@@ -10,12 +10,12 @@ public class Game {
     //alcuni sono commentati perche sono riferimenti a cose ancora da aggiungere
     private int action;
     private int numPlayer;
-    private String currentPlayer;
-    private Turn currentTurn;
+    private int currentPlayer;
+    private int currentTurn;
     private Turn[] order;
     private Controller controller;
     private Tab tab;
-    private Player player;
+    private Player[] player;
 
 
     //getter e setter
@@ -34,17 +34,17 @@ public class Game {
         this.numPlayer=numPlayer;
     }
 
-    public String getCurrentPlayer() {
+    public int getCurrentPlayer() {
         return currentPlayer;
     }
-    public void setCurrentPlayer(String currentPlayer) {
+    public void setCurrentPlayer(int currentPlayer) {
         this.currentPlayer = currentPlayer;
     }
 
-    public Turn getCurrentTurn() {
+    public int getCurrentTurn() {
         return currentTurn;
     }
-    public void setCurrentTurn(Turn currentTurn) {
+    public void setCurrentTurn(int currentTurn) {
         this.currentTurn = currentTurn;
     }
 
@@ -69,10 +69,10 @@ public class Game {
         this.tab = tab;
     }
 
-    public Player getPlayer() {
+    public Player[] getPlayer() {
         return player;
     }
-    public void setPlayer(Player player) {
+    public void setPlayer(Player[] player) {
         this.player = player;
     }
 }
