@@ -14,6 +14,8 @@ public class Game {
     private Turn currentTurn;
     private Turn[] order;
     private Controller controller;
+    private Tab tab;
+    private Player player;
 
 
     //getter e setter
@@ -42,14 +44,13 @@ public class Game {
     public Turn getCurrentTurn() {
         return currentTurn;
     }
-
     public void setCurrentTurn(Turn currentTurn) {
         this.currentTurn = currentTurn;
     }
+
     public Turn[] getOrder() {
         return order;
     }
-
     public void setOrder(Turn[] order) {
         this.order = order;
     }
@@ -57,8 +58,21 @@ public class Game {
     public Controller getController() {
         return controller;
     }
-
     public void setController(Controller controller) {
         this.controller = controller;
+    }
+
+    public Tab getTab() {
+        return tab;
+    }
+    public void setTab(Tab tab) {
+        this.tab = tab;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+    public void setPlayer(Player player) {
+        this.player = player;
     }
 }
