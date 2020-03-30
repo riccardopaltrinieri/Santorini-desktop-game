@@ -5,6 +5,7 @@ public class Cell {
     private int numColumn;
     private int level;
     private boolean isEmpty;
+    private boolean isOccupied;
 
 
     public int getNumRow(Cell cell){
@@ -18,6 +19,10 @@ public class Cell {
     }
     public boolean isEmpty(Cell cell){
         return cell.isEmpty;
+    }
+
+    public void getWorker(Cell cell){
+
     }
 
 
