@@ -1,17 +1,25 @@
 package it.polimi.ingsw;
 
-import it.polimi.ingsw.Model.Tab;
+import it.polimi.ingsw.Model.Board;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class TabTest {
+public class BoardTest {
 
-    Tab tab = new Tab();
+    Board board = new Board();
+
+
+
+
 
     @Test
     public void TabellaTest() {
-        assertEquals(25, tab.getNumColumn() * tab.getNumRow(), 0);
+        assertEquals(25, board.getNumColumn() * board.getNumRow(), 0);
+
+
+
+
     }
 }

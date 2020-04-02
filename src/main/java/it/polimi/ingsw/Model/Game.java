@@ -14,7 +14,7 @@ public class Game {
     private int currentTurn;
     private Turn[] order;
     private Controller controller;
-    private Tab tab;
+    private Board board;
     private Player[] player;
 
 
@@ -62,11 +62,11 @@ public class Game {
         this.controller = controller;
     }
 
-    public Tab getTab() {
-        return tab;
+    public Board getBoard() {
+        return board;
     }
-    public void setTab(Tab tab) {
-        this.tab = tab;
+    public void setBoard(Board board) {
+        this.board = board;
     }
 
     public Player[] getPlayer() {

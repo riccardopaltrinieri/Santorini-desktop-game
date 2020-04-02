@@ -6,19 +6,26 @@ public class Cell {
     private int level;
     private boolean isEmpty;
 
-
-
-    public int getNumRow(Cell cell){
-        return cell.numRow;
+    public void setEmptyDefault() {
+        this.isEmpty = false;
     }
-    public int getNumColumn(Cell cell){
-        return cell.numColumn;
+    public void setNumRow(int i){
+        this.numRow=i;
     }
-    public int getLevel(Cell cell){
-        return cell.level;
+    public void setNumColumn(int j){
+        this.numColumn=j;
     }
-    public boolean isEmpty(Cell cell){
-        return cell.isEmpty;
+    public int getNumRow(){
+        return this.numRow;
+    }
+    public int getNumColumn(){
+        return this.numColumn;
+    }
+    public int getLevel(){
+        return this.level;
+    }
+    public boolean isEmpty(){
+        return this.isEmpty;
     }
 
     public void getWorker(Cell cell){
