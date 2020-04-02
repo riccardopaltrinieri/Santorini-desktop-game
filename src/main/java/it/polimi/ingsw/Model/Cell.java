@@ -6,10 +6,10 @@ public class Cell {
     private int level;
     private boolean isEmpty;
 
-    public Cell (int x, int y) throws IllegalArgumentException{
-        if(x<5&&y<5) {
-            this.numColumn = x;
-            this.numRow = y;
+    public Cell (int riga, int colonna) throws IllegalArgumentException{
+        if(riga<5&&colonna<5) {
+            this.numColumn = colonna;
+            this.numRow = riga;
             this.isEmpty = true;
             this.level = 0;
         }
@@ -48,7 +48,7 @@ public class Cell {
     }
 
     public boolean canMoveTo(Cell destination) {
-        if ((destination.getNumRow()>=this.getNumRow()-1)&&(destination.getNumRow()<=this.getNumRow()+1)&&(destination.getNumColumn()>=this.getNumColumn()-1)&&(destination.getNumColumn()<=this.getNumColumn()+1)&&(destination.isEmpty())&&(destination.level<=this.level+1)){
+        if ((destination.getNumRow()>=this.getNumRow()-1)&&(destination.getNumRow()<=this.getNumRow()+1)&&(destination.getNumColumn()>=this.getNumColumn()-1)&&(destination.getNumColumn()<=this.getNumColumn()+1)&&(destination.isEmpty())&&(destination.level==this.level)){
             return true;
         }
         else{
@@ -57,7 +57,7 @@ public class Cell {
     }
 
     public boolean canBuildIn(Cell destination){
-        if ((destination.getNumRow()>=this.getNumRow()-1)&&(destination.getNumRow()<=this.getNumRow()+1)&&(destination.getNumColumn()>=this.getNumColumn()-1)&&(destination.getNumColumn()<=this.getNumColumn()+1)&&(destination.isEmpty())&&(destination.getLevel()<=4)&&(destination.getLevel()==this.getLevel()+1)){
+        if ((destination.getNumRow()>=this.getNumRow()-1)&&(destination.getNumRow()<=this.getNumRow()+1)&&(destination.getNumColumn()>=this.getNumColumn()-1)&&(destination.getNumColumn()<=this.getNumColumn()+1)&&(destination.isEmpty())&&(destination.getLevel()<=4)&&(destination.getLevel()==this.getLevel())){
             return true;
         }
         else {

@@ -5,8 +5,8 @@ import org.junit.Test;
 import static junit.framework.TestCase.*;
 
 public class CellTest {
-    int x=4;
-    int y=4;
+    int x=0;
+    int y=0;
     Cell test= new Cell(x,y);
      @Test
     public void testCostruttore(){
@@ -26,9 +26,9 @@ public class CellTest {
      }
      @Test
     public  void testCanBuildIn(){
-         Cell destination= new Cell(3,3);
+         Cell destination= new Cell(1,1);
          assertTrue(test.canBuildIn(destination));
-         Cell wrongDestination = new Cell(1,1);
+         Cell wrongDestination = new Cell(3,3);
          assertFalse(test.canBuildIn(wrongDestination));
      }
 }

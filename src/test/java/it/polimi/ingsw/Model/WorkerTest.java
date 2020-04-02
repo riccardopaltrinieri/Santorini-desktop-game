@@ -5,8 +5,9 @@ import org.junit.Test;
 import static junit.framework.TestCase.*;
 
 public class WorkerTest {
-    int x,y;
-    Cell workerPosition = new Cell(x,y);
+    int riga=0;
+    int colonna=0;
+    Cell workerPosition = new Cell(riga,colonna);
     Player workerOwner = new Player();
     Worker test = new Worker(workerPosition,workerOwner);
 
@@ -18,7 +19,7 @@ public class WorkerTest {
 
     @Test
     public void testMove(){
-        Cell destination= new Cell(x+1,y+1);
+        Cell destination= new Cell(riga+1,colonna+1);
         test.move(destination);
         if (test.getPosition().canMoveTo(destination)) {
             assertTrue(test.getPosition() == destination);
@@ -31,16 +32,21 @@ public class WorkerTest {
 
     @Test
     public void testBuild(){
-        Cell destination = new Cell(x+1,y+1);
+        Cell destination = new Cell(colonna+1,riga+1);
         int startLevel = destination.getLevel();
-        test.build(destination);
+        boolean prova =test.getPosition().canBuildIn(destination);
         if(test.getPosition().canBuildIn(destination)){
+            test.build(destination);
             assertTrue(test.getPosition().getLevel()==destination.getLevel()-1);
             assertTrue(destination.getLevel()==startLevel+1);
         }
         else{
-            assertTrue(test.getPosition().getLevel()==destination.getLevel());
-            assertTrue(destination.getLevel()==startLevel);
+            try{
+                test.build(destination);
+            }catch (IllegalArgumentException e) {
+                assertTrue(test.getPosition().getLevel() == destination.getLevel());
+                assertTrue(destination.getLevel() == startLevel);
+            }
         }
     }
 }
