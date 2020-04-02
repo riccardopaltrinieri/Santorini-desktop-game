@@ -6,9 +6,10 @@ public class Cell {
     private int level;
     private boolean isEmpty;
 
-    public Cell (int x, int y){
-        this.numColumn=x;
-        this.numRow=y;
+    public Cell (int Row, int Column){
+        this.numRow=Row;
+        this.numColumn=Column;
+
         this.isEmpty=true;
         this.level=0;
     }
@@ -37,14 +38,16 @@ public class Cell {
     public void setEmptyDefault() {
         this.isEmpty = true;
     }
-
+// si deve aggiungere l'eccezione che il worker è sul bordo
     public boolean canMoveTo(Cell destination) {
-        if ((destination.getNumRow()>=this.getNumRow()-1)&&(destination.getNumRow()<=this.getNumRow()+1)&&(destination.getNumColumn()>=this.getNumColumn()-1)&&(destination.getNumColumn()<=this.getNumColumn()+1)&&(destination.isEmpty())&&(destination.level<=this.level+1)){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return ((destination.getNumRow()>=this.getNumRow()-1)
+                &&(destination.getNumRow()<=this.getNumRow()+1)&&
+                (destination.getNumColumn()>=this.getNumColumn()-1)&&
+                (destination.getNumColumn()<=this.getNumColumn()+1)&&
+                (destination.isEmpty())&&
+                (destination.level<=this.level+1));
+
+
     }
 
 }
