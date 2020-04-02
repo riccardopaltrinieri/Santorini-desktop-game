@@ -26,6 +26,7 @@ public class Worker {
 
     //costruttore
 
+    // TODO aggiungere if(isEmpty)
     public Worker(Cell position, Player owner){
         this.position=position;
         this.owner=owner;

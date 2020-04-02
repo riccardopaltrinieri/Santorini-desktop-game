@@ -5,6 +5,7 @@ public class Cell {
     private int numColumn;
     private int level;
     private boolean isEmpty;
+    private Board board;
 
     public Cell (int Row, int Column){
         this.numRow=Row;
@@ -31,6 +32,10 @@ public class Cell {
     }
     public boolean isEmpty(){
         return this.isEmpty;
+    }
+
+    public void setBoard(Board board) {
+        this.board = board;
     }
 
     //metodi

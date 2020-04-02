@@ -18,8 +18,13 @@ public class Board {
         for (row = 0; row < 5; row++) {
             for (column = 0; column < 5; column++) {
                 this.map[row][column]=new Cell(row,column);
+                this.map[row][column].setBoard(this);
             }
         }
+    }
+
+    public Cell[][] getMap() {
+        return map;
     }
 
     /**
