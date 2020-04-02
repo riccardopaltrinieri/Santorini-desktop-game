@@ -40,4 +40,13 @@ public class Worker {
             throw new IllegalArgumentException();
         }
     }
+
+    public void build (Cell destination) throws  IllegalArgumentException{
+        if (position.canBuildIn(destination)){
+            destination.setLevel(destination.getLevel()+1);
+        }
+        else{
+            throw new IllegalArgumentException();
+        }
+    }
 }

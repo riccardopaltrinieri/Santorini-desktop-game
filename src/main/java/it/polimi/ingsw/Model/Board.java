@@ -11,9 +11,7 @@ public Cell[][] map;
         map = new Cell[5][5];
         for (i = 0; i < 5; i++) {
             for (j = 0; j < 5; j++) {
-                this.map[i][j]=new Cell();
-                this.map[i][j].setNumRow(i);
-                this.map[i][j].setNumColumn(j);
+                this.map[i][j]=new Cell(i,j);
             }
 
         }

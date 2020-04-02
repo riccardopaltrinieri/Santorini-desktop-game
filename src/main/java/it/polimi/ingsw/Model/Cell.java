@@ -6,11 +6,16 @@ public class Cell {
     private int level;
     private boolean isEmpty;
 
-    public Cell (int x, int y){
-        this.numColumn=x;
-        this.numRow=y;
-        this.isEmpty=true;
-        this.level=0;
+    public Cell (int x, int y) throws IllegalArgumentException{
+        if(x<5&&y<5) {
+            this.numColumn = x;
+            this.numRow = y;
+            this.isEmpty = true;
+            this.level = 0;
+        }
+        else{
+            throw new IllegalArgumentException();
+        }
     }
 
     public void setNumRow(int i){
@@ -32,6 +37,10 @@ public class Cell {
         return this.isEmpty;
     }
 
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
     //metodi
 
     public void setEmptyDefault() {
@@ -43,6 +52,15 @@ public class Cell {
             return true;
         }
         else{
+            return false;
+        }
+    }
+
+    public boolean canBuildIn(Cell destination){
+        if ((destination.getNumRow()>=this.getNumRow()-1)&&(destination.getNumRow()<=this.getNumRow()+1)&&(destination.getNumColumn()>=this.getNumColumn()-1)&&(destination.getNumColumn()<=this.getNumColumn()+1)&&(destination.isEmpty())&&(destination.getLevel()<=4)&&(destination.getLevel()==this.getLevel()+1)){
+            return true;
+        }
+        else {
             return false;
         }
     }
