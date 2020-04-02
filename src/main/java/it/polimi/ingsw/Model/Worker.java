@@ -23,4 +23,21 @@ public class Worker {
     public void setOwner(Player owner) {
         this.owner = owner;
     }
+
+    //costruttore
+
+    public Worker(Cell position, Player owner){
+        this.position=position;
+        this.owner=owner;
+    }
+
+    //metodi
+
+    public void move (Cell destination) throws IllegalArgumentException{
+        if (position.canMoveTo(destination)){
+            position=destination;
+        }else{
+            throw new IllegalArgumentException();
+        }
+    }
 }

@@ -6,9 +6,15 @@ public class Cell {
     private int level;
     private boolean isEmpty;
 
-    public void setEmptyDefault() {
-        this.isEmpty = false;
+    //fai costruttore con level=0 e isempty
+
+    public Cell (int x, int y){
+        this.numColumn=x;
+        this.numRow=y;
+        this.isEmpty=true;
+        this.level=0;
     }
+
     public void setNumRow(int i){
         this.numRow=i;
     }
@@ -28,9 +34,19 @@ public class Cell {
         return this.isEmpty;
     }
 
-    public void getWorker(Cell cell){
+    //metodi
 
+    public void setEmptyDefault() {
+        this.isEmpty = true;
     }
 
+    public boolean canMoveTo(Cell destination) {
+        if ((destination.getNumRow()>=this.getNumRow()-1)&&(destination.getNumRow()<=this.getNumRow()+1)&&(destination.getNumColumn()>=this.getNumColumn()-1)&&(destination.getNumColumn()<=this.getNumColumn()+1)&&(destination.isEmpty())&&(destination.level<=this.level+1)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 
 }
