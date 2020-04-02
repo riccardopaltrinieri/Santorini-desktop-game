@@ -1,4 +1,4 @@
-package it.polimi.ingsw;
+package it.polimi.ingsw.Model;
 
 import it.polimi.ingsw.Model.Board;
 import org.junit.Test;

@@ -6,8 +6,6 @@ public class Cell {
     private int level;
     private boolean isEmpty;
 
-    //fai costruttore con level=0 e isempty
-
     public Cell (int x, int y){
         this.numColumn=x;
         this.numRow=y;
