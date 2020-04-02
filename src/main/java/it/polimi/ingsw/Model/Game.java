@@ -17,6 +17,10 @@ public class Game {
     private Board board;
     private Player[] player;
 
+    public void hasLoser() {}
+
+    public void hasWinner() {}
+
 
     //getter e setter
 
