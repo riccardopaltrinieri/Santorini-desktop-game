@@ -8,10 +8,25 @@ public class Player {
     private Turn turn;
     private Divinity divinity;
     private Boolean canMoveUp;
-    private Worker[] workerArray = new Worker[2];
+    private Worker[] workers = new Worker[2];
     private Game game;
 
-    //getter e setter
+
+    /**
+     * Place the workers on the map
+     */
+    public void placeWorkers(int row, int column) {
+        Board board = this.game.getBoard();
+        Worker worker = new Worker( board.getMap()[row][column], this);
+    }
+
+    /*public int possibleMove() {
+        for (int i = 0; i < 2; i++) {
+            Cell position = workers[0].getPosition();
+
+        }
+    }*/
+
 
     public String getName() {
         return name;
@@ -53,12 +68,12 @@ public class Player {
         this.canMoveUp = canMoveUp;
     }
 
-    public Worker[] getWorkerArray() {
-        return workerArray;
+    public Worker[] getWorkers() {
+        return workers;
     }
 
-    public void setWorkerArray(Worker[] workerArray) {
-        this.workerArray = workerArray;
+    public void setWorkerArray(Worker[] workers) {
+        this.workers = workers;
     }
 
     public Game getGame() {

@@ -5,6 +5,7 @@ public class Cell {
     private int numColumn;
     private int level;
     private boolean isEmpty;
+    private Board board;
 
     public Cell (int riga, int colonna) throws IllegalArgumentException{
         if(riga<5&&colonna<5) {
@@ -40,15 +41,25 @@ public class Cell {
     public void setLevel(int level) {
         this.level = level;
     }
+    public void setBoard(Board board) {
+        this.board = board;
+    }
 
     //metodi
 
     public void setEmptyDefault() {
         this.isEmpty = true;
     }
-
+// si deve aggiungere l'eccezione che il worker è sul bordo
     public boolean canMoveTo(Cell destination) {
-        if ((destination.getNumRow()>=this.getNumRow()-1)&&(destination.getNumRow()<=this.getNumRow()+1)&&(destination.getNumColumn()>=this.getNumColumn()-1)&&(destination.getNumColumn()<=this.getNumColumn()+1)&&(destination.isEmpty())&&(destination.level==this.level)){
+        if ((destination.getNumRow()>=this.getNumRow()-1)&&
+            (destination.getNumRow()<=this.getNumRow()+1)&&
+            (destination.getNumColumn()>=this.getNumColumn()-1)&&
+            (destination.getNumColumn()<=this.getNumColumn()+1)&&
+            (destination.isEmpty())&&
+            (destination.level==this.level)&&
+                (destination.getNumRow()<5)&&
+                (destination.getNumColumn()<5)){
             return true;
         }
         else{

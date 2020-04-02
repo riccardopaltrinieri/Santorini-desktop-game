@@ -19,9 +19,9 @@ public class CellTest {
      }
      @Test
     public void testCanMoveTo(){
-         Cell destination= new Cell(3,3);
+         Cell destination= new Cell(1,1);
          assertTrue(test.canMoveTo(destination));
-         Cell wrongDestination = new Cell(1,1);
+         Cell wrongDestination = new Cell(3,3);
          assertFalse(test.canMoveTo(wrongDestination));
      }
      @Test

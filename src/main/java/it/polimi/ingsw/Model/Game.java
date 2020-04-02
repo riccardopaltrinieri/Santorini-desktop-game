@@ -72,7 +72,8 @@ public class Game {
     public Player[] getPlayer() {
         return player;
     }
-    public void setPlayer(Player[] player) {
-        this.player = player;
+    public void setPlayer(Player player) {
+        this.player[currentPlayer] = player;
+        this.player[currentPlayer].setGame(this);
     }
 }
