@@ -4,20 +4,20 @@ package it.polimi.ingsw.Model;
  * This is the board of the game
  */
 public class Board {
-    private int numRow=5;
-    private int numColumn=5;
-public Cell[][] map;
+    private static final int numRow=5;
+    private static final int numColumn=5;
+    private Cell[][] map;
 
     /**
      * This is the constructor of method
      */
     public Board () {
         int row;
-        int y;
+        int column;
         map = new Cell[5][5];
         for (row = 0; row < 5; row++) {
-            for (y = 0; y < 5; y++) {
-                this.map[row][y]=new Cell(row,y);
+            for (column = 0; column < 5; column++) {
+                this.map[row][column]=new Cell(row,column);
             }
         }
     }
@@ -48,11 +48,11 @@ public Cell[][] map;
      * With this method we can eliminate all players
      */
     public void clearAll() {
-        int x;
-        int y;
-        for (x = 0; x < 5; x++) {
-            for (y = 0; y < 5; y++) {
-                this.map[x][y].setEmptyDefault();
+        int row;
+        int column;
+        for (row = 0; row < 5; row++) {
+            for (column = 0; column < 5; column++) {
+                this.map[row][column].setEmptyDefault();
             }
         }
     }

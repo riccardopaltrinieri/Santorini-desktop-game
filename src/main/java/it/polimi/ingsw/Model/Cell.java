@@ -39,8 +39,15 @@ public class Cell {
         this.isEmpty = true;
     }
 // si deve aggiungere l'eccezione che il worker è sul bordo
-    public boolean canMoveTo(Cell destination) {
-        return ((destination.getNumRow()>=this.getNumRow()-1)
+   /* public boolean canMoveTo(Cell destination) {
+        return ((
+
+
+
+
+
+
+                (destination.getNumRow()>this.getNumRow()-1)&&(<destination.getNumColumn()<)
                 &&(destination.getNumRow()<=this.getNumRow()+1)&&
                 (destination.getNumColumn()>=this.getNumColumn()-1)&&
                 (destination.getNumColumn()<=this.getNumColumn()+1)&&
@@ -48,6 +55,6 @@ public class Cell {
                 (destination.level<=this.level+1));
 
 
-    }
+    } */
 
 }
