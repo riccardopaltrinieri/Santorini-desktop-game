@@ -35,7 +35,9 @@ public class Cell {
     }
 
     public boolean canBuildIn(Cell destination){
-        return (destination.getNumRow() >= this.numRow - 1) &&
+        return ((destination.getNumRow() >= 0) && (destination.getNumRow() <= 4) &&
+                (destination.getNumColumn() >= 0) && (destination.getNumColumn() <= 4) &&
+                destination.getNumRow() >= this.numRow - 1) &&
                 (destination.getNumRow() <= this.numRow + 1) &&
                 (destination.getNumColumn() >= this.numColumn - 1) &&
                 (destination.getNumColumn() <= this.numColumn + 1) &&
