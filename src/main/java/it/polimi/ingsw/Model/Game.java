@@ -17,6 +17,13 @@ public class Game {
     private Board board;
     private Player[] player;
 
+    /**
+     * Constructor
+     */
+    public Game (Board board) {
+        this.board = board;
+    }
+
     public void hasLoser() {}
 
     public void hasWinner() {}

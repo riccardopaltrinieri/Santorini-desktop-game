@@ -5,7 +5,6 @@ public class Cell {
     private int numColumn;
     private int level;
     private boolean isEmpty;
-    private Board board;
 
     public Cell (int riga, int colonna) throws IllegalArgumentException{
         if(riga<5&&colonna<5) {
@@ -19,12 +18,32 @@ public class Cell {
         }
     }
 
-    public void setNumRow(int i){
-        this.numRow=i;
+    public boolean isEmpty(){
+        return this.isEmpty;
     }
-    public void setNumColumn(int j){
-        this.numColumn=j;
+
+    public boolean canMoveTo(Cell destination) {
+        return  (destination.getNumRow() >= 0) && (destination.getNumRow() <= 4) &&
+                (destination.getNumColumn() >= 0) && (destination.getNumColumn() <= 4) &&
+                (destination.getNumRow() >= this.numRow - 1) &&
+                (destination.getNumRow() <= this.numRow + 1) &&
+                (destination.getNumColumn() >= this.numColumn - 1) &&
+                (destination.getNumColumn() <= this.numColumn + 1) &&
+                (destination.getLevel() >= this.level - 1) &&
+                (destination.getLevel() <= this.level + 1) &&
+                (destination.isEmpty());
     }
+
+    public boolean canBuildIn(Cell destination){
+        return (destination.getNumRow() >= this.numRow - 1) &&
+                (destination.getNumRow() <= this.numRow + 1) &&
+                (destination.getNumColumn() >= this.numColumn - 1) &&
+                (destination.getNumColumn() <= this.numColumn + 1) &&
+                (destination.isEmpty()) && (destination.getLevel() <= 4);
+    }
+
+//  ********** GETTER AND SETTER ******************
+
     public int getNumRow(){
         return this.numRow;
     }
@@ -34,46 +53,11 @@ public class Cell {
     public int getLevel(){
         return this.level;
     }
-    public boolean isEmpty(){
-        return this.isEmpty;
-    }
-
     public void setLevel(int level) {
-        this.level = level;
+        if(0 <= level && level <= 5) this.level = level;
     }
-    public void setBoard(Board board) {
-        this.board = board;
-    }
-
-    //metodi
-
-    public void setEmptyDefault() {
-        this.isEmpty = true;
-    }
-// si deve aggiungere l'eccezione che il worker è sul bordo
-    public boolean canMoveTo(Cell destination) {
-        if ((destination.getNumRow()>=this.getNumRow()-1)&&
-            (destination.getNumRow()<=this.getNumRow()+1)&&
-            (destination.getNumColumn()>=this.getNumColumn()-1)&&
-            (destination.getNumColumn()<=this.getNumColumn()+1)&&
-            (destination.isEmpty())&&
-            (destination.level==this.level)&&
-                (destination.getNumRow()<5)&&
-                (destination.getNumColumn()<5)){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-
-    public boolean canBuildIn(Cell destination){
-        if ((destination.getNumRow()>=this.getNumRow()-1)&&(destination.getNumRow()<=this.getNumRow()+1)&&(destination.getNumColumn()>=this.getNumColumn()-1)&&(destination.getNumColumn()<=this.getNumColumn()+1)&&(destination.isEmpty())&&(destination.getLevel()<=4)&&(destination.getLevel()==this.getLevel())){
-            return true;
-        }
-        else {
-            return false;
-        }
+    public void setEmpty(boolean isEmpty) {
+        this.isEmpty = isEmpty;
     }
 
 }

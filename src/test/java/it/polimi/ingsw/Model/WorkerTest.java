@@ -8,13 +8,13 @@ public class WorkerTest {
     int riga=0;
     int colonna=0;
     Cell workerPosition = new Cell(riga,colonna);
-    Player workerOwner = new Player();
+    Player workerOwner = new Player("tester", Color.Red, new Game());
     Worker test = new Worker(workerPosition,workerOwner);
 
     @Test
     public void testCostruttore(){
-        assertTrue(test.getPosition()==workerPosition);
-        assertTrue(test.getOwner()==workerOwner);
+        assertSame(test.getPosition(), workerPosition);
+        assertSame(test.getOwner(), workerOwner);
     }
 
     @Test
@@ -22,11 +22,11 @@ public class WorkerTest {
         Cell destination= new Cell(riga+1,colonna+1);
         test.move(destination);
         if (test.getPosition().canMoveTo(destination)) {
-            assertTrue(test.getPosition() == destination);
+            assertSame(test.getPosition(), destination);
         }
         else
         {
-            assertTrue(test.getPosition()==workerPosition);
+            assertSame(test.getPosition(), workerPosition);
         }
     }
 
@@ -34,18 +34,18 @@ public class WorkerTest {
     public void testBuild(){
         Cell destination = new Cell(colonna+1,riga+1);
         int startLevel = destination.getLevel();
-        boolean prova =test.getPosition().canBuildIn(destination);
+        //boolean prova =test.getPosition().canBuildIn(destination);
         if(test.getPosition().canBuildIn(destination)){
             test.build(destination);
-            assertTrue(test.getPosition().getLevel()==destination.getLevel()-1);
-            assertTrue(destination.getLevel()==startLevel+1);
+            assertEquals(test.getPosition().getLevel(), destination.getLevel() - 1);
+            assertEquals(destination.getLevel(), startLevel + 1);
         }
         else{
             try{
                 test.build(destination);
             }catch (IllegalArgumentException e) {
-                assertTrue(test.getPosition().getLevel() == destination.getLevel());
-                assertTrue(destination.getLevel() == startLevel);
+                assertEquals(test.getPosition().getLevel(), destination.getLevel());
+                assertEquals(destination.getLevel(), startLevel);
             }
         }
     }

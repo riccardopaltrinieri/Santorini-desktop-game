@@ -7,16 +7,27 @@ public class Player {
     private Turn turn;
     private Divinity divinity;
     private Boolean canMoveUp;
-    private Worker[] workers = new Worker[2];
+    private Worker[] workers;
     private Game game;
 
+    /**
+     * Constructor
+     */
+    public Player (String name, Color color, Game game) {
+        this.name = name;
+        this.color = color;
+        this.game = game;
+        this.workers = new Worker[2];
+
+    }
 
     /**
      * Place the workers on the map with the worker constructor
      */
-    public void placeWorkers(int row, int column) {
+    public void placeWorkers(int row, int column, int numWorker) {
         Board board = this.game.getBoard();
-        Worker worker = new Worker( board.getMap()[row][column], this);
+        workers[numWorker] = new Worker( board.getCell(row,column), this);
+        board.getCell(row, column).setEmpty(false);
     }
 
     /**
@@ -24,24 +35,17 @@ public class Player {
      * @return boolean that indicates if the player can make any move
      */
     public boolean canMove() {
-        boolean cannotMove = true;
         Board board = this.game.getBoard();
 
         for(int i = 0; i < 2; i++) {
             Cell pos = workers[i].getPosition();
-            for (int row = pos.getNumRow() - 1; row < pos.getNumRow() + 1; row++)
-                for (int col = pos.getNumColumn() - 1; col < pos.getNumColumn() + 1; col++)
-                    if (pos.canMoveTo(board.getMap()[row][col])) cannotMove = false;
+            //check all the cells from the one top-left to the one down-right
+            for (int row = pos.getNumRow() - 1; row <= pos.getNumRow() + 1; row++)
+                for (int col = pos.getNumColumn() - 1; col <= pos.getNumColumn() + 1; col++)
+                    if (pos.canMoveTo(board.getCell(row,col))) return true;
         }
-        if (cannotMove) this.lose();
-        return !cannotMove;
-    }
-
-    /**
-     * The player has lost because he can't make any move
-     */
-    public void lose() {
-        this.game.hasLoser();
+        this.lose();
+        return false;
     }
 
     /**
@@ -51,6 +55,12 @@ public class Player {
         this.game.hasWinner();
     }
 
+    /**
+     * The player has lost because he can't make any move
+     */
+    public void lose() {
+        this.game.hasLoser();
+    }
 
 
     //***************** GETTER AND SETTER ******************
@@ -58,56 +68,40 @@ public class Player {
     public String getName() {
         return name;
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public Color getColor() {
         return color;
     }
-
     public void setColor(Color color) {
         this.color = color;
     }
-
     public Turn getTurn() {
         return turn;
     }
-
     public void setTurn(Turn turn) {
         this.turn = turn;
     }
-
     public Divinity getDivinity() {
         return divinity;
     }
-
     public void setDivinity(Divinity divinity) {
         this.divinity = divinity;
     }
-
     public Boolean getCanMoveUp() {
         return canMoveUp;
     }
-
     public void setCanMoveUp(Boolean canMoveUp) {
         this.canMoveUp = canMoveUp;
     }
-
-    public Worker[] getWorkers() {
-        return workers;
+    public Worker getWorker(int numWorker) {
+        return workers[numWorker];
     }
-
     public void setWorkerArray(Worker[] workers) {
         this.workers = workers;
 
     }
-
     public Game getGame() {
         return game;
     }
-
     public void setGame(Game game) {
         this.game = game;
     }
