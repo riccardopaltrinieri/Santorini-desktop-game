@@ -1,6 +1,5 @@
 package it.polimi.ingsw.Model;
 
-import it.polimi.ingsw.Model.Board;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -33,7 +32,7 @@ public class BoardTest {
     public void clearCellTest() {
         cellTest = new Cell(0, 0);
         board.clearCell(cellTest);
-        assertTrue(board.getMap()[0][0].isEmpty());
+        assertTrue(board.getMap()[0][0].getIsEmpty());
     }
     @Test
     public void clearAllTest(){
@@ -41,7 +40,7 @@ public class BoardTest {
         for (x=0;x<5;x++) {
             for (y = 0; y < 5; y++)
             {
-                assertTrue(board.getMap()[x][y].isEmpty());
+                assertTrue(board.getMap()[x][y].getIsEmpty());
             }
         }
 

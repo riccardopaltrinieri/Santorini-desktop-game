@@ -12,7 +12,7 @@ public class CellTest {
     public void testCostruttore(){
          assertEquals (test.getNumColumn(),x);
          assertEquals (test.getNumRow(),y);
-         assertTrue(test.isEmpty());
+         assertTrue(test.getIsEmpty());
          assertTrue(test.getLevel()==0);
          assertTrue(test.getNumRow()<5);
          assertTrue(test.getNumColumn()<5);

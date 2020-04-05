@@ -6,7 +6,6 @@ public class Player {
     private Color color;
     private Turn turn;
     private Divinity divinity;
-    private Boolean canMoveUp;
     private Worker[] workers;
     private Game game;
 
@@ -85,12 +84,6 @@ public class Player {
     }
     public void setDivinity(Divinity divinity) {
         this.divinity = divinity;
-    }
-    public Boolean getCanMoveUp() {
-        return canMoveUp;
-    }
-    public void setCanMoveUp(Boolean canMoveUp) {
-        this.canMoveUp = canMoveUp;
     }
     public Worker getWorker(int numWorker) {
         return workers[numWorker];

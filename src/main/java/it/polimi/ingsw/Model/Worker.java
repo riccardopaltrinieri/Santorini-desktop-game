@@ -1,11 +1,19 @@
 package it.polimi.ingsw.Model;
 
+import it.polimi.ingsw.AthenaException;
+
 public class Worker {
 
     private Cell position;
     private Player owner;
 
     //costruttore
+
+    /**
+     * it's the constructor of the class
+     * @param position is the cell where you want to place your worker
+     * @param owner is the owner of the worker
+     */
     public Worker(Cell position, Player owner){
         this.position=position;
         this.owner=owner;
@@ -13,13 +21,36 @@ public class Worker {
 
     //metodi
 
-    public void move (Cell destination) throws IllegalArgumentException{
+    /**
+     *
+     * @param destination is the cell where you want to move the worker
+     * @throws IllegalArgumentException if you can't move in the destination cell
+     * @throws AthenaException if you are trying to move in a cell whit a level higher than yours but athena's godpower is activated
+     */
+
+    public void move (Cell destination) throws IllegalArgumentException, AthenaException {
         if (position.canMoveTo(destination)){
-            position=destination;
+            if ((position.getLevel()==destination.getLevel()-1)&&!(owner.getGame().getCanMoveUp())){
+                throw new AthenaException();
+            }
+            else {
+                position.setEmpty(true);
+                position = destination;
+                position.setEmpty(false);
+                if (position.getLevel()==3){
+                    owner.win();
+                }
+            }
         }else{
             throw new IllegalArgumentException();
         }
     }
+
+    /**
+     *
+     * @param destination is the cell where you are trying to build
+     * @throws IllegalArgumentException if you can't build in the destination cell for any reason
+     */
 
     public void build (Cell destination) throws  IllegalArgumentException{
         if (position.canBuildIn(destination)){

@@ -1,5 +1,6 @@
 package it.polimi.ingsw.Model;
 
+import it.polimi.ingsw.AthenaException;
 import org.junit.Test;
 
 import static junit.framework.TestCase.*;
@@ -18,16 +19,19 @@ public class WorkerTest {
     }
 
     @Test
-    public void testMove(){
+    public void testMove() throws AthenaException {
         Cell destination= new Cell(riga+1,colonna+1);
-        test.move(destination);
-        if (test.getPosition().canMoveTo(destination)) {
+        try{
+            test.move(destination);
             assertSame(test.getPosition(), destination);
-        }
-        else
-        {
+            assertFalse(test.getPosition().getIsEmpty());
+            assertTrue(workerPosition.getIsEmpty());
+        }catch (IllegalArgumentException | AthenaException a){
             assertSame(test.getPosition(), workerPosition);
+            assertTrue(test.getPosition().getIsEmpty());
+            assertFalse(destination.getIsEmpty());
         }
+
     }
 
     @Test

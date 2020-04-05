@@ -1,21 +1,3 @@
 //*
   * Lista di cose da modificare
   */
-
-
-
-public class Worker () {
-
-
-    //TODO aggiungere errore quando player.canMoveUp = 0
-    //TODO quando muovi su livello 3 chiama owner.win()
-    //TODO modificare isEmpty quando ti muovi e costruisci
-    public void move (Cell destination) throws IllegalArgumentException{ }
-
-
-    }
-
-public class Cell() {
-
-    //TODO aggiungere JavaDoc
-}

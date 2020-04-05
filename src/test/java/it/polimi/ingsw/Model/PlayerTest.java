@@ -14,7 +14,7 @@ public class PlayerTest {
     public void testPlaceWorkers() {
         tester.placeWorkers(1,1, 0);
         tester.placeWorkers(4,4,1);
-        assertFalse(game.getBoard().getCell(1,1).isEmpty());
+        assertFalse(game.getBoard().getCell(1,1).getIsEmpty());
     }
 
     @Test

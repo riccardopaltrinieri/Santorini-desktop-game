@@ -16,6 +16,7 @@ public class Game {
     private Controller controller;
     private Board board;
     private Player[] player;
+    private Boolean canMoveUp;
 
     /**
      * Constructor
@@ -30,6 +31,13 @@ public class Game {
 
 
     //getter e setter
+
+    public Boolean getCanMoveUp() {
+        return canMoveUp;
+    }
+    public void setCanMoveUp(Boolean canMoveUp) {
+        this.canMoveUp = canMoveUp;
+    }
 
     public int getAction(){
         return action;
