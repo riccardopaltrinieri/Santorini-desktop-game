@@ -6,8 +6,7 @@ import static junit.framework.TestCase.*;
 
 public class PlayerTest {
 
-    Board board = new Board();
-    Game game = new Game(board);
+    Game game = new Game();
     Player tester = new Player("Tester", Color.Red, game);
 
     @Test
@@ -37,12 +36,12 @@ public class PlayerTest {
         /*Worker worker0 = tester.getWorker(0);
         for (int row = worker0.getPosition().getNumRow() - 1; row <= worker0.getPosition().getNumRow() + 1; row++)
             for (int col = worker0.getPosition().getNumColumn() - 1; col <= worker0.getPosition().getNumColumn() + 1; col++)
-                board.getCell(row,col).setEmpty(false);
+                game.getBoard().getCell(row,col).setEmpty(false);
 
         Worker worker1 = tester.getWorker(1);
         for (int row = worker1.getPosition().getNumRow() - 1; row <= worker1.getPosition().getNumRow() + 1; row++)
             for (int col = worker1.getPosition().getNumColumn() - 1; col <= worker1.getPosition().getNumColumn() + 1; col++)
-                board.getCell(row,col).setEmpty(false);*/
+                game.getBoard().getCell(row,col).setEmpty(false);*/
 
         assertFalse(tester.canMove());
     }

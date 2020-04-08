@@ -7,19 +7,18 @@ public class Worker {
     private Cell position;
     private Player owner;
 
-    //costruttore
-
     /**
      * it's the constructor of the class
      * @param position is the cell where you want to place your worker
      * @param owner is the owner of the worker
      */
     public Worker(Cell position, Player owner){
-        this.position=position;
-        this.owner=owner;
+        if( position.getIsEmpty()) {
+            this.position = position;
+            this.owner = owner;
+            position.setEmpty(false);
+        }
     }
-
-    //metodi
 
     /**
      *
@@ -37,9 +36,6 @@ public class Worker {
                 position.setEmpty(true);
                 position = destination;
                 position.setEmpty(false);
-                if (position.getLevel()==3){
-                    owner.win();
-                }
             }
         }else{
             throw new IllegalArgumentException();

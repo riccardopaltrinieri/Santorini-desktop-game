@@ -4,10 +4,10 @@ public class Player {
 
     private String name;
     private Color color;
-    private Turn turn;
     private Divinity divinity;
     private Worker[] workers;
     private Game game;
+    private GodPower godPower;
 
     /**
      * Constructor
@@ -26,7 +26,6 @@ public class Player {
     public void placeWorkers(int row, int column, int numWorker) {
         Board board = this.game.getBoard();
         workers[numWorker] = new Worker( board.getCell(row,column), this);
-        board.getCell(row, column).setEmpty(false);
     }
 
     /**
@@ -38,29 +37,13 @@ public class Player {
 
         for(int i = 0; i < 2; i++) {
             Cell pos = workers[i].getPosition();
-            //check all the cells from the one top-left to the one down-right
+            //check all the cells from the one top-left to the one down-right, if just one is ok the player can move
             for (int row = pos.getNumRow() - 1; row <= pos.getNumRow() + 1; row++)
                 for (int col = pos.getNumColumn() - 1; col <= pos.getNumColumn() + 1; col++)
                     if (pos.canMoveTo(board.getCell(row,col))) return true;
         }
-        this.lose();
         return false;
     }
-
-    /**
-     * The player has win because his worker has moved on a level 3 building
-     */
-    public void win() {
-        this.game.hasWinner();
-    }
-
-    /**
-     * The player has lost because he can't make any move
-     */
-    public void lose() {
-        this.game.hasLoser();
-    }
-
 
     //***************** GETTER AND SETTER ******************
 
@@ -72,12 +55,6 @@ public class Player {
     }
     public void setColor(Color color) {
         this.color = color;
-    }
-    public Turn getTurn() {
-        return turn;
-    }
-    public void setTurn(Turn turn) {
-        this.turn = turn;
     }
     public Divinity getDivinity() {
         return divinity;
@@ -97,6 +74,12 @@ public class Player {
     }
     public void setGame(Game game) {
         this.game = game;
+    }
+    public GodPower getGodPower() {
+        return godPower;
+    }
+    public void setGodPower(GodPower godPower) {
+        this.godPower = godPower;
     }
 
 

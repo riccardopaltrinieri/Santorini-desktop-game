@@ -1,3 +1,6 @@
 //*
   * Lista di cose da modificare
   */
+
+  //TODO Creare le eccezioni nei worker quando muovono e costruiscono così si possono gestire dal game e mandare un messaggio/evento alla view
+  //Le eccezioni nel model sono comode perchè risalgono tutte le chiamate alle funzioni
