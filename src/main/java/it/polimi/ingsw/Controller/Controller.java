@@ -21,18 +21,19 @@ public class Controller extends Observable implements Observer {
      * it also checks if the client is following the right path
      * @param message == "action row column"
      */
-    public void parseInput(String message) throws IllegalStateException {
+    public void parseInput(String message) throws IllegalStateException, IllegalArgumentException {
 
         String[] parts = message.split(" ");
-        String action = parts[0];
+        String action = parts[0].toLowerCase();
         int row = Integer.parseInt(parts[1]);
         int column = Integer.parseInt(parts[2]);
         int worker = Integer.parseInt(parts[3]);
 
         switch( fsm.getState() ) {
             case start:
-                if (action.equals("usePower"))   fsm.setPath(game.getPlayer().getDivinity());
-                else  fsm.setPath(Divinity.Default);
+                if (action.equals("usepower"))   fsm.setPath(game.getPlayer().getDivinity());
+                else if(action.equals("default"))  fsm.setPath(Divinity.Default);
+                else throw new IllegalArgumentException("Unexpected action: "+ action);
                 break;
 
             case move:
@@ -43,11 +44,11 @@ public class Controller extends Observable implements Observer {
                 break;
             case superMove:
                 //TODO move or supermove?
-                if(action.equals("superMove")) game.useGodPower(row, column, worker);
+                if(action.equals("supermove")) game.useGodPower(row, column, worker);
                 break;
             case superBuild:
                 //TODO build or superbuild?
-                if(action.equals("superBuild")) game.useGodPower(row, column, worker);
+                if(action.equals("superbuild")) game.useGodPower(row, column, worker);
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + fsm.getState());

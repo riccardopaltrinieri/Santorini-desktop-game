@@ -10,7 +10,7 @@ public abstract class Observable {
         observers = new LinkedList<>();
     }
 
-    public void addObsever(Observer observer) {
+    public void addObserver(Observer observer) {
         observers.add(observer);
     }
 

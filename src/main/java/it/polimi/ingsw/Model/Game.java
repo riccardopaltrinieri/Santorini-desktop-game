@@ -4,12 +4,14 @@ import it.polimi.ingsw.AthenaException;
 import it.polimi.ingsw.Controller.Controller;
 import it.polimi.ingsw.utils.Observable;
 
+import java.util.ArrayList;
+
 public class Game extends Observable {
     private int numPlayer;
     private int currentPlayer;
     private Controller controller;
     private Board board;
-    private Player[] players;
+    private ArrayList<Player> players;
     private Boolean canMoveUp;
 
     /**
@@ -18,6 +20,8 @@ public class Game extends Observable {
     public Game () {
         this.board = new Board();
         this.controller = new Controller(this);
+        this.players = new ArrayList<>(3);
+        this.currentPlayer = 0;
     }
 
     public void hasLoser() {
@@ -25,7 +29,7 @@ public class Game extends Observable {
     }
 
     public void hasWinner() {
-        notifyObservers(players[currentPlayer].getName() + "wins");
+        notifyObservers(players.get(currentPlayer).getName() + "wins");
         board.clearAll();
     }
 
@@ -47,17 +51,20 @@ public class Game extends Observable {
     }
 
     public void endTurn() {
-        currentPlayer ++;
+        currentPlayer = (currentPlayer + 1) % 3;
         if (!getPlayer().canMove()){
-            notifyObservers(players[currentPlayer].getName() + "lose");
+            notifyObservers(getPlayer().getName() + "lose");
             hasLoser();
         } else {
-            notifyObservers(players[currentPlayer].getName() + "moves");
+            notifyObservers(getPlayer().getName() + "moves");
         }
     }
 
     public Player getPlayer() {
-        return players[currentPlayer];
+        return players.get(currentPlayer);
+    }
+    public void addPlayer(Player player) {
+        this.players.add(player);
     }
 
 //  ************** GETTER AND SETTER ***********************************
@@ -74,12 +81,8 @@ public class Game extends Observable {
     public void setNumPlayer(int numPlayer){
         this.numPlayer=numPlayer;
     }
-    public Player[] getPlayers() {
+    public ArrayList<Player> getPlayers() {
         return players;
-    }
-    public void setPlayer(Player player) {
-        this.players[currentPlayer] = player;
-        this.players[currentPlayer].setGame(this);
     }
     public int getCurrentPlayer() {
         return currentPlayer;

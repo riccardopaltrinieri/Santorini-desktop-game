@@ -1,11 +1,13 @@
 package it.polimi.ingsw.Model;
 
+import java.util.ArrayList;
+
 public class Player {
 
     private String name;
     private Color color;
     private Divinity divinity;
-    private Worker[] workers;
+    private ArrayList<Worker> workers;
     private Game game;
     private GodPower godPower;
 
@@ -16,7 +18,7 @@ public class Player {
         this.name = name;
         this.color = color;
         this.game = game;
-        this.workers = new Worker[2];
+        this.workers = new ArrayList<>(2);
 
     }
 
@@ -25,7 +27,7 @@ public class Player {
      */
     public void placeWorkers(int row, int column, int numWorker) {
         Board board = this.game.getBoard();
-        workers[numWorker] = new Worker( board.getCell(row,column), this);
+        workers.add(new Worker( board.getCell(row,column), this));
     }
 
     /**
@@ -36,7 +38,7 @@ public class Player {
         Board board = this.game.getBoard();
 
         for(int i = 0; i < 2; i++) {
-            Cell pos = workers[i].getPosition();
+            Cell pos = workers.get(i).getPosition();
             //check all the cells from the one top-left to the one down-right, if just one is ok the player can move
             for (int row = pos.getNumRow() - 1; row <= pos.getNumRow() + 1; row++)
                 for (int col = pos.getNumColumn() - 1; col <= pos.getNumColumn() + 1; col++)
@@ -63,11 +65,7 @@ public class Player {
         this.divinity = divinity;
     }
     public Worker getWorker(int numWorker) {
-        return workers[numWorker];
-    }
-    public void setWorkerArray(Worker[] workers) {
-        this.workers = workers;
-
+        return workers.get(numWorker);
     }
     public Game getGame() {
         return game;

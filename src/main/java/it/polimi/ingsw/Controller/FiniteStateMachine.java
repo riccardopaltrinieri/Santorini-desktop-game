@@ -16,18 +16,18 @@ public class FiniteStateMachine {
 
             case Default:
                 if (state == State.start) state = State.move;
-                if (state == State.move) state = State.build;
-                if (state == State.build) state = State.endTurn;
+                else if (state == State.move) state = State.build;
+                else if (state == State.build) state = State.endTurn;
                 break;
 
             case Apollo:
                 if (state == State.start) state = State.superMove;
-                if (state == State.superMove) state = State.build;
-                if (state == State.build) state = State.endTurn;
+                else if (state == State.superMove) state = State.build;
+                else if (state == State.build) state = State.endTurn;
                 break;
             case Artemis:
                 if (state == State.start) state = State.move;
-                if (state == State.move) {
+                else if (state == State.move) {
                     if (!again) {
                         again = true;
                     } else {
@@ -35,22 +35,22 @@ public class FiniteStateMachine {
                         state = State.build;
                     }
                 }
-                if (state == State.build) state = State.endTurn;
+                else if (state == State.build) state = State.endTurn;
                 break;
             case Athena:
                 if (state == State.start) state = State.move;
-                if (state == State.move) state = State.build;
-                if (state == State.build) state = State.endTurn;
+                else if (state == State.move) state = State.build;
+                else if (state == State.build) state = State.endTurn;
                 break;
             case Atlas:
                 if (state == State.start) state = State.move;
-                if (state == State.move) state = State.superBuild;
-                if (state == State.superBuild) state = State.endTurn;
+                else if (state == State.move) state = State.superBuild;
+                else if (state == State.superBuild) state = State.endTurn;
                 break;
             case Demeter:
                 if (state == State.start) state = State.move;
-                if (state == State.move) state = State.build;
-                if (state == State.build) {
+                else if (state == State.move) state = State.build;
+                else if (state == State.build) {
                     if (!again) {
                         again = true;
                         state = State.build;
@@ -62,23 +62,23 @@ public class FiniteStateMachine {
                 break;
             case Haphaestus:
                 if (state == State.start) state = State.move;
-                if (state == State.move) state = State.superBuild;
-                if (state == State.superBuild) state = State.endTurn;
+                else if (state == State.move) state = State.superBuild;
+                else if (state == State.superBuild) state = State.endTurn;
                 break;
             case Minotaur:
                 if (state == State.start) state = State.superMove;
-                if (state == State.superMove) state = State.build;
-                if (state == State.build) state = State.endTurn;
+                else if (state == State.superMove) state = State.build;
+                else if (state == State.build) state = State.endTurn;
                 break;
             case Pan:
                 if (state == State.start) state = State.move;
-                if (state == State.move) state = State.build;
-                if (state == State.build) state = State.endTurn;
+                else if (state == State.move) state = State.build;
+                else if (state == State.build) state = State.endTurn;
                 break;
             case Prometheus:
                 if (state == State.start) state = State.build;
-                if (state == State.move) state = State.build;
-                if (state == State.build) {
+                else if (state == State.move) state = State.build;
+                else if (state == State.build) {
                     if (!again) {
                         again = true;
                         state = State.superMove;
