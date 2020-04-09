@@ -5,7 +5,6 @@ import it.polimi.ingsw.Model.Divinity;
 import it.polimi.ingsw.Model.Game;
 import it.polimi.ingsw.Model.Player;
 import it.polimi.ingsw.View.RemoteView;
-import it.polimi.ingsw.utils.Observable;
 import org.junit.Test;
 import static junit.framework.TestCase.*;
 
