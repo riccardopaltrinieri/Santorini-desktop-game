@@ -14,6 +14,9 @@ public class Athena implements GodPower {
         if (destination.getLevel()>player.getWorker(worker).getPosition().getLevel()){
             player.getGame().setCanMoveUp(false);
         }
+        else{
+            player.getGame().setCanMoveUp(true);
+        }
         player.getWorker(worker).move(destination);
 
     }
