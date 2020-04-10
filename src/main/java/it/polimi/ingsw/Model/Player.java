@@ -25,7 +25,7 @@ public class Player {
     /**
      * Place the workers on the map with the worker constructor
      */
-    public void placeWorkers(int row, int column, int numWorker) {
+    public void placeWorkers(int row, int column) {
         Board board = this.game.getBoard();
         workers.add(new Worker( board.getCell(row,column), this));
     }

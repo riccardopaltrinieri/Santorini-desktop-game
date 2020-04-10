@@ -6,7 +6,7 @@ public enum Divinity {
     Athena,
     Atlas,
     Demeter,
-    Haphaestus,
+    Hephaestus,
     Minotaur,
     Pan,
     Prometheus,

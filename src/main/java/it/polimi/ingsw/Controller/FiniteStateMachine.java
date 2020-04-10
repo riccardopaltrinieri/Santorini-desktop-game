@@ -38,8 +38,8 @@ public class FiniteStateMachine {
                 else if (state == State.build) state = State.endTurn;
                 break;
             case Athena:
-                if (state == State.start) state = State.move;
-                else if (state == State.move) state = State.build;
+                if (state == State.start) state = State.superMove;
+                else if (state == State.superMove) state = State.build;
                 else if (state == State.build) state = State.endTurn;
                 break;
             case Atlas:
@@ -60,7 +60,7 @@ public class FiniteStateMachine {
                     }
                 }
                 break;
-            case Haphaestus:
+            case Hephaestus:
                 if (state == State.start) state = State.move;
                 else if (state == State.move) state = State.superBuild;
                 else if (state == State.superBuild) state = State.endTurn;

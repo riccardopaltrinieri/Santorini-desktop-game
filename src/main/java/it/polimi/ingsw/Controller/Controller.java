@@ -1,5 +1,6 @@
 package it.polimi.ingsw.Controller;
 
+import it.polimi.ingsw.AthenaException;
 import it.polimi.ingsw.Model.Divinity;
 import it.polimi.ingsw.Model.Game;
 import it.polimi.ingsw.utils.Observable;
@@ -21,7 +22,7 @@ public class Controller extends Observable implements Observer {
      * it also checks if the client is following the right path
      * @param message == "action row column"
      */
-    public void parseInput(String message) throws IllegalStateException, IllegalArgumentException {
+    public void parseInput(String message) throws IllegalStateException, IllegalArgumentException, AthenaException {
 
         String[] parts = message.split(" ");
         String action = parts[0].toLowerCase();
@@ -63,7 +64,7 @@ public class Controller extends Observable implements Observer {
     }
 
     @Override
-    public void update(String message) {
+    public void update(String message) throws AthenaException {
         parseInput(message);
     }
 }

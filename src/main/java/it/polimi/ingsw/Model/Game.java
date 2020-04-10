@@ -22,18 +22,19 @@ public class Game extends Observable {
         this.controller = new Controller(this);
         this.players = new ArrayList<>(3);
         this.currentPlayer = 0;
+        this.canMoveUp=true;
     }
 
     public void hasLoser() {
 
     }
 
-    public void hasWinner() {
+    public void hasWinner() throws AthenaException {
         notifyObservers(players.get(currentPlayer).getName() + "wins");
         board.clearAll();
     }
 
-    public void move(int row, int column, int worker) {
+    public void move(int row, int column, int worker) throws AthenaException {
         if(board.getCell(row, column).getLevel() == 3) hasWinner();
         try{
             getPlayer().getWorker(worker).move(board.getCell(row, column));
@@ -46,11 +47,11 @@ public class Game extends Observable {
         getPlayer().getWorker(worker).build(board.getCell(row, column));
     }
 
-    public void useGodPower(int row, int column, int worker) {
-        getPlayer().getGodPower().execute();
+    public void useGodPower(int row, int column, int worker) throws AthenaException {
+        getPlayer().getGodPower().execute(getPlayer(),board.getCell(row,column),worker);
     }
 
-    public void endTurn() {
+    public void endTurn() throws AthenaException {
         currentPlayer = (currentPlayer + 1) % 3;
         if (!getPlayer().canMove()){
             notifyObservers(getPlayer().getName() + "lose");

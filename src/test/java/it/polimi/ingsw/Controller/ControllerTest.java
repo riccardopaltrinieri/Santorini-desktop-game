@@ -1,5 +1,6 @@
 package it.polimi.ingsw.Controller;
 
+import it.polimi.ingsw.AthenaException;
 import it.polimi.ingsw.Model.Color;
 import it.polimi.ingsw.Model.Divinity;
 import it.polimi.ingsw.Model.Game;
@@ -18,17 +19,17 @@ public class ControllerTest {
     RemoteView client = new RemoteView();
 
     @Test
-    public void testGodPower(){
+    public void testGodPower() throws AthenaException {
         //insert the power to test
         tester.setDivinity(Divinity.Default);
 
         game.addPlayer(tester);
         game.addPlayer(tester2);
         client.addObserver(controller);
-        tester.placeWorkers(0,0,0);
-        tester.placeWorkers(4,4,1);
-        tester2.placeWorkers(3,3,0);
-        tester2.placeWorkers(2,2,1);
+        tester.placeWorkers(0,0);
+        tester.placeWorkers(4,4);
+        tester2.placeWorkers(3,3);
+        tester2.placeWorkers(2,2);
 
         client.notifyObservers("usePower -1 -1 -1");
         client.notifyObservers("move 1 1 0");
@@ -41,17 +42,17 @@ public class ControllerTest {
     }
 
     @Test
-    public void testDefaultInput(){
+    public void testDefaultInput() throws AthenaException {
         //insert the power to test
         tester.setDivinity(Divinity.Default);
 
         game.addPlayer(tester);
         game.addPlayer(tester2);
         client.addObserver(controller);
-        tester.placeWorkers(0,0,0);
-        tester.placeWorkers(4,4,1);
-        tester2.placeWorkers(3,3,0);
-        tester2.placeWorkers(2,2,1);
+        tester.placeWorkers(0,0);
+        tester.placeWorkers(4,4);
+        tester2.placeWorkers(3,3);
+        tester2.placeWorkers(2,2);
 
         client.notifyObservers("default -1 -1 -1");
         client.notifyObservers("move 1 1 0");
