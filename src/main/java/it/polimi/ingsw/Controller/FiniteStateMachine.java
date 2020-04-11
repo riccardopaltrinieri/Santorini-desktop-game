@@ -26,8 +26,11 @@ public class FiniteStateMachine {
                 else if (state == State.build) state = State.endTurn;
                 break;
             case Artemis:
-                if (state == State.start) state = State.move;
-                else if (state == State.move) {
+                if (state == State.start) {
+                    state = State.superMove;
+                    again=false;
+                }
+                else if (state == State.superMove) {
                     if (!again) {
                         again = true;
                     } else {

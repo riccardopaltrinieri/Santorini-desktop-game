@@ -6,7 +6,7 @@ import it.polimi.ingsw.Model.GodPower;
 import it.polimi.ingsw.Model.Player;
 
 public class Demeter implements GodPower {
-    private Divinity divinity=Divinity.Demeter;
+    private final Divinity divinity=Divinity.Demeter;
 
     @Override
     public void execute(Player player, Cell destination, int worker) {

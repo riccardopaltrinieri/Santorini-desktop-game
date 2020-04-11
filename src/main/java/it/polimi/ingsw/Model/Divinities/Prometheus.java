@@ -6,7 +6,7 @@ import it.polimi.ingsw.Model.GodPower;
 import it.polimi.ingsw.Model.Player;
 
 public class Prometheus implements GodPower {
-    private Divinity divinity=Divinity.Prometheus;
+    private final Divinity divinity=Divinity.Prometheus;
 
     @Override
     public void execute(Player player, Cell destination, int worker) {

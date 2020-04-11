@@ -60,7 +60,21 @@ public class Cell {
                 (destination.getIsEmpty()) && (destination.getLevel() <= 4);
     }
 
-//  ********** GETTER AND SETTER ******************
+    @Override
+    public boolean equals(Object comparationCell) {
+        if(comparationCell instanceof Cell) {
+            if ((this.getNumColumn() == ((Cell) comparationCell).getNumColumn()) && (this.getNumRow() == ((Cell) comparationCell).getNumRow()) && (this.getLevel() == ((Cell) comparationCell).getLevel())) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        else{
+            return false;
+        }
+    }
+
+    //  ********** GETTER AND SETTER ******************
 
     public int getNumRow(){
         return this.numRow;

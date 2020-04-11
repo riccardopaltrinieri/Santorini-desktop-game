@@ -7,7 +7,7 @@ import it.polimi.ingsw.Model.GodPower;
 import it.polimi.ingsw.Model.Player;
 
 public class Athena implements GodPower {
-    private Divinity divinity=Divinity.Athena;
+    private final Divinity divinity=Divinity.Athena;
 
     @Override
     public void execute(Player player, Cell destination, int worker) throws AthenaException {

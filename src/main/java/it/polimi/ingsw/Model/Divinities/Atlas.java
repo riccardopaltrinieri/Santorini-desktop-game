@@ -6,7 +6,7 @@ import it.polimi.ingsw.Model.GodPower;
 import it.polimi.ingsw.Model.Player;
 
 public class Atlas implements GodPower {
-    private Divinity divinity=Divinity.Atlas;
+    private final Divinity divinity=Divinity.Atlas;
 
     @Override
     public void execute(Player player, Cell destination, int worker) throws IllegalArgumentException {
