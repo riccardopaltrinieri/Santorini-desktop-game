@@ -9,8 +9,13 @@ public class Atlas implements GodPower {
     private Divinity divinity=Divinity.Atlas;
 
     @Override
-    public void execute(Player player, Cell destination, int worker) {
-
+    public void execute(Player player, Cell destination, int worker) throws IllegalArgumentException {
+        if ((player.getWorker(worker).getPosition().canBuildIn(destination))&&(destination.getLevel()<4)){
+            destination.setLevel(4);
+        }
+        else {
+            throw new IllegalArgumentException();
+        }
     }
 
     @Override
