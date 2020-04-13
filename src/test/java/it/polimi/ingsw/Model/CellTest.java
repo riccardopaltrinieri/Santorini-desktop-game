@@ -23,6 +23,7 @@ public class CellTest {
          assertTrue(test.canMoveTo(destination));
          Cell wrongDestination = new Cell(3,3);
          assertFalse(test.canMoveTo(wrongDestination));
+         assertFalse(test.canMoveTo(test));
      }
      @Test
     public  void testCanBuildIn(){

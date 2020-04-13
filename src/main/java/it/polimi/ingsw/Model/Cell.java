@@ -42,7 +42,8 @@ public class Cell {
                 (destination.getNumColumn() <= this.numColumn + 1) &&
                 (destination.getLevel() >= this.level - 1) &&
                 (destination.getLevel() <= this.level + 1) &&
-                (destination.getIsEmpty());
+                (destination.getIsEmpty()&&
+                (!this.equals(destination)));
     }
 
     /**
@@ -57,7 +58,9 @@ public class Cell {
                 (destination.getNumRow() <= this.numRow + 1) &&
                 (destination.getNumColumn() >= this.numColumn - 1) &&
                 (destination.getNumColumn() <= this.numColumn + 1) &&
-                (destination.getIsEmpty()) && (destination.getLevel() <= 4);
+                (destination.getIsEmpty()) &&
+                (destination.getLevel() <= 4) &&
+                (!this.equals(destination));
     }
 
     @Override

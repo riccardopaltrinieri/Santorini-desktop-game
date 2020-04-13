@@ -52,8 +52,8 @@ public class FiniteStateMachine {
                 break;
             case Demeter:
                 if (state == State.start) state = State.move;
-                else if (state == State.move) state = State.build;
-                else if (state == State.build) {
+                else if (state == State.move) state = State.superBuild;
+                else if (state == State.superBuild) {
                     if (!again) {
                         again = true;
                         state = State.build;
