@@ -33,9 +33,9 @@ public class Apollo implements GodPower {
                         throw new IllegalArgumentException();
                     }
                 }
-                Cell excangePosition = player.getWorker(worker).getPosition();
+                Cell exchangePosition = player.getWorker(worker).getPosition();
                 player.getWorker(worker).setPosition(players.get(wantedPlayer).getWorker(wantedWorker).getPosition());
-                players.get(wantedPlayer).getWorker(wantedWorker).setPosition(excangePosition);
+                players.get(wantedPlayer).getWorker(wantedWorker).setPosition(exchangePosition);
             }
             destination.setEmpty(false);
         }

@@ -13,10 +13,11 @@ public class DemeterTest {
     @Test
     public void testExecute(){
         Game game = new Game();
+        Board board = new Board();
         Player player = new Player("test player", Color.Green, game);
-        player.placeWorkers(1,1);
-        Cell firstDestination = new Cell(2,2);
-        Cell secondDestination = new Cell(2,1);
+        player.placeWorkers(board.getCell(1,1));
+        Cell firstDestination = board.getCell(2,2);
+        Cell secondDestination = board.getCell(2,1);
 
         try {
             test.execute(player, firstDestination, 0);

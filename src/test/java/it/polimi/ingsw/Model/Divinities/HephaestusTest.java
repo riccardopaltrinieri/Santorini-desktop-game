@@ -12,11 +12,12 @@ public class HephaestusTest {
     @Test
     public void executeTest() throws AthenaException {
         Game game = new Game();
+        Board board = new Board();
         Player player = new Player("test player", Color.Green,game);
-        player.placeWorkers(0,0);
-        Cell rightDestination = new Cell(1,1);
+        player.placeWorkers(board.getCell(0,0));
+        Cell rightDestination = board.getCell(1,1);
         int startingLevel = rightDestination.getLevel();
-        Cell wrongDestination = new Cell(1,0);
+        Cell wrongDestination = board.getCell(1,0);
         int startingWrongLevel = 2;
         wrongDestination.setLevel(startingWrongLevel);
 

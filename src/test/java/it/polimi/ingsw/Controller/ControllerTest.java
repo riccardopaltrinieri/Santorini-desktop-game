@@ -1,10 +1,7 @@
 package it.polimi.ingsw.Controller;
 
 import it.polimi.ingsw.AthenaException;
-import it.polimi.ingsw.Model.Color;
-import it.polimi.ingsw.Model.Divinity;
-import it.polimi.ingsw.Model.Game;
-import it.polimi.ingsw.Model.Player;
+import it.polimi.ingsw.Model.*;
 import it.polimi.ingsw.View.RemoteView;
 import org.junit.Test;
 import static junit.framework.TestCase.*;
@@ -13,6 +10,7 @@ import static junit.framework.TestCase.*;
 public class ControllerTest {
 
     Game game = new Game();
+    Board board = new Board();
     Controller controller = game.getController();
     Player tester = new Player("tester", Color.Red, game);
     Player tester2 = new Player("tester2", Color.Red, game);
@@ -26,10 +24,10 @@ public class ControllerTest {
         game.addPlayer(tester);
         game.addPlayer(tester2);
         client.addObserver(controller);
-        tester.placeWorkers(0,0);
-        tester.placeWorkers(4,4);
-        tester2.placeWorkers(3,3);
-        tester2.placeWorkers(2,2);
+        tester.placeWorkers(board.getCell(0,0));
+        tester.placeWorkers(board.getCell(4,4));
+        tester2.placeWorkers(board.getCell(3,3));
+        tester2.placeWorkers(board.getCell(2,2));
 
         client.notifyObservers("usePower -1 -1 -1");
         client.notifyObservers("move 1 1 0");
@@ -49,10 +47,10 @@ public class ControllerTest {
         game.addPlayer(tester);
         game.addPlayer(tester2);
         client.addObserver(controller);
-        tester.placeWorkers(0,0);
-        tester.placeWorkers(4,4);
-        tester2.placeWorkers(3,3);
-        tester2.placeWorkers(2,2);
+        tester.placeWorkers(board.getCell(0,0));
+        tester.placeWorkers(board.getCell(4,4));
+        tester2.placeWorkers(board.getCell(3,3));
+        tester2.placeWorkers(board.getCell(2,2));
 
         client.notifyObservers("default -1 -1 -1");
         client.notifyObservers("move 1 1 0");

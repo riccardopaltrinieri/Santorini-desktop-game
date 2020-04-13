@@ -12,11 +12,12 @@ public class AthenaTest {
     @Test
     public void executeTest() {
         Game game = new Game();
+        Board board = new Board();
         Player player = new Player("test player", Color.Green, game);
-        player.placeWorkers(0,0);
-        Cell higCell = new Cell(1, 1);
+        player.placeWorkers(board.getCell(0,0));
+        Cell higCell = board.getCell(1, 1);
         higCell.setLevel(1);
-        Cell lowCell = new Cell(1, 1);
+        Cell lowCell = board.getCell(1, 1);
         try {
             test.execute(player, lowCell, 0);
             assertTrue(game.getCanMoveUp());

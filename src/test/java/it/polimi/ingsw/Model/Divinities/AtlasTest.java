@@ -12,14 +12,14 @@ public class AtlasTest {
     @Test
     public void executeTest() throws AthenaException {
         Game game = new Game();
+        Board board = new Board();
         Player player = new Player("test player", Color.Green,game);
-        player.placeWorkers(0,0);
-        Cell destinationLevel0 = new Cell(1,1);
-        Cell destinationLevel1 = new Cell(1,1);
-        destinationLevel1.setLevel(1);
-        Cell destinationLevel2 = new Cell(1,1);
+        player.placeWorkers(board.getCell(1,1));
+        Cell destinationLevel0 = board.getCell(0,0);
+        Cell destinationLevel1 = board.getCell(0,1);
+        Cell destinationLevel2 = board.getCell(1,0);
         destinationLevel2.setLevel(2);
-        Cell destinationLevel3 = new Cell(1,1);
+        Cell destinationLevel3 = board.getCell(2,2);
         destinationLevel3.setLevel(3);
         test.execute(player,destinationLevel0,0);
         test.execute(player,destinationLevel1,0);

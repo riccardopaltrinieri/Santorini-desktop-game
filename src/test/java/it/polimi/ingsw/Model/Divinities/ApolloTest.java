@@ -13,11 +13,12 @@ public class ApolloTest {
         Game game = new Game();
         Player playerApollo = new Player("player test", Color.Green, game);
         Player player = new Player("player test",Color.Red, game);
-        playerApollo.placeWorkers(0,0);
-        playerApollo.placeWorkers(4,4);
+        Board board = new Board();
+        playerApollo.placeWorkers(board.getCell(0,0));
+        playerApollo.placeWorkers(board.getCell(4,4));
         Cell oldApolloPosition = playerApollo.getWorker(0).getPosition();
-        player.placeWorkers(1,1);
-        player.placeWorkers(3,3);
+        player.placeWorkers(board.getCell(1,1));
+        player.placeWorkers(board.getCell(2,2));
         Cell oldPlayerPosition = player.getWorker(0).getPosition();
         test.execute(playerApollo,oldPlayerPosition,0);
         assertTrue(playerApollo.getWorker(0).getPosition().equals(oldPlayerPosition));
