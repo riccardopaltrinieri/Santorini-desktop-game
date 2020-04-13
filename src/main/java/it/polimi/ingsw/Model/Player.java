@@ -19,6 +19,7 @@ public class Player {
         this.color = color;
         this.game = game;
         this.workers = new ArrayList<>(2);
+        this.game.getPlayers().add(this);
 
     }
 
