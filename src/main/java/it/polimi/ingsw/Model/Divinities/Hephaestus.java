@@ -1,16 +1,19 @@
 package it.polimi.ingsw.Model.Divinities;
 
-import it.polimi.ingsw.Model.Cell;
-import it.polimi.ingsw.Model.Divinity;
-import it.polimi.ingsw.Model.GodPower;
-import it.polimi.ingsw.Model.Player;
+import it.polimi.ingsw.Model.*;
 
 public class Hephaestus implements GodPower {
     private final Divinity divinity=Divinity.Hephaestus;
 
     @Override
-    public void execute(Player player, Cell destination, int worker) {
-
+    public void execute(Player player, Cell destination, int worker) throws IllegalArgumentException{
+        if (destination.getLevel()<2){
+            player.getWorker(worker).build(destination);
+            player.getWorker(worker).build(destination);
+        }
+        else{
+            throw new IllegalArgumentException();
+        }
     }
 
     @Override
