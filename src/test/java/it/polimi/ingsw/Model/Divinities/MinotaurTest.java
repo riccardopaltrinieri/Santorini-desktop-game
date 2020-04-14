@@ -12,7 +12,7 @@ public class MinotaurTest {
     public void executeTest() throws AthenaException {
         Game game = new Game();
         Player player=new Player("test player", Color.Yellow,game);
-        Board board = new Board();
+        Board board = game.getBoard();
         game.setBoard(board);
         Player foo = new Player("enemy foo test", Color.Green,game);
         player.placeWorkers(board.getCell(0,0));
