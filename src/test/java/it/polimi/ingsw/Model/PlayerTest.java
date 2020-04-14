@@ -8,7 +8,7 @@ public class PlayerTest {
 
     Game game = new Game();
     Player tester = new Player("Tester", Color.Red, game);
-    Board board = new Board();
+    Board board = game.getBoard();
 
     @Test
     public void testPlaceWorkers() {

@@ -13,7 +13,7 @@ public class ApolloTest {
         Game game = new Game();
         Player playerApollo = new Player("player test", Color.Green, game);
         Player player = new Player("player test",Color.Red, game);
-        Board board = new Board();
+        Board board = game.getBoard();
         playerApollo.placeWorkers(board.getCell(0,0));
         playerApollo.placeWorkers(board.getCell(4,4));
         Cell oldApolloPosition = playerApollo.getWorker(0).getPosition();

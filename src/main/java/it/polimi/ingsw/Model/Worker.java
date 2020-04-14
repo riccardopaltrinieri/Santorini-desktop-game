@@ -1,6 +1,7 @@
 package it.polimi.ingsw.Model;
 
 import it.polimi.ingsw.AthenaException;
+import it.polimi.ingsw.Model.Divinities.Pan;
 
 public class Worker {
 
@@ -18,6 +19,9 @@ public class Worker {
             this.owner = owner;
             position.setEmpty(false);
         }
+        else{
+            throw new IllegalArgumentException();
+        }
     }
 
     /**
@@ -33,6 +37,9 @@ public class Worker {
                 throw new AthenaException();
             }
             else {
+                if ((owner.getGodPower() instanceof Pan)&&(position.getLevel()>destination.getLevel()+1)){
+                    owner.getGame().hasWinner();
+                }
                 position.setEmpty(true);
                 position = destination;
                 position.setEmpty(false);

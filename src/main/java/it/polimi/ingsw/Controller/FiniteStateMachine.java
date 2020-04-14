@@ -51,12 +51,15 @@ public class FiniteStateMachine {
                 else if (state == State.superBuild) state = State.endTurn;
                 break;
             case Demeter:
-                if (state == State.start) state = State.move;
+                if (state == State.start) {
+                    state = State.move;
+                    again=false;
+                }
                 else if (state == State.move) state = State.superBuild;
                 else if (state == State.superBuild) {
                     if (!again) {
                         again = true;
-                        state = State.build;
+                        state = State.superBuild;
                     } else {
                         again = false;
                         state = State.endTurn;
@@ -79,8 +82,11 @@ public class FiniteStateMachine {
                 else if (state == State.build) state = State.endTurn;
                 break;
             case Prometheus:
-                if (state == State.start) state = State.build;
-                else if (state == State.move) state = State.build;
+                if (state == State.start){
+                    again=false;
+                    state = State.build;
+                }
+                else if (state == State.superMove) state = State.build;
                 else if (state == State.build) {
                     if (!again) {
                         again = true;

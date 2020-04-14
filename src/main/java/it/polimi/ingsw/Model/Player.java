@@ -28,7 +28,6 @@ public class Player {
      */
     public void placeWorkers(Cell destination) {
         workers.add(new Worker( destination, this));
-        this.getGame().getBoard().getCell(destination.getNumRow(),destination.getNumColumn()).setEmpty(false);
     }
 
     /**

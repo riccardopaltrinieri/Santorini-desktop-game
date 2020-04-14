@@ -37,7 +37,7 @@ public class Minotaur implements GodPower {
                 int deltaRow = players.get(wantedPlayer).getWorker(wantedWorker).getPosition().getNumRow()-player.getWorker(worker).getPosition().getNumRow();
                 int deltaColumn = players.get(wantedPlayer).getWorker(wantedWorker).getPosition().getNumColumn()-player.getWorker(worker).getPosition().getNumColumn();
                 Cell fooPosition = players.get(wantedPlayer).getWorker(wantedWorker).getPosition();
-                Cell fooDestination = player.getGame().getBoard().getMap()[fooPosition.getNumRow()+deltaRow][fooPosition.getNumColumn()+deltaColumn];
+                Cell fooDestination = player.getGame().getBoard().getCell(fooPosition.getNumRow()+deltaRow,fooPosition.getNumColumn()+deltaColumn);
                 players.get(wantedPlayer).getWorker(wantedWorker).move(fooDestination);
                 player.getWorker(worker).move(fooPosition);
             }

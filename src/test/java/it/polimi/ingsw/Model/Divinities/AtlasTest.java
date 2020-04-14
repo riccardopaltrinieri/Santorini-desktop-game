@@ -12,7 +12,7 @@ public class AtlasTest {
     @Test
     public void executeTest() throws AthenaException {
         Game game = new Game();
-        Board board = new Board();
+        Board board = game.getBoard();
         Player player = new Player("test player", Color.Green,game);
         player.placeWorkers(board.getCell(1,1));
         Cell destinationLevel0 = board.getCell(0,0);
