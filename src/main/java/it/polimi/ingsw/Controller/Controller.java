@@ -20,46 +20,46 @@ public class Controller extends Observable implements Observer {
     /**
      * Parses the input message from the client and call the matching methods
      * it also checks if the client is following the right path
-     * @param message == "action row column"
+     * @param message == "player action row column"
      */
     public void parseInput(String message) throws IllegalStateException, IllegalArgumentException, AthenaException {
 
         String[] parts = message.split(" ");
-        String action = parts[0].toLowerCase();
-        int row = Integer.parseInt(parts[1]);
-        int column = Integer.parseInt(parts[2]);
-        int worker = Integer.parseInt(parts[3]);
+        String name = parts[0];
+        String action = parts[1].toLowerCase();
+        int row = Integer.parseInt(parts[2]);
+        int column = Integer.parseInt(parts[3]);
+        int worker = Integer.parseInt(parts[4]);
 
-        switch( fsm.getState() ) {
-            case start:
-                if (action.equals("usepower"))   fsm.setPath(game.getPlayer().getDivinity());
-                else if(action.equals("default"))  fsm.setPath(Divinity.Default);
-                else throw new IllegalArgumentException("Unexpected action: "+ action);
-                break;
+        if (name.equals(game.getPlayer().getName())) {
+            switch (fsm.getState()) {
+                case start:
+                    if (action.equals("usepower")) fsm.setPath(game.getPlayer().getDivinity());
+                    else if (action.equals("default")) fsm.setPath(Divinity.Default);
+                    else throw new IllegalArgumentException("Unexpected action: " + action);
+                    break;
 
-            case move:
-                if(action.equals("move")) game.move(row, column, worker);
-                break;
-            case build:
-                if(action.equals("build")) game.build(row, column, worker);
-                break;
-            case superMove:
-                //TODO move or supermove?
-                if(action.equals("supermove")) game.useGodPower(row, column, worker);
-                break;
-            case superBuild:
-                //TODO build or superbuild?
-                if(action.equals("superbuild")) game.useGodPower(row, column, worker);
-                break;
-            default:
-                throw new IllegalStateException("Unexpected value: " + fsm.getState());
+                case move:
+                    if (action.equals("move")) game.move(row, column, worker);
+                    break;
+                case build:
+                    if (action.equals("build")) game.build(row, column, worker);
+                    break;
+                case superMove:
+                    if (action.equals("supermove")) game.useGodPower(row, column, worker);
+                    break;
+                case superBuild:
+                    if (action.equals("superbuild")) game.useGodPower(row, column, worker);
+                    break;
+                default:
+                    throw new IllegalStateException("Unexpected value: " + fsm.getState());
+            }
         }
         fsm.nextState();
 
         if(fsm.getState() == State.endTurn) {
             fsm.setState(State.start);
             game.endTurn();
-            notifyObservers("endTurn");
         }
     }
 

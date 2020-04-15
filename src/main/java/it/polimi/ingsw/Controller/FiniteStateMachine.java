@@ -77,8 +77,8 @@ public class FiniteStateMachine {
                 else if (state == State.build) state = State.endTurn;
                 break;
             case Pan:
-                if (state == State.start) state = State.move;
-                else if (state == State.move) state = State.build;
+                if (state == State.start) state = State.superMove;
+                else if (state == State.superMove) state = State.build;
                 else if (state == State.build) state = State.endTurn;
                 break;
             case Prometheus:
