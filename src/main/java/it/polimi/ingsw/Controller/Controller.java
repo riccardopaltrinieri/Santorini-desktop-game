@@ -11,14 +11,16 @@ public class Controller extends Observable implements Observer {
     private FiniteStateMachine fsm;
     private Game game;
 
+    /**
+     * Constructor of the class, it sets the game to control and create the FSM
+     */
     public Controller (Game game) {
         fsm = new FiniteStateMachine();
-        fsm.setState(State.start);
         this.game = game;
     }
 
     /**
-     * Parses the input message from the client and call the matching methods
+     * Parses the input message from the client and calls the matching methods
      * it also checks if the client is following the right path
      * @param message == "player action row column"
      */
@@ -63,6 +65,10 @@ public class Controller extends Observable implements Observer {
         }
     }
 
+    /**
+     * Observer method:
+     * receives a message from the observable and parse it with the parseInput method
+     */
     @Override
     public void update(String message) throws AthenaException {
         parseInput(message);

@@ -8,7 +8,18 @@ public class FiniteStateMachine {
     private Divinity divinity;
     private boolean again;
 
+    /**
+     * constructor of the class, it set the initial state to "start"
+     */
+    public FiniteStateMachine(){
+        this.state = State.start;
+        this.again = false;
+    }
 
+    /**
+     * Increments the state of the FSM following the player's divinity customized path
+     * @throws IllegalStateException when the divinity is not recognized
+     */
     public void nextState() throws IllegalStateException {
 
 
@@ -21,10 +32,14 @@ public class FiniteStateMachine {
                 break;
 
             case Apollo:
+            case Athena:
+            case Minotaur:
+            case Pan:
                 if (state == State.start) state = State.superMove;
                 else if (state == State.superMove) state = State.build;
                 else if (state == State.build) state = State.endTurn;
                 break;
+
             case Artemis:
                 if (state == State.start) {
                     state = State.superMove;
@@ -40,16 +55,14 @@ public class FiniteStateMachine {
                 }
                 else if (state == State.build) state = State.endTurn;
                 break;
-            case Athena:
-                if (state == State.start) state = State.superMove;
-                else if (state == State.superMove) state = State.build;
-                else if (state == State.build) state = State.endTurn;
-                break;
+
             case Atlas:
+            case Hephaestus:
                 if (state == State.start) state = State.move;
                 else if (state == State.move) state = State.superBuild;
                 else if (state == State.superBuild) state = State.endTurn;
                 break;
+
             case Demeter:
                 if (state == State.start) {
                     state = State.move;
@@ -66,21 +79,7 @@ public class FiniteStateMachine {
                     }
                 }
                 break;
-            case Hephaestus:
-                if (state == State.start) state = State.move;
-                else if (state == State.move) state = State.superBuild;
-                else if (state == State.superBuild) state = State.endTurn;
-                break;
-            case Minotaur:
-                if (state == State.start) state = State.superMove;
-                else if (state == State.superMove) state = State.build;
-                else if (state == State.build) state = State.endTurn;
-                break;
-            case Pan:
-                if (state == State.start) state = State.superMove;
-                else if (state == State.superMove) state = State.build;
-                else if (state == State.build) state = State.endTurn;
-                break;
+
             case Prometheus:
                 if (state == State.start){
                     again=false;
@@ -97,7 +96,6 @@ public class FiniteStateMachine {
                     }
                 }
                 break;
-
 
             default:
                 throw new IllegalStateException("Unexpected value: " + this.divinity);
