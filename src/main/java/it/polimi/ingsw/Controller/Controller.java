@@ -24,7 +24,7 @@ public class Controller extends Observable implements Observer {
      * it also checks if the client is following the right path
      * @param message == "player action row column"
      */
-    public void parseInput(String message) throws IllegalStateException, IllegalArgumentException, AthenaException {
+    public void parseInput(String message) throws IllegalStateException, IllegalArgumentException {
 
         String[] parts = message.split(" ");
         String name = parts[0];
@@ -70,7 +70,7 @@ public class Controller extends Observable implements Observer {
      * receives a message from the observable and parse it with the parseInput method
      */
     @Override
-    public void update(String message) throws AthenaException {
+    public void update(String message) {
         parseInput(message);
     }
 }

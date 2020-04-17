@@ -16,7 +16,7 @@ public abstract class Observable {
         observers.add(observer);
     }
 
-    public void notifyObservers(String message) throws AthenaException {
+    public void notifyObservers(String message) {
         for (Observer observer : observers) {
             observer.update(message);
         }

@@ -29,29 +29,44 @@ public class Game extends Observable {
 
     }
 
-    public void hasWinner() throws AthenaException {
+    public void hasWinner(){
         notifyObservers(players.get(currentPlayer).getName() + "wins");
         board.clearAll();
     }
 
-    public void move(int row, int column, int worker) throws AthenaException {
-        if(board.getCell(row, column).getLevel() == 3) hasWinner();
+    public void move(int row, int column, int worker) {
+        Cell position = getPlayer().getWorker(worker).getPosition();
+        Cell destination = board.getCell(row, column);
+
         try{
-            getPlayer().getWorker(worker).move(board.getCell(row, column));
+            if(position.getLevel() != 3 && destination.getLevel() == 3) hasWinner();
+            getPlayer().getWorker(worker).move(destination);
         } catch (AthenaException e) {
             notifyObservers("athenaException");
+        } catch (IllegalArgumentException e) {
+            notifyObservers("cantMove");
         }
     }
 
     public void build(int row, int column, int worker) {
-        getPlayer().getWorker(worker).build(board.getCell(row, column));
+        try {
+            getPlayer().getWorker(worker).build(board.getCell(row, column));
+        } catch (IllegalArgumentException e) {
+            notifyObservers("cantBuild");
+        }
     }
 
-    public void useGodPower(int row, int column, int worker) throws AthenaException {
-        getPlayer().getGodPower().execute(getPlayer(),board.getCell(row,column),worker);
+    public void useGodPower(int row, int column, int worker) {
+        try {
+            getPlayer().getGodPower().execute(getPlayer(),board.getCell(row,column),worker);
+        } catch (AthenaException e) {
+            notifyObservers("athenaException");
+        } catch (IllegalArgumentException e) {
+            notifyObservers("cantUsePower");
+        }
     }
 
-    public void endTurn() throws AthenaException {
+    public void endTurn() {
         currentPlayer = (currentPlayer + 1) % 3;
         if (!getPlayer().canMove()){
             notifyObservers(getPlayer().getName() + "lose");

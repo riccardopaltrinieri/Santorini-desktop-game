@@ -3,5 +3,5 @@ package it.polimi.ingsw.utils;
 import it.polimi.ingsw.AthenaException;
 
 public interface Observer {
-    void update(String message) throws AthenaException;
+    void update(String message);
 }
