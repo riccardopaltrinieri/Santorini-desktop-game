@@ -65,9 +65,12 @@ public class Connection extends Observable implements Runnable {
             server.lobby(this, name);
 
             while(isActive()){
+                    if(server.getDivinityPlay1() != null){
+                        send("Insert your move:");
+                        String read =(name + " " + in.nextLine());
+                        notifyObservers(read);
+                    }
 
-                    String read =(name + " " + in.nextLine());
-                    notifyObservers(read);
 
                 /*else {
                     send("Waiting for other players to choose...");

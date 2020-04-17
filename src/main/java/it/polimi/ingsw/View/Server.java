@@ -87,14 +87,13 @@ public class Server {
             getConnection(1).send("Your Divinity:"+this.getDivinityPlay2());
             //the play1 chooses his div
             if (this.getDivinityPlay2().equals(this.getDivinity2())){
-                        this.getConnection(0).send("Choose your Divinity" + this.getDivinity1());
-                        this.setDivinityPlay1(this.getConnection(0).getIn().next());
-                        this.getConnection(0).send("Your Divinity" + this.getDivinityPlay1());
+                        this.getConnection(0).send("Your Divinity" + this.getDivinity1());
+                        this.setDivinityPlay1(this.getDivinity1());
+
                     }
                     else {
-                        this.getConnection(0).send("Choose your Divinity" + this.getDivinity2());
-                        this.setDivinityPlay1(getConnection(0).getIn().next());
-                        this.getConnection(0).send("Your Divinity" + this.getDivinityPlay1());
+                        this.getConnection(0).send("Your Divinity" + this.getDivinity2());
+                        this.setDivinityPlay1(this.getDivinity2());
                     }
         }
         if ((connections.size()==3)&&(this.getNumPlayers()==3)) {
@@ -192,7 +191,10 @@ public class Server {
 
     public synchronized void lobby(Connection c, String name){
         waitingConnection.put(name, c);
-        if (waitingConnection.size()==1) this.decideNumberPlayer(connections.get(0)); //decide num of player
+        if (waitingConnection.size()==1){
+            this.decideNumberPlayer(connections.get(0)); //decide num of player
+
+        }
         if((waitingConnection.size()==2)&&(numPlayers==2)){
             startDivinity();
             List<String> keys = new ArrayList<>(waitingConnection.keySet());
