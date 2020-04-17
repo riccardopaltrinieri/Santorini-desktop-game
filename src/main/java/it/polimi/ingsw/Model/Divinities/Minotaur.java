@@ -18,7 +18,7 @@ public class Minotaur implements GodPower {
         }
         else {
             destination.setEmpty(true);
-            if (player.getWorker(worker).getPosition().canMoveTo(destination)) {
+            if (player.getWorker(worker).canMoveTo(destination)) {
                 ArrayList<Player> players = player.getGame().getPlayers();
                 int wantedPlayer = 0;
                 int wantedWorker = 0;

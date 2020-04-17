@@ -24,53 +24,11 @@ public class Cell {
         }
     }
 
-    public boolean getIsEmpty(){
-        return this.isEmpty;
-    }
-
-    /**
-     *
-     * @param destination is the cell that you want to know if it's reachable
-     * @return true if the cell is reachable or false if it's not
-     */
-    public boolean canMoveTo(Cell destination) {
-        return  (destination.getNumRow() >= 0) && (destination.getNumRow() <= 4) &&
-                (destination.getNumColumn() >= 0) && (destination.getNumColumn() <= 4) &&
-                (destination.getNumRow() >= this.numRow - 1) &&
-                (destination.getNumRow() <= this.numRow + 1) &&
-                (destination.getNumColumn() >= this.numColumn - 1) &&
-                (destination.getNumColumn() <= this.numColumn + 1) &&
-                (destination.getLevel() >= this.level - 1) &&
-                (destination.getLevel() <= this.level + 1) &&
-                (destination.getIsEmpty()&&
-                (!this.equals(destination)));
-    }
-
-    /**
-     *
-     * @param destination is the cell where you want to know if you can build in
-     * @return true if you can build in the destination cell or false if you can't
-     */
-    public boolean canBuildIn(Cell destination){
-        return ((destination.getNumRow() >= 0) && (destination.getNumRow() <= 4) &&
-                (destination.getNumColumn() >= 0) && (destination.getNumColumn() <= 4) &&
-                destination.getNumRow() >= this.numRow - 1) &&
-                (destination.getNumRow() <= this.numRow + 1) &&
-                (destination.getNumColumn() >= this.numColumn - 1) &&
-                (destination.getNumColumn() <= this.numColumn + 1) &&
-                (destination.getIsEmpty()) &&
-                (destination.getLevel() <= 4) &&
-                (!this.equals(destination));
-    }
 
     @Override
     public boolean equals(Object comparationCell) {
         if(comparationCell instanceof Cell) {
-            if ((this.getNumColumn() == ((Cell) comparationCell).getNumColumn()) && (this.getNumRow() == ((Cell) comparationCell).getNumRow()) && (this.getLevel() == ((Cell) comparationCell).getLevel())) {
-                return true;
-            } else {
-                return false;
-            }
+            return (this.getNumColumn() == ((Cell) comparationCell).getNumColumn()) && (this.getNumRow() == ((Cell) comparationCell).getNumRow()) && (this.getLevel() == ((Cell) comparationCell).getLevel());
         }
         else{
             return false;
@@ -89,10 +47,13 @@ public class Cell {
         return this.level;
     }
     public void setLevel(int level) {
-        if(0 <= level && level <= 5) this.level = level;
+        if(0 <= level && level <= 4) this.level = level;
     }
     public void setEmpty(boolean isEmpty) {
         this.isEmpty = isEmpty;
+    }
+    public boolean getIsEmpty(){
+        return this.isEmpty;
     }
 
 }

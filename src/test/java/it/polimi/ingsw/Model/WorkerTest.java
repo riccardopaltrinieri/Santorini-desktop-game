@@ -12,6 +12,7 @@ public class WorkerTest {
     Player workerOwner = new Player("tester", Color.Red, new Game());
     Worker test = new Worker(workerPosition,workerOwner);
 
+
     @Test
     public void testCostruttore(){
         assertSame(test.getPosition(), workerPosition);
@@ -19,7 +20,7 @@ public class WorkerTest {
     }
 
     @Test
-    public void testMove() throws AthenaException {
+    public void testMove() {
         Cell destination= new Cell(riga+1,colonna+1);
         try{
             test.move(destination);
@@ -39,7 +40,7 @@ public class WorkerTest {
         Cell destination = new Cell(colonna+1,riga+1);
         int startLevel = destination.getLevel();
         //boolean prova =test.getPosition().canBuildIn(destination);
-        if(test.getPosition().canBuildIn(destination)){
+        if(test.canBuildIn(destination)){
             test.build(destination);
             assertEquals(test.getPosition().getLevel(), destination.getLevel() - 1);
             assertEquals(destination.getLevel(), startLevel + 1);
@@ -52,5 +53,22 @@ public class WorkerTest {
                 assertEquals(destination.getLevel(), startLevel);
             }
         }
+    }
+
+    @Test
+    public void testCanMoveTo(){
+        Cell rightDestination= workerOwner.getGame().getBoard().getCell(1,1);
+        assertTrue(test.canMoveTo(rightDestination));
+        Cell wrongDestination = new Cell(3,3);
+        assertFalse(test.canMoveTo(wrongDestination));
+        assertFalse(test.canMoveTo(test.getPosition()));
+    }
+
+    @Test
+    public  void testCanBuildIn(){
+        Cell destination= new Cell(1,1);
+        assertTrue(test.canBuildIn(destination));
+        Cell wrongDestination = new Cell(3,3);
+        assertFalse(test.canBuildIn(wrongDestination));
     }
 }

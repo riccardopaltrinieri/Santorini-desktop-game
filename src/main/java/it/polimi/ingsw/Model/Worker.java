@@ -25,14 +25,14 @@ public class Worker {
     }
 
     /**
-     *
+     * Move the worker in the destination cell
      * @param destination is the cell where you want to move the worker
      * @throws IllegalArgumentException if you can't move in the destination cell
      * @throws AthenaException if you are trying to move in a cell whit a level higher than yours but athena's godpower is activated
      */
-
     public void move (Cell destination) throws IllegalArgumentException, AthenaException {
-        if (position.canMoveTo(destination)){
+        //if (position.canMoveTo(destination)){
+        if (canMoveTo(destination)){
             if ((position.getLevel()==destination.getLevel()-1)&&!(owner.getGame().getCanMoveUp())){
                 throw new AthenaException();
             }
@@ -50,13 +50,12 @@ public class Worker {
     }
 
     /**
-     *
+     * Increments the level of the cell where you want to build
      * @param destination is the cell where you are trying to build
      * @throws IllegalArgumentException if you can't build in the destination cell for any reason
      */
-
     public void build (Cell destination) throws  IllegalArgumentException{
-        if (position.canBuildIn(destination)){
+        if (canBuildIn(destination)){
             destination.setLevel(destination.getLevel()+1);
         }
         else{
@@ -64,6 +63,38 @@ public class Worker {
         }
     }
 
+    /**
+     * @param destination is the cell that you want to know if it's reachable
+     * @return true if the cell is reachable or false if it's not
+     */
+    public boolean canMoveTo(Cell destination) {
+        return  (destination.getNumRow() >= 0) && (destination.getNumRow() <= 4) &&
+                (destination.getNumColumn() >= 0) && (destination.getNumColumn() <= 4) &&
+                (destination.getNumRow() >= position.getNumRow() - 1) &&
+                (destination.getNumRow() <= position.getNumRow() + 1) &&
+                (destination.getNumColumn() >= position.getNumColumn() - 1) &&
+                (destination.getNumColumn() <= position.getNumColumn() + 1) &&
+                (destination.getLevel() <= position.getLevel() + 1) &&
+                (destination.getLevel() < 4) &&
+                (destination.getIsEmpty()&&
+                (!position.equals(destination)));
+    }
+
+    /**
+     * @param destination is the cell where you want to know if you can build in
+     * @return true if you can build in the destination cell or false if you can't
+     */
+    public boolean canBuildIn(Cell destination){
+        return ((destination.getNumRow() >= 0) && (destination.getNumRow() <= 4) &&
+                (destination.getNumColumn() >= 0) && (destination.getNumColumn() <= 4) &&
+                (destination.getNumRow() >= position.getNumRow() - 1) &&
+                (destination.getNumRow() <= position.getNumRow() + 1) &&
+                (destination.getNumColumn() >= position.getNumColumn() - 1) &&
+                (destination.getNumColumn() <= position.getNumColumn() + 1) &&
+                (destination.getIsEmpty()) &&
+                (destination.getLevel() < 4) &&
+                (!position.equals(destination)));
+    }
 
 //  ************** GETTER AND SETTER *******************************
 

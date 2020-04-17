@@ -10,7 +10,7 @@ public class Atlas implements GodPower {
 
     @Override
     public void execute(Player player, Cell destination, int worker) throws IllegalArgumentException {
-        if ((player.getWorker(worker).getPosition().canBuildIn(destination))&&(destination.getLevel()<4)){
+        if ((player.getWorker(worker).canBuildIn(destination))&&(destination.getLevel()<4)){
             destination.setLevel(4);
         }
         else {

@@ -13,23 +13,8 @@ public class CellTest {
          assertEquals (test.getNumColumn(),x);
          assertEquals (test.getNumRow(),y);
          assertTrue(test.getIsEmpty());
-         assertTrue(test.getLevel()==0);
+         assertEquals(0, test.getLevel());
          assertTrue(test.getNumRow()<5);
          assertTrue(test.getNumColumn()<5);
-     }
-     @Test
-    public void testCanMoveTo(){
-         Cell destination= new Cell(1,1);
-         assertTrue(test.canMoveTo(destination));
-         Cell wrongDestination = new Cell(3,3);
-         assertFalse(test.canMoveTo(wrongDestination));
-         assertFalse(test.canMoveTo(test));
-     }
-     @Test
-    public  void testCanBuildIn(){
-         Cell destination= new Cell(1,1);
-         assertTrue(test.canBuildIn(destination));
-         Cell wrongDestination = new Cell(3,3);
-         assertFalse(test.canBuildIn(wrongDestination));
      }
 }
