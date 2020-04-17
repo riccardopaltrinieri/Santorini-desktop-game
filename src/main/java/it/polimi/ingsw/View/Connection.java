@@ -1,5 +1,6 @@
 package it.polimi.ingsw.View;
 
+import it.polimi.ingsw.AthenaException;
 import it.polimi.ingsw.Model.Divinity;
 import it.polimi.ingsw.utils.Observable;
 
@@ -21,6 +22,9 @@ public class Connection extends Observable implements Runnable {
         this.server = server;
     }
 
+    public Scanner getIn(){
+        return this.in;
+    }
     private synchronized boolean isActive(){
         return active;
     }
@@ -55,57 +59,11 @@ public class Connection extends Observable implements Runnable {
             // qui posso lavorare per giostrale la logica o nella lobby
             send("Welcome! What's your name?");
             name = in.nextLine();
-            if (server.getsizeconnections() == 1){ //questa cosa è da controllare
-                send("Number of players?");
-                server.setNumplayers(in.nextInt());
-                //quello che può fare il primo giocatore
-                send("Choose three divinities:");
-                send("First divinity:");
-                server.setDivinity1(in.next());
-                send("Second divinity");
-                server.setDivinity2(in.next());
-                send("Third divinity");
-                server.setDivinity3(in.next());
-                send("All divinities have been chosen. Choose yours between: "+server.getDivinity1() + server.getDivinity2() + server.getDivinity3());
-                server.setDivinityPlay1(in.next());
-                send("Your Divinity:"+server.getDivinityPlay1());
-            }
-
-            if (server.getsizeconnections() == 2){
-
-                    if (server.getDivinityPlay1().equals(server.getDivinity1())) {
-                        send("Choose your Divinity between:" + server.getDivinity2() + server.getDivinity3());
-                        server.setDivinityPlay2(in.next());
-                    }
-                    if(server.getDivinityPlay1().equals(server.getDivinity2())) {
-                        send("Choose your Divinity between:" + server.getDivinity1() + server.getDivinity3());
-                        server.setDivinityPlay2(in.next());
-                    }
-                    if(server.getDivinityPlay1().equals((server.getDivinity3()))) {
-                            send("Choose your Divinity between:" + server.getDivinity1() + server.getDivinity2());
-                            server.setDivinityPlay2(in.next());
-                    }
-                }
-
-            if (server.getsizeconnections() == 3) {
-                if (!(server.getDivinity1().equals(server.getDivinityPlay1())) && !(server.getDivinity1().equals(server.getDivinityPlay2()))) {
-                    send("Choose your Divinity between:" + server.getDivinity1());
-                    server.setDivinityPlay3(in.next());
-                }
-                if (!(server.getDivinity2().equals(server.getDivinityPlay1())) && !(server.getDivinity2().equals(server.getDivinityPlay2()))) {
-                    send("Choose your Divinity between:" + server.getDivinity2());
-                    server.setDivinityPlay3(in.next());
-                }
-                if (!(server.getDivinity3().equals(server.getDivinityPlay1())) && !(server.getDivinity3().equals(server.getDivinityPlay2()))) {
-                    send("Choose your Divinity between:" + server.getDivinity3());
-                    server.setDivinityPlay3(in.next());
-                }
-            }
 
             server.lobby(this, name);
             while(isActive()){
-                String read = in.nextLine();
-                // notify(read);
+                String read =(name + " " + in.nextLine());
+                notifyObservers(read);
             }
         } catch(IOException e){
             System.err.println(e.getMessage());

@@ -16,7 +16,7 @@ import java.util.concurrent.Executors;
 public class Server {
     private static final int PORT= 12345;
     private ServerSocket serverSocket;
-    private int numplayers;
+    private int numPlayers;
 
     private ExecutorService executor = Executors.newFixedThreadPool(128);
 
@@ -34,14 +34,121 @@ public class Server {
     public int getsizeconnections (){
         return connections.size();
     }
-    public void setNumplayers (int i){
-        numplayers=i;
+
+    public Connection getConnection (int i){
+        return connections.get(i);
     }
+    public void setNumPlayers (int i){
+        numPlayers=i;
+    }
+    public int getNumPlayers () { return numPlayers; }
 
 
     //Register connection
     private synchronized void registerConnection(Connection c){
         connections.add(c);
+    }
+
+    public void decideNumberPlayer(Connection c){
+            c.send("Number of players?");
+            this.setNumPlayers(c.getIn().nextInt());
+            //quello che può fare il primo giocatore
+            if (this.getNumPlayers() == 3){
+                c.send("Choose three divinities:");
+                c.send("First divinity:");
+                this.setDivinity1(c.getIn().next());
+                c.send("Second divinity");
+                this.setDivinity2(c.getIn().next());
+                c.send("Third divinity");
+                this.setDivinity3(c.getIn().next());
+                c.send("All divinities have been chosen");
+            }
+            if (this.getNumPlayers() == 2){
+                c.send("Choose two divinities:");
+                c.send("First divinity:");
+                this.setDivinity1(c.getIn().next());
+                c.send("Second divinity");
+                this.setDivinity2(c.getIn().next());
+                c.send("All divinities have been chosen");
+            }
+        }
+
+
+
+    public void startDivinity(){
+        if ((connections.size()==2)&&(this.getNumPlayers()==2)){
+            //the play2 chooses his div
+            getConnection(1).send("Choose your Divinity between:" + this.getDivinity1() + this.getDivinity2());
+            this.setDivinityPlay2(getConnection(1).getIn().next()); //qui forse c'è lo scanner che funziona
+            getConnection(1).send("Your Divinity:"+this.getDivinityPlay2());
+            //the play1 chooses his div
+            if (this.getDivinityPlay2().equals(this.getDivinity2())){
+                        this.getConnection(0).send("Choose your Divinity" + this.getDivinity1());
+                        this.setDivinityPlay1(this.getConnection(0).getIn().next());
+                        this.getConnection(0).send("Your Divinity" + this.getDivinityPlay1());
+                    }
+                    else {
+                        this.getConnection(0).send("Choose your Divinity" + this.getDivinity2());
+                        this.setDivinityPlay1(getConnection(0).getIn().next());
+                        this.getConnection(0).send("Your Divinity" + this.getDivinityPlay1());
+                    }
+        }
+        if ((connections.size()==3)&&(this.getNumPlayers()==3)) {
+            //the play2 chooses his div
+            getConnection(1).send("Choose your Divinity between:" + this.getDivinity1() + this.getDivinity2() + this.getDivinity3());
+            this.setDivinityPlay2(getConnection(1).getIn().next()); //qui forse c'è lo scanner che funziona
+            getConnection(1).send("Your Divinity:" + this.getDivinityPlay2());
+
+            //the play3 chooses his div
+
+            if (getDivinityPlay2().equals(getDivinity1())){ //if the div of play2 is div1 i send div2 and 3 to play 3
+                getConnection(2).send("Choose your Divinity between:" + this.getDivinity2() + this.getDivinity3());
+                this.setDivinityPlay3(getConnection(2).getIn().next());
+                getConnection(2).send("Your Divinity:" + this.getDivinityPlay3());
+                //the play1 chooses his div
+                if (getDivinityPlay3().equals(getDivinity2())){ //play2=div1 play3=div2 => play1=div3
+                    getConnection(0).send("Your Divinity:" + this.getDivinity3());
+                    this.setDivinityPlay1(this.getDivinity3());
+                }
+                else{ //play2=div1 play3=div3 =>play1=div2
+                    getConnection(0).send("Your Divinity:" + this.getDivinity2());
+                    this.setDivinityPlay1(this.getDivinity2());
+                }
+            }
+
+            // play3 chooses his div
+            if (getDivinityPlay2().equals(getDivinity2())){ //if the div of play2 is div2 i send div1 and 3 to play 3
+                getConnection(2).send("Choose your Divinity between:" + this.getDivinity1() + this.getDivinity3());
+                this.setDivinityPlay3(getConnection(2).getIn().next());
+                getConnection(2).send("Your Divinity:" + this.getDivinityPlay3());
+
+                if (getDivinityPlay3().equals(getDivinity1())){ //play2=div2 play3=div1 =>play=div3
+                    getConnection(0).send("Your Divinity:" + this.getDivinity3());
+                    this.setDivinityPlay1(this.getDivinity3());
+                }
+                else{ //play2=div2 play3=div3 =>play1=div1
+                    getConnection(0).send("Your Divinity:" + this.getDivinity1());
+                    this.setDivinityPlay1(this.getDivinity1());
+                }
+            }
+
+            // play3 chooses his div
+
+            if (getDivinityPlay2().equals(getDivinity3())){ //if the div2=div3 i send div1 and 2 to play 3
+                getConnection(2).send("Choose your Divinity between:" + this.getDivinity1() + this.getDivinity2());
+                this.setDivinityPlay3(getConnection(2).getIn().next());
+                getConnection(2).send("Your Divinity:" + this.getDivinityPlay3());
+
+                if (getDivinityPlay3().equals(getDivinity1())){ //play2=div3 play3=div1 =>play1=div2
+                    getConnection(0).send("Your Divinity:" + this.getDivinity2());
+                    this.setDivinityPlay1(this.getDivinity2());
+                }
+                else{ //play2=div3 play3=div2 =>play1=div1
+                    getConnection(0).send("Your Divinity:" + this.getDivinity1());
+                    this.setDivinityPlay1(this.getDivinity1());
+                }
+            }
+        }
     }
 
     //Deregister connection
@@ -81,20 +188,25 @@ public class Server {
 
     public synchronized void lobby(Connection c, String name){
         waitingConnection.put(name, c);
-        if((waitingConnection.size()==2)&&(numplayers==2)){
+        if (waitingConnection.size()==1) this.decideNumberPlayer(connections.get(0)); //decide num of player
+        if((waitingConnection.size()==2)&&(numPlayers==2)){
+            startDivinity();
             List<String> keys = new ArrayList<>(waitingConnection.keySet());
             Connection c1 = waitingConnection.get(keys.get(0));
             Connection c2 = waitingConnection.get(keys.get(1));
+
             //qui Remote View
             Game game = new Game();
             Controller controller = new Controller(game);
+
             //qui ci vanno gli observer
             playingConnection.put(c1, c2);
             playingConnection.put(c2, c1);
             waitingConnection.clear();
         }
 
-        if ((waitingConnection.size()==3)&&(numplayers==3)){
+        if ((waitingConnection.size()==3)&&(numPlayers==3)){
+            startDivinity();
             List<String> keys = new ArrayList<>(waitingConnection.keySet()); // in questo modo ho i nomi dei giocatori in array
             Connection c1 = waitingConnection.get(keys.get(0));
             Connection c2 = waitingConnection.get(keys.get(1));
