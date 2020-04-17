@@ -4,6 +4,7 @@ import it.polimi.ingsw.Controller.Controller;
 import it.polimi.ingsw.Model.Divinity;
 import it.polimi.ingsw.Model.Game;
 import it.polimi.ingsw.Model.Player;
+import it.polimi.ingsw.utils.Observer;
 import org.graalvm.compiler.core.common.type.ArithmeticOpTable;
 
 import java.io.IOException;
@@ -201,15 +202,17 @@ public class Server {
             Connection c2 = waitingConnection.get(keys.get(1));
 
             //qui Remote View
+
             Game game = new Game();
             Controller controller = new Controller(game);
             Player player1 = new Player(keys.get(0), Red , game);
             Player player2 = new Player(keys.get(1), Yellow, game);
             player1.setDivinity(Divinity.valueOf(this.getDivinityPlay1()));
             player2.setDivinity(Divinity.valueOf(this.getDivinityPlay2()));
-
-
             //qui ci vanno gli observer
+            controller.addObserver((Observer) connections.get(0));
+            controller.addObserver((Observer) connections.get(1));
+
             playingConnection.put(c1, c2);
             playingConnection.put(c2, c1);
             waitingConnection.clear();
@@ -221,17 +224,24 @@ public class Server {
             Connection c1 = waitingConnection.get(keys.get(0));
             Connection c2 = waitingConnection.get(keys.get(1));
             Connection c3 = waitingConnection.get(keys.get(2));
+
             //parte RemoteView
+
             Game game = new Game();
             Controller controller = new Controller(game);
-
             Player player1 = new Player(keys.get(0), Red , game);
             Player player2 = new Player(keys.get(1), Yellow, game);
             Player player3 = new Player(keys.get(2), Green, game);
             player1.setDivinity(Divinity.valueOf(this.getDivinityPlay1()));
             player2.setDivinity(Divinity.valueOf(this.getDivinityPlay2()));
             player3.setDivinity(Divinity.valueOf(this.getDivinityPlay3()));
+
             // parte osservatori
+
+            controller.addObserver((Observer) connections.get(0));
+            controller.addObserver((Observer) connections.get(1));
+            controller.addObserver((Observer) connections.get(2));
+
             playingConnection.put(c1, c2);
             playingConnection.put(c2, c3);
             playingConnection.put(c3, c1);
