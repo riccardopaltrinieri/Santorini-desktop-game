@@ -1,7 +1,10 @@
 package it.polimi.ingsw.View;
 
 import it.polimi.ingsw.Controller.Controller;
+import it.polimi.ingsw.Model.Divinity;
 import it.polimi.ingsw.Model.Game;
+import it.polimi.ingsw.Model.Player;
+import org.graalvm.compiler.core.common.type.ArithmeticOpTable;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -12,6 +15,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+
+import static it.polimi.ingsw.Model.Color.*;
 
 public class Server {
     private static final int PORT= 12345;
@@ -198,6 +203,11 @@ public class Server {
             //qui Remote View
             Game game = new Game();
             Controller controller = new Controller(game);
+            Player player1 = new Player(keys.get(0), Red , game);
+            Player player2 = new Player(keys.get(1), Yellow, game);
+            player1.setDivinity(Divinity.valueOf(this.getDivinityPlay1()));
+            player2.setDivinity(Divinity.valueOf(this.getDivinityPlay2()));
+
 
             //qui ci vanno gli observer
             playingConnection.put(c1, c2);
@@ -214,6 +224,13 @@ public class Server {
             //parte RemoteView
             Game game = new Game();
             Controller controller = new Controller(game);
+
+            Player player1 = new Player(keys.get(0), Red , game);
+            Player player2 = new Player(keys.get(1), Yellow, game);
+            Player player3 = new Player(keys.get(2), Green, game);
+            player1.setDivinity(Divinity.valueOf(this.getDivinityPlay1()));
+            player2.setDivinity(Divinity.valueOf(this.getDivinityPlay2()));
+            player3.setDivinity(Divinity.valueOf(this.getDivinityPlay3()));
             // parte osservatori
             playingConnection.put(c1, c2);
             playingConnection.put(c2, c3);
