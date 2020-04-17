@@ -15,11 +15,13 @@ public class Connection extends Observable implements Runnable {
     private PrintWriter out;
     private Server server;
     private String name;
-    private boolean active = true;
+    private boolean active;
+    private Scanner in2;
 
     public Connection(Socket socket, Server server){
         this.socket = socket;
         this.server = server;
+        this.active = true;
     }
 
     public Scanner getIn(){
@@ -61,9 +63,17 @@ public class Connection extends Observable implements Runnable {
             name = in.nextLine();
 
             server.lobby(this, name);
+
             while(isActive()){
-                String read =(name + " " + in.nextLine());
-                notifyObservers(read);
+
+                    String read =(name + " " + in.nextLine());
+                    notifyObservers(read);
+
+                /*else {
+                    send("Waiting for other players to choose...");
+
+                } */
+
             }
         } catch(IOException e){
             System.err.println(e.getMessage());

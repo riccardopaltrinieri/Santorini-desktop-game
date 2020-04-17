@@ -4,8 +4,6 @@ import it.polimi.ingsw.Controller.Controller;
 import it.polimi.ingsw.Model.Divinity;
 import it.polimi.ingsw.Model.Game;
 import it.polimi.ingsw.Model.Player;
-import it.polimi.ingsw.utils.Observer;
-import org.graalvm.compiler.core.common.type.ArithmeticOpTable;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -60,8 +58,8 @@ public class Server {
             this.setNumPlayers(c.getIn().nextInt());
             //quello che può fare il primo giocatore
             if (this.getNumPlayers() == 3){
-                c.send("Choose three divinities:");
-                c.send("First divinity:");
+                c.send("Choose three divinities. First divinity:");
+
                 this.setDivinity1(c.getIn().next());
                 c.send("Second divinity");
                 this.setDivinity2(c.getIn().next());
@@ -70,8 +68,8 @@ public class Server {
                 c.send("All divinities have been chosen");
             }
             if (this.getNumPlayers() == 2){
-                c.send("Choose two divinities:");
-                c.send("First divinity:");
+                c.send("Choose two divinities. First divinity:");
+
                 this.setDivinity1(c.getIn().next());
                 c.send("Second divinity");
                 this.setDivinity2(c.getIn().next());
