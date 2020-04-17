@@ -210,8 +210,8 @@ public class Server {
             player1.setDivinity(Divinity.valueOf(this.getDivinityPlay1()));
             player2.setDivinity(Divinity.valueOf(this.getDivinityPlay2()));
             //qui ci vanno gli observer
-            controller.addObserver((Observer) connections.get(0));
-            controller.addObserver((Observer) connections.get(1));
+            connections.get(0).addObserver(controller);
+            connections.get(1).addObserver(controller);
 
             playingConnection.put(c1, c2);
             playingConnection.put(c2, c1);
@@ -238,9 +238,9 @@ public class Server {
 
             // parte osservatori
 
-            controller.addObserver((Observer) connections.get(0));
-            controller.addObserver((Observer) connections.get(1));
-            controller.addObserver((Observer) connections.get(2));
+            connections.get(0).addObserver(controller);
+            connections.get(1).addObserver(controller);
+            connections.get(2).addObserver(controller);
 
             playingConnection.put(c1, c2);
             playingConnection.put(c2, c3);
