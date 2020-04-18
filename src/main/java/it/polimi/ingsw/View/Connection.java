@@ -67,8 +67,11 @@ public class Connection extends Observable implements Runnable {
             while(isActive()){
                     if(server.getDivinityPlay1() != null){
                         send("Insert your move:");
-                        String read =(name + " " + in.nextLine());
-                        notifyObservers(read);
+                        String read =(in.nextLine());
+                        if (!read.isEmpty()) {
+                            read = name + " " + read;
+                            notifyObservers(read);
+                        }
                     }
 
 
@@ -76,11 +79,12 @@ public class Connection extends Observable implements Runnable {
                     send("Waiting for other players to choose...");
 
                 } */
-
             }
+
+            close();
+
         } catch(IOException e){
             System.err.println(e.getMessage());
-        } finally {
             close();
         }
     }
