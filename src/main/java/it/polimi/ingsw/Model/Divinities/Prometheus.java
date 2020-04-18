@@ -11,6 +11,7 @@ public class Prometheus implements GodPower {
 
     @Override
     public void execute(Player player, Cell destination, int worker) throws AthenaException {
+        player.canMove();
         if (!(destination.getLevel()>player.getWorker(worker).getPosition().getLevel())){
             player.getWorker(worker).move(destination);
         }

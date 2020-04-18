@@ -2,4 +2,3 @@
   * Lista di cose da modificare
   */
 
-  //TODO gestire Artemis che potrebbe scendere da un secondo livello e non muoversi più e Prometeo può costruire prima di muoversi e bloccarsi la strada

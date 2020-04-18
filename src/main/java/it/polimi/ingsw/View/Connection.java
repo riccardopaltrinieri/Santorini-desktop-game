@@ -58,7 +58,7 @@ public class Connection extends Observable implements Runnable {
         try{
             in = new Scanner(socket.getInputStream());
             out = new PrintWriter(socket.getOutputStream());
-            // qui posso lavorare per giostrale la logica o nella lobby
+            // qui posso lavorare per giostrare la logica o nella lobby
             send("Welcome! What's your name?");
             name = in.nextLine();
 

@@ -13,6 +13,7 @@ public class Artemis implements GodPower {
 
     @Override
     public void execute(Player player, Cell destination, int worker) throws AthenaException {
+        player.canMove();
         if (firstTime){
             firstPosition = player.getWorker(worker).getPosition();
             player.getWorker(worker).move(destination);
