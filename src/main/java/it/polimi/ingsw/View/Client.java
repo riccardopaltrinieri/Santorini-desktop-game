@@ -28,9 +28,14 @@ public class Client {
             System.out.println(socketLine);
             //noinspection InfiniteLoopStatement
             while (true){
-                String inputLine = stdin.nextLine();
-                socketOut.println(inputLine);
-                socketOut.flush();
+                String[] parts = socketLine.split(" ");
+                String your = parts[0];
+
+                if ((!socketLine.equals("All divinities have been chosen"))&&(!(your.equals("Your")))){
+                    String inputLine = stdin.nextLine();
+                    socketOut.println(inputLine);
+                    socketOut.flush();
+                }
                 socketLine = socketIn.nextLine();
                 System.out.println(socketLine);
             }
