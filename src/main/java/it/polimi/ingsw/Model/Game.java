@@ -75,7 +75,7 @@ public class Game extends Observable {
     }
 
     public void endTurn() {
-        currentPlayer = (currentPlayer + 1) % 3;
+        currentPlayer = (currentPlayer + 1) % this.numPlayer;
         if (!getPlayer().canMove()){
             notifyObservers(getPlayer().getName() + "lose");
             hasLoser();

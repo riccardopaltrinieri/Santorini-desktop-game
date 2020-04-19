@@ -82,7 +82,7 @@ public class Server {
     public void startDivinity(){
         if ((connections.size()==2)&&(this.getNumPlayers()==2)){
             //the play2 chooses his div
-            getConnection(1).send("Choose your Divinity between:" + this.getDivinity1() + this.getDivinity2());
+            getConnection(1).send("Choose your Divinity between:" + this.getDivinity1() + " " + this.getDivinity2());
             this.setDivinityPlay2(getConnection(1).getIn().next()); //qui forse c'è lo scanner che funziona
             getConnection(1).send("Your Divinity:"+this.getDivinityPlay2());
             //the play1 chooses his div
@@ -98,14 +98,14 @@ public class Server {
         }
         if ((connections.size()==3)&&(this.getNumPlayers()==3)) {
             //the play2 chooses his div
-            getConnection(1).send("Choose your Divinity between:" + this.getDivinity1() + this.getDivinity2() + this.getDivinity3());
+            getConnection(1).send("Choose your Divinity between:" + this.getDivinity1() + " " + this.getDivinity2() + " " + this.getDivinity3());
             this.setDivinityPlay2(getConnection(1).getIn().next()); //qui forse c'è lo scanner che funziona
             getConnection(1).send("Your Divinity:" + this.getDivinityPlay2());
 
             //the play3 chooses his div
 
             if (getDivinityPlay2().equals(getDivinity1())){ //if the div of play2 is div1 i send div2 and 3 to play 3
-                getConnection(2).send("Choose your Divinity between:" + this.getDivinity2() + this.getDivinity3());
+                getConnection(2).send("Choose your Divinity between:" + this.getDivinity2() + " " + this.getDivinity3());
                 this.setDivinityPlay3(getConnection(2).getIn().next());
                 getConnection(2).send("Your Divinity:" + this.getDivinityPlay3());
                 //the play1 chooses his div
@@ -121,7 +121,7 @@ public class Server {
 
             // play3 chooses his div
             if (getDivinityPlay2().equals(getDivinity2())){ //if the div of play2 is div2 i send div1 and 3 to play 3
-                getConnection(2).send("Choose your Divinity between:" + this.getDivinity1() + this.getDivinity3());
+                getConnection(2).send("Choose your Divinity between:" + this.getDivinity1() + " " + this.getDivinity3());
                 this.setDivinityPlay3(getConnection(2).getIn().next());
                 getConnection(2).send("Your Divinity:" + this.getDivinityPlay3());
 
@@ -138,7 +138,7 @@ public class Server {
             // play3 chooses his div
 
             if (getDivinityPlay2().equals(getDivinity3())){ //if the div2=div3 i send div1 and 2 to play 3
-                getConnection(2).send("Choose your Divinity between:" + this.getDivinity1() + this.getDivinity2());
+                getConnection(2).send("Choose your Divinity between:" + this.getDivinity1() + " " + this.getDivinity2());
                 this.setDivinityPlay3(getConnection(2).getIn().next());
                 getConnection(2).send("Your Divinity:" + this.getDivinityPlay3());
 
