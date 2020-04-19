@@ -34,6 +34,14 @@ public class Game extends Observable {
         board.clearAll();
     }
 
+    public void placeWorker(int row, int column) {
+        try {
+            getPlayer().placeWorkers(board.getCell(row, column));
+        } catch (IllegalArgumentException e) {
+            notifyObservers("cantPlace");
+        }
+    }
+
     public void move(int row, int column, int worker) {
         Cell position = getPlayer().getWorker(worker).getPosition();
         Cell destination = board.getCell(row, column);

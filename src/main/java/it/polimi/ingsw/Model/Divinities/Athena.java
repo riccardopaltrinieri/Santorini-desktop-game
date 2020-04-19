@@ -11,12 +11,7 @@ public class Athena implements GodPower {
 
     @Override
     public void execute(Player player, Cell destination, int worker) throws AthenaException {
-        if (destination.getLevel()>player.getWorker(worker).getPosition().getLevel()){
-            player.getGame().setCanMoveUp(false);
-        }
-        else{
-            player.getGame().setCanMoveUp(true);
-        }
+        player.getGame().setCanMoveUp(destination.getLevel() > player.getWorker(worker).getPosition().getLevel());
         player.getWorker(worker).move(destination);
 
     }

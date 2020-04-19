@@ -26,42 +26,49 @@ public class Controller extends Observable implements Observer {
      */
     public void parseInput(String message) throws IllegalStateException, IllegalArgumentException {
 
+        int row, column, worker;
         String[] parts = message.split(" ");
         String name = parts[0];
         String action = parts[1].toLowerCase();
-        int row = Integer.parseInt(parts[2]);
-        int column = Integer.parseInt(parts[3]);
-        int worker = Integer.parseInt(parts[4]);
 
         if (name.equals(game.getPlayer().getName())) {
-            switch (fsm.getState()) {
-                case start:
-                    if (action.equals("usepower")) fsm.setPath(game.getPlayer().getDivinity());
-                    else if (action.equals("default")) fsm.setPath(Divinity.Default);
-                    else throw new IllegalArgumentException("Unexpected action: " + action);
-                    break;
 
-                case move:
-                    if (action.equals("move")) game.move(row, column, worker);
-                    break;
-                case build:
-                    if (action.equals("build")) game.build(row, column, worker);
-                    break;
-                case superMove:
-                    if (action.equals("supermove")) game.useGodPower(row, column, worker);
-                    break;
-                case superBuild:
-                    if (action.equals("superbuild")) game.useGodPower(row, column, worker);
-                    break;
-                default:
-                    throw new IllegalStateException("Unexpected value: " + fsm.getState());
+            row = Integer.parseInt(parts[2]);
+            column = Integer.parseInt(parts[3]);
+            if (action.equals("placeworker")) game.placeWorker(row, column);
+            else {
+                if (parts.length > 4) {
+                    worker = Integer.parseInt(parts[4]);
+                    switch (fsm.getState()) {
+                        case start:
+                            if (action.equals("usepower")) fsm.setPath(game.getPlayer().getDivinity());
+                            else if (action.equals("default")) fsm.setPath(Divinity.Default);
+                            else throw new IllegalArgumentException("Unexpected action: " + action);
+                            break;
+
+                        case move:
+                            if (action.equals("move")) game.move(row, column, worker);
+                            break;
+                        case build:
+                            if (action.equals("build")) game.build(row, column, worker);
+                            break;
+                        case superMove:
+                            if (action.equals("supermove")) game.useGodPower(row, column, worker);
+                            break;
+                        case superBuild:
+                            if (action.equals("superbuild")) game.useGodPower(row, column, worker);
+                            break;
+                        default:
+                            throw new IllegalStateException("Unexpected value: " + fsm.getState());
+                    }
+                    fsm.nextState();
+
+                    if (fsm.getState() == State.endTurn) {
+                        fsm.setState(State.start);
+                        game.endTurn();
+                    }
+                }
             }
-        }
-        fsm.nextState();
-
-        if(fsm.getState() == State.endTurn) {
-            fsm.setState(State.start);
-            game.endTurn();
         }
     }
 

@@ -31,8 +31,8 @@ public class Worker {
      * @throws AthenaException if you are trying to move in a cell whit a level higher than yours but athena's godpower is activated
      */
     public void move (Cell destination) throws IllegalArgumentException, AthenaException {
-        //if (position.canMoveTo(destination)){
         if (canMoveTo(destination)){
+
             if ((position.getLevel()==destination.getLevel()-1)&&!(owner.getGame().getCanMoveUp())){
                 throw new AthenaException();
             }
@@ -64,20 +64,31 @@ public class Worker {
     }
 
     /**
+     * the destination must be inside the board, one of the 8 cell adiacent the worker,
+     * not the same cell as worker's position, can be maximum one level higher or zero level higher if athena's power is active
+     *
      * @param destination is the cell that you want to know if it's reachable
      * @return true if the cell is reachable or false if it's not
      */
     public boolean canMoveTo(Cell destination) {
+        // the destination must be inside the board
         return  (destination.getNumRow() >= 0) && (destination.getNumRow() <= 4) &&
                 (destination.getNumColumn() >= 0) && (destination.getNumColumn() <= 4) &&
+
+                // one of the 8 cell adiacent the worker
                 (destination.getNumRow() >= position.getNumRow() - 1) &&
                 (destination.getNumRow() <= position.getNumRow() + 1) &&
                 (destination.getNumColumn() >= position.getNumColumn() - 1) &&
                 (destination.getNumColumn() <= position.getNumColumn() + 1) &&
-                (destination.getLevel() <= position.getLevel() + 1) &&
-                (destination.getLevel() < 4) &&
-                (destination.getIsEmpty()&&
-                (!position.equals(destination)));
+                // should not be the same cell as worker's position
+                (destination.getIsEmpty()&& (!position.equals(destination))) &&
+                (
+                    // can be maximum one level higher
+                    ((destination.getLevel() <= position.getLevel() + 1) && owner.getGame().getCanMoveUp()) ||
+                    // or zero level higher if athena's power is active
+                    ((destination.getLevel() <= position.getLevel()) && !owner.getGame().getCanMoveUp())
+                ) &&
+                (destination.getLevel() < 4);
     }
 
     /**

@@ -27,7 +27,7 @@ public class Player {
      * Place the workers on the map with the worker constructor
      */
     public void placeWorkers(Cell destination) {
-        workers.add(new Worker( destination, this));
+        if (workers.size()< 2) workers.add(new Worker( destination, this));
     }
 
     /**
@@ -66,6 +66,9 @@ public class Player {
     }
     public Worker getWorker(int numWorker) {
         return workers.get(numWorker);
+    }
+    public ArrayList<Worker> getWorkers() {
+        return workers;
     }
     public Game getGame() {
         return game;
