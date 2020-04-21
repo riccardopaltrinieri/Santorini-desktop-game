@@ -35,6 +35,8 @@ public class Player {
      * @return boolean that indicates if the player can make any move
      */
     public boolean canMove() {
+        if (workers.size() == 0) return true;
+
         Board board = this.game.getBoard();
 
         for(int i = 0; i < 2; i++) {
