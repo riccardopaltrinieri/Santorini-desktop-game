@@ -3,19 +3,21 @@ package it.polimi.ingsw.View;
 import it.polimi.ingsw.AthenaException;
 import it.polimi.ingsw.Model.Divinity;
 import it.polimi.ingsw.utils.Observable;
+import it.polimi.ingsw.utils.Observer;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class Connection extends Observable implements Runnable {
+public class Connection extends Observable implements Runnable, Observer {
     private Socket socket;
     private Scanner in;
     private PrintWriter out;
     private Server server;
     private String name;
     private boolean active;
+    private boolean playerTurn;
     private Scanner in2;
 
     public Connection(Socket socket, Server server){
@@ -31,9 +33,18 @@ public class Connection extends Observable implements Runnable {
         return active;
     }
 
+
     public void send(String message){
         out.println(message);
         out.flush();
+    }
+
+    public String readString(){
+        String read = "";
+        while (read.isEmpty()) {
+            read = (in.nextLine());
+        }
+        return read;
     }
 
     public synchronized void closeConnection(){
@@ -58,30 +69,33 @@ public class Connection extends Observable implements Runnable {
         try{
             in = new Scanner(socket.getInputStream());
             out = new PrintWriter(socket.getOutputStream());
-            // qui posso lavorare per giostrare la logica o nella lobby
             send("Welcome! What's your name?");
-            name = in.nextLine();
+            name = readString();
 
             server.lobby(this, name);
 
             while(isActive()){
-                    if(server.getDivinityPlay1() != null){
+                if(server.gameHasStarted()){
+                    if(playerTurn) {
                         send("Insert your move:");
-                        String read =(name + " " + in.nextLine());
+                        String read = readString();
+                        read = name + " " + read;
                         notifyObservers(read);
                     }
-
-
-                /*else {
-                    send("Waiting for other players to choose...");
-
-                } */
-
+                }
             }
+
+            close();
+
         } catch(IOException e){
             System.err.println(e.getMessage());
-        } finally {
             close();
         }
+    }
+
+    @Override
+    public void update(String message) {
+        String[] parts = message.split(" ");
+        playerTurn = parts[0].equals(name) && parts[1].equals("moves");
     }
 }

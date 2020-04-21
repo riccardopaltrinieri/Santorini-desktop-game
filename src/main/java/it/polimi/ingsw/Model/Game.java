@@ -34,6 +34,14 @@ public class Game extends Observable {
         board.clearAll();
     }
 
+    public void placeWorker(int row, int column) {
+        try {
+            getPlayer().placeWorkers(board.getCell(row, column));
+        } catch (IllegalArgumentException e) {
+            notifyObservers("cantPlace");
+        }
+    }
+
     public void move(int row, int column, int worker) {
         Cell position = getPlayer().getWorker(worker).getPosition();
         Cell destination = board.getCell(row, column);
@@ -67,12 +75,12 @@ public class Game extends Observable {
     }
 
     public void endTurn() {
-        currentPlayer = (currentPlayer + 1) % 3;
+        currentPlayer = (currentPlayer + 1) % this.numPlayer;
         if (!getPlayer().canMove()){
-            notifyObservers(getPlayer().getName() + "lose");
+            notifyObservers(getPlayer().getName() + " loses");
             hasLoser();
         } else {
-            notifyObservers(getPlayer().getName() + "moves");
+            notifyObservers(getPlayer().getName() + " moves");
         }
     }
 

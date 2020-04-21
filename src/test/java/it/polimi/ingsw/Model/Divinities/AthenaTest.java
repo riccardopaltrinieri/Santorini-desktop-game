@@ -14,15 +14,20 @@ public class AthenaTest {
         Game game = new Game();
         Board board = game.getBoard();
         Player player = new Player("test player", Color.Green, game);
+
+        Cell lowCell = board.getCell(0,0);
+        Cell highCell = board.getCell(1, 1);
+        highCell.setLevel(1);
+
         player.placeWorkers(board.getCell(0,0));
-        Cell higCell = board.getCell(1, 1);
-        higCell.setLevel(1);
-        Cell lowCell = board.getCell(1, 1);
         try {
-            test.execute(player, lowCell, 0);
+            //low to high -> canMoveUp = true
+            test.execute(player, highCell, 0);
             assertTrue(game.getCanMoveUp());
+            //high to low -> canMoveUp = false
             test.execute(player,lowCell,0);
             assertFalse(game.getCanMoveUp());
+
         } catch (IllegalArgumentException | AthenaException e) {
             System.out.println(e.getMessage());
         }
