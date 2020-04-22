@@ -19,21 +19,21 @@ public class PlayerTest {
 
     @Test
     public void canMoveTest() {
+        tester.placeWorkers(board.getCell(0,0));
         tester.placeWorkers(board.getCell(1,1));
-        tester.placeWorkers(board.getCell(2,2));
         assertTrue(tester.canMove());
 
         Player foo1 = new Player("foo", Color.Green, game);
         Player foo2 = new Player("foo", Color.Green, game);
         Player foo3 = new Player("foo", Color.Green, game);
         Player foo4 = new Player("foo", Color.Green, game);
-        foo1.placeWorkers(board.getCell(0,0));
         foo1.placeWorkers(board.getCell(1,0));
         foo2.placeWorkers(board.getCell(0,1));
         foo2.placeWorkers(board.getCell(2,0));
         foo3.placeWorkers(board.getCell(0,2));
         foo3.placeWorkers(board.getCell(1,2));
         foo4.placeWorkers(board.getCell(2,1));
+        foo4.placeWorkers(board.getCell(2,2));
         /*Worker worker0 = tester.getWorker(0);
         for (int row = worker0.getPosition().getNumRow() - 1; row <= worker0.getPosition().getNumRow() + 1; row++)
             for (int col = worker0.getPosition().getNumColumn() - 1; col <= worker0.getPosition().getNumColumn() + 1; col++)

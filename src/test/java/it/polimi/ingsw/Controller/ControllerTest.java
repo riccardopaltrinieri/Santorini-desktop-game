@@ -19,7 +19,7 @@ public class ControllerTest {
 
     @Test
     public void testGodPower() {
-        board.clearAll();
+        game.setNumPlayer(2);
         //insert the power to test
         tester.setDivinity(Divinity.Athena);
         tester.setGodPower(new Athena());
@@ -44,6 +44,7 @@ public class ControllerTest {
 
     @Test
     public void testDefaultInput() {
+        game.setNumPlayer(2);
         //insert the power to test
         tester.setDivinity(Divinity.Default);
 
@@ -62,7 +63,7 @@ public class ControllerTest {
         // check if placeWorker function place 2 and only 2 worker
         assertEquals(2, tester.getWorkers().size());
 
-        client.notifyObservers("tester usePower -1 -1 -1");
+        client.notifyObservers("tester usePower 0 0 0");
         client.notifyObservers("tester move 1 1 0");
 
         // check the move function
