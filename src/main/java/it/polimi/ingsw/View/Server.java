@@ -29,6 +29,9 @@ public class Server {
     private String divinityPlay1;
     private String divinityPlay2;
     private String divinityPlay3;
+    private String firstPlayer;
+    private String secondPlayer;
+    private String thirdPlayer;
     private  boolean startGame = false;
 
 
@@ -116,14 +119,39 @@ public class Server {
         connections.remove(c); //messo qui perchè altrimenti con 3 giocatori non ho il riferimento alla connessione eliminata in foreach
     }
 
+
     public synchronized void lobby(Connection c, String name){
         waitingConnection.put(name, c);
-        if (waitingConnection.size()==1){
+        if (waitingConnection.get(name).equals(connections.get(0))){ //primo giocatore
+            firstPlayer = name;
             decideNumberPlayer(waitingConnection.get(name)); //decide num of player
         }
+
         if((waitingConnection.size()== numPlayers)) {
             startDivinity();
             List<String> keys = new ArrayList<>(waitingConnection.keySet());
+            for (String i: keys
+                 ) {
+                if (waitingConnection.get(i).equals(connections.get(1))) secondPlayer = i;
+                if (numPlayers == 3){
+                    if (waitingConnection.get(i).equals(connections.get(2))) thirdPlayer = i;
+                }
+            }
+
+            if (numPlayers == 2){
+                keys.clear();
+                keys.add(firstPlayer);
+                keys.add(secondPlayer);
+                }
+
+            if (numPlayers == 3){
+                keys.clear();
+                keys.add(firstPlayer);
+                keys.add(secondPlayer);
+                keys.add(thirdPlayer);
+            }
+
+
             Connection c1 = waitingConnection.get(keys.get(0));
             Connection c2 = waitingConnection.get(keys.get(1));
 
@@ -159,7 +187,7 @@ public class Server {
                 playingConnection3players.put(c3, c2);
             }
             waitingConnection.clear();
-            connections.get(0).update(keys.get(0) + " moves");
+            connections.get(0).update(this.firstPlayer + " moves");
             startGame = true;
         }
     }
