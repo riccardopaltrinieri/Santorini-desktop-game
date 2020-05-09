@@ -1,17 +1,20 @@
 package it.polimi.ingsw.View;
 
+import it.polimi.ingsw.Controller.State;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
-public class Client {
+public class CLInterface {
 
     private String ip;
     private int port;
+    private FSMView fsm = new FSMView();
 
-    public Client(String ip, int port){
+    public CLInterface(String ip, int port){
         this.ip = ip;
         this.port = port;
     }
@@ -29,18 +32,19 @@ public class Client {
             //noinspection InfiniteLoopStatement
             while (true){
                 String[] parts = socketLine.split(" ");
-                String your = parts[0];
+                String firstWord = parts[0];
 
-                if ((!socketLine.equals("All divinities have been chosen"))&&(!(your.equals("Your")))){
+                if (firstWord.equals("Welcome!") || firstWord.equals("Choose") || firstWord.equals("Insert")) {
                     String inputLine = stdin.nextLine();
                     socketOut.println(inputLine);
                     socketOut.flush();
                 }
                 socketLine = socketIn.nextLine();
-                System.out.println(socketLine);
+                if(firstWord.equals("Insert")) System.out.println(getStringFSM());
+                else System.out.println(socketLine);
             }
         } catch(NoSuchElementException e){
-            System.out.println("Connection closed from the client side");
+            System.out.println("Connection closed from the server side");
         } finally {
             stdin.close();
             socketIn.close();
@@ -49,4 +53,27 @@ public class Client {
         }
     }
 
+    public String getStringFSM() {
+        String line;
+        switch (fsm.getState()) {
+            case start:
+                line = "Do you want to use the God power?";
+                break;
+            case move:
+                line = "Where do you want to move?";
+                break;
+            case build:
+                line = "Where do you want to build?";
+                break;
+            case endTurn:
+                line = "Turn ended.";
+                break;
+            default:
+                line = "Error";
+                break;
+        }
+        if(fsm.getState() == State.endTurn) fsm.setState(State.start);
+        else fsm.nextState();
+        return line;
+    }
 }
