@@ -28,6 +28,7 @@ public class Player {
      */
     public void placeWorkers(Cell destination) {
         if (workers.size()< 2) workers.add(new Worker( destination, this));
+        else throw new IllegalArgumentException();
     }
 
     /**

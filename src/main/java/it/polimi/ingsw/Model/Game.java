@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class Game extends Observable {
     private int numPlayer;
-    private int currentPlayer;
+    private int iterator;
     private Controller controller;
     private Board board;
     private ArrayList<Player> players;
@@ -21,34 +21,44 @@ public class Game extends Observable {
         this.board = new Board();
         this.controller = new Controller(this);
         this.players = new ArrayList<>(3);
-        this.currentPlayer = 0;
+        this.iterator = 0;
         this.canMoveUp=true;
     }
 
     public void hasLoser() {
-
+        if(numPlayer == 2) {
+            iterator = (iterator + 1) % numPlayer;
+            hasWinner();
+        } else {
+            notifyObservers(getCurrentPlayer().getName() + " loses");
+            getCurrentPlayer().getWorker(0).getPosition().setEmpty(true);
+            getCurrentPlayer().getWorker(1).getPosition().setEmpty(true);
+            players.remove(getCurrentPlayer());
+            numPlayer -= 1;
+            iterator = (iterator + 1) % numPlayer;
+        }
     }
 
     public void hasWinner(){
-        notifyObservers(players.get(currentPlayer).getName() + "wins");
+        notifyObservers(getCurrentPlayer().getName() + "wins");
         board.clearAll();
     }
 
     public void placeWorker(int row, int column) {
         try {
-            getPlayer().placeWorkers(board.getCell(row, column));
+            getCurrentPlayer().placeWorkers(board.getCell(row, column));
         } catch (IllegalArgumentException e) {
             notifyObservers("cantPlace");
         }
     }
 
     public void move(int row, int column, int worker) {
-        Cell position = getPlayer().getWorker(worker).getPosition();
+        Cell position = getCurrentPlayer().getWorker(worker).getPosition();
         Cell destination = board.getCell(row, column);
 
         try{
-            if(position.getLevel() != 3 && destination.getLevel() == 3) hasWinner();
-            getPlayer().getWorker(worker).move(destination);
+            if(position.getLevel() < 3 && destination.getLevel() == 3) hasWinner();
+            getCurrentPlayer().getWorker(worker).move(destination);
         } catch (AthenaException e) {
             notifyObservers("athenaException");
         } catch (IllegalArgumentException e) {
@@ -58,7 +68,7 @@ public class Game extends Observable {
 
     public void build(int row, int column, int worker) {
         try {
-            getPlayer().getWorker(worker).build(board.getCell(row, column));
+            getCurrentPlayer().getWorker(worker).build(board.getCell(row, column));
         } catch (IllegalArgumentException e) {
             notifyObservers("cantBuild");
         }
@@ -66,7 +76,7 @@ public class Game extends Observable {
 
     public void useGodPower(int row, int column, int worker) {
         try {
-            getPlayer().getGodPower().execute(getPlayer(),board.getCell(row,column),worker);
+            getCurrentPlayer().getGodPower().execute(getCurrentPlayer(),board.getCell(row,column),worker);
         } catch (AthenaException e) {
             notifyObservers("athenaException");
         } catch (IllegalArgumentException e) {
@@ -75,20 +85,13 @@ public class Game extends Observable {
     }
 
     public void endTurn() {
-        currentPlayer = (currentPlayer + 1) % this.numPlayer;
-        if (!getPlayer().canMove()){
-            notifyObservers(getPlayer().getName() + " loses");
-            hasLoser();
-        } else {
-            notifyObservers(getPlayer().getName() + " moves");
-        }
+        iterator = (iterator + 1) % numPlayer;
+        if (!getCurrentPlayer().canMove()) hasLoser();
+        notifyObservers(getCurrentPlayer().getName() + " moves");
     }
 
-    public Player getPlayer() {
-        return players.get(currentPlayer);
-    }
-    public void addPlayer(Player player) {
-        this.players.add(player);
+    public Player getCurrentPlayer() {
+        return players.get(iterator);
     }
 
 //  ************** GETTER AND SETTER ***********************************
@@ -108,11 +111,11 @@ public class Game extends Observable {
     public ArrayList<Player> getPlayers() {
         return players;
     }
-    public int getCurrentPlayer() {
-        return currentPlayer;
+    public int getIterator() {
+        return iterator;
     }
-    public void setCurrentPlayer(int currentPlayer) {
-        this.currentPlayer = currentPlayer;
+    public void setIterator(int iterator) {
+        this.iterator = iterator;
     }
     public Controller getController() {
         return controller;

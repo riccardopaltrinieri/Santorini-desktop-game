@@ -1,7 +1,5 @@
 package it.polimi.ingsw.View;
 
-import it.polimi.ingsw.AthenaException;
-import it.polimi.ingsw.Model.Divinity;
 import it.polimi.ingsw.utils.Observable;
 import it.polimi.ingsw.utils.Observer;
 
@@ -11,14 +9,13 @@ import java.net.Socket;
 import java.util.Scanner;
 
 public class Connection extends Observable implements Runnable, Observer {
-    private Socket socket;
+    private final Socket socket;
     private Scanner in;
     private PrintWriter out;
-    private Server server;
+    private final Server server;
     private String name;
     private boolean active;
     private boolean playerTurn;
-    private Scanner in2;
 
     public Connection(Socket socket, Server server){
         this.socket = socket;
@@ -71,7 +68,7 @@ public class Connection extends Observable implements Runnable, Observer {
             out = new PrintWriter(socket.getOutputStream());
             send("Welcome! What's your name?");
             name = readString();
-
+            send("Wait for other players");
             server.lobby(this, name);
 
             while(isActive()){
@@ -96,6 +93,9 @@ public class Connection extends Observable implements Runnable, Observer {
     @Override
     public void update(String message) {
         String[] parts = message.split(" ");
+        if(parts[0].equals(name)){
+            if(parts[1].equals("loses")) server.deregisterConnection(this);
+        }
         playerTurn = parts[0].equals(name) && parts[1].equals("moves");
     }
 }

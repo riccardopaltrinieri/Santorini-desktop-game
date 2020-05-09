@@ -1,8 +1,8 @@
 package it.polimi.ingsw.Controller;
 
-import it.polimi.ingsw.AthenaException;
 import it.polimi.ingsw.Model.Divinity;
 import it.polimi.ingsw.Model.Game;
+import it.polimi.ingsw.utils.InputString;
 import it.polimi.ingsw.utils.Observable;
 import it.polimi.ingsw.utils.Observer;
 
@@ -29,46 +29,58 @@ public class Controller extends Observable implements Observer {
         int row, column, worker;
         String[] parts = message.split(" ");
         String name = parts[0];
-        String action = parts[1].toLowerCase();
+        InputString action = InputString.valueOf(parts[1].toLowerCase());
 
-        if (name.equals(game.getPlayer().getName())) {
+        if (name.equals(game.getCurrentPlayer().getName())) {
 
-            row = Integer.parseInt(parts[2]);
-            column = Integer.parseInt(parts[3]);
-            if (action.equals("placeworker")) game.placeWorker(row, column);
-            else {
-                if (parts.length > 4) {
+            switch (action) {
+                case usepower:
+                    if (fsm.getState() == State.start) fsm.setPath(game.getCurrentPlayer().getDivinity());
+                    break;
+
+                case normal:
+                    if (fsm.getState() == State.start) fsm.setPath(Divinity.Default);
+                    break;
+
+                case placeworker:
+                    if (fsm.getState() == State.start) fsm.setPath(Divinity.Default);
+                    if (fsm.getState() == State.move) fsm.setState(State.build);
+                    row = Integer.parseInt(parts[2]);
+                    column = Integer.parseInt(parts[3]);
+                    game.placeWorker(row, column);
+                    break;
+
+                case move:
+                    row = Integer.parseInt(parts[2]);
+                    column = Integer.parseInt(parts[3]);
                     worker = Integer.parseInt(parts[4]);
-                    switch (fsm.getState()) {
-                        case start:
-                            if (action.equals("usepower")) fsm.setPath(game.getPlayer().getDivinity());
-                            else if (action.equals("default")) fsm.setPath(Divinity.Default);
-                            else throw new IllegalArgumentException("Unexpected action: " + action);
-                            break;
+                    if (fsm.getState() == State.move) game.move(row, column, worker);
+                    break;
 
-                        case move:
-                            if (action.equals("move")) game.move(row, column, worker);
-                            break;
-                        case build:
-                            if (action.equals("build")) game.build(row, column, worker);
-                            break;
-                        case superMove:
-                            if (action.equals("supermove")) game.useGodPower(row, column, worker);
-                            break;
-                        case superBuild:
-                            if (action.equals("superbuild")) game.useGodPower(row, column, worker);
-                            break;
-                        default:
-                            throw new IllegalStateException("Unexpected value: " + fsm.getState());
-                    }
-                    fsm.nextState();
+                case build:
+                    row = Integer.parseInt(parts[2]);
+                    column = Integer.parseInt(parts[3]);
+                    worker = Integer.parseInt(parts[4]);
+                    if (fsm.getState() == State.build) game.build(row, column, worker);
+                    break;
 
-                    if (fsm.getState() == State.endTurn) {
-                        fsm.setState(State.start);
-                        game.endTurn();
-                    }
-                }
+                case supermove:
+                case superbuild:
+                    row = Integer.parseInt(parts[2]);
+                    column = Integer.parseInt(parts[3]);
+                    worker = Integer.parseInt(parts[4]);
+                    if (fsm.getState() == State.superMove || fsm.getState() == State.superBuild) game.useGodPower(row, column, worker);
+                    break;
+
             }
+
+            fsm.nextState();
+
+            if (fsm.getState() == State.endTurn) {
+                fsm.setState(State.start);
+                game.endTurn();
+            }
+
         }
     }
 

@@ -20,7 +20,7 @@ public class FiniteStateMachine {
      * Increments the state of the FSM following the player's divinity customized path
      * @throws IllegalStateException when the divinity is not recognized
      */
-    public void nextState() throws IllegalStateException {
+    protected void nextState() throws IllegalStateException {
 
 
         switch (this.divinity) {
@@ -107,11 +107,11 @@ public class FiniteStateMachine {
         return state;
     }
 
-    public void setState(State state) {
+    protected void setState(State state) {
         this.state = state;
     }
 
-    public void setPath(Divinity divinity) {
+    protected void setPath(Divinity divinity) {
         this.divinity = divinity;
     }
 

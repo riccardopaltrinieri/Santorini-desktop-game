@@ -19,13 +19,13 @@ public class Server {
     private ServerSocket serverSocket;
     private int numPlayers;
 
-    private ExecutorService executor = Executors.newFixedThreadPool(128);
+    private final ExecutorService executor = Executors.newFixedThreadPool(128);
 
-    private List<Connection> connections = new ArrayList<>();
-    private Map<String, Connection> waitingConnection = new HashMap<>();
-    private Map<Connection, Connection> playingConnection = new HashMap<>();
-    private Map<Connection, Connection> playingConnection3players = new HashMap<>();
-    private ArrayList<String> divinity = new ArrayList<>();
+    private final List<Connection> connections = new ArrayList<>();
+    private final Map<String, Connection> waitingConnection = new HashMap<>();
+    private final Map<Connection, Connection> playingConnection = new HashMap<>();
+    private final Map<Connection, Connection> playingConnection3players = new HashMap<>();
+    private final ArrayList<String> divinity = new ArrayList<>();
     private String divinityPlay1;
     private String divinityPlay2;
     private String divinityPlay3;
@@ -36,7 +36,7 @@ public class Server {
 
 
     public Server() throws IOException {
-        this.serverSocket = new ServerSocket(PORT);
+        serverSocket = new ServerSocket(PORT);
     }
 
     //Register connection
@@ -45,17 +45,18 @@ public class Server {
     }
 
     public void decideNumberPlayer(Connection c) {
-        c.send("Number of players?");
+        c.send("Choose the number of players:");
         setNumPlayers(Integer.parseInt(c.getIn().next()));
-        c.send("Choose the divinities. First divinity:");
+        c.send("Choose the first divinity:");
         divinity.add(c.getIn().next());
-        c.send("Second divinity: ");
+        c.send("Choose the second divinity: ");
         divinity.add(c.getIn().next());
         if (this.getNumPlayers() == 3) {
-            c.send("Third divinity: ");
+            c.send("Choose the third divinity: ");
             divinity.add(c.getIn().next());
         }
-        c.send("All divinities have been chosen");
+        c.send("All the divinities have been chosen");
+        c.send("Now the other players will choose between them..");
     }
 
     public void startDivinity(){
@@ -116,7 +117,10 @@ public class Server {
                 playingConnection.remove(opponent);
             }
         }
+        numPlayers -= 1;
         connections.remove(c); //messo qui perchè altrimenti con 3 giocatori non ho il riferimento alla connessione eliminata in foreach
+        c.send("You Lose");
+        c.closeConnection();
     }
 
 

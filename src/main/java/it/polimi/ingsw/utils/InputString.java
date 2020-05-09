@@ -1,4 +1,4 @@
-package it.polimi.ingsw.View;
+package it.polimi.ingsw.utils;
 
 public enum InputString {
 
@@ -7,6 +7,6 @@ public enum InputString {
     placeworker,
     usepower,
     supermove,
-    superbuild
-
+    superbuild,
+    normal
 }
