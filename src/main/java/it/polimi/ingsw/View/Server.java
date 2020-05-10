@@ -126,6 +126,9 @@ public class Server {
 
     public synchronized void lobby(Connection c, String name){
         waitingConnection.put(name, c);
+        if (c.equals(connections.get(0))) firstPlayer = name;
+        if (c.equals(connections.get(1))) secondPlayer = name;
+        if (c.equals(connections.get(2))) thirdPlayer = name;
         if (waitingConnection.get(name).equals(connections.get(0))){ //primo giocatore
             firstPlayer = name;
             decideNumberPlayer(waitingConnection.get(name)); //decide num of player
@@ -133,27 +136,9 @@ public class Server {
 
         if((waitingConnection.size()== numPlayers)) {
             startDivinity();
-            List<String> keys = new ArrayList<>(waitingConnection.keySet());
-            for (String i: keys
-                 ) {
-                if (waitingConnection.get(i).equals(connections.get(1))) secondPlayer = i;
-                if (numPlayers == 3){
-                    if (waitingConnection.get(i).equals(connections.get(2))) thirdPlayer = i;
-                }
-            }
-
-            if (numPlayers == 2){
-                keys.clear();
-                keys.add(firstPlayer);
-                keys.add(secondPlayer);
-                }
-
-            if (numPlayers == 3){
-                keys.clear();
-                keys.add(firstPlayer);
-                keys.add(secondPlayer);
-                keys.add(thirdPlayer);
-            }
+            List<String> keys = new ArrayList<>();
+            keys.add(firstPlayer);
+            keys.add(secondPlayer);
 
 
             Connection c1 = waitingConnection.get(keys.get(0));
@@ -178,6 +163,7 @@ public class Server {
             playingConnection.put(c2, c1);
 
             if (numPlayers == 3) {
+                keys.add(thirdPlayer);
                 Connection c3 = waitingConnection.get(keys.get(2));
                 Player player3 = new Player(keys.get(2), Green, game);
                 player3.setDivinity(Divinity.valueOf(divinityPlay3));
