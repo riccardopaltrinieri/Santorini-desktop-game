@@ -1,6 +1,7 @@
 package it.polimi.ingsw.View;
 
 import it.polimi.ingsw.Controller.State;
+import it.polimi.ingsw.utils.InputString;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,6 +14,8 @@ public class CLInterface {
     private String ip;
     private int port;
     private FSMView fsm = new FSMView();
+    private int moves=0;
+    private boolean wrongInput=false;
 
     public CLInterface(String ip, int port){
         this.ip = ip;
@@ -34,14 +37,37 @@ public class CLInterface {
                 String[] parts = socketLine.split(" ");
                 String firstWord = parts[0];
 
-                if (firstWord.equals("Welcome!") || firstWord.equals("Choose") || firstWord.equals("Insert")) {
+                if (firstWord.equals("Welcome!") || firstWord.equals("Choose") ) {
                     String inputLine = stdin.nextLine();
                     socketOut.println(inputLine);
                     socketOut.flush();
                 }
-                socketLine = socketIn.nextLine();
-                if(firstWord.equals("Insert")) System.out.println(getStringFSM());
-                else System.out.println(socketLine);
+                else if (firstWord.equals("Insert")){
+                    try {
+                        String inputLine = stdin.nextLine();
+                        String[] partsInput = inputLine.split(" ");
+                        String firstInput = partsInput[0];
+                        InputString.valueOf(firstInput);
+                        socketOut.println(inputLine);
+                        socketOut.flush();
+                        wrongInput = false;
+                        moves++ ;
+                    }
+                    catch (IllegalArgumentException e){
+                        System.out.println("Wrong input: reinsert your move");
+                        wrongInput = true;
+
+                    }
+                }
+
+                if (!wrongInput){
+                    socketLine = socketIn.nextLine();
+                    if (moves > 1)System.out.println(getStringFSM());
+                    else System.out.println(socketLine);
+                }
+
+
+
             }
         } catch(NoSuchElementException e){
             System.out.println("Connection closed from the server side");
