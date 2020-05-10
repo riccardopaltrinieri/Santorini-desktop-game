@@ -60,7 +60,7 @@ public class Server {
     }
 
     public void startDivinity(){
-
+        //TODO guarda quando hai più client
         if ((connections.size()== numPlayers)){
             StringBuilder choices = new StringBuilder("Choose your Divinity between: ");
             for (String god : divinity){
@@ -127,10 +127,14 @@ public class Server {
     public synchronized void lobby(Connection c, String name){
         waitingConnection.put(name, c);
         if (c.equals(connections.get(0))) firstPlayer = name;
-        if (c.equals(connections.get(1))) secondPlayer = name;
-        if (c.equals(connections.get(2))) thirdPlayer = name;
+        if (connections.size() == 2){
+            if (c.equals(connections.get(1))) secondPlayer = name;
+        }
+         if (connections.size() == 3) {
+            if (c.equals(connections.get(2))) thirdPlayer = name;
+       }
+
         if (waitingConnection.get(name).equals(connections.get(0))){ //primo giocatore
-            firstPlayer = name;
             decideNumberPlayer(waitingConnection.get(name)); //decide num of player
         }
 
