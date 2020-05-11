@@ -1,7 +1,6 @@
 package it.polimi.ingsw.utils;
 
 public enum InputString {
-
     build,
     move,
     placeworker,

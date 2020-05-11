@@ -1,6 +1,5 @@
 package it.polimi.ingsw.View;
 
-import it.polimi.ingsw.Controller.State;
 import it.polimi.ingsw.Model.Divinity;
 
 public class FSMView {
@@ -12,7 +11,7 @@ public class FSMView {
      * constructor of the class, it set the initial state to "start"
      */
     public FSMView(){
-        this.state = State.start;
+        this.state = State.placeworker;
         this.again = false;
         this.divinity = Divinity.Default;
     }
@@ -33,13 +32,26 @@ public class FSMView {
             case Pan:
             case Atlas:
             case Hephaestus:
-                if (state == State.start) state = State.move;
+                if (state == State.placeworker && !again) {
+                    again = true;
+                } else if(again) {
+                    again = false;
+                    state = State.endTurn;
+                }
+                else if (state == State.start) state = State.move;
                 else if (state == State.move) state = State.build;
                 else if (state == State.build) state = State.endTurn;
                 break;
 
             case Artemis:
-                if (state == State.start) {
+                if (state == State.placeworker && !again) {
+                    again = true;
+                }
+                else if(state == State.placeworker) {
+                    again = false;
+                    state = State.start;
+                }
+                else if (state == State.start) {
                     state = State.move;
                     again=false;
                 }
@@ -55,6 +67,13 @@ public class FSMView {
                 break;
 
             case Demeter:
+                if (state == State.placeworker && !again) {
+                    again = true;
+                }
+                else if(state == State.placeworker) {
+                    again = false;
+                    state = State.start;
+                }
                 if (state == State.start) {
                     state = State.move;
                     again=false;
@@ -72,6 +91,13 @@ public class FSMView {
                 break;
 
             case Prometheus:
+                if (state == State.placeworker && !again) {
+                    again = true;
+                }
+                else if(state == State.placeworker) {
+                    again = false;
+                    state = State.start;
+                }
                 if (state == State.start){
                     again=false;
                     state = State.build;
@@ -102,8 +128,8 @@ public class FSMView {
         this.state = state;
     }
 
-    protected void setPath(Divinity divinity) {
-        this.divinity = divinity;
+    protected void setPath(String divinity) {
+        this.divinity = Divinity.valueOf(divinity);
     }
 
 
