@@ -45,7 +45,7 @@ public class Server {
     }
 
     public void decideNumberPlayer(Connection c) {
-        c.send("Choose the number of players:");
+        c.send("Decide the number of players: [2 or 3]");
         setNumPlayers(Integer.parseInt(c.getIn().next()));
         c.send("Choose the first divinity:");
         divinity.add(c.getIn().next());
@@ -119,7 +119,6 @@ public class Server {
         }
         numPlayers -= 1;
         connections.remove(c); //messo qui perchè altrimenti con 3 giocatori non ho il riferimento alla connessione eliminata in foreach
-        c.send("You Lose");
         c.closeConnection();
     }
 
@@ -166,6 +165,9 @@ public class Server {
             playingConnection.put(c1, c2);
             playingConnection.put(c2, c1);
 
+            connections.get(0).update(this.firstPlayer + " moves");
+            connections.get(1).update(this.firstPlayer + " moves");
+
             if (numPlayers == 3) {
                 keys.add(thirdPlayer);
                 Connection c3 = waitingConnection.get(keys.get(2));
@@ -179,9 +181,10 @@ public class Server {
                 playingConnection.put(c3, c1);
                 playingConnection3players.put(c1, c3);
                 playingConnection3players.put(c3, c2);
+
+                connections.get(2).update(this.firstPlayer + " moves");
             }
             waitingConnection.clear();
-            connections.get(0).update(this.firstPlayer + " moves");
             startGame = true;
         }
     }

@@ -3,11 +3,13 @@ package it.polimi.ingsw.View;
 import it.polimi.ingsw.utils.InputString;
 
 import java.io.PrintWriter;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class CLInterface implements UserInterface {
 
     private final FSMView fsm = new FSMView();
+    private String name;
 
     public CLInterface(){
     }
@@ -26,10 +28,16 @@ public class CLInterface implements UserInterface {
                 case "Welcome!":
                     // Ask the name of the player
                     System.out.println(incomingMessage);
-                    outgoingMessage = stdin.nextLine();
+                    name = stdin.nextLine();
+                    outgoingMessage = name;
+                    break;
+                case "Decide":
+                    // Ask the number of players
+                    System.out.println(incomingMessage);
+                    outgoingMessage = checkNumber(stdin);
                     break;
                 case "Choose":
-                    // Ask the name of a divinity
+                    // Ask the name of a divinity or the number of players
                     System.out.println(incomingMessage);
                     outgoingMessage = checkDivinities(stdin);
                     break;
@@ -42,10 +50,6 @@ public class CLInterface implements UserInterface {
                 case "Insert":
                     // Ask the player action according to the fsm
                     // The fsm can't be fooled because there's one also on the server
-                    if(fsm.getState() == State.start || fsm.getState() == State.placeworker) {
-                        System.out.println("\nTurn started \n");
-                        fsm.setState(State.start);
-                    }
 
                     System.out.println(getStringFSM());
                     outgoingMessage = checkAction(stdin);
@@ -59,9 +63,21 @@ public class CLInterface implements UserInterface {
                     System.out.println("Waiting for the other player to choose..");
                     outgoingMessage = "noMessageToSend";
                     break;
+                case "player":
+                    if (parts[1].equals(name) && parts[2].equals("moves")) System.out.println("Turn started");
+                    else if(parts[2].equals("moves")) System.out.println(parts[1] + "'s turn..");
+                    else {
+                        System.out.println("You lose and cannot play anymore..");
+                        throw new NoSuchElementException();
+                    }
+                    outgoingMessage = "noMessageToSend";
+                    break;
                 default:
+                    System.out.println(incomingMessage);
                     outgoingMessage = "noMessageToSend";
             }
+
+            if(outgoingMessage.equals("Error")) throw new IllegalArgumentException();
 
         } catch(IllegalArgumentException e) {
             e.printStackTrace();
@@ -70,11 +86,24 @@ public class CLInterface implements UserInterface {
         return outgoingMessage;
     }
 
+    private String checkNumber(Scanner stdin) {
+        String number;
+        while(true) {
+            number = stdin.nextLine();
+            try {
+                if ((Integer.parseInt(number) == 2 || Integer.parseInt(number) == 3)) return number;
+                else throw new NumberFormatException();
+            } catch (NumberFormatException e) {
+                System.out.println("Please type 2 or 3");
+            }
+        }
+    }
+
     private String checkAction(Scanner stdin) {
 
         String inputLine;
-        // A variable can be used to count the attempts
-        // private int moves=0;
+
+        // private int moves=0;   // A variable that can be used to count the attempts
 
         while(true) {
 

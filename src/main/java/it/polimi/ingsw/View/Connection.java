@@ -93,9 +93,16 @@ public class Connection extends Observable implements Runnable, Observer {
     @Override
     public void update(String message) {
         String[] parts = message.split(" ");
-        if(parts[0].equals(name)){
-            if(parts[1].equals("loses")) server.deregisterConnection(this);
-        }
-        playerTurn = parts[0].equals(name) && parts[1].equals("moves");
+
+        if(parts[0].equals(name) && parts[1].equals("loses"))
+            server.deregisterConnection(this);
+        else if(parts[0].equals(name) && parts[1].equals("moves")) {
+            playerTurn = true;
+            send("player " + message);
+        } else if (parts[1].equals("moves")) {
+            playerTurn = false;
+            send("player " + message);
+        } else send("Error: " + message);
+
     }
 }

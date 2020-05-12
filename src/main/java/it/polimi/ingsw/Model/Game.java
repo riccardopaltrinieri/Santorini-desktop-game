@@ -48,7 +48,7 @@ public class Game extends Observable {
         try {
             getCurrentPlayer().placeWorkers(board.getCell(row, column));
         } catch (IllegalArgumentException e) {
-            notifyObservers("cantPlace");
+            notifyObservers("You can't place your worker here");
         }
     }
 
@@ -60,9 +60,10 @@ public class Game extends Observable {
             if(position.getLevel() < 3 && destination.getLevel() == 3) hasWinner();
             getCurrentPlayer().getWorker(worker).move(destination);
         } catch (AthenaException e) {
-            notifyObservers("athenaException");
+            notifyObservers("You can't move up because Athena's power is active");
         } catch (IllegalArgumentException e) {
-            notifyObservers("cantMove");
+            notifyObservers("Can't move here");
+
         }
     }
 
@@ -70,7 +71,7 @@ public class Game extends Observable {
         try {
             getCurrentPlayer().getWorker(worker).build(board.getCell(row, column));
         } catch (IllegalArgumentException e) {
-            notifyObservers("cantBuild");
+            notifyObservers("Can't build here");
         }
     }
 
@@ -78,9 +79,9 @@ public class Game extends Observable {
         try {
             getCurrentPlayer().getGodPower().execute(getCurrentPlayer(),board.getCell(row,column),worker);
         } catch (AthenaException e) {
-            notifyObservers("athenaException");
+            notifyObservers("You can't move up because Athena's power is active");
         } catch (IllegalArgumentException e) {
-            notifyObservers("cantUsePower");
+            notifyObservers("Can't use the Power");
         }
     }
 
