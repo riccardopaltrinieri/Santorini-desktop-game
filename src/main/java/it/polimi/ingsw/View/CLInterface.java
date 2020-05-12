@@ -3,7 +3,6 @@ package it.polimi.ingsw.View;
 import it.polimi.ingsw.utils.InputString;
 import it.polimi.ingsw.utils.NamesDivinities;
 
-import java.io.PrintWriter;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
@@ -16,17 +15,19 @@ public class CLInterface implements UserInterface {
     }
 
     @Override
-    public String update(String incomingMessage) {
-
+    public String update(LiteBoard board) {
+        String incomingMessage = board.getMessage();
         Scanner stdin = new Scanner(System.in);
         String outgoingMessage = "Error";
 
         try {
-                String[] parts = incomingMessage.split(" ");
-                String firstWord = parts[0];
+
+            String[] parts = incomingMessage.split(" ");
+            String firstWord = parts[0];
 
             switch (firstWord) {
                 case "Welcome!":
+                    board.printBoardCLI();
                     // Ask the name of the player
                     System.out.println(incomingMessage);
                     name = stdin.nextLine();
@@ -52,6 +53,7 @@ public class CLInterface implements UserInterface {
                     // Ask the player action according to the fsm
                     // The fsm can't be fooled because there's one also on the server
 
+                    board.printBoardCLI();
                     System.out.println(getStringFSM());
                     outgoingMessage = checkAction(stdin);
 

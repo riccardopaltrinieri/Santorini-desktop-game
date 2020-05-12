@@ -31,12 +31,17 @@ public class NetworkHandler {
         Scanner stdin = new Scanner(System.in);
         String incomingMessage;
         String outgoingMessage;
+        //TODO togliere inizializzazione perchè board sarà == socketIn.getBoard()
+        LiteBoard board = new LiteBoard("", null);
 
         try{
             //noinspection InfiniteLoopStatement
             while (true){
-                incomingMessage = socketIn.nextLine();
-                outgoingMessage = userInterface.update(incomingMessage);
+                //TODO non so come si fa la prossima riga
+                //board = socketIn.nextLiteBoard();
+                //TODO anche la prossima sarà implicita nella precedente quindi da togliere
+                board.setMessage(socketIn.nextLine());
+                outgoingMessage = userInterface.update(board);
                 if(!outgoingMessage.equals("noMessageToSend")) {
                     socketOut.println(outgoingMessage);
                     socketOut.flush();

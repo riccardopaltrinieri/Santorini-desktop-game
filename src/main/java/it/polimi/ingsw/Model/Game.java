@@ -2,6 +2,7 @@ package it.polimi.ingsw.Model;
 
 import it.polimi.ingsw.AthenaException;
 import it.polimi.ingsw.Controller.Controller;
+import it.polimi.ingsw.View.LiteBoard;
 import it.polimi.ingsw.utils.Observable;
 
 import java.util.ArrayList;
@@ -30,7 +31,7 @@ public class Game extends Observable {
             iterator = (iterator + 1) % numPlayer;
             hasWinner();
         } else {
-            notifyObservers(getCurrentPlayer().getName() + " loses");
+            sendBoard(new LiteBoard(getCurrentPlayer().getName() + " loses", board));
             getCurrentPlayer().getWorker(0).getPosition().setEmpty(true);
             getCurrentPlayer().getWorker(1).getPosition().setEmpty(true);
             players.remove(getCurrentPlayer());
@@ -40,55 +41,62 @@ public class Game extends Observable {
     }
 
     public void hasWinner(){
-        notifyObservers(getCurrentPlayer().getName() + "wins");
+        sendBoard(new LiteBoard(getCurrentPlayer().getName() + "wins", board));
         board.clearAll();
     }
 
-    public void placeWorker(int row, int column) {
+    public boolean placeWorker(int row, int column) {
         try {
             getCurrentPlayer().placeWorkers(board.getCell(row, column));
+            return true;
         } catch (IllegalArgumentException e) {
-            notifyObservers("You can't place your worker here");
+            sendBoard(new LiteBoard("You can't place your worker here", board));
         }
+        return false;
     }
 
-    public void move(int row, int column, int worker) {
+    public boolean move(int row, int column, int worker) {
         Cell position = getCurrentPlayer().getWorker(worker).getPosition();
         Cell destination = board.getCell(row, column);
 
         try{
             if(position.getLevel() < 3 && destination.getLevel() == 3) hasWinner();
             getCurrentPlayer().getWorker(worker).move(destination);
+            return true;
         } catch (AthenaException e) {
-            notifyObservers("You can't move up because Athena's power is active");
+            sendBoard(new LiteBoard("You can't move up because Athena's power is active", board));
         } catch (IllegalArgumentException e) {
-            notifyObservers("Can't move here");
-
+            sendBoard(new LiteBoard("Can't move here", board));
         }
+        return false;
     }
 
-    public void build(int row, int column, int worker) {
+    public boolean build(int row, int column, int worker) {
         try {
             getCurrentPlayer().getWorker(worker).build(board.getCell(row, column));
+            return true;
         } catch (IllegalArgumentException e) {
-            notifyObservers("Can't build here");
+            sendBoard(new LiteBoard("Can't build here", board));
         }
+        return false;
     }
 
-    public void useGodPower(int row, int column, int worker) {
+    public boolean useGodPower(int row, int column, int worker) {
         try {
             getCurrentPlayer().getGodPower().execute(getCurrentPlayer(),board.getCell(row,column),worker);
+            return true;
         } catch (AthenaException e) {
-            notifyObservers("You can't move up because Athena's power is active");
+            sendBoard(new LiteBoard("You can't move up because Athena's power is active", board));
         } catch (IllegalArgumentException e) {
-            notifyObservers("Can't use the Power");
+            sendBoard(new LiteBoard("Can't use the Power", board));
         }
+        return false;
     }
 
     public void endTurn() {
         iterator = (iterator + 1) % numPlayer;
         if (!getCurrentPlayer().canMove()) hasLoser();
-        notifyObservers(getCurrentPlayer().getName() + " moves");
+        sendBoard(new LiteBoard(getCurrentPlayer().getName() + " moves", board));
     }
 
     public Player getCurrentPlayer() {
@@ -103,20 +111,11 @@ public class Game extends Observable {
     public void setCanMoveUp(Boolean canMoveUp) {
         this.canMoveUp = canMoveUp;
     }
-    public int getNumPlayer(){
-        return numPlayer;
-    }
     public void setNumPlayer(int numPlayer){
         this.numPlayer=numPlayer;
     }
     public ArrayList<Player> getPlayers() {
         return players;
-    }
-    public int getIterator() {
-        return iterator;
-    }
-    public void setIterator(int iterator) {
-        this.iterator = iterator;
     }
     public Controller getController() {
         return controller;

@@ -105,4 +105,20 @@ public class Connection extends Observable implements Runnable, Observer {
         } else send("Error: " + message);
 
     }
+
+    public void newBoard(LiteBoard board) {
+        //TODO Inviare sul socket la board
+        String[] parts = board.getMessage().split(" ");
+
+        if(parts[0].equals(name) && parts[1].equals("loses"))
+            server.deregisterConnection(this);
+        else if(parts[0].equals(name) && parts[1].equals("moves")) {
+            playerTurn = true;
+            send("player " + board.getMessage());
+        } else if (parts[1].equals("moves")) {
+            playerTurn = false;
+            send("player " + board.getMessage());
+        } else send("Error: " + board.getMessage());
+
+    }
 }
