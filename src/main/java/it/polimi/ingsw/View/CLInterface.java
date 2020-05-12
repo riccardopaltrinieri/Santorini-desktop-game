@@ -1,6 +1,7 @@
 package it.polimi.ingsw.View;
 
 import it.polimi.ingsw.utils.InputString;
+import it.polimi.ingsw.utils.NamesDivinities;
 
 import java.io.PrintWriter;
 import java.util.NoSuchElementException;
@@ -145,8 +146,20 @@ public class CLInterface implements UserInterface {
     }
 
     private String checkDivinities(Scanner stdin) {
-        //TODO Divinity name and player number check
-        return stdin.nextLine();
+        String inputLine;
+
+        inputLine = stdin.nextLine();
+
+            while (true) {
+                try {
+                    NamesDivinities.valueOf(inputLine);
+                    return inputLine;
+                } catch (IllegalArgumentException e) {
+                    System.out.println("Wrong input: reinsert your Divinity:");
+                    inputLine = stdin.nextLine();
+                    //moves++;
+                }
+            }
     }
 
     public String getStringFSM() {
