@@ -8,43 +8,63 @@ import java.awt.*;
 
 public class MainFrame extends JFrame{
 
-    private JPanel northerPanel = new JPanel();
-    private JPanel centerPanel = new JPanel();
-    private JPanel southerPanel = new JPanel();
+    private String godinfo = " ciao sono apollo e sono fico ";
 
-    private JPanel godPanel = new JPanel();
-    private JPanel mapPanel = new JPanel();
-
-    private JPanel godCardPanel = new JPanel();
-    private JPanel infoGodPanel = new JPanel();
-
-    private JButton[] cellButtons = new JButton[49];
-
-    private final int godCardHeight =282;//282
-    private final int godCardWidth = 168;//168
     private Icon apolloCard = new ImageIcon("images/godCards/Apollo.png");
-
-    private final int cellBoardHeight=80;
-    private final int cellBoardWidth=80;
     private Icon[] cellBoardIcon = new ImageIcon[49];
 
+    private JLabel godLabel = new JLabel(apolloCard);
+
+    private JPanel topPanel = new JPanel();
+    private JPanel bottomPanel = new JPanel();
+    private JPanel godInfoPanel = new JPanel();
+    private JPanel mapPanel = new JPanel();
+    private JPanel endTurnPanel = new JPanel();
+
+    private JButton[] cellButtons = new JButton[49];
+    private JButton endTurnButton = new JButton("End Turn");
+
+    private JTextArea textArea = new JTextArea();
+    private JTextArea godInfoTextArea = new JTextArea();
+
+    private void registerPlayer(){
+        
+    }
+
     public void initGUI(){
-        //godcardPanel
-        JLabel godCardLabel = new JLabel(apolloCard);
-        godCardPanel.add(godCardLabel);
+        GridBagLayout layout = new GridBagLayout();
+        GridBagConstraints lim = new GridBagConstraints();
+        setLayout(layout);
 
-        //infogodPanel
-        JTextField godCardText = new JTextField("il tuo potere del dio ti permette di essere un figo incredibile ma non quanto fillo, lui è insuperabile. anto e richi puzzano");
-        godCardText.setEditable(false);
-        infoGodPanel.add(godCardText);
+        lim.gridy=1;
+        lim.gridwidth=3;
+        lim.gridheight=5;
+        layout.setConstraints(godLabel,lim);
+        add(godLabel);
 
-        //godPanel
-        godPanel.setLayout(new BorderLayout());
-        godPanel.setPreferredSize(new Dimension(godCardWidth,godCardHeight));
-        godPanel.add(godCardLabel,BorderLayout.NORTH);
-        godPanel.add(infoGodPanel,BorderLayout.SOUTH);
+        godInfoTextArea.setText(godinfo);
+        godInfoTextArea.setTabSize(100);
+        godInfoPanel.add(godInfoTextArea);
+        lim.gridy=6;
+        lim.gridheight=2;
+        layout.setConstraints(godInfoPanel,lim);
+        add(godInfoPanel);
 
-        //mapPanel
+        lim.gridy=8;
+        lim.gridwidth=8;
+        lim.gridheight=1;
+        textArea.setText("seleziona il worker che desideri muovere sulla mappa" );
+        bottomPanel.add(textArea);
+        bottomPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        layout.setConstraints(bottomPanel,lim);
+        add(bottomPanel);
+
+        lim.gridx=8;
+        lim.gridwidth=2;
+        endTurnPanel.add(endTurnButton);
+        layout.setConstraints(endTurnPanel,lim);
+        add(endTurnPanel);
+
         mapPanel.setLayout(new GridLayout(7,7));
         int row=1;
         int column=0;
@@ -59,35 +79,21 @@ public class MainFrame extends JFrame{
             String path="images/Board/" + row + column + ".png";
             cellBoardIcon[i]= new ImageIcon(path);
             cellButtons[i] = new JButton("",cellBoardIcon[i]);
-            cellButtons[i].setPreferredSize(new Dimension(cellBoardWidth,cellBoardHeight));
+            cellButtons[i].setPreferredSize(new Dimension(85,85));
             mapPanel.add(cellButtons[i]);
         }
+        lim.gridy=1;
+        lim.gridx=3;
+        lim.gridwidth=7;
+        lim.gridheight=7;
+        layout.setConstraints(mapPanel,lim);
+        add(mapPanel);
 
-        //centerPanel
-        centerPanel.setLayout(new BorderLayout());
-        centerPanel.add(godPanel, BorderLayout.WEST);
-        centerPanel.add(mapPanel,BorderLayout.EAST);
-
-        //northerPanel
-        JButton startButton = new JButton("Start New Game");
-        JButton endButton = new JButton("end turn");
-        northerPanel.add(startButton);
-        northerPanel.add(endButton);
-
-        //southerPanel
-        JTextField infotext = new JTextField("seleziona sulla mappa dove desidero muovere il tuo worker");
-        infotext.setEditable(false);
-        southerPanel.add(infotext);
-
-        //mainFrame
-        setLayout(new BorderLayout());
-        add(northerPanel,BorderLayout.NORTH);
-        add(centerPanel,BorderLayout.CENTER);
-        add(southerPanel,BorderLayout.SOUTH);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setTitle("Santorini Game");
         pack();
         setVisible(true);
-
     }
+
+
 }
