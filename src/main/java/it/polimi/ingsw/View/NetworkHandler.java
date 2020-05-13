@@ -32,20 +32,20 @@ public class NetworkHandler {
         String incomingMessage;
         String outgoingMessage;
         //TODO togliere inizializzazione perchè board sarà == socketIn.getBoard()
-        LiteBoard board = new LiteBoard("", null);
+        //LiteBoard board = new LiteBoard("", null);
 
         try{
             //noinspection InfiniteLoopStatement
             while (true){
-                //TODO non so come si fa la prossima riga
+                //TODO non so come si fa la prossima riga. HO COMMENTATO PER COMMITARE, SERIALIZZAZIONE ( WORK IN PROGRESS)
                 //board = socketIn.nextLiteBoard();
                 //TODO anche la prossima sarà implicita nella precedente quindi da togliere
-                board.setMessage(socketIn.nextLine());
-                outgoingMessage = userInterface.update(board);
-                if(!outgoingMessage.equals("noMessageToSend")) {
-                    socketOut.println(outgoingMessage);
-                    socketOut.flush();
-                }
+              //  board.setMessage(socketIn.nextLine());
+              //  outgoingMessage = userInterface.update(board);
+              //  if(!outgoingMessage.equals("noMessageToSend")) {
+                //    socketOut.println(outgoingMessage);
+               //     socketOut.flush();
+             //   }
             }
         } catch(NoSuchElementException e){
             System.out.println("Connection closed from the server side");

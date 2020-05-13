@@ -31,7 +31,7 @@ public class Game extends Observable {
             iterator = (iterator + 1) % numPlayer;
             hasWinner();
         } else {
-            sendBoard(new LiteBoard(getCurrentPlayer().getName() + " loses", board));
+            sendBoard(new LiteBoard(getCurrentPlayer().getName() + " loses", board, this));
             getCurrentPlayer().getWorker(0).getPosition().setEmpty(true);
             getCurrentPlayer().getWorker(1).getPosition().setEmpty(true);
             players.remove(getCurrentPlayer());
@@ -41,7 +41,7 @@ public class Game extends Observable {
     }
 
     public void hasWinner(){
-        sendBoard(new LiteBoard(getCurrentPlayer().getName() + "wins", board));
+        sendBoard(new LiteBoard(getCurrentPlayer().getName() + "wins", board, this));
         board.clearAll();
     }
 
@@ -50,7 +50,7 @@ public class Game extends Observable {
             getCurrentPlayer().placeWorkers(board.getCell(row, column));
             return true;
         } catch (IllegalArgumentException e) {
-            sendBoard(new LiteBoard("You can't place your worker here", board));
+            sendBoard(new LiteBoard("You can't place your worker here", board, this));
         }
         return false;
     }
@@ -64,9 +64,9 @@ public class Game extends Observable {
             getCurrentPlayer().getWorker(worker).move(destination);
             return true;
         } catch (AthenaException e) {
-            sendBoard(new LiteBoard("You can't move up because Athena's power is active", board));
+            sendBoard(new LiteBoard("You can't move up because Athena's power is active", board, this));
         } catch (IllegalArgumentException e) {
-            sendBoard(new LiteBoard("Can't move here", board));
+            sendBoard(new LiteBoard("Can't move here", board, this));
         }
         return false;
     }
@@ -76,7 +76,7 @@ public class Game extends Observable {
             getCurrentPlayer().getWorker(worker).build(board.getCell(row, column));
             return true;
         } catch (IllegalArgumentException e) {
-            sendBoard(new LiteBoard("Can't build here", board));
+            sendBoard(new LiteBoard("Can't build here", board, this));
         }
         return false;
     }
@@ -86,9 +86,9 @@ public class Game extends Observable {
             getCurrentPlayer().getGodPower().execute(getCurrentPlayer(),board.getCell(row,column),worker);
             return true;
         } catch (AthenaException e) {
-            sendBoard(new LiteBoard("You can't move up because Athena's power is active", board));
+            sendBoard(new LiteBoard("You can't move up because Athena's power is active", board, this));
         } catch (IllegalArgumentException e) {
-            sendBoard(new LiteBoard("Can't use the Power", board));
+            sendBoard(new LiteBoard("Can't use the Power", board, this));
         }
         return false;
     }
@@ -96,7 +96,7 @@ public class Game extends Observable {
     public void endTurn() {
         iterator = (iterator + 1) % numPlayer;
         if (!getCurrentPlayer().canMove()) hasLoser();
-        sendBoard(new LiteBoard(getCurrentPlayer().getName() + " moves", board));
+        sendBoard(new LiteBoard(getCurrentPlayer().getName() + " moves", board, this));
     }
 
     public Player getCurrentPlayer() {

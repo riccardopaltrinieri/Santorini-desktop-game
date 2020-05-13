@@ -78,6 +78,5 @@ public class Player {
     public void setGodPower(GodPower godPower) {
         this.godPower = godPower;
     }
-
-
+    public Color getColor() { return color; }
 }
