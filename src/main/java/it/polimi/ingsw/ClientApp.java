@@ -1,6 +1,7 @@
 package it.polimi.ingsw;
 
 import it.polimi.ingsw.View.CLInterface;
+import it.polimi.ingsw.View.GUIHandler;
 import it.polimi.ingsw.View.MainFrame;
 import it.polimi.ingsw.View.NetworkHandler;
 
@@ -33,19 +34,25 @@ public class ClientApp {
                 System.err.println(e.getMessage());
             }
         } else {
-
-            final MainFrame GUI = new MainFrame();
-
-            SwingUtilities.invokeLater(new Runnable() {
-                @Override
-                public void run() {
-                    GUI.initGUI();
+            final MainFrame  mainFrame = new MainFrame();
+                SwingUtilities.invokeLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        mainFrame.initGUI();
+                    }
+                });
+                try {
+                    GUIHandler GUI = new GUIHandler(mainFrame);
+                    connection.setUserInterface(GUI);
+                    connection.run();
                 }
-            });
+                catch (IOException e){
+                    System.err.println(e.getMessage());
+                }
+            }
 
         }
 
 
 
     }
-}

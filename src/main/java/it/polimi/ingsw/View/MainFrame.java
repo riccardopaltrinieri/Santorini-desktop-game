@@ -27,6 +27,8 @@ public class MainFrame extends JFrame{
     private JTextArea textArea = new JTextArea();
     private JTextArea godInfoTextArea = new JTextArea();
 
+    private String textAreaString;
+
     private void registerPlayer(){
         
     }
@@ -53,7 +55,7 @@ public class MainFrame extends JFrame{
         lim.gridy=8;
         lim.gridwidth=8;
         lim.gridheight=1;
-        textArea.setText("seleziona il worker che desideri muovere sulla mappa" );
+        textArea.setText(textAreaString);
         bottomPanel.add(textArea);
         bottomPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
         layout.setConstraints(bottomPanel,lim);
@@ -95,5 +97,15 @@ public class MainFrame extends JFrame{
         setVisible(true);
     }
 
+    public void updateTextArea(){
+        textArea.setText(textAreaString);
+    }
 
+    public String getTextAreaString() {
+        return textAreaString;
+    }
+
+    public void setTextAreaString(String textAreaString) {
+        this.textAreaString = textAreaString;
+    }
 }
