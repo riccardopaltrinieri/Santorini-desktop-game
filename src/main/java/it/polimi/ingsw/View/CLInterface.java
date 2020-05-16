@@ -27,7 +27,7 @@ public class CLInterface implements UserInterface {
 
             switch (firstWord) {
                 case "Welcome!":
-                    board.printBoardCLI();
+                   // board.printBoardCLI();
                     // Ask the name of the player
                     System.out.println(incomingMessage);
                     name = stdin.nextLine();
@@ -53,8 +53,9 @@ public class CLInterface implements UserInterface {
                     // Ask the player action according to the fsm
                     // The fsm can't be fooled because there's one also on the server
 
-                    board.printBoardCLI();
+
                     System.out.println(getStringFSM());
+                //    if (!getStringFSM().equals("Place your worker on the map: (write 'placeworker [row] [column]')")) board.printBoardCLI();
                     outgoingMessage = checkAction(stdin);
 
                     if(fsm.getState() == State.endTurn) {

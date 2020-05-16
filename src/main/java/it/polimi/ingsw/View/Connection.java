@@ -4,18 +4,21 @@ import it.polimi.ingsw.utils.Observable;
 import it.polimi.ingsw.utils.Observer;
 
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.Scanner;
 
 public class Connection extends Observable implements Runnable, Observer {
     private final Socket socket;
-    private Scanner in;
-    private PrintWriter out;
+    private ObjectInputStream in;
+    private ObjectOutputStream out;
     private final Server server;
     private String name;
     private boolean active;
     private boolean playerTurn;
+    private LiteBoard liteBoard;
 
     public Connection(Socket socket, Server server){
         this.socket = socket;
@@ -23,7 +26,7 @@ public class Connection extends Observable implements Runnable, Observer {
         this.active = true;
     }
 
-    public Scanner getIn(){
+    public ObjectInputStream getIn(){
         return this.in;
     }
     private synchronized boolean isActive(){
@@ -31,21 +34,31 @@ public class Connection extends Observable implements Runnable, Observer {
     }
 
 
-    public void send(String message){
-        out.println(message);
-        out.flush();
+    public void send(LiteBoard board){
+        try {
+            out.reset();
+            out.writeObject(board);
+            out.flush();
+        }  catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public String readString(){
         String read = "";
         while (read.isEmpty()) {
-            read = (in.nextLine());
+            try {
+                read = (in.readUTF());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
         }
         return read;
     }
 
     public synchronized void closeConnection(){
-        send("Connection closed from the server side");
+        send( new LiteBoard("Connection closed from the server side"));
         try{
             socket.close();
         }catch (IOException e){
@@ -63,18 +76,21 @@ public class Connection extends Observable implements Runnable, Observer {
 
     @Override
     public void run() {
+
         try{
-            in = new Scanner(socket.getInputStream());
-            out = new PrintWriter(socket.getOutputStream());
-            send("Welcome! What's your name?");
+            out = new ObjectOutputStream(socket.getOutputStream());
+            in = new ObjectInputStream(socket.getInputStream());
+
+            send( new LiteBoard("Welcome! What's your name?"));
             name = readString();
-            send("Wait for other players");
+            send(new LiteBoard("Wait for other players"));
             server.lobby(this, name);
 
             while(isActive()){
                 if(server.gameHasStarted()){
                     if(playerTurn) {
-                        send("Insert your move:");
+                        liteBoard.setMessage("Insert your move");
+                        send(liteBoard);
                         String read = readString();
                         read = name + " " + read;
                         notifyObservers(read);
@@ -98,15 +114,15 @@ public class Connection extends Observable implements Runnable, Observer {
             server.deregisterConnection(this);
         else if(parts[0].equals(name) && parts[1].equals("moves")) {
             playerTurn = true;
-            send("player " + message);
+            send(new LiteBoard("player " + message));
         } else if (parts[1].equals("moves")) {
             playerTurn = false;
-            send("player " + message);
-        } else send("Error: " + message);
+            send(new LiteBoard("player " + message));
+        } else send(new LiteBoard("Error: " + message));
 
     }
 
-    public void newBoard(LiteBoard board) {
+    public synchronized void newBoard(LiteBoard board) {
         //TODO Inviare sul socket la board
         String[] parts = board.getMessage().split(" ");
 
@@ -114,11 +130,14 @@ public class Connection extends Observable implements Runnable, Observer {
             server.deregisterConnection(this);
         else if(parts[0].equals(name) && parts[1].equals("moves")) {
             playerTurn = true;
-            send("player " + board.getMessage());
+            send(new LiteBoard("player " + board.getMessage()));
         } else if (parts[1].equals("moves")) {
             playerTurn = false;
-            send("player " + board.getMessage());
-        } else send("Error: " + board.getMessage());
+            send(new LiteBoard("player " + board.getMessage()));
+        } else send(new LiteBoard("Error: " + board.getMessage()));
+
 
     }
+
+    public void setLiteBoard(LiteBoard liteBoard) { this.liteBoard = liteBoard; }
 }

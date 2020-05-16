@@ -96,7 +96,7 @@ public class Game extends Observable {
     public void endTurn() {
         iterator = (iterator + 1) % numPlayer;
         if (!getCurrentPlayer().canMove()) hasLoser();
-        sendBoard(new LiteBoard(getCurrentPlayer().getName() + " moves", board, this));
+        sendBoard(new LiteBoard(getCurrentPlayer().getName() + " moves"));
     }
 
     public Player getCurrentPlayer() {

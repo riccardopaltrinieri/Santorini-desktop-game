@@ -2,17 +2,26 @@ package it.polimi.ingsw.View;
 
 import it.polimi.ingsw.Model.*;
 
-public class LiteBoard {
+import java.io.Serializable;
+
+public class LiteBoard implements Serializable {
+    private static final long serialVersionUID = 36347531L;
     private int[][] lv; // [riga][colonna] = livello
     /* [worker] [0] = riga
      * [worker] [1] = colonna
      * [worker] [2] = COLORE (USATE PAINT )*/
     private int[][] posWorker;
     private String message;
-    private int numWorker = 2;
-    private int RCP = 3; // sono le tre colonne di posworker
+    private transient int numWorker = 2;
+    private transient int RCP = 3; // sono le tre colonne di posworker
     private int numAllWorker;
 
+    public LiteBoard(String input){
+        message = input;
+        lv = new int[0][0];
+        posWorker = new int[0][0];
+        numAllWorker = 0;
+    }
     public LiteBoard(String message, Board board, Game game) {
         lv = new int[board.getNumRow()][board.getNumColumn()];
         // TODO creare costruttore che riempia la liteboard a partire dalla board e dai player
@@ -100,7 +109,10 @@ public class LiteBoard {
         //TODO per ogni cella guardo il livello e metto il simbolo
         //TODO decidere i simboli tra # ^ ' \ / e restituirlo x6
         int levelCell = lv[row][col];
-        return levelCell + Integer.toString(levelCell) + String.valueOf(levelCell).repeat(4);
+        String level = Integer.toString(levelCell) + levelCell;
+        level = level + level + level;
+
+        return level;
     }
     /**
      * return 2 symbols to fill the Left and Right of the board cell
