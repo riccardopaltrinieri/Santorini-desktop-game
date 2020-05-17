@@ -22,7 +22,6 @@ public class FiniteStateMachine {
      */
     protected void nextState() throws IllegalStateException {
 
-
         switch (this.divinity) {
 
             case Default:
@@ -41,18 +40,8 @@ public class FiniteStateMachine {
                 break;
 
             case Artemis:
-                if (state == State.start) {
-                    state = State.superMove;
-                    again=false;
-                }
-                else if (state == State.superMove) {
-                    if (!again) {
-                        again = true;
-                    } else {
-                        again = false;
-                        state = State.build;
-                    }
-                }
+                if (state == State.start) state = State.superMove;
+                else if (state == State.superMove) setStateAfterTwoTimes(State.build);
                 else if (state == State.build) state = State.endTurn;
                 break;
 
@@ -64,29 +53,17 @@ public class FiniteStateMachine {
                 break;
 
             case Demeter:
-                if (state == State.start) {
-                    state = State.move;
-                    again=false;
-                }
+                if (state == State.start) state = State.move;
                 else if (state == State.move) state = State.superBuild;
-                else if (state == State.superBuild) {
-                    if (!again) {
-                        again = true;
-                        state = State.superBuild;
-                    } else {
-                        again = false;
-                        state = State.endTurn;
-                    }
-                }
+                else if (state == State.superBuild) setStateAfterTwoTimes(State.endTurn);
                 break;
 
             case Prometheus:
-                if (state == State.start){
-                    again=false;
-                    state = State.build;
-                }
+                if (state == State.start) state = State.build;
                 else if (state == State.superMove) state = State.build;
                 else if (state == State.build) {
+                     // Doesn't call the method setStateAfterTwoTimes because every time
+                     // the state change to different ones
                     if (!again) {
                         again = true;
                         state = State.superMove;
@@ -109,6 +86,19 @@ public class FiniteStateMachine {
 
     protected void setState(State state) {
         this.state = state;
+    }
+
+    /**
+     * Method used to execute the same action two times without changing the state
+     * of the fsm when called for the first time
+     */
+    private void setStateAfterTwoTimes(State newState) {
+        if (!again) {
+            again = true;
+        } else {
+            again = false;
+            state = newState;
+        }
     }
 
     protected void setPath(Divinity divinity) {

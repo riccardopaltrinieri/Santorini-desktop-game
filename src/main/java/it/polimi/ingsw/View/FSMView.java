@@ -22,6 +22,10 @@ public class FSMView {
      */
     protected void nextState() throws IllegalStateException {
 
+        if (state == State.placeworker) {
+            setStateAfterTwoTimes(State.start);
+            return;
+        }
 
         switch (this.divinity) {
 
@@ -32,77 +36,30 @@ public class FSMView {
             case Pan:
             case Atlas:
             case Hephaestus:
-                if (state == State.placeworker && !again) {
-                    again = true;
-                } else if(again) {
-                    again = false;
-                    state = State.endTurn;
-                }
-                else if (state == State.start) state = State.move;
-                else if (state == State.move) state = State.build;
-                else if (state == State.build) state = State.endTurn;
+                if (state == State.start) setState(State.worker);
+                else if (state == State.worker) setState(State.move);
+                else if (state == State.move) setState(State.build);
+                else if (state == State.build) setState(State.endTurn);
                 break;
 
             case Artemis:
-                if (state == State.placeworker && !again) {
-                    again = true;
-                }
-                else if(state == State.placeworker) {
-                    again = false;
-                    state = State.start;
-                }
-                else if (state == State.start) {
-                    state = State.move;
-                    again=false;
-                }
-                else if (state == State.move) {
-                    if (!again) {
-                        again = true;
-                    } else {
-                        again = false;
-                        state = State.build;
-                    }
-                }
-                else if (state == State.build) state = State.endTurn;
+                if (state == State.start) setState(State.worker);
+                else if (state == State.worker) setState(State.move);
+                else if (state == State.move) setStateAfterTwoTimes(State.build);
+                else if (state == State.build) setState(State.endTurn);
                 break;
 
             case Demeter:
-                if (state == State.placeworker && !again) {
-                    again = true;
-                }
-                else if(state == State.placeworker) {
-                    again = false;
-                    state = State.start;
-                }
-                if (state == State.start) {
-                    state = State.move;
-                    again=false;
-                }
-                else if (state == State.move) state = State.build;
-                else if (state == State.build) {
-                    if (!again) {
-                        again = true;
-                        state = State.build;
-                    } else {
-                        again = false;
-                        state = State.endTurn;
-                    }
-                }
+                if (state == State.start) setState(State.worker);
+                else if (state == State.worker) setState(State.move);
+                else if (state == State.move) setState(State.build);
+                else if (state == State.build) setStateAfterTwoTimes(State.endTurn);
                 break;
 
             case Prometheus:
-                if (state == State.placeworker && !again) {
-                    again = true;
-                }
-                else if(state == State.placeworker) {
-                    again = false;
-                    state = State.start;
-                }
-                if (state == State.start){
-                    again=false;
-                    state = State.build;
-                }
-                else if (state == State.move) state = State.build;
+                if (state == State.start) setState(State.worker);
+                else if (state == State.worker) setState(State.build);
+                else if (state == State.move) setState(State.build);
                 else if (state == State.build) {
                     if (!again) {
                         again = true;
@@ -118,6 +75,7 @@ public class FSMView {
                 throw new IllegalStateException("Unexpected value: " + this.divinity);
         }
     }
+
 //  ************** GETTER AND SETTER **************************
 
     public State getState() {
@@ -126,6 +84,15 @@ public class FSMView {
 
     protected void setState(State state) {
         this.state = state;
+    }
+
+    private void setStateAfterTwoTimes(State newState) {
+        if (!again) {
+            again = true;
+        } else {
+            again = false;
+            state = newState;
+        }
     }
 
     protected void setPath(String divinity) {
