@@ -26,10 +26,8 @@ public class LiteBoard implements Serializable {
         lv = new int[board.getNumRow()][board.getNumColumn()];
         // TODO creare costruttore che riempia la liteboard a partire dalla board e dai player
         // TODO Aggiungere i player nei parametri
-        for (Cell[] c: board.getMap()
-             ) {
-            for (Cell c1:c
-                 ) {
+        for (Cell[] c: board.getMap()) {
+            for (Cell c1:c) {
                 int level = c1.getLevel();
                 int row = c1.getNumRow();
                 int column = c1.getNumColumn();
@@ -39,20 +37,19 @@ public class LiteBoard implements Serializable {
         numAllWorker = game.getPlayers().size()*numWorker;
         int numAllWorkerCopy = numAllWorker;
         posWorker = new int[numAllWorker][RCP];
-        for (Player p: game.getPlayers()
-             ) {
-            numAllWorkerCopy --; // decremento il numero totale dei worker il primo è in alto
-            if (numAllWorkerCopy > 0){ //è sempre così ma controllo ulteriore
-                posWorker[numAllWorkerCopy][0] = p.getWorker(0).getPosition().getNumRow();
-                posWorker[numAllWorkerCopy][1] = p.getWorker(0).getPosition().getNumColumn();
-                Color color = p.getColor();
-                int numColor = color.ordinal();
-                posWorker[numAllWorkerCopy][2] = numColor;
-                numAllWorkerCopy --;
-                posWorker[numAllWorkerCopy][0] = p.getWorker(1).getPosition().getNumRow();
-                posWorker[numAllWorkerCopy][1] = p.getWorker(1).getPosition().getNumColumn();
-                posWorker[numAllWorkerCopy][2] = numColor;
+        for (Player p: game.getPlayers()) {
+            for (Worker worker: p.getWorkers()) {
+                numAllWorkerCopy --; // decremento il numero totale dei worker il primo è in alto
+                if (numAllWorkerCopy > 0){ //è sempre così ma controllo ulteriore
+                    posWorker[numAllWorkerCopy][0] = worker.getPosition().getNumRow();
+                    posWorker[numAllWorkerCopy][1] = worker.getPosition().getNumColumn();
+                    Color color = p.getColor();
+                    int numColor = color.ordinal();
+                    posWorker[numAllWorkerCopy][2] = numColor;
+
+                }
             }
+
 
         }
         this.message = message;

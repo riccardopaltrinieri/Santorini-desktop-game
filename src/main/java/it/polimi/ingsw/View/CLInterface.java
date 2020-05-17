@@ -71,7 +71,9 @@ public class CLInterface implements UserInterface {
                         System.out.println(getStringFSM());
                         checkAction(stdin);
                     }
-                    System.out.println(getStringFSM());
+                    String toPrint = getStringFSM();
+                    if (!toPrint.equals("Place your worker on the map: (write 'placeworker [row] [column]')")) board.printBoardCLI();
+                    System.out.println(toPrint);
                     outgoingMessage = checkAction(stdin);
                     if (fsm.getState() == State.endTurn) {
                         System.out.println("Turn ended");

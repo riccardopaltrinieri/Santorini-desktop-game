@@ -89,11 +89,14 @@ public class Connection extends Observable implements Runnable, Observer {
             while(isActive()){
                 if(server.gameHasStarted()){
                     if(playerTurn) {
-                        liteBoard.setMessage("Insert your move");
-                        send(liteBoard);
-                        String read = readString();
-                        read = name + " " + read;
-                        notifyObservers(read);
+
+                            liteBoard.setMessage("Insert your move");
+                            send(liteBoard);
+                            String read = readString();
+                            read = name + " " + read;
+                            notifyObservers(read);
+
+
                     }
                 }
             }
@@ -124,18 +127,21 @@ public class Connection extends Observable implements Runnable, Observer {
 
     public synchronized void newBoard(LiteBoard board) {
         //TODO Inviare sul socket la board
-        String[] parts = board.getMessage().split(" ");
+            setLiteBoard(board);
+            String[] parts = board.getMessage().split(" ");
 
-        if(parts[0].equals(name) && parts[1].equals("loses"))
-            server.deregisterConnection(this);
-        else if(parts[0].equals(name) && parts[1].equals("moves")) {
-            playerTurn = true;
-            send(new LiteBoard("player " + board.getMessage()));
-        } else if (parts[1].equals("moves")) {
-            playerTurn = false;
-            send(new LiteBoard("player " + board.getMessage()));
-        } else send(new LiteBoard("Error: " + board.getMessage()));
-
+            if(parts[0].equals(name) && parts[1].equals("loses"))
+                server.deregisterConnection(this);
+            else if(parts[0].equals(name) && parts[1].equals("moves")) {
+                playerTurn = true;
+                send(new LiteBoard("player " + board.getMessage()));
+            } else if (parts[1].equals("moves")) {
+                playerTurn = false;
+                send(new LiteBoard("player " + board.getMessage()));
+          //  } else if (parts[0].equals(name) && parts[1].equals("update")) {
+            //    setLiteBoard(board);
+            }
+            else send(new LiteBoard("Error: " + board.getMessage()));
 
     }
 

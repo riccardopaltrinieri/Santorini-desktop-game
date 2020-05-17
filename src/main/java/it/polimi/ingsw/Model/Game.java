@@ -62,6 +62,7 @@ public class Game extends Observable {
         try{
             if(position.getLevel() < 3 && destination.getLevel() == 3) hasWinner();
             getCurrentPlayer().getWorker(worker).move(destination);
+          //  sendBoard(new LiteBoard(getCurrentPlayer().getName() + " update", board, this));
             return true;
         } catch (AthenaException e) {
             sendBoard(new LiteBoard("You can't move up because Athena's power is active", board, this));
@@ -74,6 +75,7 @@ public class Game extends Observable {
     public boolean build(int row, int column, int worker) {
         try {
             getCurrentPlayer().getWorker(worker).build(board.getCell(row, column));
+        //    sendBoard(new LiteBoard(getCurrentPlayer().getName() + " update", board, this));
             return true;
         } catch (IllegalArgumentException e) {
             sendBoard(new LiteBoard("Can't build here", board, this));
@@ -96,7 +98,7 @@ public class Game extends Observable {
     public void endTurn() {
         iterator = (iterator + 1) % numPlayer;
         if (!getCurrentPlayer().canMove()) hasLoser();
-        sendBoard(new LiteBoard(getCurrentPlayer().getName() + " moves"));
+        sendBoard(new LiteBoard(getCurrentPlayer().getName() + " moves", board, this));
     }
 
     public Player getCurrentPlayer() {
