@@ -37,17 +37,17 @@ public class Controller extends Observable implements Observer {
         if (name.equals(game.getCurrentPlayer().getName())) {
 
             switch (action) {
-                case usepower -> {
+                case usepower:
                     // Set the path of fsm as the one of the divinity
                     if (fsm.getState() == State.start) fsm.setPath(game.getCurrentPlayer().getDivinity());
                     actionExecuted = true;
-                }
-                case normal -> {
+                    break;
+                case normal:
                     // Set the default path
                     if (fsm.getState() == State.start) fsm.setPath(Divinity.Default);
                     actionExecuted = true;
-                }
-                case placeworker -> {
+                    break;
+                case placeworker:
                     // Place the worker on the map
                     // There isn't a state.placeworker because it happen only once
                     if (fsm.getState() == State.start) fsm.setPath(Divinity.Default);
@@ -55,28 +55,29 @@ public class Controller extends Observable implements Observer {
                     row = Integer.parseInt(parts[2]) - 1;
                     column = Integer.parseInt(parts[3]) - 1;
                     actionExecuted = game.placeWorker(row, column);
-                }
-                case move -> {
+                    break;
+                case move:
                     // Move the worker
                     row = Integer.parseInt(parts[2]) - 1;
                     column = Integer.parseInt(parts[3]) - 1;
                     worker = Integer.parseInt(parts[4]) - 1;
                     if (fsm.getState() == State.move) actionExecuted = game.move(row, column, worker);
-                }
-                case build -> {
+                    break;
+                case build:
                     // Build with the worker
                     row = Integer.parseInt(parts[2]) - 1;
                     column = Integer.parseInt(parts[3]) - 1;
                     worker = Integer.parseInt(parts[4]) - 1;
                     if (fsm.getState() == State.build) actionExecuted = game.build(row, column, worker);
-                }
-                case supermove, superbuild -> {
+                    break;
+                case supermove:
+                case superbuild:
                     row = Integer.parseInt(parts[2]) - 1;
                     column = Integer.parseInt(parts[3]) - 1;
                     worker = Integer.parseInt(parts[4]) - 1;
                     if (fsm.getState() == State.superMove || fsm.getState() == State.superBuild)
                         actionExecuted = game.useGodPower(row, column, worker);
-                }
+                    break;
             }
 
             // If something went wrong actionExecuted will be false and the fsm stay in the current state

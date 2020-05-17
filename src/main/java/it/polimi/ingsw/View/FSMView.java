@@ -76,14 +76,60 @@ public class FSMView {
         }
     }
 
-//  ************** GETTER AND SETTER **************************
+    protected void prevState() {
+        if (state == State.start || state == State.placeworker) {
+            resetTwoTimesState(State.placeworker);
+            return;
+        }
 
-    public State getState() {
-        return state;
-    }
+        switch (this.divinity) {
 
-    protected void setState(State state) {
-        this.state = state;
+            case Default:
+            case Apollo:
+            case Athena:
+            case Minotaur:
+            case Pan:
+            case Atlas:
+            case Hephaestus:
+                if (state == State.worker) setState(State.start);
+                else if (state == State.move) setState(State.worker);
+                else if (state == State.build) setState(State.move);
+                else if (state == State.endTurn) setState(State.build);
+                break;
+
+            case Artemis:
+                if (state == State.worker) setState(State.start);
+                else if (state == State.move) resetTwoTimesState(State.worker);
+                else if (state == State.build) resetTwoTimesState(State.move);
+                else if (state == State.endTurn) setState(State.build);
+                break;
+
+            case Demeter:
+                if (state == State.worker) setState(State.start);
+                else if (state == State.move) setState(State.worker);
+                else if (state == State.build) resetTwoTimesState(State.move);
+                else if (state == State.endTurn) resetTwoTimesState(State.build);
+                break;
+
+            case Prometheus:
+                if (state == State.worker) setState(State.start);
+                else if (state == State.build) {
+                    if (!again) {
+                        state = State.worker;
+                    } else {
+                        state = State.move;
+                    }
+                }
+                else if (state == State.move) setState(State.build);
+                else if (state == State.endTurn) {
+                    again = true;
+                    setState(State.build);
+                }
+                break;
+
+            default:
+                throw new IllegalStateException("Unexpected value: " + this.divinity);
+        }
     }
 
     private void setStateAfterTwoTimes(State newState) {
@@ -93,6 +139,25 @@ public class FSMView {
             again = false;
             state = newState;
         }
+    }
+
+    private void resetTwoTimesState(State oldState) {
+        if (again) {
+            again = false;
+        } else {
+            again = true;
+            state = oldState;
+        }
+    }
+
+//  ************** GETTER AND SETTER **************************
+
+    public State getState() {
+        return state;
+    }
+
+    protected void setState(State state) {
+        this.state = state;
     }
 
     protected void setPath(String divinity) {

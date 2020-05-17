@@ -37,53 +37,55 @@ public class CLInterface implements UserInterface {
             // board.printBoardCLI();
             // Assign the divinity to the fsm
             switch (firstWord) {
-                case "Welcome!" -> {
+                case "Welcome!":
                     // Asks the name of the player
                     System.out.println(incomingMessage);
                     name = stdin.nextLine();
                     outgoingMessage = name;
-                }
-                case "Decide" -> {
+                    break;
+
+                case "Decide":
                     // Asks the number of players
                     System.out.println(incomingMessage);
                     outgoingMessage = checkNumber(stdin);
-                }
-                case "Choose" -> {
+                    break;
+
+                case "Choose":
                     // Asks the name of a divinity
                     System.out.println(incomingMessage);
                     outgoingMessage = checkDivinities(stdin);
-                }
-                case "Your" -> {
+                    break;
+
+                case "Your":
                     // Shows to the player his God
                     fsm.setPath(parts[2]);
                     System.out.println(incomingMessage);
                     outgoingMessage = "noMessageToSend";
-                }
-                case "Insert" -> {
+                    break;
+
+                case "Insert":
                     // Ask the player action according to the fsm
                     // The fsm can't be fooled because there's one also on the server
-
                     if (fsm.getState() == State.worker) {
                         // ask to the player which worker he wants to use but don't send anything
                         System.out.println(getStringFSM());
                         checkAction(stdin);
                     }
-
                     System.out.println(getStringFSM());
                     outgoingMessage = checkAction(stdin);
-
                     if (fsm.getState() == State.endTurn) {
                         System.out.println("Turn ended");
                         fsm.setState(State.start);
                     }
-                }
-                case "Wait" -> {
+                    break;
+
+                case "Wait":
                     System.out.println("Waiting for the other player to choose..");
                     outgoingMessage = "noMessageToSend";
-                }
-                case "player" -> {
-                    // Use the name og the player to know who has to play
+                    break;
 
+                case "player":
+                    // Use the name og the player to know who has to play
                     if (parts[1].equals(name) && parts[2].equals("moves")) System.out.println("Turn started");
                     else if (parts[2].equals("moves")) System.out.println(parts[1] + "'s turn..");
                     else {
@@ -91,11 +93,19 @@ public class CLInterface implements UserInterface {
                         throw new NoSuchElementException();
                     }
                     outgoingMessage = "noMessageToSend";
-                }
-                default -> {
+                    break;
+
+                case "Error":
+                    // Something went wrong with the last action
                     System.out.println(incomingMessage);
                     outgoingMessage = "noMessageToSend";
-                }
+                    fsm.prevState();
+                    break;
+
+                default:
+                    System.out.println(incomingMessage);
+                    outgoingMessage = "noMessageToSend";
+                    break;
             }
 
             if(outgoingMessage.equals("Error")) throw new IllegalArgumentException();
@@ -205,14 +215,29 @@ public class CLInterface implements UserInterface {
      * Return the string to show to the player according to the fsm state
      */
     public String getStringFSM() {
-        String line = switch (fsm.getState()) {
-            case placeworker -> "Place your worker on the map: (write 'placeworker [row] [column]')";
-            case start -> "Do you want to use the God power or going with the normal turn? (usepower/normal)";
-            case worker -> "Choose the worker that you want to move and build with: (write 'worker 1' or 'worker 2]')";
-            case supermove, move -> "Where do you want to move? (write 'move [row] [column]')";
-            case superbuild, build -> "Where do you want to build? (write 'build [row] [column]')";
-            default -> "Error";
-        };
+        String line;
+        switch (fsm.getState()) {
+            case placeworker:
+                line = "Place your worker on the map: (write 'placeworker [row] [column]')";
+                break;
+            case start:
+                line = "Do you want to use the God power or going with the normal turn? (usepower/normal)";
+                break;
+            case worker:
+                line = "Choose the worker that you want to move and build with: (write 'worker 1' or 'worker 2]')";
+                break;
+            case supermove:
+            case move:
+                line = "Where do you want to move? (write 'move [row] [column]')";
+                break;
+            case superbuild:
+            case build:
+                line = "Where do you want to build? (write 'build [row] [column]')";
+                break;
+            default:
+                line = "Error";
+                break;
+        }
         fsm.nextState();
 
         return line;
