@@ -34,15 +34,9 @@ public class ClientApp {
                 System.err.println(e.getMessage());
             }
         } else {
-            final MainFrame  mainFrame = new MainFrame();
-                SwingUtilities.invokeLater(new Runnable() {
-                    @Override
-                    public void run() {
-                        mainFrame.initGUI();
-                    }
-                });
+
                 try {
-                    GUIHandler GUI = new GUIHandler(mainFrame);
+                    GUIHandler GUI = new GUIHandler();
                     connection.setUserInterface(GUI);
                     connection.run();
                 }

@@ -5,11 +5,9 @@ import javax.swing.*;
 
 public class GUIHandler implements UserInterface{
 
-    MainFrame mainFrame;
+    MainFrame mainFrame= new MainFrame();
+    ChooseFrame chooseFrame = new ChooseFrame();
 
-    public GUIHandler(MainFrame mainFrame){
-        this.mainFrame=mainFrame;
-    }
 
     private String name;
     @Override
@@ -23,6 +21,12 @@ public class GUIHandler implements UserInterface{
 
             switch (firstWord){
                 case "Welcome!":
+                    SwingUtilities.invokeLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            mainFrame.init();
+                        }
+                    });
                     
                     //insert the player name
                     mainFrame.updateTextArea("Insert your name in the dialog");
@@ -34,7 +38,7 @@ public class GUIHandler implements UserInterface{
                             null,
                             null,
                             "");
-                    while((outgoingMessage.equals(""))||(outgoingMessage==null)){
+                    while((outgoingMessage==null)||(outgoingMessage.equals(""))){
                         outgoingMessage = (String)JOptionPane.showInputDialog(
                                 mainFrame,
                                 "The given name is not valid, try again",
@@ -88,7 +92,16 @@ public class GUIHandler implements UserInterface{
                             }
                         }
                     }
-
+                    break;
+                case "Choose":
+                    // Ask the name of a divinity or the number of players
+                    mainFrame.setVisible(false);
+                    SwingUtilities.invokeLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            chooseFrame.init();
+                        }
+                    });
                     break;
             }
             return outgoingMessage;

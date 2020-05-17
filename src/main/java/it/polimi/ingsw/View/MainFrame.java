@@ -33,7 +33,7 @@ public class MainFrame extends JFrame{
         
     }
 
-    public void initGUI(){
+    public void init(){
         GridBagLayout layout = new GridBagLayout();
         GridBagConstraints lim = new GridBagConstraints();
         setLayout(layout);
