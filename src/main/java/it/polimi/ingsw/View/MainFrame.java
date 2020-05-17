@@ -97,7 +97,8 @@ public class MainFrame extends JFrame{
         setVisible(true);
     }
 
-    public void updateTextArea(){
+    public void updateTextArea(String text){
+        textAreaString=text;
         textArea.setText(textAreaString);
     }
 

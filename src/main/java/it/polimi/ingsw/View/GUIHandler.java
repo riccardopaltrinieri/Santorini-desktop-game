@@ -25,6 +25,7 @@ public class GUIHandler implements UserInterface{
                 case "Welcome!":
                     
                     //insert the player name
+                    mainFrame.updateTextArea("Insert your name in the dialog");
                     outgoingMessage = (String)JOptionPane.showInputDialog(
                             mainFrame,
                             "Insert your name here",
@@ -47,9 +48,47 @@ public class GUIHandler implements UserInterface{
                 case "Wait":
 
                     //waiting for the other players
-                    mainFrame.setTextAreaString("Waiting for the other Players");
-                    mainFrame.updateTextArea();
+                    mainFrame.updateTextArea("Waiting for the other Players");
                     outgoingMessage="noMessageToSend";
+                    break;
+                case "Decide":
+                    // Ask the number of players
+                    mainFrame.updateTextArea("insert the player's number in the dialog");
+                    String[] options = {"Two Players!", "Three Players!"};
+                    int result = JOptionPane.showOptionDialog(
+                            mainFrame,
+                            "Decide the number of player",
+                            "Player's number",
+                            JOptionPane.YES_NO_OPTION,
+                            JOptionPane.QUESTION_MESSAGE,
+                            null,     //no custom icon
+                            options,  //button titles
+                            options[0] //default button
+                    );
+                    if(result == JOptionPane.YES_OPTION){
+                        outgoingMessage="2";
+                    }else if (result == JOptionPane.NO_OPTION){
+                        outgoingMessage="3";
+                    }else {
+                        while((outgoingMessage.equals("2")||(outgoingMessage.equals("3")))){
+                            result = JOptionPane.showOptionDialog(
+                                    mainFrame,
+                                    "Decide the number of player",
+                                    "Player's number",
+                                    JOptionPane.YES_NO_OPTION,
+                                    JOptionPane.QUESTION_MESSAGE,
+                                    null,     //no custom icon
+                                    options,  //button titles
+                                    options[0] //default button
+                            );
+                            if(result == JOptionPane.YES_OPTION){
+                                outgoingMessage="2";
+                            }else if (result == JOptionPane.NO_OPTION) {
+                                outgoingMessage = "3";
+                            }
+                        }
+                    }
+
                     break;
             }
             return outgoingMessage;
