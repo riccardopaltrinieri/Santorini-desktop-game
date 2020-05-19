@@ -173,7 +173,7 @@ public class CLInterface implements UserInterface {
                     case placeworker:
                         int row = Integer.parseInt(partsInput[1]);
                         int col = Integer.parseInt(partsInput[2]);
-                        if (row < 0 || row > 4 || col < 0 || col > 4) throw new IllegalArgumentException();
+                        if (row < 1 || row > 5 || col < 1 || col > 5) throw new IllegalArgumentException();
                         outputLine = inputLine;
                         break;
 
