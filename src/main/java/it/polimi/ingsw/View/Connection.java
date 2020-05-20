@@ -88,16 +88,16 @@ public class Connection extends Observable implements Runnable, Observer {
 
             while(isActive()){
                 if(server.gameHasStarted()){
-                    if(playerTurn) {
+                   // if(playerTurn) {
 
-                            liteBoard.setMessage("Insert your move");
-                            send(liteBoard);
-                            String read = readString();
-                            read = name + " " + read;
-                            notifyObservers(read);
+                        // liteBoard.setMessage("Insert your move");
+                        //  send(liteBoard);
+                        String read = readString();
+                        read = name + " " + read;
+                        notifyObservers(read);
 
 
-                    }
+                    //}
                 }
             }
 
@@ -134,12 +134,15 @@ public class Connection extends Observable implements Runnable, Observer {
                 server.deregisterConnection(this);
             else if(parts[0].equals(name) && parts[1].equals("moves")) {
                 playerTurn = true;
-                send(new LiteBoard("player " + board.getMessage()));
+                liteBoard.setMessage("player " + board.getMessage());
+                send(liteBoard);
             } else if (parts[1].equals("moves")) {
                 playerTurn = false;
-                send(new LiteBoard("player " + board.getMessage()));
-          //  } else if (parts[0].equals(name) && parts[1].equals("update")) {
-            //    setLiteBoard(board);
+                liteBoard.setMessage("player " + board.getMessage());
+                send(liteBoard);
+            } else if (parts[0].equals(name) && parts[1].equals("update")) {
+                liteBoard.setMessage("Insert " + board.getMessage());
+                send(liteBoard);
             }
             else send(new LiteBoard("Error: " + board.getMessage()));
 
