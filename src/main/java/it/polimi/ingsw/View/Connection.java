@@ -118,6 +118,7 @@ public class Connection extends Observable implements Runnable, Observer {
         else if(parts[0].equals(name) && parts[1].equals("moves")) {
             playerTurn = true;
             send(new LiteBoard("player " + message));
+            send(new LiteBoard("Insert your move"));
         } else if (parts[1].equals("moves")) {
             playerTurn = false;
             send(new LiteBoard("player " + message));
