@@ -67,7 +67,6 @@ public class CLInterface implements UserInterface {
                     // Ask the player action according to the fsm
                     // The fsm can't be fooled because there's one also on the server
 
-                    board.printBoardCLI();
 
                     if (fsm.getState() == State.worker) {
                         // ask to the player which worker he wants to use but don't send anything
@@ -77,17 +76,21 @@ public class CLInterface implements UserInterface {
                     }
 
                     if(parts[1].equals(name)) {
+                        if (fsm.getState() != State.start && fsm.getState() != State.worker && fsm.getState() != State.move) board.printBoardCLI();
                         System.out.println(fsm.getStateString());
                         if (fsm.getState() != State.endTurn) {
                             outgoingMessage = checkAction(stdin);
-                            fsm.nextState();
                         }
                         else {
                             outgoingMessage = "noMessageToSend";
-                            fsm.nextState();
                         }
+                        fsm.nextState();
                     } else {
-                        System.out.println(incomingMessage.substring(7));
+                        if(parts[2].equals("update")) System.out.println(parts[1] +"'s turn: ");
+                        else {
+                            System.out.println(incomingMessage.substring(7));
+                            board.printBoardCLI();
+                        }
                         outgoingMessage = "noMessageToSend";
                     }
                     break;
@@ -99,20 +102,23 @@ public class CLInterface implements UserInterface {
 
                 case "player":
                     // Use the name of the player to know who has to play
-                    if (parts[1].equals(name) && parts[2].equals("moves")) System.out.println("Turn started");
-                    else if (parts[2].equals("moves")) System.out.println(parts[1] + "'s turn..");
-                    else {
+                    if (parts[1].equals(name) && parts[2].equals("loses")) {
                         System.out.println("You lose and cannot play anymore..");
                         throw new NoSuchElementException();
                     }
                     outgoingMessage = "noMessageToSend";
                     break;
 
-                case "Error":
+                case "Error:":
                     // Something went wrong with the last action
-                    System.out.println(incomingMessage);
-                    outgoingMessage = "noMessageToSend";
-                    fsm.prevState();
+                    if(parts[1].equals(name)) {
+                        System.out.println("Ops, something went wrong");
+                        System.out.println(incomingMessage);
+                        System.out.println("Please, try again:");
+                        if (!parts[3].equals("place")) fsm.prevState();
+                        outgoingMessage = checkAction(stdin);
+                    } else
+                        outgoingMessage = "noMessageToSend";
                     break;
 
                 default:
@@ -160,46 +166,58 @@ public class CLInterface implements UserInterface {
 
             try {
                 inputLine = stdin.nextLine();
-                String outputLine = inputLine;
                 String[] partsInput = inputLine.split(" ");
                 InputString action = InputString.valueOf(partsInput[0].toLowerCase());
+                int row, col;
 
                 // If the action is correct the message will be "action row column"
 
                 switch (action) {
 
                     case worker:
+                        if(fsm.getState() != State.worker) throw new IllegalArgumentException();
                         int worker = Integer.parseInt(partsInput[1]);
                         if (!(worker == 1) && !(worker == 2)) throw new IllegalArgumentException();
                         setWorker(worker);
-
-                        outputLine = inputLine;
                         break;
-                    case move:
-                    case build:
                     case supermove:
-                    case superbuild:
-                        // Add the worker chose before and continue the check
-                        inputLine += " " + getWorker();
-                    case placeworker:
-                        int row = Integer.parseInt(partsInput[1]);
-                        int col = Integer.parseInt(partsInput[2]);
+                    case move:
+                        if(fsm.getState() != State.move) throw new IllegalArgumentException();
+                        row = Integer.parseInt(partsInput[1]);
+                        col = Integer.parseInt(partsInput[2]);
                         if (row < 1 || row > 5 || col < 1 || col > 5) throw new IllegalArgumentException();
-                        outputLine = inputLine;
+                        inputLine += " " + getWorker();
+                        break;
+                    case superbuild:
+                    case build:
+                        if(fsm.getState() != State.build) throw new IllegalArgumentException();
+                        row = Integer.parseInt(partsInput[1]);
+                        col = Integer.parseInt(partsInput[2]);
+                        if (row < 1 || row > 5 || col < 1 || col > 5) throw new IllegalArgumentException();
+                        inputLine += " " + getWorker();
+                        break;
+                    case placeworker:
+                        row = Integer.parseInt(partsInput[1]);
+                        col = Integer.parseInt(partsInput[2]);
+                        if (row < 1 || row > 5 || col < 1 || col > 5) throw new IllegalArgumentException();
                         break;
 
                     case normal:
                     case usepower:
+                        if(fsm.getState() != State.start) throw new IllegalArgumentException();
                         if(partsInput.length > 1) throw new IllegalArgumentException();
-                        outputLine = inputLine;
                         break;
+                    default:
+                        throw new IllegalArgumentException();
                 }
 
+                // Save all the messages in a log file
+
                 // If the input is correct it can be send
-                return outputLine.toLowerCase();
+                return inputLine.toLowerCase();
 
             } catch (IllegalArgumentException | IndexOutOfBoundsException e) {
-                System.out.println("Wrong input: reinsert your move");
+                System.out.println("Wrong input, please reinsert your move");
             }
         }
     }

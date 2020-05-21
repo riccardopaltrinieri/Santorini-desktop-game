@@ -1,0 +1,48 @@
+Welcome! What's your name?
+-> toni
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> Rich
+Wait for other players
+Choose your Divinity between: Apollo Athena 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Athena
+player toni moves
+player toni moves
+Insert toni update
+Insert toni update
+-> placeworker 3 3
+Insert toni placed a worker in 3x3
+Insert toni placed a worker in 3x3
+-> placeworker 3 5
+Insert toni placed a worker in 3x5
+Insert Rich update
+Insert toni placed a worker in 3x5
+Insert Rich update
+-> placeworker 1 1
+Insert Rich placed a worker in 1x1
+Insert Rich placed a worker in 1x1
+-> placeworker 1 2
+Insert Rich placed a worker in 1x2
+Insert Rich placed a worker in 1x2
+Insert toni update
+Insert toni update
+-> normal
+Insert toni doesn't want to use the God Power
+Insert toni doesn't want to use the God Power
+-> move 3 2 1
+Insert toni moved a worker in 3x2
+Insert toni moved a worker in 3x2
+-> build 3 3 1
+Insert toni build in 3 3
+Insert Rich update
+Insert toni build in 3 3

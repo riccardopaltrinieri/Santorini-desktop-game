@@ -11,9 +11,8 @@ public class Game extends Observable {
 
     private int numPlayer;
     private int iterator;
-    private Controller controller;
     private Board board;
-    private ArrayList<Player> players;
+    private final ArrayList<Player> players;
     private Boolean canMoveUp;
 
     /**
@@ -21,7 +20,6 @@ public class Game extends Observable {
      */
     public Game () {
         this.board = new Board();
-        this.controller = new Controller(this);
         this.players = new ArrayList<>(3);
         this.iterator = 0;
         this.canMoveUp=true;
@@ -42,7 +40,7 @@ public class Game extends Observable {
     }
 
     public void hasWinner(){
-        sendBoard(new LiteBoard(getCurrentPlayer().getName() + "wins", board, this));
+        sendBoard(new LiteBoard(getCurrentPlayer().getName() + " wins", board, this));
         board.clearAll();
     }
 
@@ -50,11 +48,12 @@ public class Game extends Observable {
         try {
             getCurrentPlayer().placeWorkers(board.getCell(row, column));
 
-            String message = "Insert " + getCurrentPlayer().getName() + " placed a worker in " + (row+1) + "x" + (column+1);
+            String message = "Insert " + getCurrentPlayer().getName() + Messages.getMessage(Messages.PLACE_MESSAGE, row+1, column+1);
             sendBoard(new LiteBoard(message, board, this));
             return true;
         } catch (IllegalArgumentException e) {
-            sendBoard(new LiteBoard("Error: You can't place your worker here", board, this));
+            String message = getCurrentPlayer().getName() + Messages.getMessage(Messages.ERROR_PLACE);
+            sendBoard(new LiteBoard("Error: " + message, board, this));
         }
         return false;
     }
@@ -67,14 +66,16 @@ public class Game extends Observable {
             if(position.getLevel() < 3 && destination.getLevel() == 3) hasWinner();
             getCurrentPlayer().getWorker(worker).move(destination);
 
-            String message = "Insert " + getCurrentPlayer().getName() + " moved a worker in " + row + "x" + column;
+            String message = "Insert " + getCurrentPlayer().getName() + Messages.getMessage(Messages.MOVE_MESSAGE, row+1, column+1);
             sendBoard(new LiteBoard(message, board, this));
             return true;
 
         } catch (AthenaException e) {
-            sendBoard(new LiteBoard("Error: You can't move up because Athena's power is active", board, this));
+            String message = getCurrentPlayer().getName() + Messages.getMessage(Messages.ERROR_ATHENA);
+            sendBoard(new LiteBoard("Error: " + message, board, this));
         } catch (IllegalArgumentException e) {
-            sendBoard(new LiteBoard("Error: Can't move here", board, this));
+            String message = getCurrentPlayer().getName() + Messages.getMessage(Messages.ERROR_MOVE);
+            sendBoard(new LiteBoard("Error: " + message, board, this));
         }
         return false;
     }
@@ -83,12 +84,13 @@ public class Game extends Observable {
         try {
             getCurrentPlayer().getWorker(worker).build(board.getCell(row, column));
 
-            String message = "Insert " + getCurrentPlayer().getName() + " build in" + row + "x" + column;
+            String message = "Insert " + getCurrentPlayer().getName() + Messages.getMessage(Messages.BUILD_MESSAGE, row+1, column+1);
             sendBoard(new LiteBoard(message, board, this));
             return true;
 
         } catch (IllegalArgumentException e) {
-            sendBoard(new LiteBoard("Error: Can't build here", board, this));
+            String message = getCurrentPlayer().getName() + Messages.getMessage(Messages.ERROR_BUILD);
+            sendBoard(new LiteBoard("Error: " + message, board, this));
         }
         return false;
     }
@@ -97,13 +99,16 @@ public class Game extends Observable {
         try {
             getCurrentPlayer().getGodPower().execute(getCurrentPlayer(),board.getCell(row,column),worker);
 
-            sendBoard(new LiteBoard("Insert " + getCurrentPlayer().getName() + " used the God Power", board, this));
+            String message = "Insert " + getCurrentPlayer().getName() + Messages.getMessage(Messages.GODPOWER_MESSAGE);
+            sendBoard(new LiteBoard(message, board, this));
             return true;
 
         } catch (AthenaException e) {
-            sendBoard(new LiteBoard("Error: You can't move up because Athena's power is active", board, this));
+            String message = getCurrentPlayer().getName() + Messages.getMessage(Messages.ERROR_ATHENA);
+            sendBoard(new LiteBoard("Error:" + message, board, this));
         } catch (IllegalArgumentException e) {
-            sendBoard(new LiteBoard("Error: Can't use the Power", board, this));
+            String message = getCurrentPlayer().getName() + Messages.getMessage(Messages.ERROR_POWER);
+            sendBoard(new LiteBoard("Error: " + message, board, this));
         }
         return false;
     }
@@ -111,13 +116,13 @@ public class Game extends Observable {
     public void endTurn() {
         iterator = (iterator + 1) % numPlayer;
         if (!getCurrentPlayer().canMove()) hasLoser();
-        sendBoard(new LiteBoard("player " + getCurrentPlayer().getName() + " moves"));
         sendBoard(new LiteBoard("Insert " + getCurrentPlayer().getName() + " update", board, this));
     }
 
 
 //  ************** GETTER AND SETTER ***********************************
 
+    // ************ SPECIAL GETTERS **********
     public int getNumWorkers() {
         int numWorkers = 0;
         for (Player player : players) {
@@ -129,20 +134,11 @@ public class Game extends Observable {
         return players.get(iterator);
     }
 
-    public Boolean getCanMoveUp() {
-        return canMoveUp;
-    }
-    public void setCanMoveUp(Boolean canMoveUp) {
-        this.canMoveUp = canMoveUp;
-    }
-    public void setNumPlayer(int numPlayer){
-        this.numPlayer=numPlayer;
-    }
     public ArrayList<Player> getPlayers() {
         return players;
     }
-    public Controller getController() {
-        return controller;
+    public Boolean getCanMoveUp() {
+        return canMoveUp;
     }
     public Board getBoard() {
         return board;
@@ -150,7 +146,10 @@ public class Game extends Observable {
     public void setBoard(Board board) {
         this.board = board;
     }
-    public int getNumPlayer() {
-        return numPlayer;
+    public void setCanMoveUp(Boolean canMoveUp) {
+        this.canMoveUp = canMoveUp;
+    }
+    public void setNumPlayer(int numPlayer){
+        this.numPlayer=numPlayer;
     }
 }

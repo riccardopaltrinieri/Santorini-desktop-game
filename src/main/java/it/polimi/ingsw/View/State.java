@@ -5,8 +5,6 @@ public enum State {
     worker,
     move,
     build,
-    supermove,
-    superbuild,
     placeworker,
     endTurn
 }

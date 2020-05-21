@@ -32,11 +32,9 @@ public class FSMView {
             case worker:
                 line = "Choose the worker that you want to move and build with: (write 'worker 1' or 'worker 2]')";
                 break;
-            case supermove:
             case move:
                 line = "Where do you want to move? (write 'move [row] [column]')";
                 break;
-            case superbuild:
             case build:
                 line = "Where do you want to build? (write 'build [row] [column]')";
                 break;

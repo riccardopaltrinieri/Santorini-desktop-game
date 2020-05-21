@@ -14,7 +14,7 @@ public class ControllerTest {
     public void testDefaultInput() {
 
         Game game = new Game();
-        Controller controller = game.getController();
+        Controller controller = new Controller(game);
         Player tester = new Player("tester", Color.Red, game);
         Player tester2 = new Player("tester2", Color.Red, game);
         game.setNumPlayer(2);
@@ -56,7 +56,7 @@ public class ControllerTest {
     public void testGodPower() {
 
         Game game = new Game();
-        Controller controller = game.getController();
+        Controller controller = new Controller(game);
         Player tester = new Player("tester", Color.Red, game);
         Player tester2 = new Player("tester2", Color.Red, game);
         game.setNumPlayer(2);

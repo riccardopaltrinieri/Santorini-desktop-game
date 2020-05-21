@@ -6,15 +6,15 @@ import java.io.Serializable;
 
 public class LiteBoard implements Serializable {
     private static final long serialVersionUID = 36347531L;
-    private int[][] lv; // [riga][colonna] = livello
-    /* [worker] [0] = riga
-     * [worker] [1] = colonna
-     * [worker] [2] = COLORE (USATE PAINT )*/
-    private int[][] posWorker;
-    private String message;
-    private transient int numWorker = 2;
-    private transient int RCP = 3; // sono le tre colonne di posworker
-    private int numAllWorker;
+
+    private final int[][] lv;     // [row][column] = level
+    private final int[][] posWorker;/*
+     * [worker] [0] = row
+     * [worker] [1] = column
+     * [worker] [2] = color
+     * */
+    private final String message;
+    private final int numAllWorker;
 
     public LiteBoard(String input){
         message = input;
@@ -27,7 +27,7 @@ public class LiteBoard implements Serializable {
 
         numAllWorker = game.getNumWorkers();
         lv = new int[board.getNumRow()][board.getNumColumn()];
-        posWorker = new int[numAllWorker][RCP];
+        posWorker = new int[numAllWorker][3];
 
         for (Cell[] c: board.getMap()) {
             for (Cell c1:c) {
@@ -56,26 +56,32 @@ public class LiteBoard implements Serializable {
         return message;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
     public void printBoardCLI(){
         printBoardLine();
-        for(int boardRow = 4; boardRow >= 0; boardRow--) {
+        for(int boardRow = 4; boardRow >= -1; boardRow--) {
             for(int cellRow = 0; cellRow < 3; cellRow++) {
-                for (int col = 0; col < 5; col++) {
-                    if(cellRow == 0 || cellRow == 2) System.out.print("|" + getLevelTD(boardRow, col) + "|");
-                    else System.out.print("|" + getWorker(boardRow, col) + "|");
+                for (int col = -1; col < 5; col++) {
+                    if (col == -1) {
+                        // Print the number of the board rows
+                        if (cellRow == 0 || cellRow == 2) System.out.print("      ");
+                        else if (boardRow >= 0) System.out.print("  " + (boardRow + 1) + "   ");
+                        else System.out.print("      ");
+
+                    } else if (boardRow == -1) {
+                        // Print the number of the board columns
+                        if (cellRow == 1) System.out.print("    " + (col + 1) + "    ");
+                    } else {
+                        if (cellRow == 0 || cellRow == 2) System.out.print("|" + getLevelTD(boardRow, col) + "|");
+                        else System.out.print("|" + getWorker(boardRow, col) + "|");
+                    }
                 }
                 System.out.print('\n');
             }
-            printBoardLine();
+            if(boardRow != -1) printBoardLine();
         }
     }
 
     private String getWorker(int row, int col) {
-        //TODO per ogni cella controllo se c'è un worker e se si scrivo CW con C che sta per l'iniziale del colore
         for (int worker = 0; worker < numAllWorker; worker++) {
             if (posWorker[worker][0] == row) {
                 if (posWorker[worker][1] == col) {
@@ -100,22 +106,17 @@ public class LiteBoard implements Serializable {
      * return 7 numbers to fill the Top and Down of the board cell
      */
     public String getLevelTD(int row, int col){
-
-        int levelCell = lv[row][col];
-        StringBuilder level = new StringBuilder();
-        level.append(String.valueOf(levelCell).repeat(7));
-
-        return level.toString();
+        return String.valueOf(lv[row][col]).repeat(7);
     }
     /**
-     * return 2 symbols to fill the Left and Right of the board cell
+     * return a number to fill the Left and Right of the board cell
      */
-    public int getLevelLR(int row, int col){
-        return lv[row][col];
+    public String getLevelLR(int row, int col){
+        return String.valueOf(lv[row][col]);
     }
 
     public void printBoardLine(){
-        System.out.println("+-------++-------++-------++-------++-------+");
+        System.out.println("      +-------++-------++-------++-------++-------+");
     }
 
 }
