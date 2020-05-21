@@ -1,11 +1,10 @@
 package it.polimi.ingsw.View;
 
 
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.Socket;
+import java.nio.channels.FileLock;
+import java.nio.channels.OverlappingFileLockException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
@@ -30,38 +29,43 @@ public class NetworkHandler {
         System.out.println("Connection established");
         ObjectOutputStream socketOut = new ObjectOutputStream(socket.getOutputStream());
         ObjectInputStream socketIn = new ObjectInputStream(socket.getInputStream());
+        FileOutputStream logFile = new FileOutputStream(new File("log.txt"), true);
 
         Scanner stdin = new Scanner(System.in);
-        String incomingMessage;
         String outgoingMessage;
         LiteBoard board;
-        //TODO togliere inizializzazione perchè board sarà == socketIn.getBoard()
-        //LiteBoard board = new LiteBoard("", null);
-
         try{
             //noinspection InfiniteLoopStatement
-            while (true){
+            while (true) {
 
                 board = (LiteBoard) socketIn.readObject();
                 outgoingMessage = userInterface.update(board);
-                if (!outgoingMessage.equals("noMessageToSend"))
-                {
+
+
+                // The clients write in the same file so i lock it
+                try (FileLock lock = logFile.getChannel().lock()) {
+
+                    // Write the bytes.
+                    logFile.write((board.getMessage() + "\n").getBytes());
+                    if (!outgoingMessage.equals("noMessageToSend"))
+                        logFile.write(("-> " + outgoingMessage + "\n").getBytes());
+                } catch (OverlappingFileLockException ofle) {
+                    try {
+                        // Wait a bit
+                        Thread.sleep(100);
+                    } catch (InterruptedException ex) {
+                        throw new InterruptedIOException("Interrupted waiting for a file lock.");
+                    }
+                }
+
+                if (!outgoingMessage.equals("noMessageToSend")) {
                     socketOut.reset();
                     socketOut.writeUTF(outgoingMessage);
                     socketOut.flush();
                 }
-
-                //TODO non so come si fa la prossima riga. HO COMMENTATO PER COMMITARE, SERIALIZZAZIONE ( WORK IN PROGRESS)
-                //board = socketIn.nextLiteBoard();
-                //TODO anche la prossima sarà implicita nella precedente quindi da togliere
-              //  board.setMessage(socketIn.nextLine());
-              //  outgoingMessage = userInterface.update(board);
-              //  if(!outgoingMessage.equals("noMessageToSend")) {
-                //    socketOut.println(outgoingMessage);
-               //     socketOut.flush();
-             //   }
             }
-        } catch(NoSuchElementException | ClassNotFoundException e){
+
+        } catch(NoSuchElementException | ClassNotFoundException e) {
             System.out.println("Connection closed from the server side");
         } finally {
             stdin.close();
