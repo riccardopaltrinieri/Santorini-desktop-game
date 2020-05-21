@@ -33,51 +33,57 @@ public class Controller extends Observable implements Observer {
         InputString action = InputString.valueOf(parts[1].toLowerCase());
         boolean actionExecuted = false;
 
+        // The name is set by the connection so only the current player can execute actions
         if (name.equals(game.getCurrentPlayer().getName())) {
 
             switch (action) {
                 case usepower:
+                    // Set the path of fsm as the one of the divinity
                     if (fsm.getState() == State.start) fsm.setPath(game.getCurrentPlayer().getDivinity());
+                    actionExecuted = true;
                     break;
-
                 case normal:
+                    // Set the default path
                     if (fsm.getState() == State.start) fsm.setPath(Divinity.Default);
+                    actionExecuted = true;
                     break;
-
                 case placeworker:
+                    // Place the worker on the map
+                    // There isn't a state.placeworker because it happen only once
                     if (fsm.getState() == State.start) fsm.setPath(Divinity.Default);
                     if (fsm.getState() == State.move) fsm.setState(State.build);
-                    row = Integer.parseInt(parts[2]);
-                    column = Integer.parseInt(parts[3]);
+                    row = Integer.parseInt(parts[2]) - 1;
+                    column = Integer.parseInt(parts[3]) - 1;
                     actionExecuted = game.placeWorker(row, column);
                     break;
-
                 case move:
-                    row = Integer.parseInt(parts[2]);
-                    column = Integer.parseInt(parts[3]);
-                    worker = Integer.parseInt(parts[4]);
+                    // Move the worker
+                    row = Integer.parseInt(parts[2]) - 1;
+                    column = Integer.parseInt(parts[3]) - 1;
+                    worker = Integer.parseInt(parts[4]) - 1;
                     if (fsm.getState() == State.move) actionExecuted = game.move(row, column, worker);
                     break;
-
                 case build:
-                    row = Integer.parseInt(parts[2]);
-                    column = Integer.parseInt(parts[3]);
-                    worker = Integer.parseInt(parts[4]);
+                    // Build with the worker
+                    row = Integer.parseInt(parts[2]) - 1;
+                    column = Integer.parseInt(parts[3]) - 1;
+                    worker = Integer.parseInt(parts[4]) - 1;
                     if (fsm.getState() == State.build) actionExecuted = game.build(row, column, worker);
                     break;
-
                 case supermove:
                 case superbuild:
-                    row = Integer.parseInt(parts[2]);
-                    column = Integer.parseInt(parts[3]);
-                    worker = Integer.parseInt(parts[4]);
-                    if (fsm.getState() == State.superMove || fsm.getState() == State.superBuild) actionExecuted = game.useGodPower(row, column, worker);
+                    row = Integer.parseInt(parts[2]) - 1;
+                    column = Integer.parseInt(parts[3]) - 1;
+                    worker = Integer.parseInt(parts[4]) - 1;
+                    if (fsm.getState() == State.superMove || fsm.getState() == State.superBuild)
+                        actionExecuted = game.useGodPower(row, column, worker);
                     break;
-
             }
 
+            // If something went wrong actionExecuted will be false and the fsm stay in the current state
             if(actionExecuted) fsm.nextState();
 
+            // When the turn is ended notify the game and restart
             if (fsm.getState() == State.endTurn) {
                 fsm.setState(State.start);
                 game.endTurn();
@@ -96,5 +102,6 @@ public class Controller extends Observable implements Observer {
     }
 
     public void newBoard(LiteBoard board) {
+        // Method used only by game to send the board
     }
 }
