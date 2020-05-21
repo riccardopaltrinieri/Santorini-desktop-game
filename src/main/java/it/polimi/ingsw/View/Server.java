@@ -175,8 +175,10 @@ public class Server {
             playingConnection.put(c1, c2);
             playingConnection.put(c2, c1);
 
-            connections.get(0).update(this.firstPlayer + " moves");
-            connections.get(1).update(this.firstPlayer + " moves");
+            connections.get(0).newBoard(new LiteBoard("player " + this.firstPlayer + " moves"));
+            connections.get(0).newBoard(new LiteBoard("Insert " + this.firstPlayer + " update", game.getBoard(), game));
+            connections.get(1).newBoard(new LiteBoard("player " + this.firstPlayer + " moves"));
+            connections.get(1).newBoard(new LiteBoard("Insert " + this.firstPlayer + " update", game.getBoard(), game));
 
             if (numPlayers == 3) {
                 keys.add(thirdPlayer);
@@ -192,12 +194,10 @@ public class Server {
                 playingConnection3players.put(c1, c3);
                 playingConnection3players.put(c3, c2);
 
-                connections.get(2).update(this.firstPlayer + " moves");
+                connections.get(2).newBoard(new LiteBoard("player " + this.firstPlayer + " moves"));
+                connections.get(2).newBoard(new LiteBoard("Insert " + this.firstPlayer + " update", game.getBoard(), game));
             }
 
-            for (Connection co1: connections) {
-                co1.setLiteBoard(new LiteBoard(" "));
-            }
             waitingConnection.clear();
             startGame = true;
         }

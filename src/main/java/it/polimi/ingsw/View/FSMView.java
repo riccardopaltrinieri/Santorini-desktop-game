@@ -17,17 +17,57 @@ public class FSMView {
     }
 
     /**
+     * Return the string to show to the player according to the fsm state
+     */
+    public String getStateString() {
+
+        String line;
+        switch (state) {
+            case placeworker:
+                line = "Place your worker on the map: (write 'placeworker [row] [column]')";
+                break;
+            case start:
+                line = "Do you want to use the God power or going with the normal turn? (usepower/normal)";
+                break;
+            case worker:
+                line = "Choose the worker that you want to move and build with: (write 'worker 1' or 'worker 2]')";
+                break;
+            case supermove:
+            case move:
+                line = "Where do you want to move? (write 'move [row] [column]')";
+                break;
+            case superbuild:
+            case build:
+                line = "Where do you want to build? (write 'build [row] [column]')";
+                break;
+            case endTurn:
+                line = "Turn Ended..";
+                break;
+            default:
+                line = "Error";
+                break;
+        }
+
+        return line;
+    }
+
+    /**
      * Increments the state of the FSM following the player's divinity customized path
      * @throws IllegalStateException when the divinity is not recognized
      */
     protected void nextState() throws IllegalStateException {
 
         if (state == State.placeworker) {
-            setStateAfterTwoTimes(State.start);
+            setStateAfterTwoTimes(State.endTurn);
             return;
         }
 
-        switch (this.divinity) {
+        if (state == State.endTurn) {
+            setState(State.start);
+            return;
+        }
+
+        switch (divinity) {
 
             case Default:
             case Apollo:

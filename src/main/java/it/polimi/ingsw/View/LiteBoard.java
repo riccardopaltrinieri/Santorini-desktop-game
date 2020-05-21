@@ -22,10 +22,13 @@ public class LiteBoard implements Serializable {
         posWorker = new int[0][0];
         numAllWorker = 0;
     }
+
     public LiteBoard(String message, Board board, Game game) {
+
+        numAllWorker = game.getNumWorkers();
         lv = new int[board.getNumRow()][board.getNumColumn()];
-        // TODO creare costruttore che riempia la liteboard a partire dalla board e dai player
-        // TODO Aggiungere i player nei parametri
+        posWorker = new int[numAllWorker][RCP];
+
         for (Cell[] c: board.getMap()) {
             for (Cell c1:c) {
                 int level = c1.getLevel();
@@ -34,26 +37,18 @@ public class LiteBoard implements Serializable {
                 lv[row][column] = level;
             }
         }
-        numAllWorker = game.getPlayers().size()*numWorker;
-        int numAllWorkerCopy = numAllWorker;
-        posWorker = new int[numAllWorker][RCP];
-        for (Player p: game.getPlayers()) {
-            for (Worker worker: p.getWorkers()) {
-                numAllWorkerCopy --; // decremento il numero totale dei worker il primo è in alto
-                if (numAllWorkerCopy > 0){ //è sempre così ma controllo ulteriore
-                    posWorker[numAllWorkerCopy][0] = worker.getPosition().getNumRow();
-                    posWorker[numAllWorkerCopy][1] = worker.getPosition().getNumColumn();
-                    Color color = p.getColor();
-                    int numColor = color.ordinal();
-                    posWorker[numAllWorkerCopy][2] = numColor;
 
-                }
+        int numPosWorker = 0;
+        for (Player p : game.getPlayers()) {
+            for (Worker worker : p.getWorkers()) {
+                posWorker[numPosWorker][0] = worker.getPosition().getNumRow();
+                posWorker[numPosWorker][1] = worker.getPosition().getNumColumn();
+                posWorker[numPosWorker][2] = p.getColor().ordinal();
+                numPosWorker++;
             }
-
-
         }
         this.message = message;
-        }
+    }
 
 
 
@@ -81,14 +76,16 @@ public class LiteBoard implements Serializable {
 
     private String getWorker(int row, int col) {
         //TODO per ogni cella controllo se c'è un worker e se si scrivo CW con C che sta per l'iniziale del colore
-        for (int rowPosWorker = 0; rowPosWorker < numAllWorker; rowPosWorker++) {
-            if (posWorker[rowPosWorker][0] == row) {
-                if (posWorker[rowPosWorker][1] == col) {
+        for (int worker = 0; worker < numAllWorker; worker++) {
+            if (posWorker[worker][0] == row) {
+                if (posWorker[worker][1] == col) {
                     int[] colorList = {Color.Green.ordinal(), Color.Yellow.ordinal(), Color.Red.ordinal()};
-                    for (int color : colorList
-                    ) {
-                        if (posWorker[rowPosWorker][2] == color) {
-                            return getLevelLR(row, col) + " " +  color + "W " + getLevelLR(row, col);
+                    for (int color : colorList) {
+                        if (posWorker[worker][2] == color) {
+
+                            worker = worker%2 + 1;    // Show the number of worker that will be 1 or 2
+
+                            return getLevelLR(row, col) + " " +  Color.toFirstLetter(color) + "W" + worker + ' ' + getLevelLR(row, col);
                         }
                     }
 
@@ -96,33 +93,29 @@ public class LiteBoard implements Serializable {
 
             }
 
-        } return getLevelLR(row, col) + "    " + getLevelLR(row, col);
+        } return getLevelLR(row, col) + "     " + getLevelLR(row, col);
     }
 
     /**
-     * return 6 symbols to fill the Top and Down of the board cell
+     * return 7 numbers to fill the Top and Down of the board cell
      */
     public String getLevelTD(int row, int col){
-        //TODO per ogni cella guardo il livello e metto il simbolo
-        //TODO decidere i simboli tra # ^ ' \ / e restituirlo x6
-        int levelCell = lv[row][col];
-        String level = Integer.toString(levelCell) + levelCell;
-        level = level + level + level;
 
-        return level;
+        int levelCell = lv[row][col];
+        StringBuilder level = new StringBuilder();
+        level.append(String.valueOf(levelCell).repeat(7));
+
+        return level.toString();
     }
     /**
      * return 2 symbols to fill the Left and Right of the board cell
      */
     public int getLevelLR(int row, int col){
         return lv[row][col];
-        //TODO per ogni cella guardo il livello e metto il simbolo
-        //TODO decidere i simboli tra # ^ ' \ / e restituirlo x2
-
     }
 
     public void printBoardLine(){
-        System.out.println("+------++------++------++------++------+");
+        System.out.println("+-------++-------++-------++-------++-------+");
     }
 
 }

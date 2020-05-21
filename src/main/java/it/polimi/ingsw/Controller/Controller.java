@@ -40,11 +40,15 @@ public class Controller extends Observable implements Observer {
                 case usepower:
                     // Set the path of fsm as the one of the divinity
                     if (fsm.getState() == State.start) fsm.setPath(game.getCurrentPlayer().getDivinity());
+                    String msg = "Insert " + game.getCurrentPlayer().getName() + " update";
+                    game.sendBoard(new LiteBoard(msg, game.getBoard(),game));
                     actionExecuted = true;
                     break;
                 case normal:
                     // Set the default path
                     if (fsm.getState() == State.start) fsm.setPath(Divinity.Default);
+                    msg = "Insert " + game.getCurrentPlayer().getName() + " update";
+                    game.sendBoard(new LiteBoard(msg, game.getBoard(),game));
                     actionExecuted = true;
                     break;
                 case placeworker:

@@ -66,18 +66,29 @@ public class CLInterface implements UserInterface {
                 case "Insert":
                     // Ask the player action according to the fsm
                     // The fsm can't be fooled because there's one also on the server
+
+                    board.printBoardCLI();
+
                     if (fsm.getState() == State.worker) {
                         // ask to the player which worker he wants to use but don't send anything
-                        System.out.println(getStringFSM());
+                        System.out.println(fsm.getStateString());
                         checkAction(stdin);
+                        fsm.nextState();
                     }
-                    String toPrint = getStringFSM();
-                    if (!toPrint.equals("Place your worker on the map: (write 'placeworker [row] [column]')")) board.printBoardCLI();
-                    System.out.println(toPrint);
-                    outgoingMessage = checkAction(stdin);
-                    if (fsm.getState() == State.endTurn) {
-                        System.out.println("Turn ended");
-                        fsm.setState(State.start);
+
+                    if(parts[1].equals(name)) {
+                        System.out.println(fsm.getStateString());
+                        if (fsm.getState() != State.endTurn) {
+                            outgoingMessage = checkAction(stdin);
+                            fsm.nextState();
+                        }
+                        else {
+                            outgoingMessage = "noMessageToSend";
+                            fsm.nextState();
+                        }
+                    } else {
+                        System.out.println(incomingMessage.substring(7));
+                        outgoingMessage = "noMessageToSend";
                     }
                     break;
 
@@ -87,7 +98,7 @@ public class CLInterface implements UserInterface {
                     break;
 
                 case "player":
-                    // Use the name og the player to know who has to play
+                    // Use the name of the player to know who has to play
                     if (parts[1].equals(name) && parts[2].equals("moves")) System.out.println("Turn started");
                     else if (parts[2].equals("moves")) System.out.println(parts[1] + "'s turn..");
                     else {
@@ -211,38 +222,6 @@ public class CLInterface implements UserInterface {
                     inputLine = stdin.nextLine();
                 }
             }
-    }
-
-    /**
-     * Return the string to show to the player according to the fsm state
-     */
-    public String getStringFSM() {
-        String line;
-        switch (fsm.getState()) {
-            case placeworker:
-                line = "Place your worker on the map: (write 'placeworker [row] [column]')";
-                break;
-            case start:
-                line = "Do you want to use the God power or going with the normal turn? (usepower/normal)";
-                break;
-            case worker:
-                line = "Choose the worker that you want to move and build with: (write 'worker 1' or 'worker 2]')";
-                break;
-            case supermove:
-            case move:
-                line = "Where do you want to move? (write 'move [row] [column]')";
-                break;
-            case superbuild:
-            case build:
-                line = "Where do you want to build? (write 'build [row] [column]')";
-                break;
-            default:
-                line = "Error";
-                break;
-        }
-        fsm.nextState();
-
-        return line;
     }
 
     public void setWorker(int worker) {

@@ -17,8 +17,6 @@ public class Connection extends Observable implements Runnable, Observer {
     private final Server server;
     private String name;
     private boolean active;
-    private boolean playerTurn;
-    private LiteBoard liteBoard;
 
     public Connection(Socket socket, Server server){
         this.socket = socket;
@@ -109,45 +107,18 @@ public class Connection extends Observable implements Runnable, Observer {
         }
     }
 
-    @Override
-    public void update(String message) {
-        String[] parts = message.split(" ");
+    public void newBoard(LiteBoard board) {
 
-        if(parts[0].equals(name) && parts[1].equals("loses"))
-            server.deregisterConnection(this);
-        else if(parts[0].equals(name) && parts[1].equals("moves")) {
-            playerTurn = true;
-            send(new LiteBoard("player " + message));
-            send(new LiteBoard("Insert your move"));
-        } else if (parts[1].equals("moves")) {
-            playerTurn = false;
-            send(new LiteBoard("player " + message));
-        } else send(new LiteBoard("Error: " + message));
-
-    }
-
-    public synchronized void newBoard(LiteBoard board) {
-        //TODO Inviare sul socket la board
-            setLiteBoard(board);
             String[] parts = board.getMessage().split(" ");
-
             if(parts[0].equals(name) && parts[1].equals("loses"))
                 server.deregisterConnection(this);
-            else if(parts[0].equals(name) && parts[1].equals("moves")) {
-                playerTurn = true;
-                liteBoard.setMessage("player " + board.getMessage());
-                send(liteBoard);
-            } else if (parts[1].equals("moves")) {
-                playerTurn = false;
-                liteBoard.setMessage("player " + board.getMessage());
-                send(liteBoard);
-            } else if (parts[0].equals(name) && parts[1].equals("update")) {
-                liteBoard.setMessage("Insert " + board.getMessage());
-                send(liteBoard);
-            }
-            else send(new LiteBoard("Error: " + board.getMessage()));
-
+            else send(board);
     }
 
-    public void setLiteBoard(LiteBoard liteBoard) { this.liteBoard = liteBoard; }
+    @Override
+    public void update(String message) {
+        /*
+         * Method used only by the controller
+         */
+    }
 }
