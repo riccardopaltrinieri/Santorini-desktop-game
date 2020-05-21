@@ -1,6 +1,5 @@
 package it.polimi.ingsw.View;
 
-import java.util.Scanner;
 import javax.swing.*;
 
 public class GUIHandler implements UserInterface{
@@ -95,13 +94,14 @@ public class GUIHandler implements UserInterface{
                     break;
                 case "Choose":
                     // Ask the name of a divinity or the number of players
-                    mainFrame.setVisible(false);
-                    SwingUtilities.invokeLater(new Runnable() {
-                        @Override
-                        public void run() {
-                            chooseFrame.init();
-                        }
-                    });
+                    mainFrame.setTextAreaString("select the Gods");
+                    chooseFrame.init();
+                    //TODO gestisci caso chiusura finestra
+                    while(!(chooseFrame.getDivinityString().contains(chooseFrame.getChosenDivinity()))){
+
+                    }
+                    outgoingMessage=chooseFrame.getChosenDivinity();
+
                     break;
             }
             return outgoingMessage;
