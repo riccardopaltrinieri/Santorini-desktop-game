@@ -2,13 +2,15 @@ package it.polimi.ingsw.View;
 
 import javax.swing.*;
 
-public class GUIHandler implements UserInterface{
+public class GUIHandler implements UserInterface {
 
     MainFrame mainFrame= new MainFrame();
     ChooseFrame chooseFrame = new ChooseFrame();
 
-
     private String name;
+    private String firstGodToRemove;
+    private String secondGodToRemove;
+
     @Override
     public String update(LiteBoard board) {
         String incomingMessage = board.getMessage();
@@ -20,9 +22,10 @@ public class GUIHandler implements UserInterface{
 
             switch (firstWord){
                 case "Welcome!":
+                    //TODO gestisci bottone cancel o toglilo
                     SwingUtilities.invokeLater(new Runnable() {
                         @Override
-                        public void run() {
+                        public synchronized void  run() {
                             mainFrame.init();
                         }
                     });
@@ -93,14 +96,26 @@ public class GUIHandler implements UserInterface{
                     }
                     break;
                 case "Choose":
+                    if ((parts[2].equals("second"))||(parts[2].equals("third"))) {
+                        chooseFrame=new ChooseFrame();
+                        chooseFrame.removeDivinityString(firstGodToRemove);
+                        if (parts[2].equals("third")){
+                            chooseFrame.removeDivinityString(secondGodToRemove);
+                        }
+                    }
                     // Ask the name of a divinity or the number of players
-                    mainFrame.setTextAreaString("select the Gods");
+                    chooseFrame.setDivinityNumber(parts[2]);
+                    mainFrame.updateTextArea("select the Gods");
                     chooseFrame.init();
                     //TODO gestisci caso chiusura finestra
-                    while(!(chooseFrame.getDivinityString().contains(chooseFrame.getChosenDivinity()))){
 
+                    outgoingMessage = chooseFrame.getChosenDivinity();
+                    if(parts[2].equals("first")) {
+                        firstGodToRemove = outgoingMessage;
                     }
-                    outgoingMessage=chooseFrame.getChosenDivinity();
+                    else if(parts[2].equals("second")){
+                        secondGodToRemove = outgoingMessage;
+                    }
 
                     break;
             }

@@ -1,5 +1,7 @@
 package it.polimi.ingsw.View;
 
+import it.polimi.ingsw.utils.Observer;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,7 +26,12 @@ public class ChooseFrameListener implements ItemListener, ActionListener {
     public void actionPerformed(ActionEvent e) {
         if ((JButton)e.getSource()==frame.getSelectButton()){
             frame.setChosenDivinity(frame.getDivinityList().getSelectedItem().toString());
+            synchronized (frame) {
+                frame.notifyAll();
+            }
             frame.dispose();
+
         }
     }
+
 }

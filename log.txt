@@ -46,3 +46,556 @@ Insert toni moved a worker in 3x2
 Insert toni build in 3 3
 Insert Rich update
 Insert toni build in 3 3
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Atlas
+Welcome! What's your name?
+-> ij
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> huih
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Demeter
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Artemis
+Choose the second divinity: 
+-> Minotaur
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> ko
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Athena
+Choose the second divinity: 
+-> Demeter
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Athena
+Choose the second divinity: 
+-> Apollo
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Athena
+Choose the second divinity: 
+-> Apollo
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Artemis
+Choose the second divinity: 
+-> Apollo
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Welcome! What's your name?
+-> anto
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Athena
+Choose the second divinity: 
+-> Apollo
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Atlas
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> anto
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Welcome! What's your name?
+-> giulio
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Error
+Choose the second divinity: 
+-> Error
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Error
+Choose the second divinity: 
+-> Error
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Welcome! What's your name?
+-> lucia
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Error
+Choose the second divinity: 
+-> Error
+Choose the third divinity: 
+-> Error
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Error
+Choose the second divinity: 
+-> Error
+Choose the third divinity: 
+-> Error
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Welcome! What's your name?
+-> guido
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Error
+Choose the second divinity: 
+-> Error
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Error
+Choose the second divinity: 
+-> Error
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Welcome! What's your name?
+-> filo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Artemis
+Choose the second divinity: 
+-> Apollo
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> fiilo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> kk
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> kok
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Error
+Choose the second divinity: 
+-> Error
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Error
+Choose the second divinity: 
+-> Error
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Welcome! What's your name?
+-> tua madre
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Error
+Choose the second divinity: 
+-> Error
+Choose the third divinity: 
+-> Error
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Welcome! What's your name?
+-> filo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Error
+Choose the second divinity: 
+-> Error
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Welcome! What's your name?
+-> fsdf
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Error
+Choose the second divinity: 
+-> Error
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> uhi
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+Choose the third divinity: 
+-> Demeter
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+Choose the third divinity: 
+-> Athena
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error

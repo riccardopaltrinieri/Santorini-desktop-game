@@ -81,7 +81,7 @@ public class MainFrame extends JFrame{
             String path="images/Board/" + row + column + ".png";
             cellBoardIcon[i]= new ImageIcon(path);
             cellButtons[i] = new JButton("",cellBoardIcon[i]);
-            cellButtons[i].setPreferredSize(new Dimension(85,85));
+            cellButtons[i].setPreferredSize(new Dimension(95,95));
             mapPanel.add(cellButtons[i]);
         }
         lim.gridy=1;

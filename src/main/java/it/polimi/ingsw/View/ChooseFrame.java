@@ -12,7 +12,12 @@ public class ChooseFrame extends JFrame{
     private JPanel eastPanel = new JPanel();
     private JPanel comboPanel = new JPanel();
 
-    private JTextArea infoText = new JTextArea();
+    private String chosenDivinity;
+    private String divinityNumber="first";
+    private ArrayList<String> divinityString= new ArrayList<String>();
+
+    private JTextArea godInfoText = new JTextArea();
+    private JTextArea infoText = new JTextArea("Decide your "+ divinityNumber +" Divinity");
 
     private Icon godIcon;
     private JLabel godLabel;
@@ -21,21 +26,24 @@ public class ChooseFrame extends JFrame{
 
     private JComboBox divinityList;
 
-    private String chosenDivinity;
-    private ArrayList<String> divinityString= new ArrayList<String>();
-
-    void init(){
-        setLayout(new BorderLayout());
-
+    public ChooseFrame(){
         for (int i=0;i<10;i++){
             divinityString.add(Divinity.values()[i].toString());
         }
-        divinityList = new JComboBox(divinityString.toArray());
+    }
+
+    void init(){
+        chosenDivinity="";
         ChooseFrameListener chooseFrameListener = new ChooseFrameListener(this);
+        setLayout(new BorderLayout());
+
+        divinityList = new JComboBox(divinityString.toArray());
         divinityList.addItemListener(chooseFrameListener);
+
         eastPanel.add(divinityList);
         eastPanel.add(selectButton);
         selectButton.addActionListener(chooseFrameListener);
+
         add(eastPanel,BorderLayout.EAST);
 
         String iconPath = "images/godCards/"+divinityList.getSelectedItem()+".png";
@@ -43,10 +51,14 @@ public class ChooseFrame extends JFrame{
         godLabel= new JLabel(godIcon);
         godPanel.setLayout(new BorderLayout());
         godPanel.add(godLabel, BorderLayout.CENTER);
-        infoText.setText("descizione rapida del potere del dio");
-        infoText.setEditable(false);
-        godPanel.add(infoText,BorderLayout.SOUTH);
+        godInfoText.setText("descizione rapida del potere del dio");
+        godInfoText.setEditable(false);
+        godPanel.add(godInfoText,BorderLayout.SOUTH);
         add(godPanel,BorderLayout.CENTER);
+
+        infoText.setEditable(false);
+        infoText.setAlignmentX(CENTER_ALIGNMENT);
+        add(infoText,BorderLayout.NORTH);
 
 
         setTitle("Choose Divinity");
@@ -86,8 +98,17 @@ public class ChooseFrame extends JFrame{
         this.selectButton = selectButton;
     }
 
-    public String getChosenDivinity() {
-        return chosenDivinity;
+    public synchronized String getChosenDivinity() {
+        synchronized (this) {
+            try {
+                wait();
+                if (divinityString.contains(chosenDivinity)) {
+                    return chosenDivinity;
+                } else return "Error";
+            } catch (InterruptedException e) {
+                return "error";
+            }
+        }
     }
 
     public void setChosenDivinity(String chosenDivinity) {
@@ -100,5 +121,17 @@ public class ChooseFrame extends JFrame{
 
     public void setDivinityString(ArrayList<String> divinityString) {
         this.divinityString = divinityString;
+    }
+
+    public void removeDivinityString(String stringToRemove){
+        divinityString.remove(stringToRemove);
+    }
+
+    public String getDivinityNumber() {
+        return divinityNumber;
+    }
+
+    public void setDivinityNumber(String divinityNumber) {
+        this.divinityNumber = divinityNumber;
     }
 }
