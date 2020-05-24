@@ -1,4 +1,4 @@
-package it.polimi.ingsw.View;
+package it.polimi.ingsw.View.Graphics;
 
 import it.polimi.ingsw.Model.Divinity;
 
@@ -32,7 +32,7 @@ public class ChooseFrame extends JFrame{
         }
     }
 
-    void init(){
+    public void init(){
         chosenDivinity="";
         ChooseFrameListener chooseFrameListener = new ChooseFrameListener(this);
         setLayout(new BorderLayout());
@@ -60,7 +60,7 @@ public class ChooseFrame extends JFrame{
         infoText.setAlignmentX(CENTER_ALIGNMENT);
         add(infoText,BorderLayout.NORTH);
 
-
+        setAlwaysOnTop(true);
         setTitle("Choose Divinity");
         pack();
         setVisible(true);

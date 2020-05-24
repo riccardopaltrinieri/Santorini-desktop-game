@@ -599,3 +599,344 @@ All the divinities have been chosen
 -> Error
 Now the other players will choose between them..
 -> Error
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+Choose the third divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Welcome! What's your name?
+-> lollo
+Wait for other players
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Welcome! What's your name?
+-> lollo
+Wait for other players
+Welcome! What's your name?
+-> carlo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+Choose the third divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Athena Artemis 
+-> Apollo
+Your Divinity: Apollo
+Choose your Divinity between: Athena Artemis 
+-> Athena
+Your Divinity: Athena
+Your Divinity: Artemis
+player fillo moves
+player fillo moves
+Insert fillo update
+player fillo moves
+Insert fillo update
+Welcome! What's your name?
+-> cavoletti
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Welcome! What's your name?
+-> lollo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Welcome! What's your name?
+-> lollo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Athena 
+-> Error
+Your Divinity: Error
+Your Divinity: Apollo
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Welcome! What's your name?
+-> lollo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+-> Error
+Your Divinity: Apollo
+Your Divinity: Error
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Welcome! What's your name?
+-> benni
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+-> Error
+Your Divinity: Error
+Your Divinity: Apollo
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Welcome! What's your name?
+-> lollo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+Welcome! What's your name?
+-> luca
+Wait for other players
+Welcome! What's your name?
+-> giuseppe
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Welcome! What's your name?
+-> luca
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Welcome! What's your name?
+-> lucia
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Welcome! What's your name?
+-> lucia
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Welcome! What's your name?
+-> lucia
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Artemis
+Your Divinity: Apollo
+player fillo moves
+player fillo moves
+-> Error
+Insert fillo update
+-> Error
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Welcome! What's your name?
+-> lollo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Hephaestus
+Choose the third divinity: 
+-> Minotaur
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Welcome! What's your name?
+-> filiberto
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Artemis
+player filiberto moves
+-> Error
+Insert filiberto update
+-> Error
+player filiberto moves
+-> Error
+Insert filiberto update
+-> Error
+Welcome! What's your name?
+-> filippo
+Wait for other players
+Welcome! What's your name?
+-> benni
+Wait for other players
+Welcome! What's your name?
+-> lollo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+Choose the third divinity: 
+-> Athena
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Choose your Divinity between: Apollo Artemis Athena 
+-> Athena
+Your Divinity: Athena
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Artemis
+Your Divinity: Apollo
+player filippo moves
+-> Error
+Insert filippo update
+-> Error
+player filippo moves
+-> Error
+Insert filippo update
+-> Error
+player filippo moves
+-> Error
+Insert filippo update
+-> Error

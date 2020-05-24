@@ -1,4 +1,4 @@
-package it.polimi.ingsw.View;
+package it.polimi.ingsw.View.Graphics;
 
 import it.polimi.ingsw.Model.GodPower;
 
@@ -8,12 +8,12 @@ import java.awt.*;
 
 public class MainFrame extends JFrame{
 
-    private String godinfo = " ciao sono apollo e sono fico ";
+    private String godinfo = "you don't have a God card yet";
 
-    private Icon apolloCard = new ImageIcon("images/godCards/Apollo.png");
+    private Icon godCard = new ImageIcon("images/godCards/None.png");
     private Icon[] cellBoardIcon = new ImageIcon[49];
 
-    private JLabel godLabel = new JLabel(apolloCard);
+    private JLabel godLabel = new JLabel(godCard);
 
     private JPanel topPanel = new JPanel();
     private JPanel bottomPanel = new JPanel();
@@ -100,6 +100,12 @@ public class MainFrame extends JFrame{
     public void updateTextArea(String text){
         textAreaString=text;
         textArea.setText(textAreaString);
+    }
+
+    public void updateGodCard(String godName){
+        String path="images/godCards/"+godName+".png";
+        godCard=new ImageIcon(path);
+        godLabel.setIcon(godCard);
     }
 
     public String getTextAreaString() {

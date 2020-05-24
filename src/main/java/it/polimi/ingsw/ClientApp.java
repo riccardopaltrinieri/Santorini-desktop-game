@@ -2,10 +2,8 @@ package it.polimi.ingsw;
 
 import it.polimi.ingsw.View.CLInterface;
 import it.polimi.ingsw.View.GUIHandler;
-import it.polimi.ingsw.View.MainFrame;
 import it.polimi.ingsw.View.NetworkHandler;
 
-import javax.swing.*;
 import java.io.IOException;
 import java.util.Scanner;
 

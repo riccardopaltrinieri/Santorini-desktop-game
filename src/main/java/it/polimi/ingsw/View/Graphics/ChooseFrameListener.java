@@ -1,6 +1,6 @@
-package it.polimi.ingsw.View;
+package it.polimi.ingsw.View.Graphics;
 
-import it.polimi.ingsw.utils.Observer;
+import it.polimi.ingsw.View.Graphics.ChooseFrame;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
