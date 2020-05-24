@@ -940,3 +940,90 @@ player filippo moves
 -> Error
 Insert filippo update
 -> Error
+Welcome! What's your name?
+-> sga
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Pan
+Choose the second divinity: 
+-> Apollo
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> dsag
+Wait for other players
+Choose your Divinity between: Pan Apollo 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Pan
+player sga moves
+player sga moves
+Insert sga update
+Insert sga update
+-> placeworker 1 1
+Insert sga placed a worker in 1x1
+Insert sga placed a worker in 1x1
+-> placeworker 2 2
+Insert sga placed a worker in 2x2
+Insert dsag update
+Insert sga placed a worker in 2x2
+Insert dsag update
+-> placeworker 3 3
+Insert dsag placed a worker in 3x3
+Insert dsag placed a worker in 3x3
+-> placeworker 4 4
+Insert dsag placed a worker in 4x4
+Insert dsag placed a worker in 4x4
+Insert sga update
+Insert sga update
+-> usepower
+Insert sga wants to use the God Power
+Insert sga wants to use the God Power
+-> move 2 1 1
+Welcome! What's your name?
+-> Anta
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Prometheus
+Choose the second divinity: 
+-> Apollo
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> rast
+Wait for other players
+Choose your Divinity between: Prometheus Apollo 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Prometheus
+player Anta moves
+player Anta moves
+Insert Anta update
+Insert Anta update
+-> placeworker 1 1
+Insert Anta placed a worker in 1x1
+Insert Anta placed a worker in 1x1
+-> placeworker 2 2
+Insert Anta placed a worker in 2x2
+Insert Anta placed a worker in 2x2
+Insert rast update
+Insert rast update
+-> placeworker 3 3
+Insert rast placed a worker in 3x3
+Insert rast placed a worker in 3x3
+-> placeworker 5 5
+Insert rast placed a worker in 5x5
+Insert rast placed a worker in 5x5
+Insert Anta update
+Insert Anta update
+-> usepower
+Insert Anta wants to use the God Power
+Insert Anta wants to use the God Power
+-> build 1 2 1
+Insert Anta build in 1 2
+Insert Anta build in 1 2
+-> move 2 1 1

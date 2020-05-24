@@ -3,6 +3,8 @@ package it.polimi.ingsw.Controller;
 import it.polimi.ingsw.Model.*;
 import it.polimi.ingsw.Model.Divinities.Athena;
 import it.polimi.ingsw.Model.Divinities.Atlas;
+import it.polimi.ingsw.Model.Divinities.Pan;
+import it.polimi.ingsw.Model.Divinities.Prometheus;
 import org.junit.Test;
 
 import static junit.framework.TestCase.*;
@@ -53,7 +55,7 @@ public class ControllerTest {
 
 
     @Test
-    public void testGodPower() {
+    public void testGodPowerAthenaAtlas() {
 
         Game game = new Game();
         Controller controller = new Controller(game);
@@ -86,6 +88,48 @@ public class ControllerTest {
 
         // check the superBuild function
         assertTrue(game.getBoard().getCell(2,2).getLevel() > 0);
+
+    }
+    @Test
+    public void testGodPower() {
+
+        Game game = new Game();
+        Controller controller = new Controller(game);
+        Player tester = new Player("tester", Color.Red, game);
+        Player tester2 = new Player("tester2", Color.Red, game);
+        game.setNumPlayer(2);
+        //insert the power to test
+        tester.setDivinity(Divinity.Pan);
+        tester.setGodPower(new Pan());
+        Pan testPan = new Pan();
+        assertEquals( testPan.getDivinity(), tester.getDivinity());
+        tester2.setDivinity(Divinity.Prometheus);
+        Prometheus testProm = new Prometheus();
+        assertEquals( testProm.getDivinity(), tester2.getDivinity());
+        tester2.setGodPower(new Atlas());
+
+        controller.update("tester placeWorker 1 1");
+        controller.update("tester placeWorker 4 4");
+
+        controller.update("tester2 placeWorker 3 3");
+        controller.update("tester2 placeWorker 4 3");
+
+        //controller.update("tester usePower");
+        //controller.update("tester superMove 1 2 1");
+
+
+
+       // assertFalse(game.getBoard().getCell(0,1).getIsEmpty());
+
+        //controller.update("tester build 1 1 1");
+
+        controller.update("tester2 usePower");
+        controller.update("tester2 build 3 2 1");
+
+
+
+        //check Prometheus
+     //   assertEquals(1,game.getBoard().getCell(2,1).getLevel());
 
     }
 }

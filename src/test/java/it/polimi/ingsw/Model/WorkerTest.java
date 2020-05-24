@@ -71,4 +71,9 @@ public class WorkerTest {
         Cell wrongDestination = new Cell(3,3);
         assertFalse(test.canBuildIn(wrongDestination));
     }
+    @Test
+    public void testOwner() {
+        test.setOwner(workerOwner);
+        assertEquals(test.getOwner(), workerOwner );
+    }
 }

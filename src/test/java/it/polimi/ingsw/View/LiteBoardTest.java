@@ -17,7 +17,7 @@ public class LiteBoardTest {
     Player player2 = new Player("rsani",Color.Yellow, game);
 
     @Test
-    public void testCostruttore (){
+    public void testConstructor (){
         Cell test1 = tabella.getCell(1,1);
         Cell test2 = tabella.getCell(2,1);
         player1.placeWorkers(test1);
@@ -27,12 +27,18 @@ public class LiteBoardTest {
         player2.placeWorkers(test3);
         player2.placeWorkers(test4);
         LiteBoard test = new LiteBoard("ciao", tabella, game);
-        assertEquals("Esatto",0, test.getLevelLR(1,0));
+
+        assertEquals("Esatto", 0, Integer.parseInt(test.getLevelLR(1,0)));
         System.out.println(test.getLevelLR(1,1));
         tabella.getCell(1,1).setLevel(1);
         test = new LiteBoard("ciao", tabella, game);
         test.printBoardCLI();
 
+    }
+    @Test
+    public void TestConstructorMessage (){
+        LiteBoard test2 = new LiteBoard("Check");
+        assertEquals("Ok", "Check", test2.getMessage());
     }
     }
 
