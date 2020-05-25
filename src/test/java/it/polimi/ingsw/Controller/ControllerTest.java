@@ -21,7 +21,7 @@ public class ControllerTest {
         Player tester2 = new Player("tester2", Color.Red, game);
         game.setNumPlayer(2);
         //insert the power to test
-        tester.setDivinity(Divinity.Default);
+        tester.setGodPower("default");
 
 
         controller.update("tester placeWorker 1 1");
@@ -63,9 +63,9 @@ public class ControllerTest {
         Player tester2 = new Player("tester2", Color.Red, game);
         game.setNumPlayer(2);
         //insert the power to test
-        tester.setDivinity(Divinity.Athena);
+        tester.setGodPower("Athena");
         tester.setGodPower(new Athena());
-        tester2.setDivinity(Divinity.Atlas);
+        tester2.setGodPower("Atlas");
         tester2.setGodPower(new Atlas());
 
         controller.update("tester placeWorker 1 1");
@@ -99,13 +99,13 @@ public class ControllerTest {
         Player tester2 = new Player("tester2", Color.Red, game);
         game.setNumPlayer(2);
         //insert the power to test
-        tester.setDivinity(Divinity.Pan);
+        tester.setGodPower("Pan");
         tester.setGodPower(new Pan());
         Pan testPan = new Pan();
-        assertEquals( testPan.getDivinity(), tester.getDivinity());
-        tester2.setDivinity(Divinity.Prometheus);
+        assertEquals( testPan.getDivinity(), tester.getGodPower().getDivinity());
+        tester2.setGodPower("Prometheus");
         Prometheus testProm = new Prometheus();
-        assertEquals( testProm.getDivinity(), tester2.getDivinity());
+        assertEquals( testProm.getDivinity(), tester2.getGodPower().getDivinity());
         tester2.setGodPower(new Atlas());
 
         controller.update("tester placeWorker 1 1");

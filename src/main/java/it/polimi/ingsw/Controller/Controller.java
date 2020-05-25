@@ -39,7 +39,7 @@ public class Controller extends Observable implements Observer {
             switch (action) {
                 case usepower:
                     // Set the path of fsm as the one of the divinity
-                    if (fsm.getState() == State.start) fsm.setPath(game.getCurrentPlayer().getDivinity());
+                    if (fsm.getState() == State.start) fsm.setPath(game.getCurrentPlayer().getGodPower().getDivinity());
                     String msg = "Insert " + game.getCurrentPlayer().getName() + " wants to use the God Power";
                     game.sendBoard(new LiteBoard(msg, game.getBoard(),game));
                     actionExecuted = true;

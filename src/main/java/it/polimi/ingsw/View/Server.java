@@ -164,8 +164,8 @@ public class Server {
             Controller controller = new Controller(game);
             Player player1 = new Player(keys.get(0), Red, game);
             Player player2 = new Player(keys.get(1), Yellow, game);
-            player1.setDivinity(Divinity.valueOf(divinityPlay1));
-            player2.setDivinity(Divinity.valueOf(divinityPlay2));
+            player1.setGodPower(divinityPlay1);
+            player2.setGodPower(divinityPlay2);
             //qui ci vanno gli observer
             game.addObserver(connections.get(0));
             game.addObserver(connections.get(1));
@@ -184,7 +184,7 @@ public class Server {
                 keys.add(thirdPlayer);
                 Connection c3 = waitingConnection.get(keys.get(2));
                 Player player3 = new Player(keys.get(2), Green, game);
-                player3.setDivinity(Divinity.valueOf(divinityPlay3));
+                player3.setGodPower(divinityPlay3);
 
                 game.addObserver(connections.get(2));
                 connections.get(2).addObserver(controller);

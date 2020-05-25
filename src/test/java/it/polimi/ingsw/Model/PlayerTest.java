@@ -1,5 +1,6 @@
 package it.polimi.ingsw.Model;
 
+import it.polimi.ingsw.Model.Divinities.*;
 import org.junit.Test;
 
 import static junit.framework.TestCase.*;
@@ -15,6 +16,28 @@ public class PlayerTest {
         tester.placeWorkers(board.getCell(1,1));
         tester.placeWorkers(board.getCell(4,4));
         assertFalse(game.getBoard().getCell(1,1).getIsEmpty());
+    }
+
+    @Test
+    public void setGodPowerString (){
+        tester.setGodPower("apollo");
+        assertTrue(tester.getGodPower() instanceof Apollo);
+        tester.setGodPower("artemis");
+        assertTrue(tester.getGodPower() instanceof Artemis);
+        tester.setGodPower("athena");
+        assertTrue(tester.getGodPower() instanceof Athena);
+        tester.setGodPower("atlas");
+        assertTrue(tester.getGodPower() instanceof Atlas);
+        tester.setGodPower("demeter");
+        assertTrue(tester.getGodPower() instanceof Demeter);
+        tester.setGodPower("hephaestus");
+        assertTrue(tester.getGodPower() instanceof Hephaestus);
+        tester.setGodPower("minotaur");
+        assertTrue(tester.getGodPower() instanceof Minotaur);
+        tester.setGodPower("pan");
+        assertTrue(tester.getGodPower() instanceof Pan);
+        tester.setGodPower("prometheus");
+        assertTrue(tester.getGodPower() instanceof Prometheus);
     }
 
     @Test

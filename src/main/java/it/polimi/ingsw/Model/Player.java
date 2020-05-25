@@ -1,12 +1,13 @@
 package it.polimi.ingsw.Model;
 
+import it.polimi.ingsw.Model.Divinities.*;
+
 import java.util.ArrayList;
 
 public class Player {
 
     private String name;
     private Color color;
-    private Divinity divinity;
     private ArrayList<Worker> workers;
     private Game game;
     private GodPower godPower;
@@ -57,12 +58,6 @@ public class Player {
     public String getName() {
         return name;
     }
-    public Divinity getDivinity() {
-        return divinity;
-    }
-    public void setDivinity(Divinity divinity) {
-        this.divinity = divinity;
-    }
     public Worker getWorker(int numWorker) {
         return workers.get(numWorker);
     }
@@ -77,6 +72,32 @@ public class Player {
     }
     public void setGodPower(GodPower godPower) {
         this.godPower = godPower;
+    }
+    public void setGodPower(String godPower){
+        godPower.toLowerCase();
+        switch (godPower){
+            case("apollo"): this.godPower=new Apollo();
+            break;
+            case("artemis"): this.godPower=new Artemis();
+            break;
+            case("athena"): this.godPower=new Athena();
+            break;
+            case("atlas"): this.godPower=new Atlas();
+            break;
+            case("default"): this.godPower=new DefaultDivinity();
+            break;
+            case("demeter"): this.godPower=new Demeter();
+            break;
+            case("hephaestus"): this.godPower=new Hephaestus();
+            break;
+            case("minotaur"): this.godPower= new Minotaur();
+            break;
+            case("pan"): this.godPower=new Pan();
+            break;
+            case("prometheus"): this.godPower=new Prometheus();
+            break;
+            default: throw new IllegalArgumentException();
+        }
     }
     public Color getColor() { return color; }
 }
