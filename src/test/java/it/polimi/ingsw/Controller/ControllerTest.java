@@ -75,7 +75,7 @@ public class ControllerTest {
         controller.update("tester2 placeWorker 4 3");
 
         controller.update("tester usePower");
-        controller.update("tester superMove 1 2 1");
+        controller.update("tester move 1 2 1");
 
         // check the superMove function
         assertFalse(game.getBoard().getCell(0,1).getIsEmpty());
@@ -84,7 +84,7 @@ public class ControllerTest {
 
         controller.update("tester2 usePower");
         controller.update("tester2 move 3 2 1");
-        controller.update("tester2 superBuild 3 3 1");
+        controller.update("tester2 build 3 3 1");
 
         // check the superBuild function
         assertTrue(game.getBoard().getCell(2,2).getLevel() > 0);
@@ -114,14 +114,14 @@ public class ControllerTest {
         controller.update("tester2 placeWorker 3 3");
         controller.update("tester2 placeWorker 4 3");
 
-        //controller.update("tester usePower");
-        //controller.update("tester superMove 1 2 1");
+        controller.update("tester usePower");
+        controller.update("tester move 1 2 1");
 
 
 
-       // assertFalse(game.getBoard().getCell(0,1).getIsEmpty());
+        //assertFalse(game.getBoard().getCell(0,1).getIsEmpty());
 
-        //controller.update("tester build 1 1 1");
+        controller.update("tester build 1 1 1");
 
         controller.update("tester2 usePower");
         controller.update("tester2 build 3 2 1");
@@ -129,7 +129,7 @@ public class ControllerTest {
 
 
         //check Prometheus
-     //   assertEquals(1,game.getBoard().getCell(2,1).getLevel());
+        //assertEquals(1,game.getBoard().getCell(2,1).getLevel());
 
     }
 }
