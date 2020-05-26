@@ -1,5 +1,6 @@
 package it.polimi.ingsw.View;
 
+import it.polimi.ingsw.Model.Divinity;
 import it.polimi.ingsw.utils.InputString;
 import it.polimi.ingsw.utils.NamesDivinities;
 
@@ -10,6 +11,7 @@ public class CLInterface implements UserInterface {
 
     private final FSMView fsm = new FSMView();
     private String name;
+    private Divinity divinity;
     private int worker;
 
     public CLInterface(){
@@ -58,7 +60,7 @@ public class CLInterface implements UserInterface {
 
                 case "Your":
                     // Shows to the player his God
-                    fsm.setPath(parts[2]);
+                    setDivinity(parts[2]);
                     System.out.println(incomingMessage);
                     outgoingMessage = "noMessageToSend";
                     break;
@@ -203,7 +205,12 @@ public class CLInterface implements UserInterface {
                         break;
 
                     case normal:
+                        fsm.setPath(Divinity.Default);
+                        if(fsm.getState() != State.start) throw new IllegalArgumentException();
+                        if(partsInput.length > 1) throw new IllegalArgumentException();
+                        break;
                     case usepower:
+                        fsm.setPath(divinity);
                         if(fsm.getState() != State.start) throw new IllegalArgumentException();
                         if(partsInput.length > 1) throw new IllegalArgumentException();
                         break;
@@ -242,11 +249,15 @@ public class CLInterface implements UserInterface {
             }
     }
 
+    // *************************** GETTER AND SETTER ********************************
+
     public void setWorker(int worker) {
         this.worker = worker;
     }
-
     public int getWorker() {
         return worker;
+    }
+    public void setDivinity(String divinity) {
+        this.divinity = Divinity.valueOf(divinity);
     }
 }

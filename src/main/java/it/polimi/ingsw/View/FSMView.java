@@ -198,8 +198,8 @@ public class FSMView {
         this.state = state;
     }
 
-    protected void setPath(String divinity) {
-        this.divinity = Divinity.valueOf(divinity);
+    protected void setPath(Divinity divinity) {
+        this.divinity = divinity;
     }
 
 

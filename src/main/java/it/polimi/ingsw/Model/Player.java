@@ -74,8 +74,7 @@ public class Player {
         this.godPower = godPower;
     }
     public void setGodPower(String godPower){
-        godPower.toLowerCase();
-        switch (godPower){
+        switch (godPower.toLowerCase()){
             case("apollo"): this.godPower=new Apollo();
             break;
             case("artemis"): this.godPower=new Artemis();

@@ -66,6 +66,7 @@ public class Controller extends Observable implements Observer {
                     column = Integer.parseInt(parts[3]) - 1;
                     worker = Integer.parseInt(parts[4]) - 1;
                     if (fsm.getState() == State.move) actionExecuted = game.move(row, column, worker);
+                    if (fsm.getState() == State.superMove) actionExecuted = game.useGodPower(row, column, worker);
                     break;
                 case build:
                     // Build with the worker
@@ -73,14 +74,7 @@ public class Controller extends Observable implements Observer {
                     column = Integer.parseInt(parts[3]) - 1;
                     worker = Integer.parseInt(parts[4]) - 1;
                     if (fsm.getState() == State.build) actionExecuted = game.build(row, column, worker);
-                    break;
-                case supermove:
-                case superbuild:
-                    row = Integer.parseInt(parts[2]) - 1;
-                    column = Integer.parseInt(parts[3]) - 1;
-                    worker = Integer.parseInt(parts[4]) - 1;
-                    if (fsm.getState() == State.superMove || fsm.getState() == State.superBuild)
-                        actionExecuted = game.useGodPower(row, column, worker);
+                    if (fsm.getState() == State.superBuild) actionExecuted = game.useGodPower(row, column, worker);
                     break;
             }
 
