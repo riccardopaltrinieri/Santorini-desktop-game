@@ -175,47 +175,42 @@ public class CLInterface implements UserInterface {
                 // If the action is correct the message will be "action row column"
 
                 switch (action) {
-
-                    case worker:
-                        if(fsm.getState() != State.worker) throw new IllegalArgumentException();
+                    case worker -> {
+                        if (fsm.getState() != State.worker) throw new IllegalArgumentException();
                         int worker = Integer.parseInt(partsInput[1]);
                         if (!(worker == 1) && !(worker == 2)) throw new IllegalArgumentException();
                         setWorker(worker);
-                        break;
-                    case supermove:
-                    case move:
-                        if(fsm.getState() != State.move) throw new IllegalArgumentException();
+                    }
+                    case supermove, move -> {
+                        if (fsm.getState() != State.move) throw new IllegalArgumentException();
                         row = Integer.parseInt(partsInput[1]);
                         col = Integer.parseInt(partsInput[2]);
                         if (row < 1 || row > 5 || col < 1 || col > 5) throw new IllegalArgumentException();
                         inputLine += " " + getWorker();
-                        break;
-                    case superbuild:
-                    case build:
-                        if(fsm.getState() != State.build) throw new IllegalArgumentException();
+                    }
+                    case superbuild, build -> {
+                        if (fsm.getState() != State.build) throw new IllegalArgumentException();
                         row = Integer.parseInt(partsInput[1]);
                         col = Integer.parseInt(partsInput[2]);
                         if (row < 1 || row > 5 || col < 1 || col > 5) throw new IllegalArgumentException();
                         inputLine += " " + getWorker();
-                        break;
-                    case placeworker:
+                    }
+                    case placeworker -> {
                         row = Integer.parseInt(partsInput[1]);
                         col = Integer.parseInt(partsInput[2]);
                         if (row < 1 || row > 5 || col < 1 || col > 5) throw new IllegalArgumentException();
-                        break;
-
-                    case normal:
+                    }
+                    case normal -> {
                         fsm.setPath(Divinity.Default);
-                        if(fsm.getState() != State.start) throw new IllegalArgumentException();
-                        if(partsInput.length > 1) throw new IllegalArgumentException();
-                        break;
-                    case usepower:
+                        if (fsm.getState() != State.start) throw new IllegalArgumentException();
+                        if (partsInput.length > 1) throw new IllegalArgumentException();
+                    }
+                    case usepower -> {
                         fsm.setPath(divinity);
-                        if(fsm.getState() != State.start) throw new IllegalArgumentException();
-                        if(partsInput.length > 1) throw new IllegalArgumentException();
-                        break;
-                    default:
-                        throw new IllegalArgumentException();
+                        if (fsm.getState() != State.start) throw new IllegalArgumentException();
+                        if (partsInput.length > 1) throw new IllegalArgumentException();
+                    }
+                    default -> throw new IllegalArgumentException();
                 }
 
                 // Save all the messages in a log file

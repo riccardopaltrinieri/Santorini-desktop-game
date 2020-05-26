@@ -74,28 +74,18 @@ public class Player {
         this.godPower = godPower;
     }
     public void setGodPower(String godPower){
-        switch (godPower.toLowerCase()){
-            case("apollo"): this.godPower=new Apollo();
-            break;
-            case("artemis"): this.godPower=new Artemis();
-            break;
-            case("athena"): this.godPower=new Athena();
-            break;
-            case("atlas"): this.godPower=new Atlas();
-            break;
-            case("default"): this.godPower=new DefaultDivinity();
-            break;
-            case("demeter"): this.godPower=new Demeter();
-            break;
-            case("hephaestus"): this.godPower=new Hephaestus();
-            break;
-            case("minotaur"): this.godPower= new Minotaur();
-            break;
-            case("pan"): this.godPower=new Pan();
-            break;
-            case("prometheus"): this.godPower=new Prometheus();
-            break;
-            default: throw new IllegalArgumentException();
+        switch (godPower.toLowerCase()) {
+            case ("apollo") -> this.godPower = new Apollo();
+            case ("artemis") -> this.godPower = new Artemis();
+            case ("athena") -> this.godPower = new Athena();
+            case ("atlas") -> this.godPower = new Atlas();
+            case ("default") -> this.godPower = new DefaultDivinity();
+            case ("demeter") -> this.godPower = new Demeter();
+            case ("hephaestus") -> this.godPower = new Hephaestus();
+            case ("minotaur") -> this.godPower = new Minotaur();
+            case ("pan") -> this.godPower = new Pan();
+            case ("prometheus") -> this.godPower = new Prometheus();
+            default -> throw new IllegalArgumentException();
         }
     }
     public Color getColor() { return color; }

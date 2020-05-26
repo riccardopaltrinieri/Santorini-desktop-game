@@ -21,32 +21,14 @@ public class FSMView {
      */
     public String getStateString() {
 
-        String line;
-        switch (state) {
-            case placeworker:
-                line = "Place your worker on the map: (write 'placeworker [row] [column]')";
-                break;
-            case start:
-                line = "Do you want to use the God power or going with the normal turn? (usepower/normal)";
-                break;
-            case worker:
-                line = "Choose the worker that you want to move and build with: (write 'worker 1' or 'worker 2]')";
-                break;
-            case move:
-                line = "Where do you want to move? (write 'move [row] [column]')";
-                break;
-            case build:
-                line = "Where do you want to build? (write 'build [row] [column]')";
-                break;
-            case endTurn:
-                line = "Turn Ended..";
-                break;
-            default:
-                line = "Error";
-                break;
-        }
-
-        return line;
+        return switch (state) {
+            case placeworker -> "Place your worker on the map: (write 'placeworker [row] [column]')";
+            case start -> "Do you want to use the God power or going with the normal turn? (usepower/normal)";
+            case worker -> "Choose the worker that you want to move and build with: (write 'worker 1' or 'worker 2]')";
+            case move -> "Where do you want to move? (write 'move [row] [column]')";
+            case build -> "Where do you want to build? (write 'build [row] [column]')";
+            case endTurn -> "Turn Ended..";
+        };
     }
 
     /**
