@@ -5,7 +5,6 @@ import it.polimi.ingsw.View.Graphics.ChooseFrame;
 import it.polimi.ingsw.View.Graphics.MainFrame;
 
 import javax.swing.*;
-import java.util.NoSuchElementException;
 
 public class GUIHandler implements UserInterface {
 
@@ -28,11 +27,6 @@ public class GUIHandler implements UserInterface {
             String[] parts = incomingMessage.split(" ");
             String firstWord = parts[0];
             mainFrame.updateTextArea(incomingMessage);
-
-            for (int i=0; i<25;i++){
-                mainFrame.getActiveCellButtons()[i].setEnabled(false);
-            }
-
             switch (firstWord){
 
 
@@ -178,10 +172,10 @@ public class GUIHandler implements UserInterface {
                                 }
                                 for (int j=0;j<numPlayer*2;j++){
                                     if((board.getPosWorker()[j][0]==row)&&(board.getPosWorker()[j][1]==column)){
-                                        mainFrame.getActiveCellButtons()[i].setEnabled(false);
+                                        mainFrame.getActiveBoardButtons()[i].setEnabled(false);
                                     }
                                     else {
-                                        mainFrame.getActiveCellButtons()[i].setEnabled(true);
+                                        mainFrame.getActiveBoardButtons()[i].setEnabled(true);
                                     }
                                 }
                             }
@@ -190,7 +184,7 @@ public class GUIHandler implements UserInterface {
                     }
                     else{
                         for (int i=0; i<25;i++){
-                            mainFrame.getActiveCellButtons()[i].setEnabled(false);
+                            mainFrame.getActiveBoardButtons()[i].setEnabled(false);
                         }
                         mainFrame.updateTextArea("waiting for "+parts[1]+"'s turn");
                     }

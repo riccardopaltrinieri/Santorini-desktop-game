@@ -1310,3 +1310,59 @@ Insert Fillo update
 Insert Fillo update
 -> placeworker 2 2
 Insert Fillo placed a worker in 2x2
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Welcome! What's your name?
+-> ij
+Wait for other players
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Artemis
+Insert fillo update
+-> Error
+Welcome! What's your name?
+-> sdfsd
+Wait for other players
+Welcome! What's your name?
+-> adsa
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Welcome! What's your name?
+-> asda
+Wait for other players
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Artemis
+Your Divinity: Apollo
+Insert adsa update
+-> Error
+Insert adsa update
+-> Error
