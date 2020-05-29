@@ -11,10 +11,10 @@ public class MinotaurTest {
     @Test
     public void executeTest() throws AthenaException {
         Game game = new Game();
-        Player player=new Player("test player", Color.Yellow,game);
+        Player player=new Player("test player", Color.Purple,game);
         Board board = game.getBoard();
         game.setBoard(board);
-        Player foo = new Player("enemy foo test", Color.Green,game);
+        Player foo = new Player("enemy foo test", Color.Brown,game);
         player.placeWorkers(board.getCell(0,0));
         player.placeWorkers(board.getCell(4,4));
         foo.placeWorkers(board.getCell(1,1));

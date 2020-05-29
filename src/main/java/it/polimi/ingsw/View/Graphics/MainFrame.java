@@ -27,7 +27,7 @@ public class MainFrame extends JFrame{
 
     private String textAreaString;
 
-    private BoardButtonListener boardListener = new BoardButtonListener();
+    private BoardButton chosenButton;
 
     private void registerPlayer(){
         
@@ -82,6 +82,8 @@ public class MainFrame extends JFrame{
             String path="images/Board/" + row + column + ".png";
             cellBoardIcon[i]= new ImageIcon(path);
             boardButtons[i] = new BoardButton("",cellBoardIcon[i]);
+            boardButtons[i].setRow(row-1);
+            boardButtons[i].setColumn(column-1);
             boardButtons[i].setDisabledIcon(cellBoardIcon[i]);
             boardButtons[i].setPreferredSize(new Dimension(95,95));
             if ((row==1)||(row==7)||(column==1)||(column==7)){
@@ -89,7 +91,6 @@ public class MainFrame extends JFrame{
             }
             else{
                 activeBoardButtons[j]= boardButtons[i];
-                activeBoardButtons[j].addActionListener(boardListener);
                 activeBoardButtons[j].setEnabled(false);
                 j++;
             }
@@ -127,11 +128,30 @@ public class MainFrame extends JFrame{
         this.textAreaString = textAreaString;
     }
 
-    public JButton[] getActiveBoardButtons() {
+    public BoardButton[] getActiveBoardButtons() {
         return activeBoardButtons;
     }
 
     public void setActiveBoardButtons(BoardButton[] activeBoardButtons) {
         this.activeBoardButtons = activeBoardButtons;
+    }
+
+    public void setChosenButton(BoardButton chosenButton) {
+        this.chosenButton = chosenButton;
+    }
+
+    public synchronized int[] getChosenButtonCoordinate() {
+        synchronized (this) {
+            try {
+                wait();
+                int[] chosenButtonCoordinate = new int[2];
+                chosenButtonCoordinate[0]=chosenButton.getRow();
+                chosenButtonCoordinate[1]=chosenButton.getColumn();
+                return chosenButtonCoordinate;
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+                return getChosenButtonCoordinate();
+            }
+        }
     }
 }

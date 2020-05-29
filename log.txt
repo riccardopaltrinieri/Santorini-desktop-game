@@ -1366,3 +1366,760 @@ Insert adsa update
 -> Error
 Insert adsa update
 -> Error
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Welcome! What's your name?
+-> benni
+Wait for other players
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Artemis
+Your Divinity: Apollo
+Insert fillo update
+-> Error
+Insert fillo update
+-> Error
+Welcome! What's your name?
+-> lollo
+Wait for other players
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Artemis
+Your Divinity: Apollo
+Insert fillo update
+-> Error
+Insert fillo update
+Welcome! What's your name?
+-> lollo
+Wait for other players
+Welcome! What's your name?
+-> Fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Artemis
+Insert Fillo update
+Welcome! What's your name?
+-> lollo
+Wait for other players
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Artemis
+Your Divinity: Apollo
+Insert fillo update
+Welcome! What's your name?
+-> lollo
+Wait for other players
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Artemis
+Insert fillo update
+Insert fillo update
+-> Error
+Welcome! What's your name?
+-> lollo
+Wait for other players
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Artemis
+Insert fillo update
+Insert fillo update
+-> Error
+Welcome! What's your name?
+-> lollo
+Wait for other players
+Welcome! What's your name?
+-> sdasd
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Artemis
+Insert sdasd update
+Insert sdasd update
+-> Error
+Welcome! What's your name?
+-> lolloi
+Wait for other players
+Welcome! What's your name?
+-> jij
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Artemis
+Insert jij update
+Insert jij update
+-> Error
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Welcome! What's your name?
+-> asdas
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Artemis
+Insert asdas update
+Insert asdas update
+-> Error
+Welcome! What's your name?
+-> asdas
+Wait for other players
+Welcome! What's your name?
+-> dsadfsad
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Artemis
+Insert dsadfsad update
+Insert dsadfsad update
+-> Error
+Welcome! What's your name?
+-> asdasd
+Wait for other players
+Welcome! What's your name?
+-> asdasd
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Welcome! What's your name?
+-> sadasdasda
+Wait for other players
+Welcome! What's your name?
+-> sdasdas
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Artemis
+Your Divinity: Apollo
+Insert sdasdas update
+Insert sdasdas update
+-> Error
+Welcome! What's your name?
+-> asdasdasd
+Wait for other players
+Welcome! What's your name?
+-> sdadasdasd
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Artemis
+Insert sdadasdasd update
+Insert sdadasdasd update
+-> Error
+Welcome! What's your name?
+-> sadasd
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Welcome! What's your name?
+-> sadas
+Wait for other players
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Artemis
+Insert sadasd update
+Insert sadasd update
+-> Error
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Welcome! What's your name?
+-> ludovico
+Wait for other players
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Artemis
+Your Divinity: Apollo
+Insert fillo update
+-> Error
+Welcome! What's your name?
+-> lollo
+Wait for other players
+Welcome! What's your name?
+-> sdasdasd
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Artemis
+Insert sdasdasd update
+Welcome! What's your name?
+-> asdasd
+Wait for other players
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Artemis
+Insert fillo update
+Welcome! What's your name?
+-> qweqwe
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Welcome! What's your name?
+-> htrtyr
+Wait for other players
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Artemis
+Insert qweqwe update
+-> Error
+Insert qweqwe update
+-> placeworker 4 3
+Welcome! What's your name?
+-> filadasd
+Wait for other players
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Artemis
+Insert fillo update
+Insert fillo update
+-> placeworker 4 3
+Welcome! What's your name?
+-> sadasdas
+Wait for other players
+Welcome! What's your name?
+-> asdasd
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Apollo
+Insert asdasd update
+Your Divinity: Artemis
+Insert asdasd update
+-> placeworker 4 3
+Welcome! What's your name?
+-> ludovico
+Wait for other players
+Welcome! What's your name?
+-> franceschetti
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Apollo
+Insert franceschetti update
+All the divinities have been chosen
+Now the other players will choose between them..
+Your Divinity: Artemis
+Insert franceschetti update
+-> placeworker 4 5
+Insert franceschetti placed a worker in 4x5
+Insert franceschetti placed a worker in 4x5
+-> placeworker 5 3
+Insert franceschetti placed a worker in 5x3
+Insert franceschetti placed a worker in 5x3
+Insert ludovico update
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Welcome! What's your name?
+-> sadasd
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Artemis
+Insert sadasd update
+Insert sadasd update
+-> placeworker 3 3
+Insert sadasd placed a worker in 3x3
+Insert sadasd placed a worker in 3x3
+-> placeworker 5 5
+Insert sadasd placed a worker in 5x5
+Insert sadasd placed a worker in 5x5
+Insert fillo update
+Welcome! What's your name?
+-> lollasd
+Wait for other players
+Welcome! What's your name?
+-> asdaw
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Apollo
+Your Divinity: Artemis
+Insert asdaw update
+Insert asdaw update
+-> placeworker 3 4
+Insert asdaw placed a worker in 3x4
+Insert asdaw placed a worker in 3x4
+-> placeworker 5 3
+Insert asdaw placed a worker in 5x3
+Insert asdaw placed a worker in 5x3
+Insert lollasd update
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> richi
+Wait for other players
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Artemis
+Your Divinity: Apollo
+Insert fillo update
+Welcome! What's your name?
+-> asdasd
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> asdafsdfsdfgsdf
+Wait for other players
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Artemis
+Your Divinity: Apollo
+Insert asdasd update
+Insert asdasd update
+-> placeworker 3 3
+Insert asdasd placed a worker in 3x3
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> asdasasdadsds
+Wait for other players
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Artemis
+Your Divinity: Apollo
+Insert fillo update
+Insert fillo update
+-> placeworker 3 3
+Insert fillo placed a worker in 3x3
+Insert fillo placed a worker in 3x3
+-> placeworker 5 3
+Insert fillo placed a worker in 5x3
+Insert fillo placed a worker in 5x3
+Insert asdasasdadsds update
+Welcome! What's your name?
+-> antonio
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Minotaur
+Choose the second divinity: 
+-> Hephaestus
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> riccardo
+Wait for other players
+Choose your Divinity between: Minotaur Hephaestus 
+-> Minotaur
+Your Divinity: Minotaur
+Your Divinity: Hephaestus
+Insert antonio update
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Welcome! What's your name?
+-> asdasfas
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Apollo
+Your Divinity: Artemis
+Insert asdasfas update
+Insert asdasfas update
+-> placeworker 3 3
+Insert asdasfas placed a worker in 3x3
+Insert asdasfas placed a worker in 3x3
+-> placeworker 5 5
+Insert asdasfas placed a worker in 5x5
+Insert asdasfas placed a worker in 5x5
+Insert fillo update
+Insert fillo update
+-> placeworker 4 3
+Insert fillo placed a worker in 4x3
+Insert fillo placed a worker in 4x3
+-> placeworker 3 5
+Insert fillo placed a worker in 3x5
+Insert fillo placed a worker in 3x5
+Insert asdasfas update
+Insert asdasfas update
+Welcome! What's your name?
+-> dasafs
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> casfsdfa
+Wait for other players
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Artemis
+Your Divinity: Apollo
+Insert dasafs update
+Insert dasafs update
+-> placeworker 3 3
+Insert dasafs placed a worker in 3x3
+Insert dasafs placed a worker in 3x3
+-> placeworker 5 5
+Insert dasafs placed a worker in 5x5
+Insert dasafs placed a worker in 5x5
+Insert casfsdfa update
+Insert casfsdfa update
+-> placeworker 2 6
+Welcome! What's your name?
+-> asdasd
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> uiouioui
+Wait for other players
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Artemis
+Your Divinity: Apollo
+Insert asdasd update
+Insert asdasd update
+-> placeworker 4 3
+Insert asdasd placed a worker in 4x3
+Insert asdasd placed a worker in 4x3
+-> placeworker 2 6
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> rich
+Wait for other players
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Artemis
+Your Divinity: Apollo
+Insert fillo update
+Insert fillo update
+-> placeworker 2 2
+Insert fillo placed a worker in 2x2
+Insert fillo placed a worker in 2x2
+-> placeworker 4 4
+Insert fillo placed a worker in 4x4
+Insert fillo placed a worker in 4x4
+Insert rich update
+Insert rich update
+-> placeworker 1 5
+Insert rich placed a worker in 1x5
+Insert rich placed a worker in 1x5
+-> placeworker 5 1
+Insert rich placed a worker in 5x1
+Insert rich placed a worker in 5x1
+Insert fillo update
+Insert fillo update

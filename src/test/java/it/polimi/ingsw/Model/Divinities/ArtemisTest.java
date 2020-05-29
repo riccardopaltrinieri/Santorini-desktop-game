@@ -19,7 +19,7 @@ public class ArtemisTest {
     public void testExecute(){
         Game game = new Game();
         Board board = game.getBoard();
-        Player player = new Player("test player", Color.Green, game);
+        Player player = new Player("test player", Color.Brown, game);
         player.placeWorkers(board.getCell(1,1));
         Cell startPosition = board.getCell(1,1);
         Cell firstDestination = board.getCell(2,2);

@@ -14,9 +14,9 @@ public class GameTest
 {
     Game game = new Game();
     Controller controller = new Controller(game);
-    Player tester = new Player("tester", Color.Red, game);
-    Player tester2 = new Player("tester2", Color.Green, game);
-    Player tester3 = new Player("tester2", Color.Yellow, game);
+    Player tester = new Player("tester", Color.White, game);
+    Player tester2 = new Player("tester2", Color.Brown, game);
+    Player tester3 = new Player("tester2", Color.Purple, game);
 
     //insert the power to test
 

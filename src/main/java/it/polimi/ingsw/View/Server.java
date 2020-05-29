@@ -1,7 +1,6 @@
 package it.polimi.ingsw.View;
 
 import it.polimi.ingsw.Controller.Controller;
-import it.polimi.ingsw.Model.Divinity;
 import it.polimi.ingsw.Model.Game;
 import it.polimi.ingsw.Model.Player;
 
@@ -162,8 +161,8 @@ public class Server {
             Game game = new Game();
             game.setNumPlayer(numPlayers);
             Controller controller = new Controller(game);
-            Player player1 = new Player(keys.get(0), Red, game);
-            Player player2 = new Player(keys.get(1), Yellow, game);
+            Player player1 = new Player(keys.get(0), White, game);
+            Player player2 = new Player(keys.get(1), Purple, game);
             player1.setGodPower(divinityPlay1);
             player2.setGodPower(divinityPlay2);
             //qui ci vanno gli observer
@@ -181,7 +180,7 @@ public class Server {
             if (numPlayers == 3) {
                 keys.add(thirdPlayer);
                 Connection c3 = waitingConnection.get(keys.get(2));
-                Player player3 = new Player(keys.get(2), Green, game);
+                Player player3 = new Player(keys.get(2), Brown, game);
                 player3.setGodPower(divinityPlay3);
 
                 game.addObserver(connections.get(2));

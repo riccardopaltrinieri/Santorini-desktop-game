@@ -11,8 +11,8 @@ public class ApolloTest {
     @Test
     public void executeTest() throws AthenaException {
         Game game = new Game();
-        Player playerApollo = new Player("player test", Color.Green, game);
-        Player player = new Player("player test",Color.Red, game);
+        Player playerApollo = new Player("player test", Color.Brown, game);
+        Player player = new Player("player test",Color.White, game);
         Board board = game.getBoard();
         playerApollo.placeWorkers(board.getCell(0,0));
         playerApollo.placeWorkers(board.getCell(4,4));

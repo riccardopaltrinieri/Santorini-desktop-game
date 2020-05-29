@@ -9,7 +9,7 @@ public class WorkerTest {
     int riga=0;
     int colonna=0;
     Cell workerPosition = new Cell(riga,colonna);
-    Player workerOwner = new Player("tester", Color.Red, new Game());
+    Player workerOwner = new Player("tester", Color.White, new Game());
     Worker test = new Worker(workerPosition,workerOwner);
 
 

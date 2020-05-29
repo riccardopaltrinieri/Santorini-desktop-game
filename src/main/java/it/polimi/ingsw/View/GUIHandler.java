@@ -1,5 +1,7 @@
 package it.polimi.ingsw.View;
 
+import it.polimi.ingsw.Model.Color;
+import it.polimi.ingsw.View.Graphics.BoardButtonListener;
 import it.polimi.ingsw.View.Graphics.ChooseBetweenFrame;
 import it.polimi.ingsw.View.Graphics.ChooseFrame;
 import it.polimi.ingsw.View.Graphics.MainFrame;
@@ -14,19 +16,25 @@ public class GUIHandler implements UserInterface {
     private final FSMView fsm = new FSMView();
 
     private String name;
+    private Color color=Color.White;
     private String firstGodToRemove;
     private String secondGodToRemove;
     private int numPlayer;
 
+    private BoardButtonListener boardListener = new BoardButtonListener(fsm,color,mainFrame);
+
     @Override
     public String update(LiteBoard board) {
         String incomingMessage = board.getMessage();
-        String outgoingMessage = "Error";
+        String outgoingMessage = "noMessageToSend";
 
         try{
             String[] parts = incomingMessage.split(" ");
             String firstWord = parts[0];
             mainFrame.updateTextArea(incomingMessage);
+
+            board.printBoardGUI(mainFrame);
+
             switch (firstWord){
 
 
@@ -37,9 +45,12 @@ public class GUIHandler implements UserInterface {
                         @Override
                         public synchronized void  run() {
                             mainFrame.init();
+                            for (int i=0;i<25;i++){
+                                mainFrame.getActiveBoardButtons()[i].addActionListener(boardListener);
+                            }
+
                         }
                     });
-
 
                     mainFrame.updateTextArea("Insert your name in the dialog");
                     outgoingMessage = (String)JOptionPane.showInputDialog(
@@ -91,7 +102,7 @@ public class GUIHandler implements UserInterface {
                         outgoingMessage="3";
                         numPlayer=3;
                     }else {
-                        while((outgoingMessage.equals("2")||(outgoingMessage.equals("3")))){
+                        while(!(outgoingMessage.equals("2")||(outgoingMessage.equals("3")))){
                             result = JOptionPane.showOptionDialog(
                                     mainFrame,
                                     "Decide the number of player",
@@ -156,29 +167,20 @@ public class GUIHandler implements UserInterface {
                     break;
 
 
-                case "insert":
+                case "Insert":
                     //ask to the player for the next move according to the FSM
                     if (parts[1].equals(name)){
                         if (fsm.getState()==State.placeworker){
-                            int row=1;
-                            int column=0;
                             for (int i=0; i<25;i++){
-                                if (column <5){
-                                    column ++;
+                                if(mainFrame.getActiveBoardButtons()[i].getHaveWorker()){
+                                    mainFrame.getActiveBoardButtons()[i].setEnabled(false);
                                 }
-                                else{
-                                    row++;
-                                    column=1;
-                                }
-                                for (int j=0;j<numPlayer*2;j++){
-                                    if((board.getPosWorker()[j][0]==row)&&(board.getPosWorker()[j][1]==column)){
-                                        mainFrame.getActiveBoardButtons()[i].setEnabled(false);
-                                    }
-                                    else {
-                                        mainFrame.getActiveBoardButtons()[i].setEnabled(true);
-                                    }
+                                else {
+                                    mainFrame.getActiveBoardButtons()[i].setEnabled(true);
                                 }
                             }
+                            int[] coordinate = mainFrame.getChosenButtonCoordinate();
+                            outgoingMessage ="placeworker "+coordinate[0]+" "+coordinate[1];
                         }
                         fsm.nextState();
                     }
@@ -196,5 +198,9 @@ public class GUIHandler implements UserInterface {
             System.out.println(e.getMessage());
         }
         return null;
+    }
+
+    public State getFsmState() {
+        return fsm.getState();
     }
 }

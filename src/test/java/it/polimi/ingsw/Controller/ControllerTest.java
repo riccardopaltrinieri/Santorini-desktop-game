@@ -17,8 +17,8 @@ public class ControllerTest {
 
         Game game = new Game();
         Controller controller = new Controller(game);
-        Player tester = new Player("tester", Color.Red, game);
-        Player tester2 = new Player("tester2", Color.Red, game);
+        Player tester = new Player("tester", Color.White, game);
+        Player tester2 = new Player("tester2", Color.White, game);
         game.setNumPlayer(2);
         //insert the power to test
         tester.setGodPower("default");
@@ -59,8 +59,8 @@ public class ControllerTest {
 
         Game game = new Game();
         Controller controller = new Controller(game);
-        Player tester = new Player("tester", Color.Red, game);
-        Player tester2 = new Player("tester2", Color.Red, game);
+        Player tester = new Player("tester", Color.White, game);
+        Player tester2 = new Player("tester2", Color.White, game);
         game.setNumPlayer(2);
         //insert the power to test
         tester.setGodPower("Athena");
@@ -95,8 +95,8 @@ public class ControllerTest {
 
         Game game = new Game();
         Controller controller = new Controller(game);
-        Player tester = new Player("tester", Color.Red, game);
-        Player tester2 = new Player("tester2", Color.Red, game);
+        Player tester = new Player("tester", Color.White, game);
+        Player tester2 = new Player("tester2", Color.White, game);
         game.setNumPlayer(2);
         //insert the power to test
         tester.setGodPower("Pan");

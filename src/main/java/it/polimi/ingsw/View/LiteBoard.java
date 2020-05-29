@@ -1,6 +1,7 @@
 package it.polimi.ingsw.View;
 
 import it.polimi.ingsw.Model.*;
+import it.polimi.ingsw.View.Graphics.MainFrame;
 
 import java.io.Serializable;
 
@@ -85,7 +86,7 @@ public class LiteBoard implements Serializable {
         for (int worker = 0; worker < numAllWorker; worker++) {
             if (posWorker[worker][0] == row) {
                 if (posWorker[worker][1] == col) {
-                    int[] colorList = {Color.Green.ordinal(), Color.Yellow.ordinal(), Color.Red.ordinal()};
+                    int[] colorList = {Color.Brown.ordinal(), Color.Purple.ordinal(), Color.White.ordinal()};
                     for (int color : colorList) {
                         if (posWorker[worker][2] == color) {
 
@@ -121,5 +122,18 @@ public class LiteBoard implements Serializable {
 
     public int[][] getPosWorker() {
         return posWorker;
+    }
+
+    public int getNumAllWorker() {
+        return numAllWorker;
+    }
+
+    public void printBoardGUI(MainFrame frame){
+        for (int i =0; i<numAllWorker;i++){
+            int index = (posWorker[i][0])*5+posWorker[i][1];
+            frame.getActiveBoardButtons()[index].setHaveWorker(true);
+            frame.getActiveBoardButtons()[index].setWorkerColor(Color.intToColor(posWorker[i][2]));
+            frame.getActiveBoardButtons()[index].repaint();
+        }
     }
 }

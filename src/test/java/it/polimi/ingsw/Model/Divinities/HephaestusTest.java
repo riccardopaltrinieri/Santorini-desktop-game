@@ -13,7 +13,7 @@ public class HephaestusTest {
     public void executeTest() throws AthenaException {
         Game game = new Game();
         Board board = game.getBoard();
-        Player player = new Player("test player", Color.Green,game);
+        Player player = new Player("test player", Color.Brown,game);
         player.placeWorkers(board.getCell(0,0));
         Cell rightDestination = board.getCell(1,1);
         int startingLevel = rightDestination.getLevel();

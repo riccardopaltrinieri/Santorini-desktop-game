@@ -11,7 +11,7 @@ public class PanTest {
     public void panTest()
     {
         Game game = new Game();
-        Player panPlayer = new Player("pan's player", Color.Green, game);
+        Player panPlayer = new Player("pan's player", Color.Brown, game);
         Board board = game.getBoard();
         panPlayer.placeWorkers(board.getCell(1,1));
         board.getCell(1,1).setLevel(2);
