@@ -178,10 +178,9 @@ public class Server {
             playingConnection.put(c1, c2);
             playingConnection.put(c2, c1);
 
-
-            connections.get(0).newBoard(new LiteBoard("Insert " + this.firstPlayer + " update", game.getBoard(), game));
-
-            connections.get(1).newBoard(new LiteBoard("Insert " + this.firstPlayer + " update", game.getBoard(), game));
+            ArrayList<String> startingMessages = new ArrayList<>();
+            startingMessages.add("Start " + player1.getName() + " " + player1.getColor() + " " + player1.getGodPower().getDivinity());
+            startingMessages.add("Start " + player2.getName() + " " + player2.getColor() + " " + player2.getGodPower().getDivinity());
 
             if (numPlayers == 3) {
                 keys.add(thirdPlayer);
@@ -197,9 +196,12 @@ public class Server {
                 playingConnection3players.put(c1, c3);
                 playingConnection3players.put(c3, c2);
 
-                connections.get(2).newBoard(new LiteBoard("player " + this.firstPlayer + " moves"));
-                connections.get(2).newBoard(new LiteBoard("Insert " + this.firstPlayer + " update", game.getBoard(), game));
+                startingMessages.add("Start " + player3.getName() + " " + player3.getColor() + " " + player3.getGodPower().getDivinity());
             }
+
+            // Send to the sockets the players' names and their color, then start the game with the update
+            for (String message : startingMessages) game.sendBoard(new LiteBoard(message));
+            game.sendBoard(new LiteBoard("Insert " + game.getCurrentPlayer().getName() + " update", game.getBoard(), game));
 
             waitingConnection.clear();
             startGame = true;
@@ -230,9 +232,6 @@ public class Server {
         return startGame;
     }
 
-    public void setHasStarted(boolean a) {
-        startGame = a;
-    }
     public Connection getConnection(int i) {
         return connections.get(i);
     }
