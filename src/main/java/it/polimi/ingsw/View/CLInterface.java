@@ -102,14 +102,25 @@ public class CLInterface implements UserInterface {
                     outgoingMessage = "noMessageToSend";
                     break;
 
-                case "player":
+                case "Loser:":
                     // Use the name of the player to know who has to play
                     if (parts[1].equals(name) && parts[2].equals("loses")) {
                         System.out.println("You lose and cannot play anymore..");
                         throw new NoSuchElementException();
                     }
+                    else System.out.println(parts[1] + " loses and cannot play anymore..");
                     outgoingMessage = "noMessageToSend";
                     break;
+
+                case "Winner:":
+                    if (parts[1].equals(name) && parts[2].equals("wins")) {
+                        System.out.println("You win and the game it's over..");
+                        throw new NoSuchElementException();
+                    }
+                    else System.out.println(parts[1] + " wins and the game it's over..");
+                    outgoingMessage = "noMessageToSend";
+                    break;
+
 
                 case "Error:":
                     // Something went wrong with the last action
