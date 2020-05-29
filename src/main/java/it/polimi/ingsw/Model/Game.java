@@ -30,17 +30,18 @@ public class Game extends Observable {
             iterator = (iterator + 1) % numPlayer;
             hasWinner();
         } else {
-            sendBoard(new LiteBoard(getCurrentPlayer().getName() + " loses", board, this));
+            sendBoard(new LiteBoard("Loser: " + getCurrentPlayer().getName() + " loses", board, this));
             getCurrentPlayer().getWorker(0).getPosition().setEmpty(true);
             getCurrentPlayer().getWorker(1).getPosition().setEmpty(true);
+            int nextPlayer = (iterator + 1) % numPlayer;
             players.remove(getCurrentPlayer());
             numPlayer -= 1;
-            iterator = (iterator + 1) % numPlayer;
+            iterator = nextPlayer % numPlayer;
         }
     }
 
     public void hasWinner(){
-        sendBoard(new LiteBoard(getCurrentPlayer().getName() + " wins", board, this));
+        sendBoard(new LiteBoard("Winner: " + getCurrentPlayer().getName() + " wins", board, this));
         board.clearAll();
     }
 

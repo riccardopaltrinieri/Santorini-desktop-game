@@ -38,7 +38,7 @@ public class Connection extends Observable implements Runnable, Observer {
             out.writeObject(board);
             out.flush();
         }  catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Socket closed");
         }
     }
 
@@ -48,7 +48,8 @@ public class Connection extends Observable implements Runnable, Observer {
             try {
                 read = (in.readUTF());
             } catch (IOException e) {
-                e.printStackTrace();
+                System.out.println("Socket closed");
+                read = "Stop";
             }
 
         }
@@ -102,7 +103,7 @@ public class Connection extends Observable implements Runnable, Observer {
             close();
 
         } catch(IOException e){
-            System.err.println(e.getMessage());
+            System.err.println("Connection not more active");
             close();
         }
     }
@@ -110,9 +111,18 @@ public class Connection extends Observable implements Runnable, Observer {
     public void newBoard(LiteBoard board) {
 
             String[] parts = board.getMessage().split(" ");
-            if(parts[0].equals(name) && parts[1].equals("loses"))
+            send(board);
+            if(parts[1].equals(name) && parts[2].equals("loses")){
                 server.deregisterConnection(this);
-            else send(board);
+            }
+
+
+            if(parts[1].equals(name) && parts[2].equals("wins")){
+                server.endGame();
+            }
+
+
+
     }
 
     @Override

@@ -59,7 +59,11 @@ public class Server {
             c.send( new LiteBoard("All the divinities have been chosen"));
             c.send( new LiteBoard("Now the other players will choose between them.."));
         } catch (IOException e){
-            e.printStackTrace();
+            System.out.println("Client has disconnected while chooses all divinities");
+            for (Connection conn: connections) {
+                conn.send(new LiteBoard("First client has disconnected while chooses all divinities"));
+                conn.closeConnection();
+            }
         }
 
     }
@@ -110,12 +114,12 @@ public class Server {
             }
             playingConnection.remove(c); //rimuovo la prima connessione dalla prima hash map
             playingConnection3players.remove(c);
-            Connection toadd = connections.get(0);
-            if (playingConnection.containsKey(toadd)){
-                playingConnection.put(connections.get(1),toadd);
+            Connection toAdd = connections.get(0);
+            if (playingConnection.containsKey(toAdd)){
+                playingConnection.put(connections.get(1),toAdd);
             }
             else {
-                playingConnection.put(toadd,connections.get(1));
+                playingConnection.put(toAdd,connections.get(1));
             }
             playingConnection3players.clear();
         }
@@ -175,9 +179,9 @@ public class Server {
             playingConnection.put(c1, c2);
             playingConnection.put(c2, c1);
 
-            connections.get(0).newBoard(new LiteBoard("player " + this.firstPlayer + " moves"));
+
             connections.get(0).newBoard(new LiteBoard("Insert " + this.firstPlayer + " update", game.getBoard(), game));
-            connections.get(1).newBoard(new LiteBoard("player " + this.firstPlayer + " moves"));
+
             connections.get(1).newBoard(new LiteBoard("Insert " + this.firstPlayer + " update", game.getBoard(), game));
 
             if (numPlayers == 3) {
@@ -218,10 +222,18 @@ public class Server {
         }
     }
 
+    public void endGame() {
+        for (Connection conn: connections) {
+            conn.closeConnection();
+        }
+    }
     public boolean gameHasStarted() {
         return startGame;
     }
 
+    public void setHasStarted(boolean a) {
+        startGame = a;
+    }
     public Connection getConnection(int i) {
         return connections.get(i);
     }
@@ -233,4 +245,6 @@ public class Server {
     public int getNumPlayers() {
         return numPlayers;
     }
+
+
 }
