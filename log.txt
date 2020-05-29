@@ -1286,3 +1286,27 @@ Insert fillo placed a worker in 1x3
 Insert rich update
 Insert rich update
 -> normal
+Welcome! What's your name?
+-> Fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> Lollo
+Wait for other players
+Choose your Divinity between: Apollo Athena 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Athena
+player Fillo moves
+player Fillo moves
+Insert Fillo update
+Insert Fillo update
+-> placeworker 2 2
+Insert Fillo placed a worker in 2x2

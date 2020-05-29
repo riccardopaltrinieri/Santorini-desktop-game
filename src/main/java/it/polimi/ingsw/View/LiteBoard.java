@@ -119,4 +119,7 @@ public class LiteBoard implements Serializable {
         System.out.println("      +-------++-------++-------++-------++-------+");
     }
 
+    public int[][] getPosWorker() {
+        return posWorker;
+    }
 }

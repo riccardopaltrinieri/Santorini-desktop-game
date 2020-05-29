@@ -21,6 +21,7 @@ public class MainFrame extends JFrame{
     private JPanel mapPanel = new JPanel();
     private JPanel endTurnPanel = new JPanel();
 
+    private JButton[] activeCellButtons = new JButton[25];
     private JButton[] cellButtons = new JButton[49];
     private JButton endTurnButton = new JButton("End Turn");
 
@@ -28,6 +29,8 @@ public class MainFrame extends JFrame{
     private JTextArea godInfoTextArea = new JTextArea();
 
     private String textAreaString;
+
+    private BoardButtonListener boardListener = new BoardButtonListener();
 
     private void registerPlayer(){
         
@@ -68,6 +71,7 @@ public class MainFrame extends JFrame{
         add(endTurnPanel);
 
         mapPanel.setLayout(new GridLayout(7,7));
+        int j=0;
         int row=1;
         int column=0;
         for (int i=0;i<49;i++){
@@ -82,6 +86,14 @@ public class MainFrame extends JFrame{
             cellBoardIcon[i]= new ImageIcon(path);
             cellButtons[i] = new JButton("",cellBoardIcon[i]);
             cellButtons[i].setPreferredSize(new Dimension(95,95));
+            if ((row==1)||(row==7)||(column==1)||(column==7)){
+                cellButtons[i].setEnabled(false);
+            }
+            else{
+                activeCellButtons[j]=cellButtons[i];
+                activeCellButtons[j].addActionListener(boardListener);
+                j++;
+            }
             mapPanel.add(cellButtons[i]);
         }
         lim.gridy=1;
@@ -114,5 +126,13 @@ public class MainFrame extends JFrame{
 
     public void setTextAreaString(String textAreaString) {
         this.textAreaString = textAreaString;
+    }
+
+    public JButton[] getActiveCellButtons() {
+        return activeCellButtons;
+    }
+
+    public void setActiveCellButtons(JButton[] activeCellButtons) {
+        this.activeCellButtons = activeCellButtons;
     }
 }
