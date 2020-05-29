@@ -1287,25 +1287,7 @@ Insert rich update
 Insert rich update
 -> normal
 Welcome! What's your name?
--> Toni
-Wait for other players
-Welcome! What's your name?
--> agds
-Wait for other players
-Welcome! What's your name?
--> gasd
-Wait for other players
-Welcome! What's your name?
--> dafs
-Wait for other players
-Welcome! What's your name?
--> gsa
-Wait for other players
-Welcome! What's your name?
--> adas
-Wait for other players
-Welcome! What's your name?
--> sa
+-> Fillo
 Wait for other players
 Decide the number of players: [2 or 3]
 -> 2
@@ -1316,508 +1298,71 @@ Choose the second divinity:
 All the divinities have been chosen
 Now the other players will choose between them..
 Welcome! What's your name?
--> rea
-Wait for other players
-Welcome! What's your name?
--> asdg
-Wait for other players
-Welcome! What's your name?
--> asg
-Wait for other players
-Connection closed from the server side
-Welcome! What's your name?
--> ag
-Wait for other players
-Decide the number of players: [2 or 3]
--> 2
-Welcome! What's your name?
--> asf
-Welcome! What's your name?
--> dasg
-Welcome! What's your name?
--> asgd
-Wait for other players
-Welcome! What's your name?
--> sadg
-Wait for other players
-Decide the number of players: [2 or 3]
--> 2
-Choose the first divinity:
--> Apollo
-Client has disconnected while chooses all divinities
-Connection closed from the server side
-Welcome! What's your name?
--> rt
-Wait for other players
-Welcome! What's your name?
--> m
-Wait for other players
-First client has disconnected while chooses all divinities
-Connection closed from the server side
-Welcome! What's your name?
--> fj
-Wait for other players
-Decide the number of players: [2 or 3]
--> 2
-Welcome! What's your name?
--> j
-Wait for other players
-Decide the number of players: [2 or 3]
--> 2
-Welcome! What's your name?
--> ads
-Wait for other players
-Welcome! What's your name?
--> fsad
-Wait for other players
-Decide the number of players: [2 or 3]
--> 3
-Welcome! What's your name?
--> sf
-Wait for other players
-Welcome! What's your name?
--> afsd
-Wait for other players
-First client has disconnected while chooses all divinities
-First client has disconnected while chooses all divinities
-Connection closed from the server side
-Connection closed from the server side
-Welcome! What's your name?
--> Anto
-Wait for other players
-Decide the number of players: [2 or 3]
--> 3
-Welcome! What's your name?
--> afsd
-Wait for other players
-First client has disconnected while chooses all divinities
-Connection closed from the server side
-Welcome! What's your name?
--> asf
-Welcome! What's your name?
--> Angsa
-Wait for other players
-Decide the number of players: [2 or 3]
--> 3
-Choose the first divinity:
--> Apollo
-Choose the second divinity: 
--> Athena
-Choose the third divinity: 
--> Minotaur
-All the divinities have been chosen
-Now the other players will choose between them..
-Welcome! What's your name?
--> fa
-Wait for other players
-Welcome! What's your name?
--> fa
-Wait for other players
-Welcome! What's your name?
--> gas
-Wait for other players
-Decide the number of players: [2 or 3]
--> 3
-Choose the first divinity:
--> Apollo
-First client has disconnected while chooses all divinities
-First client has disconnected while chooses all divinities
-Connection closed from the server side
-Connection closed from the server side
-Welcome! What's your name?
--> afa
-Wait for other players
-Decide the number of players: [2 or 3]
--> 3
-Choose the first divinity:
--> Apollo
-Welcome! What's your name?
--> asg
-Wait for other players
-Welcome! What's your name?
--> dsga
-Wait for other players
-First client has disconnected while chooses all divinities
-Connection closed from the server side
-Choose your Divinity between: Apollo 
--> Apollo
-Welcome! What's your name?
--> a
-Wait for other players
-Decide the number of players: [2 or 3]
--> 3
-Welcome! What's your name?
--> if
-Welcome! What's your name?
--> if
-Welcome! What's your name?
--> Antonio
-Wait for other players
-Decide the number of players: [2 or 3]
--> 2
-Choose the first divinity:
--> Apollo
-Choose the second divinity: 
--> Athena
-All the divinities have been chosen
-Now the other players will choose between them..
-Welcome! What's your name?
--> D
-Wait for other players
-Choose your Divinity between: Apollo Athena 
--> Athena
-Your Divinity: Athena
-Your Divinity: Apollo
-player Antonio moves
-player Antonio moves
-Insert Antonio update
-Insert Antonio update
--> placeworker 1 1
-Insert Antonio placed a worker in 1x1
-Insert Antonio placed a worker in 1x1
--> placeworker 2 2
-Insert Antonio placed a worker in 2x2
-Insert D update
-Insert Antonio placed a worker in 2x2
-Insert D update
--> placeworker 3 3
-Insert D placed a worker in 3x3
-Insert D placed a worker in 3x3
--> placeworker 4 4
-Insert D placed a worker in 4x4
-Insert D placed a worker in 4x4
-Insert Antonio update
-Insert Antonio update
--> normal
-Insert Antonio doesn't want to use the God Power
-Insert Antonio doesn't want to use the God Power
--> move 1 2 1
-Insert Antonio moved a worker in 1x2
-Insert Antonio moved a worker in 1x2
--> build 1 1 1
-Insert Antonio build in 1 1
-Insert Antonio build in 1 1
-Insert D update
-Insert D update
--> normal
-Insert D doesn't want to use the God Power
-Insert D doesn't want to use the God Power
--> move 3 4 1
-Insert D moved a worker in 3x4
-Insert D moved a worker in 3x4
--> build 3 5 1
-Insert D build in 3 5
-Insert D build in 3 5
-Insert Antonio update
-Insert Antonio update
--> normal
-Insert Antonio doesn't want to use the God Power
-Insert Antonio doesn't want to use the God Power
--> move 1 1 1
-Insert Antonio moved a worker in 1x1
-Insert Antonio moved a worker in 1x1
--> build 1 2 1
-Insert Antonio build in 1 2
-Insert Antonio build in 1 2
-Insert D update
-Insert D update
--> normal
-Insert D doesn't want to use the God Power
-Insert D doesn't want to use the God Power
--> move 4 5 2
-Insert D moved a worker in 4x5
-Insert D moved a worker in 4x5
--> build 3 4 2
-Error: D can't build here
-Error: D can't build here
--> build 3 5 2
-Insert D build in 3 5
-Insert D build in 3 5
--> build 3 5 2
-Insert Antonio update
-Insert Antonio update
--> normal
-Insert Antonio doesn't want to use the God Power
-Insert Antonio doesn't want to use the God Power
--> move 1 2 1
-Insert Antonio moved a worker in 1x2
-Insert Antonio moved a worker in 1x2
--> build 1 1 1
-Insert Antonio build in 1 1
-Insert Antonio build in 1 1
-Insert D update
-Insert D update
-Welcome! What's your name?
--> Anto
-Wait for other players
-Decide the number of players: [2 or 3]
--> 2
-Choose the first divinity:
--> Apollo
-Choose the second divinity: 
--> Athena
-All the divinities have been chosen
-Now the other players will choose between them..
-Welcome! What's your name?
--> av
+-> Lollo
 Wait for other players
 Choose your Divinity between: Apollo Athena 
 -> Apollo
 Your Divinity: Apollo
 Your Divinity: Athena
-player Anto moves
-player Anto moves
-Insert Anto update
-Insert Anto update
--> placeworker 1 1
-Insert Anto placed a worker in 1x1
-Insert Anto placed a worker in 1x1
+player Fillo moves
+player Fillo moves
+Insert Fillo update
+Insert Fillo update
 -> placeworker 2 2
-Insert Anto placed a worker in 2x2
-Insert Anto placed a worker in 2x2
-Insert av update
-Insert av update
--> placeworker 3 3
-Insert av placed a worker in 3x3
-Insert av placed a worker in 3x3
--> placeworker 4 4
-Insert av placed a worker in 4x4
-Insert av placed a worker in 4x4
-Insert Anto update
-Insert Anto update
--> normal
-Insert Anto doesn't want to use the God Power
-Insert Anto doesn't want to use the God Power
--> move 1 2 1
-Insert Anto moved a worker in 1x2
-Insert Anto moved a worker in 1x2
--> build 1 1 1
-Insert Anto build in 1 1
-Insert Anto build in 1 1
-Insert av update
-Insert av update
--> normal
-Insert av doesn't want to use the God Power
-Insert av doesn't want to use the God Power
--> move 3 4 1
-Insert av moved a worker in 3x4
-Insert av moved a worker in 3x4
--> build 3 3 1
-Insert av build in 3 3
-Insert av build in 3 3
-Insert Anto update
-Insert Anto update
--> normal
-Insert Anto doesn't want to use the God Power
-Insert Anto doesn't want to use the God Power
--> move 2 1 2
-Insert Anto moved a worker in 2x1
-Insert Anto moved a worker in 2x1
--> build 1 1 2
-Insert Anto build in 1 1
-Insert Anto build in 1 1
-Insert av update
-Insert av update
--> normal
-Insert av doesn't want to use the God Power
-Insert av doesn't want to use the God Power
--> move 3 3 1
-Insert av moved a worker in 3x3
-Insert av moved a worker in 3x3
--> build 3 2 1
-Insert av build in 3 2
-Insert av build in 3 2
-Insert Anto update
-Insert Anto update
--> normal
-Insert Anto doesn't want to use the God Power
-Insert Anto doesn't want to use the God Power
--> move 2 2 1
-Insert Anto moved a worker in 2x2
-Insert Anto moved a worker in 2x2
--> build 1 1 1
-Insert Anto build in 1 1
-Insert Anto build in 1 1
-Insert av update
-Insert av update
--> normal
-Insert av doesn't want to use the God Power
-Insert av doesn't want to use the God Power
--> move 4 3 1
-Insert av moved a worker in 4x3
-Insert av moved a worker in 4x3
--> build 3 3 1
-Insert av build in 3 3
-Insert av build in 3 3
-Insert Anto update
-Insert Anto update
--> normal
-Insert Anto doesn't want to use the God Power
-Insert Anto doesn't want to use the God Power
--> move 2 3 1
-Insert Anto moved a worker in 2x3
-Insert Anto moved a worker in 2x3
--> build 1 2 1
-Insert Anto build in 1 2
-Insert Anto build in 1 2
-Insert av update
-Insert av update
--> normal
-Insert av doesn't want to use the God Power
-Insert av doesn't want to use the God Power
--> move 4 2 1
-Insert av moved a worker in 4x2
-Insert av moved a worker in 4x2
--> build 3 3 1
-Insert av build in 3 3
-Insert av build in 3 3
-Insert Anto update
-Insert Anto update
--> normal
-Insert Anto doesn't want to use the God Power
-Insert Anto doesn't want to use the God Power
--> move 2 2 2
-Insert Anto moved a worker in 2x2
-Insert Anto moved a worker in 2x2
--> build 1 2 2
-Insert Anto build in 1 2
-Insert Anto build in 1 2
-Insert av update
-Insert av update
--> normal
-Insert av doesn't want to use the God Power
-Insert av doesn't want to use the God Power
--> move 3 2 1
-Insert av moved a worker in 3x2
-Insert av moved a worker in 3x2
--> build 4 3 1
-Insert av build in 4 3
-Insert av build in 4 3
-Insert Anto update
-Insert Anto update
--> normal
-Insert Anto doesn't want to use the God Power
-Insert Anto doesn't want to use the God Power
--> move 1 4 1
-Insert Anto moved a worker in 1x4
-Insert Anto moved a worker in 1x4
--> build 1 3 1
-Insert Anto build in 1 3
-Insert Anto build in 1 3
-Insert av update
-Insert av update
--> normal
-Insert av doesn't want to use the God Power
-Insert av doesn't want to use the God Power
--> move 4 3 1
-Insert av moved a worker in 4x3
-Insert av moved a worker in 4x3
--> build 3 2 1
-Insert av build in 3 2
-Insert av build in 3 2
-Insert Anto update
-Insert Anto update
--> normal
-Insert Anto doesn't want to use the God Power
-Insert Anto doesn't want to use the God Power
--> move 1 3 1
-Insert Anto moved a worker in 1x3
-Insert Anto moved a worker in 1x3
--> build 2 3 1
-Insert Anto build in 2 3
-Insert Anto build in 2 3
-Insert av update
-Insert av update
--> normal
-Insert av doesn't want to use the God Power
-Insert av doesn't want to use the God Power
--> move 3 2 1
-Insert av moved a worker in 3x2
-Insert av moved a worker in 3x2
--> build 3 1 1
-Insert av build in 3 1
-Insert av build in 3 1
-Insert Anto update
-Insert Anto update
--> normal
-Insert Anto doesn't want to use the God Power
-Insert Anto doesn't want to use the God Power
--> move 1 2 1
-Insert Anto moved a worker in 1x2
-Insert Anto moved a worker in 1x2
--> build 2 1 1
-Insert Anto build in 2 1
-Insert Anto build in 2 1
-Insert av update
-Insert av update
--> normal
-Insert av doesn't want to use the God Power
-Insert av doesn't want to use the God Power
--> move 3 3 1
-Winner: av wins
-Insert av moved a worker in 3x3
+Insert Fillo placed a worker in 2x2
 Welcome! What's your name?
--> Toni
+-> fillo
+Wait for other players
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> fillo
 Wait for other players
 Decide the number of players: [2 or 3]
 -> 2
 Choose the first divinity:
 -> Apollo
 Choose the second divinity: 
--> Athena
+-> Artemis
 All the divinities have been chosen
+-> Error
 Now the other players will choose between them..
+-> Error
 Welcome! What's your name?
--> asdg
+-> ij
 Wait for other players
-Choose your Divinity between: Apollo Athena 
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Artemis
+Insert fillo update
+-> Error
+Welcome! What's your name?
+-> sdfsd
+Wait for other players
+Welcome! What's your name?
+-> adsa
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
 -> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+-> Error
+Now the other players will choose between them..
+-> Error
+Welcome! What's your name?
+-> asda
+Wait for other players
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Artemis
 Your Divinity: Apollo
-Your Divinity: Athena
-player Toni moves
-player Toni moves
-Insert Toni update
-Insert Toni update
--> placeworker 1 1
-Insert Toni placed a worker in 1x1
-Insert Toni placed a worker in 1x1
--> placeworker 2 2
-Insert Toni placed a worker in 2x2
-Insert Toni placed a worker in 2x2
-Insert asdg update
-Insert asdg update
--> placeworker 2 3
-Insert asdg placed a worker in 2x3
-Insert asdg placed a worker in 2x3
--> placeworker 1 4
-Insert asdg placed a worker in 1x4
-Insert asdg placed a worker in 1x4
-Insert Toni update
-Insert Toni update
--> normal
-Insert Toni doesn't want to use the God Power
-Insert Toni doesn't want to use the God Power
--> move 1 3 1
-Error: Toni can't move here
-Error: Toni can't move here
--> move 1 2 1
-Insert Toni moved a worker in 1x2
-Welcome! What's your name?
--> asdga
-Wait for other players
-Decide the number of players: [2 or 3]
--> 2
-Welcome! What's your name?
--> dcj
-Wait for other players
-Decide the number of players: [2 or 3]
--> 2
-Choose the first divinity:
--> Apollo
-Choose the second divinity: 
--> Athena
-All the divinities have been chosen
-Now the other players will choose between them..
-Welcome! What's your name?
--> vz
-Wait for other players
+Insert adsa update
+-> Error
+Insert adsa update
+-> Error

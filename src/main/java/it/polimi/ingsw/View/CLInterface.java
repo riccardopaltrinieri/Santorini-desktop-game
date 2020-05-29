@@ -72,14 +72,14 @@ public class CLInterface implements UserInterface {
 
                     if (fsm.getState() == State.worker) {
                         // ask to the player which worker he wants to use but don't send anything
-                        System.out.println(fsm.getStateString());
+                        System.out.println(fsm.getStateStringCLI());
                         checkAction(stdin);
                         fsm.nextState();
                     }
 
                     if(parts[1].equals(name)) {
                         if (fsm.getState() != State.start && fsm.getState() != State.worker && fsm.getState() != State.move) board.printBoardCLI();
-                        System.out.println(fsm.getStateString());
+                        System.out.println(fsm.getStateStringCLI());
                         if (fsm.getState() != State.endTurn) {
                             outgoingMessage = checkAction(stdin);
                         }

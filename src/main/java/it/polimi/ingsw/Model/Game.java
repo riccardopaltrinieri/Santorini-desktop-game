@@ -1,7 +1,6 @@
 package it.polimi.ingsw.Model;
 
 import it.polimi.ingsw.AthenaException;
-import it.polimi.ingsw.Controller.Controller;
 import it.polimi.ingsw.View.LiteBoard;
 import it.polimi.ingsw.utils.Observable;
 

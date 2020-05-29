@@ -1,9 +1,6 @@
 package it.polimi.ingsw.View.Graphics;
 
-import it.polimi.ingsw.Model.GodPower;
-
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 
 public class MainFrame extends JFrame{
@@ -21,13 +18,16 @@ public class MainFrame extends JFrame{
     private JPanel mapPanel = new JPanel();
     private JPanel endTurnPanel = new JPanel();
 
-    private JButton[] cellButtons = new JButton[49];
+    private BoardButton[] activeBoardButtons = new BoardButton[25];
+    private BoardButton[] boardButtons = new BoardButton[49];
     private JButton endTurnButton = new JButton("End Turn");
 
     private JTextArea textArea = new JTextArea();
     private JTextArea godInfoTextArea = new JTextArea();
 
     private String textAreaString;
+
+    private BoardButtonListener boardListener = new BoardButtonListener();
 
     private void registerPlayer(){
         
@@ -68,6 +68,7 @@ public class MainFrame extends JFrame{
         add(endTurnPanel);
 
         mapPanel.setLayout(new GridLayout(7,7));
+        int j=0;
         int row=1;
         int column=0;
         for (int i=0;i<49;i++){
@@ -80,9 +81,19 @@ public class MainFrame extends JFrame{
             }
             String path="images/Board/" + row + column + ".png";
             cellBoardIcon[i]= new ImageIcon(path);
-            cellButtons[i] = new JButton("",cellBoardIcon[i]);
-            cellButtons[i].setPreferredSize(new Dimension(95,95));
-            mapPanel.add(cellButtons[i]);
+            boardButtons[i] = new BoardButton("",cellBoardIcon[i]);
+            boardButtons[i].setDisabledIcon(cellBoardIcon[i]);
+            boardButtons[i].setPreferredSize(new Dimension(95,95));
+            if ((row==1)||(row==7)||(column==1)||(column==7)){
+                boardButtons[i].setEnabled(false);
+            }
+            else{
+                activeBoardButtons[j]= boardButtons[i];
+                activeBoardButtons[j].addActionListener(boardListener);
+                activeBoardButtons[j].setEnabled(false);
+                j++;
+            }
+            mapPanel.add(boardButtons[i]);
         }
         lim.gridy=1;
         lim.gridx=3;
@@ -114,5 +125,13 @@ public class MainFrame extends JFrame{
 
     public void setTextAreaString(String textAreaString) {
         this.textAreaString = textAreaString;
+    }
+
+    public JButton[] getActiveBoardButtons() {
+        return activeBoardButtons;
+    }
+
+    public void setActiveBoardButtons(BoardButton[] activeBoardButtons) {
+        this.activeBoardButtons = activeBoardButtons;
     }
 }
