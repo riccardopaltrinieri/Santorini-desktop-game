@@ -108,12 +108,17 @@ public class CLInterface implements UserInterface {
                         System.out.println("You lose and cannot play anymore..");
                         throw new NoSuchElementException();
                     }
-                    else System.out.println(parts[1] + " loses and cannot play anymore..");
+                    else {
+                        board.printBoardCLI();
+                        System.out.println(parts[1] + " loses and cannot play anymore..");
+                    }
+
                     outgoingMessage = "noMessageToSend";
                     break;
 
                 case "Winner:":
                     if (parts[1].equals(name) && parts[2].equals("wins")) {
+                        board.printBoardCLI();
                         System.out.println("You win and the game it's over..");
                         throw new NoSuchElementException();
                     }
@@ -126,6 +131,7 @@ public class CLInterface implements UserInterface {
                         System.out.println("Your " + parts[2] + " opponent is " + parts[1]);
                         System.out.println("He will use " + parts[3]);
                     }
+                    else System.out.println("You have " + parts[2] + " colour " + "and will use: " +parts[3]);
                     outgoingMessage = "noMessageToSend";
                     break;
 

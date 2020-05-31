@@ -46,7 +46,7 @@ public class Player {
             //check all the cells from the one top-left to the one down-right, if just one is ok the player can move
             for (int row = pos.getNumRow() - 1; row <= pos.getNumRow() + 1; row++)
                 for (int col = pos.getNumColumn() - 1; col <= pos.getNumColumn() + 1; col++)
-                    if(0 < row && row < 5 && 0 < col && col < 5)
+                    if(0 <= row && row < 5 && 0 <= col && col < 5)
                         if (workers.get(i).canMoveTo(board.getCell(row,col)))
                             return true;
         }
