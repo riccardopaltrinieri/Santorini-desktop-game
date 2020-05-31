@@ -112,9 +112,9 @@ public class Connection extends Observable implements Runnable, Observer {
 
             String[] parts = board.getMessage().split(" ");
             send(board);
-            if(parts[1].equals(name) && parts[2].equals("loses")){
-                server.deregisterConnection(this);
-            }
+          //  if(parts[1].equals(name) && parts[2].equals("loses")){
+             //   server.deregisterConnection(this);
+          //  }
 
 
             if(parts[1].equals(name) && parts[2].equals("wins")){

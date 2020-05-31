@@ -29,13 +29,14 @@ public class Game extends Observable {
             iterator = (iterator + 1) % numPlayer;
             hasWinner();
         } else {
-            sendBoard(new LiteBoard("Loser: " + getCurrentPlayer().getName() + " loses", board, this));
+
             getCurrentPlayer().getWorker(0).getPosition().setEmpty(true);
             getCurrentPlayer().getWorker(1).getPosition().setEmpty(true);
-            int nextPlayer = (iterator + 1) % numPlayer;
+            getCurrentPlayer().getWorkers().clear();
+            sendBoard(new LiteBoard("Loser: " + getCurrentPlayer().getName() + " loses", board, this));
             players.remove(getCurrentPlayer());
             numPlayer -= 1;
-            iterator = nextPlayer % numPlayer;
+            iterator = iterator % numPlayer;
         }
     }
 
@@ -113,7 +114,7 @@ public class Game extends Observable {
         return false;
     }
 
-    public void endTurn() {
+    public synchronized void endTurn() {
         iterator = (iterator + 1) % numPlayer;
         if (!getCurrentPlayer().canMove()) hasLoser();
         sendBoard(new LiteBoard("Insert " + getCurrentPlayer().getName() + " update", board, this));
