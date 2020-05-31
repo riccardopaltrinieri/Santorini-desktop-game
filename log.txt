@@ -2123,3 +2123,39 @@ Insert rich placed a worker in 5x1
 Insert rich placed a worker in 5x1
 Insert fillo update
 Insert fillo update
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> andre
+Wait for other players
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Artemis
+Your Divinity: Apollo
+Insert fillo update
+Insert fillo update
+-> placeworker 2 2
+Insert fillo placed a worker in 2x2
+Insert fillo placed a worker in 2x2
+-> placeworker 4 4
+Insert fillo placed a worker in 4x4
+Insert fillo placed a worker in 4x4
+Insert andre update
+Insert andre update
+-> placeworker 5 1
+Insert andre placed a worker in 5x1
+Insert andre placed a worker in 5x1
+-> placeworker 2 4
+Insert andre placed a worker in 2x4
+Insert andre placed a worker in 2x4
+Insert fillo update
+Insert fillo update

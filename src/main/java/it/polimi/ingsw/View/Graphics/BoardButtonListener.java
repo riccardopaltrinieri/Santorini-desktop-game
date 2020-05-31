@@ -21,9 +21,6 @@ public class BoardButtonListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (fsm.getState()== State.placeworker){
-            ((BoardButton)e.getSource()).setWorkerColor(color);
-            ((BoardButton)e.getSource()).setHaveWorker(true);
-            ((BoardButton)e.getSource()).repaint();
             frame.setChosenButton((BoardButton)e.getSource());
             synchronized (frame) {
                 frame.notifyAll();
