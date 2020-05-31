@@ -20,6 +20,7 @@ public class GUIHandler implements UserInterface {
     private String firstGodToRemove;
     private String secondGodToRemove;
     private int numPlayer;
+    private int[] selectedWorkerCoordinate;
 
     private BoardButtonListener boardListener = new BoardButtonListener(fsm,color,mainFrame);
 
@@ -37,6 +38,13 @@ public class GUIHandler implements UserInterface {
 
             switch (firstWord){
 
+                case "Start" :
+                //take the other's player info
+                    if (!parts[1].equals(name)) {
+                        mainFrame.updatePlayerInfoTextArea("Your " + parts[2] + " opponent is " + parts[1] + "\nHe will use " + parts[3]);
+                    }
+                    outgoingMessage = "noMessageToSend";
+                    break;
 
                 case "Welcome!":
                     //Ask gor the player's name
@@ -48,7 +56,8 @@ public class GUIHandler implements UserInterface {
                             for (int i=0;i<25;i++){
                                 mainFrame.getActiveBoardButtons()[i].addActionListener(boardListener);
                             }
-
+                            mainFrame.getYesButton().addActionListener(boardListener);
+                            mainFrame.getNoButton().addActionListener(boardListener);
                         }
                     });
 
@@ -169,6 +178,22 @@ public class GUIHandler implements UserInterface {
 
                 case "Insert":
                     //ask to the player for the next move according to the FSM
+
+                    if (fsm.getState() == State.worker) {
+                        // ask to the player which worker he wants to use but don't send anything
+                        mainFrame.updateTextArea("Click on the worker that you want to use");
+                        for (int i=0; i<25;i++){
+                            if(mainFrame.getActiveBoardButtons()[i].getHaveWorker()){
+                                mainFrame.getActiveBoardButtons()[i].setEnabled(true);
+                            }
+                            else {
+                                mainFrame.getActiveBoardButtons()[i].setEnabled(false);
+                            }
+                        }
+                        selectedWorkerCoordinate = mainFrame.getChosenButtonCoordinate();
+                        fsm.nextState();
+                    }
+
                     if (parts[1].equals(name)){
                         if (fsm.getState()==State.placeworker){
                             for (int i=0; i<25;i++){
@@ -181,6 +206,16 @@ public class GUIHandler implements UserInterface {
                             }
                             int[] coordinate = mainFrame.getChosenButtonCoordinate();
                             outgoingMessage ="placeworker "+coordinate[0]+" "+coordinate[1];
+                        }
+                        if (fsm.getState()==State.start){
+                            mainFrame.updateTextArea("Do you want to use your Godpower?");
+                            mainFrame.addYesOrNo();
+                            for (int i=0;i<25;i++){
+                                mainFrame.getActiveBoardButtons()[i].setEnabled(false);
+                            }
+
+                            outgoingMessage=mainFrame.getYesOrNoResponse();
+                            mainFrame.removeYesOrNo();
                         }
                         fsm.nextState();
                     }
@@ -204,3 +239,5 @@ public class GUIHandler implements UserInterface {
         return fsm.getState();
     }
 }
+
+//TODO gestire meglio messaggi di infotext per comunicare meglio
