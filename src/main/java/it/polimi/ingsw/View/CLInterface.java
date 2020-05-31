@@ -121,6 +121,13 @@ public class CLInterface implements UserInterface {
                     outgoingMessage = "noMessageToSend";
                     break;
 
+                case "Start":
+                    if (!parts[1].equals(name)) {
+                        System.out.println("Your " + parts[2] + " opponent is " + parts[1]);
+                        System.out.println("He will use " + parts[3]);
+                    }
+                    outgoingMessage = "noMessageToSend";
+                    break;
 
                 case "Error:":
                     // Something went wrong with the last action
