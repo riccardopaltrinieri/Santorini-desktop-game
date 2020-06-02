@@ -18,4 +18,18 @@ public enum Color {
         else if (num==2) return Brown;
         else throw new IllegalArgumentException();
     }
+
+    public  static Color stroingToColor (String string){
+        String lowString = string.toLowerCase();
+        if (lowString.equals("white")){
+            return Color.White;
+        }
+        else if (lowString.equals("purple")){
+            return Color.Purple;
+        }
+        else if (lowString.equals("brown")){
+            return Color.Brown;
+        }
+        else throw  new IllegalArgumentException();
+    }
 }

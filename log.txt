@@ -4020,3 +4020,914 @@ Start asdg Purple Apollo
 Insert Adsgva update
 Start af Brown Athena
 Insert Adsgva update
+Welcome! What's your name?
+-> Fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> Andre
+Wait for other players
+Choose the first divinity:
+-> Pan
+Choose the second divinity: 
+-> Athena
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Pan Athena 
+-> Athena
+Your Divinity: Athena
+Your Divinity: Pan
+Start Fillo White Pan
+Start Andre Purple Athena
+Start Fillo White Pan
+Start Andre Purple Athena
+Insert Fillo update
+Insert Fillo update
+-> placeworker 3 4
+Insert Fillo placed a worker in 3x4
+Insert Fillo placed a worker in 3x4
+-> placeworker 4 1
+Insert Fillo placed a worker in 4x1
+Insert Fillo placed a worker in 4x1
+Insert Andre update
+Insert Andre update
+-> placeworker 1 3
+Insert Andre placed a worker in 1x3
+Insert Andre placed a worker in 1x3
+-> placeworker 5 2
+Insert Andre placed a worker in 5x2
+Insert Andre placed a worker in 5x2
+Insert Fillo update
+Insert Fillo update
+-> usepower
+Insert Fillo wants to use the God Power
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> zambo
+Wait for other players
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Artemis
+Your Divinity: Apollo
+Start fillo White Apollo
+Start fillo White Apollo
+Start zambo Purple Artemis
+Insert fillo update
+Start zambo Purple Artemis
+Insert fillo update
+-> placeworker 3 2
+Insert fillo placed a worker in 3x2
+Insert fillo placed a worker in 3x2
+-> placeworker 5 4
+Insert fillo placed a worker in 5x4
+Insert fillo placed a worker in 5x4
+Insert zambo update
+Insert zambo update
+-> placeworker 1 5
+Insert zambo placed a worker in 1x5
+Insert zambo placed a worker in 1x5
+-> placeworker 2 4
+Insert zambo placed a worker in 2x4
+Insert zambo placed a worker in 2x4
+Insert fillo update
+Insert fillo update
+-> normal
+Insert fillo doesn't want to use the God Power
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Welcome! What's your name?
+-> zambo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Artemis
+Start fillo White Artemis
+Start fillo White Artemis
+Start zambo Purple Apollo
+Start zambo Purple Apollo
+Insert fillo update
+Insert fillo update
+-> placeworker 4 4
+Insert fillo placed a worker in 4x4
+Insert fillo placed a worker in 4x4
+-> placeworker 3 1
+Insert fillo placed a worker in 3x1
+Insert fillo placed a worker in 3x1
+Insert zambo update
+Insert zambo update
+-> placeworker 2 5
+Insert zambo placed a worker in 2x5
+Insert zambo placed a worker in 2x5
+-> placeworker 1 3
+Insert zambo placed a worker in 1x3
+Insert zambo placed a worker in 1x3
+Insert fillo update
+Insert fillo update
+-> normal
+Insert fillo doesn't want to use the God Power
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> lollo
+Wait for other players
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Artemis
+Start fillo White Artemis
+Start fillo White Artemis
+Start lollo Purple Apollo
+Start lollo Purple Apollo
+Insert fillo update
+Insert fillo update
+-> placeworker 3 3
+Insert fillo placed a worker in 3x3
+Insert fillo placed a worker in 3x3
+-> placeworker 5 1
+Insert fillo placed a worker in 5x1
+Insert fillo placed a worker in 5x1
+Insert lollo update
+Insert lollo update
+-> placeworker 1 5
+Insert lollo placed a worker in 1x5
+Insert lollo placed a worker in 1x5
+-> placeworker 3 5
+Insert lollo placed a worker in 3x5
+Insert lollo placed a worker in 3x5
+Insert fillo update
+Insert fillo update
+-> normal
+Insert fillo doesn't want to use the God Power
+Insert fillo doesn't want to use the God Power
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> zambo
+Wait for other players
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Artemis
+Your Divinity: Apollo
+Start fillo White Apollo
+Start fillo White Apollo
+Start zambo Purple Artemis
+Start zambo Purple Artemis
+Insert fillo update
+Insert fillo update
+-> placeworker 4 2
+Insert fillo placed a worker in 4x2
+Insert fillo placed a worker in 4x2
+-> placeworker 2 4
+Insert fillo placed a worker in 2x4
+Insert fillo placed a worker in 2x4
+Insert zambo update
+Insert zambo update
+-> placeworker 2 2
+Insert zambo placed a worker in 2x2
+Insert zambo placed a worker in 2x2
+-> placeworker 4 4
+Insert zambo placed a worker in 4x4
+Insert zambo placed a worker in 4x4
+Insert fillo update
+Insert fillo update
+-> normal
+Insert fillo doesn't want to use the God Power
+Insert fillo doesn't want to use the God Power
+Welcome! What's your name?
+-> filo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> asdasd
+Wait for other players
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Artemis
+Your Divinity: Apollo
+Start filo White Apollo
+Start filo White Apollo
+Start asdasd Purple Artemis
+Start asdasd Purple Artemis
+Insert filo update
+Insert filo update
+-> placeworker 1 1
+Insert filo placed a worker in 1x1
+Insert filo placed a worker in 1x1
+-> placeworker 1 5
+Insert filo placed a worker in 1x5
+Insert filo placed a worker in 1x5
+Insert asdasd update
+Insert asdasd update
+-> placeworker 1 3
+Insert asdasd placed a worker in 1x3
+Insert asdasd placed a worker in 1x3
+-> placeworker 2 3
+Insert asdasd placed a worker in 2x3
+Insert asdasd placed a worker in 2x3
+Insert filo update
+Insert filo update
+-> normal
+Insert filo doesn't want to use the God Power
+Insert filo doesn't want to use the God Power
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> asdasd
+Wait for other players
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Artemis
+Your Divinity: Apollo
+Start fillo White Apollo
+Start fillo White Apollo
+Start asdasd Purple Artemis
+Start asdasd Purple Artemis
+Insert fillo update
+Insert fillo update
+-> placeworker 4 3
+Insert fillo placed a worker in 4x3
+Insert fillo placed a worker in 4x3
+-> placeworker 1 1
+Insert fillo placed a worker in 1x1
+Insert fillo placed a worker in 1x1
+Insert asdasd update
+Insert asdasd update
+-> placeworker 3 4
+Insert asdasd placed a worker in 3x4
+Insert asdasd placed a worker in 3x4
+-> placeworker 3 3
+Insert asdasd placed a worker in 3x3
+Insert asdasd placed a worker in 3x3
+Insert fillo update
+Insert fillo update
+-> normal
+Insert fillo doesn't want to use the God Power
+Insert fillo doesn't want to use the God Power
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> dasd
+Wait for other players
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Artemis
+Start fillo White Artemis
+Start fillo White Artemis
+Start dasd Purple Apollo
+Start dasd Purple Apollo
+Insert fillo update
+Insert fillo update
+-> placeworker 5 1
+Insert fillo placed a worker in 5x1
+Insert fillo placed a worker in 5x1
+-> placeworker 1 1
+Insert fillo placed a worker in 1x1
+Insert fillo placed a worker in 1x1
+Insert dasd update
+Insert dasd update
+-> placeworker 2 3
+Insert dasd placed a worker in 2x3
+Insert dasd placed a worker in 2x3
+-> placeworker 3 3
+Insert dasd placed a worker in 3x3
+Insert dasd placed a worker in 3x3
+Insert fillo update
+Insert fillo update
+-> normal
+Insert fillo doesn't want to use the God Power
+Insert fillo doesn't want to use the God Power
+Welcome! What's your name?
+-> asdasd
+Wait for other players
+Welcome! What's your name?
+-> dsfsdf
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Artemis
+Your Divinity: Apollo
+Start asdasd White Artemis
+Start asdasd White Artemis
+Start dsfsdf Purple Apollo
+Start dsfsdf Purple Apollo
+Insert asdasd update
+Insert asdasd update
+-> placeworker 4 2
+Insert asdasd placed a worker in 4x2
+Insert asdasd placed a worker in 4x2
+-> placeworker 2 4
+Insert asdasd placed a worker in 2x4
+Insert asdasd placed a worker in 2x4
+Insert dsfsdf update
+Insert dsfsdf update
+-> placeworker 1 3
+Insert dsfsdf placed a worker in 1x3
+Insert dsfsdf placed a worker in 1x3
+-> placeworker 5 4
+Insert dsfsdf placed a worker in 5x4
+Insert dsfsdf placed a worker in 5x4
+Insert asdasd update
+Insert asdasd update
+-> normal
+Insert asdasd doesn't want to use the God Power
+Insert asdasd doesn't want to use the God Power
+Welcome! What's your name?
+-> ffgd
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> asdsd
+Wait for other players
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Artemis
+Start ffgd White Artemis
+Start ffgd White Artemis
+Start asdsd Purple Apollo
+Insert ffgd update
+Start asdsd Purple Apollo
+Insert ffgd update
+-> placeworker 3 3
+Insert ffgd placed a worker in 3x3
+Insert ffgd placed a worker in 3x3
+-> placeworker 4 2
+Insert ffgd placed a worker in 4x2
+Insert ffgd placed a worker in 4x2
+Insert asdsd update
+Insert asdsd update
+-> placeworker 1 5
+Insert asdsd placed a worker in 1x5
+Insert asdsd placed a worker in 1x5
+-> placeworker 1 3
+Insert asdsd placed a worker in 1x3
+Insert asdsd placed a worker in 1x3
+Insert ffgd update
+Insert ffgd update
+-> normal
+Insert ffgd doesn't want to use the God Power
+Insert ffgd doesn't want to use the God Power
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Welcome! What's your name?
+-> asdasd
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Apollo
+Your Divinity: Artemis
+Start fillo White Apollo
+Start fillo White Apollo
+Start asdasd Purple Artemis
+Start asdasd Purple Artemis
+Insert fillo update
+Insert fillo update
+-> placeworker 4 2
+Insert fillo placed a worker in 4x2
+Insert fillo placed a worker in 4x2
+-> placeworker 1 3
+Insert fillo placed a worker in 1x3
+Insert fillo placed a worker in 1x3
+Insert asdasd update
+Insert asdasd update
+-> placeworker 5 4
+Insert asdasd placed a worker in 5x4
+Insert asdasd placed a worker in 5x4
+-> placeworker 3 4
+Insert asdasd placed a worker in 3x4
+Insert asdasd placed a worker in 3x4
+Insert fillo update
+Insert fillo update
+-> normal
+Insert fillo doesn't want to use the God Power
+Insert fillo doesn't want to use the God Power
+Welcome! What's your name?
+-> hui
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> qweqwe
+Wait for other players
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Artemis
+Your Divinity: Apollo
+Start hui White Apollo
+Start hui White Apollo
+Start qweqwe Purple Artemis
+Insert hui update
+Start qweqwe Purple Artemis
+Insert hui update
+-> placeworker 1 1
+Insert hui placed a worker in 1x1
+Insert hui placed a worker in 1x1
+-> placeworker 2 3
+Insert hui placed a worker in 2x3
+Insert hui placed a worker in 2x3
+Insert qweqwe update
+Insert qweqwe update
+-> placeworker 1 2
+Insert qweqwe placed a worker in 1x2
+Insert qweqwe placed a worker in 1x2
+-> placeworker 2 2
+Insert qweqwe placed a worker in 2x2
+Insert qweqwe placed a worker in 2x2
+Insert hui update
+Insert hui update
+-> usepower
+Insert hui wants to use the God Power
+Insert hui wants to use the God Power
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Welcome! What's your name?
+-> fasdaw
+Wait for other players
+Welcome! What's your name?
+-> asdasf
+Wait for other players
+Welcome! What's your name?
+-> sdfsdf
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Apollo
+Your Divinity: Artemis
+Start asdasf White Apollo
+Start asdasf White Apollo
+Start sdfsdf Purple Artemis
+Start sdfsdf Purple Artemis
+Insert asdasf update
+Insert asdasf update
+-> placeworker 2 2
+Insert asdasf placed a worker in 2x2
+Insert asdasf placed a worker in 2x2
+-> placeworker 5 4
+Insert asdasf placed a worker in 5x4
+Insert asdasf placed a worker in 5x4
+Insert sdfsdf update
+Insert sdfsdf update
+-> placeworker 2 3
+Insert sdfsdf placed a worker in 2x3
+Insert sdfsdf placed a worker in 2x3
+-> placeworker 3 1
+Insert sdfsdf placed a worker in 3x1
+Insert sdfsdf placed a worker in 3x1
+Insert asdasf update
+Insert asdasf update
+-> normal
+Insert asdasf doesn't want to use the God Power
+Insert asdasf doesn't want to use the God Power
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Welcome! What's your name?
+-> asdasd
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Artemis
+Your Divinity: Apollo
+Start fillo White Artemis
+Start fillo White Artemis
+Start asdasd Purple Apollo
+Start asdasd Purple Apollo
+Insert fillo update
+Insert fillo update
+-> placeworker 2 2
+Insert fillo placed a worker in 2x2
+Insert fillo placed a worker in 2x2
+-> placeworker 4 4
+Insert fillo placed a worker in 4x4
+Insert fillo placed a worker in 4x4
+Insert asdasd update
+Insert asdasd update
+-> placeworker 5 2
+Insert asdasd placed a worker in 5x2
+Insert asdasd placed a worker in 5x2
+-> placeworker 3 1
+Insert asdasd placed a worker in 3x1
+Insert asdasd placed a worker in 3x1
+Insert fillo update
+Insert fillo update
+-> normal
+Insert fillo doesn't want to use the God Power
+Welcome! What's your name?
+-> asdas
+Wait for other players
+Welcome! What's your name?
+-> sdfsd
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Artemis
+Your Divinity: Apollo
+Start sdfsd White Artemis
+Start sdfsd White Artemis
+Start asdas Purple Apollo
+Start asdas Purple Apollo
+Insert sdfsd update
+Insert sdfsd update
+-> placeworker 2 2
+Insert sdfsd placed a worker in 2x2
+Insert sdfsd placed a worker in 2x2
+-> placeworker 4 4
+Insert sdfsd placed a worker in 4x4
+Insert sdfsd placed a worker in 4x4
+Insert asdas update
+Insert asdas update
+-> placeworker 2 4
+Insert asdas placed a worker in 2x4
+Insert asdas placed a worker in 2x4
+-> placeworker 4 2
+Insert asdas placed a worker in 4x2
+Insert asdas placed a worker in 4x2
+Insert sdfsd update
+Insert sdfsd update
+-> normal
+Insert sdfsd doesn't want to use the God Power
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Welcome! What's your name?
+-> lollo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Minotaur
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Minotaur 
+-> Apollo
+Your Divinity: Minotaur
+Your Divinity: Apollo
+Start fillo White Minotaur
+Start fillo White Minotaur
+Start lollo Purple Apollo
+Start lollo Purple Apollo
+Insert fillo update
+Insert fillo update
+-> placeworker 2 2
+Insert fillo placed a worker in 2x2
+Insert fillo placed a worker in 2x2
+-> placeworker 4 4
+Insert fillo placed a worker in 4x4
+Insert fillo placed a worker in 4x4
+Insert lollo update
+Insert lollo update
+-> placeworker 2 4
+Insert lollo placed a worker in 2x4
+Insert lollo placed a worker in 2x4
+-> placeworker 4 2
+Insert lollo placed a worker in 4x2
+Insert lollo placed a worker in 4x2
+Insert fillo update
+Insert fillo update
+-> normal
+Insert fillo doesn't want to use the God Power
+Insert fillo doesn't want to use the God Power
+-> move 3 3 0
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Welcome! What's your name?
+-> lollo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Artemis
+Start fillo White Artemis
+Start fillo White Artemis
+Start lollo Purple Apollo
+Start lollo Purple Apollo
+Insert fillo update
+Insert fillo update
+-> placeworker 2 2
+Insert fillo placed a worker in 2x2
+Insert fillo placed a worker in 2x2
+-> placeworker 4 4
+Insert fillo placed a worker in 4x4
+Insert fillo placed a worker in 4x4
+Insert lollo update
+Insert lollo update
+-> placeworker 4 1
+Insert lollo placed a worker in 4x1
+Insert lollo placed a worker in 4x1
+-> placeworker 1 5
+Insert lollo placed a worker in 1x5
+Insert lollo placed a worker in 1x5
+Insert fillo update
+Insert fillo update
+-> normal
+Insert fillo doesn't want to use the God Power
+Insert fillo doesn't want to use the God Power
+-> move 2 3 0
+Welcome! What's your name?
+-> dasdas
+Wait for other players
+Welcome! What's your name?
+-> sdfsdf
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Apollo
+Your Divinity: Artemis
+Start dasdas White Apollo
+Start sdfsdf Purple Artemis
+Start dasdas White Apollo
+Start sdfsdf Purple Artemis
+Insert dasdas update
+Insert dasdas update
+-> placeworker 2 2
+Insert dasdas placed a worker in 2x2
+Insert dasdas placed a worker in 2x2
+-> placeworker 4 4
+Insert dasdas placed a worker in 4x4
+Insert dasdas placed a worker in 4x4
+Insert sdfsdf update
+Insert sdfsdf update
+-> placeworker 5 2
+Insert sdfsdf placed a worker in 5x2
+Insert sdfsdf placed a worker in 5x2
+-> placeworker 1 5
+Insert sdfsdf placed a worker in 1x5
+Insert sdfsdf placed a worker in 1x5
+Insert dasdas update
+Insert dasdas update
+-> normal
+Insert dasdas doesn't want to use the God Power
+Insert dasdas doesn't want to use the God Power
+-> move 2 3 01
+Insert dasdas moved a worker in 2x3
+Insert dasdas moved a worker in 2x3
+Welcome! What's your name?
+-> sadas
+Wait for other players
+Welcome! What's your name?
+-> sdfsdf
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Apollo
+Your Divinity: Artemis
+Start sadas White Apollo
+Start sadas White Apollo
+Start sdfsdf Purple Artemis
+Start sdfsdf Purple Artemis
+Insert sadas update
+Insert sadas update
+-> placeworker 3 2
+Insert sadas placed a worker in 3x2
+Insert sadas placed a worker in 3x2
+-> placeworker 4 5
+Insert sadas placed a worker in 4x5
+Insert sadas placed a worker in 4x5
+Insert sdfsdf update
+Insert sdfsdf update
+-> placeworker 5 3
+Insert sdfsdf placed a worker in 5x3
+Insert sdfsdf placed a worker in 5x3
+-> placeworker 2 4
+Insert sdfsdf placed a worker in 2x4
+Insert sdfsdf placed a worker in 2x4
+Insert sadas update
+Insert sadas update
+-> normal
+Insert sadas doesn't want to use the God Power
+Insert sadas doesn't want to use the God Power
+-> move 4 2 01
+Insert sadas moved a worker in 4x2
+Insert sadas moved a worker in 4x2
+Welcome! What's your name?
+-> asda
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> dfsf
+Wait for other players
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Artemis
+Your Divinity: Apollo
+Start asda White Apollo
+Start asda White Apollo
+Start dfsf Purple Artemis
+Start dfsf Purple Artemis
+Insert asda update
+Insert asda update
+-> placeworker 4 3
+Insert asda placed a worker in 4x3
+Insert asda placed a worker in 4x3
+-> placeworker 3 3
+Insert asda placed a worker in 3x3
+Insert asda placed a worker in 3x3
+Insert dfsf update
+Insert dfsf update
+-> placeworker 3 4
+Insert dfsf placed a worker in 3x4
+Insert dfsf placed a worker in 3x4
+-> placeworker 4 4
+Insert dfsf placed a worker in 4x4
+Insert dfsf placed a worker in 4x4
+Insert asda update
+Welcome! What's your name?
+-> sdasd
+Wait for other players
+Welcome! What's your name?
+-> sdfsd
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Artemis
+Your Divinity: Apollo
+Start sdfsd White Artemis
+Start sdfsd White Artemis
+Start sdasd Purple Apollo
+Start sdasd Purple Apollo
+Insert sdfsd update
+Insert sdfsd update
+-> placeworker 3 2
+Insert sdfsd placed a worker in 3x2
+Insert sdfsd placed a worker in 3x2
+-> placeworker 4 4
+Insert sdfsd placed a worker in 4x4
+Insert sdfsd placed a worker in 4x4
+Insert sdasd update
+Insert sdasd update
+-> placeworker 5 2
+Insert sdasd placed a worker in 5x2
+Insert sdasd placed a worker in 5x2
+-> placeworker 3 3
+Insert sdasd placed a worker in 3x3
+Insert sdasd placed a worker in 3x3
+Insert sdfsd update
+Insert sdfsd update
+-> normal
+Insert sdfsd doesn't want to use the God Power
+Insert sdfsd doesn't want to use the God Power
+-> move 4 3 01
+Insert sdfsd moved a worker in 4x3
+Insert sdfsd moved a worker in 4x3

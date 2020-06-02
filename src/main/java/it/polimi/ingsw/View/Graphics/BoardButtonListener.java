@@ -12,7 +12,7 @@ public class BoardButtonListener implements ActionListener {
 
     FSMView fsm;
     Color color;
-    MainFrame frame;
+    final MainFrame frame;
 
     public BoardButtonListener(FSMView fsm, Color color,MainFrame frame){
         this.color = color;
@@ -21,17 +21,17 @@ public class BoardButtonListener implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (fsm.getState()== State.placeworker){
+        if ((fsm.getState()== State.placeworker)||(fsm.getState()==State.worker)||(fsm.getState()==State.move)){
             frame.setChosenButton((BoardButton)e.getSource());
             synchronized (frame) {
                 frame.notifyAll();
             }
         }
         if(fsm.getState()== State.start){
-            if (((JButton)e.getSource())==frame.getYesButton()){
+            if ((e.getSource())==frame.getYesButton()){
                 frame.setYesOrNoString("usepower");
             }
-            else if(((JButton)e.getSource())==frame.getNoButton()){
+            else if((e.getSource())==frame.getNoButton()){
                 frame.setYesOrNoString("normal");
             }
             else{
