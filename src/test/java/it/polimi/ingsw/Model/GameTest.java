@@ -17,7 +17,73 @@ public class GameTest
     Player tester2 = new Player("tester2", Color.Brown, game);
     Player tester3 = new Player("tester2", Color.Purple, game);
 
-    //insert the power to test
+    @Test
+    public void testPlaceWorker() {
+
+        // True if the worker has been placed, false otherwise
+        assertTrue(game.placeWorker(1, 1));
+        assertFalse(game.placeWorker(1, 1));
+    }
+
+    @Test
+    public void testMove() {
+
+        // The first player is tester
+        game.placeWorker(1, 1);
+        // The first move is legitimate
+        assertTrue(game.move(1, 2, 0));
+        // Cannot move in the same Cell
+        assertFalse(game.move(1, 2, 0));
+
+        // Change player to tester2
+        game.setNumPlayer(2);
+        game.endTurn();
+        game.placeWorker(2, 2);
+
+        // Cannot move in the same cell of the first worker
+        assertFalse(game.move(1, 2, 0));
+
+        // Simulate the Athena godPower
+        game.setCanMoveUp(false);
+        game.getBoard().getCell(3, 3).setLevel(1);
+        // Cannot move up because the Athena power is active
+        assertFalse(game.move(3, 3, 0));
+    }
+
+    @Test
+    public void testBuild() {
+
+        // The first player is tester
+        game.placeWorker(1, 1);
+        // The first build is legitimate
+        assertTrue(game.build(1, 2, 0));
+        // Cannot build 2 cells away
+        assertFalse(game.build(3, 3, 0));
+    }
+
+    @Test
+    public void testUseGodPower() {
+
+        tester.setGodPower("Athena");
+        tester2.setGodPower("Artemis");
+        // The first player is tester
+        game.placeWorker(1, 1);
+        // The first move is legitimate
+        assertTrue(game.useGodPower(1, 2, 0));
+
+        // Change player to tester2
+        game.setNumPlayer(2);
+        game.endTurn();
+
+        game.placeWorker(2, 2);
+
+        // Cannot move in the same cell of the first worker
+        assertFalse(game.useGodPower(1, 2, 0));
+
+        // Cannot move up because the Athena power is active
+        game.getBoard().getCell(3, 3).setLevel(1);
+        assertFalse(game.move(3, 3, 0));
+    }
 
     @Test
     public void TestHasLoser() {

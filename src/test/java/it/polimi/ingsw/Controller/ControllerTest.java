@@ -20,6 +20,7 @@ public class ControllerTest {
         game.setNumPlayer(2);
         //insert the power to test
         tester.setGodPower("default");
+        tester2.setGodPower("default");
 
 
         controller.update("tester placeWorker 1 1");
@@ -62,9 +63,7 @@ public class ControllerTest {
         game.setNumPlayer(2);
         //insert the power to test
         tester.setGodPower("Athena");
-        tester.setGodPower(new Athena());
         tester2.setGodPower("Atlas");
-        tester2.setGodPower(new Atlas());
 
         controller.update("tester placeWorker 1 1");
         controller.update("tester placeWorker 4 4");
@@ -89,7 +88,7 @@ public class ControllerTest {
 
     }
     @Test
-    public void testGodPower() {
+    public void testGodPowerPanPrometheus() {
 
         Game game = new Game();
         Controller controller = new Controller(game);
@@ -104,7 +103,6 @@ public class ControllerTest {
         tester2.setGodPower("Prometheus");
         Prometheus testProm = new Prometheus();
         assertEquals( testProm.getDivinity(), tester2.getGodPower().getDivinity());
-        tester2.setGodPower(new Atlas());
 
         controller.update("tester placeWorker 1 1");
         controller.update("tester placeWorker 4 4");
@@ -112,22 +110,57 @@ public class ControllerTest {
         controller.update("tester2 placeWorker 3 3");
         controller.update("tester2 placeWorker 4 3");
 
+        // Pan player makes a normal move with the GodPower
         controller.update("tester usePower");
         controller.update("tester move 1 2 1");
-
-
-
-        //assertFalse(game.getBoard().getCell(0,1).getIsEmpty());
-
+        assertFalse(game.getBoard().getCell(0,1).getIsEmpty());
         controller.update("tester build 1 1 1");
 
+        // Prometheus player use the GodPower
         controller.update("tester2 usePower");
         controller.update("tester2 build 3 2 1");
-
-
-
-        //check Prometheus
-        //assertEquals(1,game.getBoard().getCell(2,1).getLevel());
-
+        controller.update("tester2 move 2 2 1");
+        controller.update("tester2 build 3 3 1");
+        assertEquals(game.getBoard().getCell(2, 1).getLevel(), 1);
+        assertFalse(game.getBoard().getCell(1, 1).getIsEmpty());
+        assertEquals(game.getBoard().getCell(2, 2).getLevel(), 1);
     }
+
+    @Test
+    public void testGodPowerArtemisDemeter() {
+        Game game = new Game();
+        Controller controller = new Controller(game);
+        Player tester = new Player("tester", Color.White, game);
+        Player tester2 = new Player("tester2", Color.White, game);
+        game.setNumPlayer(2);
+        //insert the power to test
+        tester.setGodPower("Artemis");
+        tester2.setGodPower("Demeter");
+
+        controller.update("tester placeWorker 1 1");
+        controller.update("tester placeWorker 2 2");
+
+        controller.update("tester2 placeWorker 3 3");
+        controller.update("tester2 placeWorker 4 4");
+
+        // Artemis player makes two moves
+        controller.update("tester usePower");
+        controller.update("tester move 1 2 1");
+        controller.update("tester move 1 3 1");
+        assertFalse(game.getBoard().getCell(0,2).getIsEmpty());
+        assertTrue(game.getBoard().getCell(0,0).getIsEmpty());
+        assertTrue(game.getBoard().getCell(0,1).getIsEmpty());
+        controller.update("tester build 1 2 1");
+
+        // Demeter player use the GodPower
+        controller.update("tester2 usePower");
+        controller.update("tester2 move 3 4 1");
+        controller.update("tester2 build 3 3 1");
+        controller.update("tester2 build 3 3 1");
+        controller.update("tester2 build 3 5 1");
+        assertEquals(game.getBoard().getCell(2, 2).getLevel(), 1);
+        assertEquals(game.getBoard().getCell(2, 4).getLevel(), 1);
+    }
+
+
 }
