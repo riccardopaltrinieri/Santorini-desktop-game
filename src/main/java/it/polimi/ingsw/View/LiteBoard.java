@@ -129,11 +129,27 @@ public class LiteBoard implements Serializable {
     }
 
     public void printBoardGUI(MainFrame frame){
-        for (int i =0; i<numAllWorker;i++){
-            int index = (posWorker[i][0])*5+posWorker[i][1];
-            frame.getActiveBoardButtons()[index].setHaveWorker(true);
-            frame.getActiveBoardButtons()[index].setWorkerColor(Color.intToColor(posWorker[i][2]));
-            frame.getActiveBoardButtons()[index].repaint();
+        if(!frame.isVisible()){
+            return;
+        }
+        for (int i=0;i<frame.getActiveBoardButtons().length;i++){
+            for (int j =0; j<numAllWorker;j++){
+                int index = (posWorker[j][0])*5+posWorker[j][1];
+                if (i==index){
+                    frame.getActiveBoardButtons()[index].setHaveWorker(true);
+                    frame.getActiveBoardButtons()[index].setWorkerColor(Color.intToColor(posWorker[j][2]));
+                    frame.getActiveBoardButtons()[index].setWorkerNum(posWorker[j][2]);
+                    break;
+                }
+                else{
+                    frame.getActiveBoardButtons()[i].setHaveWorker(false);
+                    frame.getActiveBoardButtons()[i].setWorkerColorNull();
+                    frame.getActiveBoardButtons()[index].setWorkerNum(0);
+                }
+            }
+            frame.getActiveBoardButtons()[i].setEnabled(false);
+            frame.getActiveBoardButtons()[i].setSelectableCell(false);
+            frame.getActiveBoardButtons()[i].repaint();
         }
     }
 }

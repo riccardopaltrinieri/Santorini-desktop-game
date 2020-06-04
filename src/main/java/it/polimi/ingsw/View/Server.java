@@ -139,7 +139,7 @@ public class Server {
     public synchronized void lobby(Connection c, String name){
         waitingConnection.put(name, c);
         if (c.equals(connections.get(0))) firstPlayer = name;
-        if (connections.size() == 2){
+        if (connections.size() >= 2){
             if (c.equals(connections.get(1))) secondPlayer = name;
         }
          if (connections.size() == 3) {
@@ -223,7 +223,7 @@ public class Server {
         }
     }
 
-    public void endGame() {
+    public synchronized void endGame() {
         for (Connection conn: connections) {
             conn.closeConnection();
         }

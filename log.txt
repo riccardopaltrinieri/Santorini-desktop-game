@@ -2294,3 +2294,2640 @@ Insert rich update
 Insert toni build in 1 1
 Insert toni build in 1 1
 Insert rich update
+Welcome! What's your name?
+-> afs
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+Choose the third divinity: 
+-> Minotaur
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> agaf
+Wait for other players
+Welcome! What's your name?
+-> agfda
+Wait for other players
+Choose your Divinity between: Apollo Athena Minotaur 
+-> Apollo
+Your Divinity: Apollo
+Choose your Divinity between: Athena Minotaur 
+-> Athena
+Your Divinity: Minotaur
+Your Divinity: Athena
+Start afs White Minotaur
+Start afs White Minotaur
+Start afs White Minotaur
+Start null Purple Apollo
+Start null Purple Apollo
+Start agfda Brown Athena
+Start agfda Brown Athena
+Start null Purple Apollo
+Start agfda Brown Athena
+Insert afs update
+Insert afs update
+Insert afs update
+-> placeworker 1 1
+Insert afs placed a worker in 1x1
+Insert afs placed a worker in 1x1
+Insert afs placed a worker in 1x1
+-> placeworker 2 2
+Insert afs placed a worker in 2x2
+Insert null update
+Insert afs placed a worker in 2x2
+Insert null update
+Insert afs placed a worker in 2x2
+Insert null update
+Welcome! What's your name?
+-> ag
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> ag
+Wait for other players
+Welcome! What's your name?
+-> sad
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> saf
+Wait for other players
+Welcome! What's your name?
+-> asdg
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> gsa
+Wait for other players
+Choose your Divinity between: Apollo Athena 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Athena
+Start asdg White Athena
+Start gsa Purple Apollo
+Start asdg White Athena
+Start gsa Purple Apollo
+Insert asdg update
+Insert asdg update
+-> placeworker 1 1
+Insert asdg placed a worker in 1x1
+Insert asdg placed a worker in 1x1
+-> placeworker 2 2
+Insert asdg placed a worker in 2x2
+Insert asdg placed a worker in 2x2
+Insert gsa update
+Welcome! What's your name?
+-> afs
+Wait for other players
+Welcome! What's your name?
+-> sdag
+Wait for other players
+Welcome! What's your name?
+-> sag
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+Choose the third divinity: 
+-> Minotaur
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Athena Minotaur 
+-> Apollo
+Your Divinity: Apollo
+Choose your Divinity between: Athena Minotaur 
+-> Athena
+Your Divinity: Athena
+Your Divinity: Minotaur
+Start sag White Minotaur
+Start sag White Minotaur
+Start null Purple Apollo
+Start afs Brown Athena
+Start null Purple Apollo
+Start afs Brown Athena
+Insert sag update
+Start sag White Minotaur
+Start null Purple Apollo
+Start afs Brown Athena
+Insert sag update
+Insert sag update
+-> placeworker 1 1
+Insert sag placed a worker in 1x1
+Insert sag placed a worker in 1x1
+Insert sag placed a worker in 1x1
+-> placeworker 2 2
+Insert sag placed a worker in 2x2
+Insert sag placed a worker in 2x2
+Insert null update
+Insert null update
+Insert sag placed a worker in 2x2
+Insert null update
+Welcome! What's your name?
+-> asgd
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+Choose the third divinity: 
+-> Minotaur
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> adsgasdgsa
+Wait for other players
+Welcome! What's your name?
+-> dsagsagsagsda
+Wait for other players
+Choose your Divinity between: Apollo Athena Minotaur 
+-> Apollo
+Your Divinity: Apollo
+Choose your Divinity between: Athena Minotaur 
+-> Athena
+Your Divinity: Athena
+Your Divinity: Minotaur
+Start asgd White Minotaur
+Start asgd White Minotaur
+Start null Purple Apollo
+Start asgd White Minotaur
+Start null Purple Apollo
+Start dsagsagsagsda Brown Athena
+Start null Purple Apollo
+Start dsagsagsagsda Brown Athena
+Start dsagsagsagsda Brown Athena
+Insert asgd update
+Insert asgd update
+Insert asgd update
+-> placeworker 1 1
+Insert asgd placed a worker in 1x1
+Insert asgd placed a worker in 1x1
+-> placeworker 2 2
+Insert asgd placed a worker in 2x2
+Insert null update
+Insert asgd placed a worker in 1x1
+Insert asgd placed a worker in 2x2
+Welcome! What's your name?
+-> hadhf
+Wait for other players
+Welcome! What's your name?
+-> dafh
+Wait for other players
+Welcome! What's your name?
+-> ahahf
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+Choose the third divinity: 
+-> Minotaur
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Athena Minotaur 
+-> Apollo
+Your Divinity: Apollo
+Choose your Divinity between: Athena Minotaur 
+-> Athena
+Your Divinity: Athena
+Your Divinity: Minotaur
+Start ahahf White Minotaur
+Start ahahf White Minotaur
+Start ahahf White Minotaur
+Start null Purple Apollo
+Start null Purple Apollo
+Start hadhf Brown Athena
+Start null Purple Apollo
+Start hadhf Brown Athena
+Start hadhf Brown Athena
+Insert ahahf update
+Insert ahahf update
+Insert ahahf update
+-> placeworker 1 1
+Insert ahahf placed a worker in 1x1
+Insert ahahf placed a worker in 1x1
+-> placeworker 2 2
+Insert ahahf placed a worker in 2x2
+Insert ahahf placed a worker in 1x1
+Insert ahahf placed a worker in 2x2
+Insert null update
+Insert null update
+Insert ahahf placed a worker in 2x2
+Insert null update
+Welcome! What's your name?
+-> adfhadhadh
+Wait for other players
+Welcome! What's your name?
+-> dafhda
+Wait for other players
+Welcome! What's your name?
+-> adfjdajj
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+Choose the third divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Athena Artemis 
+-> Apollo
+Your Divinity: Apollo
+Choose your Divinity between: Athena Artemis 
+-> Athena
+Your Divinity: Athena
+Your Divinity: Artemis
+Start adfjdajj White Artemis
+Start adfjdajj White Artemis
+Start null Purple Apollo
+Start adfhadhadh Brown Athena
+Start null Purple Apollo
+Start adfhadhadh Brown Athena
+Start adfjdajj White Artemis
+Start null Purple Apollo
+Start adfhadhadh Brown Athena
+Insert adfjdajj update
+Insert adfjdajj update
+Insert adfjdajj update
+-> placeworker 1 1
+Insert adfjdajj placed a worker in 1x1
+Insert adfjdajj placed a worker in 1x1
+Insert adfjdajj placed a worker in 1x1
+-> placeworker 2 2
+Insert adfjdajj placed a worker in 2x2
+Insert adfjdajj placed a worker in 2x2
+Insert null update
+Insert adfjdajj placed a worker in 2x2
+Insert null update
+Welcome! What's your name?
+-> sdfa
+Wait for other players
+Welcome! What's your name?
+-> sadgadga
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 3
+Welcome! What's your name?
+-> hdagfa
+Wait for other players
+Welcome! What's your name?
+-> asgsag
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+Choose the third divinity: 
+-> Minotaur
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> sagds
+Wait for other players
+Choose your Divinity between: Apollo Athena Minotaur 
+-> Apollo
+Your Divinity: Apollo
+Choose your Divinity between: Athena Minotaur 
+-> Athena
+Your Divinity: Athena
+Your Divinity: Minotaur
+Start hdagfa White Minotaur
+Start hdagfa White Minotaur
+Start hdagfa White Minotaur
+Start null Purple Apollo
+Start null Purple Apollo
+Start null Purple Apollo
+Start sagds Brown Athena
+Start sagds Brown Athena
+Start sagds Brown Athena
+Insert hdagfa update
+Insert hdagfa update
+-> placeworker 1 1
+Insert hdagfa update
+Insert hdagfa placed a worker in 1x1
+Insert hdagfa placed a worker in 1x1
+-> placeworker 2 2
+Insert hdagfa placed a worker in 1x1
+Insert hdagfa placed a worker in 2x2
+Insert null update
+Insert hdagfa placed a worker in 2x2
+Insert null update
+Insert hdagfa placed a worker in 2x2
+Insert null update
+Welcome! What's your name?
+-> afa
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+Choose the third divinity: 
+-> Minotaur
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> ahffas
+Wait for other players
+Welcome! What's your name?
+-> ga
+Wait for other players
+Choose your Divinity between: Apollo Athena Minotaur 
+-> Apollo
+Your Divinity: Apollo
+Choose your Divinity between: Athena Minotaur 
+-> Athena
+Your Divinity: Athena
+Your Divinity: Minotaur
+Welcome! What's your name?
+-> astata
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+Choose the third divinity: 
+-> Minotaur
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> agsd
+Wait for other players
+Welcome! What's your name?
+-> aha
+Wait for other players
+Choose your Divinity between: Apollo Athena Minotaur 
+-> Apollo
+Your Divinity: Apollo
+Choose your Divinity between: Athena Minotaur 
+-> Athena
+Your Divinity: Athena
+Your Divinity: Minotaur
+Start astata White Minotaur
+Start astata White Minotaur
+Start astata White Minotaur
+Start agsd Purple Apollo
+Start agsd Purple Apollo
+Start agsd Purple Apollo
+Start aha Brown Athena
+Start aha Brown Athena
+Start aha Brown Athena
+Insert astata update
+Insert astata update
+Insert astata update
+-> placeworker 1 1
+Insert astata placed a worker in 1x1
+Insert astata placed a worker in 1x1
+Insert astata placed a worker in 1x1
+-> placeworker 2 2
+Insert astata placed a worker in 2x2
+Insert agsd update
+Insert astata placed a worker in 2x2
+Insert astata placed a worker in 2x2
+Insert agsd update
+Insert agsd update
+-> placeworker 4 4
+Insert agsd placed a worker in 4x4
+Insert agsd placed a worker in 4x4
+Insert agsd placed a worker in 4x4
+-> placeworker 1 4
+Insert agsd placed a worker in 1x4
+Insert aha update
+Insert agsd placed a worker in 1x4
+Insert aha update
+Insert agsd placed a worker in 1x4
+Insert aha update
+-> placeworker 5 5
+Insert aha placed a worker in 5x5
+Insert aha placed a worker in 5x5
+Insert aha placed a worker in 5x5
+-> placeworker 1 3
+Insert aha placed a worker in 1x3
+Insert aha placed a worker in 1x3
+Insert astata update
+Insert aha placed a worker in 1x3
+Insert astata update
+Insert astata update
+-> normal
+Insert astata doesn't want to use the God Power
+Insert astata doesn't want to use the God Power
+Insert astata doesn't want to use the God Power
+-> move 1 2 1
+Insert astata moved a worker in 1x2
+Insert astata moved a worker in 1x2
+Insert astata moved a worker in 1x2
+-> build 1 1 1
+Insert astata build in 1 1
+Insert astata build in 1 1
+Insert astata build in 1 1
+Insert agsd update
+Insert agsd update
+Insert agsd update
+-> normal
+Insert agsd doesn't want to use the God Power
+Insert agsd doesn't want to use the God Power
+Insert agsd doesn't want to use the God Power
+-> move 2 3 1
+Error: agsd can't move here
+Error: agsd can't move here
+Error: agsd can't move here
+-> move 3 4 1
+Insert agsd moved a worker in 3x4
+Insert agsd moved a worker in 3x4
+Insert agsd moved a worker in 3x4
+-> move 3 4 1
+Welcome! What's your name?
+-> asgd
+Wait for other players
+Welcome! What's your name?
+-> ashdashas
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Athena 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Athena
+Start ashdashas White Athena
+Start ashdashas White Athena
+Start asgd Purple Apollo
+Start asgd Purple Apollo
+Insert ashdashas update
+Insert ashdashas update
+-> placeworker 1 1
+Insert ashdashas placed a worker in 1x1
+Insert ashdashas placed a worker in 1x1
+-> placeworker 2 2
+Insert ashdashas placed a worker in 2x2
+Insert ashdashas placed a worker in 2x2
+Insert asgd update
+Insert asgd update
+-> placeworker 1 3
+Insert asgd placed a worker in 1x3
+Insert asgd placed a worker in 1x3
+-> placeworker 3 1
+Insert asgd placed a worker in 3x1
+Insert asgd placed a worker in 3x1
+Insert ashdashas update
+Insert ashdashas update
+-> normal
+Insert ashdashas doesn't want to use the God Power
+Insert ashdashas doesn't want to use the God Power
+-> move 2 1 1
+Insert ashdashas moved a worker in 2x1
+Insert ashdashas moved a worker in 2x1
+-> build 1 1 1
+Insert ashdashas build in 1 1
+Insert ashdashas build in 1 1
+Insert asgd update
+Insert asgd update
+-> normal
+Insert asgd doesn't want to use the God Power
+Insert asgd doesn't want to use the God Power
+-> move 1 2 1
+Insert asgd moved a worker in 1x2
+Insert asgd moved a worker in 1x2
+-> build 1 1 1
+Insert asgd build in 1 1
+Insert asgd build in 1 1
+Insert ashdashas update
+Insert ashdashas update
+-> normal
+Insert ashdashas doesn't want to use the God Power
+Insert ashdashas doesn't want to use the God Power
+-> move 3 2 1
+Insert ashdashas moved a worker in 3x2
+Insert ashdashas moved a worker in 3x2
+-> build 2 1 1
+Insert ashdashas build in 2 1
+Insert ashdashas build in 2 1
+Insert asgd update
+Insert asgd update
+-> normal
+Insert asgd doesn't want to use the God Power
+Insert asgd doesn't want to use the God Power
+-> move 2 3 1
+Insert asgd moved a worker in 2x3
+Insert asgd moved a worker in 2x3
+-> build 1 2 1
+Insert asgd build in 1 2
+Insert asgd build in 1 2
+Insert ashdashas update
+Insert ashdashas update
+-> normal
+Insert ashdashas doesn't want to use the God Power
+Insert ashdashas doesn't want to use the God Power
+-> move 2 1 1
+Insert ashdashas moved a worker in 2x1
+Insert ashdashas moved a worker in 2x1
+-> build 1 1 1
+Insert ashdashas build in 1 1
+Insert ashdashas build in 1 1
+Insert asgd update
+Insert asgd update
+-> normal
+Insert asgd doesn't want to use the God Power
+Insert asgd doesn't want to use the God Power
+-> move 1 3 1
+Insert asgd moved a worker in 1x3
+Insert asgd moved a worker in 1x3
+-> build 1 2 1
+Insert asgd build in 1 2
+Insert asgd build in 1 2
+Insert ashdashas update
+Insert ashdashas update
+-> normal
+Insert ashdashas doesn't want to use the God Power
+Insert ashdashas doesn't want to use the God Power
+-> move 1 2 1
+Insert ashdashas moved a worker in 1x2
+Insert ashdashas moved a worker in 1x2
+-> build 2 3 1
+Insert ashdashas build in 2 3
+Insert ashdashas build in 2 3
+Insert asgd update
+Insert asgd update
+-> normal
+Insert asgd doesn't want to use the God Power
+Insert asgd doesn't want to use the God Power
+-> move 2 4 1
+Insert asgd moved a worker in 2x4
+Insert asgd moved a worker in 2x4
+-> build 2 5 1
+Insert asgd build in 2 5
+Insert asgd build in 2 5
+Insert ashdashas update
+Insert ashdashas update
+-> normal
+Insert ashdashas doesn't want to use the God Power
+Insert ashdashas doesn't want to use the God Power
+-> move 1 1 1
+Connection closed from the server side
+Welcome! What's your name?
+-> Anto
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+Choose the third divinity: 
+-> Minotaur
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> Rea
+Wait for other players
+Welcome! What's your name?
+-> Car
+Wait for other players
+Choose your Divinity between: Apollo Athena Minotaur 
+-> Apollo
+Your Divinity: Apollo
+Choose your Divinity between: Athena Minotaur 
+-> Athena
+Your Divinity: Athena
+Your Divinity: Minotaur
+Start Anto White Minotaur
+Start Anto White Minotaur
+Start Anto White Minotaur
+Start Rea Purple Apollo
+Start Rea Purple Apollo
+Start Rea Purple Apollo
+Start Car Brown Athena
+Start Car Brown Athena
+Start Car Brown Athena
+Insert Anto update
+Insert Anto update
+Insert Anto update
+-> placeworker 1 1
+Insert Anto placed a worker in 1x1
+Insert Anto placed a worker in 1x1
+Insert Anto placed a worker in 1x1
+-> placeworker 2 2
+Insert Anto placed a worker in 2x2
+Insert Rea update
+Insert Anto placed a worker in 2x2
+Insert Anto placed a worker in 2x2
+Insert Rea update
+Insert Rea update
+-> placeworker 3 3
+Insert Rea placed a worker in 3x3
+Insert Rea placed a worker in 3x3
+Insert Rea placed a worker in 3x3
+-> placeworker 2 3
+Insert Rea placed a worker in 2x3
+Insert Car update
+Insert Rea placed a worker in 2x3
+Insert Rea placed a worker in 2x3
+Insert Car update
+Insert Car update
+-> placeworker 2 4
+Insert Car placed a worker in 2x4
+Insert Car placed a worker in 2x4
+Insert Car placed a worker in 2x4
+-> placeworker 1 5
+Insert Car placed a worker in 1x5
+Insert Car placed a worker in 1x5
+Insert Car placed a worker in 1x5
+Insert Anto update
+Insert Anto update
+Insert Anto update
+-> normal
+Insert Anto doesn't want to use the God Power
+Insert Anto doesn't want to use the God Power
+Insert Anto doesn't want to use the God Power
+-> move 2 1 1
+Insert Anto moved a worker in 2x1
+Insert Anto moved a worker in 2x1
+Insert Anto moved a worker in 2x1
+-> build 1 1 1
+Insert Anto build in 1 1
+Insert Anto build in 1 1
+Insert Anto build in 1 1
+Insert Rea update
+Insert Rea update
+Insert Rea update
+-> normal
+Insert Rea doesn't want to use the God Power
+Insert Rea doesn't want to use the God Power
+Insert Rea doesn't want to use the God Power
+-> move 3 4 1
+Insert Rea moved a worker in 3x4
+Insert Rea moved a worker in 3x4
+Insert Rea moved a worker in 3x4
+-> build 2 5 1
+Insert Rea build in 2 5
+Insert Rea build in 2 5
+Insert Rea build in 2 5
+Insert Car update
+Insert Car update
+Insert Car update
+-> normal
+Insert Car doesn't want to use the God Power
+Insert Car doesn't want to use the God Power
+Insert Car doesn't want to use the God Power
+-> move 1 3 1
+Insert Car moved a worker in 1x3
+Insert Car moved a worker in 1x3
+Insert Car moved a worker in 1x3
+-> build 1 4 1
+Insert Car build in 1 4
+Insert Car build in 1 4
+Insert Car build in 1 4
+Insert Anto update
+Insert Anto update
+Insert Anto update
+-> normal
+Insert Anto doesn't want to use the God Power
+Insert Anto doesn't want to use the God Power
+Insert Anto doesn't want to use the God Power
+-> move 1 2 1
+Insert Anto moved a worker in 1x2
+Insert Anto moved a worker in 1x2
+Insert Anto moved a worker in 1x2
+-> build 2 1 1
+Insert Anto build in 2 1
+Insert Anto build in 2 1
+Insert Anto build in 2 1
+Insert Rea update
+Insert Rea update
+Insert Rea update
+-> normal
+Insert Rea doesn't want to use the God Power
+Insert Rea doesn't want to use the God Power
+Insert Rea doesn't want to use the God Power
+-> move 2 4 2
+Insert Rea moved a worker in 2x4
+Insert Rea moved a worker in 2x4
+Insert Rea moved a worker in 2x4
+-> build 2 3 2
+Insert Rea build in 2 3
+Insert Rea build in 2 3
+Insert Rea build in 2 3
+Insert Car update
+Insert Car update
+Insert Car update
+-> normal
+Insert Car doesn't want to use the God Power
+Insert Car doesn't want to use the God Power
+Insert Car doesn't want to use the God Power
+-> move 2 4 1
+Error: Car can't move here
+Error: Car can't move here
+Welcome! What's your name?
+-> asd
+Wait for other players
+Welcome! What's your name?
+-> fas
+Wait for other players
+Welcome! What's your name?
+-> Anc
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+Choose the third divinity: 
+-> Minotaur
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Athena Minotaur 
+-> Apollo
+Your Divinity: Apollo
+Choose your Divinity between: Athena Minotaur 
+-> Athena
+Your Divinity: Athena
+Your Divinity: Minotaur
+Start Anc White Minotaur
+Start fas Purple Apollo
+Start Anc White Minotaur
+Start asd Brown Athena
+Start fas Purple Apollo
+Start asd Brown Athena
+Start Anc White Minotaur
+Start fas Purple Apollo
+Start asd Brown Athena
+Insert Anc update
+Insert Anc update
+Insert Anc update
+-> placeworker 1 1
+Insert Anc placed a worker in 1x1
+Insert Anc placed a worker in 1x1
+Insert Anc placed a worker in 1x1
+-> placeworker 2 2
+Insert Anc placed a worker in 2x2
+Insert Anc placed a worker in 2x2
+Insert Anc placed a worker in 2x2
+Insert fas update
+Insert fas update
+Insert fas update
+-> placeworker 1 2
+Insert fas placed a worker in 1x2
+Insert fas placed a worker in 1x2
+Insert fas placed a worker in 1x2
+-> placeworker 1 3
+Insert fas placed a worker in 1x3
+Insert fas placed a worker in 1x3
+Insert fas placed a worker in 1x3
+Insert asd update
+Insert asd update
+Welcome! What's your name?
+-> Anr
+Wait for other players
+Welcome! What's your name?
+-> fdas
+Wait for other players
+Welcome! What's your name?
+-> af
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+Choose the third divinity: 
+-> Minotaur
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Athena Minotaur 
+-> Apollo
+Your Divinity: Apollo
+Choose your Divinity between: Athena Minotaur 
+-> Athena
+Your Divinity: Athena
+Your Divinity: Minotaur
+Start af White Minotaur
+Start af White Minotaur
+Start af White Minotaur
+Start fdas Purple Apollo
+Start fdas Purple Apollo
+Start Anr Brown Athena
+Start Anr Brown Athena
+Start fdas Purple Apollo
+Start Anr Brown Athena
+Insert af update
+Insert af update
+Insert af update
+-> placeworker 1 1
+Insert af placed a worker in 1x1
+Insert af placed a worker in 1x1
+Insert af placed a worker in 1x1
+-> placeworker 1 2
+Insert af placed a worker in 1x2
+Insert af placed a worker in 1x2
+Insert af placed a worker in 1x2
+Insert fdas update
+Insert fdas update
+Insert fdas update
+-> placeworker 2 3
+Insert fdas placed a worker in 2x3
+Insert fdas placed a worker in 2x3
+Insert fdas placed a worker in 2x3
+-> placeworker 1 3
+Insert fdas placed a worker in 1x3
+Insert fdas placed a worker in 1x3
+Insert fdas placed a worker in 1x3
+Insert Anr update
+Insert Anr update
+Insert Anr update
+-> placeworker 2 1
+Insert Anr placed a worker in 2x1
+Insert Anr placed a worker in 2x1
+Insert Anr placed a worker in 2x1
+-> placeworker 2 2
+Insert Anr placed a worker in 2x2
+Insert Anr placed a worker in 2x2
+Insert Anr placed a worker in 2x2
+Connection closed from the server side
+Loser: af loses
+Welcome! What's your name?
+-> Anto
+Wait for other players
+Welcome! What's your name?
+-> Rci
+Wait for other players
+Welcome! What's your name?
+-> Ada
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+Choose the third divinity: 
+-> Minotaur
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Athena Minotaur 
+-> Apollo
+Your Divinity: Apollo
+Choose your Divinity between: Athena Minotaur 
+-> Athena
+Your Divinity: Athena
+Your Divinity: Minotaur
+Start Ada White Minotaur
+Start Ada White Minotaur
+Start Ada White Minotaur
+Start Rci Purple Apollo
+Start Rci Purple Apollo
+Start Rci Purple Apollo
+Start Anto Brown Athena
+Start Anto Brown Athena
+Start Anto Brown Athena
+Insert Ada update
+Insert Ada update
+Insert Ada update
+-> placeworker 1 1
+Insert Ada placed a worker in 1x1
+Insert Ada placed a worker in 1x1
+Insert Ada placed a worker in 1x1
+-> placeworker 1 2
+Insert Ada placed a worker in 1x2
+Insert Ada placed a worker in 1x2
+Insert Ada placed a worker in 1x2
+Insert Rci update
+Insert Rci update
+Insert Rci update
+-> placeworker 2 1
+Insert Rci placed a worker in 2x1
+Insert Rci placed a worker in 2x1
+Insert Rci placed a worker in 2x1
+-> placeworker 2 2
+Insert Rci placed a worker in 2x2
+Insert Rci placed a worker in 2x2
+Insert Rci placed a worker in 2x2
+Insert Anto update
+Insert Anto update
+Insert Anto update
+-> placeworker 2 3
+Insert Anto placed a worker in 2x3
+Insert Anto placed a worker in 2x3
+Insert Anto placed a worker in 2x3
+-> placeworker 1 3
+Insert Anto placed a worker in 1x3
+Insert Anto placed a worker in 1x3
+Insert Anto placed a worker in 1x3
+Connection closed from the server side
+Loser: Ada loses
+Welcome! What's your name?
+-> agdgsa
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+Choose the third divinity: 
+-> Minotaur
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> asd
+Wait for other players
+Welcome! What's your name?
+-> asbcva
+Wait for other players
+Choose your Divinity between: Apollo Athena Minotaur 
+-> Apollo
+Your Divinity: Apollo
+Choose your Divinity between: Athena Minotaur 
+-> Athena
+Your Divinity: Athena
+Your Divinity: Minotaur
+Start agdgsa White Minotaur
+Start agdgsa White Minotaur
+Start asd Purple Apollo
+Start asd Purple Apollo
+Start asbcva Brown Athena
+Start asbcva Brown Athena
+Start agdgsa White Minotaur
+Start asd Purple Apollo
+Start asbcva Brown Athena
+Insert agdgsa update
+Insert agdgsa update
+Insert agdgsa update
+-> placeworker 1 1
+Insert agdgsa placed a worker in 1x1
+Insert agdgsa placed a worker in 1x1
+Insert agdgsa placed a worker in 1x1
+-> placeworker 1 2
+Insert agdgsa placed a worker in 1x2
+Insert agdgsa placed a worker in 1x2
+Insert agdgsa placed a worker in 1x2
+Insert asd update
+Insert asd update
+Insert asd update
+-> placeworker 2 1
+Insert asd placed a worker in 2x1
+Insert asd placed a worker in 2x1
+Insert asd placed a worker in 2x1
+-> placeworker 2 2
+Insert asd placed a worker in 2x2
+Insert asd placed a worker in 2x2
+Insert asd placed a worker in 2x2
+Insert asbcva update
+Insert asbcva update
+Insert asbcva update
+-> placeworker 2 3
+Insert asbcva placed a worker in 2x3
+Insert asbcva placed a worker in 2x3
+Insert asbcva placed a worker in 2x3
+-> placeworker 1 3
+Insert asbcva placed a worker in 1x3
+Insert asbcva placed a worker in 1x3
+Insert asbcva placed a worker in 1x3
+Connection closed from the server side
+Loser: agdgsa loses
+Welcome! What's your name?
+-> Anto
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+Choose the third divinity: 
+-> Minotaur
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> Aasdgas
+Wait for other players
+Welcome! What's your name?
+-> fdsgsad
+Wait for other players
+Choose your Divinity between: Apollo Athena Minotaur 
+-> Apollo
+Your Divinity: Apollo
+Choose your Divinity between: Athena Minotaur 
+-> Athena
+Your Divinity: Athena
+Your Divinity: Minotaur
+Start Anto White Minotaur
+Start Anto White Minotaur
+Start Anto White Minotaur
+Start Aasdgas Purple Apollo
+Start Aasdgas Purple Apollo
+Start fdsgsad Brown Athena
+Start fdsgsad Brown Athena
+Start Aasdgas Purple Apollo
+Start fdsgsad Brown Athena
+Insert Anto update
+Insert Anto update
+Insert Anto update
+-> placeworker 1 1
+Insert Anto placed a worker in 1x1
+Insert Anto placed a worker in 1x1
+Insert Anto placed a worker in 1x1
+-> placeworker 1 2
+Insert Anto placed a worker in 1x2
+Insert Anto placed a worker in 1x2
+Insert Anto placed a worker in 1x2
+Insert Aasdgas update
+Insert Aasdgas update
+Insert Aasdgas update
+-> placeworker 2 1
+Insert Aasdgas placed a worker in 2x1
+Insert Aasdgas placed a worker in 2x1
+Insert Aasdgas placed a worker in 2x1
+-> placeworker 2 2
+Insert Aasdgas placed a worker in 2x2
+Insert Aasdgas placed a worker in 2x2
+Insert Aasdgas placed a worker in 2x2
+Insert fdsgsad update
+Insert fdsgsad update
+Insert fdsgsad update
+-> placeworker 2 3
+Insert fdsgsad placed a worker in 2x3
+Insert fdsgsad placed a worker in 2x3
+Insert fdsgsad placed a worker in 2x3
+-> placeworker 1 3
+Insert fdsgsad placed a worker in 1x3
+Insert fdsgsad placed a worker in 1x3
+Insert fdsgsad placed a worker in 1x3
+Connection closed from the server side
+Loser: Anto loses
+Welcome! What's your name?
+-> a
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+Choose the third divinity: 
+-> Minotaur
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> sfd
+Wait for other players
+Welcome! What's your name?
+-> fgsa
+Wait for other players
+Choose your Divinity between: Apollo Athena Minotaur 
+-> Apollo
+Your Divinity: Apollo
+Choose your Divinity between: Athena Minotaur 
+-> Athena
+Your Divinity: Athena
+Your Divinity: Minotaur
+Start a White Minotaur
+Start a White Minotaur
+Start sfd Purple Apollo
+Start sfd Purple Apollo
+Start fgsa Brown Athena
+Start fgsa Brown Athena
+Insert a update
+Start a White Minotaur
+Start sfd Purple Apollo
+Start fgsa Brown Athena
+Insert a update
+Insert a update
+-> placeworker 1 1
+Insert a placed a worker in 1x1
+Insert a placed a worker in 1x1
+Insert a placed a worker in 1x1
+-> placeworker 1 2
+Insert a placed a worker in 1x2
+Insert a placed a worker in 1x2
+Insert a placed a worker in 1x2
+Insert sfd update
+Insert sfd update
+Insert sfd update
+-> placeworker 2 1
+Insert sfd placed a worker in 2x1
+Insert sfd placed a worker in 2x1
+Insert sfd placed a worker in 2x1
+-> placeworker 2 2
+Insert sfd placed a worker in 2x2
+Insert sfd placed a worker in 2x2
+Insert sfd placed a worker in 2x2
+Insert fgsa update
+Insert fgsa update
+Insert fgsa update
+-> placeworker 2 3
+Insert fgsa placed a worker in 2x3
+Insert fgsa placed a worker in 2x3
+Insert fgsa placed a worker in 2x3
+-> placeworker 1 3
+Insert fgsa placed a worker in 1x3
+Insert fgsa placed a worker in 1x3
+Insert fgsa placed a worker in 1x3
+Connection closed from the server side
+Loser: a loses
+Welcome! What's your name?
+-> avsd
+Wait for other players
+Welcome! What's your name?
+-> as
+Wait for other players
+Welcome! What's your name?
+-> sahhg
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+Choose the third divinity: 
+-> Minotaur
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Athena Minotaur 
+-> Minotaur
+Your Divinity: Minotaur
+Choose your Divinity between: Apollo Athena 
+-> Apollo
+Your Divinity: Athena
+Your Divinity: Apollo
+Start sahhg White Athena
+Start as Purple Minotaur
+Start sahhg White Athena
+Start avsd Brown Apollo
+Start sahhg White Athena
+Start as Purple Minotaur
+Start as Purple Minotaur
+Start avsd Brown Apollo
+Start avsd Brown Apollo
+Insert sahhg update
+Insert sahhg update
+Insert sahhg update
+-> placeworker 1 1
+Insert sahhg placed a worker in 1x1
+Insert sahhg placed a worker in 1x1
+Insert sahhg placed a worker in 1x1
+-> placeworker 1 2
+Insert sahhg placed a worker in 1x2
+Insert sahhg placed a worker in 1x2
+Insert sahhg placed a worker in 1x2
+Insert as update
+Insert as update
+Insert as update
+-> placeworker 2 1
+Insert as placed a worker in 2x1
+Insert as placed a worker in 2x1
+Insert as placed a worker in 2x1
+-> placeworker 2 2
+Insert as placed a worker in 2x2
+Insert as placed a worker in 2x2
+Insert as placed a worker in 2x2
+Insert avsd update
+Insert avsd update
+Insert avsd update
+-> placeworker 2 3
+Insert avsd placed a worker in 2x3
+Insert avsd placed a worker in 2x3
+Insert avsd placed a worker in 2x3
+-> placeworker 1 3
+Insert avsd placed a worker in 1x3
+Insert avsd placed a worker in 1x3
+Insert avsd placed a worker in 1x3
+Loser: sahhg loses
+Loser: sahhg loses
+Insert avsd update
+Insert avsd update
+-> normal
+Insert avsd doesn't want to use the God Power
+Insert avsd doesn't want to use the God Power
+-> move 1 4 1
+Insert avsd moved a worker in 1x4
+Insert avsd moved a worker in 1x4
+-> build 1 5 1
+Insert avsd build in 1 5
+Insert avsd build in 1 5
+Insert as update
+Insert as update
+-> normal
+Insert as doesn't want to use the God Power
+Insert as doesn't want to use the God Power
+-> move 1 1 1
+Insert as moved a worker in 1x1
+Insert as moved a worker in 1x1
+-> build 1 2 1
+Insert as build in 1 2
+Insert as build in 1 2
+Insert avsd update
+Welcome! What's your name?
+-> Anto
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+Choose the third divinity: 
+-> Minotaur
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> agda
+Wait for other players
+Welcome! What's your name?
+-> ahgsah
+Wait for other players
+Choose your Divinity between: Apollo Athena Minotaur 
+-> Apollo
+Your Divinity: Apollo
+Choose your Divinity between: Athena Minotaur 
+-> Athena
+Your Divinity: Minotaur
+Your Divinity: Athena
+Start Anto White Minotaur
+Start Anto White Minotaur
+Start Anto White Minotaur
+Start agda Purple Apollo
+Start agda Purple Apollo
+Start ahgsah Brown Athena
+Start ahgsah Brown Athena
+Insert Anto update
+Insert Anto update
+Start agda Purple Apollo
+Start ahgsah Brown Athena
+Insert Anto update
+-> placeworker 1 1
+Insert Anto placed a worker in 1x1
+Insert Anto placed a worker in 1x1
+Insert Anto placed a worker in 1x1
+-> placeworker 1 2
+Insert Anto placed a worker in 1x2
+Insert Anto placed a worker in 1x2
+Insert agda update
+Insert agda update
+Insert Anto placed a worker in 1x2
+Insert agda update
+-> placeworker 2 1
+Insert agda placed a worker in 2x1
+Insert agda placed a worker in 2x1
+Insert agda placed a worker in 2x1
+-> placeworker 2 2
+Insert agda placed a worker in 2x2
+Insert agda placed a worker in 2x2
+Insert ahgsah update
+Insert agda placed a worker in 2x2
+Insert ahgsah update
+Insert ahgsah update
+-> placeworker 2 3
+Insert ahgsah placed a worker in 2x3
+Insert ahgsah placed a worker in 2x3
+Insert ahgsah placed a worker in 2x3
+-> placeworker 1 3
+Insert ahgsah placed a worker in 1x3
+Insert ahgsah placed a worker in 1x3
+Insert ahgsah placed a worker in 1x3
+Loser: Anto loses
+Loser: Anto loses
+Insert agda update
+Welcome! What's your name?
+-> Anto
+Wait for other players
+Welcome! What's your name?
+-> Fillo
+Wait for other players
+Welcome! What's your name?
+-> Rich
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+Choose the third divinity: 
+-> Minotaur
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Athena Minotaur 
+-> Apollo
+Your Divinity: Apollo
+Choose your Divinity between: Athena Minotaur 
+-> Minotaur
+Your Divinity: Minotaur
+Your Divinity: Athena
+Start Rich White Athena
+Start Fillo Purple Apollo
+Start Anto Brown Minotaur
+Start Rich White Athena
+Start Fillo Purple Apollo
+Start Anto Brown Minotaur
+Insert Rich update
+Insert Rich update
+-> placeworker 1 1
+Insert Rich placed a worker in 1x1
+Insert Rich placed a worker in 1x1
+-> placeworker 2 2
+Insert Rich placed a worker in 2x2
+Insert Fillo update
+Insert Rich placed a worker in 2x2
+Insert Fillo update
+Welcome! What's your name?
+-> Anto
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+Choose the third divinity: 
+-> Minotaur
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> Car
+Wait for other players
+Welcome! What's your name?
+-> Cas
+Wait for other players
+Choose your Divinity between: Apollo Athena Minotaur 
+-> Apollo
+Your Divinity: Apollo
+Choose your Divinity between: Athena Minotaur 
+-> Athena
+Your Divinity: Athena
+Your Divinity: Minotaur
+Start Anto White Minotaur
+Start Anto White Minotaur
+Start Anto White Minotaur
+Start Car Purple Apollo
+Start Car Purple Apollo
+Start Car Purple Apollo
+Start Cas Brown Athena
+Start Cas Brown Athena
+Start Cas Brown Athena
+Insert Anto update
+Insert Anto update
+Welcome! What's your name?
+-> Anto
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+Choose the third divinity: 
+-> Minotaur
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> Cer
+Wait for other players
+Welcome! What's your name?
+-> Anto
+Wait for other players
+Welcome! What's your name?
+-> af
+Wait for other players
+Welcome! What's your name?
+-> agd
+Wait for other players
+Welcome! What's your name?
+-> Ssdva
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+Choose the third divinity: 
+-> Minotaur
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Athena Minotaur 
+-> Apollo
+Your Divinity: Apollo
+Choose your Divinity between: Athena Minotaur 
+-> Athena
+Your Divinity: Athena
+Your Divinity: Minotaur
+Start Ssdva White Minotaur
+Start Ssdva White Minotaur
+Start agd Purple Apollo
+Start agd Purple Apollo
+Start af Brown Athena
+Start af Brown Athena
+Start Ssdva White Minotaur
+Start agd Purple Apollo
+Start af Brown Athena
+Insert Ssdva update
+Insert Ssdva update
+Insert Ssdva update
+-> placeworker 1 1
+Insert Ssdva placed a worker in 1x1
+Insert Ssdva placed a worker in 1x1
+Insert Ssdva placed a worker in 1x1
+-> placeworker 1 2
+Insert Ssdva placed a worker in 1x2
+Insert agd update
+Insert Ssdva placed a worker in 1x2
+Insert Ssdva placed a worker in 1x2
+Insert agd update
+Insert agd update
+-> placeworker 2 1
+Insert agd placed a worker in 2x1
+Insert agd placed a worker in 2x1
+Insert agd placed a worker in 2x1
+-> placeworker 2 2
+Insert agd placed a worker in 2x2
+Insert agd placed a worker in 2x2
+Insert agd placed a worker in 2x2
+Insert af update
+Insert af update
+Insert af update
+-> placeworker 2 3
+Insert af placed a worker in 2x3
+Insert af placed a worker in 2x3
+Insert af placed a worker in 2x3
+-> placeworker 1 3
+Insert af placed a worker in 1x3
+Insert af placed a worker in 1x3
+Insert af placed a worker in 1x3
+Loser: Ssdva loses
+Loser: Ssdva loses
+Insert agd update
+Welcome! What's your name?
+-> Anto
+Wait for other players
+Welcome! What's your name?
+-> Rich
+Wait for other players
+Welcome! What's your name?
+-> Cs
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+Choose the third divinity: 
+-> Minotaur
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Athena Minotaur 
+-> Apollo
+Your Divinity: Apollo
+Choose your Divinity between: Athena Minotaur 
+-> Athena
+Your Divinity: Athena
+Your Divinity: Minotaur
+Start Cs White Minotaur
+Start Rich Purple Apollo
+Start Anto Brown Athena
+Start Cs White Minotaur
+Start Rich Purple Apollo
+Start Anto Brown Athena
+Insert Cs update
+Start Cs White Minotaur
+Start Rich Purple Apollo
+Start Anto Brown Athena
+Insert Cs update
+Insert Cs update
+-> placeworker 1 1
+Insert Cs placed a worker in 1x1
+Insert Cs placed a worker in 1x1
+Insert Cs placed a worker in 1x1
+-> placeworker 2 2
+Insert Cs placed a worker in 2x2
+Insert Cs placed a worker in 2x2
+Insert Rich update
+Insert Cs placed a worker in 2x2
+Insert Rich update
+Insert Rich update
+-> placeworker 2 1
+Insert Rich placed a worker in 2x1
+Insert Rich placed a worker in 2x1
+Insert Rich placed a worker in 2x1
+-> placeworker 2 3
+Insert Rich placed a worker in 2x3
+Insert Rich placed a worker in 2x3
+Insert Anto update
+Insert Rich placed a worker in 2x3
+Insert Anto update
+Insert Anto update
+-> placeworker 1 2
+Insert Anto placed a worker in 1x2
+Insert Anto placed a worker in 1x2
+Insert Anto placed a worker in 1x2
+-> placeworker 1 4
+Insert Anto placed a worker in 1x4
+Insert Anto placed a worker in 1x4
+Insert Cs update
+Insert Anto placed a worker in 1x4
+Insert Cs update
+Insert Cs update
+-> normal
+Insert Cs doesn't want to use the God Power
+Insert Cs doesn't want to use the God Power
+Insert Cs doesn't want to use the God Power
+-> move 1 3 2
+Insert Cs moved a worker in 1x3
+Insert Cs moved a worker in 1x3
+Insert Cs moved a worker in 1x3
+-> build 2 2 2
+Insert Cs build in 2 2
+Insert Cs build in 2 2
+Insert Rich update
+Insert Cs build in 2 2
+Insert Rich update
+Insert Rich update
+-> normal
+Insert Rich doesn't want to use the God Power
+Insert Rich doesn't want to use the God Power
+Insert Rich doesn't want to use the God Power
+-> move 3 1 1
+Insert Rich moved a worker in 3x1
+Insert Rich moved a worker in 3x1
+Insert Rich moved a worker in 3x1
+-> build 2 1 1
+Insert Rich build in 2 1
+Insert Rich build in 2 1
+Insert Rich build in 2 1
+Insert Anto update
+Insert Anto update
+Insert Anto update
+-> normal
+Insert Anto doesn't want to use the God Power
+Insert Anto doesn't want to use the God Power
+Insert Anto doesn't want to use the God Power
+-> move 2 2 1
+Insert Anto moved a worker in 2x2
+Insert Anto moved a worker in 2x2
+Welcome! What's your name?
+-> Anto
+Wait for other players
+Welcome! What's your name?
+-> Ric
+Wait for other players
+Welcome! What's your name?
+-> SC
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+Choose the third divinity: 
+-> Minotaur
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Athena Minotaur 
+-> Apollo
+Your Divinity: Apollo
+Choose your Divinity between: Athena Minotaur 
+-> Athena
+Your Divinity: Athena
+Your Divinity: Minotaur
+Start SC White Minotaur
+Start Ric Purple Apollo
+Start Anto Brown Athena
+Start SC White Minotaur
+Start Ric Purple Apollo
+Start Anto Brown Athena
+Start SC White Minotaur
+Insert SC update
+Start Ric Purple Apollo
+Start Anto Brown Athena
+Insert SC update
+Insert SC update
+-> placeworker 1 1
+Insert SC placed a worker in 1x1
+Insert SC placed a worker in 1x1
+Insert SC placed a worker in 1x1
+-> placeworker 1 2
+Insert SC placed a worker in 1x2
+Insert Ric update
+Insert SC placed a worker in 1x2
+Insert SC placed a worker in 1x2
+Insert Ric update
+Insert Ric update
+-> placeworker 2 1
+Insert Ric placed a worker in 2x1
+Insert Ric placed a worker in 2x1
+Insert Ric placed a worker in 2x1
+-> placeworker 2 2
+Insert Ric placed a worker in 2x2
+Insert Anto update
+Insert Ric placed a worker in 2x2
+Insert Ric placed a worker in 2x2
+Insert Anto update
+Insert Anto update
+-> placeworker 2 3
+Insert Anto placed a worker in 2x3
+Insert Anto placed a worker in 2x3
+Insert Anto placed a worker in 2x3
+-> placeworker 1 3
+Insert Anto placed a worker in 1x3
+Insert Anto placed a worker in 1x3
+Insert Anto placed a worker in 1x3
+Loser: SC loses
+Loser: SC loses
+Insert Ric update
+Welcome! What's your name?
+-> af
+Wait for other players
+Welcome! What's your name?
+-> asdg
+Wait for other players
+Welcome! What's your name?
+-> Adsgva
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+Choose the third divinity: 
+-> Minotaur
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Athena Minotaur 
+-> Apollo
+Your Divinity: Apollo
+Choose your Divinity between: Athena Minotaur 
+-> Athena
+Your Divinity: Athena
+Your Divinity: Minotaur
+Start Adsgva White Minotaur
+Start Adsgva White Minotaur
+Start asdg Purple Apollo
+Start asdg Purple Apollo
+Start af Brown Athena
+Start af Brown Athena
+Start Adsgva White Minotaur
+Start asdg Purple Apollo
+Insert Adsgva update
+Start af Brown Athena
+Insert Adsgva update
+Welcome! What's your name?
+-> Fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> Andre
+Wait for other players
+Choose the first divinity:
+-> Pan
+Choose the second divinity: 
+-> Athena
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Pan Athena 
+-> Athena
+Your Divinity: Athena
+Your Divinity: Pan
+Start Fillo White Pan
+Start Andre Purple Athena
+Start Fillo White Pan
+Start Andre Purple Athena
+Insert Fillo update
+Insert Fillo update
+-> placeworker 3 4
+Insert Fillo placed a worker in 3x4
+Insert Fillo placed a worker in 3x4
+-> placeworker 4 1
+Insert Fillo placed a worker in 4x1
+Insert Fillo placed a worker in 4x1
+Insert Andre update
+Insert Andre update
+-> placeworker 1 3
+Insert Andre placed a worker in 1x3
+Insert Andre placed a worker in 1x3
+-> placeworker 5 2
+Insert Andre placed a worker in 5x2
+Insert Andre placed a worker in 5x2
+Insert Fillo update
+Insert Fillo update
+-> usepower
+Insert Fillo wants to use the God Power
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> zambo
+Wait for other players
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Artemis
+Your Divinity: Apollo
+Start fillo White Apollo
+Start fillo White Apollo
+Start zambo Purple Artemis
+Insert fillo update
+Start zambo Purple Artemis
+Insert fillo update
+-> placeworker 3 2
+Insert fillo placed a worker in 3x2
+Insert fillo placed a worker in 3x2
+-> placeworker 5 4
+Insert fillo placed a worker in 5x4
+Insert fillo placed a worker in 5x4
+Insert zambo update
+Insert zambo update
+-> placeworker 1 5
+Insert zambo placed a worker in 1x5
+Insert zambo placed a worker in 1x5
+-> placeworker 2 4
+Insert zambo placed a worker in 2x4
+Insert zambo placed a worker in 2x4
+Insert fillo update
+Insert fillo update
+-> normal
+Insert fillo doesn't want to use the God Power
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Welcome! What's your name?
+-> zambo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Artemis
+Start fillo White Artemis
+Start fillo White Artemis
+Start zambo Purple Apollo
+Start zambo Purple Apollo
+Insert fillo update
+Insert fillo update
+-> placeworker 4 4
+Insert fillo placed a worker in 4x4
+Insert fillo placed a worker in 4x4
+-> placeworker 3 1
+Insert fillo placed a worker in 3x1
+Insert fillo placed a worker in 3x1
+Insert zambo update
+Insert zambo update
+-> placeworker 2 5
+Insert zambo placed a worker in 2x5
+Insert zambo placed a worker in 2x5
+-> placeworker 1 3
+Insert zambo placed a worker in 1x3
+Insert zambo placed a worker in 1x3
+Insert fillo update
+Insert fillo update
+-> normal
+Insert fillo doesn't want to use the God Power
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> lollo
+Wait for other players
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Artemis
+Start fillo White Artemis
+Start fillo White Artemis
+Start lollo Purple Apollo
+Start lollo Purple Apollo
+Insert fillo update
+Insert fillo update
+-> placeworker 3 3
+Insert fillo placed a worker in 3x3
+Insert fillo placed a worker in 3x3
+-> placeworker 5 1
+Insert fillo placed a worker in 5x1
+Insert fillo placed a worker in 5x1
+Insert lollo update
+Insert lollo update
+-> placeworker 1 5
+Insert lollo placed a worker in 1x5
+Insert lollo placed a worker in 1x5
+-> placeworker 3 5
+Insert lollo placed a worker in 3x5
+Insert lollo placed a worker in 3x5
+Insert fillo update
+Insert fillo update
+-> normal
+Insert fillo doesn't want to use the God Power
+Insert fillo doesn't want to use the God Power
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> zambo
+Wait for other players
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Artemis
+Your Divinity: Apollo
+Start fillo White Apollo
+Start fillo White Apollo
+Start zambo Purple Artemis
+Start zambo Purple Artemis
+Insert fillo update
+Insert fillo update
+-> placeworker 4 2
+Insert fillo placed a worker in 4x2
+Insert fillo placed a worker in 4x2
+-> placeworker 2 4
+Insert fillo placed a worker in 2x4
+Insert fillo placed a worker in 2x4
+Insert zambo update
+Insert zambo update
+-> placeworker 2 2
+Insert zambo placed a worker in 2x2
+Insert zambo placed a worker in 2x2
+-> placeworker 4 4
+Insert zambo placed a worker in 4x4
+Insert zambo placed a worker in 4x4
+Insert fillo update
+Insert fillo update
+-> normal
+Insert fillo doesn't want to use the God Power
+Insert fillo doesn't want to use the God Power
+Welcome! What's your name?
+-> filo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> asdasd
+Wait for other players
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Artemis
+Your Divinity: Apollo
+Start filo White Apollo
+Start filo White Apollo
+Start asdasd Purple Artemis
+Start asdasd Purple Artemis
+Insert filo update
+Insert filo update
+-> placeworker 1 1
+Insert filo placed a worker in 1x1
+Insert filo placed a worker in 1x1
+-> placeworker 1 5
+Insert filo placed a worker in 1x5
+Insert filo placed a worker in 1x5
+Insert asdasd update
+Insert asdasd update
+-> placeworker 1 3
+Insert asdasd placed a worker in 1x3
+Insert asdasd placed a worker in 1x3
+-> placeworker 2 3
+Insert asdasd placed a worker in 2x3
+Insert asdasd placed a worker in 2x3
+Insert filo update
+Insert filo update
+-> normal
+Insert filo doesn't want to use the God Power
+Insert filo doesn't want to use the God Power
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> asdasd
+Wait for other players
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Artemis
+Your Divinity: Apollo
+Start fillo White Apollo
+Start fillo White Apollo
+Start asdasd Purple Artemis
+Start asdasd Purple Artemis
+Insert fillo update
+Insert fillo update
+-> placeworker 4 3
+Insert fillo placed a worker in 4x3
+Insert fillo placed a worker in 4x3
+-> placeworker 1 1
+Insert fillo placed a worker in 1x1
+Insert fillo placed a worker in 1x1
+Insert asdasd update
+Insert asdasd update
+-> placeworker 3 4
+Insert asdasd placed a worker in 3x4
+Insert asdasd placed a worker in 3x4
+-> placeworker 3 3
+Insert asdasd placed a worker in 3x3
+Insert asdasd placed a worker in 3x3
+Insert fillo update
+Insert fillo update
+-> normal
+Insert fillo doesn't want to use the God Power
+Insert fillo doesn't want to use the God Power
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> dasd
+Wait for other players
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Artemis
+Start fillo White Artemis
+Start fillo White Artemis
+Start dasd Purple Apollo
+Start dasd Purple Apollo
+Insert fillo update
+Insert fillo update
+-> placeworker 5 1
+Insert fillo placed a worker in 5x1
+Insert fillo placed a worker in 5x1
+-> placeworker 1 1
+Insert fillo placed a worker in 1x1
+Insert fillo placed a worker in 1x1
+Insert dasd update
+Insert dasd update
+-> placeworker 2 3
+Insert dasd placed a worker in 2x3
+Insert dasd placed a worker in 2x3
+-> placeworker 3 3
+Insert dasd placed a worker in 3x3
+Insert dasd placed a worker in 3x3
+Insert fillo update
+Insert fillo update
+-> normal
+Insert fillo doesn't want to use the God Power
+Insert fillo doesn't want to use the God Power
+Welcome! What's your name?
+-> asdasd
+Wait for other players
+Welcome! What's your name?
+-> dsfsdf
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Artemis
+Your Divinity: Apollo
+Start asdasd White Artemis
+Start asdasd White Artemis
+Start dsfsdf Purple Apollo
+Start dsfsdf Purple Apollo
+Insert asdasd update
+Insert asdasd update
+-> placeworker 4 2
+Insert asdasd placed a worker in 4x2
+Insert asdasd placed a worker in 4x2
+-> placeworker 2 4
+Insert asdasd placed a worker in 2x4
+Insert asdasd placed a worker in 2x4
+Insert dsfsdf update
+Insert dsfsdf update
+-> placeworker 1 3
+Insert dsfsdf placed a worker in 1x3
+Insert dsfsdf placed a worker in 1x3
+-> placeworker 5 4
+Insert dsfsdf placed a worker in 5x4
+Insert dsfsdf placed a worker in 5x4
+Insert asdasd update
+Insert asdasd update
+-> normal
+Insert asdasd doesn't want to use the God Power
+Insert asdasd doesn't want to use the God Power
+Welcome! What's your name?
+-> ffgd
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> asdsd
+Wait for other players
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Artemis
+Start ffgd White Artemis
+Start ffgd White Artemis
+Start asdsd Purple Apollo
+Insert ffgd update
+Start asdsd Purple Apollo
+Insert ffgd update
+-> placeworker 3 3
+Insert ffgd placed a worker in 3x3
+Insert ffgd placed a worker in 3x3
+-> placeworker 4 2
+Insert ffgd placed a worker in 4x2
+Insert ffgd placed a worker in 4x2
+Insert asdsd update
+Insert asdsd update
+-> placeworker 1 5
+Insert asdsd placed a worker in 1x5
+Insert asdsd placed a worker in 1x5
+-> placeworker 1 3
+Insert asdsd placed a worker in 1x3
+Insert asdsd placed a worker in 1x3
+Insert ffgd update
+Insert ffgd update
+-> normal
+Insert ffgd doesn't want to use the God Power
+Insert ffgd doesn't want to use the God Power
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Welcome! What's your name?
+-> asdasd
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Apollo
+Your Divinity: Artemis
+Start fillo White Apollo
+Start fillo White Apollo
+Start asdasd Purple Artemis
+Start asdasd Purple Artemis
+Insert fillo update
+Insert fillo update
+-> placeworker 4 2
+Insert fillo placed a worker in 4x2
+Insert fillo placed a worker in 4x2
+-> placeworker 1 3
+Insert fillo placed a worker in 1x3
+Insert fillo placed a worker in 1x3
+Insert asdasd update
+Insert asdasd update
+-> placeworker 5 4
+Insert asdasd placed a worker in 5x4
+Insert asdasd placed a worker in 5x4
+-> placeworker 3 4
+Insert asdasd placed a worker in 3x4
+Insert asdasd placed a worker in 3x4
+Insert fillo update
+Insert fillo update
+-> normal
+Insert fillo doesn't want to use the God Power
+Insert fillo doesn't want to use the God Power
+Welcome! What's your name?
+-> hui
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> qweqwe
+Wait for other players
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Artemis
+Your Divinity: Apollo
+Start hui White Apollo
+Start hui White Apollo
+Start qweqwe Purple Artemis
+Insert hui update
+Start qweqwe Purple Artemis
+Insert hui update
+-> placeworker 1 1
+Insert hui placed a worker in 1x1
+Insert hui placed a worker in 1x1
+-> placeworker 2 3
+Insert hui placed a worker in 2x3
+Insert hui placed a worker in 2x3
+Insert qweqwe update
+Insert qweqwe update
+-> placeworker 1 2
+Insert qweqwe placed a worker in 1x2
+Insert qweqwe placed a worker in 1x2
+-> placeworker 2 2
+Insert qweqwe placed a worker in 2x2
+Insert qweqwe placed a worker in 2x2
+Insert hui update
+Insert hui update
+-> usepower
+Insert hui wants to use the God Power
+Insert hui wants to use the God Power
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Welcome! What's your name?
+-> fasdaw
+Wait for other players
+Welcome! What's your name?
+-> asdasf
+Wait for other players
+Welcome! What's your name?
+-> sdfsdf
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Apollo
+Your Divinity: Artemis
+Start asdasf White Apollo
+Start asdasf White Apollo
+Start sdfsdf Purple Artemis
+Start sdfsdf Purple Artemis
+Insert asdasf update
+Insert asdasf update
+-> placeworker 2 2
+Insert asdasf placed a worker in 2x2
+Insert asdasf placed a worker in 2x2
+-> placeworker 5 4
+Insert asdasf placed a worker in 5x4
+Insert asdasf placed a worker in 5x4
+Insert sdfsdf update
+Insert sdfsdf update
+-> placeworker 2 3
+Insert sdfsdf placed a worker in 2x3
+Insert sdfsdf placed a worker in 2x3
+-> placeworker 3 1
+Insert sdfsdf placed a worker in 3x1
+Insert sdfsdf placed a worker in 3x1
+Insert asdasf update
+Insert asdasf update
+-> normal
+Insert asdasf doesn't want to use the God Power
+Insert asdasf doesn't want to use the God Power
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Welcome! What's your name?
+-> asdasd
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Artemis
+Your Divinity: Apollo
+Start fillo White Artemis
+Start fillo White Artemis
+Start asdasd Purple Apollo
+Start asdasd Purple Apollo
+Insert fillo update
+Insert fillo update
+-> placeworker 2 2
+Insert fillo placed a worker in 2x2
+Insert fillo placed a worker in 2x2
+-> placeworker 4 4
+Insert fillo placed a worker in 4x4
+Insert fillo placed a worker in 4x4
+Insert asdasd update
+Insert asdasd update
+-> placeworker 5 2
+Insert asdasd placed a worker in 5x2
+Insert asdasd placed a worker in 5x2
+-> placeworker 3 1
+Insert asdasd placed a worker in 3x1
+Insert asdasd placed a worker in 3x1
+Insert fillo update
+Insert fillo update
+-> normal
+Insert fillo doesn't want to use the God Power
+Welcome! What's your name?
+-> asdas
+Wait for other players
+Welcome! What's your name?
+-> sdfsd
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Artemis
+Your Divinity: Apollo
+Start sdfsd White Artemis
+Start sdfsd White Artemis
+Start asdas Purple Apollo
+Start asdas Purple Apollo
+Insert sdfsd update
+Insert sdfsd update
+-> placeworker 2 2
+Insert sdfsd placed a worker in 2x2
+Insert sdfsd placed a worker in 2x2
+-> placeworker 4 4
+Insert sdfsd placed a worker in 4x4
+Insert sdfsd placed a worker in 4x4
+Insert asdas update
+Insert asdas update
+-> placeworker 2 4
+Insert asdas placed a worker in 2x4
+Insert asdas placed a worker in 2x4
+-> placeworker 4 2
+Insert asdas placed a worker in 4x2
+Insert asdas placed a worker in 4x2
+Insert sdfsd update
+Insert sdfsd update
+-> normal
+Insert sdfsd doesn't want to use the God Power
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Welcome! What's your name?
+-> lollo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Minotaur
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Minotaur 
+-> Apollo
+Your Divinity: Minotaur
+Your Divinity: Apollo
+Start fillo White Minotaur
+Start fillo White Minotaur
+Start lollo Purple Apollo
+Start lollo Purple Apollo
+Insert fillo update
+Insert fillo update
+-> placeworker 2 2
+Insert fillo placed a worker in 2x2
+Insert fillo placed a worker in 2x2
+-> placeworker 4 4
+Insert fillo placed a worker in 4x4
+Insert fillo placed a worker in 4x4
+Insert lollo update
+Insert lollo update
+-> placeworker 2 4
+Insert lollo placed a worker in 2x4
+Insert lollo placed a worker in 2x4
+-> placeworker 4 2
+Insert lollo placed a worker in 4x2
+Insert lollo placed a worker in 4x2
+Insert fillo update
+Insert fillo update
+-> normal
+Insert fillo doesn't want to use the God Power
+Insert fillo doesn't want to use the God Power
+-> move 3 3 0
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Welcome! What's your name?
+-> lollo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Artemis
+Start fillo White Artemis
+Start fillo White Artemis
+Start lollo Purple Apollo
+Start lollo Purple Apollo
+Insert fillo update
+Insert fillo update
+-> placeworker 2 2
+Insert fillo placed a worker in 2x2
+Insert fillo placed a worker in 2x2
+-> placeworker 4 4
+Insert fillo placed a worker in 4x4
+Insert fillo placed a worker in 4x4
+Insert lollo update
+Insert lollo update
+-> placeworker 4 1
+Insert lollo placed a worker in 4x1
+Insert lollo placed a worker in 4x1
+-> placeworker 1 5
+Insert lollo placed a worker in 1x5
+Insert lollo placed a worker in 1x5
+Insert fillo update
+Insert fillo update
+-> normal
+Insert fillo doesn't want to use the God Power
+Insert fillo doesn't want to use the God Power
+-> move 2 3 0
+Welcome! What's your name?
+-> dasdas
+Wait for other players
+Welcome! What's your name?
+-> sdfsdf
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Apollo
+Your Divinity: Artemis
+Start dasdas White Apollo
+Start sdfsdf Purple Artemis
+Start dasdas White Apollo
+Start sdfsdf Purple Artemis
+Insert dasdas update
+Insert dasdas update
+-> placeworker 2 2
+Insert dasdas placed a worker in 2x2
+Insert dasdas placed a worker in 2x2
+-> placeworker 4 4
+Insert dasdas placed a worker in 4x4
+Insert dasdas placed a worker in 4x4
+Insert sdfsdf update
+Insert sdfsdf update
+-> placeworker 5 2
+Insert sdfsdf placed a worker in 5x2
+Insert sdfsdf placed a worker in 5x2
+-> placeworker 1 5
+Insert sdfsdf placed a worker in 1x5
+Insert sdfsdf placed a worker in 1x5
+Insert dasdas update
+Insert dasdas update
+-> normal
+Insert dasdas doesn't want to use the God Power
+Insert dasdas doesn't want to use the God Power
+-> move 2 3 01
+Insert dasdas moved a worker in 2x3
+Insert dasdas moved a worker in 2x3
+Welcome! What's your name?
+-> sadas
+Wait for other players
+Welcome! What's your name?
+-> sdfsdf
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Apollo
+Your Divinity: Artemis
+Start sadas White Apollo
+Start sadas White Apollo
+Start sdfsdf Purple Artemis
+Start sdfsdf Purple Artemis
+Insert sadas update
+Insert sadas update
+-> placeworker 3 2
+Insert sadas placed a worker in 3x2
+Insert sadas placed a worker in 3x2
+-> placeworker 4 5
+Insert sadas placed a worker in 4x5
+Insert sadas placed a worker in 4x5
+Insert sdfsdf update
+Insert sdfsdf update
+-> placeworker 5 3
+Insert sdfsdf placed a worker in 5x3
+Insert sdfsdf placed a worker in 5x3
+-> placeworker 2 4
+Insert sdfsdf placed a worker in 2x4
+Insert sdfsdf placed a worker in 2x4
+Insert sadas update
+Insert sadas update
+-> normal
+Insert sadas doesn't want to use the God Power
+Insert sadas doesn't want to use the God Power
+-> move 4 2 01
+Insert sadas moved a worker in 4x2
+Insert sadas moved a worker in 4x2
+Welcome! What's your name?
+-> asda
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> dfsf
+Wait for other players
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Artemis
+Your Divinity: Apollo
+Start asda White Apollo
+Start asda White Apollo
+Start dfsf Purple Artemis
+Start dfsf Purple Artemis
+Insert asda update
+Insert asda update
+-> placeworker 4 3
+Insert asda placed a worker in 4x3
+Insert asda placed a worker in 4x3
+-> placeworker 3 3
+Insert asda placed a worker in 3x3
+Insert asda placed a worker in 3x3
+Insert dfsf update
+Insert dfsf update
+-> placeworker 3 4
+Insert dfsf placed a worker in 3x4
+Insert dfsf placed a worker in 3x4
+-> placeworker 4 4
+Insert dfsf placed a worker in 4x4
+Insert dfsf placed a worker in 4x4
+Insert asda update
+Welcome! What's your name?
+-> sdasd
+Wait for other players
+Welcome! What's your name?
+-> sdfsd
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Artemis
+Your Divinity: Apollo
+Start sdfsd White Artemis
+Start sdfsd White Artemis
+Start sdasd Purple Apollo
+Start sdasd Purple Apollo
+Insert sdfsd update
+Insert sdfsd update
+-> placeworker 3 2
+Insert sdfsd placed a worker in 3x2
+Insert sdfsd placed a worker in 3x2
+-> placeworker 4 4
+Insert sdfsd placed a worker in 4x4
+Insert sdfsd placed a worker in 4x4
+Insert sdasd update
+Insert sdasd update
+-> placeworker 5 2
+Insert sdasd placed a worker in 5x2
+Insert sdasd placed a worker in 5x2
+-> placeworker 3 3
+Insert sdasd placed a worker in 3x3
+Insert sdasd placed a worker in 3x3
+Insert sdfsd update
+Insert sdfsd update
+-> normal
+Insert sdfsd doesn't want to use the God Power
+Insert sdfsd doesn't want to use the God Power
+-> move 4 3 01
+Insert sdfsd moved a worker in 4x3
+Insert sdfsd moved a worker in 4x3

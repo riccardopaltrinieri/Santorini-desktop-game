@@ -16,10 +16,11 @@ public class GUIHandler implements UserInterface {
     private final FSMView fsm = new FSMView();
 
     private String name;
-    private Color color=Color.White;
+    private Color color;
     private String firstGodToRemove;
     private String secondGodToRemove;
     private int numPlayer;
+    private int selectedWorkerIndex;
 
     private BoardButtonListener boardListener = new BoardButtonListener(fsm,color,mainFrame);
 
@@ -37,6 +38,16 @@ public class GUIHandler implements UserInterface {
 
             switch (firstWord){
 
+                case "Start" :
+                //take the other's player info
+                    if (!parts[1].equals(name)) {
+                        mainFrame.updatePlayerInfoTextArea("Your " + parts[2] + " opponent is " + parts[1] + "\nHe will use " + parts[3]);
+                    }
+                    else if (parts[1].equals(name)){
+                        color = Color.stroingToColor(parts[2]);
+                    }
+                    outgoingMessage = "noMessageToSend";
+                    break;
 
                 case "Welcome!":
                     //Ask gor the player's name
@@ -48,7 +59,8 @@ public class GUIHandler implements UserInterface {
                             for (int i=0;i<25;i++){
                                 mainFrame.getActiveBoardButtons()[i].addActionListener(boardListener);
                             }
-
+                            mainFrame.getYesButton().addActionListener(boardListener);
+                            mainFrame.getNoButton().addActionListener(boardListener);
                         }
                     });
 
@@ -169,18 +181,59 @@ public class GUIHandler implements UserInterface {
 
                 case "Insert":
                     //ask to the player for the next move according to the FSM
+
+                    if (fsm.getState() == State.worker) {
+                        // ask to the player which worker he wants to use but don't send anything
+                        mainFrame.updateTextArea("Click on the worker that you want to use");
+                        for (int i=0; i<25;i++){
+                            if((mainFrame.getActiveBoardButtons()[i].getHaveWorker())&&(mainFrame.getActiveBoardButtons()[i].getWorkerColor()==color)){
+                                mainFrame.getActiveBoardButtons()[i].setEnabled(true);
+                            }
+                            else {
+                                mainFrame.getActiveBoardButtons()[i].setEnabled(false);
+                            }
+                        }
+                        selectedWorkerIndex = (mainFrame.getChosenButtonCoordinate()[0]-1)*5+mainFrame.getChosenButtonCoordinate()[1]-1;
+                        fsm.nextState();
+                    }
+
                     if (parts[1].equals(name)){
+                        //placeWorker
                         if (fsm.getState()==State.placeworker){
                             for (int i=0; i<25;i++){
-                                if(mainFrame.getActiveBoardButtons()[i].getHaveWorker()){
-                                    mainFrame.getActiveBoardButtons()[i].setEnabled(false);
-                                }
-                                else {
-                                    mainFrame.getActiveBoardButtons()[i].setEnabled(true);
-                                }
+                                mainFrame.getActiveBoardButtons()[i].setEnabled(!mainFrame.getActiveBoardButtons()[i].getHaveWorker());
                             }
                             int[] coordinate = mainFrame.getChosenButtonCoordinate();
                             outgoingMessage ="placeworker "+coordinate[0]+" "+coordinate[1];
+                        }
+
+                        //Start
+                        if (fsm.getState()==State.start){
+                            mainFrame.updateTextArea("Do you want to use your Godpower?");
+                            mainFrame.addYesOrNo();
+                            for (int i=0;i<25;i++){
+                                mainFrame.getActiveBoardButtons()[i].setEnabled(false);
+                            }
+
+                            outgoingMessage=mainFrame.getYesOrNoResponse();
+                            mainFrame.removeYesOrNo();
+                        }
+
+                        //Move
+                        if (fsm.getState()==State.move){
+                            mainFrame.updateTextArea("Select where you want to move your worker");
+                            for (int i=0; i<25; i++){
+                                if (mainFrame.getActiveBoardButtons()[selectedWorkerIndex].canMoveTo(mainFrame.getActiveBoardButtons()[i])){
+                                    mainFrame.getActiveBoardButtons()[i].setSelectableCell(true);
+                                    mainFrame.getActiveBoardButtons()[i].setEnabled(true);
+                                    mainFrame.getActiveBoardButtons()[i].repaint();
+                                }
+                                else{
+                                    mainFrame.getActiveBoardButtons()[i].setEnabled(false);
+                                }
+                            }
+                            int[] coordinate = mainFrame.getChosenButtonCoordinate();
+                            outgoingMessage ="move "+coordinate[0]+" "+coordinate[1]+" "+mainFrame.getActiveBoardButtons()[selectedWorkerIndex].getWorkerNum()%2+1;
                         }
                         fsm.nextState();
                     }
@@ -204,3 +257,5 @@ public class GUIHandler implements UserInterface {
         return fsm.getState();
     }
 }
+
+//TODO gestire meglio messaggi di infotext per comunicare meglio
