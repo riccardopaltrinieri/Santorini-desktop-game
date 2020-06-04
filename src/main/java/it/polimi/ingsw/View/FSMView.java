@@ -37,11 +37,11 @@ public class FSMView {
     public String getStateStringGUI() {
 
         return switch (state) {
-            case placeworker -> "Place your worker on the map: select a free cell on the board')";
+            case placeworker -> "Place your worker on the map: (select a free cell on the board')";
             case start -> "Do you want to use the God power or going with the normal turn?";
-            case worker -> "Choose the worker that you want to move and build with: select one of your worker";
-            case move -> "Where do you want to move? select a free cell reachable from your worker";
-            case build -> "Where do you want to build? select a cell where your can build";
+            case worker -> "Choose the worker that you want to move and build with: (select one of your worker)";
+            case move -> "Where do you want to move? (select a free cell reachable from your worker)";
+            case build -> "Where do you want to build? (select a cell where your can build)";
             case endTurn -> "Turn Ended..";
         };
     }
@@ -112,10 +112,6 @@ public class FSMView {
     }
 
     protected void prevState() {
-        if (state == State.start || state == State.placeworker) {
-            resetTwoTimesState(State.placeworker);
-            return;
-        }
 
         switch (this.divinity) {
 
@@ -167,6 +163,10 @@ public class FSMView {
         }
     }
 
+    protected void prevState(State placeworker) {
+        resetTwoTimesState(placeworker);
+    }
+
     private void setStateAfterTwoTimes(State newState) {
         if (!again) {
             again = true;
@@ -176,7 +176,7 @@ public class FSMView {
         }
     }
 
-    private void resetTwoTimesState(State oldState) {
+    protected void resetTwoTimesState(State oldState) {
         if (again) {
             again = false;
         } else {
@@ -198,6 +198,5 @@ public class FSMView {
     protected void setPath(Divinity divinity) {
         this.divinity = divinity;
     }
-
 
 }
