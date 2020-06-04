@@ -68,29 +68,38 @@ public class CLInterface implements UserInterface {
                     // Ask the player action according to the fsm
                     // The fsm can't be fooled because there's one also on the server
 
-
-                    if (fsm.getState() == State.worker) {
-                        // ask to the player which worker he wants to use but don't send anything
-                        System.out.println(fsm.getStateStringCLI());
-                        checkAction(stdin);
-                        fsm.nextState();
-                    }
-
                     if(parts[1].equals(name)) {
+
                         if (fsm.getState() != State.start && fsm.getState() != State.worker && fsm.getState() != State.move) board.printBoardCLI();
-                        System.out.println(fsm.getStateStringCLI());
-                        if (fsm.getState() != State.endTurn) {
-                            outgoingMessage = checkAction(stdin);
+
+                        if (fsm.getState() == State.worker) {
+                            // ask to the player which worker he wants to use but don't send anything
+                            System.out.println(fsm.getStateStringCLI());
+                            checkAction(stdin);
+                            fsm.nextState();
                         }
-                        else {
+
+                        if (fsm.getState() != State.endTurn) {
+
+                            if (fsm.getState() == State.start && (divinity == Divinity.Athena || divinity == Divinity.Pan)) {
+                                // The Athena's and Pan's power are passive and there isn't the need to ask
+                                outgoingMessage = "usepower";
+                            } else {
+                                System.out.println(fsm.getStateStringCLI());
+                                outgoingMessage = checkAction(stdin);
+                            }
+
+                        } else {
                             outgoingMessage = "noMessageToSend";
                         }
+
                         fsm.nextState();
+
                     } else {
                         if(parts[2].equals("update")) System.out.println(parts[1] +"'s turn: ");
                         else {
+                            if(!parts[2].equals("wants") && !parts[2].equals("doesn't")) board.printBoardCLI();
                             System.out.println(incomingMessage.substring(7));
-                            board.printBoardCLI();
                         }
                         outgoingMessage = "noMessageToSend";
                     }
