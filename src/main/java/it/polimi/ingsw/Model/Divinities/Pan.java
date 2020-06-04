@@ -17,9 +17,10 @@ public class Pan implements GodPower {
 
         // If the worker move down of 2 levels he wins
         if (panWorker.canMoveTo(destination)) {
-            if (panWorker.getPosition().getLevel() > destination.getLevel() + 1) {
+            if (panWorker.getPosition().getLevel() > destination.getLevel() + 1)
                 player.getGame().hasWinner();
-            } else panWorker.move(destination);
+            else
+                panWorker.move(destination);
         } else {
             throw new IllegalArgumentException();
         }

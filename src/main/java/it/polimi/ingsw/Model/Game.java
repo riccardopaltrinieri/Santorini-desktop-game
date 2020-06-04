@@ -11,7 +11,7 @@ public class Game extends Observable {
 
     private int numPlayer;
     private int iterator;
-    private Board board;
+    private final Board board;
     private final ArrayList<Player> players;
     private Boolean canMoveUp;
 
@@ -145,9 +145,6 @@ public class Game extends Observable {
     }
     public Board getBoard() {
         return board;
-    }
-    public void setBoard(Board board) {
-        this.board = board;
     }
     public void setCanMoveUp(Boolean canMoveUp) {
         this.canMoveUp = canMoveUp;

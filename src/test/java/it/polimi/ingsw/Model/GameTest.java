@@ -83,6 +83,7 @@ public class GameTest
         // Cannot move up because the Athena power is active
         game.getBoard().getCell(3, 3).setLevel(1);
         assertFalse(game.move(3, 3, 0));
+        assertFalse(game.useGodPower(3, 3, 0));
     }
 
     @Test

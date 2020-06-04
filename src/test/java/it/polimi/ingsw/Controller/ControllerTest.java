@@ -2,6 +2,7 @@ package it.polimi.ingsw.Controller;
 
 import it.polimi.ingsw.Model.*;
 import it.polimi.ingsw.Model.Divinities.*;
+import it.polimi.ingsw.View.LiteBoard;
 import it.polimi.ingsw.utils.Color;
 import org.junit.Test;
 
@@ -162,5 +163,9 @@ public class ControllerTest {
         assertEquals(game.getBoard().getCell(2, 4).getLevel(), 1);
     }
 
-
+    @Test
+    public void testNewBoard () {
+        Controller controller = new Controller(new Game());
+        controller.newBoard(new LiteBoard("foo"));
+    }
 }

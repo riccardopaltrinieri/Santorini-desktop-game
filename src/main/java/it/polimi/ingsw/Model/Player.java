@@ -7,10 +7,10 @@ import java.util.ArrayList;
 
 public class Player {
 
-    private String name;
-    private Color color;
-    private ArrayList<Worker> workers;
-    private Game game;
+    private final String name;
+    private final Color color;
+    private final ArrayList<Worker> workers;
+    private final Game game;
     private GodPower godPower;
 
     /**
