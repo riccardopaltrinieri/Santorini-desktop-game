@@ -27,7 +27,7 @@ public enum Messages {
     public static String getMessage(Messages msg, int row, int col) {
         return switch (msg) {
             case MOVE_MESSAGE -> " moved a worker in " + row + 'x' + col;
-            case BUILD_MESSAGE -> " build in " + row + ' ' + col;
+            case BUILD_MESSAGE -> " built in " + row + ' ' + col;
             case PLACE_MESSAGE -> " placed a worker in " + row + 'x' + col;
             default -> null;
         };

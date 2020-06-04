@@ -107,7 +107,7 @@ public class Game extends Observable {
 
         } catch (AthenaException e) {
             String message = getCurrentPlayer().getName() + Messages.getMessage(Messages.ERROR_ATHENA);
-            sendBoard(new LiteBoard("Error:" + message, board, this));
+            sendBoard(new LiteBoard("Error: " + message, board, this));
         } catch (IllegalArgumentException e) {
             String message = getCurrentPlayer().getName() + Messages.getMessage(Messages.ERROR_POWER);
             sendBoard(new LiteBoard("Error: " + message, board, this));
