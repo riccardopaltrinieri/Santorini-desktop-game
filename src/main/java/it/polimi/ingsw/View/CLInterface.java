@@ -140,7 +140,7 @@ public class CLInterface implements UserInterface {
                         System.out.println("Ops, something went wrong");
                         System.out.println(incomingMessage);
                         System.out.println("Please, try again:");
-                        if (parts[3].equals("place")) fsm.prevState(State.placeworker);
+                        if (parts[3].equals("place")) fsm.prevStateToPlaceWorker();
                         else fsm.prevState();
                         outgoingMessage = checkAction(stdin);
                         fsm.nextState();
@@ -260,7 +260,7 @@ public class CLInterface implements UserInterface {
 
             while (true) {
                 try {
-                    NamesDivinities.valueOf(inputLine);
+                    Divinity.valueOf(inputLine);
                     return inputLine;
                 } catch (IllegalArgumentException e) {
                     System.out.println("Wrong input: reinsert your Divinity:");
