@@ -1,9 +1,7 @@
 package it.polimi.ingsw.Model.Divinities;
 
-import it.polimi.ingsw.Model.Cell;
-import it.polimi.ingsw.Model.Divinity;
-import it.polimi.ingsw.Model.GodPower;
-import it.polimi.ingsw.Model.Player;
+import it.polimi.ingsw.AthenaException;
+import it.polimi.ingsw.Model.*;
 
 import java.util.ArrayList;
 
@@ -11,31 +9,31 @@ public class Apollo implements GodPower {
     private final Divinity divinity=Divinity.Apollo;
 
     @Override
-    public void execute(Player player, Cell destination, int worker) {
+    public void execute(Player player, Cell destination, int worker) throws AthenaException {
+
+        // If the destination is empty just do a normal move
         if (destination.getIsEmpty()){
-            throw new IllegalArgumentException();
+            player.getWorker(worker).move(destination);
         }
         else {
+            // If the worker wants to move in the same cell throw exception
+            if(destination == player.getWorker(worker).getPosition()) throw new IllegalArgumentException();
+
             destination.setEmpty(true);
             if (player.getWorker(worker).canMoveTo(destination)) {
-                ArrayList<Player> players = player.getGame().getPlayers();
-                int wantedPlayer = 0;
-                int wantedWorker = 0;
-                while ((wantedPlayer < players.size()) &&
-                        !(players.get(wantedPlayer).getWorker(wantedWorker).getPosition().equals(destination))) {
-                    if (wantedWorker == 0) {
-                        wantedWorker = 1;
-                    } else {
-                        wantedPlayer++;
-                        wantedWorker = 0;
-                    }
-                    if (wantedPlayer == players.size()) {
-                        throw new IllegalArgumentException();
+
+                // Iteration for all the players/worker to find the one to switch
+                for (Player wantedPlayer : player.getGame().getPlayers()) {
+                    for (Worker wantedWorker : wantedPlayer.getWorkers()) {
+
+                        if (wantedWorker.getPosition().equals(destination)) {
+                            // Simple switch of variables
+                            Cell exchangePosition = player.getWorker(worker).getPosition();
+                            player.getWorker(worker).setPosition(wantedWorker.getPosition());
+                            wantedWorker.setPosition(exchangePosition);
+                        }
                     }
                 }
-                Cell exchangePosition = player.getWorker(worker).getPosition();
-                player.getWorker(worker).setPosition(players.get(wantedPlayer).getWorker(wantedWorker).getPosition());
-                players.get(wantedPlayer).getWorker(wantedWorker).setPosition(exchangePosition);
             }
             destination.setEmpty(false);
         }
