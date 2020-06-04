@@ -1,10 +1,8 @@
 package it.polimi.ingsw.Controller;
 
 import it.polimi.ingsw.Model.*;
-import it.polimi.ingsw.Model.Divinities.Athena;
-import it.polimi.ingsw.Model.Divinities.Atlas;
-import it.polimi.ingsw.Model.Divinities.Pan;
-import it.polimi.ingsw.Model.Divinities.Prometheus;
+import it.polimi.ingsw.Model.Divinities.*;
+import it.polimi.ingsw.utils.Color;
 import org.junit.Test;
 
 import static junit.framework.TestCase.*;

@@ -1,6 +1,6 @@
 package it.polimi.ingsw.View;
 
-import it.polimi.ingsw.Model.Divinity;
+import it.polimi.ingsw.utils.Divinity;
 
 public class FSMView {
     private State state;

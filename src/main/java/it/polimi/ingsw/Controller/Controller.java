@@ -1,6 +1,6 @@
 package it.polimi.ingsw.Controller;
 
-import it.polimi.ingsw.Model.Divinity;
+import it.polimi.ingsw.utils.Divinity;
 import it.polimi.ingsw.Model.Game;
 import it.polimi.ingsw.View.LiteBoard;
 import it.polimi.ingsw.utils.InputString;

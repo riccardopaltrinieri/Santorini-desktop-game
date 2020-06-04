@@ -1,6 +1,7 @@
 package it.polimi.ingsw.Model;
 
 import it.polimi.ingsw.AthenaException;
+import it.polimi.ingsw.utils.Color;
 import org.junit.Test;
 
 import static junit.framework.TestCase.*;

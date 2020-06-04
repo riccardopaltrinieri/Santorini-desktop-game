@@ -1,10 +1,9 @@
 package it.polimi.ingsw.View.Graphics;
 
-import it.polimi.ingsw.Model.Color;
+import it.polimi.ingsw.utils.Color;
 import it.polimi.ingsw.View.FSMView;
 import it.polimi.ingsw.View.State;
 
-import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 

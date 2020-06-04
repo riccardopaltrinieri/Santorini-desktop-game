@@ -2,7 +2,7 @@ package it.polimi.ingsw.Model.Divinities;
 
 import it.polimi.ingsw.AthenaException;
 import it.polimi.ingsw.Model.Cell;
-import it.polimi.ingsw.Model.Divinity;
+import it.polimi.ingsw.utils.Divinity;
 import it.polimi.ingsw.Model.GodPower;
 import it.polimi.ingsw.Model.Player;
 

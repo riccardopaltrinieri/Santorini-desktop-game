@@ -1,8 +1,7 @@
 package it.polimi.ingsw.View;
 
-import it.polimi.ingsw.Model.Divinity;
+import it.polimi.ingsw.utils.Divinity;
 import it.polimi.ingsw.utils.InputString;
-import it.polimi.ingsw.utils.NamesDivinities;
 
 import java.util.NoSuchElementException;
 import java.util.Scanner;

@@ -1,6 +1,6 @@
 package it.polimi.ingsw.Model;
 
-import it.polimi.ingsw.Controller.Controller;
+import it.polimi.ingsw.utils.Color;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -13,7 +13,6 @@ import static org.junit.Assert.*;
 public class GameTest
 {
     Game game = new Game();
-    Controller controller = new Controller(game);
     Player tester = new Player("tester", Color.White, game);
     Player tester2 = new Player("tester2", Color.Brown, game);
     Player tester3 = new Player("tester2", Color.Purple, game);

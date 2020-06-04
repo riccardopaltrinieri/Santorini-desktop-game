@@ -1,6 +1,6 @@
 package it.polimi.ingsw.Controller;
 
-import it.polimi.ingsw.Model.Divinity;
+import it.polimi.ingsw.utils.Divinity;
 
 public class FiniteStateMachine {
 
@@ -73,9 +73,6 @@ public class FiniteStateMachine {
                     }
                 }
                 break;
-
-            default:
-                throw new IllegalStateException("Unexpected value: " + this.divinity);
         }
     }
 //  ************** GETTER AND SETTER **************************

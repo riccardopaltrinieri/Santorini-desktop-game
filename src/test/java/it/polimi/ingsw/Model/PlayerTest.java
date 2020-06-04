@@ -1,6 +1,7 @@
 package it.polimi.ingsw.Model;
 
 import it.polimi.ingsw.Model.Divinities.*;
+import it.polimi.ingsw.utils.Color;
 import org.junit.Test;
 
 import static junit.framework.TestCase.*;
@@ -38,6 +39,8 @@ public class PlayerTest {
         assertTrue(tester.getGodPower() instanceof Pan);
         tester.setGodPower("prometheus");
         assertTrue(tester.getGodPower() instanceof Prometheus);
+        tester.setGodPower("default");
+        assertTrue(tester.getGodPower() instanceof DefaultDivinity);
     }
 
     @Test

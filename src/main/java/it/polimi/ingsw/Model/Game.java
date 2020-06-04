@@ -2,6 +2,7 @@ package it.polimi.ingsw.Model;
 
 import it.polimi.ingsw.AthenaException;
 import it.polimi.ingsw.View.LiteBoard;
+import it.polimi.ingsw.utils.Messages;
 import it.polimi.ingsw.utils.Observable;
 
 import java.util.ArrayList;
@@ -121,9 +122,7 @@ public class Game extends Observable {
     }
 
 
-//  ************** GETTER AND SETTER ***********************************
-
-    // ************ SPECIAL GETTERS **********
+//  *************** SPECIAL GETTERS **********
     public int getNumWorkers() {
         int numWorkers = 0;
         for (Player player : players) {
@@ -134,6 +133,9 @@ public class Game extends Observable {
     public Player getCurrentPlayer() {
         return players.get(iterator);
     }
+
+//  ************** GETTER AND SETTER ***********************************
+
 
     public ArrayList<Player> getPlayers() {
         return players;

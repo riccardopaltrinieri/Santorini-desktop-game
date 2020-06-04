@@ -2,8 +2,10 @@ package it.polimi.ingsw.Model.Divinities;
 
 import it.polimi.ingsw.AthenaException;
 import it.polimi.ingsw.Model.*;
+import it.polimi.ingsw.utils.Color;
 import org.junit.Test;
-import static org.junit.Assert.assertTrue;
+
+import static org.junit.Assert.assertEquals;
 
 
 public class HephaestusTest {
@@ -22,12 +24,12 @@ public class HephaestusTest {
         wrongDestination.setLevel(startingWrongLevel);
 
         test.execute(player,rightDestination,0);
-        assertTrue(rightDestination.getLevel()==startingLevel+2);
+        assertEquals(rightDestination.getLevel(), startingLevel + 2);
         try{
             test.execute(player,wrongDestination,0);
         }
         catch (IllegalArgumentException e){
-            assertTrue(wrongDestination.getLevel()==startingWrongLevel);
+            assertEquals(wrongDestination.getLevel(), startingWrongLevel);
         }
     }
 }

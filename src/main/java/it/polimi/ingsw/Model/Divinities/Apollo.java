@@ -2,8 +2,7 @@ package it.polimi.ingsw.Model.Divinities;
 
 import it.polimi.ingsw.AthenaException;
 import it.polimi.ingsw.Model.*;
-
-import java.util.ArrayList;
+import it.polimi.ingsw.utils.Divinity;
 
 public class Apollo implements GodPower {
     private final Divinity divinity=Divinity.Apollo;

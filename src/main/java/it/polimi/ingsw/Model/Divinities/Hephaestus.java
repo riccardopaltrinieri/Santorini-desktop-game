@@ -1,6 +1,7 @@
 package it.polimi.ingsw.Model.Divinities;
 
 import it.polimi.ingsw.Model.*;
+import it.polimi.ingsw.utils.Divinity;
 
 public class Hephaestus implements GodPower {
     private final Divinity divinity=Divinity.Hephaestus;

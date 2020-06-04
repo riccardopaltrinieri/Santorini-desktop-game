@@ -1,6 +1,7 @@
 package it.polimi.ingsw.Model;
 
 import it.polimi.ingsw.Model.Divinities.*;
+import it.polimi.ingsw.utils.Color;
 
 import java.util.ArrayList;
 
@@ -85,7 +86,6 @@ public class Player {
             case ("minotaur") -> this.godPower = new Minotaur();
             case ("pan") -> this.godPower = new Pan();
             case ("prometheus") -> this.godPower = new Prometheus();
-            default -> throw new IllegalArgumentException();
         }
     }
     public Color getColor() { return color; }
