@@ -93,7 +93,7 @@ public class CLInterface implements UserInterface {
                             outgoingMessage = "noMessageToSend";
                         }
 
-                        fsm.nextState();
+                        if(!outgoingMessage.equals("undo")) fsm.nextState();
 
                     } else {
                         if(parts[2].equals("update")) System.out.println(parts[1] +"'s turn: ");
@@ -157,6 +157,33 @@ public class CLInterface implements UserInterface {
                         outgoingMessage = "noMessageToSend";
                     break;
 
+                case "Undo:":
+
+                    if(parts[1].equals(name)) {
+                        switch (parts[2]) {
+                            case "undid" -> {
+                                fsm.prevState();
+                                board.printBoardCLI();
+                                System.out.println(fsm.getStateStringCLI());
+                                outgoingMessage = checkAction(stdin);
+                                fsm.nextState();
+                            }
+                            case "undoing" -> {
+                                System.out.println("Processing undo request, please wait..");
+                                outgoingMessage = "noMessageToSend";
+                            }
+                            case "cannot" -> {
+                                System.out.println("Your undo request has been rejected");
+                                System.out.println(fsm.getStateStringCLI());
+                                outgoingMessage = checkAction(stdin);
+                                fsm.nextState();
+                            }
+                        }
+                    } else {
+                        outgoingMessage = "noMessageToSend";
+                    }
+                    break;
+
                 default:
                     System.out.println(incomingMessage);
                     outgoingMessage = "noMessageToSend";
@@ -215,14 +242,14 @@ public class CLInterface implements UserInterface {
                         if (!(worker == 1) && !(worker == 2)) throw new IllegalArgumentException();
                         setWorker(worker);
                     }
-                    case supermove, move -> {
+                    case move -> {
                         if (fsm.getState() != State.move) throw new IllegalArgumentException();
                         row = Integer.parseInt(partsInput[1]);
                         col = Integer.parseInt(partsInput[2]);
                         if (row < 1 || row > 5 || col < 1 || col > 5) throw new IllegalArgumentException();
                         inputLine += " " + getWorker();
                     }
-                    case superbuild, build -> {
+                    case build -> {
                         if (fsm.getState() != State.build) throw new IllegalArgumentException();
                         row = Integer.parseInt(partsInput[1]);
                         col = Integer.parseInt(partsInput[2]);
@@ -243,6 +270,11 @@ public class CLInterface implements UserInterface {
                         fsm.setPath(divinity);
                         if (fsm.getState() != State.start) throw new IllegalArgumentException();
                         if (partsInput.length > 1) throw new IllegalArgumentException();
+                    }
+                    case undo -> {
+                        //TODO State undo check
+                        if(fsm.getState() == State.placeworker || fsm.getState() == State.worker)
+                            throw new IllegalArgumentException();
                     }
                     default -> throw new IllegalArgumentException();
                 }

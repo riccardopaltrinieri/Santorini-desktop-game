@@ -71,7 +71,7 @@ public class Connection extends Observable implements Runnable, Observer {
         try{
             out = new ObjectOutputStream(socket.getOutputStream());
             in = new ObjectInputStream(socket.getInputStream());
-            socket.setSoTimeout(60000);
+            socket.setSoTimeout(360000);
 
             send( new LiteBoard("Welcome! What's your name?"));
             name = readString();

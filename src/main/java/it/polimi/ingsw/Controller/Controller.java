@@ -9,8 +9,9 @@ import it.polimi.ingsw.utils.Observer;
 
 public class Controller extends Observable implements Observer {
 
-    private FiniteStateMachine fsm;
-    private Game game;
+    private final FiniteStateMachine fsm;
+    private final Game game;
+    private boolean undoing;
 
     /**
      * Constructor of the class, it sets the game to control and create the FSM
@@ -35,6 +36,7 @@ public class Controller extends Observable implements Observer {
 
         // The name is set by the connection so only the current player can execute actions
         if (name.equals(game.getCurrentPlayer().getName())) {
+
 
             switch (action) {
                 case usepower -> {
@@ -65,21 +67,50 @@ public class Controller extends Observable implements Observer {
                     row = Integer.parseInt(parts[2]) - 1;
                     column = Integer.parseInt(parts[3]) - 1;
                     worker = Integer.parseInt(parts[4]) - 1;
-                    if (fsm.getState() == State.move) actionExecuted = game.move(row, column, worker);
-                    if (fsm.getState() == State.superMove) actionExecuted = game.useGodPower(row, column, worker);
+                    UndoChecker undoThread = new UndoChecker(game, this, fsm.getState());
+                    if (fsm.getState() == State.move) {
+                        actionExecuted = game.move(row, column, worker);
+                        undoThread.remember(worker);
+                        undoThread.start();
+                    }
+                    if (fsm.getState() == State.superMove) {
+                        actionExecuted = game.useGodPower(row, column, worker);
+                        undoThread.remember(worker, row, column);
+                        undoThread.start();
+                    }
                 }
                 case build -> {
                     // Build with the worker
                     row = Integer.parseInt(parts[2]) - 1;
                     column = Integer.parseInt(parts[3]) - 1;
                     worker = Integer.parseInt(parts[4]) - 1;
-                    if (fsm.getState() == State.build) actionExecuted = game.build(row, column, worker);
-                    if (fsm.getState() == State.superBuild) actionExecuted = game.useGodPower(row, column, worker);
+                    UndoChecker undoThread = new UndoChecker(game, this, fsm.getState());
+                    if (fsm.getState() == State.build) {
+                        actionExecuted = game.build(row, column, worker);
+                        undoThread.remember(row, column);
+                        undoThread.start();
+                    }
+                    if (fsm.getState() == State.superBuild) {
+                        actionExecuted = game.useGodPower(row, column, worker);
+                        undoThread.remember(worker, row, column);
+                        undoThread.start();
+                    }
+                }
+
+                case undo -> {
+                    this.undoing = true;
+                    actionExecuted = false;
+                    fsm.prevState();
+                    String msg = "Undo: " + game.getCurrentPlayer().getName() + " undoing";
+                    game.sendBoard(new LiteBoard(msg, game.getBoard(), game));
                 }
             }
 
             // If something went wrong actionExecuted will be false and the fsm stay in the current state
-            if(actionExecuted) fsm.nextState();
+            if(actionExecuted) {
+                undoing = false;
+                fsm.nextState();
+            }
 
             // When the turn is ended notify the game and restart
             if (fsm.getState() == State.endTurn) {
@@ -101,5 +132,13 @@ public class Controller extends Observable implements Observer {
 
     public void newBoard(LiteBoard board) {
         // Method used only by game to send the board
+    }
+
+    public boolean isUndoing() {
+        return undoing;
+    }
+
+    public void setUndoing(boolean undoing) {
+        this.undoing = undoing;
     }
 }

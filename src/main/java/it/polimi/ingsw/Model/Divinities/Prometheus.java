@@ -33,4 +33,9 @@ public class Prometheus implements GodPower {
     public Divinity getDivinity() {
         return this.divinity;
     }
+
+    @Override
+    public void undo(Player player, Cell oldPosition, int worker, Cell building) {
+
+    }
 }
