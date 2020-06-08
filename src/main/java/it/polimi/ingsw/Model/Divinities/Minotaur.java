@@ -5,7 +5,9 @@ import it.polimi.ingsw.Model.*;
 import it.polimi.ingsw.utils.Divinity;
 
 public class Minotaur implements GodPower {
+
     private final Divinity divinity=Divinity.Minotaur;
+    private Worker oldOpponentWorker;
 
     @Override
     public void execute(Player player, Cell destination, int worker) throws AthenaException {
@@ -14,6 +16,7 @@ public class Minotaur implements GodPower {
         // If the destination is empty just do a normal move
         if (destination.getIsEmpty()){
             minotaurWorker.move(destination);
+            oldOpponentWorker = null;
         }
         else {
             // If the worker wants to move in the same cell throw exception
@@ -33,6 +36,7 @@ public class Minotaur implements GodPower {
                             Cell pushedDestination = player.getGame().getBoard().getCell(newPosition.getNumRow() + deltaRow, newPosition.getNumColumn() + deltaColumn);
                             wantedWorker.move(pushedDestination);
                             player.getWorker(worker).move(newPosition);
+                            oldOpponentWorker = wantedWorker;
                         }
                     }
                 }
@@ -48,6 +52,7 @@ public class Minotaur implements GodPower {
 
     @Override
     public void undo(Player player, Cell oldPosition, int worker, Cell building) {
-
+        if(oldOpponentWorker!= null) oldOpponentWorker.setPosition(player.getWorker(worker).getPosition());
+        player.getWorker(worker).setPosition(oldPosition);
     }
 }

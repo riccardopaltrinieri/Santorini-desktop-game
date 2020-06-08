@@ -36,5 +36,7 @@ public class Artemis implements GodPower {
     @Override
     public void undo(Player player, Cell oldPosition, int worker, Cell building) {
 
+        player.getWorker(worker).setPosition(oldPosition);
+        firstTime = !firstTime;
     }
 }

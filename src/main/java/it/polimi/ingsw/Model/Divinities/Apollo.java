@@ -5,7 +5,9 @@ import it.polimi.ingsw.Model.*;
 import it.polimi.ingsw.utils.Divinity;
 
 public class Apollo implements GodPower {
+
     private final Divinity divinity=Divinity.Apollo;
+    private Worker oldOpponentWorker;
 
     @Override
     public void execute(Player player, Cell destination, int worker) throws AthenaException {
@@ -13,6 +15,7 @@ public class Apollo implements GodPower {
         // If the destination is empty just do a normal move
         if (destination.getIsEmpty()){
             player.getWorker(worker).move(destination);
+            oldOpponentWorker = null;
         }
         else {
             // If the worker wants to move in the same cell throw exception
@@ -27,6 +30,7 @@ public class Apollo implements GodPower {
 
                         if (wantedWorker.getPosition().equals(destination)) {
                             // Simple switch of variables
+                            oldOpponentWorker = wantedWorker;
                             Cell exchangePosition = player.getWorker(worker).getPosition();
                             player.getWorker(worker).setPosition(wantedWorker.getPosition());
                             wantedWorker.setPosition(exchangePosition);
@@ -45,6 +49,7 @@ public class Apollo implements GodPower {
 
     @Override
     public void undo(Player player, Cell oldPosition, int worker, Cell building) {
-
+        if(oldOpponentWorker != null) oldOpponentWorker.setPosition(player.getWorker(worker).getPosition());
+        player.getWorker(worker).setPosition(oldPosition);
     }
 }

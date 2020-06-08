@@ -6,6 +6,7 @@ public class FSMView {
     private State state;
     private Divinity divinity;
     private boolean again;
+    private String godName;
 
     /**
      * constructor of the class, it set the initial state to "start"
@@ -23,7 +24,7 @@ public class FSMView {
 
         return switch (state) {
             case placeworker -> "Place your worker on the map: (write 'placeworker [row] [column]')";
-            case start -> "Do you want to use the God power or going with the normal turn? (usepower/normal)";
+            case start -> "Do you want to use the " + godName + " power or going with the normal turn? (usepower/normal)";
             case worker -> "Choose the worker that you want to move and build with: (write 'worker 1' or 'worker 2]')";
             case move -> "Where do you want to move? (write 'move [row] [column]')";
             case build -> "Where do you want to build? (write 'build [row] [column]')";
@@ -201,4 +202,7 @@ public class FSMView {
         this.divinity = divinity;
     }
 
+    public void setGodName(String godName) {
+        this.godName = godName;
+    }
 }

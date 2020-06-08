@@ -26,37 +26,42 @@ public class UndoChecker extends Thread implements Runnable {
     public void run() {
         try {
 
-            System.out.println("thread sleep: " + state + " " + this);
             sleep(5000);
             System.out.println("thread awakened: " + state + " " + this);
 
             if (controller.isUndoing()) {
                 switch (state) {
                     case move -> {
-                        controller.setUndoing(false);
                         player.getWorker(worker).setPosition(oldPosition);
+                        controller.setUndoing(false);
+                        controller.getFsm().prevState();
                         String msg = "Undo: " + game.getCurrentPlayer().getName() + " undid last action";
                         game.sendBoard(new LiteBoard(msg, game.getBoard(), game));
                     }
                     case build -> {
                         building.setLevel(building.getLevel() - 1);
+                        controller.setUndoing(false);
+                        controller.getFsm().prevState();
                         String msg = "Undo: " + game.getCurrentPlayer().getName() + " undid last action";
                         game.sendBoard(new LiteBoard(msg, game.getBoard(), game));
                     }
                     case superMove, superBuild -> {
                         player.getGodPower().undo(player, oldPosition, worker, building);
+                        controller.setUndoing(false);
+                        controller.getFsm().prevState();
                         String msg = "Undo: " + game.getCurrentPlayer().getName() + " undid last action";
                         game.sendBoard(new LiteBoard(msg, game.getBoard(), game));
                     }
-                    /*case  -> {
+                    case undo -> {
                         sleep(3000);
                         // If 8 seconds from the request passed and the undo flag is still true it means
-                        // that the previous thread didn't do anything
+                        // that the previous thread didn't worked
                         if(controller.isUndoing()) {
+                            controller.setUndoing(false);
                             String msg = "Undo: " + game.getCurrentPlayer().getName() + " cannot undo last action";
                             game.sendBoard(new LiteBoard(msg, game.getBoard(), game));
                         }
-                    }*/
+                    }
                 }
             }
         } catch (InterruptedException e) {

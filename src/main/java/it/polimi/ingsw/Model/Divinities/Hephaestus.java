@@ -24,6 +24,6 @@ public class Hephaestus implements GodPower {
 
     @Override
     public void undo(Player player, Cell oldPosition, int worker, Cell building) {
-
+        building.setLevel(building.getLevel()-2);
     }
 }
