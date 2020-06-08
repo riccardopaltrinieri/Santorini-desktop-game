@@ -69,13 +69,13 @@ public class Controller extends Observable implements Observer {
                     worker = Integer.parseInt(parts[4]) - 1;
                     UndoChecker undoThread = new UndoChecker(game, this, fsm.getState());
                     if (fsm.getState() == State.move) {
-                        actionExecuted = game.move(row, column, worker);
                         undoThread.remember(worker);
+                        actionExecuted = game.move(row, column, worker);
                         undoThread.start();
                     }
                     if (fsm.getState() == State.superMove) {
-                        actionExecuted = game.useGodPower(row, column, worker);
                         undoThread.remember(worker, row, column);
+                        actionExecuted = game.useGodPower(row, column, worker);
                         undoThread.start();
                     }
                 }
@@ -86,13 +86,13 @@ public class Controller extends Observable implements Observer {
                     worker = Integer.parseInt(parts[4]) - 1;
                     UndoChecker undoThread = new UndoChecker(game, this, fsm.getState());
                     if (fsm.getState() == State.build) {
-                        actionExecuted = game.build(row, column, worker);
                         undoThread.remember(row, column);
+                        actionExecuted = game.build(row, column, worker);
                         undoThread.start();
                     }
                     if (fsm.getState() == State.superBuild) {
-                        actionExecuted = game.useGodPower(row, column, worker);
                         undoThread.remember(worker, row, column);
+                        actionExecuted = game.useGodPower(row, column, worker);
                         undoThread.start();
                     }
                 }
@@ -100,7 +100,8 @@ public class Controller extends Observable implements Observer {
                 case undo -> {
                     this.undoing = true;
                     actionExecuted = false;
-                    fsm.prevState();
+                    UndoChecker undoThread = new UndoChecker(game, this, State.undo);
+                    undoThread.start();
                     String msg = "Undo: " + game.getCurrentPlayer().getName() + " undoing";
                     game.sendBoard(new LiteBoard(msg, game.getBoard(), game));
                 }
@@ -129,16 +130,17 @@ public class Controller extends Observable implements Observer {
     public void update(String message) {
         parseInput(message);
     }
-
     public void newBoard(LiteBoard board) {
         // Method used only by game to send the board
     }
-
     public boolean isUndoing() {
         return undoing;
     }
-
     public void setUndoing(boolean undoing) {
         this.undoing = undoing;
     }
+    public FiniteStateMachine getFsm() {
+        return fsm;
+    }
+
 }

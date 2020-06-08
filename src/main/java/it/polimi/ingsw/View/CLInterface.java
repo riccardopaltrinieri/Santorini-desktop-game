@@ -60,6 +60,7 @@ public class CLInterface implements UserInterface {
                 case "Your":
                     // Shows to the player his God
                     setDivinity(parts[2]);
+                    fsm.setGodName(parts[2]);
                     System.out.println(incomingMessage);
                     outgoingMessage = "noMessageToSend";
                     break;

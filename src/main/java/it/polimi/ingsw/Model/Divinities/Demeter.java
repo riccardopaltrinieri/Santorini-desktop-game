@@ -33,6 +33,7 @@ public class Demeter implements GodPower {
 
     @Override
     public void undo(Player player, Cell oldPosition, int worker, Cell building) {
-
+        building.setLevel(building.getLevel()-1);
+        firstTime = !firstTime;
     }
 }

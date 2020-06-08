@@ -7,4 +7,5 @@ public enum State {
     build,
     superBuild,
     endTurn,
+    undo,
 }

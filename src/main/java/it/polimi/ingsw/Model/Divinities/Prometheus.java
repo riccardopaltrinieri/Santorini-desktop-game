@@ -18,7 +18,7 @@ public class Prometheus implements GodPower {
         // what it was before
         boolean oldCanMoveUp = player.getGame().getCanMoveUp();
         player.getGame().setCanMoveUp(false);
-        player.canMove();
+        if(!player.canMove()) player.getGame().hasLoser();
         player.getGame().setCanMoveUp(oldCanMoveUp);
 
         // Then proceed with the move checking if the worker's moving up
@@ -36,6 +36,6 @@ public class Prometheus implements GodPower {
 
     @Override
     public void undo(Player player, Cell oldPosition, int worker, Cell building) {
-
+        player.getWorker(worker).setPosition(oldPosition);
     }
 }
