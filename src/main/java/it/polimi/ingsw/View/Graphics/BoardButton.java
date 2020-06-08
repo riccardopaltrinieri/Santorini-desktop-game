@@ -27,7 +27,7 @@ public class BoardButton extends JButton {
         super.paint(g);
         String path;
         if ((getLevel()==1)||(getLevel()==2)||(getLevel()==3)||(getLevel()==4)){
-            path = "images/Level/Level"+getLevel();
+            path = "images/Level/Level"+getLevel()+".png";
             try {
                 levelImage = ImageIO.read(new File(path));
             } catch (IOException e) {

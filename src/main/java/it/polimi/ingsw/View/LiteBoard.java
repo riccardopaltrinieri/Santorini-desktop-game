@@ -132,29 +132,23 @@ public class LiteBoard implements Serializable {
     public void printBoardGUI(MainFrame frame){
         int row;
         int column;
-        if(!frame.isVisible()){
-            return;
-        }
         for (int i=0;i<frame.getActiveBoardButtons().length;i++){
-            for (int j =0; j<numAllWorker;j++){
-                int index = (posWorker[j][0])*5+posWorker[j][1];
-                if (i==index){
-                    frame.getActiveBoardButtons()[index].setHaveWorker(true);
-                    frame.getActiveBoardButtons()[index].setWorkerColor(Color.intToColor(posWorker[j][2]));
-                    frame.getActiveBoardButtons()[index].setWorkerNum(posWorker[j][2]);
-                    break;
-                }
-                else{
-                    frame.getActiveBoardButtons()[i].setHaveWorker(false);
-                    frame.getActiveBoardButtons()[i].setWorkerColorNull();
-                    frame.getActiveBoardButtons()[index].setWorkerNum(0);
-                }
-            }
-            row = (i/5)+1;
-            column = (i%5)+1;
+            frame.getActiveBoardButtons()[i].setHaveWorker(false);
+            frame.getActiveBoardButtons()[i].setWorkerColorNull();
+            frame.getActiveBoardButtons()[i].setWorkerNum(0);
+            row = (i/5);
+            column = (i%5);
             frame.getActiveBoardButtons()[i].setLevel(lv[row][column]);
             frame.getActiveBoardButtons()[i].setEnabled(false);
             frame.getActiveBoardButtons()[i].setSelectableCell(false);
+        }
+        for (int j =0; j<numAllWorker;j++) {
+            int index = (posWorker[j][0]) * 5 + posWorker[j][1];
+            frame.getActiveBoardButtons()[index].setHaveWorker(true);
+            frame.getActiveBoardButtons()[index].setWorkerColor(Color.intToColor(posWorker[j][2]));
+            frame.getActiveBoardButtons()[index].setWorkerNum(j);
+        }
+        for (int i=0; i<25;i++){
             frame.getActiveBoardButtons()[i].repaint();
         }
     }

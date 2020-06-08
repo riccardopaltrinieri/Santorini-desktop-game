@@ -34,7 +34,6 @@ public class GUIHandler implements UserInterface {
             String firstWord = parts[0];
             mainFrame.updateTextArea(incomingMessage);
 
-            board.printBoardGUI(mainFrame);
 
             switch (firstWord){
 
@@ -180,6 +179,9 @@ public class GUIHandler implements UserInterface {
 
 
                 case "Insert":
+
+                    board.printBoardGUI(mainFrame);
+
                     //ask to the player for the next move according to the FSM
 
                     if (fsm.getState() == State.worker) {
@@ -193,7 +195,8 @@ public class GUIHandler implements UserInterface {
                                 mainFrame.getActiveBoardButtons()[i].setEnabled(false);
                             }
                         }
-                        selectedWorkerIndex = (mainFrame.getChosenButtonCoordinate()[0]-1)*5+mainFrame.getChosenButtonCoordinate()[1]-1;
+                        int[] coordinate=mainFrame.getChosenButtonCoordinate();
+                        selectedWorkerIndex = (coordinate[0]-1)*5+coordinate[1]-1;
                         fsm.nextState();
                     }
 
@@ -233,13 +236,14 @@ public class GUIHandler implements UserInterface {
                                 }
                             }
                             int[] coordinate = mainFrame.getChosenButtonCoordinate();
+                            int workerIndex=mainFrame.getActiveBoardButtons()[selectedWorkerIndex].getWorkerNum()%2+1;
+                            outgoingMessage ="move "+coordinate[0]+" "+coordinate[1]+" "+workerIndex;
                             selectedWorkerIndex = (coordinate[0]-1)*5+coordinate[1]-1;
-                            outgoingMessage ="move "+coordinate[0]+" "+coordinate[1]+" "+mainFrame.getActiveBoardButtons()[selectedWorkerIndex].getWorkerNum()%2+1;
                         }
 
                         //Build
                         if(fsm.getState()==State.build){
-                            mainFrame.updateTextArea("select where you want to buld");
+                            mainFrame.updateTextArea("select where you want to build");
                             for (int i=0;i<25;i++){
                                 if(mainFrame.getActiveBoardButtons()[selectedWorkerIndex].canBuildIn(mainFrame.getActiveBoardButtons()[i])){
                                     mainFrame.getActiveBoardButtons()[i].setSelectableCell(true);
@@ -251,7 +255,8 @@ public class GUIHandler implements UserInterface {
                                 }
                             }
                             int [] coordinate = mainFrame.getChosenButtonCoordinate();
-                            outgoingMessage = "move "+coordinate[0]+" "+coordinate[1]+" "+mainFrame.getActiveBoardButtons()[selectedWorkerIndex].getWorkerNum()%2+1;
+                            int workerIndex=mainFrame.getActiveBoardButtons()[selectedWorkerIndex].getWorkerNum()%2+1;
+                            outgoingMessage = "build "+coordinate[0]+" "+coordinate[1]+" "+workerIndex;
                         }
                         fsm.nextState();
                     }
