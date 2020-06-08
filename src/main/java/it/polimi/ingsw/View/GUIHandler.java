@@ -170,6 +170,42 @@ public class GUIHandler implements UserInterface {
 
                     break;
 
+                case "You":
+                    String[] players = {parts[6], parts[7]};
+                    int chosenPlayer = JOptionPane.showOptionDialog(
+                            mainFrame,
+                            "Decide the first Player",
+                            "First Player",
+                            JOptionPane.YES_NO_OPTION,
+                            JOptionPane.QUESTION_MESSAGE,
+                            null,     //no custom icon
+                            players,  //button titles
+                            players[0] //default button
+                    );
+                    if(chosenPlayer == JOptionPane.YES_OPTION){
+                        outgoingMessage=parts[6];
+                    }else if (chosenPlayer == JOptionPane.NO_OPTION){
+                        outgoingMessage=parts[7];
+                    }else {
+                        while(!(outgoingMessage.equals("2")||(outgoingMessage.equals("3")))){
+                            result = JOptionPane.showOptionDialog(
+                                    mainFrame,
+                                    "Decide the number of player",
+                                    "Player's number",
+                                    JOptionPane.YES_NO_OPTION,
+                                    JOptionPane.QUESTION_MESSAGE,
+                                    null,     //no custom icon
+                                    players,  //button titles
+                                    players[0] //default button
+                            );
+                            if(result == JOptionPane.YES_OPTION){
+                                outgoingMessage=parts[6];
+                            }else if (result == JOptionPane.NO_OPTION) {
+                                outgoingMessage = parts[7];
+                            }
+                        }
+                    }
+                    break;
 
                 case "Your":
                     // Shows to the player his God
