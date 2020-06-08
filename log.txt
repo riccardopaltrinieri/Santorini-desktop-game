@@ -6571,3 +6571,187 @@ Insert rich update
 Connection closed from the server side
 Insert rich update
 -> normal
+Welcome! What's your name?
+-> ag
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+Choose the third divinity: 
+-> Minotaur
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> sa
+Wait for other players
+Welcome! What's your name?
+-> adfga
+Wait for other players
+Choose your Divinity between: Apollo Athena Minotaur 
+-> Apollo
+Your Divinity: Apollo
+Choose your Divinity between: Athena Minotaur 
+-> Athena
+Your Divinity: Athena
+Your Divinity: Minotaur
+You choose the first player between: ag adfga sa
+Welcome! What's your name?
+-> aer
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+Choose the third divinity: 
+-> Minotaur
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> gasdagasv
+Wait for other players
+Welcome! What's your name?
+-> hangah
+Wait for other players
+Choose your Divinity between: Apollo Athena Minotaur 
+-> Apollo
+Your Divinity: Apollo
+Choose your Divinity between: Athena Minotaur 
+-> Athena
+Your Divinity: Athena
+Your Divinity: Minotaur
+You choose the first player between: gasdagasv hangah aer
+Welcome! What's your name?
+-> ga
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> ags
+Wait for other players
+Choose your Divinity between: Apollo Athena 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Athena
+You choose the first player between: ga ags
+Welcome! What's your name?
+-> asg
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> ahfd
+Wait for other players
+Choose your Divinity between: Apollo Athena 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Athena
+You choose the first player between: asg ahfd
+Welcome! What's your name?
+-> asdg
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+Choose the third divinity: 
+-> Minotaur
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> Vad
+Wait for other players
+Welcome! What's your name?
+-> AV
+Wait for other players
+Choose your Divinity between: Apollo Athena Minotaur 
+-> Apollo
+Your Divinity: Apollo
+Choose your Divinity between: Athena Minotaur 
+-> Athena
+Your Divinity: Athena
+Your Divinity: Minotaur
+You choose the first player between: AV asdg Vad
+-> AV
+Start AV White Minotaur
+Start AV White Minotaur
+Start asdg Purple Apollo
+Start Vad Brown Athena
+Start asdg Purple Apollo
+Start Vad Brown Athena
+Start AV White Minotaur
+Insert AV update
+Insert AV update
+Start asdg Purple Apollo
+Start Vad Brown Athena
+Insert AV update
+-> placeworker 1 1
+Insert AV placed a worker in 1x1
+Insert AV placed a worker in 1x1
+Insert AV placed a worker in 1x1
+-> placeworker 2 2
+Insert AV placed a worker in 2x2
+Insert AV placed a worker in 2x2
+Insert asdg update
+Insert AV placed a worker in 2x2
+Insert asdg update
+Insert asdg update
+-> placeworker 3 3
+Insert asdg placed a worker in 3x3
+Insert asdg placed a worker in 3x3
+Insert asdg placed a worker in 3x3
+-> placeworker 4 4
+Insert asdg placed a worker in 4x4
+Insert asdg placed a worker in 4x4
+Insert Vad update
+Insert asdg placed a worker in 4x4
+Insert Vad update
+Insert Vad update
+-> placeworker 5 5
+Insert Vad placed a worker in 5x5
+Insert Vad placed a worker in 5x5
+Insert Vad placed a worker in 5x5
+-> placeworker 2 1
+Insert Vad placed a worker in 2x1
+Insert Vad placed a worker in 2x1
+Insert Vad placed a worker in 2x1
+Insert AV update
+Insert AV update
+-> usepower
+Insert AV update
+Insert AV wants to use the God Power
+Insert AV wants to use the God Power
+Insert AV wants to use the God Power
+-> move 3 2 1
+Error: AV can't use the God Power
+Error: AV can't use the God Power
+Error: AV can't use the God Power
+-> move 4 5 1
+Error: AV can't use the God Power
+Error: AV can't use the God Power
+Error: AV can't use the God Power
+-> move 3 2 1
+Error: AV can't use the God Power
+Error: AV can't use the God Power
+Error: AV can't use the God Power
+-> move 1 2 1
+Insert AV used the God Power
+Insert AV used the God Power
