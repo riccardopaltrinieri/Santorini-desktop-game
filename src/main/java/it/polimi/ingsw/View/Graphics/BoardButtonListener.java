@@ -21,7 +21,7 @@ public class BoardButtonListener implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-        if ((fsm.getState()== State.placeworker)||(fsm.getState()==State.worker)||(fsm.getState()==State.move)){
+        if ((fsm.getState()== State.placeworker)||(fsm.getState()==State.worker)||(fsm.getState()==State.move)||(fsm.getState()==State.build)){
             frame.setChosenButton((BoardButton)e.getSource());
             synchronized (frame) {
                 frame.notifyAll();

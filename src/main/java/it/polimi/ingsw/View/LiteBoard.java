@@ -129,6 +129,8 @@ public class LiteBoard implements Serializable {
     }
 
     public void printBoardGUI(MainFrame frame){
+        int row;
+        int column;
         if(!frame.isVisible()){
             return;
         }
@@ -147,6 +149,9 @@ public class LiteBoard implements Serializable {
                     frame.getActiveBoardButtons()[index].setWorkerNum(0);
                 }
             }
+            row = (i/5)+1;
+            column = (i%5)+1;
+            frame.getActiveBoardButtons()[i].setLevel(lv[row][column]);
             frame.getActiveBoardButtons()[i].setEnabled(false);
             frame.getActiveBoardButtons()[i].setSelectableCell(false);
             frame.getActiveBoardButtons()[i].repaint();

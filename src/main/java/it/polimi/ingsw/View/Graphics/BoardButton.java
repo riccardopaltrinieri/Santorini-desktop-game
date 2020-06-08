@@ -15,10 +15,8 @@ public class BoardButton extends JButton {
     private int column;
     private BufferedImage worker = null;
     private BufferedImage selectedFrame = null;
-    private BufferedImage firstLevel = null;
-    private BufferedImage secondLevel = null;
-    private BufferedImage thirdLevel = null;
-    private BufferedImage dome = null;
+    private BufferedImage levelImage = null;
+
 
     private int level=0;
     private boolean haveWorker=false;
@@ -29,6 +27,15 @@ public class BoardButton extends JButton {
     public void paint(Graphics g){
         super.paint(g);
         String path;
+        if ((getLevel()==1)||(getLevel()==2)||(getLevel()==3)||(getLevel()==4)){
+            path = "images/Level/Level"+getLevel();
+            try {
+                levelImage = ImageIO.read(new File(path));
+            } catch (IOException e) {
+                System.out.println(e.getMessage());
+            }
+            g.drawImage(levelImage, 0, 0, null);
+        }
         if (haveWorker) {
             if (workerColor == Color.White) {
                 path = "images/Workers/whiteWorker.png";
@@ -119,6 +126,17 @@ public class BoardButton extends JButton {
     public void setWorkerColorNull(){
         workerColor=null;
     }
+
+    public boolean canBuildIn(BoardButton destination){
+        return ((destination.getRow() >= row - 1) &&
+                (destination.getRow() <= row + 1) &&
+                (destination.getColumn() >= column - 1) &&
+                (destination.getColumn() <= column + 1) &&
+                (!destination.getHaveWorker()) &&
+                (destination.getLevel() < 4) &&
+                (!this.equals(destination)));
+    }
+
     public boolean canMoveTo(BoardButton destination) {
         // the destination must be inside the board
         return
