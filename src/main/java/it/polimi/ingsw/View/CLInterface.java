@@ -143,6 +143,12 @@ public class CLInterface implements UserInterface {
                     outgoingMessage = "noMessageToSend";
                     break;
 
+                case "You":
+                    System.out.println(incomingMessage);
+                    outgoingMessage = stdin.nextLine();
+                    break;
+
+
                 case "Error:":
                     // Something went wrong with the last action
                     if(parts[1].equals(name)) {
