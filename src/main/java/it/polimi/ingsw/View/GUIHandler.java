@@ -15,12 +15,14 @@ public class GUIHandler implements UserInterface {
     ChooseBetweenFrame chooseBetweenFrame = new ChooseBetweenFrame();
     private final FSMView fsm = new FSMView();
 
-    private String name;
     private Color color;
+    private String name;
+    private String lastMessage;
     private String firstGodToRemove;
     private String secondGodToRemove;
     private int numPlayer;
     private int selectedWorkerIndex;
+
 
     private BoardButtonListener boardListener = new BoardButtonListener(fsm,color,mainFrame);
 
@@ -36,6 +38,11 @@ public class GUIHandler implements UserInterface {
 
 
             switch (firstWord){
+
+                case "Error:":
+                    //Error
+                    JOptionPane.showMessageDialog(mainFrame,"something gone wrong, please try again");
+                    incomingMessage=lastMessage;
 
                 case "Start" :
                 //take the other's player info
@@ -304,6 +311,7 @@ public class GUIHandler implements UserInterface {
                     }
                     break;
             }
+            lastMessage = incomingMessage;
             return outgoingMessage;
         }
         catch (IllegalArgumentException e){

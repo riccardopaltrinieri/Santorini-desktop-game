@@ -6574,3 +6574,70 @@ Insert lollo placed a worker in 3x3
 Insert lollo placed a worker in 2x3
 Insert lollo placed a worker in 2x3
 Insert fillo update
+Welcome! What's your name?
+-> sdasdas
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> fillo
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> 2342
+Wait for other players
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+All the divinities have been chosen
+Now the other players will choose between them..
+Choose your Divinity between: Apollo Athena 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Athena
+You choose the first player between: fillo 2342
+-> fillo
+Start fillo White Athena
+Start 2342 Purple Apollo
+Start fillo White Athena
+Start 2342 Purple Apollo
+Insert fillo update
+Insert fillo update
+-> placeworker 2 3
+Insert fillo placed a worker in 2x3
+Insert fillo placed a worker in 2x3
+-> placeworker 1 1
+Insert fillo placed a worker in 1x1
+Insert 2342 update
+Insert fillo placed a worker in 1x1
+Insert 2342 update
+-> placeworker 1 1
+Error: 2342 can't place here
+Error: 2342 can't place here
+-> placeworker 4 4
+Insert 2342 placed a worker in 4x4
+Insert 2342 placed a worker in 4x4
+-> placeworker 2 2 
+Insert 2342 placed a worker in 2x2
+Insert 2342 placed a worker in 2x2
+Insert fillo update
+-> usepower
+Insert fillo update
+Insert fillo wants to use the God Power
+Insert fillo wants to use the God Power
+-> move 3 4 1
+Insert fillo used the God Power
+Insert fillo used the God Power
+-> build 3 3 1
+Insert fillo built in 3 3
+Insert fillo built in 3 3
+Insert 2342 update
+Insert 2342 update
+-> usepower
+Insert 2342 wants to use the God Power
+Insert 2342 wants to use the God Power
+-> move 3 4 1
+Insert 2342 used the God Power
+Connection closed from the server side
