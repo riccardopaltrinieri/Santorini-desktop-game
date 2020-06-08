@@ -26,15 +26,10 @@ public class Cell implements Serializable {
         }
     }
 
-
-    @Override
-    public boolean equals(Object comparationCell) {
-        if(comparationCell instanceof Cell) {
-            return (this.getNumColumn() == ((Cell) comparationCell).getNumColumn()) && (this.getNumRow() == ((Cell) comparationCell).getNumRow()) && (this.getLevel() == ((Cell) comparationCell).getLevel());
-        }
-        else{
-            return false;
-        }
+    public boolean equals(Cell comparativeCell) {
+            return getNumColumn() == comparativeCell.getNumColumn() &&
+                   getNumRow() == comparativeCell.getNumRow() &&
+                   getLevel() == comparativeCell.getLevel();
     }
 
     //  ********** GETTER AND SETTER ******************

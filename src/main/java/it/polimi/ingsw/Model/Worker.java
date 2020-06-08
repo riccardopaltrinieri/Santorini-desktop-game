@@ -37,9 +37,6 @@ public class Worker {
                 throw new AthenaException();
             }
             else {
-                if ((owner.getGodPower() instanceof Pan)&&(position.getLevel()>destination.getLevel()+1)){
-                    owner.getGame().hasWinner();
-                }
                 position.setEmpty(true);
                 position = destination;
                 position.setEmpty(false);
@@ -75,19 +72,15 @@ public class Worker {
         return  (destination.getNumRow() >= 0) && (destination.getNumRow() <= 4) &&
                 (destination.getNumColumn() >= 0) && (destination.getNumColumn() <= 4) &&
 
-                // one of the 8 cell adiacent the worker
+                // one of the 8 cell near the worker
                 (destination.getNumRow() >= position.getNumRow() - 1) &&
                 (destination.getNumRow() <= position.getNumRow() + 1) &&
                 (destination.getNumColumn() >= position.getNumColumn() - 1) &&
                 (destination.getNumColumn() <= position.getNumColumn() + 1) &&
                 // should not be the same cell as worker's position
                 (destination.getIsEmpty()&& (!position.equals(destination))) &&
-                (
-                    // can be maximum one level higher
-                    ((destination.getLevel() <= position.getLevel() + 1) && owner.getGame().getCanMoveUp()) ||
-                    // or zero level higher if athena's power is active
-                    ((destination.getLevel() <= position.getLevel()) && !owner.getGame().getCanMoveUp())
-                ) &&
+                // should be maximum 1 level higher and at level 3
+                (destination.getLevel() <= position.getLevel() + 1) &&
                 (destination.getLevel() < 4);
     }
 

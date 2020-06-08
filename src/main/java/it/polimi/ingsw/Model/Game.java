@@ -2,6 +2,7 @@ package it.polimi.ingsw.Model;
 
 import it.polimi.ingsw.AthenaException;
 import it.polimi.ingsw.View.LiteBoard;
+import it.polimi.ingsw.utils.Messages;
 import it.polimi.ingsw.utils.Observable;
 
 import java.util.ArrayList;
@@ -10,7 +11,7 @@ public class Game extends Observable {
 
     private int numPlayer;
     private int iterator;
-    private Board board;
+    private final Board board;
     private final ArrayList<Player> players;
     private Boolean canMoveUp;
 
@@ -106,7 +107,7 @@ public class Game extends Observable {
 
         } catch (AthenaException e) {
             String message = getCurrentPlayer().getName() + Messages.getMessage(Messages.ERROR_ATHENA);
-            sendBoard(new LiteBoard("Error:" + message, board, this));
+            sendBoard(new LiteBoard("Error: " + message, board, this));
         } catch (IllegalArgumentException e) {
             String message = getCurrentPlayer().getName() + Messages.getMessage(Messages.ERROR_POWER);
             sendBoard(new LiteBoard("Error: " + message, board, this));
@@ -121,9 +122,7 @@ public class Game extends Observable {
     }
 
 
-//  ************** GETTER AND SETTER ***********************************
-
-    // ************ SPECIAL GETTERS **********
+//  *************** SPECIAL GETTERS **********
     public int getNumWorkers() {
         int numWorkers = 0;
         for (Player player : players) {
@@ -135,6 +134,9 @@ public class Game extends Observable {
         return players.get(iterator);
     }
 
+//  ************** GETTER AND SETTER ***********************************
+
+
     public ArrayList<Player> getPlayers() {
         return players;
     }
@@ -143,9 +145,6 @@ public class Game extends Observable {
     }
     public Board getBoard() {
         return board;
-    }
-    public void setBoard(Board board) {
-        this.board = board;
     }
     public void setCanMoveUp(Boolean canMoveUp) {
         this.canMoveUp = canMoveUp;

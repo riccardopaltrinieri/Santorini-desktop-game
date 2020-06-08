@@ -2,6 +2,7 @@ package it.polimi.ingsw.View;
 
 import it.polimi.ingsw.Model.*;
 
+import it.polimi.ingsw.utils.Color;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -12,7 +13,7 @@ public class LiteBoardTest {
 
     Board tabella = new Board();
     Game game = new Game();
-    Player player1 = new Player("roni",Color.Brown, game);
+    Player player1 = new Player("roni", Color.Brown, game);
     Player player2 = new Player("rsani",Color.Purple, game);
 
     @Test

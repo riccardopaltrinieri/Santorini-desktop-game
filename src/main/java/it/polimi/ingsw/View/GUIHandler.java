@@ -1,6 +1,6 @@
 package it.polimi.ingsw.View;
 
-import it.polimi.ingsw.Model.Color;
+import it.polimi.ingsw.utils.Color;
 import it.polimi.ingsw.View.Graphics.BoardButtonListener;
 import it.polimi.ingsw.View.Graphics.ChooseBetweenFrame;
 import it.polimi.ingsw.View.Graphics.ChooseFrame;
@@ -43,8 +43,8 @@ public class GUIHandler implements UserInterface {
                     if (!parts[1].equals(name)) {
                         mainFrame.updatePlayerInfoTextArea("Your " + parts[2] + " opponent is " + parts[1] + "\nHe will use " + parts[3]);
                     }
-                    else if (parts[1].equals(name)){
-                        color = Color.stroingToColor(parts[2]);
+                    else {
+                        color = Color.valueOf(parts[2]);
                     }
                     outgoingMessage = "noMessageToSend";
                     break;

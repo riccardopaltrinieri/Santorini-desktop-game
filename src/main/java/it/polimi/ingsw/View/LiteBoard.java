@@ -2,6 +2,7 @@ package it.polimi.ingsw.View;
 
 import it.polimi.ingsw.Model.*;
 import it.polimi.ingsw.View.Graphics.MainFrame;
+import it.polimi.ingsw.utils.Color;
 
 import java.io.Serializable;
 

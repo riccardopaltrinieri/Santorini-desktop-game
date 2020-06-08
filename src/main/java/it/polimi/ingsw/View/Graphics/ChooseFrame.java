@@ -1,6 +1,6 @@
 package it.polimi.ingsw.View.Graphics;
 
-import it.polimi.ingsw.Model.Divinity;
+import it.polimi.ingsw.utils.Divinity;
 
 import javax.swing.*;
 import java.awt.*;

@@ -1,45 +1,41 @@
 package it.polimi.ingsw.Model.Divinities;
 
 import it.polimi.ingsw.AthenaException;
-import it.polimi.ingsw.Model.Cell;
-import it.polimi.ingsw.Model.Divinity;
-import it.polimi.ingsw.Model.GodPower;
-import it.polimi.ingsw.Model.Player;
-
-import java.util.ArrayList;
+import it.polimi.ingsw.Model.*;
+import it.polimi.ingsw.utils.Divinity;
 
 public class Minotaur implements GodPower {
     private final Divinity divinity=Divinity.Minotaur;
 
     @Override
     public void execute(Player player, Cell destination, int worker) throws AthenaException {
+        Worker minotaurWorker = player.getWorker(worker);
+
+        // If the destination is empty just do a normal move
         if (destination.getIsEmpty()){
-            throw new IllegalArgumentException();
+            minotaurWorker.move(destination);
         }
         else {
+            // If the worker wants to move in the same cell throw exception
+            if(destination == player.getWorker(worker).getPosition()) throw new IllegalArgumentException();
+
             destination.setEmpty(true);
             if (player.getWorker(worker).canMoveTo(destination)) {
-                ArrayList<Player> players = player.getGame().getPlayers();
-                int wantedPlayer = 0;
-                int wantedWorker = 0;
-                while ((wantedPlayer < players.size()) &&
-                        !(players.get(wantedPlayer).getWorker(wantedWorker).getPosition().equals(destination))) {
-                    if (wantedWorker == 0) {
-                        wantedWorker = 1;
-                    } else {
-                        wantedPlayer++;
-                        wantedWorker = 0;
-                    }
-                    if (wantedPlayer == players.size()) {
-                        throw new IllegalArgumentException();
+
+                // Iteration for all the players/worker to find the one to push
+                for (Player wantedPlayer : player.getGame().getPlayers()) {
+                    for (Worker wantedWorker : wantedPlayer.getWorkers()) {
+
+                        if (wantedWorker.getPosition().equals(destination)) {
+                            int deltaRow = wantedWorker.getPosition().getNumRow() - minotaurWorker.getPosition().getNumRow();
+                            int deltaColumn = wantedWorker.getPosition().getNumColumn() - minotaurWorker.getPosition().getNumColumn();
+                            Cell newPosition = wantedWorker.getPosition();
+                            Cell pushedDestination = player.getGame().getBoard().getCell(newPosition.getNumRow() + deltaRow, newPosition.getNumColumn() + deltaColumn);
+                            wantedWorker.move(pushedDestination);
+                            player.getWorker(worker).move(newPosition);
+                        }
                     }
                 }
-                int deltaRow = players.get(wantedPlayer).getWorker(wantedWorker).getPosition().getNumRow()-player.getWorker(worker).getPosition().getNumRow();
-                int deltaColumn = players.get(wantedPlayer).getWorker(wantedWorker).getPosition().getNumColumn()-player.getWorker(worker).getPosition().getNumColumn();
-                Cell fooPosition = players.get(wantedPlayer).getWorker(wantedWorker).getPosition();
-                Cell fooDestination = player.getGame().getBoard().getCell(fooPosition.getNumRow()+deltaRow,fooPosition.getNumColumn()+deltaColumn);
-                players.get(wantedPlayer).getWorker(wantedWorker).move(fooDestination);
-                player.getWorker(worker).move(fooPosition);
             }
             destination.setEmpty(false);
         }
@@ -48,5 +44,10 @@ public class Minotaur implements GodPower {
     @Override
     public Divinity getDivinity() {
         return this.divinity;
+    }
+
+    @Override
+    public void undo(Player player, Cell oldPosition, int worker, Cell building) {
+
     }
 }

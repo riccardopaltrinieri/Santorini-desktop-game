@@ -1,15 +1,16 @@
 package it.polimi.ingsw.Model;
 
 import it.polimi.ingsw.Model.Divinities.*;
+import it.polimi.ingsw.utils.Color;
 
 import java.util.ArrayList;
 
 public class Player {
 
-    private String name;
-    private Color color;
-    private ArrayList<Worker> workers;
-    private Game game;
+    private final String name;
+    private final Color color;
+    private final ArrayList<Worker> workers;
+    private final Game game;
     private GodPower godPower;
 
     /**
@@ -85,7 +86,6 @@ public class Player {
             case ("minotaur") -> this.godPower = new Minotaur();
             case ("pan") -> this.godPower = new Pan();
             case ("prometheus") -> this.godPower = new Prometheus();
-            default -> throw new IllegalArgumentException();
         }
     }
     public Color getColor() { return color; }

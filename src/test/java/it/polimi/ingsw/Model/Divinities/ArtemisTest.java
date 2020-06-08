@@ -2,17 +2,18 @@ package it.polimi.ingsw.Model.Divinities;
 
 import it.polimi.ingsw.AthenaException;
 import it.polimi.ingsw.Model.*;
+import it.polimi.ingsw.utils.Color;
+import it.polimi.ingsw.utils.Divinity;
 import org.junit.Test;
 
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.*;
 
 public class ArtemisTest {
     private GodPower test = new Artemis();
 
     @Test
     public void testCostruttore(){
-        assertTrue(test.getDivinity()== Divinity.Artemis);
+        assertSame(test.getDivinity(), Divinity.Artemis);
     }
 
     @Test

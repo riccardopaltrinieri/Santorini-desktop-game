@@ -1,9 +1,12 @@
 package it.polimi.ingsw.Model;
 
 import it.polimi.ingsw.AthenaException;
+import it.polimi.ingsw.utils.Divinity;
 
 public interface GodPower {
 
-    public void execute(Player player,Cell destination,int worker) throws AthenaException;
-    public Divinity getDivinity();
+    void execute(Player player, Cell destination, int worker) throws AthenaException;
+    Divinity getDivinity();
+
+    void undo(Player player, Cell oldPosition, int worker, Cell building);
 }

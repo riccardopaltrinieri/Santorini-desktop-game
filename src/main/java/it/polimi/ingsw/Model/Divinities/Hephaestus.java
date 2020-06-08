@@ -1,6 +1,7 @@
 package it.polimi.ingsw.Model.Divinities;
 
 import it.polimi.ingsw.Model.*;
+import it.polimi.ingsw.utils.Divinity;
 
 public class Hephaestus implements GodPower {
     private final Divinity divinity=Divinity.Hephaestus;
@@ -19,5 +20,10 @@ public class Hephaestus implements GodPower {
     @Override
     public Divinity getDivinity() {
         return this.divinity;
+    }
+
+    @Override
+    public void undo(Player player, Cell oldPosition, int worker, Cell building) {
+
     }
 }

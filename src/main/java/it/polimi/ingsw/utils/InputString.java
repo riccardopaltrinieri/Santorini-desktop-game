@@ -5,8 +5,7 @@ public enum InputString {
     move,
     worker,
     placeworker,
+    normal,
     usepower,
-    supermove,
-    superbuild,
-    normal
+    undo
 }

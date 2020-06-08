@@ -1,6 +1,6 @@
 package it.polimi.ingsw.View;
 
-import it.polimi.ingsw.Model.Divinity;
+import it.polimi.ingsw.utils.Divinity;
 
 public class FSMView {
     private State state;
@@ -37,11 +37,11 @@ public class FSMView {
     public String getStateStringGUI() {
 
         return switch (state) {
-            case placeworker -> "Place your worker on the map: select a free cell on the board')";
+            case placeworker -> "Place your worker on the map: (select a free cell on the board')";
             case start -> "Do you want to use the God power or going with the normal turn?";
-            case worker -> "Choose the worker that you want to move and build with: select one of your worker";
-            case move -> "Where do you want to move? select a free cell reachable from your worker";
-            case build -> "Where do you want to build? select a cell where your can build";
+            case worker -> "Choose the worker that you want to move and build with: (select one of your worker)";
+            case move -> "Where do you want to move? (select a free cell reachable from your worker)";
+            case build -> "Where do you want to build? (select a cell where your can build)";
             case endTurn -> "Turn Ended..";
         };
     }
@@ -105,17 +105,10 @@ public class FSMView {
                     }
                 }
                 break;
-
-            default:
-                throw new IllegalStateException("Unexpected value: " + this.divinity);
         }
     }
 
     protected void prevState() {
-        if (state == State.start || state == State.placeworker) {
-            resetTwoTimesState(State.placeworker);
-            return;
-        }
 
         switch (this.divinity) {
 
@@ -134,16 +127,16 @@ public class FSMView {
 
             case Artemis:
                 if (state == State.worker) setState(State.start);
-                else if (state == State.move) resetTwoTimesState(State.worker);
-                else if (state == State.build) resetTwoTimesState(State.move);
+                else if (state == State.move) resetTwoTimesState(State.worker, false);
+                else if (state == State.build) resetTwoTimesState(State.move, true);
                 else if (state == State.endTurn) setState(State.build);
                 break;
 
             case Demeter:
                 if (state == State.worker) setState(State.start);
                 else if (state == State.move) setState(State.worker);
-                else if (state == State.build) resetTwoTimesState(State.move);
-                else if (state == State.endTurn) resetTwoTimesState(State.build);
+                else if (state == State.build) resetTwoTimesState(State.move, false);
+                else if (state == State.endTurn) resetTwoTimesState(State.build, true);
                 break;
 
             case Prometheus:
@@ -155,16 +148,24 @@ public class FSMView {
                         state = State.move;
                     }
                 }
-                else if (state == State.move) setState(State.build);
+                else if (state == State.move) {
+                    setState(State.build);
+                    again = false;
+                }
                 else if (state == State.endTurn) {
                     again = true;
                     setState(State.build);
                 }
                 break;
-
-            default:
-                throw new IllegalStateException("Unexpected value: " + this.divinity);
         }
+    }
+
+    protected void prevStateToPlaceWorker() {
+        if(state == State.endTurn) {
+            state = State.placeworker;
+            again = true;
+        } else
+            again = false;
     }
 
     private void setStateAfterTwoTimes(State newState) {
@@ -176,12 +177,13 @@ public class FSMView {
         }
     }
 
-    private void resetTwoTimesState(State oldState) {
-        if (again) {
-            again = false;
-        } else {
+    protected void resetTwoTimesState(State oldState, boolean toSecondTime) {
+        if(toSecondTime) {
             again = true;
             state = oldState;
+        } else {
+            if(again) again = false;
+            else state = oldState;
         }
     }
 
@@ -198,6 +200,5 @@ public class FSMView {
     protected void setPath(Divinity divinity) {
         this.divinity = divinity;
     }
-
 
 }

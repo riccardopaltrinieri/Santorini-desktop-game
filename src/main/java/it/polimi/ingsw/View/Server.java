@@ -11,7 +11,7 @@ import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import static it.polimi.ingsw.Model.Color.*;
+import static it.polimi.ingsw.utils.Color.*;
 
 public class Server {
     private static final int PORT = 12345;

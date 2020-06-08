@@ -1,8 +1,7 @@
 package it.polimi.ingsw.View;
 
-import it.polimi.ingsw.Model.Divinity;
+import it.polimi.ingsw.utils.Divinity;
 import it.polimi.ingsw.utils.InputString;
-import it.polimi.ingsw.utils.NamesDivinities;
 
 import java.util.NoSuchElementException;
 import java.util.Scanner;
@@ -69,29 +68,38 @@ public class CLInterface implements UserInterface {
                     // Ask the player action according to the fsm
                     // The fsm can't be fooled because there's one also on the server
 
-
-                    if (fsm.getState() == State.worker) {
-                        // ask to the player which worker he wants to use but don't send anything
-                        System.out.println(fsm.getStateStringCLI());
-                        checkAction(stdin);
-                        fsm.nextState();
-                    }
-
                     if(parts[1].equals(name)) {
+
                         if (fsm.getState() != State.start && fsm.getState() != State.worker && fsm.getState() != State.move) board.printBoardCLI();
-                        System.out.println(fsm.getStateStringCLI());
-                        if (fsm.getState() != State.endTurn) {
-                            outgoingMessage = checkAction(stdin);
+
+                        if (fsm.getState() == State.worker) {
+                            // ask to the player which worker he wants to use but don't send anything
+                            System.out.println(fsm.getStateStringCLI());
+                            checkAction(stdin);
+                            fsm.nextState();
                         }
-                        else {
+
+                        if (fsm.getState() != State.endTurn) {
+
+                            if (fsm.getState() == State.start && (divinity == Divinity.Athena || divinity == Divinity.Pan)) {
+                                // The Athena's and Pan's power are passive and there isn't the need to ask
+                                outgoingMessage = "usepower";
+                            } else {
+                                System.out.println(fsm.getStateStringCLI());
+                                outgoingMessage = checkAction(stdin);
+                            }
+
+                        } else {
                             outgoingMessage = "noMessageToSend";
                         }
-                        fsm.nextState();
+
+                        if(!outgoingMessage.equals("undo")) fsm.nextState();
+
                     } else {
                         if(parts[2].equals("update")) System.out.println(parts[1] +"'s turn: ");
                         else {
+                            if(!parts[2].equals("wants") && !parts[2].equals("doesn't")) board.printBoardCLI();
                             System.out.println(incomingMessage.substring(7));
-                            board.printBoardCLI();
                         }
                         outgoingMessage = "noMessageToSend";
                     }
@@ -141,10 +149,39 @@ public class CLInterface implements UserInterface {
                         System.out.println("Ops, something went wrong");
                         System.out.println(incomingMessage);
                         System.out.println("Please, try again:");
-                        if (!parts[3].equals("place")) fsm.prevState();
+                        if (parts[3].equals("place")) fsm.prevStateToPlaceWorker();
+                        else fsm.prevState();
                         outgoingMessage = checkAction(stdin);
+                        fsm.nextState();
                     } else
                         outgoingMessage = "noMessageToSend";
+                    break;
+
+                case "Undo:":
+
+                    if(parts[1].equals(name)) {
+                        switch (parts[2]) {
+                            case "undid" -> {
+                                fsm.prevState();
+                                board.printBoardCLI();
+                                System.out.println(fsm.getStateStringCLI());
+                                outgoingMessage = checkAction(stdin);
+                                fsm.nextState();
+                            }
+                            case "undoing" -> {
+                                System.out.println("Processing undo request, please wait..");
+                                outgoingMessage = "noMessageToSend";
+                            }
+                            case "cannot" -> {
+                                System.out.println("Your undo request has been rejected");
+                                System.out.println(fsm.getStateStringCLI());
+                                outgoingMessage = checkAction(stdin);
+                                fsm.nextState();
+                            }
+                        }
+                    } else {
+                        outgoingMessage = "noMessageToSend";
+                    }
                     break;
 
                 default:
@@ -205,14 +242,14 @@ public class CLInterface implements UserInterface {
                         if (!(worker == 1) && !(worker == 2)) throw new IllegalArgumentException();
                         setWorker(worker);
                     }
-                    case supermove, move -> {
+                    case move -> {
                         if (fsm.getState() != State.move) throw new IllegalArgumentException();
                         row = Integer.parseInt(partsInput[1]);
                         col = Integer.parseInt(partsInput[2]);
                         if (row < 1 || row > 5 || col < 1 || col > 5) throw new IllegalArgumentException();
                         inputLine += " " + getWorker();
                     }
-                    case superbuild, build -> {
+                    case build -> {
                         if (fsm.getState() != State.build) throw new IllegalArgumentException();
                         row = Integer.parseInt(partsInput[1]);
                         col = Integer.parseInt(partsInput[2]);
@@ -233,6 +270,11 @@ public class CLInterface implements UserInterface {
                         fsm.setPath(divinity);
                         if (fsm.getState() != State.start) throw new IllegalArgumentException();
                         if (partsInput.length > 1) throw new IllegalArgumentException();
+                    }
+                    case undo -> {
+                        //TODO State undo check
+                        if(fsm.getState() == State.placeworker || fsm.getState() == State.worker)
+                            throw new IllegalArgumentException();
                     }
                     default -> throw new IllegalArgumentException();
                 }
@@ -259,7 +301,7 @@ public class CLInterface implements UserInterface {
 
             while (true) {
                 try {
-                    NamesDivinities.valueOf(inputLine);
+                    Divinity.valueOf(inputLine);
                     return inputLine;
                 } catch (IllegalArgumentException e) {
                     System.out.println("Wrong input: reinsert your Divinity:");

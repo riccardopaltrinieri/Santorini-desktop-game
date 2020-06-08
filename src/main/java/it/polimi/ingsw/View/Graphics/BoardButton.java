@@ -7,8 +7,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-import it.polimi.ingsw.Model.Cell;
-import it.polimi.ingsw.Model.Color;
+import it.polimi.ingsw.utils.Color;
 
 public class BoardButton extends JButton {
     private int row;

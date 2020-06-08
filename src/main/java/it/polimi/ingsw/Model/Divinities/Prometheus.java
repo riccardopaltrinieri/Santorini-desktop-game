@@ -2,7 +2,8 @@ package it.polimi.ingsw.Model.Divinities;
 
 import it.polimi.ingsw.AthenaException;
 import it.polimi.ingsw.Model.Cell;
-import it.polimi.ingsw.Model.Divinity;
+import it.polimi.ingsw.Model.Worker;
+import it.polimi.ingsw.utils.Divinity;
 import it.polimi.ingsw.Model.GodPower;
 import it.polimi.ingsw.Model.Player;
 
@@ -11,17 +12,30 @@ public class Prometheus implements GodPower {
 
     @Override
     public void execute(Player player, Cell destination, int worker) throws AthenaException {
+
+        // The worker cannot move up if he used the power and he could have trapped himself:
+        // A canMove check is needed and the flag canMoveUp is set on false remembering
+        // what it was before
+        boolean oldCanMoveUp = player.getGame().getCanMoveUp();
+        player.getGame().setCanMoveUp(false);
         player.canMove();
-        if (!(destination.getLevel()>player.getWorker(worker).getPosition().getLevel())){
+        player.getGame().setCanMoveUp(oldCanMoveUp);
+
+        // Then proceed with the move checking if the worker's moving up
+        Worker prometheusWorker = player.getWorker(worker);
+        if (destination.getLevel() <= prometheusWorker.getPosition().getLevel() )
             player.getWorker(worker).move(destination);
-        }
-        else{
+        else
             throw new IllegalArgumentException();
-        }
     }
 
     @Override
     public Divinity getDivinity() {
         return this.divinity;
+    }
+
+    @Override
+    public void undo(Player player, Cell oldPosition, int worker, Cell building) {
+
     }
 }

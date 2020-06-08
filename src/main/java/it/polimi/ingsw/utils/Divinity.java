@@ -1,6 +1,6 @@
 package it.polimi.ingsw.utils;
 
-public enum NamesDivinities {
+public enum Divinity {
     Apollo,
     Artemis,
     Athena,
@@ -9,5 +9,6 @@ public enum NamesDivinities {
     Hephaestus,
     Minotaur,
     Pan,
-    Prometheus
+    Prometheus,
+    Default
 }
