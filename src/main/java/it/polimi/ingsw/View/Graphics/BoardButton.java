@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.IOException;
 
 import it.polimi.ingsw.utils.Color;
+import it.polimi.ingsw.utils.Divinity;
 
 public class BoardButton extends JButton {
     private int row;
@@ -50,7 +51,7 @@ public class BoardButton extends JButton {
             }
             g.drawImage(worker, 10, 10, null);
         }
-        else if (selectableCell){
+        if (selectableCell){
             path ="images/frameMove.png";
             try {
                 selectedFrame = ImageIO.read(new File(path));
@@ -127,28 +128,32 @@ public class BoardButton extends JButton {
     }
 
     public boolean canBuildIn(BoardButton destination){
-        return ((destination.getRow() >= row - 1) &&
-                (destination.getRow() <= row + 1) &&
-                (destination.getColumn() >= column - 1) &&
-                (destination.getColumn() <= column + 1) &&
-                (!destination.getHaveWorker()) &&
-                (destination.getLevel() < 4) &&
-                (!this.equals(destination)));
+        return (destination.getRow() >= row - 1) &&
+            (destination.getRow() <= row + 1) &&
+            (destination.getColumn() >= column - 1) &&
+            (destination.getColumn() <= column + 1) &&
+            (!destination.getHaveWorker()) &&
+            (destination.getLevel() < 4) &&
+            (!this.equals(destination));
     }
 
-    public boolean canMoveTo(BoardButton destination) {
-        // the destination must be inside the board
-        return
-                // one of the 8 cell adiacent the worker
-                (destination.getRow() >= row - 1) &&
-                (destination.getRow() <= row + 1) &&
-                (destination.getColumn() >= column - 1) &&
-                (destination.getColumn() <= column + 1) &&
+    public boolean canMoveTo(BoardButton destination, Divinity power) {
+        return  // Should be one of the 8 cell near the worker
+                destination.getRow() >= row - 1 &&
+                destination.getRow() <= row + 1 &&
+                destination.getColumn() >= column - 1 &&
+                destination.getColumn() <= column + 1 &&
+                // can be maximum one level higher
+                // unless the divinity is prometheus
+                ((power != Divinity.Prometheus && destination.getLevel() <= level + 1) ||
+                (power == Divinity.Prometheus && destination.getLevel() <= level)) &&
+                // should not be a dome
+                destination.getLevel() < 4 &&
                 // should not be the same cell as worker's position
-                (!destination.getHaveWorker()&& (!this.equals(destination))) &&
-                        // can be maximum one level higher
-                        (destination.getLevel() <= level + 1)
-                 &&
-                (destination.getLevel() < 4);
+                !this.equals(destination) &&
+                // should not be another worker's cell
+                // unless the divinity is Apollo or Minotaur
+                (!destination.getHaveWorker() ||
+                power == Divinity.Apollo || power == Divinity.Minotaur);
     }
 }

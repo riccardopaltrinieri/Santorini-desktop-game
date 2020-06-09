@@ -24,10 +24,8 @@ public class Server {
     private final Map<String, Connection> waitingConnection = new HashMap<>();
     private final Map<Connection, Connection> playingConnection = new HashMap<>();
     private final Map<Connection, Connection> playingConnection3players = new HashMap<>();
-    private final ArrayList<String> divinity = new ArrayList<>();
-    private String divinityPlay1;
-    private String divinityPlay2;
-    private String divinityPlay3;
+    private final ArrayList<String> divinities = new ArrayList<>();
+    private final String[] playerDivinities = new String[3];
     private String firstPlayer;
     private String secondPlayer;
     private String thirdPlayer;
@@ -48,12 +46,12 @@ public class Server {
             c.send(new LiteBoard("Decide the number of players: [2 or 3]"));
             setNumPlayers(Integer.parseInt(c.getIn().readUTF()));
             c.send(new LiteBoard("Choose the first divinity:"));
-            divinity.add(c.getIn().readUTF());
+            divinities.add(c.getIn().readUTF());
             c.send(new LiteBoard("Choose the second divinity: "));
-            divinity.add(c.getIn().readUTF());
+            divinities.add(c.getIn().readUTF());
             if (this.getNumPlayers() == 3) {
                 c.send(new LiteBoard("Choose the third divinity: "));
-                divinity.add(c.getIn().readUTF());
+                divinities.add(c.getIn().readUTF());
             }
             c.send(new LiteBoard("All the divinities have been chosen"));
             c.send(new LiteBoard("Now the other players will choose between them.."));
@@ -68,37 +66,37 @@ public class Server {
     }
 
     public void startDivinity() {
-        //TODO guarda quando hai più client
         try {
-            if ((connections.size() == numPlayers)) {
-                StringBuilder choices = new StringBuilder("Choose your Divinity between: ");
-                for (String god : divinity) {
-                    choices.append(god).append(' ');
-                }
-                getConnection(1).send(new LiteBoard(choices.toString()));
-                divinityPlay2 = getConnection(1).getIn().readUTF();
-                getConnection(1).send(new LiteBoard("Your Divinity: " + divinityPlay2));
-                divinity.remove(divinityPlay2);
-                if (numPlayers == 3) {
-                    choices = new StringBuilder("Choose your Divinity between: ");
-                    for (String god : divinity) {
-                        choices.append(god).append(' ');
-                    }
-                    getConnection(2).send(new LiteBoard(choices.toString()));
-                    divinityPlay3 = getConnection(2).getIn().readUTF();
-                    getConnection(2).send(new LiteBoard("Your Divinity: " + divinityPlay3));
-                    divinity.remove(divinityPlay3);
-                }
-                divinityPlay1 = divinity.get(0);
-                getConnection(0).send(new LiteBoard("Your Divinity: " + divinityPlay1));
+            StringBuilder choices = new StringBuilder("Choose your Divinity between: ");
+
+            for (String god : divinities)  choices.append(god).append(' ');
+
+            getConnection(1).send(new LiteBoard(choices.toString()));
+            playerDivinities[1] = getConnection(1).getIn().readUTF();
+            getConnection(1).send(new LiteBoard("Your Divinity: " + playerDivinities[1]));
+            divinities.remove(playerDivinities[1]);
+
+            if (numPlayers == 3) {
+                choices = new StringBuilder("Choose your Divinity between: ");
+
+                for (String god : divinities)  choices.append(god).append(' ');
+
+                getConnection(2).send(new LiteBoard(choices.toString()));
+                playerDivinities[2] = getConnection(2).getIn().readUTF();
+                getConnection(2).send(new LiteBoard("Your Divinity: " + playerDivinities[2]));
+                divinities.remove(playerDivinities[2]);
             }
+
+            playerDivinities[0] = divinities.get(0);
+            getConnection(0).send(new LiteBoard("Your Divinity: " + playerDivinities[0]));
+            divinities.clear();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
 
     }
 
-    //Deregister connection
     public synchronized void deregisterConnection(Connection c) {
         if (playingConnection.size() == 3) {
             for (Connection conn : connections) {
@@ -120,60 +118,50 @@ public class Server {
                 playingConnection.put(toAdd, connections.get(1));
             }
             playingConnection3players.clear();
+            connections.remove(c);
+            c.closeConnection();
+            numPlayers = 2;
+
+        } else if (playingConnection.size() == 2) {
+            c.closeConnection();
+            playingConnection.clear();
+            connections.clear();
         }
-        if (playingConnection.size() == 2) {
-            Connection opponent = playingConnection.get(c);
-            if (opponent != null) {
-                opponent.closeConnection();
-                playingConnection.remove(c);
-                playingConnection.remove(opponent);
-            }
-        }
-        numPlayers -= 1;
-        connections.remove(c); //messo qui perchè altrimenti con 3 giocatori non ho il riferimento alla connessione eliminata in foreach
-        c.closeConnection();
     }
 
 
     public synchronized void lobby(Connection c, String name) {
         waitingConnection.put(name, c);
-        if (c.equals(connections.get(0))) firstPlayer = name;
-        if (connections.size() >= 2) {
-            if (c.equals(connections.get(1))) secondPlayer = name;
+        System.out.println("New client: " + name);
+        if (waitingConnection.size() == 1) {
+            firstPlayer = name;
+            decideNumberPlayer(c);
         }
-        if (connections.size() == 3) {
-            if (c.equals(connections.get(2))) thirdPlayer = name;
-        }
+        else if (waitingConnection.size() == 2) secondPlayer = name;
+        else if (waitingConnection.size() == 3) thirdPlayer = name;
 
-        if (waitingConnection.get(name).equals(connections.get(0))) { //primo giocatore
-            decideNumberPlayer(waitingConnection.get(name)); //decide num of player
-        }
+        if (!(waitingConnection.size() == numPlayers))
+            c.send(new LiteBoard("Waiting for other players..."));
 
-        if ((waitingConnection.size() == numPlayers)) {
+        else {
             startDivinity();
-            chooseFirstPlayer(connections.get(0));
-            List<String> keys = new ArrayList<>();
-            keys.add(firstPlayer);
-            keys.add(secondPlayer);
+            chooseFirstPlayer(waitingConnection.get(firstPlayer));
 
-
-            Connection c1 = waitingConnection.get(keys.get(0));
-            Connection c2 = waitingConnection.get(keys.get(1));
-
-            //qui Remote View
+            Connection c1 = waitingConnection.get(firstPlayer);
+            Connection c2 = waitingConnection.get(secondPlayer);
 
             Game game = new Game();
             game.setNumPlayer(numPlayers);
             Controller controller = new Controller(game);
-            Player player1 = new Player(keys.get(0), White, game);
-            Player player2 = new Player(keys.get(1), Purple, game);
-            player1.setGodPower(divinityPlay1);
-            player2.setGodPower(divinityPlay2);
-            //qui ci vanno gli observer
-            game.addObserver(connections.get(0));
-            game.addObserver(connections.get(1));
-            connections.get(0).addObserver(controller);
-            connections.get(1).addObserver(controller);
+            Player player1 = new Player(firstPlayer, White, game);
+            Player player2 = new Player(secondPlayer, Purple, game);
+            player1.setGodPower(playerDivinities[0]);
+            player2.setGodPower(playerDivinities[1]);
+
+            game.addObserver(c1);
+            game.addObserver(c2);
+            c1.addObserver(controller);
+            c2.addObserver(controller);
 
             playingConnection.put(c1, c2);
             playingConnection.put(c2, c1);
@@ -183,13 +171,12 @@ public class Server {
             startingMessages.add("Start " + player2.getName() + " " + player2.getColor() + " " + player2.getGodPower().getDivinity());
 
             if (numPlayers == 3) {
-                keys.add(thirdPlayer);
-                Connection c3 = waitingConnection.get(keys.get(2));
-                Player player3 = new Player(keys.get(2), Brown, game);
-                player3.setGodPower(divinityPlay3);
+                Connection c3 = waitingConnection.get(thirdPlayer);
+                Player player3 = new Player(thirdPlayer, Brown, game);
+                player3.setGodPower(playerDivinities[2]);
 
-                game.addObserver(connections.get(2));
-                connections.get(2).addObserver(controller);
+                game.addObserver(c3);
+                c3.addObserver(controller);
 
                 playingConnection.put(c2, c3);
                 playingConnection.put(c3, c1);
@@ -214,7 +201,7 @@ public class Server {
             c.send(new LiteBoard("You choose the first player between: " + names.get(0) + " " + names.get(1) + " " + names.get(2)));
         if (numPlayers == 2)
             c.send(new LiteBoard("You choose the first player between: " + names.get(0) + " " + names.get(1)));
-        checkName();
+        checkName(c);
 
         }
 
@@ -257,44 +244,40 @@ public class Server {
     }
 
 
-    private void checkName() {
+    private void checkName(Connection c) {
 
-        while (true) {
-            try {
-                String firstChosen = ((getConnection(0).getIn().readUTF()));
-                for (String names : waitingConnection.keySet()) {
-                    if (firstChosen.equals(names)) {
+        try {
+            while (true) {
+
+                String firstChosen = (c.getIn().readUTF());
+
+                if (waitingConnection.containsKey(firstChosen)) {
+                    if (numPlayers == 2 && firstChosen.equals(secondPlayer)) {
+                        secondPlayer = firstPlayer;
+                        firstPlayer = firstChosen;
+                    } else if (numPlayers == 3) {
                         if (firstChosen.equals(secondPlayer)) {
+                            secondPlayer = thirdPlayer;
+                            thirdPlayer = firstPlayer;
+                            firstPlayer = firstChosen;
+                        }
+                        if (firstChosen.equals(thirdPlayer)) {
+                            thirdPlayer = secondPlayer;
                             secondPlayer = firstPlayer;
                             firstPlayer = firstChosen;
                         }
-                        if (numPlayers == 3) {
-                            if (firstChosen.equals(secondPlayer)) {
-                                secondPlayer = thirdPlayer;
-                                thirdPlayer = firstPlayer;
-                                firstPlayer = firstChosen;
-                            }
-                            if (firstChosen.equals(thirdPlayer)) {
-                                thirdPlayer = secondPlayer;
-                                secondPlayer = firstPlayer;
-                                firstPlayer = firstChosen;
-                            }
-                        }
-                        return;
                     }
-                   getConnection(0).send(new LiteBoard("Wrong name: reinsert it"));
+                    return;
                 }
-            } catch (IOException e) {
-                System.out.println("Client has disconnected while chooses first player");
-                for (Connection conn : connections) {
-                    conn.send(new LiteBoard("First client has disconnected while chooses first player"));
-                    conn.closeConnection();
-                }
-
-
+                else
+                    getConnection(0).send(new LiteBoard("Wrong name, reinsert it.. "));
             }
-
-
+        } catch (IOException e) {
+            System.out.println("Client has disconnected while chooses first player");
+            for (Connection conn : connections) {
+                conn.send(new LiteBoard("First client has disconnected while choosing first player"));
+                conn.closeConnection();
+            }
         }
     }
 

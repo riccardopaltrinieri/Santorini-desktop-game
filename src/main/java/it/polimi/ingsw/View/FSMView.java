@@ -202,6 +202,10 @@ public class FSMView {
         this.divinity = divinity;
     }
 
+    protected Divinity getPath() {
+        return divinity;
+    }
+
     public void setGodName(String godName) {
         this.godName = godName;
     }

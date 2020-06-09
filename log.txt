@@ -6439,6 +6439,671 @@ Winner: sdafdg wins
 Connection closed from the server side
 Connection closed from the server side
 Welcome! What's your name?
+-> toni
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Minotaur
+Choose the second divinity: 
+-> Apollo
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> rich
+Wait for other players
+Choose your Divinity between: Minotaur Apollo 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Minotaur
+You choose the first player between: toni rich
+-> toni
+Start toni White Minotaur
+Start toni White Minotaur
+Start rich Purple Apollo
+Start rich Purple Apollo
+Insert toni update
+Insert toni update
+-> placeworker 1 1
+Insert toni placed a worker in 1x1
+Insert toni placed a worker in 1x1
+-> placeworker 2 2
+Insert toni placed a worker in 2x2
+Insert toni placed a worker in 2x2
+Insert rich update
+Insert rich update
+-> placeworker 3 3
+Insert rich placed a worker in 3x3
+Insert rich placed a worker in 3x3
+-> placeworker 2 3
+Insert rich placed a worker in 2x3
+Insert rich placed a worker in 2x3
+Insert toni update
+Insert toni update
+-> usepower
+Insert toni wants to use the God Power
+Insert toni wants to use the God Power
+-> move 2 3 2
+Insert toni used the God Power
+Insert toni used the God Power
+-> undo
+Undo: toni undoing
+Undo: toni undoing
+Undo: toni cannot undo last action
+Undo: toni cannot undo last action
+-> build 2 2 2
+Insert toni built in 2 2
+Insert rich update
+Insert toni built in 2 2
+Insert rich update
+-> usepower
+Insert rich wants to use the God Power
+Insert rich wants to use the God Power
+-> move 2 3 1
+Insert rich used the God Power
+Insert rich used the God Power
+-> undo
+Undo: rich undoing
+Undo: rich undoing
+Undo: rich cannot undo last action
+Undo: rich cannot undo last action
+-> build 2 2 1
+Insert rich built in 2 2
+Insert rich built in 2 2
+Insert toni update
+Connection closed from the server side
+Welcome! What's your name?
+-> toni
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Minotaur
+Choose the third divinity: 
+-> Atlas
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> rich
+Wait for other players
+Welcome! What's your name?
+-> phil
+Wait for other players
+Choose your Divinity between: Apollo Minotaur Atlas 
+-> Apollo
+Your Divinity: Apollo
+Choose your Divinity between: Minotaur Atlas 
+-> Minotaur
+Your Divinity: Minotaur
+Your Divinity: Atlas
+You choose the first player between: toni rich phil
+-> toni
+Start toni White Atlas
+Start rich Purple Apollo
+Start phil Brown Minotaur
+Start toni White Atlas
+Start rich Purple Apollo
+Start toni White Atlas
+Start phil Brown Minotaur
+Start rich Purple Apollo
+Start phil Brown Minotaur
+Insert toni update
+Insert toni update
+Insert toni update
+-> placeworker 1 1
+Insert toni placed a worker in 1x1
+Insert toni placed a worker in 1x1
+Insert toni placed a worker in 1x1
+-> placeworker 2 2
+Insert toni placed a worker in 2x2
+Insert toni placed a worker in 2x2
+Insert rich update
+Insert toni placed a worker in 2x2
+Insert rich update
+Insert rich update
+-> placeworker 2 3
+Insert rich placed a worker in 2x3
+Insert rich placed a worker in 2x3
+Insert rich placed a worker in 2x3
+-> placeworker 1 4
+Insert rich placed a worker in 1x4
+Insert phil update
+Insert rich placed a worker in 1x4
+Insert rich placed a worker in 1x4
+Insert phil update
+Insert phil update
+-> placeworker 1 3
+Insert phil placed a worker in 1x3
+Insert phil placed a worker in 1x3
+Insert phil placed a worker in 1x3
+-> placeworker 3 4
+Insert phil placed a worker in 3x4
+Insert toni update
+Insert phil placed a worker in 3x4
+Insert toni update
+Insert phil placed a worker in 3x4
+Insert toni update
+-> usepower
+Insert toni wants to use the God Power
+Insert toni wants to use the God Power
+Insert toni wants to use the God Power
+-> move 1 2 1
+Insert toni moved a worker in 1x2
+Insert toni moved a worker in 1x2
+Insert toni moved a worker in 1x2
+-> build 1 1 1
+Insert toni used the God Power
+Insert rich update
+Insert toni used the God Power
+Insert rich update
+Insert toni used the God Power
+Connection closed from the server side
+Connection closed from the server side
+Insert rich update
+-> usepower
+Welcome! What's your name?
+-> toni
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Minotaur
+Choose the second divinity: 
+-> Apollo
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> toni
+Wait for other players
+Welcome! What's your name?
+-> toni
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Minotaur
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> rich
+Wait for other players
+Choose your Divinity between: Apollo Minotaur 
+-> Apollo
+Your Divinity: Minotaur
+Your Divinity: Apollo
+You choose the first player between: toni rich
+-> toni
+Start toni White Minotaur
+Start toni White Minotaur
+Start rich Purple Apollo
+Start rich Purple Apollo
+Insert toni update
+Insert toni update
+-> placeworker 1 1
+Insert toni placed a worker in 1x1
+Insert toni placed a worker in 1x1
+-> placeworker 2 2
+Insert toni placed a worker in 2x2
+Insert toni placed a worker in 2x2
+Insert rich update
+Insert rich update
+-> placeworker 3 3
+Insert rich placed a worker in 3x3
+Insert rich placed a worker in 3x3
+-> placeworker 2 3
+Insert rich placed a worker in 2x3
+Insert rich placed a worker in 2x3
+Insert toni update
+Insert toni update
+-> usepower
+Insert toni wants to use the God Power
+Insert toni wants to use the God Power
+-> move 2 3 2
+Insert toni used the God Power
+Insert toni used the God Power
+-> undo
+Undo: toni undoing
+Undo: toni undoing
+Undo: toni undid last action
+Undo: toni undid last action
+-> move 3 3 2
+Insert toni used the God Power
+Insert toni used the God Power
+-> undo
+Undo: toni undoing
+Undo: toni undoing
+Undo: toni undid last action
+Undo: toni undid last action
+-> move 2 3 2
+Insert toni used the God Power
+Insert toni used the God Power
+-> build 2 2 2
+Insert toni built in 2 2
+Insert toni built in 2 2
+Insert rich update
+Insert rich update
+-> usepower
+Insert rich wants to use the God Power
+Insert rich wants to use the God Power
+-> move 2 3 2
+Insert rich used the God Power
+Insert rich used the God Power
+-> undo
+Undo: rich undoing
+Undo: rich undoing
+Undo: rich undid last action
+Undo: rich undid last action
+-> move 3 4 2
+Insert rich used the God Power
+Insert rich used the God Power
+-> build 3 3 2
+Insert rich built in 3 3
+Insert rich built in 3 3
+Insert toni update
+Insert toni update
+-> usepower
+Insert toni wants to use the God Power
+Insert toni wants to use the God Power
+-> move 3 4 2
+Insert toni used the God Power
+Insert toni used the God Power
+-> undo
+Undo: toni undoing
+Undo: toni undoing
+Undo: toni cannot undo last action
+Undo: toni cannot undo last action
+-> build 1 1 2
+You took to much time to answer, you lose..
+-> 
+Welcome! What's your name?
+-> toni
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Atlas
+Choose the second divinity: 
+-> Minotaur
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> rich
+Wait for other players
+Choose your Divinity between: Atlas Minotaur 
+-> Atlas
+Your Divinity: Atlas
+Your Divinity: Minotaur
+You choose the first player between: toni rich
+-> toni
+Start toni White Minotaur
+Start rich Purple Atlas
+Start toni White Minotaur
+Start rich Purple Atlas
+Insert toni update
+Insert toni update
+-> placeworker 1 1
+Insert toni placed a worker in 1x1
+Insert toni placed a worker in 1x1
+-> placeworker 2 2
+Insert toni placed a worker in 2x2
+Insert rich update
+Insert toni placed a worker in 2x2
+Insert rich update
+-> placeworker 2 3
+Insert rich placed a worker in 2x3
+Insert rich placed a worker in 2x3
+-> placeworker 4 4
+Insert rich placed a worker in 4x4
+Insert rich placed a worker in 4x4
+Insert toni update
+Insert toni update
+-> usepower
+Insert toni wants to use the God Power
+Insert toni wants to use the God Power
+-> move 2 3 2
+Insert toni used the God Power
+Insert toni used the God Power
+-> undo
+Undo: toni undoing
+Undo: toni undoing
+Undo: toni undid last action
+Undo: toni undid last action
+-> move 3 3 2
+Insert toni used the God Power
+Insert toni used the God Power
+-> undo
+Undo: toni undoing
+Undo: toni undoing
+Undo: toni undid last action
+Undo: toni undid last action
+-> move 3 3 2
+Error: toni can't use the God Power
+Error: toni can't use the God Power
+-> move 3 2 2
+Insert toni used the God Power
+Insert toni used the God Power
+-> undo
+Undo: toni undoing
+Undo: toni undoing
+Undo: toni undid last action
+Undo: toni undid last action
+-> move 2 3 2
+Insert toni used the God Power
+Insert toni used the God Power
+-> undo
+Undo: toni undoing
+Undo: toni undoing
+Undo: toni cannot undo last action
+Undo: toni cannot undo last action
+-> build 2 3 2
+Error: toni can't build here
+Error: toni can't build here
+-> build 2 2 2
+Error: toni can't build here
+Undo: toni undid last action
+Error: toni can't build here
+-> build 3 3 2
+Undo: toni undid last action
+-> build 3 3 2
+Welcome! What's your name?
+-> toni
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Minotaur
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> rich
+Wait for other players
+Choose your Divinity between: Apollo Minotaur 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Minotaur
+You choose the first player between: toni rich
+-> toni
+Start toni White Minotaur
+Start toni White Minotaur
+Start rich Purple Apollo
+Start rich Purple Apollo
+Insert toni update
+Insert toni update
+-> placeworker 1 1
+Insert toni placed a worker in 1x1
+Insert toni placed a worker in 1x1
+-> placeworker 2 2
+Insert toni placed a worker in 2x2
+Insert rich update
+Insert toni placed a worker in 2x2
+Insert rich update
+-> placeworker 2 3
+Insert rich placed a worker in 2x3
+Insert rich placed a worker in 2x3
+-> placeworker 3 3
+Insert rich placed a worker in 3x3
+Insert rich placed a worker in 3x3
+Insert toni update
+Insert toni update
+-> usepower
+Insert toni wants to use the God Power
+Insert toni wants to use the God Power
+-> move 2 3 2
+Insert toni used the God Power
+Insert toni used the God Power
+-> undo
+Undo: toni undoing
+Undo: toni undoing
+Undo: toni undid last action
+Undo: toni undid last action
+-> move 3 3 2
+Insert toni used the God Power
+Insert toni used the God Power
+-> undo
+Undo: toni undoing
+Undo: toni undoing
+Undo: toni undid last action
+Undo: toni undid last action
+-> move 3 2 2
+Insert toni used the God Power
+Insert toni used the God Power
+-> undo
+Undo: toni undoing
+Undo: toni undoing
+Undo: toni undid last action
+Undo: toni undid last action
+-> move 2 3 2
+Error: toni can't use the God Power
+Error: toni can't use the God Power
+-> move 3 2 2
+Insert toni used the God Power
+Insert toni used the God Power
+-> build 1 3 2
+Insert toni built in 1 3
+Insert toni built in 1 3
+Insert rich update
+Insert rich update
+-> usepower
+Insert rich wants to use the God Power
+Insert rich wants to use the God Power
+-> move 2 2 1
+Insert rich used the God Power
+Insert rich used the God Power
+-> undo
+Undo: rich undoing
+Undo: rich undoing
+Undo: rich cannot undo last action
+Undo: rich cannot undo last action
+-> build 1 3 1
+Insert rich built in 1 3
+Insert rich built in 1 3
+Insert toni update
+Insert toni update
+-> normal
+Insert toni doesn't want to use the God Power
+Insert toni doesn't want to use the God Power
+-> move 1 2 2
+Insert toni moved a worker in 1x2
+Insert toni moved a worker in 1x2
+-> build 1 3 2
+Insert toni built in 1 3
+Insert toni built in 1 3
+Insert rich update
+Insert rich update
+-> usepower
+Insert rich wants to use the God Power
+Insert rich wants to use the God Power
+-> move 1 2 1
+Insert rich used the God Power
+Insert rich used the God Power
+-> undo
+Undo: rich undoing
+Undo: rich undoing
+Undo: rich undid last action
+Undo: rich undid last action
+-> move 2 1 1
+Insert rich used the God Power
+Welcome! What's your name?
+-> toni
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Minotaur
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> rich
+Wait for other players
+Choose your Divinity between: Apollo Minotaur 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Minotaur
+You choose the first player between: toni rich
+-> toni
+Start toni White Minotaur
+Start toni White Minotaur
+Start rich Purple Apollo
+Start rich Purple Apollo
+Insert toni update
+Insert toni update
+-> placeworker 1 1
+Insert toni placed a worker in 1x1
+Insert toni placed a worker in 1x1
+-> placeworker 2 2
+Insert toni placed a worker in 2x2
+Insert toni placed a worker in 2x2
+Insert rich update
+Insert rich update
+-> placeworker 2 3
+Insert rich placed a worker in 2x3
+Insert rich placed a worker in 2x3
+-> placeworker 1 2
+Insert rich placed a worker in 1x2
+Insert rich placed a worker in 1x2
+Insert toni update
+Insert toni update
+-> usepower
+Insert toni wants to use the God Power
+Insert toni wants to use the God Power
+-> move 1 2 1
+Insert toni used the God Power
+Insert toni used the God Power
+-> undo
+Undo: toni undoing
+Undo: toni undoing
+Undo: toni undid last action
+Undo: toni undid last action
+-> move 1 2 1
+Error: toni can't use the God Power
+Error: toni can't use the God Power
+-> move 1 2 1
+Insert toni used the God Power
+Insert toni used the God Power
+-> build 1 3 1
+Error: toni can't build here
+Error: toni can't build here
+-> build 1 1 1
+Insert toni built in 1 1
+Insert toni built in 1 1
+Insert rich update
+Insert rich update
+-> usepower
+Insert rich wants to use the God Power
+Insert rich wants to use the God Power
+-> move 2 2 2
+Insert rich used the God Power
+Insert rich used the God Power
+-> build 1 2 2
+Error: rich can't build here
+Error: rich can't build here
+-> build 1 1 2
+Insert rich built in 1 1
+Insert rich built in 1 1
+Insert toni update
+Insert toni update
+-> usepower 
+Insert toni wants to use the God Power
+Insert toni wants to use the God Power
+-> move 2 3 2
+Insert toni used the God Power
+Insert toni used the God Power
+-> undo
+Undo: toni undoing
+Undo: toni undoing
+Undo: toni undid last action
+Undo: toni undid last action
+-> move 1 3 2
+Insert toni used the God Power
+Insert toni used the God Power
+-> build 1 4 2
+Error: toni can't build here
+Error: toni can't build here
+-> build 1 3 2
+Error: toni can't build here
+Error: toni can't build here
+-> build 1 2 2
+Error: toni can't build here
+Error: toni can't build here
+-> build 1 4 2
+Error: toni can't build here
+Error: toni can't build here
+-> build 1 1 2
+Insert toni built in 1 1
+Insert rich update
+Insert toni built in 1 1
+Insert rich update
+-> usepower 
+Insert rich wants to use the God Power
+Insert rich wants to use the God Power
+-> move 1 2 1
+Insert rich used the God Power
+Insert rich used the God Power
+-> build 1 3 1
+Error: rich can't build here
+Error: rich can't build here
+-> build 1 1 1
+Insert rich built in 1 1
+Insert rich built in 1 1
+Insert toni update
+Insert toni update
+-> normal
+Insert toni doesn't want to use the God Power
+Insert toni doesn't want to use the God Power
+-> move 1 4 1
+Error: toni can't move here
+Error: toni can't move here
+-> move 1 3 1
+Error: toni can't move here
+Error: toni can't move here
+-> move 2 3 1
+Insert toni moved a worker in 2x3
+Insert toni moved a worker in 2x3
+-> build 1 3 1
+Error: toni can't build here
+Error: toni can't build here
+-> build 1 4 1
+Insert toni built in 1 4
+Insert toni built in 1 4
+Insert rich update
+Insert rich update
+-> normal 
+Insert rich doesn't want to use the God Power
+Insert rich doesn't want to use the God Power
+-> move 1 4 1
+Error: rich can't move here
+Error: rich can't move here
+-> move 1 4 1
+Error: rich can't move here
+Error: rich can't move here
+-> move 1 3 1
+Error: rich can't move here
+Error: rich can't move here
+-> move 2 1 1
+Insert rich moved a worker in 2x1
+Insert rich moved a worker in 2x1
+-> build 3 1 1
+Insert rich built in 3 1
+Insert rich built in 3 1
+Insert toni update
+Insert toni update
+-> normal
+Insert toni doesn't want to use the God Power
+Insert toni doesn't want to use the God Power
+-> move 1 3 2
+Error: toni can't move here
+Error: toni can't move here
+-> move 1 4 2
+Error: toni can't move here
+Welcome! What's your name?
 -> fillo
 Wait for other players
 Welcome! What's your name?
@@ -6640,4 +7305,1704 @@ Insert 2342 wants to use the God Power
 Insert 2342 wants to use the God Power
 -> move 3 4 1
 Insert 2342 used the God Power
+Connection closed from the server side
+Welcome! What's your name?
+-> toni
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> rich
+Wait for other players
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Artemis
+Your Divinity: Apollo
+You choose the first player between: toni rich
+-> toni
+Start toni White Apollo
+Start rich Purple Artemis
+Start toni White Apollo
+Start rich Purple Artemis
+Insert toni update
+Insert toni update
+-> placeworker 4 2
+Insert toni placed a worker in 4x2
+Insert toni placed a worker in 4x2
+-> placeworker 5 1
+Insert toni placed a worker in 5x1
+Insert toni placed a worker in 5x1
+Insert rich update
+Insert rich update
+-> placeworker 5 4
+Insert rich placed a worker in 5x4
+Insert rich placed a worker in 5x4
+-> placeworker 5 5
+Insert rich placed a worker in 5x5
+Insert rich placed a worker in 5x5
+Insert toni update
+Insert toni update
+-> normal
+Insert toni doesn't want to use the God Power
+Insert toni doesn't want to use the God Power
+-> move 4 3 1
+Insert toni moved a worker in 4x3
+Insert toni moved a worker in 4x3
+-> build 4 2 1
+Insert toni built in 4 2
+Insert toni built in 4 2
+Insert rich update
+Insert rich update
+-> normal
+Insert rich doesn't want to use the God Power
+Insert rich doesn't want to use the God Power
+-> move 5 3 1
+Insert rich moved a worker in 5x3
+Insert rich moved a worker in 5x3
+-> build 4 2 1
+Insert rich built in 4 2
+Insert rich built in 4 2
+Insert toni update
+Insert toni update
+-> normal
+Insert toni doesn't want to use the God Power
+Insert toni doesn't want to use the God Power
+-> move 3 2 1
+Insert toni moved a worker in 3x2
+Insert toni moved a worker in 3x2
+-> build 4 2 1
+Insert toni built in 4 2
+Insert toni built in 4 2
+Insert rich update
+Insert rich update
+-> normal
+Insert rich doesn't want to use the God Power
+Insert rich doesn't want to use the God Power
+-> move 4 3 1
+Insert rich moved a worker in 4x3
+Insert rich moved a worker in 4x3
+-> build 4 2 1
+Insert rich built in 4 2
+Insert rich built in 4 2
+Insert toni update
+Insert toni update
+-> usepower
+Insert toni wants to use the God Power
+Insert toni wants to use the God Power
+-> move 3 3 1
+Insert toni used the God Power
+Insert toni used the God Power
+-> build 3 2 1
+Insert toni built in 3 2
+Insert toni built in 3 2
+Insert rich update
+Welcome! What's your name?
+-> toni
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> rich
+Wait for other players
+Choose your Divinity between: Apollo Athena 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Athena
+You choose the first player between: toni rich
+-> toni
+Start toni White Athena
+Start toni White Athena
+Start rich Purple Apollo
+Start rich Purple Apollo
+Insert toni update
+Insert toni update
+-> placeworker 1 1
+Insert toni placed a worker in 1x1
+Insert toni placed a worker in 1x1
+-> placeworker 2 2
+Insert toni placed a worker in 2x2
+Insert rich update
+Insert toni placed a worker in 2x2
+Insert rich update
+-> placeworker 3 3
+Insert rich placed a worker in 3x3
+Insert rich placed a worker in 3x3
+-> placeworker 4 4
+Insert rich placed a worker in 4x4
+Insert rich placed a worker in 4x4
+Insert toni update
+-> usepower
+Insert toni update
+Insert toni wants to use the God Power
+Insert toni wants to use the God Power
+-> move 2 1 1
+Insert toni used the God Power
+Insert toni used the God Power
+-> build 1 1 1
+Welcome! What's your name?
+-> toni
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Pan
+Choose the third divinity: 
+-> Athena
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> rich
+Wait for other players
+Welcome! What's your name?
+-> phil
+Wait for other players
+Choose your Divinity between: Apollo Pan Athena 
+-> Pan
+Your Divinity: Pan
+Choose your Divinity between: Apollo Athena 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Athena
+You choose the first player between: toni rich phil
+-> toni
+Start toni White Athena
+Start rich Purple Pan
+Start phil Brown Apollo
+Start toni White Athena
+Start toni White Athena
+Start rich Purple Pan
+Start rich Purple Pan
+Start phil Brown Apollo
+Start phil Brown Apollo
+Insert toni update
+Insert toni update
+Insert toni update
+-> placeworker 1 1
+Insert toni placed a worker in 1x1
+Insert toni placed a worker in 1x1
+Insert toni placed a worker in 1x1
+-> placeworker 2 2
+Insert toni placed a worker in 2x2
+Insert toni placed a worker in 2x2
+Insert rich update
+Insert rich update
+Insert toni placed a worker in 2x2
+Welcome! What's your name?
+-> toni
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+Choose the third divinity: 
+-> Pan
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> rich
+Wait for other players
+Welcome! What's your name?
+-> phil
+Wait for other players
+Choose your Divinity between: Apollo Athena Pan 
+-> Apollo
+Your Divinity: Apollo
+Choose your Divinity between: Athena Pan 
+-> Pan
+Your Divinity: Pan
+Your Divinity: Athena
+You choose the first player between: toni rich phil
+-> toni
+Start toni White Athena
+Start rich Purple Apollo
+Start toni White Athena
+Start phil Brown Pan
+Start rich Purple Apollo
+Start phil Brown Pan
+Start toni White Athena
+Start rich Purple Apollo
+Start phil Brown Pan
+Insert toni update
+Insert toni update
+Insert toni update
+-> placeworker 1 1
+Insert toni placed a worker in 1x1
+Insert toni placed a worker in 1x1
+Insert toni placed a worker in 1x1
+-> placeworker 2 2
+Insert toni placed a worker in 2x2
+Insert rich update
+Insert toni placed a worker in 2x2
+Insert rich update
+Insert toni placed a worker in 2x2
+Insert rich update
+-> placeworker 3 3
+Insert rich placed a worker in 3x3
+Insert rich placed a worker in 3x3
+Insert rich placed a worker in 3x3
+-> placeworker 4 4
+Insert rich placed a worker in 4x4
+Insert rich placed a worker in 4x4
+Insert phil update
+Insert rich placed a worker in 4x4
+Insert phil update
+Insert phil update
+-> placeworker 5 5
+Insert phil placed a worker in 5x5
+Insert phil placed a worker in 5x5
+Insert phil placed a worker in 5x5
+-> placeworker 1 2
+Insert phil placed a worker in 1x2
+Insert toni update
+Insert phil placed a worker in 1x2
+Insert phil placed a worker in 1x2
+Insert toni update
+-> usepower
+Insert toni update
+Insert toni wants to use the God Power
+Insert toni wants to use the God Power
+Welcome! What's your name?
+-> toni
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+Choose the third divinity: 
+-> Pan
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> rich
+Wait for other players
+Welcome! What's your name?
+-> phil
+Wait for other players
+Choose your Divinity between: Apollo Athena Pan 
+-> Apollo
+Your Divinity: Apollo
+Choose your Divinity between: Athena Pan 
+-> Pan
+Your Divinity: Athena
+Your Divinity: Pan
+You choose the first player between: toni rich phil
+-> toni
+Start toni White Athena
+Start rich Purple Apollo
+Start toni White Athena
+Start phil Brown Pan
+Start rich Purple Apollo
+Start phil Brown Pan
+Start toni White Athena
+Start rich Purple Apollo
+Start phil Brown Pan
+Insert toni update
+Insert toni update
+Insert toni update
+-> placeworker 1 1
+Insert toni placed a worker in 1x1
+Insert toni placed a worker in 1x1
+Insert toni placed a worker in 1x1
+-> placeworker 2 2
+Insert toni placed a worker in 2x2
+Insert rich update
+Insert toni placed a worker in 2x2
+Insert toni placed a worker in 2x2
+Insert rich update
+Insert rich update
+-> placeworker 1 2
+Insert rich placed a worker in 1x2
+Insert rich placed a worker in 1x2
+Insert rich placed a worker in 1x2
+-> placeworker 2 3
+Insert rich placed a worker in 2x3
+Insert phil update
+Insert rich placed a worker in 2x3
+Insert rich placed a worker in 2x3
+Insert phil update
+Insert phil update
+-> placeworker 1 3
+Insert phil placed a worker in 1x3
+Insert phil placed a worker in 1x3
+Insert phil placed a worker in 1x3
+-> placeworker 2 4
+Insert phil placed a worker in 2x4
+Insert toni update
+-> usepower
+Insert phil placed a worker in 2x4
+Insert toni update
+Insert toni wants to use the God Power
+Insert phil placed a worker in 2x4
+Insert toni update
+Insert toni wants to use the God Power
+Welcome! What's your name?
+-> toni
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> toni
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+Choose the third divinity: 
+-> Pan
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> rich
+Wait for other players
+Welcome! What's your name?
+-> phil
+Wait for other players
+Choose your Divinity between: Apollo Athena Pan 
+-> Apollo
+Your Divinity: Apollo
+Choose your Divinity between: Athena Pan 
+-> Pan
+Your Divinity: Pan
+Your Divinity: Athena
+You choose the first player between: toni rich phil
+-> toni
+Start toni White Athena
+Start rich Purple Apollo
+Start phil Brown Pan
+Start toni White Athena
+Start toni White Athena
+Start rich Purple Apollo
+Start rich Purple Apollo
+Start phil Brown Pan
+Start phil Brown Pan
+Insert toni update
+Insert toni update
+Insert toni update
+-> placeworker 2 1
+Insert toni placed a worker in 2x1
+Insert toni placed a worker in 2x1
+Insert toni placed a worker in 2x1
+-> placeworker 4 1
+Insert toni placed a worker in 4x1
+Insert rich update
+Insert toni placed a worker in 4x1
+Insert toni placed a worker in 4x1
+Insert rich update
+Insert rich update
+-> placeworker 4 3
+Insert rich placed a worker in 4x3
+Insert rich placed a worker in 4x3
+Insert rich placed a worker in 4x3
+-> placeworker 2 2
+Insert rich placed a worker in 2x2
+Insert rich placed a worker in 2x2
+Insert phil update
+Insert phil update
+Insert rich placed a worker in 2x2
+Insert phil update
+-> placeworker 2 3
+Insert phil placed a worker in 2x3
+Insert phil placed a worker in 2x3
+Insert phil placed a worker in 2x3
+-> placeworker 3 3
+Insert phil placed a worker in 3x3
+Insert toni update
+-> usepower
+Insert phil placed a worker in 3x3
+Insert toni update
+Insert toni wants to use the God Power
+Insert phil placed a worker in 3x3
+Insert toni update
+Insert toni wants to use the God Power
+Insert toni wants to use the God Power
+-> move 3 1 2
+Insert toni used the God Power
+Insert toni used the God Power
+Insert toni used the God Power
+-> build 1 4 2
+Error: toni can't build here
+Error: toni can't build here
+Error: toni can't build here
+-> build 4 1 2
+Insert toni built in 4 1
+Insert toni built in 4 1
+Insert rich update
+Insert toni built in 4 1
+Insert rich update
+Insert rich update
+-> normal
+Insert rich doesn't want to use the God Power
+Insert rich doesn't want to use the God Power
+Insert rich doesn't want to use the God Power
+-> move 3 2 1
+Insert rich moved a worker in 3x2
+Insert rich moved a worker in 3x2
+Insert rich moved a worker in 3x2
+-> build 4 2 1
+Insert rich built in 4 2
+Insert rich built in 4 2
+Insert phil update
+-> usepower
+Insert phil update
+Insert phil wants to use the God Power
+Insert rich built in 4 2
+Insert phil update
+Insert phil wants to use the God Power
+Welcome! What's your name?
+-> toni
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Pan
+Choose the third divinity: 
+-> Athena
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> rich
+Wait for other players
+Welcome! What's your name?
+-> phil
+Wait for other players
+Choose your Divinity between: Apollo Pan Athena 
+-> Apollo
+Your Divinity: Apollo
+Choose your Divinity between: Pan Athena 
+-> Pan
+Your Divinity: Pan
+Your Divinity: Athena
+You choose the first player between: toni rich phil
+-> toni
+Start toni White Athena
+Start rich Purple Apollo
+Start phil Brown Pan
+Start toni White Athena
+Start toni White Athena
+Start rich Purple Apollo
+Start rich Purple Apollo
+Start phil Brown Pan
+Start phil Brown Pan
+Insert toni update
+Insert toni update
+Insert toni update
+-> placeworker 1 1
+Insert toni placed a worker in 1x1
+Insert toni placed a worker in 1x1
+Insert toni placed a worker in 1x1
+-> placeworker 2 1
+Insert toni placed a worker in 2x1
+Insert toni placed a worker in 2x1
+Insert rich update
+Insert toni placed a worker in 2x1
+Insert rich update
+Insert rich update
+-> placeworker 1 2
+Insert rich placed a worker in 1x2
+Insert rich placed a worker in 1x2
+Insert rich placed a worker in 1x2
+-> placeworker 2 2
+Insert rich placed a worker in 2x2
+Insert phil update
+Insert rich placed a worker in 2x2
+Insert rich placed a worker in 2x2
+Insert phil update
+Insert phil update
+-> placeworker 1 3
+Insert phil placed a worker in 1x3
+Insert phil placed a worker in 1x3
+Insert phil placed a worker in 1x3
+-> placeworker 2 3
+Insert phil placed a worker in 2x3
+Insert toni update
+-> usepower
+Insert phil placed a worker in 2x3
+Insert toni update
+Insert toni wants to use the God Power
+Insert phil placed a worker in 2x3
+Insert toni update
+Insert toni wants to use the God Power
+Welcome! What's your name?
+-> toni
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Pan
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> rich
+Wait for other players
+Choose your Divinity between: Apollo Pan 
+-> Apollo
+Your Divinity: Pan
+Your Divinity: Apollo
+You choose the first player between: toni rich
+-> toni
+Start toni White Pan
+Start toni White Pan
+Start rich Purple Apollo
+Start rich Purple Apollo
+Insert toni update
+Insert toni update
+-> placeworker 1 1
+Insert toni placed a worker in 1x1
+Insert toni placed a worker in 1x1
+-> placeworker 2 2
+Insert toni placed a worker in 2x2
+Insert toni placed a worker in 2x2
+Insert rich update
+Insert rich update
+-> placeworker 3 3
+Insert rich placed a worker in 3x3
+Insert rich placed a worker in 3x3
+-> placeworker 4 4
+Insert rich placed a worker in 4x4
+Insert rich placed a worker in 4x4
+Insert toni update
+Insert toni update
+-> usepower
+Insert toni wants to use the God Power
+Welcome! What's your name?
+-> toni
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> rich
+Wait for other players
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Artemis
+Your Divinity: Apollo
+You choose the first player between: toni rich
+-> toni
+Start toni White Apollo
+Start rich Purple Artemis
+Start toni White Apollo
+Insert toni update
+Start rich Purple Artemis
+Insert toni update
+-> placeworker 1 1
+Insert toni placed a worker in 1x1
+Insert toni placed a worker in 1x1
+-> placeworker 2 2
+Insert toni placed a worker in 2x2
+Insert rich update
+Insert toni placed a worker in 2x2
+Insert rich update
+-> placeworker 3 3
+Insert rich placed a worker in 3x3
+Insert rich placed a worker in 3x3
+-> placeworker 4 4
+Insert rich placed a worker in 4x4
+Insert rich placed a worker in 4x4
+Insert toni update
+Insert toni update
+-> usepower
+Insert toni wants to use the God Power
+Insert toni wants to use the God Power
+-> move 3 2 2
+Insert toni used the God Power
+Insert toni used the God Power
+-> build 4 3 2
+Insert toni built in 4 3
+Insert toni built in 4 3
+Insert rich update
+Welcome! What's your name?
+-> toni
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> rich
+Wait for other players
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Apollo
+Your Divinity: Artemis
+You choose the first player between: toni rich
+-> toni
+Start toni White Apollo
+Start rich Purple Artemis
+Start toni White Apollo
+Start rich Purple Artemis
+Insert toni update
+Insert toni update
+-> placeworker 1 1
+Insert toni placed a worker in 1x1
+Insert toni placed a worker in 1x1
+-> placeworker 2 2
+Insert toni placed a worker in 2x2
+Insert rich update
+Insert toni placed a worker in 2x2
+Insert rich update
+-> placeworker 3 3
+Insert rich placed a worker in 3x3
+Insert rich placed a worker in 3x3
+-> placeworker 4 4
+Insert rich placed a worker in 4x4
+Insert rich placed a worker in 4x4
+Insert toni update
+Insert toni update
+-> usepower
+Insert toni wants to use the God Power
+Insert toni wants to use the God Power
+-> move 3 2 2
+Insert toni used the God Power
+Insert toni used the God Power
+-> build 4 2 2
+Insert toni built in 4 2
+Insert toni built in 4 2
+Insert rich update
+Insert rich update
+-> normal
+Insert rich doesn't want to use the God Power
+Insert rich doesn't want to use the God Power
+-> move 2 2 1
+Insert rich moved a worker in 2x2
+Insert rich moved a worker in 2x2
+-> build 2 1 1
+Insert rich built in 2 1
+Insert rich built in 2 1
+Insert toni update
+Insert toni update
+-> usepower
+Insert toni wants to use the God Power
+Insert toni wants to use the God Power
+-> move 4 2 2
+Insert toni used the God Power
+Insert toni used the God Power
+-> build 3 2 2
+Insert toni built in 3 2
+Insert rich update
+Insert toni built in 3 2
+Insert rich update
+-> normal
+Insert rich doesn't want to use the God Power
+Insert rich doesn't want to use the God Power
+-> move 1 2 1
+Insert rich moved a worker in 1x2
+Insert rich moved a worker in 1x2
+-> build 2 2 1
+Insert rich built in 2 2
+Insert rich built in 2 2
+Insert toni update
+Insert toni update
+-> usepower
+Welcome! What's your name?
+-> toni
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> rich
+Wait for other players
+Choose your Divinity between: Apollo Athena 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Athena
+You choose the first player between: toni rich
+-> toni
+Start toni White Athena
+Start rich Purple Apollo
+Start toni White Athena
+Start rich Purple Apollo
+Insert toni update
+Insert toni update
+-> placeworker 1 1
+Insert toni placed a worker in 1x1
+Insert toni placed a worker in 1x1
+-> placeworker 2 2
+Insert toni placed a worker in 2x2
+Insert toni placed a worker in 2x2
+Insert rich update
+Insert rich update
+-> placeworker 4 2
+Insert rich placed a worker in 4x2
+Insert rich placed a worker in 4x2
+-> placeworker 2 4
+Insert rich placed a worker in 2x4
+Insert toni update
+Insert rich placed a worker in 2x4
+Insert toni update
+-> usepower
+Insert toni wants to use the God Power
+Insert toni wants to use the God Power
+-> move 1 2 1
+Insert toni used the God Power
+Insert toni used the God Power
+-> build 1 1 1
+Insert toni built in 1 1
+Insert toni built in 1 1
+Insert rich update
+Insert rich update
+-> usepower
+Insert rich wants to use the God Power
+Insert rich wants to use the God Power
+-> move 3 2 1
+Insert rich used the God Power
+Insert rich used the God Power
+-> build 2 1 1
+Insert rich built in 2 1
+Insert rich built in 2 1
+Insert toni update
+Insert toni update
+-> usepower
+Insert toni wants to use the God Power
+Insert toni wants to use the God Power
+-> move 2 3  1
+Connection closed from the server side
+Welcome! What's your name?
+-> toni
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> rich
+Wait for other players
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Artemis
+Welcome! What's your name?
+-> toni
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> rich
+Wait for other players
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Artemis
+Your Divinity: Apollo
+You choose the first player between: toni rich
+-> toni
+Start toni White Apollo
+Start toni White Apollo
+Start rich Purple Artemis
+Start rich Purple Artemis
+Insert toni update
+Insert toni update
+-> placeworker 1 1
+Insert toni placed a worker in 1x1
+Insert toni placed a worker in 1x1
+-> placeworker 2 2
+Insert toni placed a worker in 2x2
+Insert rich update
+Insert toni placed a worker in 2x2
+Insert rich update
+-> placeworker 1 2
+Insert rich placed a worker in 1x2
+Insert rich placed a worker in 1x2
+-> placeworker 1 3
+Insert rich placed a worker in 1x3
+Insert rich placed a worker in 1x3
+Insert toni update
+Insert toni update
+-> usepower
+Insert toni wants to use the God Power
+Insert toni wants to use the God Power
+-> move 1 3 2
+Insert toni used the God Power
+Insert toni used the God Power
+-> build 2 3 2
+Insert toni built in 2 3
+Insert toni built in 2 3
+Insert rich update
+Insert rich update
+-> normal
+Insert rich doesn't want to use the God Power
+Insert rich doesn't want to use the God Power
+-> move 2 3 2
+Insert rich moved a worker in 2x3
+Insert rich moved a worker in 2x3
+-> build 2 2 2
+Insert rich built in 2 2
+Insert rich built in 2 2
+Insert toni update
+Connection closed from the server side
+Welcome! What's your name?
+-> toni
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> rich
+Wait for other players
+Choose your Divinity between: Apollo Athena 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Athena
+You choose the first player between: toni rich
+-> toni
+Start toni White Athena
+Start rich Purple Apollo
+Start toni White Athena
+Start rich Purple Apollo
+Insert toni update
+Connection closed from the server side
+Welcome! What's your name?
+-> toni
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> rich
+Wait for other players
+Choose your Divinity between: Athena Apollo Athena 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Athena
+You choose the first player between: toni rich
+-> toni
+First client has disconnected while choosing first player
+Connection closed from the server side
+Wrong name, reinsert it.. 
+-> rich
+Welcome! What's your name?
+-> rich
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+Choose the third divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> toni
+Wait for other players
+Welcome! What's your name?
+-> phil
+Wait for other players
+Choose your Divinity between: Apollo Athena Artemis 
+-> Apollo
+Your Divinity: Apollo
+Choose your Divinity between: Athena Artemis 
+-> Athena
+Your Divinity: Athena
+Your Divinity: Artemis
+You choose the first player between: toni rich phil
+-> toni
+Welcome! What's your name?
+-> toni
+Wait for other players
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+All the divinities have been chosen
+Now the other players will choose between them..
+Welcome! What's your name?
+-> rich
+Wait for other players
+Choose your Divinity between: Apollo Athena 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Athena
+You choose the first player between: toni rich
+-> toni
+Welcome! What's your name?
+-> toni
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+All the divinities have been chosen
+Now the other players will choose between them..
+Waiting for other players...
+Welcome! What's your name?
+-> rich
+Choose your Divinity between: Apollo Athena 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Athena
+You choose the first player between: toni rich
+-> toni
+Start toni White Athena
+Start toni White Athena
+Start rich Purple Apollo
+Start rich Purple Apollo
+Insert toni update
+Insert toni update
+-> placeworker 1 1
+Insert toni placed a worker in 1x1
+Insert toni placed a worker in 1x1
+-> placeworker 2 2
+Insert toni placed a worker in 2x2
+Insert toni placed a worker in 2x2
+Insert rich update
+Connection closed from the server side
+Welcome! What's your name?
+-> toni
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+All the divinities have been chosen
+Now the other players will choose between them..
+Waiting for other players...
+Welcome! What's your name?
+-> rich
+Choose your Divinity between: Apollo Athena 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Athena
+You choose the first player between: toni rich
+-> toni
+Start toni White Athena
+Start toni White Athena
+Start rich Purple Apollo
+Start rich Purple Apollo
+Insert toni update
+Insert toni update
+-> placeworker 1 1
+Insert toni placed a worker in 1x1
+Connection closed from the server side
+Welcome! What's your name?
+-> toni
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+All the divinities have been chosen
+Now the other players will choose between them..
+Waiting for other players...
+Welcome! What's your name?
+-> rich
+Choose your Divinity between: Apollo Athena 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Athena
+You choose the first player between: toni rich
+-> toni
+Wrong name, reinsert it.. 
+-> rich
+Welcome! What's your name?
+-> toni
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Waiting for other players...
+Welcome! What's your name?
+-> rich
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Artemis
+You choose the first player between: toni rich
+-> toni
+Start toni White Artemis
+Start rich Purple Apollo
+Start toni White Artemis
+Start rich Purple Apollo
+Insert toni update
+Insert toni update
+-> placeworker 1 1
+Insert toni placed a worker in 1x1
+Insert toni placed a worker in 1x1
+-> placeworker 2 2
+Insert toni placed a worker in 2x2
+Insert rich update
+Insert toni placed a worker in 2x2
+Insert rich update
+-> placeworker 3 3
+Insert rich placed a worker in 3x3
+Connection closed from the server side
+Welcome! What's your name?
+-> toni
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+All the divinities have been chosen
+Now the other players will choose between them..
+Waiting for other players...
+Welcome! What's your name?
+-> rich
+Choose your Divinity between: Apollo Athena 
+-> Apollo
+Your Divinity: Athena
+Your Divinity: Apollo
+Welcome! What's your name?
+-> toni
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Waiting for other players...
+Welcome! What's your name?
+-> phiò
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Artemis
+You choose the first player between: toni phiò
+-> toni
+Start toni White Artemis
+Start toni White Artemis
+Start phiò Purple Apollo
+Start phiò Purple Apollo
+Insert toni update
+Insert toni update
+-> placeworker 1 1
+Insert toni placed a worker in 1x1
+Insert toni placed a worker in 1x1
+-> placeworker 2 2
+Insert toni placed a worker in 2x2
+Insert phiò update
+Insert toni placed a worker in 2x2
+Insert phiò update
+-> placeworker 1 3
+Insert phiò placed a worker in 1x3
+Insert phiò placed a worker in 1x3
+-> placeworker 2 3
+Insert phiò placed a worker in 2x3
+Insert phiò placed a worker in 2x3
+Insert toni update
+Insert toni update
+-> normal
+Insert toni doesn't want to use the God Power
+Insert toni doesn't want to use the God Power
+-> move 2 1 2
+Insert toni moved a worker in 2x1
+Insert toni moved a worker in 2x1
+-> build 3 1 2
+Insert toni built in 3 1
+Insert toni built in 3 1
+Insert phiò update
+Insert phiò update
+-> usepower
+Insert phiò wants to use the God Power
+Insert phiò wants to use the God Power
+-> move 1 3 2
+Insert phiò used the God Power
+Insert phiò used the God Power
+-> build 2 2 2
+Insert phiò built in 2 2
+Insert phiò built in 2 2
+Insert toni update
+Insert toni update
+-> usepower
+Insert toni wants to use the God Power
+Insert toni wants to use the God Power
+-> move 3 1 2
+Insert toni used the God Power
+Insert toni used the God Power
+-> move 4 1 2
+Insert toni used the God Power
+Insert toni used the God Power
+-> build 3 1 2
+Insert toni built in 3 1
+Insert toni built in 3 1
+Insert phiò update
+Connection closed from the server side
+Welcome! What's your name?
+-> toni
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+All the divinities have been chosen
+Now the other players will choose between them..
+Waiting for other players...
+Welcome! What's your name?
+-> rich
+Choose your Divinity between: Apollo Athena 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Athena
+You choose the first player between: toni rich
+-> toni
+First client has disconnected while choosing first player
+Connection closed from the server side
+Wrong name, reinsert it.. 
+-> 
+Welcome! What's your name?
+-> toni
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Waiting for other players...
+Welcome! What's your name?
+-> phil
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Artemis
+Your Divinity: Apollo
+You choose the first player between: toni phil
+-> toni
+Start toni White Apollo
+Start toni White Apollo
+Start phil Purple Artemis
+Start phil Purple Artemis
+Insert toni update
+Insert toni update
+-> placeworker 2 2
+Insert toni placed a worker in 2x2
+Insert toni placed a worker in 2x2
+-> placeworker 3 2
+Insert toni placed a worker in 3x2
+Insert phil update
+Insert toni placed a worker in 3x2
+Insert phil update
+-> placeworker 2 3
+Insert phil placed a worker in 2x3
+Connection closed from the server side
+Welcome! What's your name?
+-> toni
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+All the divinities have been chosen
+Now the other players will choose between them..
+Waiting for other players...
+Welcome! What's your name?
+-> rich
+Choose your Divinity between: Apollo Athena 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Athena
+You choose the first player between: toni rich
+-> toni
+Wrong name, reinsert it.. 
+-> asdf
+First client has disconnected while choosing first player
+Connection closed from the server side
+Welcome! What's your name?
+-> toni
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Waiting for other players...
+Welcome! What's your name?
+-> rich
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Artemis
+Your Divinity: Apollo
+You choose the first player between: toni rich
+-> toni
+Start toni White Apollo
+Start toni White Apollo
+Start rich Purple Artemis
+Start rich Purple Artemis
+Insert toni update
+Insert toni update
+-> placeworker 1 1
+Insert toni placed a worker in 1x1
+Insert toni placed a worker in 1x1
+-> placeworker 2 2
+Insert toni placed a worker in 2x2
+Insert rich update
+Insert toni placed a worker in 2x2
+Insert rich update
+-> placeworker 1 2
+Insert rich placed a worker in 1x2
+Insert rich placed a worker in 1x2
+-> placeworker 1 3
+Insert rich placed a worker in 1x3
+Insert rich placed a worker in 1x3
+Insert toni update
+Insert toni update
+-> usepower
+Insert toni wants to use the God Power
+Insert toni wants to use the God Power
+-> move 1 2 2
+Insert toni used the God Power
+Insert toni used the God Power
+-> build 2 3 2
+Insert toni built in 2 3
+Insert rich update
+Insert toni built in 2 3
+Insert rich update
+-> normal
+Insert rich doesn't want to use the God Power
+Insert rich doesn't want to use the God Power
+-> move 2 3 1
+Insert rich moved a worker in 2x3
+Insert rich moved a worker in 2x3
+-> build 2 4 1
+Insert rich built in 2 4
+Insert rich built in 2 4
+Insert toni update
+Insert toni update
+-> usepower
+Insert toni wants to use the God Power
+Insert toni wants to use the God Power
+-> move 2 3 2
+Insert toni used the God Power
+Insert toni used the God Power
+-> build 2 4 2
+Insert toni built in 2 4
+Insert toni built in 2 4
+Insert rich update
+Insert rich update
+-> usepower
+Insert rich wants to use the God Power
+Insert rich wants to use the God Power
+-> move 2 2 1
+Insert rich used the God Power
+Insert rich used the God Power
+-> move 1 2 1
+Error: rich can't use the God Power
+Error: rich can't use the God Power
+Connection closed from the server side
+Welcome! What's your name?
+-> toni
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Welcome! What's your name?
+-> phil
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Waiting for other players...
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Artemis
+You choose the first player between: toni phil
+-> toni
+Start toni White Artemis
+Start toni White Artemis
+Start phil Purple Apollo
+Start phil Purple Apollo
+Insert toni update
+Insert toni update
+-> placeworker 1 1
+Insert toni placed a worker in 1x1
+Insert toni placed a worker in 1x1
+-> placeworker 3 3
+Insert toni placed a worker in 3x3
+Insert phil update
+Insert toni placed a worker in 3x3
+Insert phil update
+-> placeworker 3 1
+Insert phil placed a worker in 3x1
+Insert phil placed a worker in 3x1
+-> placeworker 2 3
+Insert phil placed a worker in 2x3
+Insert phil placed a worker in 2x3
+Insert toni update
+Insert toni update
+-> usepower
+Insert toni wants to use the God Power
+Insert toni wants to use the God Power
+-> move 3 4 2
+Insert toni used the God Power
+Insert toni used the God Power
+-> move 3 3 2
+Error: toni can't use the God Power
+Error: toni can't use the God Power
+Connection closed from the server side
+Welcome! What's your name?
+-> toni
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Waiting for other players...
+Welcome! What's your name?
+-> phil
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Artemis
+Your Divinity: Apollo
+You choose the first player between: toni phil
+-> toni
+Start toni White Apollo
+Start phil Purple Artemis
+Start toni White Apollo
+Start phil Purple Artemis
+Insert toni update
+Insert toni update
+-> placeworker 2 1
+Insert toni placed a worker in 2x1
+Insert toni placed a worker in 2x1
+-> placeworker 1 2
+Insert toni placed a worker in 1x2
+Insert phil update
+Insert toni placed a worker in 1x2
+Insert phil update
+-> placeworker 3 1
+Insert phil placed a worker in 3x1
+Insert phil placed a worker in 3x1
+-> placeworker 2 3
+Insert phil placed a worker in 2x3
+Insert toni update
+Insert phil placed a worker in 2x3
+Insert toni update
+-> normal
+Insert toni doesn't want to use the God Power
+Insert toni doesn't want to use the God Power
+-> move 2 2 1
+Insert toni moved a worker in 2x2
+Insert toni moved a worker in 2x2
+-> build 1 1 1
+Insert toni built in 1 1
+Insert phil update
+Insert toni built in 1 1
+Insert phil update
+-> usepower
+Insert phil wants to use the God Power
+Insert phil wants to use the God Power
+-> move 2 2 1
+Error: phil can't use the God Power
+-> move 2 3 1
+Error: phil can't use the God Power
+-> move 2 4 2
+Insert phil used the God Power
+-> build 1 3 2
+Error: phil can't use the God Power
+Error: phil can't use the God Power
+Connection closed from the server side
+Welcome! What's your name?
+-> rich
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Waiting for other players...
+Welcome! What's your name?
+-> dsfgsdfg
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Artemis
+Your Divinity: Apollo
+You choose the first player between: dsfgsdfg rich
+-> dsfgsdfg
+Wrong name, reinsert it.. 
+First client has disconnected while chooses first player
+Connection closed from the server side
+Welcome! What's your name?
+-> trwtr
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Waiting for other players...
+Welcome! What's your name?
+-> dfgdgh
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Artemis
+Your Divinity: Apollo
+You choose the first player between: dfgdgh trwtr
+-> dfgdgh
+Wrong name, reinsert it.. 
+Welcome! What's your name?
+-> dfgdfhg
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Waiting for other players...
+Welcome! What's your name?
+-> adsf
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Artemis
+You choose the first player between: dfgdfhg adsf
+-> dfgdfhg
+Start dfgdfhg White Artemis
+Start dfgdfhg White Artemis
+Start adsf Purple Apollo
+Start adsf Purple Apollo
+Insert dfgdfhg update
+Insert dfgdfhg update
+-> placeworker 1 1
+Insert dfgdfhg placed a worker in 1x1
+Insert dfgdfhg placed a worker in 1x1
+-> placeworker 3 3
+Insert dfgdfhg placed a worker in 3x3
+Insert adsf update
+Insert dfgdfhg placed a worker in 3x3
+Insert adsf update
+-> placeworker 2 1
+Insert adsf placed a worker in 2x1
+Insert adsf placed a worker in 2x1
+-> placeworker 1 3
+Insert adsf placed a worker in 1x3
+Insert adsf placed a worker in 1x3
+Insert dfgdfhg update
+Insert dfgdfhg update
+-> usepower
+Insert dfgdfhg wants to use the God Power
+Insert dfgdfhg wants to use the God Power
+-> move 2 2 1
+Insert dfgdfhg used the God Power
+Insert dfgdfhg used the God Power
+-> move 3 2 1
+Insert dfgdfhg used the God Power
+Insert dfgdfhg used the God Power
+-> build 3 1 1
+Insert dfgdfhg built in 3 1
+Insert dfgdfhg built in 3 1
+Insert adsf update
+Insert adsf update
+-> usepower
+Insert adsf wants to use the God Power
+Insert adsf wants to use the God Power
+-> move 3 2 1
+Insert adsf used the God Power
+Insert adsf used the God Power
+-> build 2 2 1
+Insert adsf built in 2 2
+Insert adsf built in 2 2
+Insert dfgdfhg update
+Insert dfgdfhg update
+-> usepower
+Insert dfgdfhg wants to use the God Power
+Insert dfgdfhg wants to use the God Power
+-> move 3 4 2
+Insert dfgdfhg used the God Power
+Insert dfgdfhg used the God Power
+-> move 3 3 2
+Error: dfgdfhg can't use the God Power
+Error: dfgdfhg can't use the God Power
+-> move 2 2 1
+Insert dfgdfhg used the God Power
+Insert dfgdfhg used the God Power
+-> build 3 1 1
+Insert dfgdfhg built in 3 1
+Insert dfgdfhg built in 3 1
+Insert adsf update
+Insert adsf update
+-> normal
+Insert adsf doesn't want to use the God Power
+Insert adsf doesn't want to use the God Power
+-> move 2 1 1
+Insert adsf moved a worker in 2x1
+Insert adsf moved a worker in 2x1
+-> build 3 1 1
+Insert adsf built in 3 1
+Insert adsf built in 3 1
+Insert dfgdfhg update
+Insert dfgdfhg update
+-> usepower
+Insert dfgdfhg wants to use the God Power
+Insert dfgdfhg wants to use the God Power
+-> move 2 3 1
+Insert dfgdfhg used the God Power
+Insert dfgdfhg used the God Power
+-> move 2 2 1
+Error: dfgdfhg can't use the God Power
+Error: dfgdfhg can't use the God Power
+-> move 1 1 1
+Error: dfgdfhg can't use the God Power
+Error: dfgdfhg can't use the God Power
+-> move 1 2 1
+Insert dfgdfhg used the God Power
+Insert dfgdfhg used the God Power
+-> build 2 2 1
+Insert dfgdfhg built in 2 2
+Insert dfgdfhg built in 2 2
+Insert adsf update
+Welcome! What's your name?
+-> afgetrt
+Welcome! What's your name?
+-> shtrfgbvb
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Waiting for other players...
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Apollo
+Your Divinity: Artemis
+You choose the first player between: afgetrt shtrfgbvb
+-> afgetrt
+Start afgetrt White Apollo
+Start afgetrt White Apollo
+Start shtrfgbvb Purple Artemis
+Start shtrfgbvb Purple Artemis
+Insert afgetrt update
+Insert afgetrt update
+-> placeworker 1 1
+Welcome! What's your name?
+-> afergeg
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen
+Now the other players will choose between them..
+Waiting for other players...
+Welcome! What's your name?
+-> ruyktyu
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Artemis
+Your Divinity: Apollo
+You choose the first player between: ruyktyu afergeg
+-> ruyktyu
+Start ruyktyu White Apollo
+Start ruyktyu White Apollo
+Start afergeg Purple Artemis
+Start afergeg Purple Artemis
+Insert ruyktyu update
+Insert ruyktyu update
+-> placeworker 1 1
+Insert ruyktyu placed a worker in 1x1
+Insert ruyktyu placed a worker in 1x1
+-> placeworker 2 2
+Insert ruyktyu placed a worker in 2x2
+Insert ruyktyu placed a worker in 2x2
+Insert afergeg update
+Insert afergeg update
+-> placeworker 2 1
+Insert afergeg placed a worker in 2x1
+Insert afergeg placed a worker in 2x1
+-> placeworker 3 1
+Insert afergeg placed a worker in 3x1
+Insert ruyktyu update
+Insert afergeg placed a worker in 3x1
+Insert ruyktyu update
+-> usepower
+Insert ruyktyu wants to use the God Power
+Insert ruyktyu wants to use the God Power
+-> move 3 2 2
+Insert ruyktyu used the God Power
+Insert ruyktyu used the God Power
+-> move 2 2 2
 Connection closed from the server side

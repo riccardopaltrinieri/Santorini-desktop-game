@@ -145,10 +145,10 @@ public class CLInterface implements UserInterface {
                     break;
 
                 case "You":
+                case "Wrong" :
                     System.out.println(incomingMessage);
                     outgoingMessage = stdin.nextLine();
                     break;
-
 
                 case "Error:":
                     // Something went wrong with the last action
@@ -264,6 +264,7 @@ public class CLInterface implements UserInterface {
                         inputLine += " " + getWorker();
                     }
                     case placeworker -> {
+                        if(fsm.getState() != State.placeworker) throw new IllegalArgumentException();
                         row = Integer.parseInt(partsInput[1]);
                         col = Integer.parseInt(partsInput[2]);
                         if (row < 1 || row > 5 || col < 1 || col > 5) throw new IllegalArgumentException();

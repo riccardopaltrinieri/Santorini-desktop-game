@@ -71,7 +71,7 @@ public class LiteBoard implements Serializable {
 
                     } else if (boardRow == -1) {
                         // Print the number of the board columns
-                        if (cellRow == 1) System.out.print("    " + (col + 1) + "    ");
+                        if (cellRow == 1) System.out.print("   " + (col + 1) + "    ");
                     } else {
                         if (cellRow == 0 || cellRow == 2) System.out.print("|" + getLevelTD(boardRow, col) + "|");
                         else System.out.print("|" + getWorker(boardRow, col) + "|");
@@ -93,7 +93,7 @@ public class LiteBoard implements Serializable {
 
                             worker = worker%2 + 1;    // Show the number of worker that will be 1 or 2
 
-                            return getLevelLR(row, col) + " " +  Color.toFirstLetter(color) + "W" + worker + ' ' + getLevelLR(row, col);
+                            return getLevelLR(row, col) + " " +  Color.toANSICode(color) + "W" + worker + Color.RESET + ' ' + getLevelLR(row, col);
                         }
                     }
 
@@ -101,14 +101,14 @@ public class LiteBoard implements Serializable {
 
             }
 
-        } return getLevelLR(row, col) + "     " + getLevelLR(row, col);
+        } return getLevelLR(row, col) + "    " + getLevelLR(row, col);
     }
 
     /**
      * return 7 numbers to fill the Top and Down of the board cell
      */
     public String getLevelTD(int row, int col){
-        return String.valueOf(lv[row][col]).repeat(7);
+        return String.valueOf(lv[row][col]).repeat(6);
     }
     /**
      * return a number to fill the Left and Right of the board cell
@@ -118,15 +118,7 @@ public class LiteBoard implements Serializable {
     }
 
     public void printBoardLine(){
-        System.out.println("      +-------++-------++-------++-------++-------+");
-    }
-
-    public int[][] getPosWorker() {
-        return posWorker;
-    }
-
-    public int getNumAllWorker() {
-        return numAllWorker;
+        System.out.println("      +------++------++------++------++------+");
     }
 
     public void printBoardGUI(MainFrame frame){

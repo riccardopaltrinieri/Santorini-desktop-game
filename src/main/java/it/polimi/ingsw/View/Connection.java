@@ -75,7 +75,6 @@ public class Connection extends Observable implements Runnable, Observer {
 
             send( new LiteBoard("Welcome! What's your name?"));
             name = readString();
-            send(new LiteBoard("Wait for other players"));
             server.lobby(this, name);
 
             while(isActive()){

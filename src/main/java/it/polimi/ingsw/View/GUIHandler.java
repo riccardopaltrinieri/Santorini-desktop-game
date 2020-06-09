@@ -5,6 +5,7 @@ import it.polimi.ingsw.View.Graphics.BoardButtonListener;
 import it.polimi.ingsw.View.Graphics.ChooseBetweenFrame;
 import it.polimi.ingsw.View.Graphics.ChooseFrame;
 import it.polimi.ingsw.View.Graphics.MainFrame;
+import it.polimi.ingsw.utils.Divinity;
 
 import javax.swing.*;
 
@@ -16,15 +17,15 @@ public class GUIHandler implements UserInterface {
     private final FSMView fsm = new FSMView();
 
     private Color color;
+    private Divinity divinity;
     private String name;
     private String lastMessage;
     private String firstGodToRemove;
     private String secondGodToRemove;
-    private int numPlayer;
     private int selectedWorkerIndex;
 
 
-    private BoardButtonListener boardListener = new BoardButtonListener(fsm,color,mainFrame);
+    private final BoardButtonListener boardListener = new BoardButtonListener(fsm,color,mainFrame);
 
     @Override
     public String update(LiteBoard board) {
@@ -40,9 +41,50 @@ public class GUIHandler implements UserInterface {
             switch (firstWord){
 
                 case "Error:":
+                    board.printBoardGUI(mainFrame);
                     //Error
-                    JOptionPane.showMessageDialog(mainFrame,"something gone wrong, please try again");
-                    incomingMessage=lastMessage;
+                    if (parts[1].equals(name)) {
+                        JOptionPane.showMessageDialog(mainFrame, "something gone wrong, please try again");
+                        fsm.prevState();
+                        for (int i = 0; i < 25; i++) mainFrame.getActiveBoardButtons()[i].setEnabled(false);
+                        //Move
+                        if (fsm.getState() == State.move) {
+                            mainFrame.updateTextArea("Select where you want to move your worker");
+                            for (int i = 0; i < 25; i++) {
+                                if (mainFrame.getActiveBoardButtons()[selectedWorkerIndex].canMoveTo(mainFrame.getActiveBoardButtons()[i], fsm.getPath())) {
+                                    mainFrame.getActiveBoardButtons()[i].setSelectableCell(true);
+                                    mainFrame.getActiveBoardButtons()[i].setEnabled(true);
+                                    mainFrame.getActiveBoardButtons()[i].repaint();
+                                } else {
+                                    mainFrame.getActiveBoardButtons()[i].setEnabled(false);
+                                }
+                            }
+                            int[] coordinate = mainFrame.getChosenButtonCoordinate();
+                            int workerIndex = mainFrame.getActiveBoardButtons()[selectedWorkerIndex].getWorkerNum() % 2 + 1;
+                            outgoingMessage = "move " + coordinate[0] + " " + coordinate[1] + " " + workerIndex;
+                            selectedWorkerIndex = (coordinate[0] - 1) * 5 + coordinate[1] - 1;
+                        }
+
+                        //Build
+                        if (fsm.getState() == State.build) {
+                            mainFrame.updateTextArea("select where you want to build");
+                            for (int i = 0; i < 25; i++) {
+                                if (mainFrame.getActiveBoardButtons()[selectedWorkerIndex].canBuildIn(mainFrame.getActiveBoardButtons()[i])) {
+                                    mainFrame.getActiveBoardButtons()[i].setSelectableCell(true);
+                                    mainFrame.getActiveBoardButtons()[i].setEnabled(true);
+                                    mainFrame.getActiveBoardButtons()[i].repaint();
+                                } else {
+                                    mainFrame.getActiveBoardButtons()[i].setEnabled(false);
+                                }
+                            }
+                            int[] coordinate = mainFrame.getChosenButtonCoordinate();
+                            int workerIndex = mainFrame.getActiveBoardButtons()[selectedWorkerIndex].getWorkerNum() % 2 + 1;
+                            outgoingMessage = "build " + coordinate[0] + " " + coordinate[1] + " " + workerIndex;
+                        }
+                        fsm.nextState();
+                        incomingMessage = lastMessage;
+                    }
+                    break;
 
                 case "Start" :
                 //take the other's player info
@@ -115,10 +157,8 @@ public class GUIHandler implements UserInterface {
                     );
                     if(result == JOptionPane.YES_OPTION){
                         outgoingMessage="2";
-                        numPlayer=2;
                     }else if (result == JOptionPane.NO_OPTION){
                         outgoingMessage="3";
-                        numPlayer=3;
                     }else {
                         while(!(outgoingMessage.equals("2")||(outgoingMessage.equals("3")))){
                             result = JOptionPane.showOptionDialog(
@@ -133,10 +173,8 @@ public class GUIHandler implements UserInterface {
                             );
                             if(result == JOptionPane.YES_OPTION){
                                 outgoingMessage="2";
-                                numPlayer=2;
                             }else if (result == JOptionPane.NO_OPTION) {
                                 outgoingMessage = "3";
-                                numPlayer=3;
                             }
                         }
                     }
@@ -217,6 +255,7 @@ public class GUIHandler implements UserInterface {
                 case "Your":
                     // Shows to the player his God
                     mainFrame.updateGodCard(parts[2]);
+                    divinity = Divinity.valueOf(parts[2]);
                     outgoingMessage = "noMessageToSend";
                     break;
 
@@ -262,6 +301,8 @@ public class GUIHandler implements UserInterface {
                             }
 
                             outgoingMessage=mainFrame.getYesOrNoResponse();
+                            if(outgoingMessage.equals("usepower")) fsm.setPath(divinity);
+                            else fsm.setPath(Divinity.Default);
                             mainFrame.removeYesOrNo();
                         }
 
@@ -269,7 +310,7 @@ public class GUIHandler implements UserInterface {
                         if (fsm.getState()==State.move){
                             mainFrame.updateTextArea("Select where you want to move your worker");
                             for (int i=0; i<25; i++){
-                                if (mainFrame.getActiveBoardButtons()[selectedWorkerIndex].canMoveTo(mainFrame.getActiveBoardButtons()[i])){
+                                if (mainFrame.getActiveBoardButtons()[selectedWorkerIndex].canMoveTo(mainFrame.getActiveBoardButtons()[i], fsm.getPath())){
                                     mainFrame.getActiveBoardButtons()[i].setSelectableCell(true);
                                     mainFrame.getActiveBoardButtons()[i].setEnabled(true);
                                     mainFrame.getActiveBoardButtons()[i].repaint();
@@ -318,10 +359,6 @@ public class GUIHandler implements UserInterface {
             System.out.println(e.getMessage());
         }
         return null;
-    }
-
-    public State getFsmState() {
-        return fsm.getState();
     }
 }
 
