@@ -17,7 +17,6 @@ public class BoardButton extends JButton {
     private BufferedImage selectedFrame = null;
     private BufferedImage levelImage = null;
 
-
     private int level=0;
     private boolean haveWorker=false;
     private boolean selectableCell=false;
@@ -52,7 +51,7 @@ public class BoardButton extends JButton {
             g.drawImage(worker, 10, 10, null);
         }
         if (selectableCell){
-            path ="images/frameMove.png";
+            path = "images/frameMove.png";
             try {
                 selectedFrame = ImageIO.read(new File(path));
             }
@@ -147,6 +146,7 @@ public class BoardButton extends JButton {
                 // unless the divinity is prometheus
                 ((power != Divinity.Prometheus && destination.getLevel() <= level + 1) ||
                 (power == Divinity.Prometheus && destination.getLevel() <= level)) &&
+
                 // should not be a dome
                 destination.getLevel() < 4 &&
                 // should not be the same cell as worker's position
@@ -156,4 +156,5 @@ public class BoardButton extends JButton {
                 (!destination.getHaveWorker() ||
                 power == Divinity.Apollo || power == Divinity.Minotaur);
     }
+
 }

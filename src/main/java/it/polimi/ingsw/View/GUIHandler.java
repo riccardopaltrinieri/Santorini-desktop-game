@@ -1,10 +1,7 @@
 package it.polimi.ingsw.View;
 
+import it.polimi.ingsw.View.Graphics.*;
 import it.polimi.ingsw.utils.Color;
-import it.polimi.ingsw.View.Graphics.BoardButtonListener;
-import it.polimi.ingsw.View.Graphics.ChooseBetweenFrame;
-import it.polimi.ingsw.View.Graphics.ChooseFrame;
-import it.polimi.ingsw.View.Graphics.MainFrame;
 import it.polimi.ingsw.utils.Divinity;
 
 import javax.swing.*;
@@ -23,6 +20,8 @@ public class GUIHandler implements UserInterface {
     private String firstGodToRemove;
     private String secondGodToRemove;
     private int selectedWorkerIndex;
+    private int previousCellMoveIndex=-1;
+    private int previousCellBuildIndex=-1;
 
 
     private final BoardButtonListener boardListener = new BoardButtonListener(fsm,color,mainFrame);
@@ -270,12 +269,7 @@ public class GUIHandler implements UserInterface {
                         // ask to the player which worker he wants to use but don't send anything
                         mainFrame.updateTextArea("Click on the worker that you want to use");
                         for (int i=0; i<25;i++){
-                            if((mainFrame.getActiveBoardButtons()[i].getHaveWorker())&&(mainFrame.getActiveBoardButtons()[i].getWorkerColor()==color)){
-                                mainFrame.getActiveBoardButtons()[i].setEnabled(true);
-                            }
-                            else {
-                                mainFrame.getActiveBoardButtons()[i].setEnabled(false);
-                            }
+                            mainFrame.getActiveBoardButtons()[i].setEnabled((mainFrame.getActiveBoardButtons()[i].getHaveWorker()) && (mainFrame.getActiveBoardButtons()[i].getWorkerColor() == color));
                         }
                         int[] coordinate=mainFrame.getChosenButtonCoordinate();
                         selectedWorkerIndex = (coordinate[0]-1)*5+coordinate[1]-1;
@@ -292,15 +286,19 @@ public class GUIHandler implements UserInterface {
                             outgoingMessage ="placeworker "+coordinate[0]+" "+coordinate[1];
                         }
 
-                        //Start
+                        //Ask if you want to use the godpower
                         if (fsm.getState()==State.start){
-                            mainFrame.updateTextArea("Do you want to use your Godpower?");
-                            mainFrame.addYesOrNo();
-                            for (int i=0;i<25;i++){
-                                mainFrame.getActiveBoardButtons()[i].setEnabled(false);
+                            if((divinity==Divinity.Athena)||(divinity==Divinity.Pan)){
+                                outgoingMessage="usepower";
                             }
-
-                            outgoingMessage=mainFrame.getYesOrNoResponse();
+                            else {
+                                mainFrame.updateTextArea("Do you want to use your Godpower?");
+                                mainFrame.addYesOrNo();
+                                for (int i = 0; i < 25; i++) {
+                                    mainFrame.getActiveBoardButtons()[i].setEnabled(false);
+                                }
+                                outgoingMessage = mainFrame.getYesOrNoResponse();
+                            }
                             if(outgoingMessage.equals("usepower")) fsm.setPath(divinity);
                             else fsm.setPath(Divinity.Default);
                             mainFrame.removeYesOrNo();
@@ -310,7 +308,7 @@ public class GUIHandler implements UserInterface {
                         if (fsm.getState()==State.move){
                             mainFrame.updateTextArea("Select where you want to move your worker");
                             for (int i=0; i<25; i++){
-                                if (mainFrame.getActiveBoardButtons()[selectedWorkerIndex].canMoveTo(mainFrame.getActiveBoardButtons()[i], fsm.getPath())){
+                                if ((mainFrame.getActiveBoardButtons()[selectedWorkerIndex].canMoveTo(mainFrame.getActiveBoardButtons()[i], fsm.getPath()))&&(i!= previousCellMoveIndex)){
                                     mainFrame.getActiveBoardButtons()[i].setSelectableCell(true);
                                     mainFrame.getActiveBoardButtons()[i].setEnabled(true);
                                     mainFrame.getActiveBoardButtons()[i].repaint();
@@ -321,6 +319,12 @@ public class GUIHandler implements UserInterface {
                             }
                             int[] coordinate = mainFrame.getChosenButtonCoordinate();
                             int workerIndex=mainFrame.getActiveBoardButtons()[selectedWorkerIndex].getWorkerNum()%2+1;
+                            if (previousCellMoveIndex==-1) {
+                                previousCellMoveIndex = selectedWorkerIndex;
+                            }
+                            else {
+                                previousCellMoveIndex=-1;
+                            }
                             outgoingMessage ="move "+coordinate[0]+" "+coordinate[1]+" "+workerIndex;
                             selectedWorkerIndex = (coordinate[0]-1)*5+coordinate[1]-1;
                         }
@@ -329,7 +333,7 @@ public class GUIHandler implements UserInterface {
                         if(fsm.getState()==State.build){
                             mainFrame.updateTextArea("select where you want to build");
                             for (int i=0;i<25;i++){
-                                if(mainFrame.getActiveBoardButtons()[selectedWorkerIndex].canBuildIn(mainFrame.getActiveBoardButtons()[i])){
+                                if((mainFrame.getActiveBoardButtons()[selectedWorkerIndex].canBuildIn(mainFrame.getActiveBoardButtons()[i]))&&(i!=previousCellBuildIndex)){
                                     mainFrame.getActiveBoardButtons()[i].setSelectableCell(true);
                                     mainFrame.getActiveBoardButtons()[i].setEnabled(true);
                                     mainFrame.getActiveBoardButtons()[i].repaint();
@@ -339,6 +343,12 @@ public class GUIHandler implements UserInterface {
                                 }
                             }
                             int [] coordinate = mainFrame.getChosenButtonCoordinate();
+                            if (previousCellBuildIndex==-1) {
+                                previousCellBuildIndex = (coordinate[0]-1) * 5 + coordinate[1]-1;
+                            }
+                            else {
+                                previousCellBuildIndex=-1;
+                            }
                             int workerIndex=mainFrame.getActiveBoardButtons()[selectedWorkerIndex].getWorkerNum()%2+1;
                             outgoingMessage = "build "+coordinate[0]+" "+coordinate[1]+" "+workerIndex;
                         }
