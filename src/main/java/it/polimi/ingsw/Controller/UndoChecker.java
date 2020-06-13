@@ -27,7 +27,6 @@ public class UndoChecker extends Thread implements Runnable {
         try {
 
             sleep(5000);
-            System.out.println("thread awakened: " + state + " " + this);
 
             if (controller.isUndoing()) {
                 switch (state) {

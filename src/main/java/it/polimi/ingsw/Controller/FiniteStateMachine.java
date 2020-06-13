@@ -22,6 +22,11 @@ public class FiniteStateMachine {
      */
     protected void nextState() throws IllegalStateException {
 
+        if(state == State.endTurn) {
+            state = State.start;
+            return;
+        }
+
         switch (this.divinity) {
 
             case Default:
