@@ -98,13 +98,19 @@ public class Controller extends Observable implements Observer {
                 }
 
                 case undo -> {
-                    this.undoing = true;
+                    undoing = true;
                     actionExecuted = false;
                     UndoChecker undoThread = new UndoChecker(game, this, State.undo);
                     undoThread.start();
                     String msg = "Undo: " + game.getCurrentPlayer().getName() + " undoing";
                     game.sendBoard(new LiteBoard(msg, game.getBoard(), game));
                 }
+
+                case endturn -> {
+                    undoing = false;
+                    actionExecuted = game.endTurn();
+                }
+
             }
 
             // If something went wrong actionExecuted will be false and the fsm stay in the current state
@@ -112,13 +118,6 @@ public class Controller extends Observable implements Observer {
                 undoing = false;
                 fsm.nextState();
             }
-
-            // When the turn is ended notify the game and restart
-            if (fsm.getState() == State.endTurn) {
-                fsm.setState(State.start);
-                game.endTurn();
-            }
-
         }
     }
 

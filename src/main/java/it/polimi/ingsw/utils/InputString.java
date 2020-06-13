@@ -7,5 +7,6 @@ public enum InputString {
     placeworker,
     normal,
     usepower,
+    endturn,
     undo
 }

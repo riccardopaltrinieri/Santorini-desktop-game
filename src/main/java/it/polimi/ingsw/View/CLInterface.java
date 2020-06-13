@@ -80,18 +80,12 @@ public class CLInterface implements UserInterface {
                             fsm.nextState();
                         }
 
-                        if (fsm.getState() != State.endTurn) {
-
-                            if (fsm.getState() == State.start && (divinity == Divinity.Athena || divinity == Divinity.Pan)) {
-                                // The Athena's and Pan's power are passive and there isn't the need to ask
-                                outgoingMessage = "usepower";
-                            } else {
-                                System.out.println(fsm.getStateStringCLI());
-                                outgoingMessage = checkAction(stdin);
-                            }
-
+                        if (fsm.getState() == State.start && (divinity == Divinity.Athena || divinity == Divinity.Pan)) {
+                            // The Athena's and Pan's power are passive and there isn't the need to ask
+                            outgoingMessage = "usepower";
                         } else {
-                            outgoingMessage = "noMessageToSend";
+                            System.out.println(fsm.getStateStringCLI());
+                            outgoingMessage = checkAction(stdin);
                         }
 
                         if(!outgoingMessage.equals("undo")) fsm.nextState();
@@ -278,6 +272,9 @@ public class CLInterface implements UserInterface {
                         fsm.setPath(divinity);
                         if (fsm.getState() != State.start) throw new IllegalArgumentException();
                         if (partsInput.length > 1) throw new IllegalArgumentException();
+                    }
+                    case endturn -> {
+                        if(fsm.getState() != State.endTurn) throw new IllegalArgumentException();
                     }
                     case undo -> {
                         //TODO State undo check

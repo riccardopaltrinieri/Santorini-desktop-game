@@ -28,7 +28,7 @@ public class FSMView {
             case worker -> "Choose the worker that you want to move and build with: (write 'worker 1' or 'worker 2]')";
             case move -> "Where do you want to move? (write 'move [row] [column]')";
             case build -> "Where do you want to build? (write 'build [row] [column]')";
-            case endTurn -> "Turn Ended..";
+            case endTurn -> "Write 'endturn' to confirm your actions: ";
         };
     }
 
@@ -99,10 +99,10 @@ public class FSMView {
                 else if (state == State.build) {
                     if (!again) {
                         again = true;
-                        state = State.move;
+                        setState(State.move);
                     } else {
                         again = false;
-                        state = State.endTurn;
+                        setState(State.endTurn);
                     }
                 }
                 break;
