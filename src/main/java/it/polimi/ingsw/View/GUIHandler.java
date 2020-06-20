@@ -25,6 +25,7 @@ public class GUIHandler implements UserInterface {
 
 
     private final BoardButtonListener boardListener = new BoardButtonListener(fsm,color,mainFrame);
+    private final UndoEndlistener undoEndlistener = new UndoEndlistener(mainFrame);
 
     @Override
     public String update(LiteBoard board) {
@@ -106,9 +107,10 @@ public class GUIHandler implements UserInterface {
                             for (int i=0;i<25;i++){
                                 mainFrame.getActiveBoardButtons()[i].addActionListener(boardListener);
                             }
-                            mainFrame.getEndTurnButton().addActionListener(boardListener);
+                            mainFrame.getEndTurnButton().addActionListener(undoEndlistener);
                             mainFrame.getYesButton().addActionListener(boardListener);
                             mainFrame.getNoButton().addActionListener(boardListener);
+                            mainFrame.getUndoButton().addActionListener(undoEndlistener);
                         }
                     });
 
@@ -263,7 +265,6 @@ public class GUIHandler implements UserInterface {
                 case "Insert":
 
                     board.printBoardGUI(mainFrame);
-
                     //ask to the player for the next move according to the FSM
 
                     if (fsm.getState() == State.worker) {
@@ -289,6 +290,7 @@ public class GUIHandler implements UserInterface {
 
                         //Ask if you want to use the godpower
                         if (fsm.getState()==State.start){
+                            mainFrame.getUndoButton().setEnabled(true);
                             if((divinity==Divinity.Athena)||(divinity==Divinity.Pan)){
                                 outgoingMessage="usepower";
                             }
@@ -381,7 +383,12 @@ public class GUIHandler implements UserInterface {
                     break;
             }
             lastMessage = incomingMessage;
-            return outgoingMessage;
+            if (mainFrame.getUndo()==false) {
+                return outgoingMessage;
+            }
+            else{
+                return "Undo: "+parts[1] +" undid last action";
+            }
         }
         catch (IllegalArgumentException e){
             System.out.println(e.getMessage());

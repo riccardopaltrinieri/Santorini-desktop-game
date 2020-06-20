@@ -11,8 +11,6 @@ public class MainFrame extends JFrame{
 
     private JLabel godLabel = new JLabel(godCard);
 
-    private JPanel bottomPanel = new JPanel();
-    private JPanel godInfoPanel = new JPanel();
     private JPanel mapPanel = new JPanel();
     private JPanel yesOrNoPanel = new JPanel();
 
@@ -25,6 +23,9 @@ public class MainFrame extends JFrame{
     private JButton endTurnButton = new JButton("End Turn");
     private JButton yesButton = new JButton("Yes");
     private JButton noButton = new JButton("No");
+    private JButton undoButton = new JButton("Undo");
+
+    private boolean undo=false;
 
     private String yesOrNoString;
 
@@ -45,23 +46,12 @@ public class MainFrame extends JFrame{
         layout.setConstraints(godLabel,lim);
         add(godLabel);
 
-        /*godInfoPanel.add(playerInfoTextArea);
-        playerInfoTextArea.setEditable(false);
-        lim.gridy=6;
-        lim.gridheight=1;
-        layout.setConstraints(godInfoPanel,lim);
-        add(godInfoPanel);
-        */
-
-
         lim.gridy=8;
         lim.gridx=1;
         lim.gridwidth=3;
         lim.gridheight=1;
-        bottomPanel.add(textArea);
-        bottomPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
-        layout.setConstraints(bottomPanel,lim);
-        add(bottomPanel);
+        layout.setConstraints(textArea,lim);
+        add(textArea);
 
         mapPanel.setLayout(new GridLayout(7,7));
         int j=0;
@@ -113,6 +103,10 @@ public class MainFrame extends JFrame{
         endTurnButton.setEnabled(false);
         layout.setConstraints(endTurnButton,lim);
         add(endTurnButton);
+        lim.gridx=8;
+        layout.setConstraints(undoButton,lim);
+        undoButton.setEnabled(false);
+        add(undoButton);
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setTitle("Santorini Game");
@@ -211,5 +205,17 @@ public class MainFrame extends JFrame{
 
     public JButton getEndTurnButton() {
         return endTurnButton;
+    }
+
+    public JButton getUndoButton() {
+        return undoButton;
+    }
+
+    public void setUndo(boolean undo) {
+        this.undo = undo;
+    }
+
+    public boolean getUndo() {
+        return undo;
     }
 }
