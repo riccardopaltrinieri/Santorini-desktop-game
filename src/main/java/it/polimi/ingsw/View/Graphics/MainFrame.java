@@ -22,6 +22,7 @@ public class MainFrame extends JFrame{
     private JTextArea textArea = new JTextArea();
     private JTextArea playerInfoTextArea = new JTextArea();
 
+    private JButton endTurnButton = new JButton("End Turn");
     private JButton yesButton = new JButton("Yes");
     private JButton noButton = new JButton("No");
 
@@ -44,17 +45,18 @@ public class MainFrame extends JFrame{
         layout.setConstraints(godLabel,lim);
         add(godLabel);
 
-        godInfoPanel.add(playerInfoTextArea);
+        /*godInfoPanel.add(playerInfoTextArea);
         playerInfoTextArea.setEditable(false);
         lim.gridy=6;
-        lim.gridheight=2;
+        lim.gridheight=1;
         layout.setConstraints(godInfoPanel,lim);
         add(godInfoPanel);
-
+        */
 
 
         lim.gridy=8;
-        lim.gridwidth=8;
+        lim.gridx=1;
+        lim.gridwidth=3;
         lim.gridheight=1;
         bottomPanel.add(textArea);
         bottomPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -98,13 +100,19 @@ public class MainFrame extends JFrame{
         layout.setConstraints(mapPanel,lim);
         add(mapPanel);
 
-        lim.gridx=5;
+        lim.gridx=4;
         lim.gridy=8;
-        lim.gridwidth=4;
+        lim.gridwidth=3;
         lim.gridheight=1;
         layout.setConstraints(yesOrNoPanel,lim);
         yesOrNoPanel.setPreferredSize(new Dimension(200,50));
         add(yesOrNoPanel);
+
+        lim.gridx=7;
+        lim.gridwidth=1;
+        endTurnButton.setEnabled(false);
+        layout.setConstraints(endTurnButton,lim);
+        add(endTurnButton);
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setTitle("Santorini Game");
@@ -132,10 +140,6 @@ public class MainFrame extends JFrame{
 
     public BoardButton[] getActiveBoardButtons() {
         return activeBoardButtons;
-    }
-
-    public void setActiveBoardButtons(BoardButton[] activeBoardButtons) {
-        this.activeBoardButtons = activeBoardButtons;
     }
 
     public void setChosenButton(BoardButton chosenButton) {
@@ -195,5 +199,17 @@ public class MainFrame extends JFrame{
 
     public void setYesOrNoString(String yesOrNoString) {
         this.yesOrNoString = yesOrNoString;
+    }
+
+    public void enableEndTurn(){
+        endTurnButton.setEnabled(true);
+    }
+
+    public void disableEndTurn(){
+        endTurnButton.setEnabled(false);
+    }
+
+    public JButton getEndTurnButton() {
+        return endTurnButton;
     }
 }

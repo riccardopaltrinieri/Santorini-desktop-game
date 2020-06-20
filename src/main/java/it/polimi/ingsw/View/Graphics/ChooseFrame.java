@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class ChooseFrame extends JFrame{
 
     private JPanel godPanel = new JPanel();
-    private JPanel eastPanel = new JPanel();
+    private JPanel centerPanel = new JPanel();
     private JPanel comboPanel = new JPanel();
 
     private String chosenDivinity;
@@ -40,21 +40,23 @@ public class ChooseFrame extends JFrame{
         divinityList = new JComboBox(divinityString.toArray());
         divinityList.addItemListener(chooseFrameListener);
 
-        eastPanel.add(divinityList);
-        eastPanel.add(selectButton);
+        comboPanel.add(divinityList);
+        comboPanel.add(selectButton);
+        //godInfoText.setText(Divinity.getDescrption(divinityList.getSelectedItem().toString().toLowerCase()));
+        godInfoText.setEditable(false);
+        centerPanel.setLayout(new BorderLayout());
+        centerPanel.add(comboPanel,BorderLayout.NORTH);
+        centerPanel.add(godInfoText,BorderLayout.CENTER);
         selectButton.addActionListener(chooseFrameListener);
 
-        add(eastPanel,BorderLayout.EAST);
+        add(centerPanel,BorderLayout.CENTER);
 
         String iconPath = "images/godCards/"+divinityList.getSelectedItem()+".png";
         godIcon= new ImageIcon(iconPath);
         godLabel= new JLabel(godIcon);
         godPanel.setLayout(new BorderLayout());
         godPanel.add(godLabel, BorderLayout.CENTER);
-        godInfoText.setText("descizione rapida del potere del dio");
-        godInfoText.setEditable(false);
-        godPanel.add(godInfoText,BorderLayout.SOUTH);
-        add(godPanel,BorderLayout.CENTER);
+        add(godPanel,BorderLayout.WEST);
 
         infoText.setEditable(false);
         infoText.setAlignmentX(CENTER_ALIGNMENT);

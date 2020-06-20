@@ -106,6 +106,7 @@ public class GUIHandler implements UserInterface {
                             for (int i=0;i<25;i++){
                                 mainFrame.getActiveBoardButtons()[i].addActionListener(boardListener);
                             }
+                            mainFrame.getEndTurnButton().addActionListener(boardListener);
                             mainFrame.getYesButton().addActionListener(boardListener);
                             mainFrame.getNoButton().addActionListener(boardListener);
                         }
@@ -340,6 +341,7 @@ public class GUIHandler implements UserInterface {
                                 }
                                 else{
                                     mainFrame.getActiveBoardButtons()[i].setEnabled(false);
+
                                 }
                             }
                             int [] coordinate = mainFrame.getChosenButtonCoordinate();
@@ -351,6 +353,22 @@ public class GUIHandler implements UserInterface {
                             }
                             int workerIndex=mainFrame.getActiveBoardButtons()[selectedWorkerIndex].getWorkerNum()%2+1;
                             outgoingMessage = "build "+coordinate[0]+" "+coordinate[1]+" "+workerIndex;
+                        }
+
+                        //EndTurn
+                        if (fsm.getState()==State.endTurn){
+                            mainFrame.updateTextArea("press End Button to confirm your choiche");
+                            mainFrame.enableEndTurn();
+                            synchronized (mainFrame){
+                                try {
+                                    mainFrame.wait();
+                                }
+                                catch (InterruptedException e){
+
+                                }
+                                mainFrame.disableEndTurn();
+                                outgoingMessage="endturn";
+                            }
                         }
                         fsm.nextState();
                     }

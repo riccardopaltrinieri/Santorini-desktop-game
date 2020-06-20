@@ -26,6 +26,11 @@ public class BoardButtonListener implements ActionListener {
                 frame.notifyAll();
             }
         }
+        if((e.getSource())==frame.getEndTurnButton()){
+            synchronized (frame) {
+                frame.notifyAll();
+            }
+        }
         if(fsm.getState()== State.start){
             if ((e.getSource())==frame.getYesButton()){
                 frame.setYesOrNoString("usepower");
