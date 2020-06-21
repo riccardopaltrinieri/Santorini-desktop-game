@@ -11178,3 +11178,80 @@ Insert fillo doesn't want to use the God Power
 Insert fillo moved a worker in 5x2
 Insert fillo moved a worker in 5x2
 -> undo: fillo undid last action
+Welcome! What's your name?
+-> aga
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+Choose the third divinity: 
+-> Minotaur
+All the divinities have been chosen
+Now the other players will choose between them..
+Waiting for other players...
+Welcome! What's your name?
+-> ob
+Waiting for other players...
+Welcome! What's your name?
+-> bi
+Choose your Divinity between: Apollo Athena Minotaur 
+-> Apollo
+Your Divinity: Apollo
+Choose your Divinity between: Athena Minotaur 
+-> Athena
+Your Divinity: Athena
+Your Divinity: Minotaur
+You choose the first player between: ob bi aga
+-> bi
+Start bi White Minotaur
+Start aga Purple Apollo
+Start bi White Minotaur
+Start bi White Minotaur
+Start ob Brown Athena
+Start aga Purple Apollo
+Start aga Purple Apollo
+Start ob Brown Athena
+Start ob Brown Athena
+Insert bi update
+Insert bi update
+Insert bi update
+-> placeworker 1 1
+You took to much time to answer, you lose..
+-> 
+You took to much time to answer, you lose..
+-> 
+Welcome! What's your name?
+-> Anto
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+All the divinities have been chosen
+Now the other players will choose between them..
+Waiting for other players...
+Welcome! What's your name?
+-> asg
+Choose your Divinity between: Apollo Athena 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Athena
+You choose the first player between: asg Anto
+-> asg
+Start asg White Athena
+Start asg White Athena
+Start Anto Purple Apollo
+Start Anto Purple Apollo
+Insert asg update
+Insert asg update
+-> placeworker 1 1
+Insert asg placed a worker in 1x1
+Insert asg placed a worker in 1x1
+-> placeworker 2 2
+Insert asg placed a worker in 2x2
+Insert asg placed a worker in 2x2
+-> endturn
+Insert Anto update
