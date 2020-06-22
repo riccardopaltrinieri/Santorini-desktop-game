@@ -14,7 +14,7 @@ import java.util.concurrent.Executors;
 import static it.polimi.ingsw.utils.Color.*;
 
 public class Server {
-    private static final int PORT = 12345;
+    private static final int PORT = 12355;
     private ServerSocket serverSocket;
     private int numPlayers;
 
@@ -241,6 +241,13 @@ public class Server {
 
     public int getNumPlayers() {
         return numPlayers;
+    }
+
+    public void addConnection (Connection con){
+        connections.add(con);
+    }
+    public int dimConnections(){
+        return connections.size();
     }
 
 

@@ -11255,3 +11255,121 @@ Insert asg placed a worker in 2x2
 Insert asg placed a worker in 2x2
 -> endturn
 Insert Anto update
+Welcome! What's your name?
+-> Anton
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Hephaestus
+Choose the second divinity: 
+-> Demeter
+All the divinities have been chosen
+Now the other players will choose between them..
+Waiting for other players...
+Welcome! What's your name?
+-> fs
+Choose your Divinity between: Hephaestus Demeter 
+-> Hephaestus
+Your Divinity: Hephaestus
+Your Divinity: Demeter
+You choose the first player between: Anton fs
+-> Anton
+Start Anton White Demeter
+Start fs Purple Hephaestus
+Start Anton White Demeter
+Start fs Purple Hephaestus
+Insert Anton update
+Insert Anton update
+-> placeworker 2 2
+Insert Anton placed a worker in 2x2
+Insert Anton placed a worker in 2x2
+-> placeworker 3 3
+Insert Anton placed a worker in 3x3
+Insert Anton placed a worker in 3x3
+-> endturn
+Insert fs update
+Insert fs update
+-> placeworker 4 2
+Insert fs placed a worker in 4x2
+Insert fs placed a worker in 4x2
+-> placeworker 3 1
+Insert fs placed a worker in 3x1
+Insert fs placed a worker in 3x1
+-> endturn
+Insert Anton update
+Insert Anton update
+-> normal
+Insert Anton doesn't want to use the God Power
+Insert Anton doesn't want to use the God Power
+-> move 2 3 2
+Insert Anton moved a worker in 2x3
+Insert Anton moved a worker in 2x3
+-> build 3 4 2
+Insert Anton built in 3 4
+Insert Anton built in 3 4
+-> endturn
+Insert fs update
+Insert fs update
+-> normal
+Insert fs doesn't want to use the God Power
+Insert fs doesn't want to use the God Power
+-> move 4 3 1
+Insert fs moved a worker in 4x3
+Insert fs moved a worker in 4x3
+-> build 5 2 1
+Insert fs built in 5 2
+Insert fs built in 5 2
+-> endturn
+Insert Anton update
+Insert Anton update
+-> usepower
+Insert Anton wants to use the God Power
+Insert Anton wants to use the God Power
+-> move 1 1 1
+Insert Anton moved a worker in 1x1
+Insert Anton moved a worker in 1x1
+-> build 2 1 1
+Insert Anton used the God Power
+Insert Anton used the God Power
+-> endturn
+Insert fs update
+Insert fs update
+-> usepower
+Insert fs wants to use the God Power
+Insert fs wants to use the God Power
+-> move 3 4 1
+Connection closed from the server side
+-> Undo: closed undid last action
+Welcome! What's your name?
+-> Anto
+Welcome! What's your name?
+-> Anti
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+All the divinities have been chosen
+Now the other players will choose between them..
+Waiting for other players...
+Choose your Divinity between: Apollo Athena 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Athena
+You choose the first player between: Anto Anti
+-> Anto
+Start Anto White Athena
+Start Anti Purple Apollo
+Start Anto White Athena
+Start Anti Purple Apollo
+Insert Anto update
+Insert Anto update
+-> placeworker 1 1
+Insert Anto placed a worker in 1x1
+Insert Anto placed a worker in 1x1
+-> placeworker 2 2
+Insert Anto placed a worker in 2x2
+Insert Anto placed a worker in 2x2
+-> endturn
+Insert Anti update
