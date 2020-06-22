@@ -41,7 +41,7 @@ public class Server {
         connections.add(c);
     }
 
-    public void decideNumberPlayer(Connection c) {
+    public void decideNumberPlayerAndDiv(Connection c) {
         try {
             c.send(new LiteBoard("Decide the number of players: [2 or 3]"));
             setNumPlayers(Integer.parseInt(c.getIn().readUTF()));
@@ -135,7 +135,7 @@ public class Server {
         System.out.println("New client: " + name);
         if (waitingConnection.size() == 1) {
             firstPlayer = name;
-            decideNumberPlayer(c);
+            decideNumberPlayerAndDiv(c);
         }
         else if (waitingConnection.size() == 2) secondPlayer = name;
         else if (waitingConnection.size() == 3) thirdPlayer = name;
