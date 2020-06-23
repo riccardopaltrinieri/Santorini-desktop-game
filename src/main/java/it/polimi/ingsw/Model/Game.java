@@ -117,10 +117,8 @@ public class Game extends Observable {
 
     public synchronized boolean endTurn() {
         iterator = (iterator + 1) % numPlayer;
-        if (!getCurrentPlayer().canMove()) {
-            hasLoser();
-            return false;
-        }
+        if (!getCurrentPlayer().canMove()) hasLoser();
+
         sendBoard(new LiteBoard("Insert " + getCurrentPlayer().getName() + " update", board, this));
         return true;
     }

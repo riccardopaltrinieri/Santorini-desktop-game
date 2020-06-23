@@ -88,8 +88,10 @@ public class Connection extends Observable implements Runnable, Observer {
             close();
 
         } catch(IOException e){
-            send(new LiteBoard("You took to much time to answer, you lose.."));
-            server.endGame();
+            if(isActive()) {
+                send(new LiteBoard("You took to much time to answer, you lose.."));
+                server.endGame();
+            }
             System.err.println("Connection not more active");
             close();
         }
@@ -98,6 +100,10 @@ public class Connection extends Observable implements Runnable, Observer {
     public void newBoard(LiteBoard board) {
         String[] parts = board.getMessage().split(" ");
         send(board);
+        if (parts[1].equals(name) && parts[2].equals("loses")) {
+            active = false;
+            close();
+        }
         if(parts[1].equals(name) && parts[2].equals("wins")){
             server.endGame();
         }

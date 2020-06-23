@@ -71,9 +71,9 @@ public class Server {
 
             for (String god : divinities)  choices.append(god).append(' ');
 
-            getConnection(1).send(new LiteBoard(choices.toString()));
-            playerDivinities[1] = getConnection(1).getIn().readUTF();
-            getConnection(1).send(new LiteBoard("Your Divinity: " + playerDivinities[1]));
+            waitingConnection.get(secondPlayer).send(new LiteBoard(choices.toString()));
+            playerDivinities[1] = waitingConnection.get(secondPlayer).getIn().readUTF();
+            waitingConnection.get(secondPlayer).send(new LiteBoard("Your Divinity: " + playerDivinities[1]));
             divinities.remove(playerDivinities[1]);
 
             if (numPlayers == 3) {
@@ -81,14 +81,14 @@ public class Server {
 
                 for (String god : divinities)  choices.append(god).append(' ');
 
-                getConnection(2).send(new LiteBoard(choices.toString()));
-                playerDivinities[2] = getConnection(2).getIn().readUTF();
-                getConnection(2).send(new LiteBoard("Your Divinity: " + playerDivinities[2]));
+                waitingConnection.get(thirdPlayer).send(new LiteBoard(choices.toString()));
+                playerDivinities[2] = waitingConnection.get(thirdPlayer).getIn().readUTF();
+                waitingConnection.get(thirdPlayer).send(new LiteBoard("Your Divinity: " + playerDivinities[2]));
                 divinities.remove(playerDivinities[2]);
             }
 
             playerDivinities[0] = divinities.get(0);
-            getConnection(0).send(new LiteBoard("Your Divinity: " + playerDivinities[0]));
+            waitingConnection.get(firstPlayer).send(new LiteBoard("Your Divinity: " + playerDivinities[0]));
             divinities.clear();
 
         } catch (IOException e) {
