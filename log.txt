@@ -12359,3 +12359,784 @@ Welcome! What's your name?
 -> afs
 Welcome! What's your name?
 -> avdsa
+Welcome! What's your name?
+-> asf
+Welcome! What's your name?
+-> fas
+Welcome! What's your name?
+-> adgd
+First client has disconnected while choosing the divinities
+First client has disconnected while choosing the divinities
+Connection closed from the server side
+Connection closed from the server side
+Welcome! What's your name?
+-> wwg
+Welcome! What's your name?
+-> dahs
+Welcome! What's your name?
+-> safg
+Decide the number of players: [2 or 3]
+-> 3
+Welcome! What's your name?
+-> fdag
+Welcome! What's your name?
+-> gas
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Minotaur
+Choose the third divinity: 
+-> Athena
+All the divinities have been chosen, 
+now the other players will choose between them.
+Waiting for other players...
+Welcome! What's your name?
+-> sadg
+Waiting for other players...
+Welcome! What's your name?
+-> sa
+Waiting for other players...
+Choose your Divinity between: Apollo Minotaur Athena 
+-> Apollo
+Your Divinity: Apollo
+Choose your Divinity between: Minotaur Athena 
+-> Athena
+Your Divinity: Minotaur
+Your Divinity: Athena
+You choose the first player between: sadg gas sa
+-> sa
+Start sa White Minotaur
+Start sa White Minotaur
+Start gas Purple Apollo
+Start sa White Minotaur
+Start gas Purple Apollo
+Start sadg Brown Athena
+Start sadg Brown Athena
+Insert sa update
+Insert sa update
+Start gas Purple Apollo
+Start sadg Brown Athena
+Insert sa update
+-> placeworker 1 1
+Insert sa placed a worker in 1x1
+Insert sa placed a worker in 1x1
+Insert sa placed a worker in 1x1
+-> placeworker 2 2
+Insert sa placed a worker in 2x2
+Insert sa placed a worker in 2x2
+Insert sa placed a worker in 2x2
+-> endturn
+Insert gas update
+Insert gas update
+Insert gas update
+-> placeworker 2 1
+Insert gas placed a worker in 2x1
+Insert gas placed a worker in 2x1
+Insert gas placed a worker in 2x1
+-> placeworker 1 2
+Insert gas placed a worker in 1x2
+Insert gas placed a worker in 1x2
+Insert gas placed a worker in 1x2
+-> endturn
+Insert sadg update
+Insert sadg update
+Insert sadg update
+-> placeworker 2 3
+Insert sadg placed a worker in 2x3
+Insert sadg placed a worker in 2x3
+Insert sadg placed a worker in 2x3
+-> placeworker 2 4
+Insert sadg placed a worker in 2x4
+Insert sadg placed a worker in 2x4
+Insert sadg placed a worker in 2x4
+-> endturn
+Insert sa update
+-> usepower
+Insert sa update
+Insert sa update
+Insert sa wants to use the God Power
+Insert sa wants to use the God Power
+Insert sa wants to use the God Power
+-> move 4 1 2
+Error: sa can't use the God Power
+Error: sa can't use the God Power
+Error: sa can't use the God Power
+-> move 5 5 2
+Error: sa can't use the God Power
+Error: sa can't use the God Power
+Error: sa can't use the God Power
+-> move 4 4 2
+Error: sa can't use the God Power
+Error: sa can't use the God Power
+Error: sa can't use the God Power
+-> move 3 2 2
+Insert sa used the God Power
+Insert sa used the God Power
+Insert sa used the God Power
+-> build 3 1 2
+Insert sa built in 3 1
+Insert sa built in 3 1
+Insert sa built in 3 1
+-> endturn
+Insert gas update
+Insert gas update
+Insert gas update
+-> normal
+Insert gas doesn't want to use the God Power
+Insert gas doesn't want to use the God Power
+Insert gas doesn't want to use the God Power
+-> move 3 3 1
+Error: gas can't move here
+Error: gas can't move here
+Error: gas can't move here
+-> move 2 2 1
+Insert gas moved a worker in 2x2
+Insert gas moved a worker in 2x2
+Insert gas moved a worker in 2x2
+-> build 2 1 1
+Insert gas built in 2 1
+Insert gas built in 2 1
+Insert gas built in 2 1
+-> endturn
+Insert sadg update
+Insert sadg update
+Insert sadg update
+-> normal
+Insert sadg doesn't want to use the God Power
+Insert sadg doesn't want to use the God Power
+Insert sadg doesn't want to use the God Power
+-> move 2 1 1
+Error: sadg can't move here
+Error: sadg can't move here
+Error: sadg can't move here
+-> move 1 3 1
+Insert sadg moved a worker in 1x3
+Insert sadg moved a worker in 1x3
+Insert sadg moved a worker in 1x3
+-> build 2 3 1
+Insert sadg built in 2 3
+Insert sadg built in 2 3
+Insert sadg built in 2 3
+-> endturn
+Insert sa update
+-> usepower
+Insert sa update
+Insert sa update
+Insert sa wants to use the God Power
+Insert sa wants to use the God Power
+Insert sa wants to use the God Power
+-> move 2 1 1
+Insert sa used the God Power
+Insert sa used the God Power
+Insert sa used the God Power
+-> build 3 1 1
+Insert sa built in 3 1
+Insert sa built in 3 1
+Insert sa built in 3 1
+-> endturn
+Insert gas update
+Insert gas update
+Insert gas update
+-> normal
+Insert gas doesn't want to use the God Power
+Insert gas doesn't want to use the God Power
+Insert gas doesn't want to use the God Power
+-> move 2 3 2
+Insert gas moved a worker in 2x3
+Insert gas moved a worker in 2x3
+Insert gas moved a worker in 2x3
+-> build 3 3 2
+Insert gas built in 3 3
+Insert gas built in 3 3
+Insert gas built in 3 3
+-> endturn
+Insert sadg update
+Insert sadg update
+Insert sadg update
+-> usepower
+Insert sadg wants to use the God Power
+Insert sadg wants to use the God Power
+Insert sadg wants to use the God Power
+-> move 2 1 1
+Error: sadg can't use the God Power
+Error: sadg can't use the God Power
+Error: sadg can't use the God Power
+-> move 1 2 1
+Insert sadg used the God Power
+Insert sadg used the God Power
+Insert sadg used the God Power
+-> build 1 1 1
+Insert sadg built in 1 1
+Insert sadg built in 1 1
+Insert sadg built in 1 1
+-> endturn
+Insert sa update
+-> usepower
+Insert sa update
+Insert sa update
+Insert sa wants to use the God Power
+Insert sa wants to use the God Power
+Insert sa wants to use the God Power
+-> move 3 1 1
+Error: sa can't move up because Athena's power is active
+Error: sa can't move up because Athena's power is active
+Error: sa can't move up because Athena's power is active
+-> move 1 1 1
+Insert sa used the God Power
+Insert sa used the God Power
+Insert sa used the God Power
+-> build 2 1 1
+Insert sa built in 2 1
+Insert sa built in 2 1
+Insert sa built in 2 1
+-> endturn
+Insert gas update
+Insert gas update
+Insert gas update
+-> normal
+Insert gas doesn't want to use the God Power
+Insert gas doesn't want to use the God Power
+Insert gas doesn't want to use the God Power
+-> move 3 2 1
+Error: gas can't move here
+Error: gas can't move here
+Error: gas can't move here
+-> move 3 3 1
+Error: gas can't move up because Athena's power is active
+Error: gas can't move up because Athena's power is active
+Error: gas can't move up because Athena's power is active
+-> move 1 3 1
+Insert gas moved a worker in 1x3
+Insert gas moved a worker in 1x3
+Insert gas moved a worker in 1x3
+-> build 2 2 1
+Insert gas built in 2 2
+Insert gas built in 2 2
+Insert gas built in 2 2
+-> endturn
+Insert sadg update
+Insert sadg update
+Insert sadg update
+-> usepower
+Insert sadg wants to use the God Power
+Insert sadg wants to use the God Power
+Insert sadg wants to use the God Power
+-> move 1 3 1
+Error: sadg can't use the God Power
+Error: sadg can't use the God Power
+Error: sadg can't use the God Power
+-> move 1 1 1
+Error: sadg can't use the God Power
+Error: sadg can't use the God Power
+Error: sadg can't use the God Power
+-> move 2 2 1
+Insert sadg used the God Power
+Insert sadg used the God Power
+Insert sadg used the God Power
+-> build 3 3 1
+Insert sadg built in 3 3
+Insert sadg built in 3 3
+Insert sadg built in 3 3
+-> endturn
+Insert sa update
+-> usepower
+Insert sa update
+Insert sa update
+Insert sa wants to use the God Power
+Insert sa wants to use the God Power
+Insert sa wants to use the God Power
+-> move 2 1 1
+Insert sa used the God Power
+Insert sa used the God Power
+Insert sa used the God Power
+-> build 3 1 1
+Insert sa built in 3 1
+Insert sa built in 3 1
+Insert sa built in 3 1
+-> endturn
+Insert gas update
+Insert gas update
+Insert gas update
+-> normal
+Insert gas doesn't want to use the God Power
+Insert gas doesn't want to use the God Power
+Insert gas doesn't want to use the God Power
+-> move 1 4 1
+Insert gas moved a worker in 1x4
+Insert gas moved a worker in 1x4
+Insert gas moved a worker in 1x4
+-> build 1 5 1
+Insert gas built in 1 5
+Insert gas built in 1 5
+Insert gas built in 1 5
+-> endturn
+Insert sadg update
+Insert sadg update
+Insert sadg update
+-> usepower
+Insert sadg wants to use the God Power
+Insert sadg wants to use the God Power
+Insert sadg wants to use the God Power
+-> move 2 3 1
+Error: sadg can't use the God Power
+Error: sadg can't use the God Power
+Error: sadg can't use the God Power
+-> move 1 1 1
+Insert sadg used the God Power
+Insert sadg used the God Power
+Insert sadg used the God Power
+-> build 1 2 1
+Insert sadg built in 1 2
+Insert sadg built in 1 2
+Insert sadg built in 1 2
+-> endturn
+Insert sa update
+-> usepower
+Insert sa update
+Insert sa update
+Insert sa wants to use the God Power
+Insert sa wants to use the God Power
+Insert sa wants to use the God Power
+-> move 3 1 1
+Error: sa can't move up because Athena's power is active
+Error: sa can't move up because Athena's power is active
+Error: sa can't move up because Athena's power is active
+-> move 2 2 1
+Insert sa used the God Power
+Insert sa used the God Power
+Insert sa used the God Power
+-> build 1 2 1
+Insert sa built in 1 2
+Insert sa built in 1 2
+Insert sa built in 1 2
+-> endturn
+Insert gas update
+Insert gas update
+Insert gas update
+-> usepower
+Insert gas wants to use the God Power
+Insert gas wants to use the God Power
+Insert gas wants to use the God Power
+-> move 2 4 2
+Insert gas used the God Power
+Insert gas used the God Power
+Insert gas used the God Power
+-> build 3 4 2
+Insert gas built in 3 4
+Insert gas built in 3 4
+Insert gas built in 3 4
+-> endturn
+Insert sadg update
+Insert sadg update
+Insert sadg update
+-> normal
+Insert sadg doesn't want to use the God Power
+Insert sadg doesn't want to use the God Power
+Insert sadg doesn't want to use the God Power
+-> move 2 1 1
+Error: sadg can't move up because Athena's power is active
+Error: sadg can't move up because Athena's power is active
+Error: sadg can't move up because Athena's power is active
+-> move 1 3 1
+Error: sadg can't move here
+Error: sadg can't move here
+Error: sadg can't move here
+-> move 2 1 1
+Error: sadg can't move up because Athena's power is active
+Error: sadg can't move up because Athena's power is active
+Error: sadg can't move up because Athena's power is active
+-> move 2 2 1
+Error: sadg can't move here
+Error: sadg can't move here
+Error: sadg can't move here
+-> move 1 2 1
+Error: sadg can't move up because Athena's power is active
+Error: sadg can't move up because Athena's power is active
+Error: sadg can't move up because Athena's power is active
+-> undo
+Undo: sadg undoing
+Undo: sadg undoing
+Undo: sadg undoing
+Undo: sadg undid last action
+Undo: sadg undid last action
+Undo: sadg undid last action
+-> undo
+Undo: sadg undoing
+Undo: sadg undoing
+Undo: sadg undoing
+Undo: sadg cannot undo last action
+Undo: sadg cannot undo last action
+Undo: sadg cannot undo last action
+-> build 1 2 1
+Connection closed from the server side
+Connection closed from the server side
+Welcome! What's your name?
+-> asg
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+Choose the third divinity: 
+-> Minotaur
+All the divinities have been chosen, 
+now the other players will choose between them.
+Waiting for other players...
+Welcome! What's your name?
+-> Ric
+Waiting for other players...
+Welcome! What's your name?
+-> To
+Waiting for other players...
+Choose your Divinity between: Apollo Athena Minotaur 
+-> Apollo
+Your Divinity: Apollo
+Choose your Divinity between: Athena Minotaur 
+-> Athena
+Your Divinity: Athena
+Your Divinity: Minotaur
+First client has disconnected while choosing first player
+First client has disconnected while choosing first player
+Connection closed from the server side
+Connection closed from the server side
+Welcome! What's your name?
+-> An
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+Choose the third divinity: 
+-> Minotaur
+All the divinities have been chosen, 
+now the other players will choose between them.
+Waiting for other players...
+Welcome! What's your name?
+-> Da
+Waiting for other players...
+Welcome! What's your name?
+-> Va
+Waiting for other players...
+Choose your Divinity between: Apollo Athena Minotaur 
+-> Apollo
+Your Divinity: null
+-> Error
+Choose your Divinity between: Apollo Athena Minotaur 
+-> Apollo
+Your Divinity: null
+-> Error
+Your Divinity: null
+-> Error
+Welcome! What's your name?
+-> a
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+Choose the third divinity: 
+-> Minotaur
+All the divinities have been chosen, 
+now the other players will choose between them.
+Waiting for other players...
+Welcome! What's your name?
+-> sagd
+Waiting for other players...
+Welcome! What's your name?
+-> sag
+Waiting for other players...
+Choose your Divinity between: Apollo Athena Minotaur 
+-> Apollo
+Your Divinity: null
+-> Error
+Welcome! What's your name?
+-> ga
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+Choose the third divinity: 
+-> Minotaur
+All the divinities have been chosen, 
+now the other players will choose between them.
+Waiting for other players...
+Welcome! What's your name?
+-> gas
+Waiting for other players...
+Welcome! What's your name?
+-> ag
+Waiting for other players...
+Choose your Divinity between: Apollo Athena Minotaur 
+-> Apollo
+Your Divinity: null
+-> Error
+Welcome! What's your name?
+-> af
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+All the divinities have been chosen, 
+now the other players will choose between them.
+Waiting for other players...
+Welcome! What's your name?
+-> AC
+Waiting for other players...
+Choose your Divinity between: Apollo Athena 
+-> Apollo
+Your Divinity: null
+-> Error
+Your Divinity: null
+-> Error
+Welcome! What's your name?
+-> sad
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Apollo
+All the divinities have been chosen, 
+now the other players will choose between them.
+Waiting for other players...
+Welcome! What's your name?
+-> Ant
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+All the divinities have been chosen, 
+now the other players will choose between them.
+Waiting for other players...
+Welcome! What's your name?
+-> Ad
+Waiting for other players...
+Choose your Divinity between: Apollo Athena 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Athena
+You choose the first player between: Ad Ant
+-> Ad
+Start Ad White Apollo
+Start Ad White Apollo
+Start Ant Purple Athena
+Insert Ad update
+Start Ant Purple Athena
+Insert Ad update
+-> placeworker 1 1
+Insert Ad placed a worker in 1x1
+Insert Ad placed a worker in 1x1
+-> placeworker 2 1
+Insert Ad placed a worker in 2x1
+Insert Ad placed a worker in 2x1
+-> endturn
+Insert Ant update
+Insert Ant update
+-> placeworker 2 2
+Insert Ant placed a worker in 2x2
+Insert Ant placed a worker in 2x2
+-> placeworker 1 3
+Insert Ant placed a worker in 1x3
+Insert Ant placed a worker in 1x3
+-> endturn
+Insert Ad update
+Insert Ad update
+-> usepower
+Insert Ad wants to use the God Power
+Insert Ad wants to use the God Power
+-> move 2 2 2
+Insert Ad used the God Power
+Insert Ad used the God Power
+-> build 1 2 2
+Insert Ad built in 1 2
+Insert Ad built in 1 2
+-> endturn
+Insert Ant update
+Insert Ant update
+-> usepower
+Insert Ant wants to use the God Power
+Insert Ant wants to use the God Power
+-> move 2 2 1
+Error: Ant can't use the God Power
+Error: Ant can't use the God Power
+-> move 1 2 1
+Insert Ant used the God Power
+Insert Ant used the God Power
+-> build 2 1 1
+Insert Ant built in 2 1
+Insert Ant built in 2 1
+-> endturn
+Insert Ad update
+Insert Ad update
+-> usepower
+Insert Ad wants to use the God Power
+Insert Ad wants to use the God Power
+-> move 1 2 2
+Insert Ad used the God Power
+Insert Ad used the God Power
+-> build 2 1 2
+Insert Ad built in 2 1
+Insert Ad built in 2 1
+-> endturn
+Insert Ant update
+Insert Ant update
+-> usepower
+Insert Ant wants to use the God Power
+Insert Ant wants to use the God Power
+-> move 2 3 2
+Insert Ant used the God Power
+Insert Ant used the God Power
+-> build 1 3 2
+Insert Ant built in 1 3
+Insert Ant built in 1 3
+-> endturn
+Insert Ad update
+Insert Ad update
+-> usepower
+Insert Ad wants to use the God Power
+Insert Ad wants to use the God Power
+-> move 2 2 1
+Insert Ad used the God Power
+Insert Ad used the God Power
+-> build 2 2 1
+Error: Ad can't build here
+Error: Ad can't build here
+-> build 2 1 1
+Insert Ad built in 2 1
+Insert Ad built in 2 1
+-> endturn
+Insert Ant update
+Insert Ant update
+-> usepower
+Insert Ant wants to use the God Power
+Insert Ant wants to use the God Power
+-> move 1 3 2
+Insert Ant used the God Power
+Insert Ant used the God Power
+-> build 2 3 2
+Insert Ant built in 2 3
+Insert Ant built in 2 3
+-> endturn
+Insert Ad update
+Insert Ad update
+-> normal
+Insert Ad doesn't want to use the God Power
+Insert Ad doesn't want to use the God Power
+-> move 2 3 1
+Insert Ad moved a worker in 2x3
+Insert Ad moved a worker in 2x3
+-> build 2 2 1
+Insert Ad built in 2 2
+Insert Ad built in 2 2
+-> endturn
+Insert Ant update
+Insert Ant update
+-> usepower
+Insert Ant wants to use the God Power
+Insert Ant wants to use the God Power
+-> move 2 2 2
+Insert Ant used the God Power
+Insert Ant used the God Power
+-> build 3 2 2
+Insert Ant built in 3 2
+Insert Ant built in 3 2
+-> endturn
+Insert Ad update
+Insert Ad update
+-> normal
+Insert Ad doesn't want to use the God Power
+Insert Ad doesn't want to use the God Power
+-> move 3 3 1
+Insert Ad moved a worker in 3x3
+Insert Ad moved a worker in 3x3
+-> build 3 2 1
+Insert Ad built in 3 2
+Insert Ad built in 3 2
+-> endturn
+Insert Ant update
+Insert Ant update
+-> usepower
+Insert Ant wants to use the God Power
+Insert Ant wants to use the God Power
+-> move 2 3 2
+Insert Ant used the God Power
+Insert Ant used the God Power
+-> build 2 2 2
+Insert Ant built in 2 2
+Insert Ant built in 2 2
+-> endturn
+Insert Ad update
+Insert Ad update
+-> usepower
+Insert Ad wants to use the God Power
+Insert Ad wants to use the God Power
+-> move 2 2 2
+Error: Ad can't move up because Athena's power is active
+Error: Ad can't move up because Athena's power is active
+-> move 2 3 2
+Insert Ad used the God Power
+Insert Ad used the God Power
+-> build 1 3 2
+Insert Ad built in 1 3
+Insert Ad built in 1 3
+-> endturn
+Insert Ant update
+Insert Ant update
+-> usepower
+Insert Ant wants to use the God Power
+Insert Ant wants to use the God Power
+-> move 2 2 2
+Insert Ant used the God Power
+Insert Ant used the God Power
+-> build 1 3 2
+Insert Ant built in 1 3
+Insert Ant built in 1 3
+-> endturn
+Insert Ad update
+Insert Ad update
+-> usepower
+Insert Ad wants to use the God Power
+Insert Ad wants to use the God Power
+-> move 2 2 2
+Insert Ad used the God Power
+Insert Ad used the God Power
+-> build 2 2 2
+Error: Ad can't build here
+Error: Ad can't build here
+-> build 3 2 2
+Insert Ad built in 3 2
+Insert Ad built in 3 2
+-> endturn
+Insert Ant update
+Insert Ant update
+-> usepower
+Insert Ant wants to use the God Power
+Insert Ant wants to use the God Power
+-> move 2 1 2
+Error: Ant can't use the God Power
+Error: Ant can't use the God Power
+-> move 2 4 2
+Insert Ant used the God Power
+Insert Ant used the God Power
+-> build 2 3 2
+Insert Ant built in 2 3
+Insert Ant built in 2 3
+-> endturn
+Insert Ad update
+Insert Ad update
+-> normal
+Insert Ad doesn't want to use the God Power
+Insert Ad doesn't want to use the God Power
+-> move 2 1 2
+Connection closed from the server side

@@ -3,6 +3,7 @@ package it.polimi.ingsw.View;
 import it.polimi.ingsw.Controller.Controller;
 import it.polimi.ingsw.Model.Game;
 import it.polimi.ingsw.Model.Player;
+import it.polimi.ingsw.utils.Divinity;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -26,6 +27,7 @@ public class Server {
     private final Map<Connection, Connection> playingConnection3players = new HashMap<>();
     private final ArrayList<String> divinities = new ArrayList<>();
     private final String[] playerDivinities = new String[3];
+    private final Map<String, String> divinityPlayer = new HashMap<>();
     private String firstPlayer;
     private String secondPlayer;
     private String thirdPlayer;
@@ -68,13 +70,14 @@ public class Server {
     public void startDivinity() {
         try {
             StringBuilder choices = new StringBuilder("Choose your Divinity between: ");
-
+            String tempDivinity;
             for (String god : divinities)  choices.append(god).append(' ');
 
             waitingConnection.get(secondPlayer).send(new LiteBoard(choices.toString()));
-            playerDivinities[1] = waitingConnection.get(secondPlayer).getIn().readUTF();
-            waitingConnection.get(secondPlayer).send(new LiteBoard("Your Divinity: " + playerDivinities[1]));
-            divinities.remove(playerDivinities[1]);
+            tempDivinity = waitingConnection.get(secondPlayer).getIn().readUTF();
+            divinityPlayer.put(secondPlayer, tempDivinity);
+            waitingConnection.get(secondPlayer).send(new LiteBoard("Your Divinity: " + tempDivinity));
+            divinities.remove(tempDivinity);
 
             if (numPlayers == 3) {
                 choices = new StringBuilder("Choose your Divinity between: ");
@@ -82,13 +85,14 @@ public class Server {
                 for (String god : divinities)  choices.append(god).append(' ');
 
                 waitingConnection.get(thirdPlayer).send(new LiteBoard(choices.toString()));
-                playerDivinities[2] = waitingConnection.get(thirdPlayer).getIn().readUTF();
-                waitingConnection.get(thirdPlayer).send(new LiteBoard("Your Divinity: " + playerDivinities[2]));
-                divinities.remove(playerDivinities[2]);
+                tempDivinity = (waitingConnection.get(thirdPlayer).getIn().readUTF());
+                divinityPlayer.put(thirdPlayer, tempDivinity);
+                waitingConnection.get(thirdPlayer).send(new LiteBoard("Your Divinity: " + tempDivinity));
+                divinities.remove(tempDivinity);
             }
 
-            playerDivinities[0] = divinities.get(0);
-            waitingConnection.get(firstPlayer).send(new LiteBoard("Your Divinity: " + playerDivinities[0]));
+            divinityPlayer.put(firstPlayer, (divinities.get(0)));
+            waitingConnection.get(firstPlayer).send(new LiteBoard("Your Divinity: " + divinities.get(0)));
             divinities.clear();
 
         } catch (IOException e) {
@@ -146,6 +150,7 @@ public class Server {
         c.send(new LiteBoard("Waiting for other players..."));
 
         if(waitingConnection.size() == numPlayers) {
+
             startDivinity();
             chooseFirstPlayer(waitingConnection.get(firstPlayer));
 
@@ -157,8 +162,8 @@ public class Server {
             Controller controller = new Controller(game);
             Player player1 = new Player(firstPlayer, White, game);
             Player player2 = new Player(secondPlayer, Purple, game);
-            player1.setGodPower(playerDivinities[0]);
-            player2.setGodPower(playerDivinities[1]);
+            player1.setGodPower(divinityPlayer.get(firstPlayer));
+            player2.setGodPower(divinityPlayer.get(secondPlayer));
 
             game.addObserver(c1);
             game.addObserver(c2);
@@ -175,7 +180,7 @@ public class Server {
             if (numPlayers == 3) {
                 Connection c3 = waitingConnection.get(thirdPlayer);
                 Player player3 = new Player(thirdPlayer, Brown, game);
-                player3.setGodPower(playerDivinities[2]);
+                player3.setGodPower(divinityPlayer.get(thirdPlayer));
 
                 game.addObserver(c3);
                 c3.addObserver(controller);
