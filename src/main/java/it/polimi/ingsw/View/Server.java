@@ -37,7 +37,7 @@ public class Server {
     }
 
     //Register connection
-    private void registerConnection(Connection c) {
+    private synchronized void registerConnection(Connection c) {
         connections.add(c);
     }
 
@@ -59,8 +59,8 @@ public class Server {
             System.out.println("Client has disconnected while choosing the divinities");
             for (Connection conn : connections) {
                 conn.send(new LiteBoard("First client has disconnected while choosing the divinities"));
+                conn.closeConnection();
             }
-            endGame();
         }
 
     }
@@ -92,10 +92,7 @@ public class Server {
             divinities.clear();
 
         } catch (IOException e) {
-            for (Connection conn : connections) {
-                conn.send(new LiteBoard("Client has disconnected while choosing the divinities"));
-            }
-            endGame();
+            e.printStackTrace();
         }
 
     }
