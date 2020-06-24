@@ -4,6 +4,7 @@ import it.polimi.ingsw.Model.Cell;
 import it.polimi.ingsw.Model.Game;
 import it.polimi.ingsw.Model.Player;
 import it.polimi.ingsw.View.LiteBoard;
+import it.polimi.ingsw.utils.InputString;
 
 public class UndoChecker extends Thread implements Runnable {
 
@@ -31,18 +32,22 @@ public class UndoChecker extends Thread implements Runnable {
             if (controller.isUndoing()) {
                 switch (state) {
                     case move -> {
-                        player.getWorker(worker).setPosition(oldPosition);
-                        controller.setUndoing(false);
-                        controller.getFsm().prevState();
-                        String msg = "Undo: " + game.getCurrentPlayer().getName() + " undid last action";
-                        game.sendBoard(new LiteBoard(msg, game.getBoard(), game));
+                        if(controller.getLastAction() == state) {
+                            player.getWorker(worker).setPosition(oldPosition);
+                            controller.setUndoing(false);
+                            controller.getFsm().prevState();
+                            String msg = "Undo: " + game.getCurrentPlayer().getName() + " undid last action";
+                            game.sendBoard(new LiteBoard(msg, game.getBoard(), game));
+                        }
                     }
                     case build -> {
-                        building.setLevel(building.getLevel() - 1);
-                        controller.setUndoing(false);
-                        controller.getFsm().prevState();
-                        String msg = "Undo: " + game.getCurrentPlayer().getName() + " undid last action";
-                        game.sendBoard(new LiteBoard(msg, game.getBoard(), game));
+                        if(controller.getLastAction() == state) {
+                            building.setLevel(building.getLevel() - 1);
+                            controller.setUndoing(false);
+                            controller.getFsm().prevState();
+                            String msg = "Undo: " + game.getCurrentPlayer().getName() + " undid last action";
+                            game.sendBoard(new LiteBoard(msg, game.getBoard(), game));
+                        }
                     }
                     case superMove, superBuild -> {
                         player.getGodPower().undo(player, oldPosition, worker, building);

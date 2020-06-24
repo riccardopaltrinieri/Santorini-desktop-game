@@ -130,11 +130,10 @@ public class CLInterface implements UserInterface {
                     break;
 
                 case "Start":
-                    if (!parts[1].equals(name)) {
-                        System.out.println("Your " + parts[2] + " opponent is " + parts[1]);
-                        System.out.println("He will use " + parts[3]);
-                    }
-                    else System.out.println("You have " + parts[2] + " colour " + "and will use: " +parts[3]);
+                    if (!parts[1].equals(name))
+                        System.out.println("Your " + parts[2] + " opponent is " + parts[1] + "and he will use " + parts[3]);
+                    else
+                        System.out.println("You have " + parts[2] + " color " + "and will use: " + parts[3]);
                     outgoingMessage = "noMessageToSend";
                     break;
 
@@ -181,6 +180,8 @@ public class CLInterface implements UserInterface {
                             }
                         }
                     } else {
+                        if(parts[2].equals("undid"))
+                            System.out.println(parts[1] + " undid last action");
                         outgoingMessage = "noMessageToSend";
                     }
                     break;

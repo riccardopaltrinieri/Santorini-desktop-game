@@ -53,12 +53,12 @@ public class Server {
                 c.send(new LiteBoard("Choose the third divinity: "));
                 divinities.add(c.getIn().readUTF());
             }
-            c.send(new LiteBoard("All the divinities have been chosen"));
-            c.send(new LiteBoard("Now the other players will choose between them.."));
+            c.send(new LiteBoard("All the divinities have been chosen, "));
+            c.send(new LiteBoard("now the other players will choose between them."));
         } catch (IOException e) {
-            System.out.println("Client has disconnected while chooses all divinities");
+            System.out.println("Client has disconnected while choosing the divinities");
             for (Connection conn : connections) {
-                conn.send(new LiteBoard("First client has disconnected while chooses all divinities"));
+                conn.send(new LiteBoard("First client has disconnected while choosing the divinities"));
                 conn.closeConnection();
             }
         }
@@ -140,10 +140,9 @@ public class Server {
         else if (waitingConnection.size() == 2) secondPlayer = name;
         else if (waitingConnection.size() == 3) thirdPlayer = name;
 
-        if (!(waitingConnection.size() == numPlayers))
-            c.send(new LiteBoard("Waiting for other players..."));
+        c.send(new LiteBoard("Waiting for other players..."));
 
-        else {
+        if(waitingConnection.size() == numPlayers) {
             startDivinity();
             chooseFirstPlayer(waitingConnection.get(firstPlayer));
 
@@ -243,9 +242,6 @@ public class Server {
         return numPlayers;
     }
 
-    public void addConnection (Connection con){
-        connections.add(con);
-    }
     public int dimConnections(){
         return connections.size();
     }

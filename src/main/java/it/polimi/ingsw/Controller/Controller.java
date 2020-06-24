@@ -11,6 +11,7 @@ public class Controller extends Observable implements Observer {
 
     private final FiniteStateMachine fsm;
     private final Game game;
+    private State lastAction;
     private boolean undoing;
 
     /**
@@ -45,6 +46,7 @@ public class Controller extends Observable implements Observer {
                     String msg = "Insert " + game.getCurrentPlayer().getName() + " wants to use the God Power";
                     game.sendBoard(new LiteBoard(msg, game.getBoard(), game));
                     actionExecuted = true;
+                    lastAction = fsm.getState();
                 }
                 case normal -> {
                     // Set the default path
@@ -52,6 +54,7 @@ public class Controller extends Observable implements Observer {
                     String msg = "Insert " + game.getCurrentPlayer().getName() + " doesn't want to use the God Power";
                     game.sendBoard(new LiteBoard(msg, game.getBoard(), game));
                     actionExecuted = true;
+                    lastAction = fsm.getState();
                 }
                 case placeworker -> {
                     // Place the worker on the map
@@ -61,6 +64,7 @@ public class Controller extends Observable implements Observer {
                     row = Integer.parseInt(parts[2]) - 1;
                     column = Integer.parseInt(parts[3]) - 1;
                     actionExecuted = game.placeWorker(row, column);
+                    lastAction = fsm.getState();
                 }
                 case move -> {
                     // Move the worker
@@ -78,6 +82,7 @@ public class Controller extends Observable implements Observer {
                         actionExecuted = game.useGodPower(row, column, worker);
                         undoThread.start();
                     }
+                    lastAction = fsm.getState();
                 }
                 case build -> {
                     // Build with the worker
@@ -95,6 +100,7 @@ public class Controller extends Observable implements Observer {
                         actionExecuted = game.useGodPower(row, column, worker);
                         undoThread.start();
                     }
+                    lastAction = fsm.getState();
                 }
 
                 case undo -> {
@@ -109,6 +115,7 @@ public class Controller extends Observable implements Observer {
                 case endturn -> {
                     undoing = false;
                     actionExecuted = game.endTurn();
+                    lastAction = fsm.getState();
                 }
 
             }
@@ -137,6 +144,9 @@ public class Controller extends Observable implements Observer {
     }
     public void setUndoing(boolean undoing) {
         this.undoing = undoing;
+    }
+    public State getLastAction() {
+        return lastAction;
     }
     public FiniteStateMachine getFsm() {
         return fsm;
