@@ -10,14 +10,20 @@ public class LiteBoard implements Serializable {
     private static final long serialVersionUID = 36347531L;
 
     private final int[][] lv;     // [row][column] = level
-    private final int[][] posWorker;/*
-     * [worker] [0] = row
-     * [worker] [1] = column
-     * [worker] [2] = color
-     * */
+
+    private final int[][] posWorker;
+     /* [worker] [0] = row
+     *  [worker] [1] = column
+     *  [worker] [2] = color
+     *  */
+
     private final String message;
     private final int numAllWorker;
 
+    /**
+     * Constructor used to only send a message
+     * @param input is the message to send
+     */
     public LiteBoard(String input){
         message = input;
         lv = new int[0][0];
@@ -25,8 +31,15 @@ public class LiteBoard implements Serializable {
         numAllWorker = 0;
     }
 
+    /**
+     * Constructor used to send all the data needed by clients
+     * @param message referred to what just happened
+     * @param board from where taking the data on levels
+     * @param game from where taking the data on workers
+     */
     public LiteBoard(String message, Board board, Game game) {
 
+        this.message = message;
         numAllWorker = game.getNumWorkers();
         lv = new int[board.getNumRow()][board.getNumColumn()];
         posWorker = new int[numAllWorker][3];
@@ -49,59 +62,60 @@ public class LiteBoard implements Serializable {
                 numPosWorker++;
             }
         }
-        this.message = message;
     }
 
-
-
-    public String getMessage() {
-        return message;
-    }
-
+    /**
+     * Method which prints the board on the System.out using data passed from the
+     * model, like levels of building and position and color of the workers.
+     */
     public void printBoardCLI(){
         printBoardLine();
         for(int boardRow = 4; boardRow >= -1; boardRow--) {
             for(int cellRow = 0; cellRow < 3; cellRow++) {
                 for (int col = -1; col < 5; col++) {
                     if (col == -1) {
-                        // Print the number of the board rows
+                        // Print the number of the rows on the board left side
                         if (cellRow == 0 || cellRow == 2) System.out.print("      ");
                         else if (boardRow >= 0) System.out.print("  " + (boardRow + 1) + "   ");
                         else System.out.print("      ");
 
                     } else if (boardRow == -1) {
-                        // Print the number of the board columns
+                        // Print the number of the columns on the bottom
                         if (cellRow == 1) System.out.print("   " + (col + 1) + "    ");
                     } else {
+                        // Print the first and third line of the cell using the level number
                         if (cellRow == 0 || cellRow == 2) System.out.print("|" + getLevelTD(boardRow, col) + "|");
+                        // Print the second line of the cell using level and the worker if present
                         else System.out.print("|" + getWorker(boardRow, col) + "|");
                     }
                 }
+                // End of the board row
                 System.out.print('\n');
             }
             if(boardRow != -1) printBoardLine();
         }
     }
 
+    /**
+     * Return the middle row of the board to print on console with the
+     * colored worker if present, empty otherwise
+     * @param row of the cell to inspect
+     * @param col of the cell to inspect
+     * @return a 6 symbols string to print with or without the worker
+     */
     private String getWorker(int row, int col) {
         for (int worker = 0; worker < numAllWorker; worker++) {
             if (posWorker[worker][0] == row) {
                 if (posWorker[worker][1] == col) {
-                    int[] colorList = {Color.Brown.ordinal(), Color.Purple.ordinal(), Color.White.ordinal()};
-                    for (int color : colorList) {
-                        if (posWorker[worker][2] == color) {
 
-                            worker = worker%2 + 1;    // Show the number of worker that will be 1 or 2
+                    int color = posWorker[worker][2];
+                    worker = worker % 2 + 1;    // Show the number of worker that will be 1 or 2
 
-                            return getLevelLR(row, col) + " " +  Color.toANSICode(color) + "W" + worker + Color.RESET + ' ' + getLevelLR(row, col);
-                        }
-                    }
-
+                    return getLevelLR(row, col) + " " + Color.toANSICode(color) + "W" + worker + Color.RESET + ' ' + getLevelLR(row, col);
                 }
-
             }
-
-        } return getLevelLR(row, col) + "    " + getLevelLR(row, col);
+        }
+        return getLevelLR(row, col) + "    " + getLevelLR(row, col);
     }
 
     /**
@@ -121,6 +135,11 @@ public class LiteBoard implements Serializable {
         System.out.println("      +------++------++------++------++------+");
     }
 
+    /**
+     * Method used to print levels and workers on the buttons using data
+     * passed with the board from the model
+     * @param frame where to print the data
+     */
     public void printBoardGUI(MainFrame frame){
         int row;
         int column;
@@ -144,4 +163,9 @@ public class LiteBoard implements Serializable {
             frame.getActiveBoardButtons()[i].repaint();
         }
     }
+
+    public String getMessage() {
+        return message;
+    }
+
 }
