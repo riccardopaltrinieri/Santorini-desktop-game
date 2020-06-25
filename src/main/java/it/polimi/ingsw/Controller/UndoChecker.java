@@ -4,7 +4,6 @@ import it.polimi.ingsw.Model.Cell;
 import it.polimi.ingsw.Model.Game;
 import it.polimi.ingsw.Model.Player;
 import it.polimi.ingsw.View.LiteBoard;
-import it.polimi.ingsw.utils.InputString;
 
 public class UndoChecker extends Thread implements Runnable {
 
@@ -29,7 +28,7 @@ public class UndoChecker extends Thread implements Runnable {
 
             sleep(5000);
 
-            if (controller.isUndoing()) {
+            if (controller.isUndoing() && player == game.getCurrentPlayer()) {
                 switch (state) {
                     case move -> {
                         if(controller.getLastAction() == state) {
