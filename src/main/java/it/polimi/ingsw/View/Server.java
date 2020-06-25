@@ -3,7 +3,6 @@ package it.polimi.ingsw.View;
 import it.polimi.ingsw.Controller.Controller;
 import it.polimi.ingsw.Model.Game;
 import it.polimi.ingsw.Model.Player;
-import it.polimi.ingsw.utils.Divinity;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -179,7 +178,7 @@ public class Server {
 
             if (numPlayers == 3) {
                 Connection c3 = waitingConnection.get(thirdPlayer);
-                Player player3 = new Player(thirdPlayer, Brown, game);
+                Player player3 = new Player(thirdPlayer, Red, game);
                 player3.setGodPower(divinityPlayer.get(thirdPlayer));
 
                 game.addObserver(c3);

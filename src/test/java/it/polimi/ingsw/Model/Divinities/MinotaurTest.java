@@ -16,7 +16,7 @@ public class MinotaurTest {
         Game game = new Game();
         Player player = new Player("test player", Color.Purple,game);
         Board board = game.getBoard();
-        Player foo = new Player("enemy foo test", Color.Brown,game);
+        Player foo = new Player("enemy foo test", Color.Red,game);
         player.setGodPower(new Minotaur());
         assertEquals(Divinity.Minotaur, player.getGodPower().getDivinity());
 

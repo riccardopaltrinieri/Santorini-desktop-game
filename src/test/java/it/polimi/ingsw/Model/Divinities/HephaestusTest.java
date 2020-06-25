@@ -15,7 +15,7 @@ public class HephaestusTest {
     public void executeTest() throws AthenaException {
         Game game = new Game();
         Board board = game.getBoard();
-        Player player = new Player("test player", Color.Brown,game);
+        Player player = new Player("test player", Color.Red,game);
         player.setGodPower(new Hephaestus());
         assertEquals(Divinity.Hephaestus, player.getGodPower().getDivinity());
 

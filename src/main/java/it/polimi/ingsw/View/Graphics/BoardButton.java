@@ -38,7 +38,7 @@ public class BoardButton extends JButton {
         if (haveWorker) {
             if (workerColor == Color.White) {
                 path = "images/Workers/whiteWorker.png";
-            } else if (workerColor == Color.Brown) {
+            } else if (workerColor == Color.Red) {
                 path = "images/Workers/brownWorker.png";
             } else {
                 path = "images/Workers/purpleWorker.png";

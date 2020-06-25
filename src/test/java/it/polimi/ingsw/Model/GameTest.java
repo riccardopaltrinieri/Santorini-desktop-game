@@ -14,7 +14,7 @@ public class GameTest
 {
     Game game = new Game();
     Player tester = new Player("tester", Color.White, game);
-    Player tester2 = new Player("tester2", Color.Brown, game);
+    Player tester2 = new Player("tester2", Color.Red, game);
     Player tester3 = new Player("tester2", Color.Purple, game);
 
     @Test

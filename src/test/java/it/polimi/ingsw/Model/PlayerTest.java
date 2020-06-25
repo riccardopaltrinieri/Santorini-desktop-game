@@ -52,10 +52,10 @@ public class PlayerTest {
         tester.placeWorkers(board.getCell(1,1));
         assertTrue(tester.canMove());
 
-        Player foo1 = new Player("foo", Color.Brown, game);
-        Player foo2 = new Player("foo", Color.Brown, game);
-        Player foo3 = new Player("foo", Color.Brown, game);
-        Player foo4 = new Player("foo", Color.Brown, game);
+        Player foo1 = new Player("foo", Color.Red, game);
+        Player foo2 = new Player("foo", Color.Red, game);
+        Player foo3 = new Player("foo", Color.Red, game);
+        Player foo4 = new Player("foo", Color.Red, game);
         foo1.placeWorkers(board.getCell(1,0));
         foo2.placeWorkers(board.getCell(0,1));
         foo2.placeWorkers(board.getCell(2,0));

@@ -11,13 +11,13 @@ import junit.framework.TestCase;
 public class DefaultDivinityTest extends TestCase {
 
     public void testExecute() throws AthenaException {
-        Player tester = new Player("tester", Color.Brown, new Game());
+        Player tester = new Player("tester", Color.Red, new Game());
         tester.setGodPower("default");
         tester.getGodPower().execute(tester, new Cell(1, 1),0);
     }
 
     public void testGetDivinity() {
-        Player tester = new Player("tester", Color.Brown, new Game());
+        Player tester = new Player("tester", Color.Red, new Game());
         tester.setGodPower("default");
         assertEquals(tester.getGodPower().getDivinity(), Divinity.Default);
     }
