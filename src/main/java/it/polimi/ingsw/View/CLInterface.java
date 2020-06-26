@@ -125,8 +125,18 @@ public class CLInterface implements UserInterface {
                         System.out.println("Ops, something went wrong");
                         System.out.println(incomingMessage);
                         System.out.println("Please, try again:");
-                        if (parts[3].equals("place")) fsm.prevStateToPlaceWorker();
+
+                        if (parts[3].equals("place"))
+                            fsm.prevStateToPlaceWorker();
+                        else if (parts[3].equals("worker")) {
+                            fsm.setState(State.worker);
+                            System.out.println("Choose again the worker: ");
+                            checkAction(stdin);
+                            fsm.nextState();
+                        }
                         else fsm.prevState();
+
+                        System.out.println(fsm.getStateStringCLI());
                         outgoingMessage = checkAction(stdin);
                         fsm.nextState();
                     } else

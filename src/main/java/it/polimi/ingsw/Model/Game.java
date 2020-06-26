@@ -7,6 +7,7 @@ import it.polimi.ingsw.utils.Messages;
 import it.polimi.ingsw.utils.Observable;
 
 import java.util.ArrayList;
+import java.util.IllegalFormatException;
 
 public class Game extends Observable {
 
@@ -62,17 +63,23 @@ public class Game extends Observable {
     }
 
     public boolean move(int row, int column, int worker) {
-        Cell position = getCurrentPlayer().getWorker(worker).getPosition();
-        Cell destination = board.getCell(row, column);
 
-        try{
+        try {
+            if (!getCurrentPlayer().workerCanMove(worker)) throw new IllegalStateException();
+
+            Cell position = getCurrentPlayer().getWorker(worker).getPosition();
+            Cell destination = board.getCell(row, column);
+
             getCurrentPlayer().getWorker(worker).move(destination);
-            if(position.getLevel() < 3 && destination.getLevel() == 3) hasWinner();
+            if (position.getLevel() < 3 && destination.getLevel() == 3) hasWinner();
 
-            String message = "Insert " + getCurrentPlayer().getName() + Messages.getMessage(Messages.MOVE_MESSAGE, row+1, column+1);
+            String message = "Insert " + getCurrentPlayer().getName() + Messages.getMessage(Messages.MOVE_MESSAGE, row + 1, column + 1);
             sendBoard(new LiteBoard(message, board, this));
             return true;
 
+        } catch (IllegalStateException e){
+            String message = getCurrentPlayer().getName() + Messages.getMessage(Messages.ERROR_WORKER);
+            sendBoard(new LiteBoard("Error: " + message, board, this));
         } catch (AthenaException e) {
             String message = getCurrentPlayer().getName() + Messages.getMessage(Messages.ERROR_ATHENA);
             sendBoard(new LiteBoard("Error: " + message, board, this));
@@ -105,6 +112,7 @@ public class Game extends Observable {
             if( god.getDivinity() == Divinity.Athena || god.getDivinity() == Divinity.Apollo ||
                     god.getDivinity() == Divinity.Pan || god.getDivinity() == Divinity.Artemis ||
                     god.getDivinity() == Divinity.Minotaur) {
+                if (!getCurrentPlayer().workerCanMove(worker)) throw new IllegalStateException();
                 Cell position = getCurrentPlayer().getWorker(worker).getPosition();
                 Cell destination = board.getCell(row, column);
                 if(position.getLevel() < 3 && destination.getLevel() == 3) hasWinner();
@@ -116,6 +124,9 @@ public class Game extends Observable {
             sendBoard(new LiteBoard(message, board, this));
             return true;
 
+        } catch (IllegalStateException e){
+            String message = getCurrentPlayer().getName() + Messages.getMessage(Messages.ERROR_WORKER);
+            sendBoard(new LiteBoard("Error: " + message, board, this));
         } catch (AthenaException e) {
             String message = getCurrentPlayer().getName() + Messages.getMessage(Messages.ERROR_ATHENA);
             sendBoard(new LiteBoard("Error: " + message, board, this));

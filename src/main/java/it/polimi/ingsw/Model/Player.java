@@ -27,6 +27,7 @@ public class Player {
 
     /**
      * Place the workers on the map with the worker constructor
+     * @throws IllegalArgumentException if there are already 2 workers
      */
     public void placeWorkers(Cell destination) {
         if (workers.size()< 2) workers.add(new Worker( destination, this));
@@ -35,22 +36,31 @@ public class Player {
 
     /**
      * Examine the cell around the player's workers
-     * @return boolean that indicates if the player can make any move
+     * @return true if the player can make any move
      */
     public boolean canMove() {
+
         if (workers.size() == 0) return true;
 
-        Board board = this.game.getBoard();
+        return workerCanMove(0) || workerCanMove(1);
+    }
 
-        for(int i = 0; i < 2; i++) {
-            Cell pos = workers.get(i).getPosition();
-            //check all the cells from the one top-left to the one down-right, if just one is ok the player can move
-            for (int row = pos.getNumRow() - 1; row <= pos.getNumRow() + 1; row++)
-                for (int col = pos.getNumColumn() - 1; col <= pos.getNumColumn() + 1; col++)
-                    if(0 <= row && row < 5 && 0 <= col && col < 5)
-                        if (workers.get(i).canMoveTo(board.getCell(row,col)))
-                            return true;
-        }
+    /**
+     * Examine the cell around a worker
+     * @return true if is there an empty cell around the worker
+     */
+    public boolean workerCanMove(int worker) {
+
+        Board board = game.getBoard();
+
+        Cell pos = getWorker(worker).getPosition();
+        //check all the cells from the one top-left to the one down-right, if just one is ok the worker can move
+        for (int row = pos.getNumRow() - 1; row <= pos.getNumRow() + 1; row++)
+            for (int col = pos.getNumColumn() - 1; col <= pos.getNumColumn() + 1; col++)
+                if(0 <= row && row < 5 && 0 <= col && col < 5)
+                    if (getWorker(worker).canMoveTo(board.getCell(row,col)))
+                        return true;
+
         return false;
     }
 

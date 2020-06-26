@@ -15,7 +15,7 @@ import static it.polimi.ingsw.utils.Color.*;
 
 public class Server {
     private static final int PORT = 12345;
-    private ServerSocket serverSocket;
+    private final ServerSocket serverSocket;
     private int numPlayers;
 
     private final ExecutorService executor = Executors.newFixedThreadPool(128);

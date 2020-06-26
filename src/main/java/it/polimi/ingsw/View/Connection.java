@@ -88,8 +88,8 @@ public class Connection extends Observable implements Runnable, Observer {
         } catch(IOException e){
             if(isActive()) {
                 send(new LiteBoard("You took to much time to answer, you lose.."));
-                server.endGame();
                 close();
+                server.endGame();
             }
             System.err.println("Connection with " + name + " not more active");
         }

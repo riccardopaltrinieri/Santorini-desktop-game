@@ -3,6 +3,7 @@ package it.polimi.ingsw.utils;
 public enum Messages {
 
     ERROR_PLACE,
+    ERROR_WORKER,
     ERROR_MOVE,
     ERROR_BUILD,
     ERROR_ATHENA,
@@ -12,9 +13,11 @@ public enum Messages {
     PLACE_MESSAGE,
     GODPOWER_MESSAGE;
 
+
     public static String getMessage(Messages msg) {
         return switch (msg) {
             case ERROR_PLACE -> " can't place here";
+            case ERROR_WORKER -> " this worker can't move";
             case ERROR_MOVE -> " can't move here";
             case ERROR_BUILD -> " can't build here";
             case ERROR_ATHENA -> " can't move up because Athena's power is active";
