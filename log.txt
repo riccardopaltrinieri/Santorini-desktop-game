@@ -13457,3 +13457,286 @@ Insert rich update
 Insert rich update
 Connection closed from the server side
 Connection closed from the server side
+Welcome! What's your name?
+-> An
+Welcome! What's your name?
+-> Ri
+Welcome! What's your name?
+-> Fi
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+Choose the third divinity: 
+-> Minotaur
+All the divinities have been chosen, 
+now the other players will choose between them.
+Waiting for other players...
+Waiting for other players...
+Waiting for other players...
+Choose your Divinity between: Apollo Athena Minotaur 
+-> Apollo
+Your Divinity: Apollo
+Choose your Divinity between: Athena Minotaur 
+-> Athena
+Your Divinity: Minotaur
+Your Divinity: Athena
+You choose the first player between: Fi Ri An
+-> Fi
+Start Fi White Apollo
+Start Fi White Apollo
+Start Fi White Apollo
+Start Ri Purple Athena
+Start Ri Purple Athena
+Start Ri Purple Athena
+Start An Red Minotaur
+Start An Red Minotaur
+Start An Red Minotaur
+Insert Fi update
+Insert Fi update
+Insert Fi update
+-> placeworker 1 1
+Insert Fi placed a worker in 1x1
+Insert Fi placed a worker in 1x1
+Insert Fi placed a worker in 1x1
+-> placeworker 1 2
+Insert Fi placed a worker in 1x2
+Insert Fi placed a worker in 1x2
+Insert Fi placed a worker in 1x2
+-> endturn
+Insert Ri update
+Insert Ri update
+Insert Ri update
+-> placeworker 2 1
+Insert Ri placed a worker in 2x1
+Insert Ri placed a worker in 2x1
+Insert Ri placed a worker in 2x1
+-> placeworker 2 2
+Insert Ri placed a worker in 2x2
+Insert Ri placed a worker in 2x2
+Insert Ri placed a worker in 2x2
+-> endturn
+Insert An update
+Insert An update
+Insert An update
+-> placeworker 2 3
+Insert An placed a worker in 2x3
+Insert An placed a worker in 2x3
+Insert An placed a worker in 2x3
+-> placeworker 1 3
+Insert An placed a worker in 1x3
+Insert An placed a worker in 1x3
+Insert An placed a worker in 1x3
+-> endturn
+Loser: Fi loses
+Loser: Fi loses
+Insert Ri update
+-> usepower
+Insert Ri update
+Insert Ri wants to use the God Power
+Insert Ri wants to use the God Power
+-> move 1 1 1
+Insert Ri used the God Power
+Insert Ri used the God Power
+-> build 2 1 1
+Insert Ri built in 2 1
+Insert Ri built in 2 1
+-> endturn
+Insert An update
+Insert An update
+-> usepower
+Insert An wants to use the God Power
+Insert An wants to use the God Power
+-> move 2 3 2
+Error: An can't use the God Power
+Error: An can't use the God Power
+-> move 1 2 2
+Insert An used the God Power
+Insert An used the God Power
+-> build 2 3 2
+Insert An built in 2 3
+Insert An built in 2 3
+-> endturn
+Insert Ri update
+Insert Ri update
+-> usepower
+Insert Ri wants to use the God Power
+Insert Ri wants to use the God Power
+-> move 2 1 1
+Insert Ri used the God Power
+Insert Ri used the God Power
+-> build 1 1 1
+Insert Ri built in 1 1
+Insert Ri built in 1 1
+-> endturn
+Insert An update
+Insert An update
+-> usepower
+Insert An wants to use the God Power
+Insert An wants to use the God Power
+-> move 2 2 1
+Error: An can't use the God Power
+Error: An can't use the God Power
+-> move 2 2 1
+Error: An can't use the God Power
+Error: An can't use the God Power
+-> move 2 3 1
+You took to much time to answer, you lose..
+-> 
+Welcome! What's your name?
+-> asd
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+Choose the third divinity: 
+-> Minotaur
+All the divinities have been chosen, 
+now the other players will choose between them.
+Waiting for other players...
+Welcome! What's your name?
+-> ar
+Waiting for other players...
+Welcome! What's your name?
+-> agsa
+Waiting for other players...
+Choose your Divinity between: Apollo Athena Minotaur 
+-> Apollo
+Your Divinity: Apollo
+Choose your Divinity between: Athena Minotaur 
+-> Athena
+Your Divinity: Athena
+Your Divinity: Minotaur
+You choose the first player between: ar asd agsa
+-> ae
+Welcome! What's your name?
+-> sag
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+Choose the third divinity: 
+-> Minotaur
+All the divinities have been chosen, 
+now the other players will choose between them.
+Waiting for other players...
+Welcome! What's your name?
+-> gas
+Waiting for other players...
+Welcome! What's your name?
+-> gas
+Waiting for other players...
+Welcome! What's your name?
+-> can
+Waiting the start of game
+Welcome! What's your name?
+-> can
+Waiting the start of game
+Welcome! What's your name?
+-> sad
+Waiting the start of game
+Welcome! What's your name?
+-> sad
+Waiting the start of game
+Welcome! What's your name?
+-> asfd
+Waiting the start of game
+Welcome! What's your name?
+-> asfd
+Waiting the start of game
+Welcome! What's your name?
+-> as
+Waiting the start of game
+Welcome! What's your name?
+-> as
+Waiting the start of game
+Welcome! What's your name?
+-> ad
+Waiting the start of game
+Welcome! What's your name?
+-> ad
+Waiting the start of game
+Welcome! What's your name?
+-> ad
+Waiting the start of game
+Welcome! What's your name?
+-> ad
+This name is already taken, choose another name
+Welcome! What's your name?
+-> As
+Waiting the start of game
+Welcome! What's your name?
+-> As
+This name is already taken, choose another name
+-> As
+This name is already taken, choose another name
+-> As
+This name is already taken, choose another name
+-> As
+This name is already taken, choose another name
+-> As
+This name is already taken, choose another name
+-> As
+This name is already taken, choose another name
+-> As
+This name is already taken, choose another name
+-> As
+This name is already taken, choose another name
+-> cas
+This name is already taken, choose another name
+-> d
+This name is already taken, choose another name
+-> s
+Welcome! What's your name?
+-> As
+Waiting the start of game
+Welcome! What's your name?
+-> As
+This name is already taken, choose another name
+-> da
+Waiting the start of game
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+All the divinities have been chosen, 
+Waiting for other players...
+now the other players will choose between them.
+Waiting for other players...
+Choose your Divinity between: Apollo Athena 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Athena
+Welcome! What's your name?
+-> Anto
+Waiting the start of game
+Welcome! What's your name?
+-> Anto
+This name is already taken, choose another name
+-> Ad
+Waiting the start of game
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Athena
+All the divinities have been chosen, 
+now the other players will choose between them.
+Waiting for other players...
+Waiting for other players...
+Welcome! What's your name?
+-> asd
+Welcome! What's your name?
+-> asd
+This name is already taken, choose another name
+-> c
+Waiting the chooses of the Start Player and the start of game

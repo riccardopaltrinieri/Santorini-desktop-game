@@ -279,7 +279,7 @@ public class Server {
                     return;
                 }
                 else
-                    getConnection(0).send(new LiteBoard("Wrong name, reinsert it.. "));
+                    c.send(new LiteBoard("Wrong name, reinsert it.. "));
             }
         } catch (IOException e) {
             System.out.println("Client has disconnected while chooses first player");
@@ -290,6 +290,35 @@ public class Server {
         }
     }
 
+
+    public void notEqualsName(Connection c) {
+        try{
+            boolean taken;
+            while(true) {
+                taken = false;
+                String name = c.readString();
+                for (Connection connect: connections) {
+                    if (name.equals(connect.getName())) {
+                        taken = true;
+                        break;
+                    }
+                }
+                    if ((taken)) c.send(new LiteBoard("This name is already taken, choose another name"));
+                    else {
+                        c.setName(name);
+                        if (!waitingConnection.isEmpty()) c.send(new LiteBoard("Waiting the chooses of the Start Player and the start of game"));
+
+                        return;
+                    }
+                }
+
+
+    } catch (IOException e){
+        System.out.println(e.getMessage());
+    }
+
+
+}
 }
 
 

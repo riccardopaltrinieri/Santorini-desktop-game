@@ -112,7 +112,7 @@ public class CLInterface implements UserInterface {
                         System.out.println("You have " + parts[2] + " color " + "and will use: " + parts[3]);
                     outgoingMessage = "noMessageToSend";
                     break;
-
+                case "This":
                 case "You":
                 case "Wrong" :
                     System.out.println(incomingMessage);

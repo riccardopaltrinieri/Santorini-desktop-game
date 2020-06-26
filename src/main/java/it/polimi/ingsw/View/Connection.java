@@ -74,7 +74,7 @@ public class Connection extends Observable implements Runnable, Observer {
             socket.setSoTimeout(360000);
 
             send( new LiteBoard("Welcome! What's your name?"));
-            name = readString();
+            server.notEqualsName(this);
             server.lobby(this, name);
 
             while(isActive()){
@@ -102,8 +102,12 @@ public class Connection extends Observable implements Runnable, Observer {
                 || parts[2].equals("wins")) close();
     }
 
+    public String getName(){ return name; }
+
     @Override
     public void update(String message) {
         // Method used only by the controller
     }
+
+    public void setName(String n) { name = n; }
 }

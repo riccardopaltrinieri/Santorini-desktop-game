@@ -76,9 +76,10 @@ public class NetworkHandler {
             System.out.println(e);
         } finally {
             System.out.println("Connection closed from the server side");
+
             stdin.close();
-            socketIn.close();
             socketOut.close();
+            socketIn.close();
             socket.close();
         }
     }
