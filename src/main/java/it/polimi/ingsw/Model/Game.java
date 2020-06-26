@@ -2,6 +2,7 @@ package it.polimi.ingsw.Model;
 
 import it.polimi.ingsw.AthenaException;
 import it.polimi.ingsw.View.LiteBoard;
+import it.polimi.ingsw.utils.Divinity;
 import it.polimi.ingsw.utils.Messages;
 import it.polimi.ingsw.utils.Observable;
 
@@ -65,8 +66,8 @@ public class Game extends Observable {
         Cell destination = board.getCell(row, column);
 
         try{
-            if(position.getLevel() < 3 && destination.getLevel() == 3) hasWinner();
             getCurrentPlayer().getWorker(worker).move(destination);
+            if(position.getLevel() < 3 && destination.getLevel() == 3) hasWinner();
 
             String message = "Insert " + getCurrentPlayer().getName() + Messages.getMessage(Messages.MOVE_MESSAGE, row+1, column+1);
             sendBoard(new LiteBoard(message, board, this));
@@ -99,7 +100,17 @@ public class Game extends Observable {
 
     public boolean useGodPower(int row, int column, int worker) {
         try {
-            getCurrentPlayer().getGodPower().execute(getCurrentPlayer(),board.getCell(row,column),worker);
+            GodPower god = getCurrentPlayer().getGodPower();
+
+            if( god.getDivinity() == Divinity.Athena || god.getDivinity() == Divinity.Apollo ||
+                    god.getDivinity() == Divinity.Pan || god.getDivinity() == Divinity.Artemis ||
+                    god.getDivinity() == Divinity.Minotaur) {
+                Cell position = getCurrentPlayer().getWorker(worker).getPosition();
+                Cell destination = board.getCell(row, column);
+                if(position.getLevel() < 3 && destination.getLevel() == 3) hasWinner();
+            }
+
+            god.execute(getCurrentPlayer(),board.getCell(row,column),worker);
 
             String message = "Insert " + getCurrentPlayer().getName() + Messages.getMessage(Messages.GODPOWER_MESSAGE);
             sendBoard(new LiteBoard(message, board, this));

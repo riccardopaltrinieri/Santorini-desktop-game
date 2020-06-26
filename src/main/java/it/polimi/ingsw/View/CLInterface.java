@@ -105,30 +105,6 @@ public class CLInterface implements UserInterface {
                     outgoingMessage = "noMessageToSend";
                     break;
 
-                case "Loser:":
-                    // Use the name of the player to know who has to play
-                    if (parts[1].equals(name) && parts[2].equals("loses")) {
-                        System.out.println("You lose and cannot play anymore..");
-                        throw new NoSuchElementException();
-                    }
-                    else {
-                        board.printBoardCLI();
-                        System.out.println(parts[1] + " loses and cannot play anymore..");
-                    }
-
-                    outgoingMessage = "noMessageToSend";
-                    break;
-
-                case "Winner:":
-                    if (parts[1].equals(name) && parts[2].equals("wins")) {
-                        board.printBoardCLI();
-                        System.out.println("You win and the game it's over..");
-                        throw new NoSuchElementException();
-                    }
-                    else System.out.println(parts[1] + " wins and the game it's over..");
-                    outgoingMessage = "noMessageToSend";
-                    break;
-
                 case "Start":
                     if (!parts[1].equals(name))
                         System.out.println("Your " + parts[2] + " opponent is " + parts[1] + "and he will use " + parts[3]);
@@ -184,6 +160,35 @@ public class CLInterface implements UserInterface {
                             System.out.println(parts[1] + " undid last action");
                         outgoingMessage = "noMessageToSend";
                     }
+                    break;
+
+                case "Loser:":
+                    // Use the name of the player to know who has to play
+                    if (parts[1].equals(name) && parts[2].equals("loses")) {
+                        System.out.println("You lose and cannot play anymore..");
+                        System.out.println("Press enter to stop the app");
+                        stdin.nextLine();
+                        throw new NoSuchElementException("Game ended");
+                    }
+                    else {
+                        board.printBoardCLI();
+                        System.out.println(parts[1] + " loses and cannot play anymore..");
+                    }
+
+                    outgoingMessage = "noMessageToSend";
+                    break;
+
+                case "Winner:":
+                    if (parts[1].equals(name) && parts[2].equals("wins")) {
+                        board.printBoardCLI();
+                        System.out.println("You win and the game it's over..");
+                        throw new NoSuchElementException();
+                    }
+                    else System.out.println(parts[1] + " wins and the game it's over..");
+
+                    System.out.println("Press enter to stop the app");
+                    stdin.nextLine();
+                    outgoingMessage = "noMessageToSend";
                     break;
 
                 default:

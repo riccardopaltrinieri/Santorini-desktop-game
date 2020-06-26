@@ -125,11 +125,10 @@ public class Server {
             }
             playingConnection3players.clear();
             connections.remove(c);
-            c.closeConnection();
             numPlayers = 2;
 
         } else if (playingConnection.size() == 2) {
-            c.closeConnection();
+
             playingConnection.clear();
             connections.clear();
         }

@@ -59,9 +59,9 @@ public class Connection extends Observable implements Runnable, Observer {
     }
 
     private void close(){
-        closeConnection();
-        System.out.println("Deregistering client...");
+        System.out.println("Deregistering client: " + name);
         server.deregisterConnection(this);
+        closeConnection();
         System.out.println("Done!");
     }
 
@@ -85,28 +85,21 @@ public class Connection extends Observable implements Runnable, Observer {
                 }
             }
 
-            close();
-
         } catch(IOException e){
             if(isActive()) {
                 send(new LiteBoard("You took to much time to answer, you lose.."));
                 server.endGame();
+                close();
             }
-            System.err.println("Connection not more active");
-            close();
+            System.err.println("Connection with " + name + " not more active");
         }
     }
 
     public void newBoard(LiteBoard board) {
         String[] parts = board.getMessage().split(" ");
         send(board);
-        if (parts[1].equals(name) && parts[2].equals("loses")) {
-            active = false;
-            close();
-        }
-        if(parts[1].equals(name) && parts[2].equals("wins")){
-            server.endGame();
-        }
+        if ((parts[1].equals(name) && parts[2].equals("loses"))
+                || parts[2].equals("wins")) close();
     }
 
     @Override
