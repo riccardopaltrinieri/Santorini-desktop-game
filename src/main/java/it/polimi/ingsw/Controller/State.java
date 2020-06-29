@@ -6,6 +6,7 @@ public enum State {
     superMove,
     build,
     superBuild,
+    secondTimeState,
     endTurn,
     undo,
 }

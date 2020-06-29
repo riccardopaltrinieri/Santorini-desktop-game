@@ -1,11 +1,8 @@
 package it.polimi.ingsw.Controller;
 
-import it.polimi.ingsw.utils.Divinity;
+import it.polimi.ingsw.utils.*;
 import it.polimi.ingsw.Model.Game;
 import it.polimi.ingsw.View.LiteBoard;
-import it.polimi.ingsw.utils.InputString;
-import it.polimi.ingsw.utils.Observable;
-import it.polimi.ingsw.utils.Observer;
 
 public class Controller extends Observable implements Observer {
 
@@ -72,13 +69,12 @@ public class Controller extends Observable implements Observer {
                     row = Integer.parseInt(parts[2]) - 1;
                     column = Integer.parseInt(parts[3]) - 1;
                     worker = Integer.parseInt(parts[4]) - 1;
-                    undoThread = new UndoChecker(game, this, fsm.getState());
                     if (fsm.getState() == State.move) {
-                        undoThread.remember(worker);
+                        undoThread = new UndoChecker(game, this, fsm.getState());
                         actionExecuted = game.move(row, column, worker);
                     }
-                    if (fsm.getState() == State.superMove) {
-                        undoThread.remember(worker, row, column);
+                    if (fsm.getState() == State.superMove || fsm.getState() == State.secondTimeState) {
+                        undoThread = new UndoChecker(game, this, fsm.getState());
                         actionExecuted = game.useGodPower(row, column, worker);
                     }
                     lastAction = fsm.getState();
@@ -88,13 +84,12 @@ public class Controller extends Observable implements Observer {
                     row = Integer.parseInt(parts[2]) - 1;
                     column = Integer.parseInt(parts[3]) - 1;
                     worker = Integer.parseInt(parts[4]) - 1;
-                    undoThread = new UndoChecker(game, this, fsm.getState());
                     if (fsm.getState() == State.build) {
-                        undoThread.remember(row, column);
+                        undoThread = new UndoChecker(game, this, fsm.getState());
                         actionExecuted = game.build(row, column, worker);
                     }
-                    if (fsm.getState() == State.superBuild) {
-                        undoThread.remember(worker, row, column);
+                    if (fsm.getState() == State.superBuild || fsm.getState() == State.secondTimeState) {
+                        undoThread = new UndoChecker(game, this, fsm.getState());
                         actionExecuted = game.useGodPower(row, column, worker);
                     }
                     lastAction = fsm.getState();
@@ -110,9 +105,11 @@ public class Controller extends Observable implements Observer {
                 }
 
                 case endturn -> {
-                    undoing = false;
-                    actionExecuted = game.endTurn();
-                    lastAction = fsm.getState();
+                    if(fsm.getState() == State.endTurn) {
+                        undoing = false;
+                        actionExecuted = game.endTurn();
+                        lastAction = fsm.getState();
+                    }
                 }
 
             }

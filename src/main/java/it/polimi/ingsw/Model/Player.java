@@ -22,7 +22,14 @@ public class Player {
         this.game = game;
         this.workers = new ArrayList<>(2);
         this.game.getPlayers().add(this);
+    }
 
+    public Player(Player player) {
+        this.game = player.getGame();
+        this.name = player.getName();
+        this.color = player.getColor();
+        this.workers = new ArrayList<>(2);
+        this.godPower = player.godPower;
     }
 
     /**

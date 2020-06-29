@@ -2,20 +2,42 @@ package it.polimi.ingsw.Model;
 
 import it.polimi.ingsw.AthenaException;
 import it.polimi.ingsw.View.LiteBoard;
-import it.polimi.ingsw.utils.Divinity;
-import it.polimi.ingsw.utils.Messages;
-import it.polimi.ingsw.utils.Observable;
+import it.polimi.ingsw.utils.*;
 
 import java.util.ArrayList;
-import java.util.IllegalFormatException;
 
-public class Game extends Observable {
+public class Game extends Observable implements Originator {
 
     private int numPlayer;
     private int iterator;
-    private final Board board;
-    private final ArrayList<Player> players;
+    private Board board;
+    private ArrayList<Player> players;
     private Boolean canMoveUp;
+
+    private static class Memento {
+        public final Board board;
+        public final ArrayList<Player> players;
+        public Boolean canMoveUp;
+
+        private Memento(Game game) {
+            this.canMoveUp = game.getCanMoveUp();
+
+            // Get a copy of the map
+            this.board = new Board(game.getBoard().getMapCopy());
+            // Create a copy of every player and place their workers on the new map
+            this.players = new ArrayList<>();
+            for (Player p : game.getPlayers()) {
+                Player playerCopy = new Player(p);
+                this.players.add(playerCopy);
+                for (Worker w : p.getWorkers()) {
+                    playerCopy.placeWorkers(board.getCell(
+                            w.getPosition().getNumRow(),
+                            w.getPosition().getNumColumn()
+                    ));
+                }
+            }
+        }
+    }
 
     /**
      * Constructor
@@ -145,8 +167,21 @@ public class Game extends Observable {
         return true;
     }
 
+    @Override
+    public Object save() {
+        return new Memento(this);
+    }
 
-//  *************** SPECIAL GETTERS **********
+    @Override
+    public void restore(Object obj) {
+        Memento stateToRestore = (Memento) obj;
+        this.board = stateToRestore.board;
+        this.players = stateToRestore.players;
+        this.canMoveUp = stateToRestore.canMoveUp;
+    }
+
+//  ******************* SPECIAL GETTERS ***************************************
+
     public int getNumWorkers() {
         int numWorkers = 0;
         for (Player player : players) {
@@ -158,7 +193,7 @@ public class Game extends Observable {
         return players.get(iterator);
     }
 
-//  ************** GETTER AND SETTER ***********************************
+//  ******************* GETTER AND SETTER *************************************
 
 
     public ArrayList<Player> getPlayers() {
@@ -176,4 +211,5 @@ public class Game extends Observable {
     public void setNumPlayer(int numPlayer){
         this.numPlayer=numPlayer;
     }
+
 }
