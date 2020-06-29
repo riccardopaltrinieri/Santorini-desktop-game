@@ -8,7 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class UndoEndlistener implements ActionListener {
-    private MainFrame frame;
+    private final MainFrame frame;
     public UndoEndlistener(MainFrame frame){
         this.frame=frame;
     }
@@ -18,11 +18,10 @@ public class UndoEndlistener implements ActionListener {
             synchronized (frame) {
                 frame.notifyAll();
             }
-        }
-        if((e.getSource())==frame.getUndoButton()){
+        } else {
             synchronized (frame) {
-                frame.notifyAll();
                 frame.setUndo(true);
+                frame.notifyAll();
             }
         }
     }
