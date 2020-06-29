@@ -146,7 +146,7 @@ public class LiteBoard implements Serializable {
         for (int i=0;i<frame.getActiveBoardButtons().length;i++){
             frame.getActiveBoardButtons()[i].setHaveWorker(false);
             frame.getActiveBoardButtons()[i].setWorkerColorNull();
-            frame.getActiveBoardButtons()[i].setWorkerNum(0);
+            frame.getActiveBoardButtons()[i].setWorkerNum(-1);
             row = (i/5);
             column = (i%5);
             frame.getActiveBoardButtons()[i].setLevel(lv[row][column]);

@@ -24,7 +24,7 @@ public class FSMView {
 
         return switch (state) {
             case placeworker -> "Place your worker on the map: (write 'placeworker [row] [column]')";
-            case start -> "Do you want to use the " + godName + " power or going with the normal turn? (usepower/normal)";
+            case start -> "Are you going to use the " + godName + " power or going with the normal turn? (usepower/normal)";
             case worker -> "Choose the worker that you want to move and build with: (write 'worker 1' or 'worker 2]')";
             case move -> "Where do you want to move? (write 'move [row] [column]')";
             case build -> "Where do you want to build? (write 'build [row] [column]')";
@@ -39,11 +39,11 @@ public class FSMView {
 
         return switch (state) {
             case placeworker -> "Place your worker on the map: (select a free cell on the board')";
-            case start -> "Do you want to use the God power or going with the normal turn?";
+            case start -> "Are you going to use the " + godName + " power or going with the normal turn?";
             case worker -> "Choose the worker that you want to move and build with: (select one of your worker)";
             case move -> "Where do you want to move? (select a free cell reachable from your worker)";
             case build -> "Where do you want to build? (select a cell where your can build)";
-            case endTurn -> "Turn Ended..";
+            case endTurn -> "Click the \"endturn\" button to confirm your actions";
         };
     }
 

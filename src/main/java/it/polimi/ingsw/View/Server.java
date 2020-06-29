@@ -25,7 +25,6 @@ public class Server {
     private final Map<Connection, Connection> playingConnection = new HashMap<>();
     private final Map<Connection, Connection> playingConnection3players = new HashMap<>();
     private final ArrayList<String> divinities = new ArrayList<>();
-    private final String[] playerDivinities = new String[3];
     private final Map<String, String> divinityPlayer = new HashMap<>();
     private String firstPlayer;
     private String secondPlayer;
@@ -234,10 +233,6 @@ public class Server {
 
     public boolean gameHasStarted() {
         return startGame;
-    }
-
-    public Connection getConnection(int i) {
-        return connections.get(i);
     }
 
     public void setNumPlayers(int i) {

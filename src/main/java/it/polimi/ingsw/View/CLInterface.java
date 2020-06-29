@@ -112,12 +112,6 @@ public class CLInterface implements UserInterface {
                         System.out.println("You have " + parts[2] + " color " + "and will use: " + parts[3]);
                     outgoingMessage = "noMessageToSend";
                     break;
-                case "This":
-                case "You":
-                case "Wrong" :
-                    System.out.println(incomingMessage);
-                    outgoingMessage = stdin.nextLine();
-                    break;
 
                 case "Error:":
                     // Something went wrong with the last action
@@ -173,7 +167,6 @@ public class CLInterface implements UserInterface {
                     break;
 
                 case "Loser:":
-                    // Use the name of the player to know who has to play
                     if (parts[1].equals(name) && parts[2].equals("loses")) {
                         System.out.println("You lose and cannot play anymore..");
                         System.out.println("Press enter to stop the app");
@@ -199,6 +192,13 @@ public class CLInterface implements UserInterface {
                     System.out.println("Press enter to stop the app");
                     stdin.nextLine();
                     outgoingMessage = "noMessageToSend";
+                    break;
+
+                case "This":
+                case "You":
+                case "Wrong" :
+                    System.out.println(incomingMessage);
+                    outgoingMessage = stdin.nextLine();
                     break;
 
                 default:
