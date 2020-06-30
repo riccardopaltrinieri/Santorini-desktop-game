@@ -10,17 +10,17 @@ import java.util.Scanner;
 public class ClientApp {
 
     public static void main(String[] args){
-        NetworkHandler connection = new NetworkHandler("127.0.0.1", 12345);
-        Scanner stdin = new Scanner(System.in);
+        NetworkHandler connection = new NetworkHandler("127.0.0.1", 12445);
+      //  Scanner stdin = new Scanner(System.in);
 
-        System.out.println("Do you want to use the Graphics Interface or continue on the command line?");
-        System.out.println("(write gui/cli): ");
-        String input = stdin.nextLine();
+       // System.out.println("Do you want to use the Graphics Interface or continue on the command line?");
+      //  System.out.println("(write gui/cli): ");
+        String input = args[0];
 
-        while (!input.equals("cli") && !input.equals("gui")) {
-            System.out.println("please, write 'gui' or 'cli':");
-            input = stdin.nextLine();
-        }
+       // while (!input.equals("cli") && !input.equals("gui")) {
+        //    System.out.println("please, write 'gui' or 'cli':");
+        //  input = args ;
+      //  }
 
         if(input.equals("cli")){
             try{
