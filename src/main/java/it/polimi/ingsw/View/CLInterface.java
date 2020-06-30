@@ -105,43 +105,12 @@ public class CLInterface implements UserInterface {
                     outgoingMessage = "noMessageToSend";
                     break;
 
-                case "Loser:":
-                    // Use the name of the player to know who has to play
-                    if (parts[1].equals(name) && parts[2].equals("loses")) {
-                        System.out.println("You lose and cannot play anymore..");
-                        throw new NoSuchElementException();
-                    }
-                    else {
-                        board.printBoardCLI();
-                        System.out.println(parts[1] + " loses and cannot play anymore..");
-                    }
-
-                    outgoingMessage = "noMessageToSend";
-                    break;
-
-                case "Winner:":
-                    if (parts[1].equals(name) && parts[2].equals("wins")) {
-                        board.printBoardCLI();
-                        System.out.println("You win and the game it's over..");
-                        throw new NoSuchElementException();
-                    }
-                    else System.out.println(parts[1] + " wins and the game it's over..");
-                    outgoingMessage = "noMessageToSend";
-                    break;
-
                 case "Start":
-                    if (!parts[1].equals(name)) {
-                        System.out.println("Your " + parts[2] + " opponent is " + parts[1]);
-                        System.out.println("He will use " + parts[3]);
-                    }
-                    else System.out.println("You have " + parts[2] + " colour " + "and will use: " +parts[3]);
+                    if (!parts[1].equals(name))
+                        System.out.println("Your " + parts[2] + " opponent is " + parts[1] + "and he will use " + parts[3]);
+                    else
+                        System.out.println("You have " + parts[2] + " color " + "and will use: " + parts[3]);
                     outgoingMessage = "noMessageToSend";
-                    break;
-
-                case "You":
-                case "Wrong" :
-                    System.out.println(incomingMessage);
-                    outgoingMessage = stdin.nextLine();
                     break;
 
                 case "Error:":
@@ -150,8 +119,18 @@ public class CLInterface implements UserInterface {
                         System.out.println("Ops, something went wrong");
                         System.out.println(incomingMessage);
                         System.out.println("Please, try again:");
-                        if (parts[3].equals("place")) fsm.prevStateToPlaceWorker();
+
+                        if (parts[3].equals("place"))
+                            fsm.prevStateToPlaceWorker();
+                        else if (parts[3].equals("worker")) {
+                            fsm.setState(State.worker);
+                            System.out.println("Choose again the worker: ");
+                            checkAction(stdin);
+                            fsm.nextState();
+                        }
                         else fsm.prevState();
+
+                        System.out.println(fsm.getStateStringCLI());
                         outgoingMessage = checkAction(stdin);
                         fsm.nextState();
                     } else
@@ -181,8 +160,45 @@ public class CLInterface implements UserInterface {
                             }
                         }
                     } else {
+                        if(parts[2].equals("undid"))
+                            System.out.println(parts[1] + " undid last action");
                         outgoingMessage = "noMessageToSend";
                     }
+                    break;
+
+                case "Loser:":
+                    if (parts[1].equals(name) && parts[2].equals("loses")) {
+                        System.out.println("You lose and cannot play anymore..");
+                        System.out.println("Press enter to stop the app");
+                        stdin.nextLine();
+                        throw new NoSuchElementException("Game ended");
+                    }
+                    else {
+                        board.printBoardCLI();
+                        System.out.println(parts[1] + " loses and cannot play anymore..");
+                    }
+
+                    outgoingMessage = "noMessageToSend";
+                    break;
+
+                case "Winner:":
+                    if (parts[1].equals(name) && parts[2].equals("wins")) {
+                        board.printBoardCLI();
+                        System.out.println("You win and the game it's over..");
+                        throw new NoSuchElementException();
+                    }
+                    else System.out.println(parts[1] + " wins and the game it's over..");
+
+                    System.out.println("Press enter to stop the app");
+                    stdin.nextLine();
+                    outgoingMessage = "noMessageToSend";
+                    break;
+
+                case "This":
+                case "You":
+                case "Wrong" :
+                    System.out.println(incomingMessage);
+                    outgoingMessage = stdin.nextLine();
                     break;
 
                 default:
@@ -238,48 +254,42 @@ public class CLInterface implements UserInterface {
 
                 switch (action) {
                     case worker -> {
-                        if (fsm.getState() != State.worker) throw new IllegalArgumentException();
+                        if (fsm.getState() != State.worker) throw new IllegalArgumentException("you can't choose the worker now");
                         int worker = Integer.parseInt(partsInput[1]);
-                        if (!(worker == 1) && !(worker == 2)) throw new IllegalArgumentException();
+                        if (!(worker == 1) && !(worker == 2)) throw new IllegalArgumentException("you only have 2 workers");
                         setWorker(worker);
                     }
-                    case move -> {
-                        if (fsm.getState() != State.move) throw new IllegalArgumentException();
+                    case move, build -> {
+                        if (action == InputString.move && fsm.getState() != State.move) throw new IllegalArgumentException("you can't make a move now");
+                        if (action == InputString.build && fsm.getState() != State.build) throw new IllegalArgumentException("you can't build now");
+                        if (partsInput.length > 3) throw new IllegalArgumentException("too many parameters");
                         row = Integer.parseInt(partsInput[1]);
                         col = Integer.parseInt(partsInput[2]);
-                        if (row < 1 || row > 5 || col < 1 || col > 5) throw new IllegalArgumentException();
-                        inputLine += " " + getWorker();
-                    }
-                    case build -> {
-                        if (fsm.getState() != State.build) throw new IllegalArgumentException();
-                        row = Integer.parseInt(partsInput[1]);
-                        col = Integer.parseInt(partsInput[2]);
-                        if (row < 1 || row > 5 || col < 1 || col > 5) throw new IllegalArgumentException();
+                        if (row < 1 || row > 5 || col < 1 || col > 5) throw new IllegalArgumentException("row and columns should be from 1 to 5");
                         inputLine += " " + getWorker();
                     }
                     case placeworker -> {
-                        if(fsm.getState() != State.placeworker) throw new IllegalArgumentException();
+                        if(fsm.getState() != State.placeworker) throw new IllegalArgumentException("you can only have 2 workers");
                         row = Integer.parseInt(partsInput[1]);
                         col = Integer.parseInt(partsInput[2]);
-                        if (row < 1 || row > 5 || col < 1 || col > 5) throw new IllegalArgumentException();
+                        if (row < 1 || row > 5 || col < 1 || col > 5) throw new IllegalArgumentException("row and columns should be from 1 to 5");
                     }
                     case normal -> {
                         fsm.setPath(Divinity.Default);
-                        if (fsm.getState() != State.start) throw new IllegalArgumentException();
-                        if (partsInput.length > 1) throw new IllegalArgumentException();
+                        if (fsm.getState() != State.start) throw new IllegalArgumentException("you're not deciding your turn now");
+                        if (partsInput.length > 1) throw new IllegalArgumentException("you wrote too many words");
                     }
                     case usepower -> {
                         fsm.setPath(divinity);
-                        if (fsm.getState() != State.start) throw new IllegalArgumentException();
-                        if (partsInput.length > 1) throw new IllegalArgumentException();
+                        if (fsm.getState() != State.start) throw new IllegalArgumentException("you're not deciding your turn now");
+                        if (partsInput.length > 1) throw new IllegalArgumentException("you wrote too many words");
                     }
                     case endturn -> {
-                        if(fsm.getState() != State.endTurn) throw new IllegalArgumentException();
+                        if(fsm.getState() != State.endTurn) throw new IllegalArgumentException("you should not end your turn now");
                     }
                     case undo -> {
-                        //TODO State undo check
-                        if(fsm.getState() == State.placeworker || fsm.getState() == State.worker)
-                            throw new IllegalArgumentException();
+                        if(fsm.getState() == State.start || fsm.getState() == State.placeworker || fsm.getState() == State.worker)
+                            throw new IllegalArgumentException("You can't undo your action now");
                     }
                     default -> throw new IllegalArgumentException();
                 }
@@ -289,8 +299,10 @@ public class CLInterface implements UserInterface {
                 // If the input is correct it can be send
                 return inputLine.toLowerCase();
 
-            } catch (IllegalArgumentException | IndexOutOfBoundsException e) {
-                System.out.println("Wrong input, please reinsert your move");
+            } catch (IllegalArgumentException e) {
+                System.out.println("Wrong input, " + e.getMessage());
+            } catch (IndexOutOfBoundsException e) {
+                System.out.println("Wrong input, too few parameters");
             }
         }
     }

@@ -2,7 +2,7 @@ package it.polimi.ingsw.Controller;
 
 import it.polimi.ingsw.utils.Divinity;
 
-public class FiniteStateMachine {
+class FiniteStateMachine {
 
     private State state;
     private Divinity divinity;
@@ -23,58 +23,58 @@ public class FiniteStateMachine {
     protected void nextState() throws IllegalStateException {
 
         if(state == State.endTurn) {
-            state = State.start;
+            setState(State.start);
             return;
         }
 
         switch (this.divinity) {
 
             case Default:
-                if (state == State.start) state = State.move;
-                else if (state == State.move) state = State.build;
-                else if (state == State.build) state = State.endTurn;
+                if (state == State.start) setState(State.move);
+                else if (state == State.move) setState(State.build);
+                else if (state == State.build)  setState(State.endTurn);
                 break;
 
             case Apollo:
             case Athena:
             case Minotaur:
             case Pan:
-                if (state == State.start) state = State.superMove;
-                else if (state == State.superMove) state = State.build;
-                else if (state == State.build) state = State.endTurn;
+                if (state == State.start)  setState(State.superMove);
+                else if (state == State.superMove)  setState(State.build);
+                else if (state == State.build)  setState(State.endTurn);
                 break;
 
             case Artemis:
-                if (state == State.start) state = State.superMove;
-                else if (state == State.superMove) setStateAfterTwoTimes(State.build);
-                else if (state == State.build) state = State.endTurn;
+                if (state == State.start)  setState(State.superMove);
+                else if (state == State.superMove)  setState(State.secondTimeState);
+                else if (state == State.secondTimeState)  setState(State.build);
+                else if (state == State.build)  setState(State.endTurn);
                 break;
 
             case Atlas:
             case Hephaestus:
-                if (state == State.start) state = State.move;
-                else if (state == State.move) state = State.superBuild;
-                else if (state == State.superBuild) state = State.endTurn;
+                if (state == State.start)  setState(State.move);
+                else if (state == State.move)  setState(State.superBuild);
+                else if (state == State.superBuild)  setState(State.endTurn);
                 break;
 
             case Demeter:
-                if (state == State.start) state = State.move;
-                else if (state == State.move) state = State.superBuild;
-                else if (state == State.superBuild) setStateAfterTwoTimes(State.endTurn);
+                if (state == State.start)  setState(State.move);
+                else if (state == State.move)  setState(State.superBuild);
+                else if (state == State.superBuild)  setState(State.secondTimeState);
+                else if (state == State.secondTimeState)  setState(State.endTurn);
                 break;
 
             case Prometheus:
-                if (state == State.start) state = State.build;
-                else if (state == State.superMove) state = State.build;
+                if (state == State.start)  setState(State.build);
+                else if (state == State.superMove)  setState(State.build);
                 else if (state == State.build) {
-                     // Doesn't call the method setStateAfterTwoTimes because every time
-                     // the state change to different ones
                     if (!again) {
                         again = true;
-                        state = State.superMove;
+                        setState(State.superMove);
                     } else {
                         again = false;
-                        state = State.endTurn;
+                        setState(State.endTurn);
                     }
                 }
                 break;
@@ -101,8 +101,9 @@ public class FiniteStateMachine {
                 break;
 
             case Artemis:
-                if (state == State.superMove) resetTwoTimesState(State.start, false);
-                else if (state == State.build) resetTwoTimesState(State.superMove, true);
+                if (state == State.superMove) state = State.start;
+                else if (state == State.secondTimeState) state = State.superMove;
+                else if (state == State.build) state = State.secondTimeState;
                 else if (state == State.endTurn) state = State.build;
                 break;
 
@@ -115,8 +116,9 @@ public class FiniteStateMachine {
 
             case Demeter:
                 if (state == State.move) state = State.start;
-                else if (state == State.superBuild) resetTwoTimesState(State.move, false);
-                else if (state == State.endTurn) resetTwoTimesState(State.superBuild, true);
+                else if (state == State.superBuild) state = State.move;
+                else if (state == State.secondTimeState) state = State.superBuild;
+                else if (state == State.endTurn) state = State.secondTimeState;
                 break;
 
             case Prometheus:
@@ -142,29 +144,6 @@ public class FiniteStateMachine {
 
     protected void setState(State state) {
         this.state = state;
-    }
-
-    /**
-     * Method used to execute the same action two times without changing the state
-     * of the fsm when called for the first time
-     */
-    private void setStateAfterTwoTimes(State newState) {
-        if (!again) {
-            again = true;
-        } else {
-            again = false;
-            state = newState;
-        }
-    }
-
-    protected void resetTwoTimesState(State oldState, boolean toSecondTime) {
-        if(toSecondTime) {
-            again = true;
-            state = oldState;
-        } else {
-            if(again) again = false;
-            else state = oldState;
-        }
     }
 
     protected void setPath(Divinity divinity) {

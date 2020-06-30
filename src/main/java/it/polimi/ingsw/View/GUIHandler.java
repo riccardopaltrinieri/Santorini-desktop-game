@@ -5,10 +5,11 @@ import it.polimi.ingsw.utils.Color;
 import it.polimi.ingsw.utils.Divinity;
 
 import javax.swing.*;
+import java.util.NoSuchElementException;
 
 public class GUIHandler implements UserInterface {
 
-    MainFrame mainFrame= new MainFrame();
+    final MainFrame mainFrame= new MainFrame();
     ChooseFrame chooseFrame = new ChooseFrame();
     ChooseBetweenFrame chooseBetweenFrame = new ChooseBetweenFrame();
     private final FSMView fsm = new FSMView();
@@ -30,7 +31,7 @@ public class GUIHandler implements UserInterface {
     @Override
     public String update(LiteBoard board) {
         String incomingMessage = board.getMessage();
-        String outgoingMessage = "noMessageToSend";
+        String outgoingMessage = "Error";
 
         try{
             String[] parts = incomingMessage.split(" ");
@@ -44,52 +45,28 @@ public class GUIHandler implements UserInterface {
                     board.printBoardGUI(mainFrame);
                     //Error
                     if (parts[1].equals(name)) {
-                        JOptionPane.showMessageDialog(mainFrame, "something gone wrong, please try again");
-                        fsm.prevState();
-                        for (int i = 0; i < 25; i++) mainFrame.getActiveBoardButtons()[i].setEnabled(false);
-                        //Move
-                        if (fsm.getState() == State.move) {
-                            mainFrame.updateTextArea("Select where you want to move your worker");
-                            for (int i = 0; i < 25; i++) {
-                                if (mainFrame.getActiveBoardButtons()[selectedWorkerIndex].canMoveTo(mainFrame.getActiveBoardButtons()[i], fsm.getPath())) {
-                                    mainFrame.getActiveBoardButtons()[i].setSelectableCell(true);
-                                    mainFrame.getActiveBoardButtons()[i].setEnabled(true);
-                                    mainFrame.getActiveBoardButtons()[i].repaint();
-                                } else {
-                                    mainFrame.getActiveBoardButtons()[i].setEnabled(false);
-                                }
-                            }
-                            int[] coordinate = mainFrame.getChosenButtonCoordinate();
-                            int workerIndex = mainFrame.getActiveBoardButtons()[selectedWorkerIndex].getWorkerNum() % 2 + 1;
-                            outgoingMessage = "move " + coordinate[0] + " " + coordinate[1] + " " + workerIndex;
-                            selectedWorkerIndex = (coordinate[0] - 1) * 5 + coordinate[1] - 1;
-                        }
+                        JOptionPane.showMessageDialog(mainFrame, "Ops, something went wrong\n" +incomingMessage+ "\nPlease try again");
 
-                        //Build
-                        if (fsm.getState() == State.build) {
-                            mainFrame.updateTextArea("select where you want to build");
-                            for (int i = 0; i < 25; i++) {
-                                if (mainFrame.getActiveBoardButtons()[selectedWorkerIndex].canBuildIn(mainFrame.getActiveBoardButtons()[i])) {
-                                    mainFrame.getActiveBoardButtons()[i].setSelectableCell(true);
-                                    mainFrame.getActiveBoardButtons()[i].setEnabled(true);
-                                    mainFrame.getActiveBoardButtons()[i].repaint();
-                                } else {
-                                    mainFrame.getActiveBoardButtons()[i].setEnabled(false);
-                                }
-                            }
-                            int[] coordinate = mainFrame.getChosenButtonCoordinate();
-                            int workerIndex = mainFrame.getActiveBoardButtons()[selectedWorkerIndex].getWorkerNum() % 2 + 1;
-                            outgoingMessage = "build " + coordinate[0] + " " + coordinate[1] + " " + workerIndex;
+                        if (parts[3].equals("place"))
+                            fsm.prevStateToPlaceWorker();
+                        else if (parts[3].equals("worker")) {
+                            fsm.setState(State.worker);
+                            checkAction();
+                            fsm.nextState();
                         }
+                        else fsm.prevState();
+
+                        outgoingMessage = checkAction();
                         fsm.nextState();
+
                         incomingMessage = lastMessage;
-                    }
+                    } else outgoingMessage = "noMessageToSend";
                     break;
 
                 case "Start" :
                 //take the other's player info
                     if (!parts[1].equals(name)) {
-                        mainFrame.updatePlayerInfoTextArea("Your " + parts[2] + " opponent is " + parts[1] + "\nHe will use " + parts[3]);
+                        JOptionPane.showMessageDialog(mainFrame, "Your " + parts[2] + " opponent is " + parts[1] + "\nHe will use " + parts[3]);
                     }
                     else {
                         color = Color.valueOf(parts[2]);
@@ -104,45 +81,46 @@ public class GUIHandler implements UserInterface {
                         @Override
                         public synchronized void  run() {
                             mainFrame.init();
-                            for (int i=0;i<25;i++){
-                                mainFrame.getActiveBoardButtons()[i].addActionListener(boardListener);
+                            for (BoardButton button : mainFrame.getActiveBoardButtons()){
+                                button.addActionListener(boardListener);
                             }
                             mainFrame.getEndTurnButton().addActionListener(undoEndlistener);
-                            mainFrame.getYesButton().addActionListener(boardListener);
-                            mainFrame.getNoButton().addActionListener(boardListener);
+                            mainFrame.getPowerButton().addActionListener(boardListener);
+                            mainFrame.getDefaultButton().addActionListener(boardListener);
                             mainFrame.getUndoButton().addActionListener(undoEndlistener);
                         }
                     });
 
                     mainFrame.updateTextArea("Insert your name in the dialog");
-                    outgoingMessage = (String)JOptionPane.showInputDialog(
-                            mainFrame,
-                            "Insert your name here",
-                            "Player's name",
-                            JOptionPane.PLAIN_MESSAGE,
-                            null,
-                            null,
-                            "");
-                    while((outgoingMessage==null)||(outgoingMessage.equals(""))){
+                    do {
                         outgoingMessage = (String)JOptionPane.showInputDialog(
                                 mainFrame,
-                                "The given name is not valid, try again",
+                                "Insert your name here",
                                 "Player's name",
                                 JOptionPane.PLAIN_MESSAGE,
                                 null,
                                 null,
                                 "");
-                    }
+                    } while( outgoingMessage==null || outgoingMessage.equals("") );
+
                     name = outgoingMessage;
+                break;
+
+                case "This":
+
+                    mainFrame.updateTextArea("Insert your name in the dialog");
+                    do {
+                        outgoingMessage = (String)JOptionPane.showInputDialog(
+                                mainFrame,
+                                "This name is already taken, please choose another one",
+                                "Player's name",
+                                JOptionPane.PLAIN_MESSAGE,
+                                null,
+                                null,
+                                "");
+                    } while( outgoingMessage==null || outgoingMessage.equals("") );
+
                     break;
-
-
-                case "Wait":
-
-                    //waiting for the other players
-                    outgoingMessage="noMessageToSend";
-                    break;
-
 
                 case "Decide":
                     // Ask the number of players
@@ -156,32 +134,16 @@ public class GUIHandler implements UserInterface {
                             null,     //no custom icon
                             options,  //button titles
                             options[0] //default button
-                    );
-                    if(result == JOptionPane.YES_OPTION){
-                        outgoingMessage="2";
-                    }else if (result == JOptionPane.NO_OPTION){
-                        outgoingMessage="3";
-                    }else {
-                        while(!(outgoingMessage.equals("2")||(outgoingMessage.equals("3")))){
-                            result = JOptionPane.showOptionDialog(
-                                    mainFrame,
-                                    "Decide the number of player",
-                                    "Player's number",
-                                    JOptionPane.YES_NO_OPTION,
-                                    JOptionPane.QUESTION_MESSAGE,
-                                    null,     //no custom icon
-                                    options,  //button titles
-                                    options[0] //default button
                             );
-                            if(result == JOptionPane.YES_OPTION){
-                                outgoingMessage="2";
-                            }else if (result == JOptionPane.NO_OPTION) {
-                                outgoingMessage = "3";
-                            }
+                    do {
+                        if (result == JOptionPane.YES_OPTION) {
+                            outgoingMessage = "2";
+                        } else if (result == JOptionPane.NO_OPTION) {
+                            outgoingMessage = "3";
                         }
-                    }
-                    break;
+                    } while(!(outgoingMessage.equals("2")||(outgoingMessage.equals("3"))));
 
+                    break;
 
                 case "Choose":
                     //ask the player to choose the divinity
@@ -218,39 +180,47 @@ public class GUIHandler implements UserInterface {
                     break;
 
                 case "You":
-                    String[] players = {parts[6], parts[7]};
-                    int chosenPlayer = JOptionPane.showOptionDialog(
-                            mainFrame,
-                            "Decide the first Player",
-                            "First Player",
-                            JOptionPane.YES_NO_OPTION,
-                            JOptionPane.QUESTION_MESSAGE,
-                            null,     //no custom icon
-                            players,  //button titles
-                            players[0] //default button
-                    );
-                    if(chosenPlayer == JOptionPane.YES_OPTION){
-                        outgoingMessage=parts[6];
-                    }else if (chosenPlayer == JOptionPane.NO_OPTION){
-                        outgoingMessage=parts[7];
-                    }else {
-                        while(!(outgoingMessage.equals("2")||(outgoingMessage.equals("3")))){
-                            result = JOptionPane.showOptionDialog(
+                    String[] players;
+                    if(parts.length == 8 ) {
+                        // There are only 2 players
+                        players = new String[]{parts[6], parts[7]};
+                        do {
+                            int chosenPlayer = JOptionPane.showOptionDialog(
                                     mainFrame,
-                                    "Decide the number of player",
-                                    "Player's number",
+                                    "Decide the first Player",
+                                    "First Player",
                                     JOptionPane.YES_NO_OPTION,
                                     JOptionPane.QUESTION_MESSAGE,
                                     null,     //no custom icon
                                     players,  //button titles
                                     players[0] //default button
                             );
-                            if(result == JOptionPane.YES_OPTION){
-                                outgoingMessage=parts[6];
-                            }else if (result == JOptionPane.NO_OPTION) {
+                            if (chosenPlayer == JOptionPane.YES_OPTION) {
+                                outgoingMessage = parts[6];
+                            } else if (chosenPlayer == JOptionPane.NO_OPTION) {
                                 outgoingMessage = parts[7];
                             }
-                        }
+                        } while (outgoingMessage.isEmpty());
+                    }
+                    else {
+                        // There are 3 players
+                        players = new String[]{parts[6], parts[7], parts[8]};
+                        do {
+                            int chosenPlayer = JOptionPane.showOptionDialog(
+                                    mainFrame,
+                                    "Decide the first Player",
+                                    "First Player",
+                                    JOptionPane.YES_NO_CANCEL_OPTION,
+                                    JOptionPane.QUESTION_MESSAGE,
+                                    null,     //no custom icon
+                                    players,  //button titles
+                                    players[0] //default button
+                            );
+                            if (chosenPlayer == JOptionPane.YES_OPTION) outgoingMessage = parts[6];
+                            else if (chosenPlayer == JOptionPane.NO_OPTION) outgoingMessage = parts[7];
+                            else outgoingMessage = parts[8];
+
+                        } while (outgoingMessage.isEmpty());
                     }
                     break;
 
@@ -258,143 +228,199 @@ public class GUIHandler implements UserInterface {
                     // Shows to the player his God
                     mainFrame.updateGodCard(parts[2]);
                     divinity = Divinity.valueOf(parts[2]);
+                    fsm.setGodName(parts[2]);
                     outgoingMessage = "noMessageToSend";
                     break;
 
 
                 case "Insert":
 
+                    // Updates the board
                     board.printBoardGUI(mainFrame);
                     //ask to the player for the next move according to the FSM
-
-                    if (fsm.getState() == State.worker) {
-                        // ask to the player which worker he wants to use but don't send anything
-                        mainFrame.updateTextArea("Click on the worker that you want to use");
-                        for (int i=0; i<25;i++){
-                            mainFrame.getActiveBoardButtons()[i].setEnabled((mainFrame.getActiveBoardButtons()[i].getHaveWorker()) && (mainFrame.getActiveBoardButtons()[i].getWorkerColor() == color));
-                        }
-                        int[] coordinate=mainFrame.getChosenButtonCoordinate();
-                        selectedWorkerIndex = (coordinate[0]-1)*5+coordinate[1]-1;
-                        fsm.nextState();
-                    }
+                    mainFrame.updateTextArea(fsm.getStateStringGUI());
 
                     if (parts[1].equals(name)){
-                        //placeWorker
-                        if (fsm.getState()==State.placeworker){
-                            for (int i=0; i<25;i++){
-                                mainFrame.getActiveBoardButtons()[i].setEnabled(!mainFrame.getActiveBoardButtons()[i].getHaveWorker());
-                            }
-                            int[] coordinate = mainFrame.getChosenButtonCoordinate();
-                            outgoingMessage ="placeworker "+coordinate[0]+" "+coordinate[1];
+
+                        if (fsm.getState() == State.worker) {
+                            checkAction();
+                            fsm.nextState();
                         }
 
-                        //Ask if you want to use the godpower
-                        if (fsm.getState()==State.start){
-                            mainFrame.getUndoButton().setEnabled(true);
-                            if((divinity==Divinity.Athena)||(divinity==Divinity.Pan)){
-                                outgoingMessage="usepower";
-                            }
-                            else {
-                                mainFrame.updateTextArea("Do you want to use your Godpower?");
-                                mainFrame.addYesOrNo();
-                                for (int i = 0; i < 25; i++) {
-                                    mainFrame.getActiveBoardButtons()[i].setEnabled(false);
-                                }
-                                outgoingMessage = mainFrame.getYesOrNoResponse();
-                            }
-                            if(outgoingMessage.equals("usepower")) fsm.setPath(divinity);
-                            else fsm.setPath(Divinity.Default);
-                            mainFrame.removeYesOrNo();
+                        outgoingMessage = checkAction();
+
+                        if (!outgoingMessage.equals("undo")) fsm.nextState();
+                    } else {
+                        for (BoardButton button : mainFrame.getActiveBoardButtons()){
+                            button.setEnabled(false);
                         }
-
-                        //Move
-                        if (fsm.getState()==State.move){
-                            mainFrame.updateTextArea("Select where you want to move your worker");
-                            for (int i=0; i<25; i++){
-                                if ((mainFrame.getActiveBoardButtons()[selectedWorkerIndex].canMoveTo(mainFrame.getActiveBoardButtons()[i], fsm.getPath()))&&(i!= previousCellMoveIndex)){
-                                    mainFrame.getActiveBoardButtons()[i].setSelectableCell(true);
-                                    mainFrame.getActiveBoardButtons()[i].setEnabled(true);
-                                    mainFrame.getActiveBoardButtons()[i].repaint();
-                                }
-                                else{
-                                    mainFrame.getActiveBoardButtons()[i].setEnabled(false);
-                                }
-                            }
-                            int[] coordinate = mainFrame.getChosenButtonCoordinate();
-                            int workerIndex=mainFrame.getActiveBoardButtons()[selectedWorkerIndex].getWorkerNum()%2+1;
-                            if (previousCellMoveIndex==-1) {
-                                previousCellMoveIndex = selectedWorkerIndex;
-                            }
-                            else {
-                                previousCellMoveIndex=-1;
-                            }
-                            outgoingMessage ="move "+coordinate[0]+" "+coordinate[1]+" "+workerIndex;
-                            selectedWorkerIndex = (coordinate[0]-1)*5+coordinate[1]-1;
-                        }
-
-                        //Build
-                        if(fsm.getState()==State.build){
-                            mainFrame.updateTextArea("select where you want to build");
-                            for (int i=0;i<25;i++){
-                                if((mainFrame.getActiveBoardButtons()[selectedWorkerIndex].canBuildIn(mainFrame.getActiveBoardButtons()[i]))&&(i!=previousCellBuildIndex)){
-                                    mainFrame.getActiveBoardButtons()[i].setSelectableCell(true);
-                                    mainFrame.getActiveBoardButtons()[i].setEnabled(true);
-                                    mainFrame.getActiveBoardButtons()[i].repaint();
-                                }
-                                else{
-                                    mainFrame.getActiveBoardButtons()[i].setEnabled(false);
-
-                                }
-                            }
-                            int [] coordinate = mainFrame.getChosenButtonCoordinate();
-                            if (previousCellBuildIndex==-1) {
-                                previousCellBuildIndex = (coordinate[0]-1) * 5 + coordinate[1]-1;
-                            }
-                            else {
-                                previousCellBuildIndex=-1;
-                            }
-                            int workerIndex=mainFrame.getActiveBoardButtons()[selectedWorkerIndex].getWorkerNum()%2+1;
-                            outgoingMessage = "build "+coordinate[0]+" "+coordinate[1]+" "+workerIndex;
-                        }
-
-                        //EndTurn
-                        if (fsm.getState()==State.endTurn){
-                            mainFrame.updateTextArea("press End Button to confirm your choiche");
-                            mainFrame.enableEndTurn();
-                            synchronized (mainFrame){
-                                try {
-                                    mainFrame.wait();
-                                }
-                                catch (InterruptedException e){
-
-                                }
-                                mainFrame.disableEndTurn();
-                                outgoingMessage="endturn";
-                            }
-                        }
-                        fsm.nextState();
+                        if(parts[2].equals("update")) mainFrame.updateTextArea(parts[1] +"'s turn: ");
+                        outgoingMessage = "noMessageToSend";
                     }
-                    else{
-                        for (int i=0; i<25;i++){
-                            mainFrame.getActiveBoardButtons()[i].setEnabled(false);
-                        }
-                        mainFrame.updateTextArea("waiting for "+parts[1]+"'s turn");
+                    break;
+
+                case "Undo:":
+                    board.printBoardGUI(mainFrame);
+
+                    if(parts[1].equals(name)) {
+                       switch(parts[2]) {
+                           case "undid" -> {
+                               fsm.prevState();
+                               outgoingMessage = checkAction();
+                               fsm.nextState();
+                           }
+                           case "undoing" -> {
+                               mainFrame.updateTextArea("Processing undo request, please wait..");
+                               outgoingMessage = "noMessageToSend";
+                           }
+                           case "cannot" -> {
+                               JOptionPane.showMessageDialog(mainFrame, "Your undo request has been rejected");
+                               outgoingMessage = checkAction();
+                               fsm.nextState();
+                           }
+                       }
                     }
+                    else {
+                        if(parts[2].equals("undid"))
+                            mainFrame.updateTextArea(parts[1] + " undid last action");
+                        outgoingMessage = "noMessageToSend";
+                    }
+                    break;
+
+                case "Loser:":
+                        if (parts[1].equals(name) && parts[2].equals("loses")) {
+                            JOptionPane.showMessageDialog(mainFrame, "You lose and cannot play anymore..");
+
+                            throw new NoSuchElementException("Game ended");
+                        }
+                        else {
+                            JOptionPane.showMessageDialog(mainFrame, parts[1] + " loses and cannot play anymore..");
+                        }
+
+                        outgoingMessage = "noMessageToSend";
+                        break;
+
+                case "Winner:":
+                    if (parts[1].equals(name) && parts[2].equals("wins")) {
+                        JOptionPane.showMessageDialog(mainFrame, "You win and the game it's over..");
+                        throw new NoSuchElementException();
+                    }
+                    else JOptionPane.showMessageDialog(mainFrame, parts[1] + " wins and the game it's over..");
+
+                    outgoingMessage = "noMessageToSend";
+                    break;
+
+
+                default:
+                    outgoingMessage = "noMessageToSend";
                     break;
             }
             lastMessage = incomingMessage;
-            if (mainFrame.getUndo()==false) {
-                return outgoingMessage;
-            }
-            else{
-                return "Undo: "+parts[1] +" undid last action";
-            }
+            if (outgoingMessage.equals("Error")) throw new IllegalArgumentException();
+
+            return outgoingMessage;
         }
-        catch (IllegalArgumentException e){
+        catch (IllegalArgumentException | InterruptedException e){
             System.out.println(e.getMessage());
         }
         return null;
     }
+
+    private String checkAction() throws IllegalArgumentException, InterruptedException {
+
+        switch(fsm.getState()) {
+
+            case placeworker -> {
+                mainFrame.getUndoButton().setEnabled(false);
+                for (BoardButton button : mainFrame.getActiveBoardButtons()) {
+                    button.setEnabled(!button.getHaveWorker());
+                }
+                int[] coordinate = mainFrame.getChosenButtonCoordinate();
+                return "placeworker " + coordinate[0] + " " + coordinate[1];
+            }
+
+            case start -> {
+                mainFrame.getUndoButton().setEnabled(false);
+                //Asks if you want to use the godPower
+                if ((divinity == Divinity.Athena) || (divinity == Divinity.Pan)) {
+                    return "usepower";
+                } else {
+                    for (BoardButton button : mainFrame.getActiveBoardButtons()) {
+                        button.setEnabled(false);
+                    }
+                    mainFrame.updateTextArea(fsm.getStateStringGUI());
+                    mainFrame.addYesOrNo();
+                    String message = mainFrame.getYesOrNoResponse();
+                    if (message.equals("usepower")) fsm.setPath(divinity);
+                    else fsm.setPath(Divinity.Default);
+                    mainFrame.removeYesOrNo();
+                    return message;
+                }
+            }
+
+            case worker -> {
+                mainFrame.getUndoButton().setEnabled(false);
+                // ask to the player which worker he wants to use but don't send anything
+                for (BoardButton button : mainFrame.getActiveBoardButtons()) {
+                    button.setEnabled((button.getHaveWorker()) && (button.getWorkerColor() == color));
+                }
+                int[] coordinate = mainFrame.getChosenButtonCoordinate();
+                selectedWorkerIndex = mainFrame.getActiveButton((coordinate[0] - 1) * 5 + coordinate[1] - 1).getWorkerNum();
+                return "";
+            }
+
+            case move, build -> {
+                mainFrame.getUndoButton().setEnabled(true);
+                mainFrame.updateTextArea(fsm.getStateStringGUI());
+                mainFrame.updateActiveBoardButtons(fsm.getState(), fsm.getPath(), selectedWorkerIndex);
+
+                int workerIndex = selectedWorkerIndex % 2 + 1;
+                int[] coordinate = mainFrame.getChosenButtonCoordinate();
+
+                if(mainFrame.getUndo() && coordinate[0] == -1) {
+                    mainFrame.setUndo(false);
+                    return "undo";
+                }
+
+                // If the divinity is Artemis the worker can't move in the initial position
+                if(fsm.getState() == State.move && fsm.getPath() == Divinity.Artemis){
+                    if(previousCellMoveIndex == -1) {
+                        previousCellMoveIndex = (coordinate[0]-1) * 5 + coordinate[1]-1;
+                        mainFrame.getActiveButton(previousCellMoveIndex).setSelectableCell(false);
+                    }
+                    else previousCellMoveIndex = -1;
+                }
+                // If the divinity is Demeter the worker can't build in the same position
+                else if(fsm.getState() == State.build && fsm.getPath() == Divinity.Demeter) {
+                    if (previousCellBuildIndex == -1) {
+                        previousCellBuildIndex = (coordinate[0] - 1) * 5 + coordinate[1] - 1;
+                        mainFrame.getActiveButton(previousCellBuildIndex).setSelectableCell(false);
+                    } else previousCellBuildIndex = -1;
+                }
+
+                return fsm.getState() + " " + coordinate[0] + " " + coordinate[1] + " " + workerIndex;
+            }
+            case endTurn -> {
+                mainFrame.getUndoButton().setEnabled(true);
+                mainFrame.getEndTurnButton().setEnabled(true);
+                synchronized (mainFrame) {
+                    mainFrame.wait();
+                    mainFrame.getUndoButton().setEnabled(false);
+                    mainFrame.getEndTurnButton().setEnabled(false);
+                    if(mainFrame.getUndo()){
+                        mainFrame.setUndo(false);
+                        return "undo";
+                    } else
+                        return "endturn";
+                }
+            }
+
+            default -> {
+                return "Error";
+            }
+        }
+    }
+
 }
 
 //TODO gestire meglio messaggi di infotext per comunicare meglio

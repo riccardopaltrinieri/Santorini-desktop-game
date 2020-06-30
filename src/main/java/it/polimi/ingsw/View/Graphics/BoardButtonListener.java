@@ -27,10 +27,10 @@ public class BoardButtonListener implements ActionListener {
             }
         }
         if(fsm.getState()== State.start){
-            if ((e.getSource())==frame.getYesButton()){
+            if ((e.getSource())==frame.getPowerButton()){
                 frame.setYesOrNoString("usepower");
             }
-            else if((e.getSource())==frame.getNoButton()){
+            else if((e.getSource())==frame.getDefaultButton()){
                 frame.setYesOrNoString("normal");
             }
             else{

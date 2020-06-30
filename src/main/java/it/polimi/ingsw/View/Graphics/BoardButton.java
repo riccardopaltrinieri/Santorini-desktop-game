@@ -38,7 +38,7 @@ public class BoardButton extends JButton {
         if (haveWorker) {
             if (workerColor == Color.White) {
                 path = "images/Workers/whiteWorker.png";
-            } else if (workerColor == Color.Brown) {
+            } else if (workerColor == Color.Red) {
                 path = "images/Workers/brownWorker.png";
             } else {
                 path = "images/Workers/purpleWorker.png";
@@ -60,6 +60,43 @@ public class BoardButton extends JButton {
             }
             g.drawImage(selectedFrame,0,0,null);
         }
+    }
+
+    public void setSelectableCell(boolean selectableCell) {
+        this.selectableCell = selectableCell;
+        this.setEnabled(selectableCell);
+        this.repaint();
+    }
+
+    public boolean canBuildIn(BoardButton destination){
+        return (destination.getRow() >= row - 1) &&
+                (destination.getRow() <= row + 1) &&
+                (destination.getColumn() >= column - 1) &&
+                (destination.getColumn() <= column + 1) &&
+                (!destination.getHaveWorker()) &&
+                (destination.getLevel() < 4) &&
+                (!this.equals(destination));
+    }
+
+    public boolean canMoveTo(BoardButton destination, Divinity power) {
+        return  // Should be one of the 8 cell near the worker
+                destination.getRow() >= row - 1 &&
+                        destination.getRow() <= row + 1 &&
+                        destination.getColumn() >= column - 1 &&
+                        destination.getColumn() <= column + 1 &&
+                        // can be maximum one level higher
+                        // unless the divinity is prometheus
+                        ((power != Divinity.Prometheus && destination.getLevel() <= level + 1) ||
+                                (power == Divinity.Prometheus && destination.getLevel() <= level)) &&
+
+                        // should not be a dome
+                        destination.getLevel() < 4 &&
+                        // should not be the same cell as worker's position
+                        !this.equals(destination) &&
+                        // should not be another worker's cell
+                        // unless the divinity is Apollo or Minotaur
+                        (!destination.getHaveWorker() ||
+                                power == Divinity.Apollo || power == Divinity.Minotaur);
     }
 
     public BoardButton(String string, Icon icon){
@@ -106,14 +143,6 @@ public class BoardButton extends JButton {
         this.level = level;
     }
 
-    public boolean getSelectableCell() {
-        return selectableCell;
-    }
-
-    public void setSelectableCell(boolean selectableCell) {
-        this.selectableCell = selectableCell;
-    }
-
     public int getWorkerNum() {
         return workerNum;
     }
@@ -124,37 +153,6 @@ public class BoardButton extends JButton {
 
     public void setWorkerColorNull(){
         workerColor=null;
-    }
-
-    public boolean canBuildIn(BoardButton destination){
-        return (destination.getRow() >= row - 1) &&
-            (destination.getRow() <= row + 1) &&
-            (destination.getColumn() >= column - 1) &&
-            (destination.getColumn() <= column + 1) &&
-            (!destination.getHaveWorker()) &&
-            (destination.getLevel() < 4) &&
-            (!this.equals(destination));
-    }
-
-    public boolean canMoveTo(BoardButton destination, Divinity power) {
-        return  // Should be one of the 8 cell near the worker
-                destination.getRow() >= row - 1 &&
-                destination.getRow() <= row + 1 &&
-                destination.getColumn() >= column - 1 &&
-                destination.getColumn() <= column + 1 &&
-                // can be maximum one level higher
-                // unless the divinity is prometheus
-                ((power != Divinity.Prometheus && destination.getLevel() <= level + 1) ||
-                (power == Divinity.Prometheus && destination.getLevel() <= level)) &&
-
-                // should not be a dome
-                destination.getLevel() < 4 &&
-                // should not be the same cell as worker's position
-                !this.equals(destination) &&
-                // should not be another worker's cell
-                // unless the divinity is Apollo or Minotaur
-                (!destination.getHaveWorker() ||
-                power == Divinity.Apollo || power == Divinity.Minotaur);
     }
 
 }

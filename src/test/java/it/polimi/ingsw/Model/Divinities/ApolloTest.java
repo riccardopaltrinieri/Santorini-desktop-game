@@ -14,7 +14,7 @@ public class ApolloTest {
     @Test
     public void executeTest() throws AthenaException {
         Game game = new Game();
-        Player playerApollo = new Player("player test", Color.Brown, game);
+        Player playerApollo = new Player("player test", Color.Red, game);
         Player player = new Player("player test",Color.White, game);
         playerApollo.setGodPower(new Apollo());
         assertEquals(Divinity.Apollo, playerApollo.getGodPower().getDivinity());

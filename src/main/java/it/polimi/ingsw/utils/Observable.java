@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public abstract class Observable {
-    private List<Observer> observers;
+    private final List<Observer> observers;
 
     public Observable() {
         observers = new LinkedList<>();

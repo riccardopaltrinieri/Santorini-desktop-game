@@ -42,7 +42,7 @@ public class Connection extends Observable implements Runnable, Observer {
 
     public String readString() throws IOException {
         String read = "";
-        while (read.isEmpty()) {
+        while (read.isBlank()) {
             read = (in.readUTF());
         }
         return read;
@@ -59,9 +59,9 @@ public class Connection extends Observable implements Runnable, Observer {
     }
 
     private void close(){
-        closeConnection();
-        System.out.println("Deregistering client...");
+        System.out.println("Deregistering client: " + name);
         server.deregisterConnection(this);
+        closeConnection();
         System.out.println("Done!");
     }
 
@@ -74,7 +74,7 @@ public class Connection extends Observable implements Runnable, Observer {
             socket.setSoTimeout(360000);
 
             send( new LiteBoard("Welcome! What's your name?"));
-            name = readString();
+            server.notEqualsName(this);
             server.lobby(this, name);
 
             while(isActive()){
@@ -85,26 +85,29 @@ public class Connection extends Observable implements Runnable, Observer {
                 }
             }
 
-            close();
-
         } catch(IOException e){
-            send(new LiteBoard("You took to much time to answer, you lose.."));
-            server.endGame();
-            System.err.println("Connection not more active");
-            close();
+            if(isActive()) {
+                send(new LiteBoard("You took to much time to answer, you lose.."));
+                close();
+                server.endGame();
+            }
+            System.err.println("Connection with " + name + " not more active");
         }
     }
 
     public void newBoard(LiteBoard board) {
         String[] parts = board.getMessage().split(" ");
         send(board);
-        if(parts[1].equals(name) && parts[2].equals("wins")){
-            server.endGame();
-        }
+        if ((parts[1].equals(name) && parts[2].equals("loses"))
+                || parts[2].equals("wins")) close();
     }
+
+    public String getName(){ return name; }
 
     @Override
     public void update(String message) {
         // Method used only by the controller
     }
+
+    public void setName(String n) { name = n; }
 }

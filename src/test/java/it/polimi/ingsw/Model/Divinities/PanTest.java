@@ -14,7 +14,7 @@ public class PanTest {
     public void panTest()
     {
         Game game = new Game();
-        Player panPlayer = new Player("pan's player", Color.Brown, game);
+        Player panPlayer = new Player("pan's player", Color.Red, game);
         Board board = game.getBoard();
         panPlayer.setGodPower(new Pan());
         assertEquals(Divinity.Pan, panPlayer.getGodPower().getDivinity());

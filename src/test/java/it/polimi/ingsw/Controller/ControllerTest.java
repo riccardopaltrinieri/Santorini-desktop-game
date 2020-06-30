@@ -31,13 +31,13 @@ public class ControllerTest {
 
         controller.update("tester placeWorker 4 4");
         controller.update("tester placeWorker 1 2");
-
+        controller.update("tester endturn");
         // check if placeWorker function place 2 and only 2 worker
         assertEquals(2, tester.getWorkers().size());
 
         controller.update("tester2 placeWorker 3 4");
         controller.update("tester2 placeWorker 3 3");
-
+        controller.update("tester2 endturn");
         controller.update("tester normal");
         controller.update("tester move 1 2 1");
 
@@ -50,7 +50,7 @@ public class ControllerTest {
         // check the build function
         assertFalse(game.getBoard().getCell(0,0).getLevel()==0);
         assertEquals(1, game.getBoard().getCell(0, 0).getLevel());
-
+        controller.update("tester endturn");
     }
 
 
@@ -68,10 +68,10 @@ public class ControllerTest {
 
         controller.update("tester placeWorker 1 1");
         controller.update("tester placeWorker 4 4");
-
+        controller.update("tester endturn");
         controller.update("tester2 placeWorker 3 3");
         controller.update("tester2 placeWorker 4 3");
-
+        controller.update("tester2 endturn");
         controller.update("tester usePower");
         controller.update("tester move 1 2 1");
 
@@ -79,7 +79,7 @@ public class ControllerTest {
         assertFalse(game.getBoard().getCell(0,1).getIsEmpty());
 
         controller.update("tester build 1 1 1");
-
+        controller.update("tester endturn");
         controller.update("tester2 usePower");
         controller.update("tester2 move 3 2 1");
         controller.update("tester2 build 3 3 1");
@@ -107,16 +107,16 @@ public class ControllerTest {
 
         controller.update("tester placeWorker 1 1");
         controller.update("tester placeWorker 4 4");
-
+        controller.update("tester endturn");
         controller.update("tester2 placeWorker 3 3");
         controller.update("tester2 placeWorker 4 3");
-
+        controller.update("tester2 endturn");
         // Pan player makes a normal move with the GodPower
         controller.update("tester usePower");
         controller.update("tester move 1 2 1");
         assertFalse(game.getBoard().getCell(0,1).getIsEmpty());
         controller.update("tester build 1 1 1");
-
+        controller.update("tester endturn");
         // Prometheus player use the GodPower
         controller.update("tester2 usePower");
         controller.update("tester2 build 3 2 1");
@@ -140,10 +140,10 @@ public class ControllerTest {
 
         controller.update("tester placeWorker 1 1");
         controller.update("tester placeWorker 2 2");
-
+        controller.update("tester endturn");
         controller.update("tester2 placeWorker 3 3");
         controller.update("tester2 placeWorker 4 4");
-
+        controller.update("tester2 endturn");
         // Artemis player makes two moves
         controller.update("tester usePower");
         controller.update("tester move 1 2 1");
@@ -152,7 +152,7 @@ public class ControllerTest {
         assertTrue(game.getBoard().getCell(0,0).getIsEmpty());
         assertTrue(game.getBoard().getCell(0,1).getIsEmpty());
         controller.update("tester build 1 2 1");
-
+        controller.update("tester endturn");
         // Demeter player use the GodPower
         controller.update("tester2 usePower");
         controller.update("tester2 move 3 4 1");

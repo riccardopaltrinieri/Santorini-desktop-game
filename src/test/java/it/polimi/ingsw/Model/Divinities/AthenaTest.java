@@ -14,7 +14,7 @@ public class AthenaTest {
     public void executeTest() {
         Game game = new Game();
         Board board = game.getBoard();
-        Player player = new Player("test player", Color.Brown, game);
+        Player player = new Player("test player", Color.Red, game);
 
         Cell lowCell = board.getCell(0,0);
         Cell highCell = board.getCell(1, 1);

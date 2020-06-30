@@ -1,29 +1,31 @@
 package it.polimi.ingsw.View.Graphics;
 
+import it.polimi.ingsw.View.State;
+import it.polimi.ingsw.utils.Divinity;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class MainFrame extends JFrame{
-    private final int cellSize=90;
 
     private Icon godCard = new ImageIcon("images/godCards/None.png");
-    private Icon[] cellBoardIcon = new ImageIcon[49];
+    private final Icon[] cellBoardIcon = new ImageIcon[49];
 
-    private JLabel godLabel = new JLabel(godCard);
+    private final JLabel godLabel = new JLabel(godCard);
 
-    private JPanel mapPanel = new JPanel();
-    private JPanel yesOrNoPanel = new JPanel();
+    private final JPanel mapPanel = new JPanel();
+    private final JPanel yesOrNoPanel = new JPanel();
 
-    private BoardButton[] activeBoardButtons = new BoardButton[25];
-    private BoardButton[] boardButtons = new BoardButton[49];
+    private final BoardButton[] activeBoardButtons = new BoardButton[25];
+    private final BoardButton[] boardButtons = new BoardButton[49];
 
-    private JTextArea textArea = new JTextArea();
-    private JTextArea playerInfoTextArea = new JTextArea();
+    private final JTextArea textArea = new JTextArea();
+    private final JTextArea playerInfoTextArea = new JTextArea();
 
-    private JButton endTurnButton = new JButton("End Turn");
-    private JButton yesButton = new JButton("Yes");
-    private JButton noButton = new JButton("No");
-    private JButton undoButton = new JButton("Undo");
+    private final JButton endTurnButton = new JButton("End Turn");
+    private final JButton powerButton = new JButton("Use Power");
+    private final JButton defaultButton = new JButton("Normal turn");
+    private final JButton undoButton = new JButton("Undo");
 
     private boolean undo=false;
 
@@ -31,15 +33,12 @@ public class MainFrame extends JFrame{
 
     private BoardButton chosenButton;
 
-    private void registerPlayer(){
-        
-    }
-
     public void init(){
         GridBagLayout layout = new GridBagLayout();
         GridBagConstraints lim = new GridBagConstraints();
         setLayout(layout);
 
+        int cellSize = 90;
         lim.gridy=1;
         lim.gridwidth=3;
         lim.gridheight=5;
@@ -71,8 +70,8 @@ public class MainFrame extends JFrame{
             boardButtons[i].setRow(row-1);
             boardButtons[i].setColumn(column-1);
             boardButtons[i].setDisabledIcon(cellBoardIcon[i]);
-            boardButtons[i].setPreferredSize(new Dimension(cellSize,cellSize));
-            boardButtons[i].setMaximumSize(new Dimension(cellSize,cellSize));
+            boardButtons[i].setPreferredSize(new Dimension(cellSize, cellSize));
+            boardButtons[i].setMaximumSize(new Dimension(cellSize, cellSize));
             if ((row==1)||(row==7)||(column==1)||(column==7)){
                 boardButtons[i].setEnabled(false);
             }
@@ -114,13 +113,26 @@ public class MainFrame extends JFrame{
         setVisible(true);
     }
 
+    public void updateActiveBoardButtons(State state, Divinity divinity, int worker) {
+        switch (state){
+            case move -> {
+                for (BoardButton button : activeBoardButtons)
+                    button.setSelectableCell(getWorkerButton(worker).canMoveTo(button, divinity));
+            }
+            case build -> {
+                for (BoardButton button : activeBoardButtons)
+                    button.setSelectableCell(getWorkerButton(worker).canBuildIn(button));
+            }
+        }
+    }
+
     public void updateTextArea(String text){
         textArea.setText(text);
     }
 
     public void updatePlayerInfoTextArea(String text){
         String oldText=playerInfoTextArea.getText();
-        if (oldText!=""){
+        if (!oldText.isBlank()){
             oldText+="\n";
         }
         playerInfoTextArea.setText(oldText + " " + text);
@@ -135,6 +147,16 @@ public class MainFrame extends JFrame{
     public BoardButton[] getActiveBoardButtons() {
         return activeBoardButtons;
     }
+    public BoardButton getActiveButton(int index) {
+        return activeBoardButtons[index];
+    }
+    public BoardButton getWorkerButton(int worker) {
+        for (BoardButton button : activeBoardButtons)
+            if (button.getWorkerNum() == worker)
+                return button;
+
+        return null;
+    }
 
     public void setChosenButton(BoardButton chosenButton) {
         this.chosenButton = chosenButton;
@@ -144,6 +166,7 @@ public class MainFrame extends JFrame{
         synchronized (this) {
             try {
                 wait();
+                if(undo) return new int[]{-1, -1};
                 int[] chosenButtonCoordinate = new int[2];
                 chosenButtonCoordinate[0]=chosenButton.getRow();
                 chosenButtonCoordinate[1]=chosenButton.getColumn();
@@ -170,25 +193,21 @@ public class MainFrame extends JFrame{
 
     public void addYesOrNo(){
 
-        yesOrNoPanel.add(yesButton);
-        yesOrNoPanel.add(noButton);
+        yesOrNoPanel.add(powerButton);
+        yesOrNoPanel.add(defaultButton);
     }
 
     public void removeYesOrNo(){
-        yesOrNoPanel.remove(yesButton);
-        yesOrNoPanel.remove(noButton);
+        yesOrNoPanel.remove(powerButton);
+        yesOrNoPanel.remove(defaultButton);
     }
 
-    public JButton getYesButton() {
-        return yesButton;
+    public JButton getPowerButton() {
+        return powerButton;
     }
 
-    public JButton getNoButton() {
-        return noButton;
-    }
-
-    public String getYesOrNoString() {
-        return yesOrNoString;
+    public JButton getDefaultButton() {
+        return defaultButton;
     }
 
     public void setYesOrNoString(String yesOrNoString) {

@@ -3,24 +3,15 @@ package it.polimi.ingsw.utils;
 public enum Color {
     White,
     Purple,
-    Brown;
+    Red;
 
     public static final String RESET = "\u001B[0m";
 
-    public static char toFirstLetter (int numColor) {
-        return switch (numColor) {
-            case 0 -> 'W';
-            case 1 -> 'P';
-            case 2 -> 'B';
-            default -> throw new IllegalArgumentException("Color must be 0|1|2");
-        };
-    }
-
     public static Color intToColor (int numColor){
         return switch (numColor) {
-            case 0 -> Color.White;
-            case 1 -> Color.Purple;
-            case 2 -> Brown;
+            case 0 -> White;
+            case 1 -> Purple;
+            case 2 -> Red;
             default -> throw new IllegalArgumentException("Color must be 0|1|2");
         };
     }

@@ -20,6 +20,10 @@ public class Board {
                 this.map[row][column] = new Cell(row, column);
     }
 
+    public Board(Cell[][] map) {
+        this.map = map;
+    }
+
     /**
      * When a player is eliminated this method brings back isEmpty=true
      * @param cell is the position of worker
@@ -37,6 +41,21 @@ public class Board {
         for (row = 0; row < 5; row++)
             for (column = 0; column < 5; column++)
                 this.map[row][column].setEmpty(true);
+    }
+
+    public Cell[][] getMapCopy() {
+        Cell[][] mapCopy = new Cell[5][5];
+
+        int row;
+        int column;
+        for (row = 0; row < 5; row++) {
+            for (column = 0; column < 5; column++) {
+                mapCopy[row][column] = new Cell(row, column);
+                mapCopy[row][column].setLevel(this.map[row][column].getLevel());
+                mapCopy[row][column].setEmpty(true);
+            }
+        }
+        return mapCopy;
     }
 
 // *************** GETTER AND SETTER *********************************
