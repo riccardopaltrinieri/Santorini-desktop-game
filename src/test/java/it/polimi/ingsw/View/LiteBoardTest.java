@@ -26,7 +26,10 @@ public class LiteBoardTest {
         Cell test4 = tabella.getCell(0,1);
         player2.placeWorkers(test3);
         player2.placeWorkers(test4);
-        LiteBoard test;
+        LiteBoard test = new LiteBoard("ciao", tabella, game);
+
+        assertEquals("Esatto", 0, Integer.parseInt(test.getLevelLR(1,0)));
+        System.out.println(test.getLevelLR(1,1));
         tabella.getCell(1,1).setLevel(1);
         test = new LiteBoard("ciao", tabella, game);
         test.printBoardCLI();

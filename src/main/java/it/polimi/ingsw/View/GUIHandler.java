@@ -36,6 +36,7 @@ public class GUIHandler implements UserInterface {
         try{
             String[] parts = incomingMessage.split(" ");
             String firstWord = parts[0];
+            mainFrame.updateTextArea(incomingMessage);
 
 
             switch (firstWord){
@@ -236,10 +237,10 @@ public class GUIHandler implements UserInterface {
 
                     // Updates the board
                     board.printBoardGUI(mainFrame);
+                    //ask to the player for the next move according to the FSM
+                    mainFrame.updateTextArea(fsm.getStateStringGUI());
 
                     if (parts[1].equals(name)){
-                        //ask to the player for the next move according to the FSM
-                        mainFrame.updateTextArea(fsm.getStateStringGUI());
 
                         if (fsm.getState() == State.worker) {
                             checkAction();

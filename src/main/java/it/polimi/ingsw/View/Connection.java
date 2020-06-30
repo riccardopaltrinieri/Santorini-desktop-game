@@ -1,6 +1,5 @@
-package it.polimi.ingsw.Network;
+package it.polimi.ingsw.View;
 
-import it.polimi.ingsw.View.LiteBoard;
 import it.polimi.ingsw.utils.Observable;
 import it.polimi.ingsw.utils.Observer;
 
