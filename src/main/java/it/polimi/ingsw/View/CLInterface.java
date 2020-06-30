@@ -254,48 +254,42 @@ public class CLInterface implements UserInterface {
 
                 switch (action) {
                     case worker -> {
-                        if (fsm.getState() != State.worker) throw new IllegalArgumentException();
+                        if (fsm.getState() != State.worker) throw new IllegalArgumentException("you can't choose the worker now");
                         int worker = Integer.parseInt(partsInput[1]);
-                        if (!(worker == 1) && !(worker == 2)) throw new IllegalArgumentException();
+                        if (!(worker == 1) && !(worker == 2)) throw new IllegalArgumentException("you only have 2 workers");
                         setWorker(worker);
                     }
-                    case move -> {
-                        if (fsm.getState() != State.move) throw new IllegalArgumentException();
+                    case move, build -> {
+                        if (action == InputString.move && fsm.getState() != State.move) throw new IllegalArgumentException("you can't make a move now");
+                        if (action == InputString.build && fsm.getState() != State.build) throw new IllegalArgumentException("you can't build now");
+                        if (partsInput.length > 3) throw new IllegalArgumentException("too many parameters");
                         row = Integer.parseInt(partsInput[1]);
                         col = Integer.parseInt(partsInput[2]);
-                        if (row < 1 || row > 5 || col < 1 || col > 5) throw new IllegalArgumentException();
-                        inputLine += " " + getWorker();
-                    }
-                    case build -> {
-                        if (fsm.getState() != State.build) throw new IllegalArgumentException();
-                        row = Integer.parseInt(partsInput[1]);
-                        col = Integer.parseInt(partsInput[2]);
-                        if (row < 1 || row > 5 || col < 1 || col > 5) throw new IllegalArgumentException();
+                        if (row < 1 || row > 5 || col < 1 || col > 5) throw new IllegalArgumentException("row and columns should be from 1 to 5");
                         inputLine += " " + getWorker();
                     }
                     case placeworker -> {
-                        if(fsm.getState() != State.placeworker) throw new IllegalArgumentException();
+                        if(fsm.getState() != State.placeworker) throw new IllegalArgumentException("you can only have 2 workers");
                         row = Integer.parseInt(partsInput[1]);
                         col = Integer.parseInt(partsInput[2]);
-                        if (row < 1 || row > 5 || col < 1 || col > 5) throw new IllegalArgumentException();
+                        if (row < 1 || row > 5 || col < 1 || col > 5) throw new IllegalArgumentException("row and columns should be from 1 to 5");
                     }
                     case normal -> {
                         fsm.setPath(Divinity.Default);
-                        if (fsm.getState() != State.start) throw new IllegalArgumentException();
-                        if (partsInput.length > 1) throw new IllegalArgumentException();
+                        if (fsm.getState() != State.start) throw new IllegalArgumentException("you're not deciding your turn now");
+                        if (partsInput.length > 1) throw new IllegalArgumentException("you wrote too many words");
                     }
                     case usepower -> {
                         fsm.setPath(divinity);
-                        if (fsm.getState() != State.start) throw new IllegalArgumentException();
-                        if (partsInput.length > 1) throw new IllegalArgumentException();
+                        if (fsm.getState() != State.start) throw new IllegalArgumentException("you're not deciding your turn now");
+                        if (partsInput.length > 1) throw new IllegalArgumentException("you wrote too many words");
                     }
                     case endturn -> {
-                        if(fsm.getState() != State.endTurn) throw new IllegalArgumentException();
+                        if(fsm.getState() != State.endTurn) throw new IllegalArgumentException("you should not end your turn now");
                     }
                     case undo -> {
-                        //TODO State undo check
-                        if(fsm.getState() == State.placeworker || fsm.getState() == State.worker)
-                            throw new IllegalArgumentException();
+                        if(fsm.getState() == State.start || fsm.getState() == State.placeworker || fsm.getState() == State.worker)
+                            throw new IllegalArgumentException("You can't undo your action now");
                     }
                     default -> throw new IllegalArgumentException();
                 }
@@ -305,8 +299,10 @@ public class CLInterface implements UserInterface {
                 // If the input is correct it can be send
                 return inputLine.toLowerCase();
 
-            } catch (IllegalArgumentException | IndexOutOfBoundsException e) {
-                System.out.println("Wrong input, please reinsert your move");
+            } catch (IllegalArgumentException e) {
+                System.out.println("Wrong input, " + e.getMessage());
+            } catch (IndexOutOfBoundsException e) {
+                System.out.println("Wrong input, too few parameters");
             }
         }
     }

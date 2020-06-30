@@ -42,7 +42,7 @@ public class Connection extends Observable implements Runnable, Observer {
 
     public String readString() throws IOException {
         String read = "";
-        while (read.isEmpty()) {
+        while (read.isBlank()) {
             read = (in.readUTF());
         }
         return read;

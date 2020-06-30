@@ -1,6 +1,6 @@
 package it.polimi.ingsw.Controller;
 
-public enum State {
+enum State {
     start,
     move,
     superMove,

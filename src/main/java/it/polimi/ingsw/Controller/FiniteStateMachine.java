@@ -2,7 +2,7 @@ package it.polimi.ingsw.Controller;
 
 import it.polimi.ingsw.utils.Divinity;
 
-public class FiniteStateMachine {
+class FiniteStateMachine {
 
     private State state;
     private Divinity divinity;
