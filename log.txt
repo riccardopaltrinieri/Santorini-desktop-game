@@ -17026,3 +17026,603 @@ Start toni Purple Apollo
 Insert rich update
 -> placeworker 1 1
 Insert rich placed a worker in 1x1
+Welcome! What's your name?
+-> as
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen, 
+now the other players will choose between them.
+Waiting for other players...
+Welcome! What's your name?
+-> ca
+Waiting the chooses of the Start Player and the start of game
+Waiting for other players...
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Artemis
+You choose the first player between: as ca
+-> as
+Start as White Artemis
+Start ca Purple Apollo
+Start as White Artemis
+Start ca Purple Apollo
+Insert as update
+Insert as update
+-> placeworker 3 3
+Insert as placed a worker in 3x3
+Insert as placed a worker in 3x3
+-> placeworker 4 4
+Insert as placed a worker in 4x4
+Insert as placed a worker in 4x4
+-> undo
+Undo: as undoing
+Undo: as undoing
+Undo: as cannot undo last action
+Undo: as cannot undo last action
+-> endturn
+Insert ca update
+Insert ca update
+-> placeworker 4 2
+Insert ca placed a worker in 4x2
+Insert ca placed a worker in 4x2
+-> placeworker 2 3
+Insert ca placed a worker in 2x3
+Insert ca placed a worker in 2x3
+-> endturn
+Insert as update
+Insert as update
+-> usepower
+Insert as wants to use the God Power
+Insert as wants to use the God Power
+-> move 2 4 1
+Insert as used the God Power
+Insert as used the God Power
+-> move 3 5 1
+Insert as used the God Power
+Insert as used the God Power
+-> build 3 4 1
+Insert as built in 3 4
+Insert as built in 3 4
+-> undo
+Undo: as undoing
+Undo: as undoing
+Undo: as undid last action
+Undo: as undid last action
+-> build 4 5 1
+Insert as built in 4 5
+Insert as built in 4 5
+-> endturn
+Insert ca update
+Insert ca update
+-> usepower
+Insert ca wants to use the God Power
+Insert ca wants to use the God Power
+-> move 3 4 2
+Insert ca used the God Power
+Insert ca used the God Power
+-> build 4 5 2
+Insert ca built in 4 5
+Insert ca built in 4 5
+-> endturn
+Insert as update
+Insert as update
+-> usepower
+Insert as wants to use the God Power
+Insert as wants to use the God Power
+-> move 3 3 2
+Insert as used the God Power
+Insert as used the God Power
+-> move 4 3 2
+Insert as used the God Power
+Insert as used the God Power
+-> build 4 4 2
+Insert as built in 4 4
+Insert as built in 4 4
+-> endturn
+Insert ca update
+Insert ca update
+-> normal
+Insert ca doesn't want to use the God Power
+Insert ca doesn't want to use the God Power
+-> move 4 4 2
+Insert ca moved a worker in 4x4
+Insert ca moved a worker in 4x4
+-> build 4 5 2
+Insert ca built in 4 5
+Insert ca built in 4 5
+-> endturn
+Insert as update
+Insert as update
+-> usepower
+Insert as wants to use the God Power
+Insert as wants to use the God Power
+-> move 5 3 2
+Insert as used the God Power
+Insert as used the God Power
+-> move 5 4 2
+Insert as used the God Power
+Insert as used the God Power
+-> build 5 5 2
+Insert as built in 5 5
+Insert as built in 5 5
+-> undo
+Undo: as undoing
+Undo: as undoing
+Undo: as undid last action
+Undo: as undid last action
+-> build 4 5 2
+Insert as built in 4 5
+Insert as built in 4 5
+-> endturn
+Insert ca update
+Insert ca update
+-> usepower
+Insert ca wants to use the God Power
+Insert ca wants to use the God Power
+-> move 5 5 2
+Insert ca used the God Power
+Insert ca used the God Power
+-> build 4 4 2
+Insert ca built in 4 4
+Insert ca built in 4 4
+-> endturn
+Insert as update
+Insert as update
+-> normal
+Insert as doesn't want to use the God Power
+Insert as doesn't want to use the God Power
+-> move 3 4 1
+Insert as moved a worker in 3x4
+Insert as moved a worker in 3x4
+-> build 4 3 1
+Insert as built in 4 3
+Insert as built in 4 3
+-> endturn
+Insert ca update
+Insert ca update
+-> normal
+Insert ca doesn't want to use the God Power
+Insert ca doesn't want to use the God Power
+-> undo
+Undo: ca undoing
+Undo: ca undoing
+Undo: ca cannot undo last action
+Welcome! What's your name?
+-> ca
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Athena
+Choose the second divinity: 
+-> Pan
+All the divinities have been chosen, 
+now the other players will choose between them.
+Waiting for other players...
+Welcome! What's your name?
+->  a
+Waiting the chooses of the Start Player and the start of game
+Waiting for other players...
+Choose your Divinity between: Athena Pan 
+-> Athena
+Your Divinity: Athena
+Your Divinity: Pan
+You choose the first player between:  a ca
+-> ca
+Wrong name, reinsert it.. 
+First client has disconnected while choosing first player
+Connection closed from the server side
+First client has disconnected while choosing first player
+Connection closed from the server side
+Welcome! What's your name?
+-> av
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+Choose the third divinity: 
+-> Athena
+All the divinities have been chosen, 
+now the other players will choose between them.
+Waiting for other players...
+Welcome! What's your name?
+-> av
+This name is already taken, choose another name
+-> va
+Waiting the chooses of the Start Player and the start of game
+Waiting for other players...
+Welcome! What's your name?
+-> ba
+Waiting the chooses of the Start Player and the start of game
+Waiting for other players...
+Choose your Divinity between: Apollo Artemis Athena 
+-> Athena
+Your Divinity: Athena
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Artemis
+Your Divinity: Apollo
+You choose the first player between: av va ba
+-> av
+Start av White Apollo
+Start av White Apollo
+Start va Purple Athena
+Start ba Red Artemis
+Insert av update
+-> placeworker 5 3
+Please, be sure you're using the official software: last message was unexpected or has a wrong format
+Start av White Apollo
+Start va Purple Athena
+Start ba Red Artemis
+Insert av update
+Please, be sure you're using the official software: last message was unexpected or has a wrong format
+Start va Purple Athena
+Start ba Red Artemis
+Insert av update
+-> placeworker 4 2
+Please, be sure you're using the official software: last message was unexpected or has a wrong format
+Insert av placed a worker in 4x2
+Insert av placed a worker in 4x2
+-> placeworker 3 3
+Insert av placed a worker in 3x3
+Insert av placed a worker in 3x3
+-> endturn
+Insert va update
+Insert va update
+Insert av placed a worker in 4x2
+-> placeworker 3 2
+Insert va placed a worker in 3x2
+Insert va placed a worker in 3x2
+Insert av placed a worker in 3x3
+-> endturn
+Insert va update
+Insert va placed a worker in 3x2
+Connection closed from the server side
+Connection closed from the server side
+You took to much time to answer, you lose..
+-> you
+Welcome! What's your name?
+-> fa
+Decide the number of players: [2 or 3]
+-> 3
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+Choose the third divinity: 
+-> Athena
+All the divinities have been chosen, 
+now the other players will choose between them.
+Waiting for other players...
+Welcome! What's your name?
+-> ad
+Waiting the chooses of the Start Player and the start of game
+Waiting for other players...
+Welcome! What's your name?
+-> ca
+Waiting the chooses of the Start Player and the start of game
+Waiting for other players...
+Choose your Divinity between: Apollo Artemis Athena 
+-> Athena
+Your Divinity: Athena
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Artemis
+Your Divinity: Apollo
+You choose the first player between: ad fa ca
+-> ad
+Start ad White Athena
+Start ad White Athena
+Start ca Purple Artemis
+Start fa Red Apollo
+Insert ad update
+Start ca Purple Artemis
+Start fa Red Apollo
+Insert ad update
+-> placeworker 3 3
+Insert ad placed a worker in 3x3
+Insert ad placed a worker in 3x3
+-> placeworker 4 2
+Insert ad placed a worker in 4x2
+Insert ad placed a worker in 4x2
+-> endturn
+Insert ca update
+Insert ca update
+Start ad White Athena
+Start ca Purple Artemis
+Start fa Red Apollo
+Insert ad update
+Insert ad placed a worker in 3x3
+Insert ad placed a worker in 4x2
+Insert ca update
+-> placeworker 4 3
+Insert ca placed a worker in 4x3
+Insert ca placed a worker in 4x3
+Insert ca placed a worker in 4x3
+-> placeworker 5 4
+Insert ca placed a worker in 5x4
+Insert ca placed a worker in 5x4
+Insert ca placed a worker in 5x4
+-> endturn
+Insert fa update
+Insert fa update
+Insert fa update
+-> placeworker 4 4
+Insert fa placed a worker in 4x4
+Insert fa placed a worker in 4x4
+Insert fa placed a worker in 4x4
+-> placeworker 2 5
+Insert fa placed a worker in 2x5
+Insert fa placed a worker in 2x5
+Insert fa placed a worker in 2x5
+-> endturn
+Insert ad update
+Insert ad update
+-> usepower
+Insert ad update
+Insert ad wants to use the God Power
+Insert ad wants to use the God Power
+Insert ad wants to use the God Power
+-> move 3 2 2
+Insert ad used the God Power
+Insert ad used the God Power
+Insert ad used the God Power
+-> build 4 1 2
+Insert ad built in 4 1
+Insert ad built in 4 1
+Insert ad built in 4 1
+-> endturn
+Insert ca update
+Insert ca update
+Insert ca update
+-> normal
+Insert ca doesn't want to use the God Power
+Insert ca doesn't want to use the God Power
+Insert ca doesn't want to use the God Power
+-> move 3 4 1
+Insert ca moved a worker in 3x4
+Insert ca moved a worker in 3x4
+Insert ca moved a worker in 3x4
+-> build 3 5 1
+Insert ca built in 3 5
+Insert ca built in 3 5
+Insert ca built in 3 5
+-> endturn
+Insert fa update
+Insert fa update
+Insert fa update
+-> normal
+Insert fa doesn't want to use the God Power
+Insert fa doesn't want to use the God Power
+Insert fa doesn't want to use the God Power
+-> move 3 5 1
+Error: fa can't move up because Athena's power is active
+Error: fa can't move up because Athena's power is active
+Error: fa can't move up because Athena's power is active
+-> move 4 3 1
+Insert fa moved a worker in 4x3
+Insert fa moved a worker in 4x3
+Insert fa moved a worker in 4x3
+-> build 4 2 1
+Insert fa built in 4 2
+Insert fa built in 4 2
+Insert fa built in 4 2
+-> endturn
+Insert ad update
+-> usepower
+Insert ad update
+Insert ad update
+Insert ad wants to use the God Power
+Insert ad wants to use the God Power
+Insert ad wants to use the God Power
+-> move 4 2 1
+Insert ad used the God Power
+Insert ad used the God Power
+Insert ad used the God Power
+-> build 4 1 1
+Insert ad built in 4 1
+Insert ad built in 4 1
+Insert ad built in 4 1
+-> endturn
+Insert ca update
+Insert ca update
+Insert ca update
+-> normal
+Insert ca doesn't want to use the God Power
+Insert ca doesn't want to use the God Power
+Insert ca doesn't want to use the God Power
+-> move 3 3 1
+Insert ca moved a worker in 3x3
+Insert ca moved a worker in 3x3
+Insert ca moved a worker in 3x3
+-> build 2 2 1
+Insert ca built in 2 2
+Insert ca built in 2 2
+Insert ca built in 2 2
+-> endturn
+Insert fa update
+Insert fa update
+Insert fa update
+-> usepower
+Insert fa wants to use the God Power
+Insert fa wants to use the God Power
+Insert fa wants to use the God Power
+-> move 4 2 1
+Insert fa used the God Power
+Insert fa used the God Power
+Insert fa used the God Power
+-> build 4 1 1
+Insert fa built in 4 1
+Insert fa built in 4 1
+Insert fa built in 4 1
+-> endturn
+Insert ad update
+-> usepower
+Insert ad update
+Insert ad update
+Insert ad wants to use the God Power
+Insert ad wants to use the God Power
+Insert ad wants to use the God Power
+-> move 5 2 1
+Insert ad used the God Power
+Insert ad used the God Power
+Insert ad used the God Power
+-> build 5 1 1
+Insert ad built in 5 1
+Insert ad built in 5 1
+Insert ad built in 5 1
+-> endturn
+Insert ca update
+Insert ca update
+Insert ca update
+-> usepower
+Insert ca wants to use the God Power
+Insert ca wants to use the God Power
+Insert ca wants to use the God Power
+-> move 4 4 2
+Insert ca used the God Power
+Insert ca used the God Power
+Insert ca used the God Power
+-> move 5 3 2
+Insert ca used the God Power
+Insert ca used the God Power
+Insert ca used the God Power
+-> build 4 3 2
+Insert ca built in 4 3
+Insert ca built in 4 3
+Insert ca built in 4 3
+-> endturn
+Insert fa update
+Insert fa update
+Insert fa update
+-> normal
+Insert fa doesn't want to use the God Power
+Insert fa doesn't want to use the God Power
+Insert fa doesn't want to use the God Power
+-> move 3 5 2
+Error: fa can't move up because Athena's power is active
+Error: fa can't move up because Athena's power is active
+Error: fa can't move up because Athena's power is active
+-> move 3 4 2
+Insert fa moved a worker in 3x4
+Insert fa moved a worker in 3x4
+Insert fa moved a worker in 3x4
+-> build 4 4 2
+Insert fa built in 4 4
+Insert fa built in 4 4
+Insert fa built in 4 4
+-> endturn
+Insert ad update
+Insert ad update
+Insert ad update
+-> usepower
+Insert ad wants to use the God Power
+Insert ad wants to use the God Power
+Insert ad wants to use the God Power
+-> move 4 3 2
+Insert ad used the God Power
+Insert ad used the God Power
+Insert ad used the God Power
+-> build 5 4 2
+Insert ad built in 5 4
+Insert ad built in 5 4
+Insert ad built in 5 4
+-> endturn
+Insert ca update
+Insert ca update
+Insert ca update
+-> normal
+Insert ca doesn't want to use the God Power
+Insert ca doesn't want to use the God Power
+Insert ca doesn't want to use the God Power
+-> move 4 4 2
+Insert ca moved a worker in 4x4
+Insert ca moved a worker in 4x4
+Insert ca moved a worker in 4x4
+-> build 5 3 2
+Insert ca built in 5 3
+Insert ca built in 5 3
+Insert ca built in 5 3
+-> endturn
+Insert fa update
+Insert fa update
+Insert fa update
+-> usepower
+Insert fa wants to use the God Power
+Insert fa wants to use the God Power
+Insert fa wants to use the God Power
+-> move 5 2 1
+Insert fa used the God Power
+Insert fa used the God Power
+Insert fa used the God Power
+-> build 5 1 1
+Insert fa built in 5 1
+Insert fa built in 5 1
+Insert fa built in 5 1
+-> endturn
+Insert ad update
+Insert ad update
+Insert ad update
+-> usepower
+Insert ad wants to use the God Power
+Insert ad wants to use the God Power
+Insert ad wants to use the God Power
+-> move 5 1 1
+Insert ad used the God Power
+Insert ad used the God Power
+Insert ad used the God Power
+-> build 4 2 1
+Insert ad built in 4 2
+Insert ad built in 4 2
+Insert ad built in 4 2
+-> endturn
+Insert ca update
+Insert ca update
+Insert ca update
+-> normal
+Insert ca doesn't want to use the God Power
+Insert ca doesn't want to use the God Power
+Insert ca doesn't want to use the God Power
+-> move 3 2 1
+Insert ca moved a worker in 3x2
+Insert ca moved a worker in 3x2
+Insert ca moved a worker in 3x2
+-> build 4 2 1
+Insert ca built in 4 2
+Insert ca built in 4 2
+Insert ca built in 4 2
+-> endturn
+Insert fa update
+Insert fa update
+Insert fa update
+-> normal
+Insert fa doesn't want to use the God Power
+Insert fa doesn't want to use the God Power
+Insert fa doesn't want to use the God Power
+-> move 3 3 2
+Insert fa moved a worker in 3x3
+Insert fa moved a worker in 3x3
+Insert fa moved a worker in 3x3
+-> build 3 4 2
+Insert fa built in 3 4
+Insert fa built in 3 4
+Insert fa built in 3 4
+-> endturn
+Insert ad update
+-> usepower
+Insert ad update
+Insert ad update
+Insert ad wants to use the God Power
+Insert ad wants to use the God Power
+Insert ad wants to use the God Power
+-> move 4 2 1
+Winner: ad wins
+Connection closed from the server side
+Winner: ad wins
+Connection closed from the server side
