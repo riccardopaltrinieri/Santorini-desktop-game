@@ -36,11 +36,19 @@ public class Server {
         serverSocket = new ServerSocket(PORT);
     }
 
+    /**
+     * When a client connects itself to Server, add it in connections
+     * @param c is the connection
+     */
     //Register connection
     private void registerConnection(Connection c) {
         connections.add(c);
     }
 
+    /**
+     * First player decides the number of player and divinities
+     * @param c is the connection
+     */
     public void decideNumberPlayerAndDiv(Connection c) {
         try {
             c.send(new LiteBoard("Decide the number of players: [2 or 3]"));
@@ -65,6 +73,9 @@ public class Server {
 
     }
 
+    /**
+     * Each player chooses his Divinity
+     */
     public void startDivinity() {
         try {
             StringBuilder choices = new StringBuilder("Choose your Divinity between: ");
@@ -102,6 +113,10 @@ public class Server {
 
     }
 
+    /**
+     * When a connection ends or the third player loses we use the deregister
+     * @param c is the connection
+     */
     public synchronized void deregisterConnection(Connection c) {
         if (playingConnection.size() == 3) {
             for (Connection conn : connections) {
@@ -134,6 +149,11 @@ public class Server {
     }
 
 
+    /**
+     * This is the lobby of the game, in this there are all initial moves
+     * @param c is the connection
+     * @param name is the name of client
+     */
     public synchronized void lobby(Connection c, String name) {
         waitingConnection.put(name, c);
         System.out.println("New client: " + name);
@@ -199,6 +219,10 @@ public class Server {
         }
     }
 
+    /**
+     * In this method the first connection choose the first player
+     * @param c is the first connection
+     */
     private void chooseFirstPlayer(Connection c) {
         List<String> names = new ArrayList<>(waitingConnection.keySet());
         if (numPlayers == 3)
@@ -210,6 +234,10 @@ public class Server {
         }
 
 
+    /**
+     * This is the run method of server. This is active all the time and accept the socket of client.
+     * After create a thread for Connection of each client.
+     */
     public void run() {
         System.out.println("Server listening on port: " + PORT);
         //noinspection InfiniteLoopStatement
@@ -225,12 +253,18 @@ public class Server {
         }
     }
 
+    /**
+     * This method ends the game
+     */
     public synchronized void endGame() {
         for (Connection conn : connections) {
             conn.closeConnection();
         }
     }
 
+    /**
+     * @return true if the game has started
+     */
     public boolean gameHasStarted() {
         return startGame;
     }
@@ -248,6 +282,10 @@ public class Server {
     }
 
 
+    /**
+     * Check if the name there is in the waitingConnection or not. If there isn't the client has to reinsert it.
+     * @param c is the first connection
+     */
     private void checkName(Connection c) {
 
         try {
@@ -286,6 +324,10 @@ public class Server {
     }
 
 
+    /**
+     * Check if the name has already taken
+     * @param c is the connection of each player
+     */
     public void notEqualsName(Connection c) {
         try{
             boolean taken;

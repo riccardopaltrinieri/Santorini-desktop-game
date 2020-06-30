@@ -16,6 +16,11 @@ public class Connection extends Observable implements Runnable, Observer {
     private String name;
     private boolean active;
 
+    /**
+     * Constructor used to create a connection
+     * @param socket is the socket created by Server
+     * @param server is the Server of game
+     */
     public Connection(Socket socket, Server server){
         this.socket = socket;
         this.server = server;
@@ -25,11 +30,19 @@ public class Connection extends Observable implements Runnable, Observer {
     public ObjectInputStream getIn(){
         return this.in;
     }
+
+    /**
+     * @return if the connection is still active
+     */
     private synchronized boolean isActive(){
         return active;
     }
 
 
+    /**
+     * Method that send the message and the board to each Client from Game.
+     * @param board this is the LiteBoard that we send to Client. It can be a message or a message+board+game
+     */
     public void send(LiteBoard board){
         try {
             out.reset();
@@ -40,6 +53,11 @@ public class Connection extends Observable implements Runnable, Observer {
         }
     }
 
+    /**
+     * Read the input of client
+     * @return the input of Client
+     * @throws IOException if the socket is close
+     */
     public String readString() throws IOException {
         String read = "";
         while (read.isBlank()) {
@@ -48,6 +66,9 @@ public class Connection extends Observable implements Runnable, Observer {
         return read;
     }
 
+    /**
+     * We the connection ends we use this method to close the socket
+     */
     public synchronized void closeConnection(){
         send( new LiteBoard("Connection closed from the server side"));
         try{
@@ -58,6 +79,9 @@ public class Connection extends Observable implements Runnable, Observer {
         active = false;
     }
 
+    /**
+     * Deregister the connection in server and print the the message "Done" in Server
+     */
     private void close(){
         System.out.println("Deregistering client: " + name);
         server.deregisterConnection(this);
@@ -65,6 +89,9 @@ public class Connection extends Observable implements Runnable, Observer {
         System.out.println("Done!");
     }
 
+    /**
+     * Create the ObjectOutputStream and ObjectInputStream. When the connection isActive read the input of each client.
+     */
     @Override
     public void run() {
 
@@ -95,6 +122,10 @@ public class Connection extends Observable implements Runnable, Observer {
         }
     }
 
+    /**
+     * Receive the board from game and send it to each Client. After check if there is a winner or a loser.
+     * @param board is the board received from the game.
+     */
     public void newBoard(LiteBoard board) {
         String[] parts = board.getMessage().split(" ");
         send(board);
