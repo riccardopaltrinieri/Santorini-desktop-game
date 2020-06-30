@@ -18,6 +18,8 @@ public class Game extends Observable implements Originator {
      * Create an object that store the copy of the model’s state. The contents of the memento
      * aren’t accessible to any other object except the one that produced it.
      * This object can be used after some changes to restore the previous state.
+     * @see Originator
+     * @see CareTaker
      */
     private static class Memento {
         public final Board board;
@@ -164,7 +166,15 @@ public class Game extends Observable implements Originator {
                 if (!getCurrentPlayer().workerCanMove(worker)) throw new IllegalStateException();
                 Cell position = getCurrentPlayer().getWorker(worker).getPosition();
                 Cell destination = board.getCell(row, column);
+
+                god.execute(getCurrentPlayer(),board.getCell(row,column),worker);
+
                 if(position.getLevel() < 3 && destination.getLevel() == 3) hasWinner();
+                else {
+                    String message = "Insert " + getCurrentPlayerName() + Messages.GODPOWER;
+                    sendBoard(new LiteBoard(message, board, this));
+                }
+                return true;
             }
 
             god.execute(getCurrentPlayer(),board.getCell(row,column),worker);

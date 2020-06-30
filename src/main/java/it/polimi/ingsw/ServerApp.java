@@ -1,6 +1,6 @@
 package it.polimi.ingsw;
 
-import it.polimi.ingsw.View.Server;
+import it.polimi.ingsw.Network.Server;
 
 import java.io.IOException;
 
