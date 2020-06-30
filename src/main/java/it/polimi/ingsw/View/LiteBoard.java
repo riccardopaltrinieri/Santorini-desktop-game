@@ -9,7 +9,7 @@ import java.io.Serializable;
 public class LiteBoard implements Serializable {
     private static final long serialVersionUID = 36347531L;
 
-    private final int[][] lv;     // [row][column] = level
+    private final int[][] levels;     // [row][column] = level
 
     private final int[][] posWorker;
      /* [worker] [0] = row
@@ -26,7 +26,7 @@ public class LiteBoard implements Serializable {
      */
     public LiteBoard(String input){
         message = input;
-        lv = new int[0][0];
+        levels = new int[0][0];
         posWorker = new int[0][0];
         numAllWorker = 0;
     }
@@ -41,7 +41,7 @@ public class LiteBoard implements Serializable {
 
         this.message = message;
         numAllWorker = game.getNumWorkers();
-        lv = new int[board.getNumRow()][board.getNumColumn()];
+        levels = new int[board.getNumRow()][board.getNumColumn()];
         posWorker = new int[numAllWorker][3];
 
         for (Cell[] c: board.getMap()) {
@@ -49,7 +49,7 @@ public class LiteBoard implements Serializable {
                 int level = c1.getLevel();
                 int row = c1.getNumRow();
                 int column = c1.getNumColumn();
-                lv[row][column] = level;
+                levels[row][column] = level;
             }
         }
 
@@ -121,17 +121,17 @@ public class LiteBoard implements Serializable {
     /**
      * return 7 numbers to fill the Top and Down of the board cell
      */
-    public String getLevelTD(int row, int col){
-        return String.valueOf(lv[row][col]).repeat(6);
+    private String getLevelTD(int row, int col){
+        return String.valueOf(levels[row][col]).repeat(6);
     }
     /**
      * return a number to fill the Left and Right of the board cell
      */
-    public String getLevelLR(int row, int col){
-        return String.valueOf(lv[row][col]);
+    private String getLevelLR(int row, int col){
+        return String.valueOf(levels[row][col]);
     }
 
-    public void printBoardLine(){
+    private void printBoardLine(){
         System.out.println("      +------++------++------++------++------+");
     }
 
@@ -149,7 +149,7 @@ public class LiteBoard implements Serializable {
             frame.getActiveBoardButtons()[i].setWorkerNum(-1);
             row = (i/5);
             column = (i%5);
-            frame.getActiveBoardButtons()[i].setLevel(lv[row][column]);
+            frame.getActiveBoardButtons()[i].setLevel(levels[row][column]);
             frame.getActiveBoardButtons()[i].setEnabled(false);
             frame.getActiveBoardButtons()[i].setSelectableCell(false);
         }

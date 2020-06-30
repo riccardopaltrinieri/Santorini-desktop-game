@@ -7,14 +7,14 @@ import it.polimi.ingsw.utils.CareTaker;
 
 import static java.lang.Thread.sleep;
 
-class UndoChecker extends CareTaker implements Runnable{
+class UndoHandler extends CareTaker implements Runnable{
 
     private final Game game;
     private final Controller controller;
     private final State state;
     private final Player player;
 
-    public UndoChecker(Game game, Controller controller, State state) {
+    public UndoHandler(Game game, Controller controller, State state) {
         this.game = game;
         this.controller = controller;
         this.state = state;
