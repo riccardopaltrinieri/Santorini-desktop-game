@@ -19564,3 +19564,224 @@ Insert toni doesn't want to use the God Power
 -> move 3 4 2
 Winner: toni wins
 Connection closed from the server side
+Welcome! What's your name?
+-> as
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen, 
+now the other players will choose between them.
+Waiting for other players...
+Welcome! What's your name?
+-> asdg
+Waiting the chooses of the Start Player and the start of game
+Waiting for other players...
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Artemis
+Your Divinity: Apollo
+You choose the first player between: as asdg
+-> asdg
+Start asdg White Artemis
+Start asdg White Artemis
+Start as Purple Apollo
+Insert asdg update
+Start as Purple Apollo
+Welcome! What's your name?
+-> fsad
+Welcome! What's your name?
+-> ga
+Waiting the chooses of the Start Player and the start of game
+Decide the number of players: [2 or 3]
+-> 2
+First client has disconnected while choosing the divinities
+Connection closed from the server side
+Welcome! What's your name?
+-> ca
+Welcome! What's your name?
+-> jf
+Welcome! What's your name?
+-> ad
+Welcome! What's your name?
+-> ca
+Waiting the chooses of the Start Player and the start of game
+Decide the number of players: [2 or 3]
+-> 2
+First client has disconnected while choosing the divinities
+Welcome! What's your name?
+-> sd
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> ac
+Welcome! What's your name?
+-> a
+Welcome! What's your name?
+-> ca
+Waiting the chooses of the Start Player and the start of game
+Welcome! What's your name?
+-> ca
+Welcome! What's your name?
+-> va
+Waiting the chooses of the Start Player and the start of game
+Welcome! What's your name?
+-> va
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Demeter
+Choose the second divinity: 
+-> Hephaestus
+All the divinities have been chosen, 
+now the other players will choose between them.
+Waiting for other players...
+Welcome! What's your name?
+-> rich
+Waiting the chooses of the Start Player and the start of game
+Waiting for other players...
+Choose your Divinity between: Demeter Hephaestus 
+-> Demeter
+Your Divinity: Demeter
+Your Divinity: Hephaestus
+You choose the first player between: rich va
+-> va
+Start va White Hephaestus
+Start rich Purple Demeter
+Insert va update
+Start va White Hephaestus
+Welcome! What's your name?
+-> fa
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen, 
+now the other players will choose between them.
+Waiting for other players...
+Welcome! What's your name?
+-> ba
+Waiting the chooses of the Start Player and the start of game
+Waiting for other players...
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Artemis
+Your Divinity: Apollo
+You choose the first player between: fa ba
+-> ba
+Start ba White Artemis
+Start ba White Artemis
+Start fa Purple Apollo
+Insert ba update
+Start fa Purple Apollo
+Insert ba update
+-> placeworker 2 3
+Insert ba placed a worker in 2x3
+Insert ba placed a worker in 2x3
+-> placeworker 4 2
+Insert ba placed a worker in 4x2
+Timeout: batook too much time to decide. Game over.
+Welcome! What's your name?
+-> va
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Pan
+All the divinities have been chosen, 
+now the other players will choose between them.
+Waiting for other players...
+Welcome! What's your name?
+-> ba
+Waiting the chooses of the Start Player and the start of game
+Waiting for other players...
+Choose your Divinity between: Apollo Pan 
+-> Pan
+Your Divinity: Pan
+Your Divinity: Apollo
+You choose the first player between: va ba
+-> ba
+Wrong name, reinsert it.. 
+Timeout: vatook too much time to decide. Game over.
+Welcome! What's your name?
+-> ba
+Welcome! What's your name?
+-> abb
+Waiting the chooses of the Start Player and the start of game
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+Waiting for other players...
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Apollo
+All the divinities have been chosen, 
+now the other players will choose between them.
+Waiting for other players...
+Your Divinity: Artemis
+You choose the first player between: abb ba
+-> ba
+Wrong name, reinsert it.. 
+Welcome! What's your name?
+-> ca
+Welcome! What's your name?
+-> ab
+Waiting the chooses of the Start Player and the start of game
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+Waiting for other players...
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+All the divinities have been chosen, 
+now the other players will choose between them.
+Waiting for other players...
+Your Divinity: Artemis
+You choose the first player between: ab ca
+-> ca
+Start ca White Artemis
+Your Divinity: Apollo
+Start ca White Artemis
+Start ab Purple Apollo
+Insert ca update
+Start ab Purple Apollo
+Insert ca update
+-> placeworker 3 3
+Insert ca placed a worker in 3x3
+Timeout: catook too much time to decide. Game over.
+Welcome! What's your name?
+-> na
+Welcome! What's your name?
+-> sa
+Waiting the chooses of the Start Player and the start of game
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+Waiting for other players...
+All the divinities have been chosen, 
+now the other players will choose between them.
+Waiting for other players...
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Artemis
+Your Divinity: Apollo
+You choose the first player between: na sa
+-> sa
+You choose the first player between: na sa
+-> sa
+Timeout: natook too much time to decide. Game over.
+Timeout: natook too much time to decide. Game over.

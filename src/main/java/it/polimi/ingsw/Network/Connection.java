@@ -115,7 +115,7 @@ public class Connection extends Observable implements Runnable, Observer {
 
         } catch(IOException e){
             if(isActive()) {
-                send(new LiteBoard("You took to much time to answer, you lose.."));
+                server.timeout(name);
                 close();
                 server.endGame();
             }
