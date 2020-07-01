@@ -1,1 +1,1 @@
-java -jar Client.jar ad
+java -jar Client.jar

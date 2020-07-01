@@ -11,25 +11,20 @@ public class ClientApp {
 
     public static void main(String[] args){
         NetworkHandler connection = new NetworkHandler("127.0.0.1", 12445);
-      //  Scanner stdin = new Scanner(System.in);
 
-       // System.out.println("Do you want to use the Graphics Interface or continue on the command line?");
-      //  System.out.println("(write gui/cli): ");
-        String input = args[0];
+        if(args.length != 0) {
+            if(args[0].equals("-cli")) {
+                try {
+                    CLInterface CLI = new CLInterface();
+                    connection.setUserInterface(CLI);
+                    connection.run();
 
-       // while (!input.equals("cli") && !input.equals("gui")) {
-        //    System.out.println("please, write 'gui' or 'cli':");
-        //  input = args ;
-      //  }
-
-        if(input.equals("cli")){
-            try{
-                CLInterface CLI = new CLInterface();
-                connection.setUserInterface(CLI);
-                connection.run();
-
-            }catch (IOException e){
-                System.err.println(e.getMessage());
+                } catch (IOException e) {
+                    System.err.println(e.getMessage());
+                }
+            } else {
+                System.out.println("You can use the parameter -cli to use the command line interface");
+                System.out.println("or none parameter to start the graphic interface");
             }
         } else {
 
