@@ -16,7 +16,7 @@ import java.util.concurrent.Executors;
 import static it.polimi.ingsw.utils.Color.*;
 
 public class Server {
-    private static final int PORT = 12445;
+    private static int PORT;
     private final ServerSocket serverSocket;
     private int numPlayers;
 
@@ -34,7 +34,8 @@ public class Server {
     private boolean startGame = false;
 
 
-    public Server() throws IOException {
+    public Server(int port) throws IOException {
+        PORT = port;
         serverSocket = new ServerSocket(PORT);
     }
 

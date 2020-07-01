@@ -52,7 +52,7 @@ In [deliverables](https://github.com/riccardopaltrinieri/ing-sw-2020-paltrinieri
 
 
 ### Jars
-After the download you can start the game wirh jars. For a simplier use we have created three file.bat.
+After the download you can start the game with jars. For a simplier use we have created three file.bat.
 ## JAR execution 
 ### Client
 To run the client:
