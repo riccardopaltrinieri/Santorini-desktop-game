@@ -67,7 +67,7 @@ public class GUIHandler implements UserInterface {
                 //take the other's player info
 
                     if (!parts[1].equals(name)) {
-                        JOptionPane.showMessageDialog(mainFrame, "Your " + parts[2] + " opponent is " + parts[1] + "\nHe will use " + parts[3]);
+                        mainFrame.updatePlayerInfoTextArea("Your " + parts[2] + " opponent is " + parts[1] + "\nHe will use " + parts[3]);
                     }
                     else {
                         color = Color.valueOf(parts[2]);
@@ -160,7 +160,6 @@ public class GUIHandler implements UserInterface {
                         choosePanel.init();
                         mainFrame.add(choosePanel);
                         mainFrame.pack();
-                        //TODO gestisci caso chiusura finestra
 
                         outgoingMessage = choosePanel.getChosenDivinity();
                         if (parts[2].equals("first")) {
@@ -169,16 +168,7 @@ public class GUIHandler implements UserInterface {
                             secondGodToRemove = outgoingMessage;
                         }
                         if (((numPlayer==2)&&(parts[2].equals("second"))||(numPlayer==3)&&(parts[2].equals("third")))){
-                            mainFrame.remove(choosePanel);
-                            mainFrame.remove(chooseBetweenPanel);
-                            mainFrame.init();
-                            for (BoardButton button : mainFrame.getActiveBoardButtons()){
-                                button.addActionListener(boardListener);
-                            }
-                            mainFrame.getEndTurnButton().addActionListener(undoEndlistener);
-                            mainFrame.getPowerButton().addActionListener(boardListener);
-                            mainFrame.getDefaultButton().addActionListener(boardListener);
-                            mainFrame.getUndoButton().addActionListener(undoEndlistener);
+                            startGameFrame();
                         }
                     }
                     else if (parts[1].equals("your")){
@@ -193,16 +183,7 @@ public class GUIHandler implements UserInterface {
                         mainFrame.pack();
 
                         outgoingMessage= chooseBetweenPanel.getChosenDivinity();
-                        mainFrame.remove(choosePanel);
-                        mainFrame.remove(chooseBetweenPanel);
-                        mainFrame.init();
-                        for (BoardButton button : mainFrame.getActiveBoardButtons()){
-                            button.addActionListener(boardListener);
-                        }
-                        mainFrame.getEndTurnButton().addActionListener(undoEndlistener);
-                        mainFrame.getPowerButton().addActionListener(boardListener);
-                        mainFrame.getDefaultButton().addActionListener(boardListener);
-                        mainFrame.getUndoButton().addActionListener(undoEndlistener);
+                        startGameFrame();
                     }
 
                     break;
@@ -368,6 +349,20 @@ public class GUIHandler implements UserInterface {
             System.out.println(e.getMessage());
         }
         return null;
+    }
+
+    private void startGameFrame(){
+        mainFrame.remove(choosePanel);
+        mainFrame.remove(chooseBetweenPanel);
+        mainFrame.init();
+        for (BoardButton button : mainFrame.getActiveBoardButtons()){
+            button.addActionListener(boardListener);
+        }
+        mainFrame.getEndTurnButton().addActionListener(undoEndlistener);
+        mainFrame.getPowerButton().addActionListener(boardListener);
+        mainFrame.getDefaultButton().addActionListener(boardListener);
+        mainFrame.getUndoButton().addActionListener(undoEndlistener);
+        mainFrame.updateTextArea("waiting for other player");
     }
 
     private String checkAction(LiteBoard board) throws IllegalArgumentException, InterruptedException {

@@ -33,7 +33,7 @@ public class BoardButton extends JButton {
             } catch (IOException e) {
                 System.out.println(e.getMessage());
             }
-            g.drawImage(levelImage, 0, 0, null);
+            g.drawImage(levelImage, 5, 5,80,80, null);
         }
         if (haveWorker) {
             if (workerColor == Color.White) {

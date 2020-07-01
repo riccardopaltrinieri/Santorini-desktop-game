@@ -4,6 +4,7 @@ import it.polimi.ingsw.View.State;
 import it.polimi.ingsw.utils.Divinity;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 
 public class MainFrame extends JFrame{
@@ -18,6 +19,9 @@ public class MainFrame extends JFrame{
     private JPanel mainPanel = new JPanel();
     private final JPanel mapPanel = new JPanel();
     private final JPanel yesOrNoPanel = new JPanel();
+    private final JPanel bottomPanel = new JPanel();
+    private final JPanel endUndoPanel = new JPanel();
+    private final JPanel textPanel = new JPanel();
 
     private final BoardButton[] activeBoardButtons = new BoardButton[25];
     private final BoardButton[] boardButtons = new BoardButton[49];
@@ -55,12 +59,32 @@ public class MainFrame extends JFrame{
         layout.setConstraints(godLabel,lim);
         mainPanel.add(godLabel);
 
+        lim.gridy=6;
+        lim.gridx=1;
+        lim.gridheight=2;
+        lim.gridwidth=3;
+        layout.setConstraints(playerInfoTextArea,lim);
+        mainPanel.add(playerInfoTextArea);
+        playerInfoTextArea.setEditable(false);
+
         lim.gridy=8;
         lim.gridx=1;
-        lim.gridwidth=3;
-        lim.gridheight=1;
-        layout.setConstraints(textArea,lim);
-        mainPanel.add(textArea);
+        lim.gridwidth=14;
+        lim.gridheight=2;
+        lim.fill=GridBagConstraints.HORIZONTAL;
+        bottomPanel.setLayout(new BorderLayout(10,100));
+        textPanel.add(textArea);
+        bottomPanel.add(textPanel, BorderLayout.WEST);
+
+        bottomPanel.add(yesOrNoPanel,BorderLayout.CENTER);
+
+        endTurnButton.setEnabled(false);
+        endUndoPanel.add(endTurnButton);
+        undoButton.setEnabled(false);
+        endUndoPanel.add(undoButton);
+        bottomPanel.add(endUndoPanel,BorderLayout.EAST);
+        layout.setConstraints(bottomPanel,lim);
+        mainPanel.add(bottomPanel);
 
         mapPanel.setLayout(new GridLayout(7,7));
         int j=0;
@@ -99,23 +123,25 @@ public class MainFrame extends JFrame{
         layout.setConstraints(mapPanel,lim);
         mainPanel.add(mapPanel);
 
-        lim.gridx=4;
+        /*lim.gridx=4;
         lim.gridy=8;
         lim.gridwidth=3;
         lim.gridheight=1;
         layout.setConstraints(yesOrNoPanel,lim);
         yesOrNoPanel.setPreferredSize(new Dimension(200,50));
-        mainPanel.add(yesOrNoPanel);
+        yesOrNoPanel.setLayout(new BorderLayout());
+        mainPanel.add(yesOrNoPanel);*/
 
-        lim.gridx=7;
+        /*lim.gridx=8;
         lim.gridwidth=1;
+        lim.weightx=100;
         endTurnButton.setEnabled(false);
         layout.setConstraints(endTurnButton,lim);
         mainPanel.add(endTurnButton);
-        lim.gridx=8;
+        lim.gridx=9;
         layout.setConstraints(undoButton,lim);
         undoButton.setEnabled(false);
-        mainPanel.add(undoButton);
+        mainPanel.add(undoButton);*/
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setTitle("Santorini Game");
@@ -139,6 +165,7 @@ public class MainFrame extends JFrame{
 
     public void updateTextArea(String text){
         textArea.setText(text);
+        textArea.setEditable(false);
     }
 
     public void updatePlayerInfoTextArea(String text){
@@ -147,6 +174,7 @@ public class MainFrame extends JFrame{
             oldText+="\n";
         }
         playerInfoTextArea.setText(oldText + " " + text);
+        playerInfoTextArea.setEditable(false);
     }
 
     public void updateGodCard(String godName){
@@ -221,11 +249,6 @@ public class MainFrame extends JFrame{
 
     public JButton getDefaultButton() {
         return defaultButton;
-    }
-
-    public boolean removeMainPanel(){
-        remove(mainPanel);
-        return true;
     }
 
     public boolean removeStartingPanel(){
