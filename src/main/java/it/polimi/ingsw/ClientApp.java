@@ -1,16 +1,36 @@
 package it.polimi.ingsw;
 
+import it.polimi.ingsw.Network.Server;
 import it.polimi.ingsw.View.CLInterface;
 import it.polimi.ingsw.View.GUIHandler;
 import it.polimi.ingsw.View.NetworkHandler;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
 public class ClientApp {
 
     public static void main(String[] args){
-        NetworkHandler connection = new NetworkHandler("127.0.0.1", 12445);
+        String confFilePath = "network.json";
+        String ip = "127.0.0.1";
+        int port = 12445;
+
+        try{
+            JSONParser parser = new JSONParser();
+            Object obj = parser.parse(new FileReader(confFilePath));
+            JSONObject jsonObject = (JSONObject) obj;
+            String port1 = (String) jsonObject.get("port");
+            port = Integer.valueOf(port1);
+            ip = (String) jsonObject.get("ip");
+
+        } catch (ParseException | IOException e) {
+            System.err.println("Impossible read the ip or the port!\n" + e.getMessage());
+        }
+        NetworkHandler connection = new NetworkHandler(ip, port);
 
         if(args.length != 0) {
             if(args[0].equals("-cli")) {
