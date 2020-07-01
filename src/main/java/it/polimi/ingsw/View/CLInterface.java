@@ -1,9 +1,9 @@
 package it.polimi.ingsw.View;
 
+import it.polimi.ingsw.utils.Color;
 import it.polimi.ingsw.utils.Divinity;
 import it.polimi.ingsw.utils.InputString;
 
-import javax.swing.*;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
@@ -13,6 +13,7 @@ public class CLInterface implements UserInterface {
     private String name;
     private Divinity divinity;
     private int worker;
+    private Color color;
 
     public CLInterface(){
     }
@@ -42,7 +43,8 @@ public class CLInterface implements UserInterface {
                 case "Welcome!":
                     // Asks the name of the player
                     System.out.println(incomingMessage);
-                    name = stdin.nextLine();
+                    do name = stdin.nextLine();
+                    while (name == null || name.isBlank());
                     outgoingMessage = name;
                     break;
 
@@ -77,7 +79,7 @@ public class CLInterface implements UserInterface {
                         if (fsm.getState() == State.worker) {
                             // ask to the player which worker he wants to use but don't send anything
                             System.out.println(fsm.getStateStringCLI());
-                            checkAction(stdin);
+                            checkWorker(stdin, board);
                             fsm.nextState();
                         }
 
@@ -109,8 +111,10 @@ public class CLInterface implements UserInterface {
                 case "Start":
                     if (!parts[1].equals(name))
                         System.out.println("Your " + parts[2] + " opponent is " + parts[1] + "and he will use " + parts[3]);
-                    else
+                    else{
+                        color = Color.valueOf(parts[2]);
                         System.out.println("You have " + parts[2] + " color " + "and will use: " + parts[3]);
+                    }
                     outgoingMessage = "noMessageToSend";
                     break;
 
@@ -126,7 +130,7 @@ public class CLInterface implements UserInterface {
                         else if (parts[3].equals("worker")) {
                             fsm.setState(State.worker);
                             System.out.println("Choose again the worker: ");
-                            checkAction(stdin);
+                            checkWorker(stdin, board);
                             fsm.nextState();
                         }
                         else fsm.prevState();
@@ -232,6 +236,27 @@ public class CLInterface implements UserInterface {
         return outgoingMessage;
     }
 
+    private void checkWorker(Scanner stdin, LiteBoard board) {
+
+        while (true) {
+            try {
+                String inputLine = stdin.nextLine();
+                String[] partsInput = inputLine.split(" ");
+                InputString action = InputString.valueOf(partsInput[0].toLowerCase());
+                int worker = Integer.parseInt(partsInput[1]);
+
+                if (!(action == InputString.worker)) throw new IllegalArgumentException("you should write 'worker [num]'");
+                if (!(worker == 1) && !(worker == 2)) throw new IllegalArgumentException("you only have 2 workers");
+                if (!board.workerCanMoveCLI(worker, color.ordinal())) throw new IllegalArgumentException(" this worker can't move");
+                setWorker(worker);
+                return;
+            } catch (IllegalArgumentException | IndexOutOfBoundsException e) {
+                System.out.println("Wrong input," + e.getMessage());
+                System.out.println("Choose again the worker: ");
+            }
+        }
+    }
+
     /**
      * Checks if the number of player in input is 2 or 3 according to the rules of the game
      * @return the number in string format
@@ -269,12 +294,6 @@ public class CLInterface implements UserInterface {
                 // If the action is correct the message will be "action row column"
 
                 switch (action) {
-                    case worker -> {
-                        if (fsm.getState() != State.worker) throw new IllegalArgumentException("you can't choose the worker now");
-                        int worker = Integer.parseInt(partsInput[1]);
-                        if (!(worker == 1) && !(worker == 2)) throw new IllegalArgumentException("you only have 2 workers");
-                        setWorker(worker);
-                    }
                     case move, build -> {
                         if (action == InputString.move && fsm.getState() != State.move) throw new IllegalArgumentException("you can't make a move now");
                         if (action == InputString.build && fsm.getState() != State.build) throw new IllegalArgumentException("you can't build now");

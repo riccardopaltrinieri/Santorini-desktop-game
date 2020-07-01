@@ -135,7 +135,7 @@ public class LiteBoard implements Serializable {
         System.out.println("      +------++------++------++------++------+");
     }
 
-    public boolean workerCanMove(int rowWorker,int colWorker) {
+    public boolean workerCanMove(int rowWorker, int colWorker) {
 
         //check all the cells from the one top-left to the one down-right, if just one is ok the worker can move
         for (int row = rowWorker - 1; row <= rowWorker + 1; row++)
@@ -148,10 +148,11 @@ public class LiteBoard implements Serializable {
                             (levels[row][col] <= levels[rowWorker][colWorker] + 1) &&
                             (levels[row][col] < 4)) {
                             //should not be the position of another player
-                            Boolean occupied = false;
+                            boolean occupied = false;
                             for (int i = 0; i < numAllWorker;i++) {
-                                if ((posWorker[i][0]==row)&&(posWorker[i][1]==col)){
+                                if ((posWorker[i][0] == row) && (posWorker[i][1] == col)) {
                                     occupied = true;
+                                    break;
                                 }
                             }
                             if (!occupied) {
@@ -162,6 +163,15 @@ public class LiteBoard implements Serializable {
 
 
         return false;
+    }
+
+    public boolean workerCanMoveCLI(int worker, int color) {
+        for (int w = 0; w < numAllWorker; w ++) {
+            if (w % 2 == (worker-1) && posWorker[w][2] == color) {
+                return workerCanMove(posWorker[w][0], posWorker[w][1]);
+            }
+        }
+        throw new IllegalArgumentException("this worker doesn't exists");
     }
 
     /**
