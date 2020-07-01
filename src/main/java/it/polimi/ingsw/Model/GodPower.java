@@ -7,6 +7,4 @@ public interface GodPower {
 
     void execute(Player player, Cell destination, int worker) throws AthenaException;
     Divinity getDivinity();
-
-    void undo(Player player, Cell oldPosition, int worker, Cell building);
 }

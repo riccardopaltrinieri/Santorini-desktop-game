@@ -48,6 +48,15 @@ public class GameTest
         game.getBoard().getCell(3, 3).setLevel(1);
         // Cannot move up because the Athena power is active
         assertFalse(game.move(3, 3, 0));
+
+        // Simulate the block of a worker
+        Cell pos = game.getBoard().getCell(2, 2);
+        // Fill all the cells from the one top-left to the one down-right
+        for (int row = pos.getNumRow() - 1; row <= pos.getNumRow() + 1; row++)
+            for (int col = pos.getNumColumn() - 1; col <= pos.getNumColumn() + 1; col++)
+                if(0 <= row && row < 5 && 0 <= col && col < 5) game.getBoard().getCell(row, col).setEmpty(false);
+
+        assertFalse(game.move(2, 3, 0));
     }
 
     @Test
@@ -84,6 +93,15 @@ public class GameTest
         game.getBoard().getCell(3, 3).setLevel(1);
         assertFalse(game.move(3, 3, 0));
         assertFalse(game.useGodPower(3, 3, 0));
+
+        // Simulate the block of a worker
+        Cell pos = game.getBoard().getCell(2, 2);
+        // Fill all the cells from the one top-left to the one down-right
+        for (int row = pos.getNumRow() - 1; row <= pos.getNumRow() + 1; row++)
+            for (int col = pos.getNumColumn() - 1; col <= pos.getNumColumn() + 1; col++)
+                if(0 <= row && row < 5 && 0 <= col && col < 5) game.getBoard().getCell(row, col).setEmpty(false);
+
+        assertFalse(game.useGodPower(2, 3, 0));
     }
 
     @Test
@@ -111,7 +129,7 @@ public class GameTest
         tester.placeWorkers(cell2);
         Cell cell3 = game.getBoard().getCell(2,4);
         tester3.placeWorkers(cell3);
-        game.hasLoser(); //il primo deve sparire
+        game.hasLoser();
         assertTrue(cell.getIsEmpty());
         assertTrue(cell2.getIsEmpty());
         assertFalse(cell3.getIsEmpty());

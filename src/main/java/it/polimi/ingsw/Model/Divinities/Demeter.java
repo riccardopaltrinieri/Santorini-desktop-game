@@ -8,16 +8,16 @@ import it.polimi.ingsw.Model.Player;
 public class Demeter implements GodPower {
     private final Divinity divinity=Divinity.Demeter;
     private Boolean firstTime = true;
-    private Cell firstCostruction;
+    private Cell firstConstruction;
 
     @Override
     public void execute(Player player, Cell destination, int worker) {
         if (firstTime){
-            firstCostruction = destination;
+            firstConstruction = destination;
             player.getWorker(worker).build(destination);
             firstTime=false;
         }
-        else if (firstCostruction.equals(destination)){
+        else if (firstConstruction.equals(destination)){
             throw new IllegalArgumentException();
         }
         else{
@@ -29,11 +29,5 @@ public class Demeter implements GodPower {
     @Override
     public Divinity getDivinity() {
         return this.divinity;
-    }
-
-    @Override
-    public void undo(Player player, Cell oldPosition, int worker, Cell building) {
-        building.setLevel(building.getLevel()-1);
-        firstTime = !firstTime;
     }
 }
