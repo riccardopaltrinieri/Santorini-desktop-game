@@ -30,7 +30,7 @@ class UndoHandler extends CareTaker implements Runnable{
 
             if (controller.isUndoing() && player == game.getCurrentPlayer()) {
 
-                if(state != it.polimi.ingsw.Controller.State.undo) {
+                if(state != State.undo) {
                     // Check if the player didn't make any other moves
                     if (controller.getLastAction() == state) {
 
@@ -44,8 +44,8 @@ class UndoHandler extends CareTaker implements Runnable{
 
                 } else {
 
-                    sleep(3000);
-                    // If 8 seconds from the request passed and the undo flag is still true it means
+                    sleep(1000);
+                    // If 6 seconds from the request passed and the undo flag is still true it means
                     // that the previous thread didn't worked
                     if(controller.isUndoing()) {
                         controller.setUndoing(false);
@@ -55,7 +55,7 @@ class UndoHandler extends CareTaker implements Runnable{
                 }
             }
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            System.out.println("UndoHandler interrupted while sleeping");
         }
     }
 

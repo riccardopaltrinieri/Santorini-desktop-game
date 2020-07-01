@@ -20,14 +20,4 @@ public class Athena implements GodPower {
     public Divinity getDivinity() {
         return this.divinity;
     }
-
-    @Override
-    public void undo(Player player, Cell oldPosition, int worker, Cell building) {
-        player.getGame().setCanMoveUp(true);
-        try {
-            player.getWorker(worker).move(oldPosition);
-        } catch (AthenaException e) {
-            e.printStackTrace();
-        }
-    }
 }

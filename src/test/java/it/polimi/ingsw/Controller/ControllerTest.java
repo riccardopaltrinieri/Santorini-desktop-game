@@ -6,6 +6,7 @@ import it.polimi.ingsw.View.LiteBoard;
 import it.polimi.ingsw.utils.Color;
 import org.junit.Test;
 
+import static java.lang.Thread.sleep;
 import static junit.framework.TestCase.*;
 
 
@@ -51,6 +52,9 @@ public class ControllerTest {
         assertFalse(game.getBoard().getCell(0,0).getLevel()==0);
         assertEquals(1, game.getBoard().getCell(0, 0).getLevel());
         controller.update("tester endturn");
+
+        // Check the exception
+        controller.update("tester normal");
     }
 
 
@@ -167,5 +171,47 @@ public class ControllerTest {
     public void testNewBoard () {
         Controller controller = new Controller(new Game());
         controller.newBoard(new LiteBoard("foo"));
+    }
+
+    @Test
+    public void testUndoHandler() throws InterruptedException {
+
+        Game game = new Game();
+        Controller controller = new Controller(game);
+        Player tester = new Player("tester", Color.White, game);
+        Player tester2 = new Player("tester2", Color.White, game);
+        game.setNumPlayer(2);
+        //insert the power to test
+        tester.setGodPower("default");
+        tester2.setGodPower("default");
+
+
+        controller.update("tester placeWorker 1 1");
+        controller.update("tester placeWorker 4 4");
+        controller.update("tester endturn");
+
+        controller.update("tester2 placeWorker 3 4");
+        controller.update("tester2 placeWorker 3 3");
+        controller.update("tester2 endturn");
+        controller.update("tester normal");
+
+        // Save the state, do the action and restore the state
+        //UndoHandler undoThread1 = new UndoHandler(game, controller, controller.getFsm().getState());
+        controller.update("tester move 1 2 1");
+        //new Thread(undoThread1).start();
+        controller.update("tester undo");
+
+        // Check if the undo function has worked
+        sleep(5500);
+        assertTrue(game.getBoard().getCell(0,1).getIsEmpty());
+
+        controller.update("tester move 1 2 1");
+        sleep(5500);
+        controller.update("tester undo");
+
+        //new Thread(new UndoHandler(game, controller, State.undo)).start();
+        sleep(6500);
+        // Check if the undo function hasn't worked
+        assertFalse(game.getBoard().getCell(0,1).getIsEmpty());
     }
 }
