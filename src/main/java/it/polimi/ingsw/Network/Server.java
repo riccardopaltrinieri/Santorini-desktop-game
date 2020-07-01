@@ -216,6 +216,7 @@ public class Server {
             for (String message : startingMessages) game.sendBoard(new LiteBoard(message));
             game.sendBoard(new LiteBoard("Insert " + game.getCurrentPlayer().getName() + " update", game.getBoard(), game));
 
+            divinityPlayer.clear();
             waitingConnection.clear();
             startGame = true;
         }
@@ -262,6 +263,11 @@ public class Server {
         for (Connection conn : connections) {
             conn.closeConnection();
         }
+        waitingConnection.clear();
+        connections.clear();
+        playingConnection.clear();
+        divinities.clear();
+        divinityPlayer.clear();
     }
 
     /**
@@ -358,6 +364,12 @@ public class Server {
 
 
 }
+
+    public void timeout(String name) {
+        for (Connection conn: connections) {
+            conn.send(new LiteBoard("Timeout: " + name + "took too much time to decide. Game over."));
+        }
+    }
 }
 
 

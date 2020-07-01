@@ -3,6 +3,7 @@ package it.polimi.ingsw.View;
 import it.polimi.ingsw.utils.Divinity;
 import it.polimi.ingsw.utils.InputString;
 
+import javax.swing.*;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
@@ -199,6 +200,21 @@ public class CLInterface implements UserInterface {
                 case "Wrong" :
                     System.out.println(incomingMessage);
                     outgoingMessage = stdin.nextLine();
+                    break;
+
+                case "First":
+                case "Client":
+                    System.out.println(incomingMessage);
+                    throw new NoSuchElementException();
+
+                case "Timeout":
+                    if (parts[1].equals(name)) {
+                       System.out.println("You took to much time to answer, you lose..");
+                        throw new NoSuchElementException();
+                    }
+                    else System.out.println(parts[1] + " took to much time to answer and the game it's over..");
+
+                    outgoingMessage = "noMessageToSend";
                     break;
 
                 default:

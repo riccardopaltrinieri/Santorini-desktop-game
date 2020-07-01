@@ -300,6 +300,7 @@ public class GUIHandler implements UserInterface {
                         break;
 
                 case "Winner:":
+                    board.printBoardGUI(mainFrame);
                     if (parts[1].equals(name) && parts[2].equals("wins")) {
                         JOptionPane.showMessageDialog(mainFrame, "You win and the game it's over..");
                         throw new NoSuchElementException();
@@ -308,6 +309,21 @@ public class GUIHandler implements UserInterface {
 
                     outgoingMessage = "noMessageToSend";
                     break;
+
+                case "First":
+                case "Client":
+                    JOptionPane.showMessageDialog(mainFrame, incomingMessage);
+                    throw new NoSuchElementException();
+
+                case "Timeout":
+                    if (parts[1].equals(name)) {
+                        JOptionPane.showMessageDialog(mainFrame, "You took to much time to answer, you lose..");
+                         throw new NoSuchElementException();
+                    }
+                    else JOptionPane.showMessageDialog(mainFrame, parts[1] + " took to much time to answer and the game it's over..");
+
+                     outgoingMessage = "noMessageToSend";
+                     break;
 
 
                 default:
