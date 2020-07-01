@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
-public class ChooseFrame extends JFrame{
+public class ChoosePanel extends JPanel{
 
     private JPanel godPanel = new JPanel();
     private JPanel centerPanel = new JPanel();
@@ -26,7 +26,7 @@ public class ChooseFrame extends JFrame{
 
     private JComboBox divinityList;
 
-    public ChooseFrame(){
+    public ChoosePanel(){
         for (int i=0;i<10;i++){
             divinityString.add(Divinity.values()[i].toString());
         }
@@ -34,11 +34,11 @@ public class ChooseFrame extends JFrame{
 
     public void init(){
         chosenDivinity="";
-        ChooseFrameListener chooseFrameListener = new ChooseFrameListener(this);
+        ChoosePanelListener choosePanelListener = new ChoosePanelListener(this);
         setLayout(new BorderLayout());
 
         divinityList = new JComboBox(divinityString.toArray());
-        divinityList.addItemListener(chooseFrameListener);
+        divinityList.addItemListener(choosePanelListener);
 
         comboPanel.add(divinityList);
         comboPanel.add(selectButton);
@@ -47,7 +47,7 @@ public class ChooseFrame extends JFrame{
         centerPanel.setLayout(new BorderLayout());
         centerPanel.add(comboPanel,BorderLayout.NORTH);
         centerPanel.add(godInfoText,BorderLayout.CENTER);
-        selectButton.addActionListener(chooseFrameListener);
+        selectButton.addActionListener(choosePanelListener);
 
         add(centerPanel,BorderLayout.CENTER);
 
@@ -62,9 +62,6 @@ public class ChooseFrame extends JFrame{
         infoText.setAlignmentX(CENTER_ALIGNMENT);
         add(infoText,BorderLayout.NORTH);
 
-        setAlwaysOnTop(true);
-        setTitle("Choose Divinity");
-        pack();
         setVisible(true);
     }
 

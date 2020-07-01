@@ -10,8 +10,8 @@ import java.util.NoSuchElementException;
 public class GUIHandler implements UserInterface {
 
     final MainFrame mainFrame= new MainFrame();
-    ChooseFrame chooseFrame = new ChooseFrame();
-    ChooseBetweenFrame chooseBetweenFrame = new ChooseBetweenFrame();
+    ChoosePanel choosePanel = new ChoosePanel();
+    ChooseBetweenPanel chooseBetweenPanel = new ChooseBetweenPanel();
     private final FSMView fsm = new FSMView();
 
     private Color color;
@@ -23,6 +23,7 @@ public class GUIHandler implements UserInterface {
     private int selectedWorkerIndex;
     private int previousCellMoveIndex=-1;
     private int previousCellBuildIndex=-1;
+    private int numPlayer;
 
 
     private final BoardButtonListener boardListener = new BoardButtonListener(fsm,color,mainFrame);
@@ -64,6 +65,7 @@ public class GUIHandler implements UserInterface {
 
                 case "Start" :
                 //take the other's player info
+
                     if (!parts[1].equals(name)) {
                         JOptionPane.showMessageDialog(mainFrame, "Your " + parts[2] + " opponent is " + parts[1] + "\nHe will use " + parts[3]);
                     }
@@ -79,14 +81,8 @@ public class GUIHandler implements UserInterface {
                     SwingUtilities.invokeLater(new Runnable() {
                         @Override
                         public synchronized void  run() {
-                            mainFrame.init();
-                            for (BoardButton button : mainFrame.getActiveBoardButtons()){
-                                button.addActionListener(boardListener);
-                            }
-                            mainFrame.getEndTurnButton().addActionListener(undoEndlistener);
-                            mainFrame.getPowerButton().addActionListener(boardListener);
-                            mainFrame.getDefaultButton().addActionListener(boardListener);
-                            mainFrame.getUndoButton().addActionListener(undoEndlistener);
+                            mainFrame.startingInit();
+
                         }
                     });
 
@@ -137,43 +133,76 @@ public class GUIHandler implements UserInterface {
                     do {
                         if (result == JOptionPane.YES_OPTION) {
                             outgoingMessage = "2";
+                            numPlayer = 2;
                         } else if (result == JOptionPane.NO_OPTION) {
                             outgoingMessage = "3";
+                            numPlayer = 3;
                         }
                     } while(!(outgoingMessage.equals("2")||(outgoingMessage.equals("3"))));
 
                     break;
 
                 case "Choose":
+                    mainFrame.removeStartingPanel();
+                    mainFrame.pack();
                     //ask the player to choose the divinity
                     if (parts[1].equals("the")) {
                         if ((parts[2].equals("second")) || (parts[2].equals("third"))) {
-                            chooseFrame = new ChooseFrame();
-                            chooseFrame.removeDivinityString(firstGodToRemove);
+                            mainFrame.remove(choosePanel);
+                            choosePanel = new ChoosePanel();
+                            choosePanel.removeDivinityString(firstGodToRemove);
                             if (parts[2].equals("third")) {
-                                chooseFrame.removeDivinityString(secondGodToRemove);
+                                choosePanel.removeDivinityString(secondGodToRemove);
                             }
                         }
                         // Ask the name of a divinity or the number of players
-                        chooseFrame.setDivinityNumber(parts[2]);
-                        chooseFrame.init();
+                        choosePanel.setDivinityNumber(parts[2]);
+                        choosePanel.init();
+                        mainFrame.add(choosePanel);
+                        mainFrame.pack();
                         //TODO gestisci caso chiusura finestra
 
-                        outgoingMessage = chooseFrame.getChosenDivinity();
+                        outgoingMessage = choosePanel.getChosenDivinity();
                         if (parts[2].equals("first")) {
                             firstGodToRemove = outgoingMessage;
                         } else if (parts[2].equals("second")) {
                             secondGodToRemove = outgoingMessage;
                         }
+                        if (((numPlayer==2)&&(parts[2].equals("second"))||(numPlayer==3)&&(parts[2].equals("third")))){
+                            mainFrame.remove(choosePanel);
+                            mainFrame.remove(chooseBetweenPanel);
+                            mainFrame.init();
+                            for (BoardButton button : mainFrame.getActiveBoardButtons()){
+                                button.addActionListener(boardListener);
+                            }
+                            mainFrame.getEndTurnButton().addActionListener(undoEndlistener);
+                            mainFrame.getPowerButton().addActionListener(boardListener);
+                            mainFrame.getDefaultButton().addActionListener(boardListener);
+                            mainFrame.getUndoButton().addActionListener(undoEndlistener);
+                        }
                     }
                     else if (parts[1].equals("your")){
                         if (parts.length==6){
-                            chooseBetweenFrame.init(parts[4],parts[5]);
+                            chooseBetweenPanel.init(parts[4],parts[5]);
                         }
                         else{
-                            chooseBetweenFrame.init(parts[4],parts[5],parts[6]);
+                            chooseBetweenPanel.init(parts[4],parts[5],parts[6]);
                         }
-                        outgoingMessage=chooseBetweenFrame.getChosenDivinity();
+                        mainFrame.removeStartingPanel();
+                        mainFrame.add(chooseBetweenPanel);
+                        mainFrame.pack();
+
+                        outgoingMessage= chooseBetweenPanel.getChosenDivinity();
+                        mainFrame.remove(choosePanel);
+                        mainFrame.remove(chooseBetweenPanel);
+                        mainFrame.init();
+                        for (BoardButton button : mainFrame.getActiveBoardButtons()){
+                            button.addActionListener(boardListener);
+                        }
+                        mainFrame.getEndTurnButton().addActionListener(undoEndlistener);
+                        mainFrame.getPowerButton().addActionListener(boardListener);
+                        mainFrame.getDefaultButton().addActionListener(boardListener);
+                        mainFrame.getUndoButton().addActionListener(undoEndlistener);
                     }
 
                     break;

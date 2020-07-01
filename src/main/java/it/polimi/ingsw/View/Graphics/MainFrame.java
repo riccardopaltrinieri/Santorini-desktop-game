@@ -8,11 +8,14 @@ import java.awt.*;
 
 public class MainFrame extends JFrame{
 
+    private Icon background = new ImageIcon("images/LoadingBackground.jpeg");
     private Icon godCard = new ImageIcon("images/godCards/None.png");
     private final Icon[] cellBoardIcon = new ImageIcon[49];
 
     private final JLabel godLabel = new JLabel(godCard);
+    private JLabel backgroundLabel = new JLabel();
 
+    private JPanel mainPanel = new JPanel();
     private final JPanel mapPanel = new JPanel();
     private final JPanel yesOrNoPanel = new JPanel();
 
@@ -33,24 +36,31 @@ public class MainFrame extends JFrame{
 
     private BoardButton chosenButton;
 
+    public void startingInit(){
+        backgroundLabel.setIcon(background);
+        add(backgroundLabel);
+        pack();
+        setVisible(true);
+    }
+
     public void init(){
         GridBagLayout layout = new GridBagLayout();
         GridBagConstraints lim = new GridBagConstraints();
-        setLayout(layout);
+        mainPanel.setLayout(layout);
 
         int cellSize = 90;
         lim.gridy=1;
         lim.gridwidth=3;
         lim.gridheight=5;
         layout.setConstraints(godLabel,lim);
-        add(godLabel);
+        mainPanel.add(godLabel);
 
         lim.gridy=8;
         lim.gridx=1;
         lim.gridwidth=3;
         lim.gridheight=1;
         layout.setConstraints(textArea,lim);
-        add(textArea);
+        mainPanel.add(textArea);
 
         mapPanel.setLayout(new GridLayout(7,7));
         int j=0;
@@ -87,7 +97,7 @@ public class MainFrame extends JFrame{
         lim.gridwidth=7;
         lim.gridheight=7;
         layout.setConstraints(mapPanel,lim);
-        add(mapPanel);
+        mainPanel.add(mapPanel);
 
         lim.gridx=4;
         lim.gridy=8;
@@ -95,20 +105,21 @@ public class MainFrame extends JFrame{
         lim.gridheight=1;
         layout.setConstraints(yesOrNoPanel,lim);
         yesOrNoPanel.setPreferredSize(new Dimension(200,50));
-        add(yesOrNoPanel);
+        mainPanel.add(yesOrNoPanel);
 
         lim.gridx=7;
         lim.gridwidth=1;
         endTurnButton.setEnabled(false);
         layout.setConstraints(endTurnButton,lim);
-        add(endTurnButton);
+        mainPanel.add(endTurnButton);
         lim.gridx=8;
         layout.setConstraints(undoButton,lim);
         undoButton.setEnabled(false);
-        add(undoButton);
+        mainPanel.add(undoButton);
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setTitle("Santorini Game");
+        add(mainPanel);
         pack();
         setVisible(true);
     }
@@ -210,6 +221,16 @@ public class MainFrame extends JFrame{
 
     public JButton getDefaultButton() {
         return defaultButton;
+    }
+
+    public boolean removeMainPanel(){
+        remove(mainPanel);
+        return true;
+    }
+
+    public boolean removeStartingPanel(){
+        remove(backgroundLabel);
+        return true;
     }
 
     public void setYesOrNoString(String yesOrNoString) {

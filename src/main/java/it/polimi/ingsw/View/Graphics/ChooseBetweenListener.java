@@ -6,9 +6,9 @@ import java.awt.event.ActionListener;
 
 public class ChooseBetweenListener implements ActionListener {
 
-    ChooseBetweenFrame frame;
+    ChooseBetweenPanel frame;
 
-    public ChooseBetweenListener(ChooseBetweenFrame frame){
+    public ChooseBetweenListener(ChooseBetweenPanel frame){
         this.frame = frame;
     }
 
@@ -18,6 +18,5 @@ public class ChooseBetweenListener implements ActionListener {
         synchronized (frame) {
             frame.notifyAll();
         }
-        frame.dispose();
     }
 }

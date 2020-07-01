@@ -4,7 +4,7 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
 
-public class ChooseBetweenFrame extends JFrame {
+public class ChooseBetweenPanel extends JPanel {
     private JPanel upperPanel = new JPanel();
     private JPanel godPanel = new JPanel();
     private JPanel leftGodPanel = new JPanel();
@@ -31,7 +31,6 @@ public class ChooseBetweenFrame extends JFrame {
     ChooseBetweenListener listener = new ChooseBetweenListener(this);
 
     public void init(String firstGod, String secondGod) {
-        setAlwaysOnTop(true);
         setLayout(new BorderLayout());
 
         upperPanel.add(chooseText);
@@ -61,8 +60,6 @@ public class ChooseBetweenFrame extends JFrame {
         godPanel.add(leftGodPanel, BorderLayout.WEST);
 
         add(godPanel, BorderLayout.CENTER);
-        setTitle("Choose Divinity");
-        pack();
         setVisible(true);
     }
 
@@ -78,7 +75,6 @@ public class ChooseBetweenFrame extends JFrame {
         centralGodPanel.add(centralGodButton, BorderLayout.SOUTH);
 
         godPanel.add(centralGodPanel, BorderLayout.CENTER);
-        pack();
     }
 
     public synchronized String getChosenDivinity() {
