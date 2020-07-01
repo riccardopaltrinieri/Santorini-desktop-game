@@ -61,8 +61,14 @@ CLI : open ClientCli.bat <br>
 GUI: open ClientGui.bat
 ### Server
 To run the server: open Server.bat <br>
-Go to `./src/main/resources/properties` and open the `settings.properties` file.  <br>
-Here you can set your preferred network.
+Open the `network.json` file.  <br>
+Here you can set ip and port of Server. 
+The default is: <br>
+{
+  "port": "12445", <br>
+  "ip": "127.0.0.1"<br>
+
+}
 
 
 
