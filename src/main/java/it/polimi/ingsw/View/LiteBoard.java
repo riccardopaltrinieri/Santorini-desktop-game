@@ -135,6 +135,35 @@ public class LiteBoard implements Serializable {
         System.out.println("      +------++------++------++------++------+");
     }
 
+    public boolean workerCanMove(int rowWorker,int colWorker) {
+
+        //check all the cells from the one top-left to the one down-right, if just one is ok the worker can move
+        for (int row = rowWorker - 1; row <= rowWorker + 1; row++)
+            for (int col = colWorker - 1; col <= colWorker + 1; col++)
+                if(0 <= row && row < 5 && 0 <= col && col < 5){
+                        if(
+                            // should not be the same cell as worker's position
+                            (row!=rowWorker)||(col!=colWorker)&&
+                            // should be maximum 1 level higher and at level 3
+                            (levels[row][col] <= levels[rowWorker][colWorker] + 1) &&
+                            (levels[row][col] < 4)) {
+                            //should not be the position of another player
+                            Boolean occupied = false;
+                            for (int i = 0; i < numAllWorker;i++) {
+                                if ((posWorker[i][0]==row)&&(posWorker[i][1]==col)){
+                                    occupied = true;
+                                }
+                            }
+                            if (!occupied) {
+                                return true;
+                            }
+                        }
+                }
+
+
+        return false;
+    }
+
     /**
      * Method used to print levels and workers on the buttons using data
      * passed with the board from the model

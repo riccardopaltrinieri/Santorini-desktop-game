@@ -50,12 +50,12 @@ public class GUIHandler implements UserInterface {
                             fsm.prevStateToPlaceWorker();
                         else if (parts[3].equals("worker")) {
                             fsm.setState(State.worker);
-                            checkAction();
+                            checkAction(board);
                             fsm.nextState();
                         }
                         else fsm.prevState();
 
-                        outgoingMessage = checkAction();
+                        outgoingMessage = checkAction(board);
                         fsm.nextState();
 
                         incomingMessage = lastMessage;
@@ -242,11 +242,11 @@ public class GUIHandler implements UserInterface {
                         mainFrame.updateTextArea(fsm.getStateStringGUI());
 
                         if (fsm.getState() == State.worker) {
-                            checkAction();
+                            checkAction(board);
                             fsm.nextState();
                         }
 
-                        outgoingMessage = checkAction();
+                        outgoingMessage = checkAction(board);
 
                         if (!outgoingMessage.equals("undo")) fsm.nextState();
                     } else {
@@ -265,7 +265,7 @@ public class GUIHandler implements UserInterface {
                        switch(parts[2]) {
                            case "undid" -> {
                                fsm.prevState();
-                               outgoingMessage = checkAction();
+                               outgoingMessage = checkAction(board);
                                fsm.nextState();
                            }
                            case "undoing" -> {
@@ -274,7 +274,7 @@ public class GUIHandler implements UserInterface {
                            }
                            case "cannot" -> {
                                JOptionPane.showMessageDialog(mainFrame, "Your undo request has been rejected");
-                               outgoingMessage = checkAction();
+                               outgoingMessage = checkAction(board);
                                fsm.nextState();
                            }
                        }
@@ -325,7 +325,7 @@ public class GUIHandler implements UserInterface {
         return null;
     }
 
-    private String checkAction() throws IllegalArgumentException, InterruptedException {
+    private String checkAction(LiteBoard board) throws IllegalArgumentException, InterruptedException {
 
         switch(fsm.getState()) {
 
@@ -361,8 +361,11 @@ public class GUIHandler implements UserInterface {
                 mainFrame.getUndoButton().setEnabled(false);
                 // ask to the player which worker he wants to use but don't send anything
                 for (BoardButton button : mainFrame.getActiveBoardButtons()) {
-                    button.setEnabled((button.getHaveWorker()) && (button.getWorkerColor() == color));
+                    if ((button.getHaveWorker()) && (button.getWorkerColor() == color)) {
+                        button.setEnabled(board.workerCanMove(button.getRow()-1, button.getColumn()-1));
+                    }
                 }
+
                 int[] coordinate = mainFrame.getChosenButtonCoordinate();
                 selectedWorkerIndex = mainFrame.getActiveButton((coordinate[0] - 1) * 5 + coordinate[1] - 1).getWorkerNum();
                 return "";

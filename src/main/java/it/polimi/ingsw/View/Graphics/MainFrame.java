@@ -147,9 +147,11 @@ public class MainFrame extends JFrame{
     public BoardButton[] getActiveBoardButtons() {
         return activeBoardButtons;
     }
+
     public BoardButton getActiveButton(int index) {
         return activeBoardButtons[index];
     }
+
     public BoardButton getWorkerButton(int worker) {
         for (BoardButton button : activeBoardButtons)
             if (button.getWorkerNum() == worker)
