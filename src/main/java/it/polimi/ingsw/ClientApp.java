@@ -37,8 +37,7 @@ public class ClientApp {
                     connection.setUserInterface(CLI);
                     connection.run();
 
-                } catch (IOException e) {
-                    System.err.println(e.getMessage());
+                } catch (IOException ignored) {
                 }
             } else {
                 System.out.println("You can use the parameter -cli to use the command line interface");
@@ -52,7 +51,7 @@ public class ClientApp {
                     connection.run();
                 }
                 catch (IOException e){
-                    System.err.println(e.getMessage());
+                    System.err.println("Close the window to stop the app..");
                 }
             }
 

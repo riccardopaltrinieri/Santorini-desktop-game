@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import java.net.SocketTimeoutException;
 
 public class Connection extends Observable implements Runnable, Observer {
     private final Socket socket;
@@ -68,26 +69,18 @@ public class Connection extends Observable implements Runnable, Observer {
     }
 
     /**
-     * We the connection ends we use this method to close the socket
+     * close the socket and unregister the connection in the server arrays
      */
-    public synchronized void closeConnection(){
-        send( new LiteBoard("Connection closed from the server side"));
-        try{
+    public synchronized void close(){
+        try {
+            System.out.println("Unregistering client: " + name);
             socket.close();
-        }catch (IOException e){
-            System.err.println(e.getMessage());
+            server.unregisterConnection(this);
+            active = false;
+            System.out.println("Done!");
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        active = false;
-    }
-
-    /**
-     * Deregister the connection in server and print the the message "Done" in Server
-     */
-    private void close(){
-        System.out.println("Deregistering client: " + name);
-        server.deregisterConnection(this);
-        closeConnection();
-        System.out.println("Done!");
     }
 
     /**
@@ -113,25 +106,26 @@ public class Connection extends Observable implements Runnable, Observer {
                 }
             }
 
+        } catch (SocketTimeoutException e) {
+            server.timeout(name);
+            if(isActive()) close();
         } catch(IOException e){
-            if(isActive()) {
-                server.timeout(name);
-                close();
-                server.endGame();
-            }
+            server.endGame();
+            if(isActive()) close();
             System.err.println("Connection with " + name + " not more active");
         }
     }
 
     /**
-     * Receive the board from game and send it to each Client. After check if there is a winner or a loser.
+     * Receives the board from the game and send it to each Client. Then it checks if there is a winner or a loser.
      * @param board is the board received from the game.
      */
     public void newBoard(LiteBoard board) {
         String[] parts = board.getMessage().split(" ");
         send(board);
-        if ((parts[1].equals(name) && parts[2].equals("loses"))
-                || parts[2].equals("wins")) close();
+        if ((parts[1].equals(name) && parts[2].equals("loses")) ||
+             parts[2].equals("wins"))
+                close();
     }
 
     public String getName(){ return name; }

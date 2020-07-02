@@ -220,9 +220,9 @@ public class CLInterface implements UserInterface {
                 case "Client":
                     // There was an error and the game end here
                     System.out.println(incomingMessage);
-                    throw new NoSuchElementException();
+                    throw new NoSuchElementException(incomingMessage);
 
-                case "Timeout":
+                case "Timeout:":
                     if (parts[1].equals(name)) {
                        System.out.println("You took to much time to answer, you lose..");
                         throw new NoSuchElementException();

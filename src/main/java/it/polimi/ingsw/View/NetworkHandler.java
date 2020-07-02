@@ -81,7 +81,7 @@ public class NetworkHandler {
             }
 
         } catch(NoSuchElementException | ClassNotFoundException e) {
-            System.out.println(e);
+            System.out.println(e.getMessage());
         } finally {
             System.out.println("Connection closed from the server side");
 

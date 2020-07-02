@@ -328,9 +328,9 @@ public class GUIHandler implements UserInterface {
                 case "First":
                 case "Client":
                     JOptionPane.showMessageDialog(mainFrame, incomingMessage);
-                    throw new NoSuchElementException();
+                    throw new NoSuchElementException(incomingMessage);
 
-                case "Timeout":
+                case "Timeout:":
                     if (parts[1].equals(name)) {
                         JOptionPane.showMessageDialog(mainFrame, "You took to much time to answer, you lose..");
                          throw new NoSuchElementException();
@@ -339,7 +339,6 @@ public class GUIHandler implements UserInterface {
 
                      outgoingMessage = "noMessageToSend";
                      break;
-
 
                 default:
                     outgoingMessage = "noMessageToSend";
