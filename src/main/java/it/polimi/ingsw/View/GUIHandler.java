@@ -55,6 +55,11 @@ public class GUIHandler implements UserInterface {
                         else fsm.prevState();
 
                         outgoingMessage = checkAction(board);
+                        while (outgoingMessage.equals("undo")) {
+                            JOptionPane.showMessageDialog(mainFrame, "You can't undo a mistake");
+                            mainFrame.updateTextArea(fsm.getStateStringGUI());
+                            outgoingMessage = checkAction(board);
+                        }
                         fsm.nextState();
 
                         incomingMessage = lastMessage;
