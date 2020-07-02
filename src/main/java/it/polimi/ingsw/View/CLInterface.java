@@ -92,6 +92,9 @@ public class CLInterface implements UserInterface {
                         }
 
                         if(!outgoingMessage.equals("undo")) fsm.nextState();
+                        else if (fsm.getState() == State.worker) {
+                            outgoingMessage = update(board);
+                        }
 
                     } else {
                         if(parts[2].equals("update")) System.out.println(parts[1] +"'s turn: ");
@@ -125,9 +128,7 @@ public class CLInterface implements UserInterface {
                         System.out.println(incomingMessage);
                         System.out.println("Please, try again:");
 
-                        if (parts[3].equals("place"))
-                            fsm.prevStateToPlaceWorker();
-                        else if (parts[3].equals("worker")) {
+                        if (parts[3].equals("worker")) {
                             fsm.setState(State.worker);
                             System.out.println("Choose again the worker: ");
                             checkWorker(stdin, board);
@@ -151,6 +152,11 @@ public class CLInterface implements UserInterface {
                                 board.printBoardCLI();
                                 System.out.println(fsm.getStateStringCLI());
                                 outgoingMessage = checkAction(stdin);
+                                while (outgoingMessage.equals("undo")) {
+                                    System.out.println("You can undo only last action, please continue with the play");
+                                    System.out.println(fsm.getStateStringCLI());
+                                    outgoingMessage = checkAction(stdin);
+                                }
                                 fsm.nextState();
                             }
                             case "undoing" -> {
@@ -323,13 +329,12 @@ public class CLInterface implements UserInterface {
                         if(fsm.getState() != State.endTurn) throw new IllegalArgumentException("you should not end your turn now");
                     }
                     case undo -> {
-                        if(fsm.getState() == State.start || fsm.getState() == State.placeworker || fsm.getState() == State.worker)
+                        if(fsm.getState() == State.start || fsm.getState() == State.worker)
                             throw new IllegalArgumentException("You can't undo your action now");
+                        if(fsm.getLastState() == State.worker) fsm.setState(State.worker);
                     }
                     default -> throw new IllegalArgumentException();
                 }
-
-                // Save all the messages in a log file
 
                 // If the input is correct it can be send
                 return inputLine.toLowerCase();

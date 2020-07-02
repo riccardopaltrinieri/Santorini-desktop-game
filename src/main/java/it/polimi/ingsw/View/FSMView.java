@@ -3,7 +3,9 @@ package it.polimi.ingsw.View;
 import it.polimi.ingsw.utils.Divinity;
 
 public class FSMView {
+
     private State state;
+    private State lastState;
     private Divinity divinity;
     private boolean again;
     private String godName;

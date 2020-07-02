@@ -275,7 +275,13 @@ public class GUIHandler implements UserInterface {
                        switch(parts[2]) {
                            case "undid" -> {
                                fsm.prevState();
+                               mainFrame.updateTextArea(fsm.getStateStringGUI());
                                outgoingMessage = checkAction(board);
+                               while (outgoingMessage.equals("undo")) {
+                                   JOptionPane.showMessageDialog(mainFrame, "You can undo only last action, please continue with the play");
+                                   mainFrame.updateTextArea(fsm.getStateStringGUI());
+                                   outgoingMessage = checkAction(board);
+                               }
                                fsm.nextState();
                            }
                            case "undoing" -> {
@@ -284,6 +290,7 @@ public class GUIHandler implements UserInterface {
                            }
                            case "cannot" -> {
                                JOptionPane.showMessageDialog(mainFrame, "Your undo request has been rejected");
+                               mainFrame.updateTextArea(fsm.getStateStringGUI());
                                outgoingMessage = checkAction(board);
                                fsm.nextState();
                            }
@@ -370,11 +377,17 @@ public class GUIHandler implements UserInterface {
         switch(fsm.getState()) {
 
             case placeworker -> {
-                mainFrame.getUndoButton().setEnabled(false);
+                mainFrame.getUndoButton().setEnabled(true);
                 for (BoardButton button : mainFrame.getActiveBoardButtons()) {
                     button.setEnabled(!button.getHaveWorker());
                 }
                 int[] coordinate = mainFrame.getChosenButtonCoordinate();
+
+                if(mainFrame.getUndo() && coordinate[0] == -1) {
+                    mainFrame.setUndo(false);
+                    return "undo";
+                }
+
                 return "placeworker " + coordinate[0] + " " + coordinate[1];
             }
 
@@ -402,8 +415,9 @@ public class GUIHandler implements UserInterface {
                 // ask to the player which worker he wants to use but don't send anything
                 for (BoardButton button : mainFrame.getActiveBoardButtons()) {
                     if ((button.getHaveWorker()) && (button.getWorkerColor() == color)) {
-                        button.setEnabled(board.workerCanMove(button.getRow()-1, button.getColumn()-1));
-                    }
+                        button.setSelectableCell(board.workerCanMove(button.getRow()-1, button.getColumn()-1));
+                    } else
+                        button.setSelectableCell(false);
                 }
 
                 int[] coordinate = mainFrame.getChosenButtonCoordinate();
@@ -420,6 +434,13 @@ public class GUIHandler implements UserInterface {
                 int[] coordinate = mainFrame.getChosenButtonCoordinate();
 
                 if(mainFrame.getUndo() && coordinate[0] == -1) {
+                    if(fsm.getLastState() == State.worker) {
+                        fsm.setState(State.worker);
+                        mainFrame.setUndo(false);
+                        checkAction(board);
+                        fsm.nextState();
+                        return checkAction(board);
+                    }
                     mainFrame.setUndo(false);
                     return "undo";
                 }

@@ -64,6 +64,7 @@ public class Controller extends Observable implements Observer {
                         if (fsm.getState() == State.move) fsm.setState(State.build);
                         row = Integer.parseInt(parts[2]) - 1;
                         column = Integer.parseInt(parts[3]) - 1;
+                        undoThread = new UndoHandler(game, this, fsm.getState());
                         actionExecuted = game.placeWorker(row, column);
                         lastAction = fsm.getState();
                     }
@@ -130,14 +131,10 @@ public class Controller extends Observable implements Observer {
             else throw new IllegalArgumentException();
 
         } catch (IllegalArgumentException | IndexOutOfBoundsException exception) {
-            game.sendBoard(new LiteBoard("Please, be sure you're using the official software: last message was unexpected or has a wrong format"));
+            game.sendBoard(new LiteBoard("Please, be sure you're using the official software since last message was unexpected or had a wrong format"));
         }
     }
 
-    /**
-     * Observer method:
-     * receives a message from the observable and parse it with the parseInput method
-     */
     @Override
     public void update(String message) {
         parseInput(message);

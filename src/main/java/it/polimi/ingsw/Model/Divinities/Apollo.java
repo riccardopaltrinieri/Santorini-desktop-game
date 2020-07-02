@@ -16,8 +16,9 @@ public class Apollo implements GodPower {
             player.getWorker(worker).move(destination);
         }
         else {
-            // If the worker wants to move in the same cell throw exception
-            if(destination == player.getWorker(worker).getPosition()) throw new IllegalArgumentException();
+            // If the worker wants to move in the same cell or in the position of the other worker owned by the player
+            if( destination == player.getWorker(0).getPosition() ||
+                destination == player.getWorker(1).getPosition()) throw new IllegalArgumentException();
 
             destination.setEmpty(true);
             if (player.getWorker(worker).canMoveTo(destination)) {
