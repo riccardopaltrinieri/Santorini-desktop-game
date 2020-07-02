@@ -47,9 +47,7 @@ public class GUIHandler implements UserInterface {
                     if (parts[1].equals(name)) {
                         JOptionPane.showMessageDialog(mainFrame, "Ops, something went wrong\n" +incomingMessage+ "\nPlease try again");
 
-                        if (parts[3].equals("place"))
-                            fsm.prevStateToPlaceWorker();
-                        else if (parts[3].equals("worker")) {
+                        if (parts[3].equals("worker")) {
                             fsm.setState(State.worker);
                             checkAction(board);
                             fsm.nextState();

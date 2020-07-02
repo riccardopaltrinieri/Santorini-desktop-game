@@ -8,6 +8,14 @@ import java.nio.channels.OverlappingFileLockException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
+/**
+ * Contains a socket which connect the client with the server. Its main role is
+ * to pass messages from server to the User Interface and vice versa writing on
+ * the log file all the messages passing through it.
+ *
+ * @see UserInterface
+ * @see Socket
+ */
 public class NetworkHandler {
 
     private final String ip;
@@ -23,9 +31,9 @@ public class NetworkHandler {
     }
 
     /**
-     * Creates a socket with the server which send a board filled with all the needed data from the game.
-     * The board is passed to the UI (which could be either on command line or graphic) that return the
-     * message to send back to the server.
+     * Receives from the socket a board filled with all the needed data from the game.
+     * The board is passed to the UI (which could be either on command line or graphic)
+     * that return the message to send back to the server. <br>
      * It also write on the log file all the incoming/outgoing messages of the client.
      * @throws IOException if an I/O error occurs when creating or reading from the socket
      */
