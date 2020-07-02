@@ -4,6 +4,12 @@ import it.polimi.ingsw.utils.*;
 import it.polimi.ingsw.Model.Game;
 import it.polimi.ingsw.View.LiteBoard;
 
+/**
+ * This controller parse all the messages coming from the sockets and if they're
+ * correct change the state of the model calling on it the corresponding method. <br>
+ * It uses an internal Finite State Machine with the sequence of actions that
+ * the current player must follow
+ */
 public class Controller extends Observable implements Observer {
 
     private final FiniteStateMachine fsm;
@@ -12,8 +18,7 @@ public class Controller extends Observable implements Observer {
     private boolean undoing;
 
     /**
-     * Constructor of the class, it sets the game to control and create a FSM
-     * which check the sequence of actions that the current player must follow
+     * Constructor of the class, it sets the game to control and create the FSM
      */
     public Controller (Game game) {
         fsm = new FiniteStateMachine();
@@ -21,9 +26,9 @@ public class Controller extends Observable implements Observer {
     }
 
     /**
-     * Parses the input message from the client and calls the matching methods
-     * it also checks if the client is following the right path
-     * @param message == "player action row column"
+     * Parses the input message from the client and calls the matching methods.
+     * It also checks if the client is following the right path
+     * @param message should be "player name action row column"
      */
     public synchronized void parseInput(String message) {
 
@@ -64,6 +69,7 @@ public class Controller extends Observable implements Observer {
                         if (fsm.getState() == State.move) fsm.setState(State.build);
                         row = Integer.parseInt(parts[2]) - 1;
                         column = Integer.parseInt(parts[3]) - 1;
+                        undoThread = new UndoHandler(game, this, fsm.getState());
                         actionExecuted = game.placeWorker(row, column);
                         lastAction = fsm.getState();
                     }
@@ -130,14 +136,10 @@ public class Controller extends Observable implements Observer {
             else throw new IllegalArgumentException();
 
         } catch (IllegalArgumentException | IndexOutOfBoundsException exception) {
-            game.sendBoard(new LiteBoard("Please, be sure you're using the official software: last message was unexpected or has a wrong format"));
+            game.sendBoard(new LiteBoard("Please, be sure you're using the official software since last message was unexpected or had a wrong format"));
         }
     }
 
-    /**
-     * Observer method:
-     * receives a message from the observable and parse it with the parseInput method
-     */
     @Override
     public void update(String message) {
         parseInput(message);

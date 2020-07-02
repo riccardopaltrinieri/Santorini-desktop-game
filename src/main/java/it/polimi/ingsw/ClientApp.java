@@ -1,6 +1,5 @@
 package it.polimi.ingsw;
 
-import it.polimi.ingsw.Network.Server;
 import it.polimi.ingsw.View.CLInterface;
 import it.polimi.ingsw.View.GUIHandler;
 import it.polimi.ingsw.View.NetworkHandler;
@@ -10,7 +9,6 @@ import org.json.simple.parser.ParseException;
 
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Scanner;
 
 public class ClientApp {
 
@@ -24,7 +22,7 @@ public class ClientApp {
             Object obj = parser.parse(new FileReader(confFilePath));
             JSONObject jsonObject = (JSONObject) obj;
             String port1 = (String) jsonObject.get("port");
-            port = Integer.valueOf(port1);
+            port = Integer.parseInt(port1);
             ip = (String) jsonObject.get("ip");
 
         } catch (ParseException | IOException e) {
@@ -39,8 +37,7 @@ public class ClientApp {
                     connection.setUserInterface(CLI);
                     connection.run();
 
-                } catch (IOException e) {
-                    System.err.println(e.getMessage());
+                } catch (IOException ignored) {
                 }
             } else {
                 System.out.println("You can use the parameter -cli to use the command line interface");
@@ -54,7 +51,7 @@ public class ClientApp {
                     connection.run();
                 }
                 catch (IOException e){
-                    System.err.println(e.getMessage());
+                    System.err.println("Close the window to stop the app..");
                 }
             }
 

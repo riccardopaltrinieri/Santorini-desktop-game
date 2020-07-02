@@ -120,7 +120,7 @@ public class Server {
      * When a connection ends or the third player loses we use the deregister
      * @param c is the connection
      */
-    public synchronized void deregisterConnection(Connection c) {
+    public synchronized void unregisterConnection(Connection c) {
         if (playingConnection.size() == 3) {
             for (Connection conn : connections) {
                 if (c.equals(playingConnection.get(conn))) {
@@ -257,23 +257,6 @@ public class Server {
         }
     }
 
-    /**
-     * This method ends the game
-     */
-    public synchronized void endGame() {
-        for (Connection conn : connections) {
-            conn.closeConnection();
-        }
-        waitingConnection.clear();
-        connections.clear();
-        playingConnection.clear();
-        divinities.clear();
-        divinityPlayer.clear();
-    }
-
-    /**
-     * @return true if the game has started
-     */
     public boolean gameHasStarted() {
         return startGame;
     }
@@ -285,11 +268,6 @@ public class Server {
     public int getNumPlayers() {
         return numPlayers;
     }
-
-    public int dimConnections(){
-        return connections.size();
-    }
-
 
     /**
      * Check if the name there is in the waitingConnection or not. If there isn't the client has to reinsert it.
@@ -324,10 +302,10 @@ public class Server {
                     c.send(new LiteBoard("Wrong name, reinsert it.. "));
             }
         } catch (IOException e) {
-            System.out.println("Client has disconnected while chooses first player");
+            System.out.println("Client has disconnected while choosing first player");
             for (Connection conn : connections) {
                 conn.send(new LiteBoard("First client has disconnected while choosing first player"));
-                conn.closeConnection();
+                conn.close();
             }
         }
     }
@@ -359,17 +337,36 @@ public class Server {
                 }
 
 
-    } catch (IOException e){
-        System.out.println(e.getMessage());
+        } catch (IOException e){
+            System.out.println(e.getMessage());
+        }
     }
 
-
-}
-
+    /**
+     * Method called when the the read() on the socket times out. It send a message to other players
+     * and close all the other connections.
+     * @param name of the player disconnected
+     */
     public void timeout(String name) {
         for (Connection conn: connections) {
             conn.send(new LiteBoard("Timeout: " + name + "took too much time to decide. Game over."));
+            conn.close();
         }
+    }
+
+    /**
+     * This method ends the game and close all the connection
+     */
+    public synchronized void endGame() {
+        for (Connection conn : connections) {
+            conn.send(new LiteBoard("Client disconnected: the game ends without a winner"));
+            conn.close();
+        }
+        waitingConnection.clear();
+        connections.clear();
+        playingConnection.clear();
+        divinities.clear();
+        divinityPlayer.clear();
     }
 }
 

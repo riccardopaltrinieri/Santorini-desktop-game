@@ -2,9 +2,16 @@ package it.polimi.ingsw.Controller;
 
 import it.polimi.ingsw.utils.Divinity;
 
+/**
+ * A Finite State Machine that represents the actions that every player must do
+ * in his turn. <br>
+ * The default turn is start -> move -> build -> end but every god can make a different
+ * path with a superMove, a superBuild or repeating the move/build state a second time
+ */
 class FiniteStateMachine {
 
     private State state;
+    private State lastState;
     private Divinity divinity;
     private boolean again;
 
@@ -21,6 +28,8 @@ class FiniteStateMachine {
      * @throws IllegalStateException when the divinity is not recognized
      */
     protected void nextState() throws IllegalStateException {
+
+        lastState = state;
 
         if(state == State.endTurn) {
             setState(State.start);
@@ -81,58 +90,24 @@ class FiniteStateMachine {
         }
     }
 
-    protected void prevState() throws IllegalStateException {
+    /**
+     * Go back to the previous state according to the player's divinity path
+     */
+    protected void prevState() {
 
-        switch (this.divinity) {
+        if (divinity != Divinity.Prometheus) setState(lastState);
 
-            case Default:
-                if (state == State.move) state = State.start;
-                else if (state == State.build) state = State.move;
-                else if (state == State.endTurn) state = State.build;
-                break;
-
-            case Apollo:
-            case Athena:
-            case Minotaur:
-            case Pan:
-                if (state == State.superMove) state = State.start;
-                else if (state == State.build) state = State.superMove;
-                else if (state == State.endTurn) state = State.build;
-                break;
-
-            case Artemis:
-                if (state == State.superMove) state = State.start;
-                else if (state == State.secondTimeState) state = State.superMove;
-                else if (state == State.build) state = State.secondTimeState;
-                else if (state == State.endTurn) state = State.build;
-                break;
-
-            case Atlas:
-            case Hephaestus:
-                if (state == State.move) state = State.start;
-                else if (state == State.superBuild) state = State.move;
-                else if (state == State.endTurn) state = State.superBuild;
-                break;
-
-            case Demeter:
-                if (state == State.move) state = State.start;
-                else if (state == State.superBuild) state = State.move;
-                else if (state == State.secondTimeState) state = State.superBuild;
-                else if (state == State.endTurn) state = State.secondTimeState;
-                break;
-
-            case Prometheus:
-                if (state == State.superMove) {
-                    again = false;
-                    state = State.build;
-                } else if (state == State.build) {
-                    if (again) state = State.superMove;
-                    else state = State.start;
-                } else if (state == State.endTurn) {
-                    again = true;
-                    state = State.build;
-                }
-                break;
+        else {
+            if (state == State.superMove) {
+                again = false;
+                setState(State.build);
+            } else if (state == State.build) {
+                if (again) setState(State.superMove);
+                else setState(State.start);
+            } else if (state == State.endTurn) {
+                again = true;
+                setState(State.build);
+            }
         }
     }
 

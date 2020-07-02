@@ -4,28 +4,22 @@ import it.polimi.ingsw.utils.Color;
 import it.polimi.ingsw.utils.Divinity;
 import it.polimi.ingsw.utils.InputString;
 
+import javax.swing.*;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class CLInterface implements UserInterface {
 
-    private final FSMView fsm = new FSMView();
+    private final FSMView fsm;
     private String name;
     private Divinity divinity;
     private int worker;
     private Color color;
 
     public CLInterface(){
+        this.fsm = new FSMView();
     }
 
-    /**
-     * Method that get as input the board to show to the player and asks to him to write
-     * the action he must execute in that moment, according to an internal Finite State Machine
-     * which follow the identical one on the server.
-     * The action inserted by the player is returned to be sent to the server
-     * @param board that will be showed to the player based on the message written in it
-     * @return the action of the player already checked
-     */
     @Override
     public String update(LiteBoard board) {
         String incomingMessage = board.getMessage();
@@ -37,8 +31,6 @@ public class CLInterface implements UserInterface {
             String[] parts = incomingMessage.split(" ");
             String firstWord = parts[0];
 
-            // board.printBoardCLI();
-            // Assign the divinity to the fsm
             switch (firstWord) {
                 case "Welcome!":
                     // Asks the name of the player
@@ -74,6 +66,7 @@ public class CLInterface implements UserInterface {
 
                     if(parts[1].equals(name)) {
 
+                        // Nothing changed, no need to reprint the board
                         if (fsm.getState() != State.start && fsm.getState() != State.worker && fsm.getState() != State.move) board.printBoardCLI();
 
                         if (fsm.getState() == State.worker) {
@@ -84,21 +77,31 @@ public class CLInterface implements UserInterface {
                         }
 
                         if (fsm.getState() == State.start && (divinity == Divinity.Athena || divinity == Divinity.Pan)) {
-                            // The Athena's and Pan's power are passive and there isn't the need to ask
+                            // The Athena's and Pan's power are passive and there is no need to ask
                             outgoingMessage = "usepower";
-                        } else {
+                        }
+                        else {
                             System.out.println(fsm.getStateStringCLI());
                             outgoingMessage = checkAction(stdin);
                         }
 
                         if(!outgoingMessage.equals("undo")) fsm.nextState();
+                        else if (fsm.getState() == State.worker) {
+                            // If the player want to reselect the worker it asks again to choose it and ask next action
+                            outgoingMessage = update(board);
+                        }
 
                     } else {
+                        // If someone else is starting the turn write it
                         if(parts[2].equals("update")) System.out.println(parts[1] +"'s turn: ");
                         else {
-                            if(!parts[2].equals("wants") && !parts[2].equals("doesn't")) board.printBoardCLI();
-                            System.out.println(incomingMessage.substring(7));
+                            // If someone else did something reprint the board and write what happened
+                            if(!parts[2].equals("wants") && !parts[2].equals("doesn't")){
+                                board.printBoardCLI();
+                                System.out.println(incomingMessage.substring(7));
+                            }
                         }
+                        // But don't send anything
                         outgoingMessage = "noMessageToSend";
                     }
                     break;
@@ -125,9 +128,8 @@ public class CLInterface implements UserInterface {
                         System.out.println(incomingMessage);
                         System.out.println("Please, try again:");
 
-                        if (parts[3].equals("place"))
-                            fsm.prevStateToPlaceWorker();
-                        else if (parts[3].equals("worker")) {
+                        // The worker choice is different from other actions
+                        if (parts[3].equals("worker")) {
                             fsm.setState(State.worker);
                             System.out.println("Choose again the worker: ");
                             checkWorker(stdin, board);
@@ -147,10 +149,16 @@ public class CLInterface implements UserInterface {
                     if(parts[1].equals(name)) {
                         switch (parts[2]) {
                             case "undid" -> {
+                                // The undo action was successful so it asks again to make the action
                                 fsm.prevState();
                                 board.printBoardCLI();
                                 System.out.println(fsm.getStateStringCLI());
                                 outgoingMessage = checkAction(stdin);
+                                while (outgoingMessage.equals("undo")) {
+                                    System.out.println("You can undo only last action, please continue with the play");
+                                    System.out.println(fsm.getStateStringCLI());
+                                    outgoingMessage = checkAction(stdin);
+                                }
                                 fsm.nextState();
                             }
                             case "undoing" -> {
@@ -158,6 +166,7 @@ public class CLInterface implements UserInterface {
                                 outgoingMessage = "noMessageToSend";
                             }
                             case "cannot" -> {
+                                // The player asked the undo too late, it goes with the scheduled action
                                 System.out.println("Your undo request has been rejected");
                                 System.out.println(fsm.getStateStringCLI());
                                 outgoingMessage = checkAction(stdin);
@@ -202,16 +211,18 @@ public class CLInterface implements UserInterface {
                 case "This":
                 case "You":
                 case "Wrong" :
+                    // Something has to be rewrite
                     System.out.println(incomingMessage);
                     outgoingMessage = stdin.nextLine();
                     break;
 
                 case "First":
                 case "Client":
+                    // There was an error and the game end here
                     System.out.println(incomingMessage);
-                    throw new NoSuchElementException();
+                    throw new NoSuchElementException(incomingMessage);
 
-                case "Timeout":
+                case "Timeout:":
                     if (parts[1].equals(name)) {
                        System.out.println("You took to much time to answer, you lose..");
                         throw new NoSuchElementException();
@@ -222,12 +233,14 @@ public class CLInterface implements UserInterface {
                     break;
 
                 default:
+                    // Case of other messages that don't need an answer and can be printed
                     System.out.println(incomingMessage);
                     outgoingMessage = "noMessageToSend";
                     break;
             }
 
-            if(outgoingMessage.equals("Error")) throw new IllegalArgumentException();
+            // If none modified the outgoingMessage there was an UNEXPECTED error and the game end
+            if(outgoingMessage.equals("Error")) throw new IllegalArgumentException("Unexpected Error in Command Line Interface");
 
         } catch(IllegalArgumentException e) {
             e.printStackTrace();
@@ -236,6 +249,10 @@ public class CLInterface implements UserInterface {
         return outgoingMessage;
     }
 
+    /**
+     * Asks the user to select a worker, then check if the input is right and if the selected worker can move.
+     * If it can't asks again to choose.
+     */
     private void checkWorker(Scanner stdin, LiteBoard board) {
 
         while (true) {
@@ -243,9 +260,10 @@ public class CLInterface implements UserInterface {
                 String inputLine = stdin.nextLine();
                 String[] partsInput = inputLine.split(" ");
                 InputString action = InputString.valueOf(partsInput[0].toLowerCase());
-                int worker = Integer.parseInt(partsInput[1]);
 
                 if (!(action == InputString.worker)) throw new IllegalArgumentException("you should write 'worker [num]'");
+                if (partsInput.length != 2) throw new IllegalArgumentException("you should write 'worker [num]'");
+                int worker = Integer.parseInt(partsInput[1]);
                 if (!(worker == 1) && !(worker == 2)) throw new IllegalArgumentException("you only have 2 workers");
                 if (!board.workerCanMoveCLI(worker, color.ordinal())) throw new IllegalArgumentException(" this worker can't move");
                 setWorker(worker);
@@ -323,13 +341,12 @@ public class CLInterface implements UserInterface {
                         if(fsm.getState() != State.endTurn) throw new IllegalArgumentException("you should not end your turn now");
                     }
                     case undo -> {
-                        if(fsm.getState() == State.start || fsm.getState() == State.placeworker || fsm.getState() == State.worker)
+                        if(fsm.getState() == State.start || fsm.getState() == State.worker)
                             throw new IllegalArgumentException("You can't undo your action now");
+                        if(fsm.getLastState() == State.worker) fsm.setState(State.worker);
                     }
                     default -> throw new IllegalArgumentException();
                 }
-
-                // Save all the messages in a log file
 
                 // If the input is correct it can be send
                 return inputLine.toLowerCase();

@@ -84,17 +84,16 @@ public class FSMViewTest {
     @Test
     public void prevState() {
 
-        // If the player is placing worker the function to call is different
         fsm.setState(State.placeworker);
         fsm.nextState();
-        fsm.prevStateToPlaceWorker();
+        fsm.prevState();
         assertEquals(State.placeworker, fsm.getState());
         fsm.nextState();
         fsm.nextState();
         assertEquals(State.endTurn, fsm.getState());
-        fsm.prevStateToPlaceWorker();
+        fsm.prevState();
         assertEquals(State.placeworker, fsm.getState());
-        fsm.prevStateToPlaceWorker();
+        fsm.prevState();
         assertEquals(State.placeworker, fsm.getState());
 
         // Check of the divinities who follow a normal path

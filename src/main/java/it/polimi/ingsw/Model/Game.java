@@ -6,6 +6,21 @@ import it.polimi.ingsw.utils.*;
 
 import java.util.ArrayList;
 
+/**
+ * The main Model class of the project, it contains the references to the players, their workers
+ * and the board of the game.
+ * For every message coming from the clients the corresponding method is called to change the
+ * state of data and move the workers or build somewhere on the board.
+ * The basic rules are: <br>
+ * _ {@link Player} take turns, starting with the Start Player, who first placed his {@link Worker}.
+ * On their turn, they select one of their workers and must move and then build with it. <br>
+ * _ If one Workers moves up on top of level 3 during the turn, the player instantly wins! <br>
+ * _ A player must always perform a move then build on his turn. If he is unable to, he loses.
+ *
+ * @see it.polimi.ingsw.Controller.Controller
+ * @see Player
+ * @see Worker
+ */
 public class Game extends Observable implements Originator {
 
     private int numPlayer;
@@ -15,17 +30,22 @@ public class Game extends Observable implements Originator {
     private Boolean canMoveUp;
 
     /**
-     * Create an object that store the copy of the model’s state. The contents of the memento
+     * An object that store the copy of the model’s state. The contents of the memento
      * aren’t accessible to any other object except the one that produced it.
-     * This object can be used after some changes to restore the previous state.
      * @see Originator
      * @see CareTaker
+     * @see #Memento(Game)
      */
     private static class Memento {
         public final Board board;
         public final ArrayList<Player> players;
         public Boolean canMoveUp;
 
+        /**
+         * Create a {@link Memento} object that can be used after some changes to restore the previous state.
+         * @param game is the originator of this memento object
+         * @see Memento
+         */
         private Memento(Game game) {
             this.canMoveUp = game.getCanMoveUp();
 
@@ -243,14 +263,13 @@ public class Game extends Observable implements Originator {
     }
 
     /**
-     * @return the player who's playing the current turn name
+     * @return the name of the player who's playing the current turn
      */
     public String getCurrentPlayerName() {
         return players.get(iterator).getName();
     }
 
 //  ******************* GETTER AND SETTER *************************************
-
 
     public ArrayList<Player> getPlayers() {
         return players;

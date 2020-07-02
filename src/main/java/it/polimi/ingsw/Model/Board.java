@@ -1,7 +1,8 @@
 package it.polimi.ingsw.Model;
 
 /**
- * This is the board of the game
+ * This is the board of the game, it is represented with a matrix of {@link Cell}s and
+ * can contain buildings and workers
  */
 public class Board {
     private static final int numRow=5;

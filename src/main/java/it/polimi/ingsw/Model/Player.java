@@ -5,6 +5,12 @@ import it.polimi.ingsw.utils.Color;
 
 import java.util.ArrayList;
 
+/**
+ * A class containing all the data of a game player like his name, color, the god power
+ * he chose at the start of the game and his workers.
+ * @see Game
+ * @see Worker
+ */
 public class Player {
 
     private final String name;
@@ -43,7 +49,7 @@ public class Player {
 
     /**
      * Examine the cell around the player's workers
-     * @return true if the player can make any move
+     * @return true if the player can make at least one move
      */
     public boolean canMove() {
 
@@ -53,8 +59,8 @@ public class Player {
     }
 
     /**
-     * Examine the cell around a worker
-     * @return true if is there an empty cell around the worker
+     * Examine the cell around a worker to check if he can move
+     * @return true if is there at least one cell around the worker where he can move
      */
     public boolean workerCanMove(int worker) {
 

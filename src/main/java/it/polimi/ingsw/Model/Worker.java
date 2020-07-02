@@ -3,6 +3,14 @@ package it.polimi.ingsw.Model;
 import it.polimi.ingsw.AthenaException;
 import it.polimi.ingsw.Model.Divinities.Pan;
 
+/**
+ * Class that represents a worker on a board. It contains the owner reference and the position
+ * on the board. A Worker may move up a maximum of one level higher, move down any number of levels
+ * lower, or move along the same level. A Worker may not move up more than one level. <br>
+ * The space your Worker moves into must neighbor him and be unoccupied (not containing a Worker or a Dome. <br>
+ * Also it can build a block or a dome on an neighboring and unoccupied space at any level if he was
+ * the one who moved in the player turn
+ */
 public class Worker {
 
     private Cell position;
@@ -61,9 +69,9 @@ public class Worker {
     }
 
     /**
-     * the destination must be inside the board, one of the 8 cell adiacent the worker,
-     * not the same cell as worker's position, can be maximum one level higher or zero level higher if athena's power is active
-     *
+     * the destination must be inside the board, one of the 8 cell neighboring the worker, not the
+     * same cell as worker's position, can be maximum one level higher (or zero level higher if
+     * athena's power is active)
      * @param destination is the cell that you want to know if it's reachable
      * @return true if the cell is reachable or false if it's not
      */

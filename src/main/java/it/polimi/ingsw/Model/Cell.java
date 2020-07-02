@@ -2,9 +2,12 @@ package it.polimi.ingsw.Model;
 
 import java.io.Serializable;
 
+/**
+ * A cell of the game board: it may contains a building represented with levels and a worker
+ */
 public class Cell implements Serializable {
-    private int numRow;
-    private int numColumn;
+    private final int numRow;
+    private final int numColumn;
     private int level;
     private boolean isEmpty;
 

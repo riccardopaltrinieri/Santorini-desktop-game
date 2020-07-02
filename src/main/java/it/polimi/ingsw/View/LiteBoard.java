@@ -81,7 +81,7 @@ public class LiteBoard implements Serializable {
 
                     } else if (boardRow == -1) {
                         // Print the number of the columns on the bottom
-                        if (cellRow == 1) System.out.print("   " + (col + 1) + "    ");
+                        if (cellRow == 1) System.out.print("    " + (col + 1) + "    ");
                     } else {
                         // Print the first and third line of the cell using the level number
                         if (cellRow == 0 || cellRow == 2) System.out.print("|" + getLevelTD(boardRow, col) + "|");
@@ -111,18 +111,18 @@ public class LiteBoard implements Serializable {
                     int color = posWorker[worker][2];
                     worker = worker % 2 + 1;    // Show the number of worker that will be 1 or 2
 
-                    return getLevelLR(row, col) + " " + Color.toANSICode(color) + "W" + worker + Color.RESET + ' ' + getLevelLR(row, col);
+                    return getLevelLR(row, col) + " " + Color.intToFirstLetter(color) + "W" + worker + ' ' + getLevelLR(row, col);
                 }
             }
         }
-        return getLevelLR(row, col) + "    " + getLevelLR(row, col);
+        return getLevelLR(row, col) + "     " + getLevelLR(row, col);
     }
 
     /**
      * return 7 numbers to fill the Top and Down of the board cell
      */
     private String getLevelTD(int row, int col){
-        return String.valueOf(levels[row][col]).repeat(6);
+        return String.valueOf(levels[row][col]).repeat(7);
     }
     /**
      * return a number to fill the Left and Right of the board cell
@@ -132,9 +132,12 @@ public class LiteBoard implements Serializable {
     }
 
     private void printBoardLine(){
-        System.out.println("      +------++------++------++------++------+");
+        System.out.println("      +-------++-------++-------++-------++-------+");
     }
 
+    /**
+     * @return true if the worker in the cell can move, false otherwise
+     */
     public boolean workerCanMove(int rowWorker, int colWorker) {
 
         //check all the cells from the one top-left to the one down-right, if just one is ok the worker can move
@@ -165,6 +168,10 @@ public class LiteBoard implements Serializable {
         return false;
     }
 
+    /**
+     * Same as {@link #workerCanMove(int, int)} but giving as parameter the player relative
+     * number of the worker and the player's color
+     */
     public boolean workerCanMoveCLI(int worker, int color) {
         for (int w = 0; w < numAllWorker; w ++) {
             if (w % 2 == (worker-1) && posWorker[w][2] == color) {

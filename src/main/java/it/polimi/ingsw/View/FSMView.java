@@ -3,7 +3,9 @@ package it.polimi.ingsw.View;
 import it.polimi.ingsw.utils.Divinity;
 
 public class FSMView {
+
     private State state;
+    private State lastState;
     private Divinity divinity;
     private boolean again;
     private String godName;
@@ -52,6 +54,8 @@ public class FSMView {
      * @throws IllegalStateException when the divinity is not recognized
      */
     protected void nextState() throws IllegalStateException {
+
+        lastState = state;
 
         if (state == State.placeworker) {
             setStateAfterTwoTimes(State.endTurn);
@@ -111,6 +115,11 @@ public class FSMView {
 
     protected void prevState() {
 
+        if(lastState == State.placeworker) {
+            setState(lastState);
+            again = !again;
+        }
+
         switch (this.divinity) {
 
             case Default:
@@ -161,14 +170,6 @@ public class FSMView {
         }
     }
 
-    protected void prevStateToPlaceWorker() {
-        if(state == State.endTurn) {
-            state = State.placeworker;
-            again = true;
-        } else
-            again = false;
-    }
-
     private void setStateAfterTwoTimes(State newState) {
         if (!again) {
             again = true;
@@ -178,7 +179,7 @@ public class FSMView {
         }
     }
 
-    protected void resetTwoTimesState(State oldState, boolean toSecondTime) {
+    private void resetTwoTimesState(State oldState, boolean toSecondTime) {
         if(toSecondTime) {
             again = true;
             state = oldState;
@@ -192,6 +193,10 @@ public class FSMView {
 
     public State getState() {
         return state;
+    }
+
+    public State getLastState() {
+        return lastState;
     }
 
     protected void setState(State state) {
