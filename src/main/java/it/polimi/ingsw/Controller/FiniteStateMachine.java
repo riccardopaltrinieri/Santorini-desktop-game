@@ -2,6 +2,12 @@ package it.polimi.ingsw.Controller;
 
 import it.polimi.ingsw.utils.Divinity;
 
+/**
+ * A Finite State Machine that represents the actions that every player must do
+ * in his turn. <br>
+ * The default turn is start -> move -> build -> end but every god can make a different
+ * path with a superMove, a superBuild or repeating the move/build state a second time
+ */
 class FiniteStateMachine {
 
     private State state;
@@ -84,9 +90,10 @@ class FiniteStateMachine {
         }
     }
 
-    protected void prevState() throws IllegalStateException {
-
-        switch (this.divinity) {
+    /**
+     * Go back to the previous state according to the player's divinity path
+     */
+    protected void prevState() {
 
         if (divinity != Divinity.Prometheus) setState(lastState);
 

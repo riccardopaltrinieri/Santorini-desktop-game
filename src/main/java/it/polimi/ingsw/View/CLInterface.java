@@ -4,28 +4,22 @@ import it.polimi.ingsw.utils.Color;
 import it.polimi.ingsw.utils.Divinity;
 import it.polimi.ingsw.utils.InputString;
 
+import javax.swing.*;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class CLInterface implements UserInterface {
 
-    private final FSMView fsm = new FSMView();
+    private final FSMView fsm;
     private String name;
     private Divinity divinity;
     private int worker;
     private Color color;
 
     public CLInterface(){
+        this.fsm = new FSMView();
     }
 
-    /**
-     * Method that get as input the board to show to the player and asks to him to write
-     * the action he must execute in that moment, according to an internal Finite State Machine
-     * which follow the identical one on the server.
-     * The action inserted by the player is returned to be sent to the server
-     * @param board that will be showed to the player based on the message written in it
-     * @return the action of the player already checked
-     */
     @Override
     public String update(LiteBoard board) {
         String incomingMessage = board.getMessage();
@@ -242,6 +236,10 @@ public class CLInterface implements UserInterface {
         return outgoingMessage;
     }
 
+    /**
+     * Asks the user to select a worker, then check if the input is right and if the selected worker can move.
+     * If it can't asks again to choose.
+     */
     private void checkWorker(Scanner stdin, LiteBoard board) {
 
         while (true) {

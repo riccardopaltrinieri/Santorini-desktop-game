@@ -4,6 +4,12 @@ import it.polimi.ingsw.utils.*;
 import it.polimi.ingsw.Model.Game;
 import it.polimi.ingsw.View.LiteBoard;
 
+/**
+ * This controller parse all the messages coming from the sockets and if they're
+ * correct change the state of the model calling on it the corresponding method. <br>
+ * It uses an internal Finite State Machine with the sequence of actions that
+ * the current player must follow
+ */
 public class Controller extends Observable implements Observer {
 
     private final FiniteStateMachine fsm;
@@ -12,8 +18,7 @@ public class Controller extends Observable implements Observer {
     private boolean undoing;
 
     /**
-     * Constructor of the class, it sets the game to control and create a FSM
-     * which check the sequence of actions that the current player must follow
+     * Constructor of the class, it sets the game to control and create the FSM
      */
     public Controller (Game game) {
         fsm = new FiniteStateMachine();
@@ -21,9 +26,9 @@ public class Controller extends Observable implements Observer {
     }
 
     /**
-     * Parses the input message from the client and calls the matching methods
-     * it also checks if the client is following the right path
-     * @param message == "player action row column"
+     * Parses the input message from the client and calls the matching methods.
+     * It also checks if the client is following the right path
+     * @param message should be "player name action row column"
      */
     public synchronized void parseInput(String message) {
 

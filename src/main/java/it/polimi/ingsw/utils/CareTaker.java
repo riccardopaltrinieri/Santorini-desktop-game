@@ -1,7 +1,6 @@
 package it.polimi.ingsw.utils;
 
 /**
- * (From https://en.wikipedia.org/wiki/Memento_pattern)
  * A caretaker can request a memento from the originator (to save its internal state) through the method {@link #save(Originator)}
  * and pass a memento back to the originator (to restore to a previous state) through the method {@link #undo(Originator)}.
  *

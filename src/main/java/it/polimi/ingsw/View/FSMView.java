@@ -55,6 +55,8 @@ public class FSMView {
      */
     protected void nextState() throws IllegalStateException {
 
+        lastState = state;
+
         if (state == State.placeworker) {
             setStateAfterTwoTimes(State.endTurn);
             return;
@@ -112,6 +114,11 @@ public class FSMView {
     }
 
     protected void prevState() {
+
+        if(lastState == State.placeworker) {
+            setState(lastState);
+            again = !again;
+        }
 
         switch (this.divinity) {
 
@@ -194,6 +201,10 @@ public class FSMView {
 
     public State getState() {
         return state;
+    }
+
+    public State getLastState() {
+        return lastState;
     }
 
     protected void setState(State state) {
