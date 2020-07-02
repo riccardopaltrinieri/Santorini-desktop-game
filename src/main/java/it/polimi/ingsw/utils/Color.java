@@ -24,4 +24,13 @@ public enum Color {
             default -> throw new IllegalArgumentException("Color must be 0|1|2");
         };
     }
+
+    public static String intToFirstLetter(int col) {
+        return switch (col) {
+            case 0 -> "W";
+            case 1 -> "P";
+            case 2 -> "R";
+            default -> throw new IllegalArgumentException("Color must be 0|1|2");
+        };
+    }
 }

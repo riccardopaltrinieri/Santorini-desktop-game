@@ -7,6 +7,13 @@ import it.polimi.ingsw.utils.CareTaker;
 
 import static java.lang.Thread.sleep;
 
+/**
+ * Thread that save the state of the game, sleep for 5 second and when wake up
+ * check if the client asked for the undo option. <br>
+ * If true restore the previous state on the game, else does nothing
+ *
+ * @see CareTaker
+ */
 class UndoHandler extends CareTaker implements Runnable{
 
     private final Game game;
@@ -14,6 +21,11 @@ class UndoHandler extends CareTaker implements Runnable{
     private final State state;
     private final Player player;
 
+    /**
+     * Create the thread with current state and needed parameters
+     *
+     * @see UndoHandler
+     */
     public UndoHandler(Game game, Controller controller, State state) {
         this.game = game;
         this.controller = controller;
@@ -22,6 +34,9 @@ class UndoHandler extends CareTaker implements Runnable{
         save(game);
     }
 
+    /**
+     * @see UndoHandler
+     */
     @Override
     public void run() {
         try {

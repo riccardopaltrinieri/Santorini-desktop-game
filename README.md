@@ -1,4 +1,4 @@
-﻿# Prova Finale Ingegneria del Software 2020
+﻿﻿# Prova Finale Ingegneria del Software 2020
 ## Gruppo GC23
 
 - ###      Riccardo Paltrinieri ([@riccardopaltrinieri](https://github.com/riccardopaltrinieri))
@@ -42,6 +42,7 @@ In [deliverables](https://github.com/riccardopaltrinieri/ing-sw-2020-paltrinieri
 | Undo | [![GREEN](https://placehold.it/15/44bb44/44bb44)](#)|
 | Multiple games | [![RED](https://placehold.it/15/f03c15/f03c15)](#) |
 | Advanced god | [![RED](https://placehold.it/15/f03c15/f03c15)](#) |
+| Persistent games | [![RED](https://placehold.it/15/f03c15/f03c15)](#) |
 
 
 <!--
@@ -69,14 +70,18 @@ The default is: <br>
   "ip": "127.0.0.1"<br>
 }
 
-###Test
+### Test
 
-##Overall Coverage Summary
+## Overall Coverage Summary
+
 | Package | Class, % | Method, % | Line, % |
+|:------------|:-----------|:-----------------|:-------------------:|
 | all classes | 64,2% (34/ 53) | 52,1% (149/ 286) | 39,2% (760/ 1940) |
 
-##Coverage Breakdown
+## Coverage Breakdown
+
 | Package | Class, % | Method, % | Line, % |
+|:------------|:-----------|:-----------------|:-------------------:|
 | it.polimi.ingsw | 33,3% (1/ 3) | 20% (1/ 5) | 4,2% (2/ 48) |
 | it.polimi.ingsw.Controller | 100% (6/ 6) | 100% (20/ 20) | 98,8% (167/ 169) |
 | it.polimi.ingsw.Model | 100% (6/ 6) |	100% (58/ 58) |	100% (256/ 256) |

@@ -170,14 +170,6 @@ public class FSMView {
         }
     }
 
-    protected void prevStateToPlaceWorker() {
-        if(state == State.endTurn) {
-            state = State.placeworker;
-            again = true;
-        } else
-            again = false;
-    }
-
     private void setStateAfterTwoTimes(State newState) {
         if (!again) {
             again = true;
@@ -187,7 +179,7 @@ public class FSMView {
         }
     }
 
-    protected void resetTwoTimesState(State oldState, boolean toSecondTime) {
+    private void resetTwoTimesState(State oldState, boolean toSecondTime) {
         if(toSecondTime) {
             again = true;
             state = oldState;
