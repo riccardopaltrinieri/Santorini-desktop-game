@@ -40,6 +40,8 @@ public class MainFrame extends JFrame{
 
     private BoardButton chosenButton;
 
+    private final Font font = new Font("Times New Roman",Font.PLAIN,16);
+
     public void startingInit(){
         backgroundLabel.setIcon(background);
         add(backgroundLabel);
@@ -64,6 +66,7 @@ public class MainFrame extends JFrame{
         lim.gridheight=2;
         lim.gridwidth=3;
         layout.setConstraints(playerInfoTextArea,lim);
+        playerInfoTextArea.setFont(font);
         mainPanel.add(playerInfoTextArea);
         playerInfoTextArea.setEditable(false);
 
@@ -73,9 +76,9 @@ public class MainFrame extends JFrame{
         lim.gridheight=2;
         lim.fill=GridBagConstraints.HORIZONTAL;
         bottomPanel.setLayout(new BorderLayout(10,100));
+        textArea.setFont(font);
         textPanel.add(textArea);
         bottomPanel.add(textPanel, BorderLayout.WEST);
-
         bottomPanel.add(yesOrNoPanel,BorderLayout.CENTER);
 
         endTurnButton.setEnabled(false);
@@ -122,26 +125,6 @@ public class MainFrame extends JFrame{
         lim.gridheight=7;
         layout.setConstraints(mapPanel,lim);
         mainPanel.add(mapPanel);
-
-        /*lim.gridx=4;
-        lim.gridy=8;
-        lim.gridwidth=3;
-        lim.gridheight=1;
-        layout.setConstraints(yesOrNoPanel,lim);
-        yesOrNoPanel.setPreferredSize(new Dimension(200,50));
-        yesOrNoPanel.setLayout(new BorderLayout());
-        mainPanel.add(yesOrNoPanel);*/
-
-        /*lim.gridx=8;
-        lim.gridwidth=1;
-        lim.weightx=100;
-        endTurnButton.setEnabled(false);
-        layout.setConstraints(endTurnButton,lim);
-        mainPanel.add(endTurnButton);
-        lim.gridx=9;
-        layout.setConstraints(undoButton,lim);
-        undoButton.setEnabled(false);
-        mainPanel.add(undoButton);*/
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setTitle("Santorini Game");

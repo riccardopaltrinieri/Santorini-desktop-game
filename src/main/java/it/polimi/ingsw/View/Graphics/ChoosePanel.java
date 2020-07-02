@@ -7,22 +7,22 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class ChoosePanel extends JPanel{
-
-    private JPanel godPanel = new JPanel();
-    private JPanel centerPanel = new JPanel();
-    private JPanel comboPanel = new JPanel();
+    private final Color backGroundColor = new Color(0,0,0,5);
+    private final JPanel godPanel = new JPanel();
+    private final JPanel centerPanel = new JPanel();
+    private final JPanel comboPanel = new JPanel();
 
     private String chosenDivinity;
     private String divinityNumber="first";
     private ArrayList<String> divinityString= new ArrayList<String>();
 
-    private JTextArea godInfoText = new JTextArea();
-    private JTextArea infoText = new JTextArea("Decide your "+ divinityNumber +" Divinity");
+    private final JTextArea godInfoText = new JTextArea();
+    private final JTextArea infoText = new JTextArea();
 
     private Icon godIcon;
     private JLabel godLabel;
 
-    private JButton selectButton = new JButton("Select");
+    private final JButton selectButton = new JButton("Select");
 
     private JComboBox divinityList;
 
@@ -33,19 +33,23 @@ public class ChoosePanel extends JPanel{
     }
 
     public void init(){
+        setBackground(backGroundColor);
+        setPreferredSize(new Dimension(900,680));
         chosenDivinity="";
         ChoosePanelListener choosePanelListener = new ChoosePanelListener(this);
-        setLayout(new BorderLayout());
+        setLayout(new BorderLayout(20,20));
 
         divinityList = new JComboBox(divinityString.toArray());
         divinityList.addItemListener(choosePanelListener);
 
         comboPanel.add(divinityList);
         comboPanel.add(selectButton);
-        //godInfoText.setText(Divinity.getDescrption(divinityList.getSelectedItem().toString().toLowerCase()));
+        updateGodDescription();
         godInfoText.setEditable(false);
         centerPanel.setLayout(new BorderLayout());
         centerPanel.add(comboPanel,BorderLayout.NORTH);
+        godInfoText.setFont(new Font("Times New Roman",Font.ITALIC,18));
+        godInfoText.setBackground(backGroundColor);
         centerPanel.add(godInfoText,BorderLayout.CENTER);
         selectButton.addActionListener(choosePanelListener);
 
@@ -59,7 +63,10 @@ public class ChoosePanel extends JPanel{
         add(godPanel,BorderLayout.WEST);
 
         infoText.setEditable(false);
+        infoText.setBackground(backGroundColor);
+        infoText.setFont(new Font("Times New Roman",Font.PLAIN,15));
         infoText.setAlignmentX(CENTER_ALIGNMENT);
+        updateInfoText();
         add(infoText,BorderLayout.NORTH);
 
         setVisible(true);
@@ -77,24 +84,12 @@ public class ChoosePanel extends JPanel{
         return divinityList;
     }
 
-    public void setDivinityList(JComboBox divinityList) {
-        this.divinityList = divinityList;
-    }
-
     public JLabel getGodLabel() {
         return godLabel;
     }
 
-    public void setGodLabel(JLabel godLabel) {
-        this.godLabel = godLabel;
-    }
-
     public JButton getSelectButton() {
         return selectButton;
-    }
-
-    public void setSelectButton(JButton selectButton) {
-        this.selectButton = selectButton;
     }
 
     public synchronized String getChosenDivinity() {
@@ -126,11 +121,15 @@ public class ChoosePanel extends JPanel{
         divinityString.remove(stringToRemove);
     }
 
-    public String getDivinityNumber() {
-        return divinityNumber;
+    public void updateGodDescription (){
+        godInfoText.setText(Divinity.getDescrption(divinityList.getSelectedItem().toString().toLowerCase()));
     }
 
-    public void setDivinityNumber(String divinityNumber) {
-        this.divinityNumber = divinityNumber;
+    public void updateInfoText(){
+        infoText.setText("Decide your "+ divinityNumber +" Divinity");
+    }
+
+    public void setDivinityNumber(String string) {
+        divinityNumber = string;
     }
 }

@@ -17,6 +17,7 @@ public class ChoosePanelListener implements ItemListener, ActionListener {
             String path="images/godCards/"+frame.getDivinityList().getSelectedItem()+".png";
             frame.setGodIcon(new ImageIcon(path));
             frame.getGodLabel().setIcon(frame.getGodIcon());
+            frame.updateGodDescription();
         }
     }
 

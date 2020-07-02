@@ -144,11 +144,11 @@ public class GUIHandler implements UserInterface {
 
                 case "Choose":
                     mainFrame.removeStartingPanel();
+                    mainFrame.remove(choosePanel);
                     mainFrame.pack();
                     //ask the player to choose the divinity
                     if (parts[1].equals("the")) {
                         if ((parts[2].equals("second")) || (parts[2].equals("third"))) {
-                            mainFrame.remove(choosePanel);
                             choosePanel = new ChoosePanel();
                             choosePanel.removeDivinityString(firstGodToRemove);
                             if (parts[2].equals("third")) {

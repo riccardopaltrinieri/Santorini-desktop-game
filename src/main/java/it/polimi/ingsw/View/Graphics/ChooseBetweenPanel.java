@@ -5,11 +5,11 @@ import javax.swing.border.Border;
 import java.awt.*;
 
 public class ChooseBetweenPanel extends JPanel {
-    private JPanel upperPanel = new JPanel();
-    private JPanel godPanel = new JPanel();
-    private JPanel leftGodPanel = new JPanel();
-    private JPanel centralGodPanel = new JPanel();
-    private JPanel rightGodPanel = new JPanel();
+    private final JPanel upperPanel = new JPanel();
+    private final JPanel godPanel = new JPanel();
+    private final JPanel leftGodPanel = new JPanel();
+    private final JPanel centralGodPanel = new JPanel();
+    private final JPanel rightGodPanel = new JPanel();
 
     private Icon leftGodIcon;
     private Icon centralGodIcon;
@@ -32,7 +32,8 @@ public class ChooseBetweenPanel extends JPanel {
 
     public void init(String firstGod, String secondGod) {
         setLayout(new BorderLayout());
-
+        setPreferredSize(new Dimension(900,680));
+        chooseText.setFont(new Font("Times New Roman",Font.PLAIN,15));
         upperPanel.add(chooseText);
         upperPanel.setAlignmentX(CENTER_ALIGNMENT);
         add(upperPanel, BorderLayout.NORTH);
