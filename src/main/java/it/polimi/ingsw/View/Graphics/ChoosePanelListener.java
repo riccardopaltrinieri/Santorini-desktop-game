@@ -6,6 +6,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
+/**
+ * it's the ActionListener that listen to all the events that occur to the {@link ChoosePanel} JPanel
+ */
 public class ChoosePanelListener implements ItemListener, ActionListener {
     ChoosePanel frame;
     public ChoosePanelListener(ChoosePanel frame){

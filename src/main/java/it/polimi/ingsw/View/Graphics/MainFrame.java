@@ -4,9 +4,13 @@ import it.polimi.ingsw.View.State;
 import it.polimi.ingsw.utils.Divinity;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 
+/**
+ * it's the class that handle all the main graphics element of the game like the JFrame where everything
+ * it's shown, a JPanel used to display a background for the registration of the player and finally
+ * the ain panel where it's shown all the real game once it's started
+ */
 public class MainFrame extends JFrame{
 
     private Icon background = new ImageIcon("images/LoadingBackground.jpeg");
@@ -42,6 +46,10 @@ public class MainFrame extends JFrame{
 
     private final Font font = new Font("Times New Roman",Font.PLAIN,16);
 
+    /**
+     * initialize a "loading background" that is displayed during the player's registration or when a player
+     * is waiting for the others to register
+     */
     public void startingInit(){
         backgroundLabel.setIcon(background);
         add(backgroundLabel);
@@ -49,6 +57,10 @@ public class MainFrame extends JFrame{
         setVisible(true);
     }
 
+    /**
+     * that's the methods that initialize the main JPanel that have to be displayed once the real game starts
+     * and it's used to display all the main component like the game board
+     */
     public void init(){
         GridBagLayout layout = new GridBagLayout();
         GridBagConstraints lim = new GridBagConstraints();
@@ -133,6 +145,15 @@ public class MainFrame extends JFrame{
         setVisible(true);
     }
 
+    /**
+     * it's a method that refresh all the board button as selectable or not based on the state of the fsm
+     * in order to make active the button and to repaint them if they have changed their status
+     * @param state indicate if the state of the fsm it's build or move in order to know which
+     *              cells has to change their status
+     * @param divinity if the player have chosen to use his GodPower that param represent the GodPower
+     *                 that he's using or it's set to Default if the player isn't using any GodPower
+     * @param worker represent the worker selected by the user
+     */
     public void updateActiveBoardButtons(State state, Divinity divinity, int worker) {
         switch (state){
             case move -> {
@@ -234,21 +255,12 @@ public class MainFrame extends JFrame{
         return defaultButton;
     }
 
-    public boolean removeStartingPanel(){
+    public void removeStartingPanel(){
         remove(backgroundLabel);
-        return true;
     }
 
     public void setYesOrNoString(String yesOrNoString) {
         this.yesOrNoString = yesOrNoString;
-    }
-
-    public void enableEndTurn(){
-        endTurnButton.setEnabled(true);
-    }
-
-    public void disableEndTurn(){
-        endTurnButton.setEnabled(false);
     }
 
     public JButton getEndTurnButton() {

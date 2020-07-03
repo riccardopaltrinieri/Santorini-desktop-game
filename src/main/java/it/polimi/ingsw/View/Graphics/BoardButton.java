@@ -10,7 +10,12 @@ import java.io.IOException;
 import it.polimi.ingsw.utils.Color;
 import it.polimi.ingsw.utils.Divinity;
 
+/**
+ * this class represent the button of the Map and it's used mainly to override the repainting of the button if
+ * there is a worker or a construction on it
+ */
 public class BoardButton extends JButton {
+
     private int row;
     private int column;
     private BufferedImage worker = null;
@@ -62,12 +67,21 @@ public class BoardButton extends JButton {
         }
     }
 
+    /**
+     * set the selectableCell variable to the value of the
+     * @param selectableCell and repaint the button itself
+     */
     public void setSelectableCell(boolean selectableCell) {
         this.selectableCell = selectableCell;
         this.setEnabled(selectableCell);
         this.repaint();
     }
 
+    /**
+     * it's used to know if a worker in the cell represented by the button can build in a specific cell
+     * @param destination represent where you want to know if you can build
+     * @return  true if you can build in the destination cell or false if you can't
+     */
     public boolean canBuildIn(BoardButton destination){
         return (destination.getRow() >= row - 1) &&
                 (destination.getRow() <= row + 1) &&
@@ -78,6 +92,14 @@ public class BoardButton extends JButton {
                 (!this.equals(destination));
     }
 
+
+    /**
+     * it's used to know if a worker in the cell represented by the button can move in a specific cell using
+     * eventualy a specific GodPower
+     * @param destination represent the cell where you want to move in
+     * @param power represent the power that you are using to move or Default if are not using any GodPower
+     * @return true if you can move to the destination cell or false if you can't
+     */
     public boolean canMoveTo(BoardButton destination, Divinity power) {
         return  // Should be one of the 8 cell near the worker
                 destination.getRow() >= row - 1 &&

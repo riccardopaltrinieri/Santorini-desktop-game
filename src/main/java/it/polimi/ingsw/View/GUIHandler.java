@@ -7,6 +7,11 @@ import it.polimi.ingsw.utils.Divinity;
 import javax.swing.*;
 import java.util.NoSuchElementException;
 
+/**
+ * this class include all the logic of GUI and handle what have to be displayed in the frame
+ * based on the state of the game and handle the communication forwarding the message through the UserInterface
+ * and receiving the incoming one.
+ */
 public class GUIHandler implements UserInterface {
 
     final MainFrame mainFrame= new MainFrame();
@@ -355,6 +360,9 @@ public class GUIHandler implements UserInterface {
         return null;
     }
 
+    /**
+     * initialize the main panel removing everything that was on the screen before
+     */
     private void startGameFrame(){
         mainFrame.remove(choosePanel);
         mainFrame.remove(chooseBetweenPanel);
@@ -369,6 +377,11 @@ public class GUIHandler implements UserInterface {
         mainFrame.updateTextArea("waiting for other player");
     }
 
+    /**
+     * Checks if the action inserted by the player respect all the parameters (like
+     * types, rows and columns greater than 0 and smaller than 5 and worker == 1 || 2)
+     * and returns it
+     */
     private String checkAction(LiteBoard board) throws IllegalArgumentException, InterruptedException {
 
         switch(fsm.getState()) {

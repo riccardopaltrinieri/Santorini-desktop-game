@@ -7,6 +7,9 @@ import it.polimi.ingsw.View.State;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * it's the ActionListener that listen to all the events that occur to the {@link BoardButton}
+ */
 public class BoardButtonListener implements ActionListener {
 
     FSMView fsm;

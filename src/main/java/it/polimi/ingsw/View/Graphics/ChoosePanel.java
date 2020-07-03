@@ -7,6 +7,10 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class ChoosePanel extends JPanel{
+    /**
+     * it's the JPanel used to get the choice of the GodPowers from the player taken from a JComboBox
+     * that contains all the Divinity that aren't already chosen
+     */
     private final Color backGroundColor = new Color(0,0,0,5);
     private final JPanel godPanel = new JPanel();
     private final JPanel centerPanel = new JPanel();
@@ -26,12 +30,16 @@ public class ChoosePanel extends JPanel{
 
     private JComboBox divinityList;
 
+
     public ChoosePanel(){
         for (int i=0;i<10;i++){
             divinityString.add(Divinity.values()[i].toString());
         }
     }
 
+    /**
+     * this method initialize all the graphics element that need to be displayed for this panel
+     */
     public void init(){
         setBackground(backGroundColor);
         setPreferredSize(new Dimension(900,680));
@@ -92,6 +100,11 @@ public class ChoosePanel extends JPanel{
         return selectButton;
     }
 
+    /**
+     * it's the method used to take the choice of the player and it's synchronized on the Panel itself
+     * to wait the choice of the player
+     * @return the GodPower chosen by the player
+     */
     public synchronized String getChosenDivinity() {
         synchronized (this) {
             try {
@@ -107,14 +120,6 @@ public class ChoosePanel extends JPanel{
 
     public void setChosenDivinity(String chosenDivinity) {
         this.chosenDivinity = chosenDivinity;
-    }
-
-    public ArrayList getDivinityString() {
-        return divinityString;
-    }
-
-    public void setDivinityString(ArrayList<String> divinityString) {
-        this.divinityString = divinityString;
     }
 
     public void removeDivinityString(String stringToRemove){

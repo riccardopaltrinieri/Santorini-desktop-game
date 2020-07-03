@@ -7,6 +7,10 @@ import it.polimi.ingsw.utils.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * it's the ActionListener that listen for the events that occur
+ * to the EndButton or the UndoButton
+ */
 public class UndoEndlistener implements ActionListener {
     private final MainFrame frame;
     public UndoEndlistener(MainFrame frame){

@@ -22470,3 +22470,760 @@ Insert fillo built in 2 1
 Insert fillo built in 2 1
 Timeout: fillotook too much time to decide. Game over.
 Connection closed from the server side
+Welcome! What's your name?
+-> fillo
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen, 
+now the other players will choose between them.
+Waiting for other players...
+Welcome! What's your name?
+-> lollo
+Waiting the chooses of the Start Player and the start of game
+Waiting for other players...
+Welcome! What's your name?
+-> fillo
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen, 
+now the other players will choose between them.
+Waiting for other players...
+Welcome! What's your name?
+-> gersdf
+Waiting the chooses of the Start Player and the start of game
+Waiting for other players...
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Artemis
+You choose the first player between: fillo gersdf
+Welcome! What's your name?
+-> fillo
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen, 
+now the other players will choose between them.
+Waiting for other players...
+Welcome! What's your name?
+-> lollo
+Waiting the chooses of the Start Player and the start of game
+Waiting for other players...
+Welcome! What's your name?
+-> fillo
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> lollo
+Waiting the chooses of the Start Player and the start of game
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen, 
+now the other players will choose between them.
+Waiting for other players...
+Waiting for other players...
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Artemis
+You choose the first player between: fillo lollo
+-> fillo
+Start fillo White Artemis
+Start lollo Purple Apollo
+Start fillo White Artemis
+Start lollo Purple Apollo
+Insert fillo update
+Insert fillo update
+-> placeworker 3 2
+Insert fillo placed a worker in 3x2
+Insert fillo placed a worker in 3x2
+-> placeworker 3 4
+Insert fillo placed a worker in 3x4
+Insert fillo placed a worker in 3x4
+-> endturn
+Insert lollo update
+Insert lollo update
+-> placeworker 4 1
+Insert lollo placed a worker in 4x1
+Insert lollo placed a worker in 4x1
+-> placeworker 4 4
+Insert lollo placed a worker in 4x4
+Insert lollo placed a worker in 4x4
+-> endturn
+Insert fillo update
+Insert fillo update
+-> normal
+Insert fillo doesn't want to use the God Power
+Insert fillo doesn't want to use the God Power
+-> move 2 1 1
+Insert fillo moved a worker in 2x1
+Insert fillo moved a worker in 2x1
+-> build 3 2 1
+Insert fillo built in 3 2
+Insert fillo built in 3 2
+-> endturn
+Insert lollo update
+Insert lollo update
+-> normal
+Insert lollo doesn't want to use the God Power
+Insert lollo doesn't want to use the God Power
+-> move 3 2 1
+Insert lollo moved a worker in 3x2
+Insert lollo moved a worker in 3x2
+-> build 3 3 1
+Insert lollo built in 3 3
+Insert lollo built in 3 3
+-> endturn
+Insert fillo update
+Insert fillo update
+-> normal
+Insert fillo doesn't want to use the God Power
+Insert fillo doesn't want to use the God Power
+-> move 3 3 2
+Insert fillo moved a worker in 3x3
+Insert fillo moved a worker in 3x3
+-> build 4 3 2
+Insert fillo built in 4 3
+Insert fillo built in 4 3
+-> endturn
+Insert lollo update
+Insert lollo update
+-> usepower
+Insert lollo wants to use the God Power
+Insert lollo wants to use the God Power
+-> move 3 3 1
+Insert lollo used the God Power
+Insert lollo used the God Power
+-> build 4 3 1
+Insert lollo built in 4 3
+Insert lollo built in 4 3
+-> endturn
+Insert fillo update
+Insert fillo update
+-> normal
+Insert fillo doesn't want to use the God Power
+Insert fillo doesn't want to use the God Power
+-> move 4 3 2
+Insert fillo moved a worker in 4x3
+Insert fillo moved a worker in 4x3
+-> build 5 3 2
+Insert fillo built in 5 3
+Insert fillo built in 5 3
+-> endturn
+Insert lollo update
+Insert lollo update
+-> normal
+Insert lollo doesn't want to use the God Power
+Insert lollo doesn't want to use the God Power
+-> move 5 4 2
+Insert lollo moved a worker in 5x4
+Insert lollo moved a worker in 5x4
+-> build 5 3 2
+Insert lollo built in 5 3
+Insert lollo built in 5 3
+-> endturn
+Insert fillo update
+Insert fillo update
+-> normal
+Insert fillo doesn't want to use the God Power
+Insert fillo doesn't want to use the God Power
+-> move 5 3 2
+Insert fillo moved a worker in 5x3
+Insert fillo moved a worker in 5x3
+-> build 4 3 2
+Insert fillo built in 4 3
+Insert fillo built in 4 3
+-> endturn
+Insert lollo update
+Insert lollo update
+-> normal
+Insert lollo doesn't want to use the God Power
+Insert lollo doesn't want to use the God Power
+-> move 3 4 1
+Insert lollo moved a worker in 3x4
+Insert lollo moved a worker in 3x4
+-> build 4 4 1
+Insert lollo built in 4 4
+Insert lollo built in 4 4
+-> endturn
+Insert fillo update
+Insert fillo update
+-> normal
+Insert fillo doesn't want to use the God Power
+Insert fillo doesn't want to use the God Power
+-> move 4 3 2
+Winner: fillo wins
+Welcome! What's your name?
+-> ewef
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen, 
+now the other players will choose between them.
+Waiting for other players...
+Welcome! What's your name?
+-> batto
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> fillo
+Waiting the chooses of the Start Player and the start of game
+Choose the first divinity:
+-> Hephaestus
+Choose the second divinity: 
+-> Atlas
+All the divinities have been chosen, 
+now the other players will choose between them.
+Waiting for other players...
+Waiting for other players...
+Choose your Divinity between: Hephaestus Atlas 
+-> Hephaestus
+Your Divinity: Hephaestus
+Your Divinity: Atlas
+You choose the first player between: batto fillo
+-> fillo
+Start fillo White Hephaestus
+Start fillo White Hephaestus
+Start batto Purple Atlas
+Start batto Purple Atlas
+Insert fillo update
+Insert fillo update
+-> placeworker 2 2
+Insert fillo placed a worker in 2x2
+Insert fillo placed a worker in 2x2
+-> placeworker 4 4
+Insert fillo placed a worker in 4x4
+Insert fillo placed a worker in 4x4
+-> endturn
+Insert batto update
+Insert batto update
+-> placeworker 3 2
+Insert batto placed a worker in 3x2
+Insert batto placed a worker in 3x2
+-> placeworker 3 5
+Insert batto placed a worker in 3x5
+Insert batto placed a worker in 3x5
+-> endturn
+Insert fillo update
+Insert fillo update
+-> usepower
+Insert fillo wants to use the God Power
+Insert fillo wants to use the God Power
+-> move 2 3 1
+Insert fillo moved a worker in 2x3
+Insert fillo moved a worker in 2x3
+-> build 3 3 1
+Insert fillo used the God Power
+Insert fillo used the God Power
+-> endturn
+Insert batto update
+Insert batto update
+-> usepower
+Insert batto wants to use the God Power
+Insert batto wants to use the God Power
+-> move 4 3 1
+Insert batto moved a worker in 4x3
+Insert batto moved a worker in 4x3
+-> build 3 3 1
+Insert batto used the God Power
+Insert batto used the God Power
+-> endturn
+Insert fillo update
+Insert fillo update
+-> usepower
+Insert fillo wants to use the God Power
+Insert fillo wants to use the God Power
+-> move 2 2 1
+Insert fillo moved a worker in 2x2
+Insert fillo moved a worker in 2x2
+-> build 2 1 1
+Insert fillo used the God Power
+Insert fillo used the God Power
+-> endturn
+Insert batto update
+Insert batto update
+-> normal
+Insert batto doesn't want to use the God Power
+Insert batto doesn't want to use the God Power
+-> move 3 2 1
+Insert batto moved a worker in 3x2
+Insert batto moved a worker in 3x2
+-> build 3 1 1
+Insert batto built in 3 1
+Insert batto built in 3 1
+-> endturn
+Insert fillo update
+Insert fillo update
+-> usepower
+Insert fillo wants to use the God Power
+Insert fillo wants to use the God Power
+-> move 3 1 1
+Insert fillo moved a worker in 3x1
+Insert fillo moved a worker in 3x1
+-> build 2 2 1
+Insert fillo used the God Power
+Insert fillo used the God Power
+-> endturn
+Insert batto update
+Insert batto update
+-> usepower
+Insert batto wants to use the God Power
+Insert batto wants to use the God Power
+-> move 2 3 1
+Insert batto moved a worker in 2x3
+Insert batto moved a worker in 2x3
+-> build 2 2 1
+Insert batto used the God Power
+Insert batto used the God Power
+-> endturn
+Insert fillo update
+Insert fillo update
+-> usepower
+Insert fillo wants to use the God Power
+Insert fillo wants to use the God Power
+-> move 2 1 1
+Insert fillo moved a worker in 2x1
+Insert fillo moved a worker in 2x1
+-> build 1 1 1
+Insert fillo used the God Power
+Insert fillo used the God Power
+-> endturn
+Insert batto update
+Insert batto update
+-> usepower
+Insert batto wants to use the God Power
+Insert batto wants to use the God Power
+-> move 2 4 2
+Insert batto moved a worker in 2x4
+Insert batto moved a worker in 2x4
+-> build 3 4 2
+Insert batto used the God Power
+Insert batto used the God Power
+-> endturn
+Insert fillo update
+Insert fillo update
+-> usepower
+Insert fillo wants to use the God Power
+Insert fillo wants to use the God Power
+-> move 1 1 1
+Insert fillo moved a worker in 1x1
+Insert fillo moved a worker in 1x1
+-> build 1 2 1
+Insert fillo used the God Power
+Insert fillo used the God Power
+-> endturn
+Insert batto update
+Insert batto update
+-> usepower
+Insert batto wants to use the God Power
+Insert batto wants to use the God Power
+-> move 3 2 1
+Insert batto moved a worker in 3x2
+Insert batto moved a worker in 3x2
+-> build 2 1 1
+Insert batto used the God Power
+Insert batto used the God Power
+-> endturn
+Insert fillo update
+Insert fillo update
+-> usepower
+Insert fillo wants to use the God Power
+Insert fillo wants to use the God Power
+-> move 1 2 1
+Insert fillo moved a worker in 1x2
+Insert fillo moved a worker in 1x2
+-> build 2 3 1
+Insert fillo used the God Power
+Insert fillo used the God Power
+-> endturn
+Insert batto update
+Insert batto update
+-> usepower
+Insert batto wants to use the God Power
+Insert batto wants to use the God Power
+-> move 1 3 2
+Insert batto moved a worker in 1x3
+Insert batto moved a worker in 1x3
+-> build 2 3 2
+Insert batto used the God Power
+Insert batto used the God Power
+-> endturn
+Insert fillo update
+Insert fillo update
+-> usepower
+Insert fillo wants to use the God Power
+Insert fillo wants to use the God Power
+-> move 4 3 2
+Insert fillo moved a worker in 4x3
+Insert fillo moved a worker in 4x3
+-> build 4 2 2
+Insert fillo used the God Power
+Insert fillo used the God Power
+-> endturn
+Insert batto update
+Insert batto update
+-> normal
+Insert batto doesn't want to use the God Power
+Insert batto doesn't want to use the God Power
+-> move 2 4 2
+Insert batto moved a worker in 2x4
+Insert batto moved a worker in 2x4
+-> build 1 4 2
+Insert batto built in 1 4
+Insert batto built in 1 4
+-> endturn
+Insert fillo update
+Insert fillo update
+-> usepower
+Insert fillo wants to use the God Power
+Insert fillo wants to use the God Power
+-> move 5 2 2
+Insert fillo moved a worker in 5x2
+Insert fillo moved a worker in 5x2
+-> build 4 1 2
+Insert fillo used the God Power
+Insert fillo used the God Power
+-> undo
+Undo: fillo undoing
+Undo: fillo undoing
+Undo: fillo undid last action
+Undo: fillo undid last action
+-> build 4 1 2
+Insert fillo used the God Power
+Insert fillo used the God Power
+-> endturn
+Insert batto update
+Insert batto update
+-> usepower
+Insert batto wants to use the God Power
+Insert batto wants to use the God Power
+-> move 3 1 1
+Insert batto moved a worker in 3x1
+Insert batto moved a worker in 3x1
+-> build 4 2 1
+Insert batto used the God Power
+Insert batto used the God Power
+-> endturn
+Insert fillo update
+Insert fillo update
+-> usepower
+Insert fillo wants to use the God Power
+Insert fillo wants to use the God Power
+-> move 5 1 2
+Insert fillo moved a worker in 5x1
+Insert fillo moved a worker in 5x1
+-> build 4 1 2
+Error: fillo can't use the God Power
+Error: fillo can't use the God Power
+-> build 4 1 2
+Error: fillo can't use the God Power
+Error: fillo can't use the God Power
+-> undo
+Undo: fillo undoing
+Undo: fillo undoing
+Undo: fillo cannot undo last action
+Undo: fillo cannot undo last action
+-> endturn
+Welcome! What's your name?
+-> fillo
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> lollo
+Waiting the chooses of the Start Player and the start of game
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen, 
+now the other players will choose between them.
+Waiting for other players...
+Waiting for other players...
+Choose your Divinity between: Apollo Artemis 
+-> Artemis
+Your Divinity: Artemis
+Your Divinity: Apollo
+You choose the first player between: fillo lollo
+-> fillo
+Wrong name, reinsert it.. 
+Welcome! What's your name?
+-> lollo
+Welcome! What's your name?
+-> fillo
+Decide the number of players: [2 or 3]
+-> 2
+Choose the first divinity:
+-> Apollo
+Choose the second divinity: 
+-> Artemis
+All the divinities have been chosen, 
+now the other players will choose between them.
+Waiting for other players...
+Welcome! What's your name?
+-> lollo
+Waiting the chooses of the Start Player and the start of game
+Waiting for other players...
+Choose your Divinity between: Apollo Artemis 
+-> Apollo
+Your Divinity: Apollo
+Your Divinity: Artemis
+You choose the first player between: fillo lollo
+-> fillo
+Start fillo White Artemis
+Start lollo Purple Apollo
+Start fillo White Artemis
+Start lollo Purple Apollo
+Insert fillo update
+Insert fillo update
+-> placeworker 3 2
+Insert fillo placed a worker in 3x2
+Insert fillo placed a worker in 3x2
+-> placeworker 3 4
+Insert fillo placed a worker in 3x4
+Insert fillo placed a worker in 3x4
+-> endturn
+Insert lollo update
+Insert lollo update
+-> placeworker 4 3
+Insert lollo placed a worker in 4x3
+Insert lollo placed a worker in 4x3
+-> placeworker 2 3
+Insert lollo placed a worker in 2x3
+Insert lollo placed a worker in 2x3
+-> endturn
+Insert fillo update
+Insert fillo update
+-> normal
+Insert fillo doesn't want to use the God Power
+Insert fillo doesn't want to use the God Power
+-> move 3 1 1
+Insert fillo moved a worker in 3x1
+Insert fillo moved a worker in 3x1
+-> undo
+Undo: fillo undoing
+Undo: fillo undoing
+Undo: fillo cannot undo last action
+Undo: fillo cannot undo last action
+-> build 3 2 1
+Insert fillo built in 3 2
+Insert fillo built in 3 2
+-> endturn
+Insert lollo update
+Insert lollo update
+-> normal
+Insert lollo doesn't want to use the God Power
+Insert lollo doesn't want to use the God Power
+-> move 3 2 1
+Insert lollo moved a worker in 3x2
+Insert lollo moved a worker in 3x2
+-> build 4 2 1
+Insert lollo built in 4 2
+Insert lollo built in 4 2
+-> undo
+Undo: lollo undoing
+Undo: lollo undoing
+Undo: lollo undid last action
+Undo: lollo undid last action
+-> build 4 2 1
+Insert lollo built in 4 2
+Insert lollo built in 4 2
+-> endturn
+Insert fillo update
+Insert fillo update
+-> normal
+Insert fillo doesn't want to use the God Power
+Insert fillo doesn't want to use the God Power
+-> move 4 2 1
+Insert fillo moved a worker in 4x2
+Insert fillo moved a worker in 4x2
+-> undo
+Undo: fillo undoing
+Undo: fillo undoing
+Undo: fillo cannot undo last action
+Undo: fillo cannot undo last action
+-> build 4 3 1
+Insert fillo built in 4 3
+Insert fillo built in 4 3
+-> undo
+Undo: fillo undoing
+Undo: fillo undoing
+Undo: fillo undid last action
+Undo: fillo undid last action
+-> build 5 3 1
+Insert fillo built in 5 3
+Insert fillo built in 5 3
+-> endturn
+Insert lollo update
+Welcome! What's your name?
+-> lollo
+Decide the number of players: [2 or 3]
+-> 2
+Welcome! What's your name?
+-> asdf
+Waiting the chooses of the Start Player and the start of game
+Choose the first divinity:
+-> Hephaestus
+Choose the second divinity: 
+-> Apollo
+All the divinities have been chosen, 
+now the other players will choose between them.
+Waiting for other players...
+Waiting for other players...
+Choose your Divinity between: Hephaestus Apollo 
+-> Hephaestus
+Your Divinity: Hephaestus
+Your Divinity: Apollo
+You choose the first player between: asdf lollo
+-> asdf
+Start asdf White Hephaestus
+Start asdf White Hephaestus
+Start lollo Purple Apollo
+Start lollo Purple Apollo
+Insert asdf update
+Insert asdf update
+-> placeworker 3 2
+Insert asdf placed a worker in 3x2
+Insert asdf placed a worker in 3x2
+-> placeworker 3 4
+Insert asdf placed a worker in 3x4
+Insert asdf placed a worker in 3x4
+-> endturn
+Insert lollo update
+Insert lollo update
+-> placeworker 4 3
+Insert lollo placed a worker in 4x3
+Insert lollo placed a worker in 4x3
+-> placeworker 2 3
+Insert lollo placed a worker in 2x3
+Insert lollo placed a worker in 2x3
+-> endturn
+Insert asdf update
+Insert asdf update
+-> usepower
+Insert asdf wants to use the God Power
+Insert asdf wants to use the God Power
+-> move 3 1 1
+Insert asdf moved a worker in 3x1
+Insert asdf moved a worker in 3x1
+-> build 2 1 1
+Insert asdf used the God Power
+Insert asdf used the God Power
+-> endturn
+Insert lollo update
+Insert lollo update
+-> normal
+Insert lollo doesn't want to use the God Power
+Insert lollo doesn't want to use the God Power
+-> move 3 2 1
+Insert lollo moved a worker in 3x2
+Insert lollo moved a worker in 3x2
+-> build 2 2 1
+Insert lollo built in 2 2
+Insert lollo built in 2 2
+-> endturn
+Insert asdf update
+Insert asdf update
+-> usepower
+Insert asdf wants to use the God Power
+Insert asdf wants to use the God Power
+-> move 2 2 1
+Insert asdf moved a worker in 2x2
+Insert asdf moved a worker in 2x2
+-> build 2 1 1
+Error: asdf can't use the God Power
+Error: asdf can't use the God Power
+-> build 1 1 1
+Insert asdf used the God Power
+Insert asdf used the God Power
+-> endturn
+Insert lollo update
+Insert lollo update
+-> normal
+Insert lollo doesn't want to use the God Power
+Insert lollo doesn't want to use the God Power
+-> move 3 1 1
+Insert lollo moved a worker in 3x1
+Insert lollo moved a worker in 3x1
+-> build 2 1 1
+Insert lollo built in 2 1
+Insert lollo built in 2 1
+-> endturn
+Insert asdf update
+Insert asdf update
+-> usepower
+Insert asdf wants to use the God Power
+Insert asdf wants to use the God Power
+-> move 1 2 1
+Insert asdf moved a worker in 1x2
+Insert asdf moved a worker in 1x2
+-> build 2 2 1
+Insert asdf used the God Power
+Insert asdf used the God Power
+-> endturn
+Insert lollo update
+Insert lollo update
+-> normal
+Insert lollo doesn't want to use the God Power
+Insert lollo doesn't want to use the God Power
+-> move 3 3 2
+Insert lollo moved a worker in 3x3
+Insert lollo moved a worker in 3x3
+-> build 2 3 2
+Insert lollo built in 2 3
+Insert lollo built in 2 3
+-> endturn
+Insert asdf update
+Insert asdf update
+-> usepower
+Insert asdf wants to use the God Power
+Insert asdf wants to use the God Power
+-> move 4 3 2
+Insert asdf moved a worker in 4x3
+Insert asdf moved a worker in 4x3
+-> build 4 4 2
+Insert asdf used the God Power
+Insert asdf used the God Power
+-> endturn
+Insert lollo update
+Insert lollo update
+-> normal
+Insert lollo doesn't want to use the God Power
+Insert lollo doesn't want to use the God Power
+-> move 2 4 2
+Insert lollo moved a worker in 2x4
+Insert lollo moved a worker in 2x4
+-> build 2 3 2
+Insert lollo built in 2 3
+Insert lollo built in 2 3
+-> endturn
+Insert asdf update
+Insert asdf update
+-> usepower
+Insert asdf wants to use the God Power
+Insert asdf wants to use the God Power
+-> move 5 4 2
+Insert asdf moved a worker in 5x4
+Insert asdf moved a worker in 5x4
+-> build 4 4 2
+Error: asdf can't use the God Power
+Error: asdf can't use the God Power
+-> undo
+Undo: asdf undoing
+Undo: asdf undoing
+Undo: asdf cannot undo last action
