@@ -147,7 +147,7 @@ public class Server {
         } else if (playingConnection.size() == 2) {
 
             playingConnection.clear();
-            connections.clear();
+            connections.remove(c);
         }
     }
 

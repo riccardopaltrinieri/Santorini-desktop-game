@@ -1,4 +1,4 @@
-﻿﻿# Prova Finale Ingegneria del Software 2020
+# Prova Finale Ingegneria del Software 2020
 ## Gruppo GC23
 
 - ###      Riccardo Paltrinieri ([@riccardopaltrinieri](https://github.com/riccardopaltrinieri))
