@@ -115,7 +115,7 @@ public class Controller extends Observable implements Observer {
 
                     case endturn -> {
                         if (fsm.getState() == State.endTurn) {
-                            undoing = false;
+                            setUndoing(true);
                             actionExecuted = game.endTurn();
                             lastAction = fsm.getState();
                         }
@@ -128,7 +128,7 @@ public class Controller extends Observable implements Observer {
                 //   the fsm stay in the current state and
                 //   the undoThread doesn't start so it can't undo last action
                 if (actionExecuted) {
-                    undoing = false;
+                    setUndoing(false);
                     fsm.nextState();
                     if (undoThread != null) new Thread(undoThread).start();
                 }
@@ -147,16 +147,16 @@ public class Controller extends Observable implements Observer {
     public void newBoard(LiteBoard board) {
         // Method used only by game to send the board
     }
-    public boolean isUndoing() {
+    protected boolean isUndoing() {
         return undoing;
     }
-    public void setUndoing(boolean undoing) {
+    protected void setUndoing(boolean undoing) {
         this.undoing = undoing;
     }
-    public State getLastAction() {
+    protected State getLastAction() {
         return lastAction;
     }
-    public FiniteStateMachine getFsm() {
+    protected FiniteStateMachine getFsm() {
         return fsm;
     }
 
