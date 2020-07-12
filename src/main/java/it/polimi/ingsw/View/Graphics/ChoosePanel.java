@@ -131,10 +131,6 @@ public class ChoosePanel extends JPanel{
     }
 
     public void updateInfoText(){
-        infoText.setText("Decide your "+ divinityNumber +" Divinity");
-    }
-
-    public void setDivinityNumber(String string) {
-        divinityNumber = string;
+        infoText.setText("Decide a Divinity");
     }
 }

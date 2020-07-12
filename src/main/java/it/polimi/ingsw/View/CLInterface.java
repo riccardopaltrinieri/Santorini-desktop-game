@@ -32,6 +32,9 @@ public class CLInterface implements UserInterface {
             String firstWord = parts[0];
 
             switch (firstWord) {
+                case "Device":
+                    outgoingMessage = "computer";
+                    break;
                 case "Welcome!":
                     // Asks the name of the player
                     System.out.println(incomingMessage);

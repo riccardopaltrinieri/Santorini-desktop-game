@@ -3,8 +3,10 @@ package it.polimi.ingsw.View;
 import it.polimi.ingsw.Model.*;
 import it.polimi.ingsw.View.Graphics.MainFrame;
 import it.polimi.ingsw.utils.Color;
+import org.json.simple.JSONArray;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class LiteBoard implements Serializable {
     private static final long serialVersionUID = 36347531L;
@@ -26,8 +28,8 @@ public class LiteBoard implements Serializable {
      */
     public LiteBoard(String input){
         message = input;
-        levels = new int[0][0];
-        posWorker = new int[0][0];
+        levels = null;
+        posWorker = null;
         numAllWorker = 0;
     }
 
@@ -214,4 +216,27 @@ public class LiteBoard implements Serializable {
         return message;
     }
 
+    public String toJson() {
+        JSONArray json = new JSONArray();
+        json.add(message);
+
+        for (int i=0;i<5;i++) {
+            ArrayList<Integer> row = new ArrayList<>();
+            for (int j=0;j<5;j++) {
+                if(levels != null) row.add(levels[i][j]);
+                else row.add(0);
+            }
+            json.add(row);
+        }
+
+        for (int i=0;i<numAllWorker;i++) {
+            ArrayList<Integer> worker = new ArrayList<>();
+            worker.add(posWorker[i][0]);
+            worker.add(posWorker[i][1]);
+            worker.add(posWorker[i][2]);
+            json.add(worker);
+        }
+
+        return json.toString();
+    }
 }

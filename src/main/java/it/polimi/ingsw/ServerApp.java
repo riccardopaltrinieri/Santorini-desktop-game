@@ -17,15 +17,14 @@ public class ServerApp {
             JSONParser parser = new JSONParser();
             Object obj = parser.parse(new FileReader(confFilePath));
             JSONObject jsonObject = (JSONObject) obj;
-            String port1 = (String) jsonObject.get("port");
-            port = Integer.parseInt(port1);
+            port = Integer.parseInt((String) jsonObject.get("port"));
 
         } catch (ParseException | IOException e) {
             System.err.println("Impossible to read the port. Use default!\n" + e.getMessage());
         }
         try{
             server = new Server(port);
-            server.run();
+            new Thread(server).start();
         }catch (IOException e) {
         System.err.println("Impossible to start the server!\n" + e.getMessage());
     }

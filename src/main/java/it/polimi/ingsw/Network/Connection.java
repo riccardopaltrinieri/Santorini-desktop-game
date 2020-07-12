@@ -17,6 +17,7 @@ public class Connection extends Observable implements Runnable, Observer {
     private final Server server;
     private String name;
     private boolean active;
+    private String device;
 
     /**
      * Constructor used to create a connection
@@ -29,17 +30,41 @@ public class Connection extends Observable implements Runnable, Observer {
         this.active = true;
     }
 
-    public ObjectInputStream getIn(){
-        return this.in;
-    }
-
     /**
-     * @return if the connection is still active
+     * Create the ObjectOutputStream and ObjectInputStream. When the connection isActive read the input of each client.
      */
-    private synchronized boolean isActive(){
-        return active;
-    }
+    @Override
+    public void run() {
 
+        try{
+            out = new ObjectOutputStream(socket.getOutputStream());
+            in = new ObjectInputStream(socket.getInputStream());
+            socket.setSoTimeout(360000);
+
+            setDevice();
+            send( new LiteBoard("Welcome! What's your name?"));
+            server.notEqualsName(this);
+            server.lobby(this, name);
+
+            while(isActive()){
+                if(server.gameHasStarted()){
+                    String read = readString();
+                    read = name + " " + read;
+                    notifyObservers(read);
+                }
+            }
+
+        } catch (SocketTimeoutException e) {
+            server.timeout(name);
+            if(isActive()) close();
+        } catch(IOException e){
+            if(isActive()) {
+                server.endGame();
+                close();
+            }
+            System.err.println("Connection with " + name + " not more active");
+        }
+    }
 
     /**
      * Method that send the message and the board to each Client from Game.
@@ -48,7 +73,8 @@ public class Connection extends Observable implements Runnable, Observer {
     public void send(LiteBoard board){
         try {
             out.reset();
-            out.writeObject(board);
+            if(device.equals("computer")) out.writeObject(board);
+            else out.writeUTF(board.toJson());
             out.flush();
         }  catch (IOException e) {
             System.out.println("Socket closed");
@@ -84,48 +110,18 @@ public class Connection extends Observable implements Runnable, Observer {
     }
 
     /**
-     * Create the ObjectOutputStream and ObjectInputStream. When the connection isActive read the input of each client.
-     */
-    @Override
-    public void run() {
-
-        try{
-            out = new ObjectOutputStream(socket.getOutputStream());
-            in = new ObjectInputStream(socket.getInputStream());
-            socket.setSoTimeout(360000);
-
-            send( new LiteBoard("Welcome! What's your name?"));
-            server.notEqualsName(this);
-            server.lobby(this, name);
-
-            while(isActive()){
-                if(server.gameHasStarted()){
-                    String read = readString();
-                    read = name + " " + read;
-                    notifyObservers(read);
-                }
-            }
-
-        } catch (SocketTimeoutException e) {
-            server.timeout(name);
-            if(isActive()) close();
-        } catch(IOException e){
-            server.endGame();
-            if(isActive()) close();
-            System.err.println("Connection with " + name + " not more active");
-        }
-    }
-
-    /**
      * Receives the board from the game and send it to each Client. Then it checks if there is a winner or a loser.
      * @param board is the board received from the game.
      */
     public void newBoard(LiteBoard board) {
         String[] parts = board.getMessage().split(" ");
-        send(board);
         if ((parts[1].equals(name) && parts[2].equals("loses")) ||
-             parts[2].equals("wins"))
-                close();
+             parts[2].equals("wins")){
+            active = false;
+            send(board);
+            close();
+        } else
+            send(board);
     }
 
     public String getName(){ return name; }
@@ -133,6 +129,24 @@ public class Connection extends Observable implements Runnable, Observer {
     @Override
     public void update(String message) {
         // Method used only by the controller
+        //TODO refactor observer pattern
+    }
+
+    private void setDevice() {
+        try {
+            out.writeUTF("Device:");
+            device = in.readUTF();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public ObjectInputStream getIn(){
+        return this.in;
+    }
+
+    private boolean isActive(){
+        return active;
     }
 
     public void setName(String n) { name = n; }

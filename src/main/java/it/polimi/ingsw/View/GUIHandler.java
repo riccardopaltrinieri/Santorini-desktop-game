@@ -23,8 +23,8 @@ public class GUIHandler implements UserInterface {
     private Divinity divinity;
     private String name;
     private String lastMessage;
-    private String firstGodToRemove;
-    private String secondGodToRemove;
+    private String firstGodToRemove=null;
+    private String secondGodToRemove=null;
     private int selectedWorkerIndex;
     private int previousCellMoveIndex=-1;
     private int previousCellBuildIndex=-1;
@@ -153,18 +153,12 @@ public class GUIHandler implements UserInterface {
                 case "Choose":
                     mainFrame.removeStartingPanel();
                     mainFrame.remove(choosePanel);
-                    mainFrame.pack();
+                    choosePanel = new ChoosePanel();
                     //ask the player to choose the divinity
                     if (parts[1].equals("the")) {
-                        if ((parts[2].equals("second")) || (parts[2].equals("third"))) {
-                            choosePanel = new ChoosePanel();
-                            choosePanel.removeDivinityString(firstGodToRemove);
-                            if (parts[2].equals("third")) {
-                                choosePanel.removeDivinityString(secondGodToRemove);
-                            }
-                        }
+                        if (firstGodToRemove != null) choosePanel.removeDivinityString(firstGodToRemove);
+                        if (secondGodToRemove != null) choosePanel.removeDivinityString(secondGodToRemove);
                         // Ask the name of a divinity or the number of players
-                        choosePanel.setDivinityNumber(parts[2]);
                         choosePanel.init();
                         mainFrame.add(choosePanel);
                         mainFrame.pack();

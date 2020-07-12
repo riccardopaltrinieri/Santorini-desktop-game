@@ -3,7 +3,6 @@ package it.polimi.ingsw.Network;
 import it.polimi.ingsw.Controller.Controller;
 import it.polimi.ingsw.Model.Game;
 import it.polimi.ingsw.Model.Player;
-import it.polimi.ingsw.Network.Connection;
 import it.polimi.ingsw.View.LiteBoard;
 
 import java.io.IOException;
@@ -15,8 +14,10 @@ import java.util.concurrent.Executors;
 
 import static it.polimi.ingsw.utils.Color.*;
 
-public class Server {
+public class Server implements Runnable {
+
     private static int PORT;
+
     private final ServerSocket serverSocket;
     private int numPlayers;
 
@@ -24,8 +25,7 @@ public class Server {
 
     private final List<Connection> connections = new ArrayList<>();
     private final Map<String, Connection> waitingConnection = new HashMap<>();
-    private final Map<Connection, Connection> playingConnection = new HashMap<>();
-    private final Map<Connection, Connection> playingConnection3players = new HashMap<>();
+    private final Map<String, Connection> playingConnection = new HashMap<>();
     private final ArrayList<String> divinities = new ArrayList<>();
     private final Map<String, String> divinityPlayer = new HashMap<>();
     private String firstPlayer;
@@ -40,12 +40,47 @@ public class Server {
     }
 
     /**
+     * This is the run method of server. This is active all the time and accept the socket of client.
+     * After create a thread for Connection of each client.
+     */
+    public void run() {
+        System.out.println("Server listening on port: " + PORT);
+        //noinspection InfiniteLoopStatement
+        while (true) {
+            try {
+                Socket socket = serverSocket.accept();
+                Connection connection = new Connection(socket, this);
+                registerConnection(connection);
+                executor.submit(connection);
+            } catch (IOException e) {
+                System.err.println("Connection error!");
+            }
+        }
+    }
+
+    /**
      * When a client connects itself to Server, add it in connections
      * @param c is the connection
      */
     //Register connection
     private void registerConnection(Connection c) {
         connections.add(c);
+    }
+
+    /**
+     * When a connection ends or the third player loses we use the deregister
+     * @param c is the connection
+     */
+    public synchronized void unregisterConnection(Connection c) {
+        if (playingConnection.size() == 3) {
+            connections.remove(c);
+            numPlayers = 2;
+
+        } else if (playingConnection.size() == 2) {
+
+            playingConnection.clear();
+            connections.remove(c);
+        }
     }
 
     /**
@@ -116,41 +151,6 @@ public class Server {
 
     }
 
-    /**
-     * When a connection ends or the third player loses we use the deregister
-     * @param c is the connection
-     */
-    public synchronized void unregisterConnection(Connection c) {
-        if (playingConnection.size() == 3) {
-            for (Connection conn : connections) {
-                if (c.equals(playingConnection.get(conn))) {
-                    playingConnection.remove(conn);
-                }
-            }
-            for (Connection conn : connections) {
-                if (c.equals(playingConnection.get(conn))) {
-                    playingConnection3players.remove(conn);
-                }
-            }
-            playingConnection.remove(c); //rimuovo la prima connessione dalla prima hash map
-            playingConnection3players.remove(c);
-            Connection toAdd = connections.get(0);
-            if (playingConnection.containsKey(toAdd)) {
-                playingConnection.put(connections.get(1), toAdd);
-            } else {
-                playingConnection.put(toAdd, connections.get(1));
-            }
-            playingConnection3players.clear();
-            connections.remove(c);
-            numPlayers = 2;
-
-        } else if (playingConnection.size() == 2) {
-
-            playingConnection.clear();
-            connections.remove(c);
-        }
-    }
-
 
     /**
      * This is the lobby of the game, in this there are all initial moves
@@ -190,9 +190,6 @@ public class Server {
             c1.addObserver(controller);
             c2.addObserver(controller);
 
-            playingConnection.put(c1, c2);
-            playingConnection.put(c2, c1);
-
             ArrayList<String> startingMessages = new ArrayList<>();
             startingMessages.add("Start " + player1.getName() + " " + player1.getColor() + " " + player1.getGodPower().getDivinity());
             startingMessages.add("Start " + player2.getName() + " " + player2.getColor() + " " + player2.getGodPower().getDivinity());
@@ -205,13 +202,9 @@ public class Server {
                 game.addObserver(c3);
                 c3.addObserver(controller);
 
-                playingConnection.put(c2, c3);
-                playingConnection.put(c3, c1);
-                playingConnection3players.put(c1, c3);
-                playingConnection3players.put(c3, c2);
-
                 startingMessages.add("Start " + player3.getName() + " " + player3.getColor() + " " + player3.getGodPower().getDivinity());
             }
+            playingConnection.putAll(waitingConnection);
 
             // Send to the sockets the players' names and their color, then start the game with the update
             for (String message : startingMessages) game.sendBoard(new LiteBoard(message));
@@ -237,25 +230,6 @@ public class Server {
 
         }
 
-
-    /**
-     * This is the run method of server. This is active all the time and accept the socket of client.
-     * After create a thread for Connection of each client.
-     */
-    public void run() {
-        System.out.println("Server listening on port: " + PORT);
-        //noinspection InfiniteLoopStatement
-        while (true) {
-            try {
-                Socket socket = serverSocket.accept();
-                Connection connection = new Connection(socket, this);
-                registerConnection(connection);
-                executor.submit(connection);
-            } catch (IOException e) {
-                System.err.println("Connection error!");
-            }
-        }
-    }
 
     public boolean gameHasStarted() {
         return startGame;
